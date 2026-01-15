@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/app-sidebar"
@@ -8,14 +7,11 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
   title: "AEM Cert Prep Hub | AD0-E134 Sites Developer Expert",
   description:
     "Prepare for Adobe Experience Manager Developer certifications with comprehensive study guides, topics, and resources for AEM as a Cloud Service.",
-  generator: "v0.app",
+  generator: "rocampo",
   icons: {
     icon: [
       { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },

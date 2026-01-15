@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, Code, Cloud, Puzzle, Layers, FileText, GitBranch, Shield, Zap, Globe } from "lucide-react"
 import type { Topic } from "@/lib/topics"
 
 const tagColors: Record<string, string> = {
@@ -12,18 +12,32 @@ const tagColors: Record<string, string> = {
   Advanced: "bg-chart-3/10 text-chart-3 hover:bg-chart-3/20",
 }
 
+const iconMap = {
+  Code,
+  Cloud,
+  Puzzle,
+  Layers,
+  FileText,
+  GitBranch,
+  Shield,
+  Zap,
+  Globe,
+}
+
 interface TopicCardProps {
   topic: Topic
 }
 
 export function TopicCard({ topic }: TopicCardProps) {
+  const Icon = iconMap[topic.icon as keyof typeof iconMap]
+  
   return (
     <Card className="overflow-hidden">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <topic.icon className="h-5 w-5 text-primary" />
+              {Icon && <Icon className="h-5 w-5 text-primary" />}
             </div>
             <div>
               <h3 className="font-semibold leading-tight">{topic.title}</h3>

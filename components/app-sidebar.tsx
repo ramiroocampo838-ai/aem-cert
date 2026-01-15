@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, BookOpen, HelpCircle, Link2, Info, GraduationCap, Moon, Sun } from "lucide-react"
+import { Home, BookOpen, HelpCircle, Link2, Info, GraduationCap, Moon, Sun, Presentation } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import {
@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button"
 
 const navItems = [
   { title: "Dashboard", href: "/", icon: Home },
+  { title: "Intro Presentation", href: "/intro", icon: Presentation },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Quizzes", href: "/quizzes", icon: HelpCircle },
   { title: "Resources", href: "/resources", icon: Link2 },
