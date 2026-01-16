@@ -5,7 +5,7 @@
 
 "use client"
 
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Home, X } from "lucide-react"
@@ -22,7 +22,7 @@ import { MusicPlayer } from "@/components/presentation/music-player"
 import { slides, getTotalSlides } from "@/lib/slides-content"
 import type { ModalContent } from "@/lib/slides-content"
 
-export default function IntroPage() {
+function IntroContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const totalSlides = getTotalSlides()
@@ -244,5 +244,13 @@ export default function IntroPage() {
       {/* Music Player */}
       <MusicPlayer />
     </div>
+  )
+}
+
+export default function IntroPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen w-full bg-slate-900 flex items-center justify-center"><div className="text-white">Loading...</div></div>}>
+      <IntroContent />
+    </Suspense>
   )
 }
