@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <linearGradient id="aem-gradient-apple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EB1000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B46C1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background for iOS -->
+  <rect width="180" height="180" rx="40" fill="#0F172A"/>
+  
+  <!-- 3D Cube Base - Scaled up -->
+  <path d="M90 40L145 70V140L90 170L35 140V70L90 40Z" fill="url(#aem-gradient-apple)"/>
+  
+  <!-- Cube Face Highlights -->
+  <path d="M90 40L145 70L90 100L35 70L90 40Z" fill="url(#aem-gradient-apple)" opacity="0.4"/>
+  <path d="M35 70V140L90 170V100L35 70Z" fill="#000000" opacity="0.25"/>
+  
+  <!-- Letter A - Larger -->
+  <path d="M90 75L105 115H98L95 105H85L82 115H75L90 75Z M90 85L87 95H93L90 85Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Shine -->
+  <circle cx="110" cy="80" r="10" fill="white" opacity="0.25"/>
+</svg>

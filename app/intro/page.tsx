@@ -7,6 +7,9 @@
 
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import Link from "next/link"
+import { Home, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { SlideContainer } from "@/components/presentation/slide-container"
 import { SlideNavigation } from "@/components/presentation/slide-navigation"
 import { ProgressBar } from "@/components/presentation/progress-bar"
@@ -126,6 +129,18 @@ export default function IntroPage() {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-slate-900">
+      {/* Home Button - Fixed top-right */}
+      <Link href="/" className="fixed top-14 right-4 z-50">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-10 w-10 rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-all"
+          title="Back to Home"
+        >
+          <Home className="h-5 w-5" />
+        </Button>
+      </Link>
+
       <ProgressBar
         currentSlide={currentSlide}
         totalSlides={totalSlides}

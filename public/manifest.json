@@ -1,0 +1,49 @@
+{
+  "name": "AEM Cert Prep Hub",
+  "short_name": "AEM Prep",
+  "description": "Adobe Experience Manager certification preparation platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#EB1000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Topics",
+      "short_name": "Topics",
+      "description": "Browse AEM certification topics",
+      "url": "/topics",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Quizzes",
+      "short_name": "Quizzes",
+      "description": "Practice with quizzes",
+      "url": "/quizzes",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Presentation",
+      "short_name": "Intro",
+      "description": "AEM introduction presentation",
+      "url": "/intro",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

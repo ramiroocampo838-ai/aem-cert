@@ -101,30 +101,40 @@ export function MusicPlayer() {
   const currentTrack = tracks[currentTrackIndex]
 
   return (
-    <div
-      className={cn(
-        "fixed bottom-6 right-6 z-50 transition-all duration-300",
-        isExpanded ? "w-80" : "w-16"
-      )}
-    >
-      {/* Collapsed State - Just Music Icon */}
-      {!isExpanded && (
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsExpanded(true)}
-          className={cn(
-            "h-16 w-16 rounded-full bg-gradient-to-br from-purple-600 to-blue-600",
-            "text-white shadow-lg backdrop-blur-sm hover:from-purple-500 hover:to-blue-500",
-            isPlaying && "animate-pulse"
-          )}
-        >
-          <Music className="h-6 w-6" />
-        </Button>
-      )}
+    <>
+      {/* Hidden Audio Element - Always mounted */}
+      <audio
+        ref={audioRef}
+        src={currentTrack.url}
+        loop={false}
+        onEnded={handleTrackEnd}
+        preload="none"
+      />
 
-      {/* Expanded State - Full Player */}
-      {isExpanded && (
+      <div
+        className={cn(
+          "fixed bottom-6 right-6 z-50 transition-all duration-300",
+          isExpanded ? "w-80" : "w-16"
+        )}
+      >
+        {/* Collapsed State - Just Music Icon */}
+        {!isExpanded && (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsExpanded(true)}
+            className={cn(
+              "h-16 w-16 rounded-full bg-gradient-to-br from-purple-600 to-blue-600",
+              "text-white shadow-lg backdrop-blur-sm hover:from-purple-500 hover:to-blue-500",
+              isPlaying && "animate-pulse"
+            )}
+          >
+            <Music className="h-6 w-6" />
+          </Button>
+        )}
+
+        {/* Expanded State - Full Player */}
+        {isExpanded && (
         <div
           className={cn(
             "rounded-xl border border-white/20 bg-gradient-to-br from-slate-900/95 to-slate-800/95",
@@ -211,17 +221,9 @@ export function MusicPlayer() {
               ))}
             </div>
           </div>
-
-          {/* Hidden Audio Element */}
-          <audio
-            ref={audioRef}
-            src={currentTrack.url}
-            loop={false}
-            onEnded={handleTrackEnd}
-            preload="none"
-          />
         </div>
       )}
-    </div>
+      </div>
+    </>
   )
 }

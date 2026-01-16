@@ -56,7 +56,8 @@ export default function HomePage() {
               </div>
               <Button asChild>
                 <Link href="/intro" className="gap-2">
-                  Start Presentation
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
