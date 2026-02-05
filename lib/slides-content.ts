@@ -12,18 +12,19 @@ export interface CodeExample {
 
 export interface ExpandableContent {
   title: string
-  content: string | string[]
+  content: string | string[] | { text: string; url?: string }[]
   type?: "list" | "text" | "table"
 }
 
 export interface DiagramData {
-  type: "architecture" | "flow" | "tree" | "comparison"
+  type: "architecture" | "flow" | "tree" | "comparison" | "ascii"
   description: string
   elements?: {
     id: string
     label: string
     tooltip?: string
   }[]
+  asciiContent?: string
 }
 
 export interface ModalContent {
@@ -622,8 +623,44 @@ public class EmailServiceImpl implements EmailService {
     ],
     diagrams: [
       {
-        type: "architecture",
-        description: "Editable Template Structure"
+        type: "ascii",
+        description: "Editable Template Structure",
+        asciiContent: `┌─────────────────────────────────────────────────────────────
+│                 EDITABLE TEMPLATE (AEM)                                            
+├─────────────────────────────────────────────────────────
+│  STRUCTURE (Mode: Structure)   🔒 LOCKED for authors                               
+│  - Header / Footer / Navigation                                                    
+│  - Base layout (containers / grid)                                                                      
+│  - Allowed Components + Policies                                                   
+│  - Style System / Responsive settings                                              
+│                                                                                    
+│  Example:                                                                          
+│   [Header 🔒]                                                                     
+│   [Main Container 🔒  (defines where editing IS allowed)]                           
+│   [Footer 🔒]                                                                     
+├─────────────────────────────────────────────────────────────
+│  INITIAL CONTENT (Mode: Initial Content)   ✅ EDITABLE                            
+│  - "Starter" content pre-loaded in new pages                                      
+│  - Ex: a Hero, welcome text, placeholders, etc.                                   
+│                                                                                    
+│  Example:                                                                          
+│   (Inside Main Container)                                                          
+│   [Hero ✅] [Text ✅] [Image ✅]                                                 
+└───────────────────────────────────────────────────────────────
+
+                 ↓ Create page from template
+
+┌───────────────────────────────────────────────────────────────
+│                     PAGE (AEM)                                                     
+├───────────────────────────────────────────────────────────────
+│  What the author SEES and EDITS in Page Editor                                     
+│                                                                                    
+│  [Header 🔒 inherited from Structure]                                              
+│  [Main Container ✅ editable (according to policies)]                              
+│     - Author adds/removes allowed components                                       
+│     - Author changes allowed content and styles                                    
+│  [Footer 🔒 inherited from Structure]                                              
+└───────────────────────────────────────────────────────────────`
       }
     ],
     codeExamples: [
@@ -922,10 +959,18 @@ public class ArticleModel {
         type: "list"
       }
     ],
-    diagrams: [
+    modals: [
       {
-        type: "architecture",
-        description: "AEM Cloud Service Architecture"
+        title: "AEM Cloud Service Architecture Diagram 1",
+        content: "Detailed view of AEM Cloud Service Architecture - Part 1",
+        type: "image",
+        data: "/AEM-Cloud-Service-Architecture-1.png"
+      },
+      {
+        title: "AEM Cloud Service Architecture Diagram 2",
+        content: "Detailed view of AEM Cloud Service Architecture - Part 2",
+        type: "image",
+        data: "/AEM-Cloud-Service-Architecture-2.png"
       }
     ],
     codeExamples: [
@@ -1012,10 +1057,12 @@ public class ArticleModel {
         type: "list"
       }
     ],
-    diagrams: [
+    modals: [
       {
-        type: "flow",
-        description: "Author-Publish Replication Flow"
+        title: "Author-Publish Replication Flow",
+        content: "Visual representation of the content replication process between Author and Publish tiers",
+        type: "image",
+        data: "/Author-Publish-Replication-Flow.png"
       }
     ],
     tooltips: [
@@ -1328,23 +1375,23 @@ public class ArticleModel {
       {
         title: "Essential Links",
         content: [
-          "Adobe Certification: https://learning.adobe.com/certification.html",
-          "Experience League: https://experienceleague.adobe.com/",
-          "AEM Documentation: https://experienceleague.adobe.com/docs/experience-manager-cloud-service.html",
-          "WKND Tutorial: https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html",
-          "AEM Community: https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community",
-          "GitHub - Core Components: https://github.com/adobe/aem-core-wcm-components"
+          { text: "Adobe Certification", url: "https://learning.adobe.com/certification.html" },
+          { text: "Experience League", url: "https://experienceleague.adobe.com/" },
+          { text: "AEM Documentation", url: "https://experienceleague.adobe.com/docs/experience-manager-cloud-service.html" },
+          { text: "WKND Tutorial", url: "https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html" },
+          { text: "AEM Community", url: "https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community" },
+          { text: "GitHub - Core Components", url: "https://github.com/adobe/aem-core-wcm-components" }
         ],
         type: "list"
       },
       {
         title: "Download and Install",
         content: [
-          "AEM as a Cloud Service SDK: https://experience.adobe.com/#/downloads",
-          "Java JDK 11 or 17: https://adoptium.net/",
-          "Maven 3.6+: https://maven.apache.org/download.cgi",
-          "IDE: IntelliJ IDEA or Eclipse with AEM plugins",
-          "Git: https://git-scm.com/downloads"
+          { text: "AEM as a Cloud Service SDK", url: "https://experience.adobe.com/#/downloads" },
+          { text: "Java JDK 11 or 17", url: "https://adoptium.net/" },
+          { text: "Maven 3.6+", url: "https://maven.apache.org/download.cgi" },
+          { text: "IDE: IntelliJ IDEA or Eclipse with AEM plugins" },
+          { text: "Git", url: "https://git-scm.com/downloads" }
         ],
         type: "list"
       }
