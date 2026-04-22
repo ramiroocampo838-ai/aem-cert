@@ -1,4 +1,4 @@
-import { GraduationCap, Presentation, ArrowRight } from "lucide-react"
+import { GraduationCap, Presentation, ArrowRight, Cloud, Brain, ShieldCheck } from "lucide-react"
 import Link from "next/link"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
@@ -30,8 +30,7 @@ export default function HomePage() {
               AEM Developer Certification Prep Hub
             </h1>
             <p className="mt-3 text-pretty text-muted-foreground md:text-lg">
-              Focus: <span className="font-medium text-foreground">AD0-E134</span> Sites Developer Expert | AEM as a
-              Cloud Service
+              AEM Sites Developer Certification | Expert Level | AEM as a Cloud Service
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
               Master Adobe Experience Manager with comprehensive study guides, practice topics, and curated resources.
@@ -76,6 +75,126 @@ export default function HomePage() {
               <div className="rounded-lg border border-border bg-background/50 p-3">
                 <div className="text-2xl font-bold text-indigo-600">6</div>
                 <div className="text-xs text-muted-foreground">Interactive Diagrams</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Cloud Manager Presentation Feature */}
+        <Card className="border-2 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-teal-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600 text-white">
+                  <Cloud className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Cloud Manager Overview</CardTitle>
+                  <CardDescription>32-minute interactive course on CI/CD, roles, and monitoring</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/cloud-manager" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-emerald-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-teal-600">5</div>
+                <div className="text-xs text-muted-foreground">Code Examples</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-cyan-600">3</div>
+                <div className="text-xs text-muted-foreground">Diagrams & Tables</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Code Quality Rules Presentation Feature */}
+        <Card className="border-2 border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-red-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-600 text-white">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Code Quality Rules</CardTitle>
+                  <CardDescription>43-minute guide to 58 rules across SonarQube, OakPAL, HTL, OSGi, Dispatcher, Performance &amp; Security</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/code-quality" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-orange-600">16</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-red-600">58</div>
+                <div className="text-xs text-muted-foreground">Quality Rules</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-rose-600">8</div>
+                <div className="text-xs text-muted-foreground">Rule Categories</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Trivia Challenge Feature */}
+        <Card className="border-2 border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-fuchsia-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-600 text-white">
+                  <Brain className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Trivia Challenge</CardTitle>
+                  <CardDescription>Test your knowledge — 10 random questions, instant feedback</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/trivia" className="gap-2">
+                  <span className="hidden md:block">Play Trivia</span>
+                  <span className="block md:hidden">Play</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-violet-600">200</div>
+                <div className="text-xs text-muted-foreground">Questions in bank</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-fuchsia-600">2</div>
+                <div className="text-xs text-muted-foreground">Topic sections</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-purple-600">∞</div>
+                <div className="text-xs text-muted-foreground">Unique sessions</div>
               </div>
             </div>
           </CardContent>

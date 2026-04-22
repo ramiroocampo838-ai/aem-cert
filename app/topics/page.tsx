@@ -24,7 +24,7 @@ export default function TopicsPage() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Study Topics</h1>
           <p className="mt-1 text-muted-foreground">
-            Comprehensive coverage of all AD0-E134 exam domains. Expand each topic to view key concepts.
+            Comprehensive coverage of all AEM certification exam domains. Expand each topic to view key concepts.
           </p>
         </div>
 

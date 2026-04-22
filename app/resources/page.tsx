@@ -13,7 +13,7 @@ const resources = [
     category: "Documentation",
   },
   {
-    title: "AD0-E134 Exam Guide",
+    title: "AEM Developer Certification Exam Guide",
     description: "Official exam guide with detailed objectives, readiness questionnaire, and preparation resources.",
     url: "https://experienceleague.adobe.com/docs/certification/certification/technical-certifications/aem/aem-sites-developer-expert.html",
     icon: Award,

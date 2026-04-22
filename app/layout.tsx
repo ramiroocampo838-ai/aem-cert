@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "AEM Cert Prep Hub | AD0-E134 Sites Developer Expert",
+  title: "AEM Cert Prep Hub | Adobe Experience Manager Certification",
   description:
     "Prepare for Adobe Experience Manager Developer certifications with comprehensive study guides, topics, and resources for AEM as a Cloud Service.",
   generator: "rocampo",

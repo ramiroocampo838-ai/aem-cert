@@ -60,7 +60,7 @@ export const slides: Slide[] = [
   {
     id: 1,
     title: "AEM Developer Certification Path",
-    subtitle: "Your Journey to AD0-E134 Certification",
+    subtitle: "Your Journey to AEM Certification",
     content: [
       "Welcome to the Adobe Experience Manager Developer Introduction",
       "A comprehensive guide to mastering AEM fundamentals",
@@ -133,10 +133,10 @@ export const slides: Slide[] = [
 
   {
     id: 3,
-    title: "Why Get Certified? (AD0-E134)",
-    subtitle: "Sites Developer Expert Certification",
+    title: "Why Get AEM Certified?",
+    subtitle: "Adobe Experience Manager Developer Certification",
     content: [
-      "The AD0-E134 certification validates your expertise in:",
+      "AEM certification validates your expertise in:",
       "• AEM architecture and development",
       "• Component and template creation",
       "• Cloud Service implementation",
@@ -1077,7 +1077,7 @@ public class ArticleModel {
   // CERTIFICATION PATH (Slides 14-17)
   {
     id: 14,
-    title: "AD0-E134 Exam Breakdown",
+    title: "AEM Certification Exam Breakdown",
     subtitle: "Understanding the Certification Domains",
     content: [
       "The exam tests five key domains:",
