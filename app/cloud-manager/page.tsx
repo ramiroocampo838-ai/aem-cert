@@ -1,6 +1,7 @@
 /**
- * AEM Introduction Presentation - Main Page
- * Interactive slide-based presentation for AEM fundamentals
+ * Cloud Manager & AEMaaCS Presentation - Main Page
+ * Interactive slide-based presentation on Cloud Manager fundamentals.
+ * Architecture mirrors app/intro/page.tsx — independent content source.
  */
 
 "use client"
@@ -8,7 +9,7 @@
 import { Suspense, useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
-import { Home, X } from "lucide-react"
+import { Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SlideContainer } from "@/components/presentation/slide-container"
 import { SlideNavigation } from "@/components/presentation/slide-navigation"
@@ -20,15 +21,14 @@ import { InfoModal } from "@/components/presentation/info-modal"
 import { InteractiveDiagram } from "@/components/presentation/interactive-diagram"
 import { ImageGallery } from "@/components/presentation/image-gallery"
 import { MusicPlayer } from "@/components/presentation/music-player"
-import { slides, getTotalSlides } from "@/lib/slides-content"
-import type { ModalContent } from "@/lib/slides-content"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+import { cloudManagerSlides, getTotalCloudManagerSlides } from "@/lib/cloud-manager-slides"
+import type { ModalContent } from "@/lib/cloud-manager-slides"
 
-function IntroContent() {
+function CloudManagerContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const totalSlides = getTotalSlides()
-  
+  const totalSlides = getTotalCloudManagerSlides()
+
   const [currentSlide, setCurrentSlide] = useState(() => {
     const slideParam = searchParams.get("slide")
     const slideNum = slideParam ? parseInt(slideParam, 10) : 1
@@ -37,7 +37,7 @@ function IntroContent() {
 
   const [openModal, setOpenModal] = useState<ModalContent | null>(null)
 
-  // Update URL when slide changes
+  // Sync URL when slide changes
   useEffect(() => {
     const url = new URL(window.location.href)
     url.searchParams.set("slide", currentSlide.toString())
@@ -47,7 +47,6 @@ function IntroContent() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't handle if modal is open
       if (openModal) return
 
       switch (e.key) {
@@ -92,38 +91,37 @@ function IntroContent() {
     }
   }
 
-  const currentSlideData = slides[currentSlide - 1]
-  
-  const timeRemaining = slides
+  const currentSlideData = cloudManagerSlides[currentSlide - 1]
+
+  const timeRemaining = cloudManagerSlides
     .slice(currentSlide)
     .reduce((total, slide) => total + slide.estimatedTime, 0)
 
-  const slidesTitles = slides.map(s => s.title)
+  const slidesTitles = cloudManagerSlides.map(s => s.title)
 
-  // Process content to add tooltips
+  // Process content with optional inline tooltips
   const renderContent = (content: string[]) => {
     return content.map((paragraph, idx) => {
-      // Check if this paragraph has tooltips
       const tooltips = currentSlideData.tooltips || []
-      let processedText = paragraph
+      let matched = false
 
-      // Replace tooltip text with InfoTooltip components
-      tooltips.forEach((tooltip) => {
-        if (processedText.includes(tooltip.text)) {
-          const parts = processedText.split(tooltip.text)
+      for (const tooltip of tooltips) {
+        if (paragraph.includes(tooltip.text)) {
+          const parts = paragraph.split(tooltip.text)
+          matched = true
           return (
             <p key={idx} className="text-lg text-white/90">
               {parts[0]}
               <InfoTooltip text={tooltip.text} content={tooltip.content} />
-              {parts[1]}
+              {parts.slice(1).join(tooltip.text)}
             </p>
           )
         }
-      })
+      }
 
       return (
         <p key={idx} className="text-lg text-white/90">
-          {processedText}
+          {paragraph}
         </p>
       )
     })
@@ -131,8 +129,7 @@ function IntroContent() {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-slate-900">
-      
-      {/* Home Button - Fixed top-right */}
+      {/* Home Button — Fixed top-right */}
       <Link href="/" className="fixed top-14 right-4 z-50">
         <Button
           variant="ghost"
@@ -143,9 +140,7 @@ function IntroContent() {
           <Home className="h-5 w-5" />
         </Button>
       </Link>
-      <div className="fixed top-14 left-200 z-150">
-    <SidebarTrigger className="-ml-1" />
-    </div>
+
       <ProgressBar
         currentSlide={currentSlide}
         totalSlides={totalSlides}
@@ -220,7 +215,7 @@ function IntroContent() {
             </div>
           )}
 
-          {/* Modals Available */}
+          {/* Modals */}
           {currentSlideData.modals && currentSlideData.modals.length > 0 && (
             currentSlideData.modals.every(modal => modal.type === "image") ? (
               <ImageGallery images={currentSlideData.modals} />
@@ -230,7 +225,7 @@ function IntroContent() {
                   <button
                     key={idx}
                     onClick={() => setOpenModal(modal)}
-                    className="rounded-lg border border-blue-400/40 bg-blue-500/10 px-4 py-2 text-sm text-blue-300 transition-colors hover:bg-blue-500/20"
+                    className="rounded-lg border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300 transition-colors hover:bg-emerald-500/20"
                   >
                     📖 {modal.title}
                   </button>
@@ -256,10 +251,16 @@ function IntroContent() {
   )
 }
 
-export default function IntroPage() {
+export default function CloudManagerPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen w-full bg-slate-900 flex items-center justify-center"><div className="text-white">Loading...</div></div>}>
-      <IntroContent />
+    <Suspense
+      fallback={
+        <div className="min-h-screen w-full bg-slate-900 flex items-center justify-center">
+          <div className="text-white">Loading...</div>
+        </div>
+      }
+    >
+      <CloudManagerContent />
     </Suspense>
   )
 }

@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, BookOpen, HelpCircle, Link2, Info, GraduationCap, Moon, Sun, Presentation } from "lucide-react"
+import { Home, BookOpen, HelpCircle, Link2, Info, GraduationCap, Moon, Sun, Presentation, Cloud, Brain, ShieldCheck } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import {
@@ -24,6 +24,9 @@ import { Button } from "@/components/ui/button"
 const navItems = [
   { title: "Dashboard", href: "/", icon: Home },
   { title: "Intro Presentation", href: "/intro", icon: Presentation },
+  { title: "Cloud Manager", href: "/cloud-manager", icon: Cloud },
+  { title: "Code Quality Rules", href: "/code-quality", icon: ShieldCheck },
+  { title: "Trivia", href: "/trivia", icon: Brain },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Quizzes", href: "/quizzes", icon: HelpCircle },
   { title: "Resources", href: "/resources", icon: Link2 },
@@ -49,7 +52,7 @@ export function AppSidebar() {
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold">AEM Cert Prep Hub</span>
-            <span className="text-xs text-muted-foreground">AD0-E134 Expert</span>
+            <span className="text-xs text-muted-foreground">AEM Certification Prep</span>
           </div>
         </Link>
       </SidebarHeader>

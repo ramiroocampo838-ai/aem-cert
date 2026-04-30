@@ -27,12 +27,37 @@ export function ExpandableSection({
     if (section.type === "list" && Array.isArray(section.content)) {
       return (
         <ul className="space-y-2">
-          {section.content.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
-              <span>{item}</span>
-            </li>
-          ))}
+          {section.content.map((item, idx) => {
+            // Check if item is an object with text and optional url
+            if (typeof item === 'object' && item !== null && 'text' in item) {
+              const linkItem = item as { text: string; url?: string };
+              return (
+                <li key={idx} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                  {linkItem.url ? (
+                    <a
+                      href={linkItem.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-300 hover:text-blue-200 underline transition-colors"
+                    >
+                      {linkItem.text}
+                    </a>
+                  ) : (
+                    <span>{linkItem.text}</span>
+                  )}
+                </li>
+              );
+            }
+            
+            // Fallback for string items
+            return (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                <span>{item}</span>
+              </li>
+            );
+          })}
         </ul>
       )
     }
@@ -45,9 +70,29 @@ export function ExpandableSection({
     if (Array.isArray(section.content)) {
       return (
         <div className="space-y-2">
-          {section.content.map((paragraph, idx) => (
-            <p key={idx} className="leading-relaxed">{paragraph}</p>
-          ))}
+          {section.content.map((paragraph, idx) => {
+            // Handle mixed content: string or {text, url?}
+            if (typeof paragraph === 'object' && paragraph !== null && 'text' in paragraph) {
+              const linkItem = paragraph as { text: string; url?: string };
+              if (linkItem.url) {
+                return (
+                  <p key={idx} className="leading-relaxed">
+                    <a
+                      href={linkItem.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-300 hover:text-blue-200 underline transition-colors"
+                    >
+                      {linkItem.text}
+                    </a>
+                  </p>
+                );
+              }
+              return <p key={idx} className="leading-relaxed">{linkItem.text}</p>;
+            }
+            // Handle string content
+            return <p key={idx} className="leading-relaxed">{paragraph}</p>;
+          })}
         </div>
       )
     }

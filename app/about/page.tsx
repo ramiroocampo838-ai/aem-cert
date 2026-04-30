@@ -19,12 +19,12 @@ export default function AboutPage() {
         <div className="max-w-2xl">
           <h1 className="text-2xl font-bold tracking-tight">About AEM Cert Prep Hub</h1>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            This application is designed to help developers prepare for the Adobe Experience Manager (AEM) certification
-            exams, with a primary focus on the{" "}
+            This application is designed to help developers build solid knowledge of Adobe Experience Manager (AEM)
+            and prepare for the{"\ "}
             <span className="font-medium text-foreground">
-              AD0-E134 Adobe Experience Manager Sites Developer Expert
-            </span>{" "}
-            certification.
+              Adobe Experience Manager Sites Developer Expert Certification
+            </span>{"\ "}
+            at any level.
           </p>
         </div>
 
@@ -38,8 +38,8 @@ export default function AboutPage() {
               <CardTitle className="mt-3 text-lg">Exam Coverage</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              Covers both AEM 6.x (on-premise) and AEM as a Cloud Service topics as outlined in the official AD0-E134
-              exam guide, updated for 2026.
+              Covers both AEM 6.x (on-premise) and AEM as a Cloud Service topics, aligned with official AEM developer
+              certification objectives and updated for 2026.
             </CardContent>
           </Card>
 

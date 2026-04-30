@@ -28,6 +28,8 @@ export function InteractiveDiagram({ diagram, className }: InteractiveDiagramPro
         return <TreeDiagram diagram={diagram} onHover={setHoveredElement} />
       case "comparison":
         return <ComparisonDiagram diagram={diagram} onHover={setHoveredElement} />
+      case "ascii":
+        return <AsciiDiagram diagram={diagram} />
       default:
         return <DefaultDiagram diagram={diagram} />
     }
@@ -335,6 +337,16 @@ function DefaultDiagram({ diagram }: { diagram: DiagramData }) {
         <p className="text-white/60">📊 {diagram.description}</p>
         <p className="mt-2 text-sm text-white/40">Interactive diagram</p>
       </div>
+    </div>
+  )
+}
+
+function AsciiDiagram({ diagram }: { diagram: DiagramData }) {
+  return (
+    <div className="w-full max-w-4xl">
+      <pre className="whitespace-pre-wrap font-mono text-sm text-white/90 leading-relaxed">
+        {diagram.asciiContent}
+      </pre>
     </div>
   )
 }

@@ -1,18 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock, FileQuestion, Target, Award } from "lucide-react"
+import { Presentation, BookOpen, GraduationCap, Layers } from "lucide-react"
 
 const stats = [
-  { label: "Questions", value: "50", icon: FileQuestion },
-  { label: "Duration", value: "100 min", icon: Clock },
-  { label: "Passing Score", value: "~70%", icon: Target },
-  { label: "Exam Code", value: "AD0-E134", icon: Award },
+  { label: "Presentations", value: "2", icon: Presentation },
+  { label: "Study Topics", value: "10+", icon: BookOpen },
+  { label: "Total Slides", value: "32", icon: Layers },
+  { label: "Level", value: "Expert", icon: GraduationCap },
 ]
 
 export function ExamStatsCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">Exam Quick Facts</CardTitle>
+        <CardTitle className="text-lg">Hub at a Glance</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
