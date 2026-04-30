@@ -21,6 +21,7 @@ import { InteractiveDiagram } from "@/components/presentation/interactive-diagra
 import { MusicPlayer } from "@/components/presentation/music-player"
 import { slides, getTotalSlides } from "@/lib/slides-content"
 import type { ModalContent } from "@/lib/slides-content"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
 function IntroContent() {
   const router = useRouter()
@@ -129,6 +130,7 @@ function IntroContent() {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-slate-900">
+      
       {/* Home Button - Fixed top-right */}
       <Link href="/" className="fixed top-14 right-4 z-50">
         <Button
@@ -140,7 +142,9 @@ function IntroContent() {
           <Home className="h-5 w-5" />
         </Button>
       </Link>
-
+      <div className="fixed top-14 left-200 z-150">
+    <SidebarTrigger className="-ml-1" />
+    </div>
       <ProgressBar
         currentSlide={currentSlide}
         totalSlides={totalSlides}
