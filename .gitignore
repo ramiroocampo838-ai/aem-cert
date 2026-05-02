@@ -23,6 +23,9 @@ yarn-error.log*
 # md files
 *.md
 *.txt
+!public/speeches/*.txt
+!public/audios/
+!public/music/
 
 
 # vercel

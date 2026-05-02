@@ -1,0 +1,216 @@
+AEM Introduction — Presentation Guide
+
+
+1. Introduction
+
+Today we’re going to talk about Adobe Experience Manager, also known as AEM.
+
+The goal is to understand what it is, how it works internally, and the key concepts you need to know to start working with it.
+
+We’ll go from high-level ideas down to the core building blocks, in a practical and easy-to-follow way.
+
+
+2. What is AEM?
+
+AEM is an enterprise CMS, which means it’s a platform used to manage digital content and deliver it across multiple channels.
+
+In simple terms, it helps companies build and manage digital experiences.
+
+It has four main pillars:
+- Web content management
+- Digital asset management (images, videos, documents)
+- Forms
+- Marketing tools
+
+It is part of Adobe Experience Cloud, which means it integrates with tools like Analytics and Target.
+
+It’s widely used in industries like banking, retail, healthcare, and government.
+
+
+3. AEM Architecture
+
+AEM is built on top of three main layers. Think of it as a stack:
+
+- JCR (Content Repository)
+- Apache Sling (Request resolution)
+- OSGi (Services and business logic)
+
+Basic request flow:
+1. An HTTP request comes in
+2. Sling interprets the URL
+3. The resource is located in the repository (JCR)
+4. The component responsible for rendering is identified
+5. OSGi executes the business logic
+6. A response is generated and returned
+
+If you understand this flow, you understand a big part of AEM.
+
+
+4. JCR (Content Repository)
+
+Content in AEM is stored in a tree structure, similar to a file system.
+
+Key paths:
+- /content → website pages
+- /apps → custom code
+- /libs → AEM internal code (never modify)
+- /conf → configurations
+- /var → runtime data
+- /home → users
+
+Each page has a node called jcr:content where its properties are stored.
+
+Everything in AEM revolves around content, so this is a fundamental concept.
+
+
+5. Apache Sling
+
+Sling is the engine that connects URLs to content.
+
+It follows a RESTful approach and uses a key property:
+- sling:resourceType
+
+This property tells AEM which component should render a resource.
+
+Example URL:
+/content/mysite/en.mobile.html
+
+Breakdown:
+- Path: /content/mysite/en
+- Selector: mobile
+- Extension: html
+
+This structure gives AEM a lot of flexibility in how content is delivered.
+
+
+6. OSGi
+
+OSGi is the container where business logic lives.
+
+It manages services and configurations.
+
+A key concept:
+- Modules (bundles) can be installed, updated, or removed without restarting the server
+
+This makes AEM highly dynamic.
+
+It also supports dependency injection and environment-specific configurations.
+
+
+7. Components
+
+Components are the basic building blocks in AEM.
+
+You can think of them as LEGO pieces.
+
+A typical component includes:
+- Definition
+- HTML template (HTL)
+- Author dialog
+- CSS/JS
+
+HTL (HTML Template Language) is the modern standard:
+- Secure by default
+- Protects against XSS
+- Replaces older technologies like JSP
+
+There are also Core Components, which are ready-to-use, production-quality components.
+
+
+8. Editable Templates
+
+Templates define the structure of pages.
+
+There are two main modes:
+- Structure → locked areas (like header and footer)
+- Initial Content → default editable content
+
+Policies define:
+- Which components are allowed
+- Which styles are available
+
+This creates a clear separation between developers and content authors.
+
+
+9. Content Fragments vs Experience Fragments
+
+It’s important to understand the difference:
+
+Content Fragment:
+- Focused on data
+- No design
+- Ideal for APIs or headless delivery
+
+Experience Fragment:
+- Includes layout and design
+- Reusable visual sections
+- Ideal for banners or page sections
+
+In short:
+- Content Fragment = content
+- Experience Fragment = presentation
+
+
+10. Sling Models
+
+Sling Models are Java classes used to retrieve data from the repository in a clean way.
+
+They rely on annotations for dependency injection.
+
+Key annotations:
+- @ValueMapValue → injects properties
+- @ChildResource → injects child nodes
+- @OSGiService → injects services
+- @PostConstruct → initialization logic
+
+They replace logic in views and help keep code clean and maintainable.
+
+
+11. AEM as a Cloud Service
+
+AEM can run as a cloud service, which introduces some important changes:
+
+- Infrastructure managed by Adobe
+- Automatic updates
+- Auto-scaling
+
+Important rules:
+- /apps and /libs are read-only at runtime
+- Environment variables are used for configuration
+- RDE (Rapid Development Environment) is available for fast development
+
+This enforces modern best practices.
+
+
+12. Author vs Publish
+
+AEM has two main environments:
+
+Author:
+- Where content is created and managed
+- Internal use only
+
+Publish:
+- Where content is delivered to end users
+
+Content moves between them through a publishing process.
+
+In front of Publish, there is the Dispatcher:
+- Handles caching
+- Improves performance
+- Adds a security layer
+
+
+13. Closing
+
+AEM is a powerful platform built on:
+- Structured content (JCR)
+- Dynamic request resolution (Sling)
+- Modular services (OSGi)
+
+The key takeaway is understanding how everything connects:
+- How content links to components
+- How requests are processed
+- How projects are structured
+
+If you understand these fundamentals, you can start working effectively with AEM.
