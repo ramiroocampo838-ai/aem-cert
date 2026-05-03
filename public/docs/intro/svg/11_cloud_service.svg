@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 480" width="680" height="480">
+
+  <style>
+    .t  { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; fill: #2C2C2A; }
+    .ts { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+    .th { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+    .title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+
+    .c-purple rect, .c-purple ellipse, .c-purple circle { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-purple .ts { fill: #534AB7; }
+
+    .c-teal rect, .c-teal ellipse, .c-teal circle { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal text { fill: #085041; }
+    .c-teal .ts { fill: #0F6E56; }
+
+    .c-coral rect, .c-coral ellipse, .c-coral circle { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral text { fill: #712B13; }
+    .c-coral .ts { fill: #993C1D; }
+
+    .c-amber rect, .c-amber ellipse, .c-amber circle { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber text { fill: #633806; }
+    .c-amber .ts { fill: #854F0B; }
+
+    .c-gray rect, .c-gray ellipse, .c-gray circle { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray text { fill: #2C2C2A; }
+    .c-gray .ts { fill: #444441; }
+
+    .c-red rect, .c-red ellipse, .c-red circle { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red text { fill: #791F1F; }
+    .c-red .ts { fill: #A32D2D; }
+
+    .c-blue rect, .c-blue ellipse, .c-blue circle { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue text { fill: #0C447C; }
+    .c-blue .ts { fill: #185FA5; }
+
+    .c-green rect, .c-green ellipse, .c-green circle { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green text { fill: #27500A; }
+    .c-green .ts { fill: #3B6D11; }
+
+    .arr { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .leader { fill: none; stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect, ellipse, circle { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+
+  <text class="title" x="40" y="40">AEM as a Cloud Service</text>
+  <text class="subtitle" x="40" y="60">Adobe-managed infrastructure with modern best practices enforced</text>
+
+  <text class="th" x="40" y="100">What changes</text>
+
+  <g class="c-blue">
+    <rect x="40" y="120" width="190" height="100" rx="8"/>
+    <text class="th" x="135" y="146" text-anchor="middle">Managed by Adobe</text>
+    <text class="ts" x="135" y="168" text-anchor="middle">No servers to</text>
+    <text class="ts" x="135" y="184" text-anchor="middle">install or maintain</text>
+    <text class="ts" x="135" y="204" text-anchor="middle">yourself</text>
+  </g>
+
+  <g class="c-blue">
+    <rect x="245" y="120" width="190" height="100" rx="8"/>
+    <text class="th" x="340" y="146" text-anchor="middle">Automatic updates</text>
+    <text class="ts" x="340" y="168" text-anchor="middle">Always running on</text>
+    <text class="ts" x="340" y="184" text-anchor="middle">a current version</text>
+    <text class="ts" x="340" y="204" text-anchor="middle">of AEM</text>
+  </g>
+
+  <g class="c-blue">
+    <rect x="450" y="120" width="190" height="100" rx="8"/>
+    <text class="th" x="545" y="146" text-anchor="middle">Auto-scaling</text>
+    <text class="ts" x="545" y="168" text-anchor="middle">Capacity adjusts</text>
+    <text class="ts" x="545" y="184" text-anchor="middle">to traffic</text>
+    <text class="ts" x="545" y="204" text-anchor="middle">automatically</text>
+  </g>
+
+  <line x1="40" y1="250" x2="640" y2="250" class="divider"/>
+
+  <text class="title" x="40" y="280">Important rules</text>
+
+  <g class="c-red">
+    <rect x="40" y="300" width="290" height="80" rx="8"/>
+    <text class="th" x="185" y="324" text-anchor="middle">/apps and /libs are read-only</text>
+    <text class="ts" x="185" y="346" text-anchor="middle">at runtime</text>
+    <text class="ts" x="185" y="362" text-anchor="middle">All changes go through deployments</text>
+  </g>
+
+  <g class="c-amber">
+    <rect x="350" y="300" width="290" height="80" rx="8"/>
+    <text class="th" x="495" y="324" text-anchor="middle">Configuration as variables</text>
+    <text class="ts" x="495" y="346" text-anchor="middle">Environment variables</text>
+    <text class="ts" x="495" y="362" text-anchor="middle">replace per-instance configs</text>
+  </g>
+
+  <g class="c-green">
+    <rect x="155" y="400" width="370" height="60" rx="8"/>
+    <text class="th" x="340" y="424" text-anchor="middle">RDE: Rapid Development Environment</text>
+    <text class="ts" x="340" y="444" text-anchor="middle">Lets developers iterate quickly without full deploys</text>
+  </g>
+
+</svg>

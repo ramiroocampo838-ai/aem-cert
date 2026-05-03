@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { SpeakerButton } from "@/components/ui/speaker-button"
 import type { Concept } from "@/lib/concepts/types"
 
 interface ConceptCardProps {
@@ -39,8 +40,13 @@ export function ConceptCard({ concept, index }: ConceptCardProps) {
         </div>
 
         {expanded && (
-          <div className="ml-8 mt-3 text-sm text-foreground/80 leading-relaxed border-t border-border/60 pt-3">
-            {concept.explanation}
+          <div className="ml-8 mt-3 border-t border-border/60 pt-3">
+            <div className="flex justify-end mb-1.5">
+              <SpeakerButton text={`${concept.title}. ${concept.explanation}`} />
+            </div>
+            <p className="text-sm text-foreground/80 leading-relaxed">
+              {concept.explanation}
+            </p>
           </div>
         )}
       </CardContent>

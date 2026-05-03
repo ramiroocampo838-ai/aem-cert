@@ -23,6 +23,7 @@ import { MusicPlayer } from "@/components/presentation/music-player"
 import { slides, getTotalSlides } from "@/lib/slides-content"
 import type { ModalContent } from "@/lib/slides-content"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { SpeakerButton } from "@/components/ui/speaker-button"
 
 function IntroContent() {
   const router = useRouter()
@@ -93,7 +94,13 @@ function IntroContent() {
   }
 
   const currentSlideData = slides[currentSlide - 1]
-  
+
+  const speechText = [
+    currentSlideData.title,
+    currentSlideData.subtitle,
+    ...currentSlideData.content,
+  ].filter(Boolean).join(". ")
+
   const timeRemaining = slides
     .slice(currentSlide)
     .reduce((total, slide) => total + slide.estimatedTime, 0)
@@ -132,17 +139,24 @@ function IntroContent() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-slate-900">
       
-      {/* Home Button - Fixed top-right */}
-      <Link href="/" className="fixed top-14 right-4 z-50">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-10 w-10 rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-all"
-          title="Back to Home"
-        >
-          <Home className="h-5 w-5" />
-        </Button>
-      </Link>
+      {/* Top-right controls: Speaker + Home */}
+      <div className="fixed top-14 right-4 z-50 flex items-center gap-2">
+        <SpeakerButton
+          key={currentSlide}
+          text={speechText}
+          className="h-10 w-10 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
+        />
+        <Link href="/">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-10 w-10 rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-all"
+            title="Back to Home"
+          >
+            <Home className="h-5 w-5" />
+          </Button>
+        </Link>
+      </div>
       <div className="fixed top-14 left-200 z-150">
     <SidebarTrigger className="-ml-1" />
     </div>
