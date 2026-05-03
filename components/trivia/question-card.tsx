@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { CheckCircle2, XCircle, ChevronRight, Lightbulb } from "lucide-react"
 import type { SessionQuestion, QuestionResult, SectionColor } from "@/lib/trivia-types"
+import { SpeakerButton } from "@/components/ui/speaker-button"
 
 const COLOR_CLASSES = {
   purple: {
@@ -130,16 +131,16 @@ export function QuestionCard({
         {question.options.map((opt, idx) => (
           <button key={idx} onClick={() => handleSelect(idx)} disabled={isAnswered} className={getOptionClasses(idx)}>
             {/* Letter label */}
-            <span className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-current flex items-center justify-center text-xs font-bold mt-0.5">
+            <span className="shrink-0 w-6 h-6 rounded-full border-2 border-current flex items-center justify-center text-xs font-bold mt-0.5">
               {String.fromCharCode(65 + idx)}
             </span>
             <span className="flex-1">{opt.text}</span>
             {/* Result icon */}
             {isAnswered && opt.isCorrect && (
-              <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-green-500 mt-0.5" />
+              <CheckCircle2 className="shrink-0 w-5 h-5 text-green-500 mt-0.5" />
             )}
             {isAnswered && idx === selectedIndex && !opt.isCorrect && (
-              <XCircle className="flex-shrink-0 w-5 h-5 text-red-500 mt-0.5" />
+              <XCircle className="shrink-0 w-5 h-5 text-red-500 mt-0.5" />
             )}
           </button>
         ))}
@@ -155,12 +156,21 @@ export function QuestionCard({
               : "border-orange-200 bg-orange-50 dark:border-orange-800 dark:bg-orange-900/20",
           ].join(" ")}
         >
-          <div className="flex items-center gap-2 font-semibold text-sm">
-            <Lightbulb className="w-4 h-4" />
-            {result?.isCorrect ? "Correct! " : "Not quite — "}
-            <span className={result?.isCorrect ? "text-green-700 dark:text-green-300" : "text-orange-700 dark:text-orange-300"}>
-              {result?.isCorrect ? "Well done!" : "Here's why:"}
-            </span>
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 font-semibold text-sm">
+              <Lightbulb className="w-4 h-4" />
+              {result?.isCorrect ? "Correct! " : "Not quite — "}
+              <span className={result?.isCorrect ? "text-green-700 dark:text-green-300" : "text-orange-700 dark:text-orange-300"}>
+                {result?.isCorrect ? "Well done!" : "Here's why:"}
+              </span>
+            </div>
+            <SpeakerButton
+              text={
+                result?.isCorrect
+                  ? `Correct! Well done! ${question.explanation}`
+                  : `Not quite. Here's why: ${question.explanation}`
+              }
+            />
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">{question.explanation}</p>
         </div>

@@ -1,0 +1,389 @@
+AEM Code Quality — Presentation Guide
+
+
+1. Introduction
+
+In this section we recap the Code Quality rules that apply to AEM development.
+
+This covers everything Cloud Manager enforces before code reaches production, plus the standards AEM developers are expected to follow in their day-to-day work.
+
+We've covered eight categories with hundreds of rules and concepts.
+
+The goal is to make sure the most important patterns are clear and easy to recall.
+
+
+2. Why Code Quality Matters in AEM
+
+AEM applications run in production environments with thousands of concurrent users.
+
+Bad code patterns in AEM cause specific, serious problems:
+
+- Unclosed resources exhaust the JCR session pool and crash the repository
+- OSGi singletons with mutable state create race conditions under concurrent load
+- Direct writes to /libs break on every AEM upgrade
+- Overly broad Dispatcher filters expose admin endpoints to the internet
+
+Code quality in AEM is not just about clean code — it is about system stability and security.
+
+Cloud Manager enforces a subset of these rules automatically through SonarQube, OakPAL, and the AEM Analyzer Plugin.
+
+The rest are enforced through code review and developer discipline.
+
+
+3. SonarQube Rules — Critical Bugs
+
+These are the rules that cause production incidents if violated. Know them by rule key.
+
+java:S2095 — Resources Should Be Closed
+- ResourceResolver, JCR Session, and InputStream implement AutoCloseable
+- An unclosed ResourceResolver leaks a JCR session, eventually exhausting the connection pool
+- Fix: always use try-with-resources
+
+java:S2885 — Thread Safety in OSGi Services
+- OSGi @Component services are singletons shared across all concurrent request threads
+- Mutable instance fields (like ArrayList or HashMap) create race conditions
+- Fix: use ConcurrentHashMap, CopyOnWriteArrayList, or keep the service stateless
+
+java:S2259 — Null Pointer Dereference
+- AEM APIs like adaptTo(), getChild(), and getResource() frequently return null
+- Calling any method on a null reference throws a NullPointerException at runtime
+- Fix: always null-check results from Sling and JCR APIs before use
+
+java:S2068 — Hardcoded Credentials
+- Passwords and API keys in source code are visible to anyone with repository access
+- Fix: use OSGi configuration with AEM Crypto Support, or Cloud Manager environment variables
+
+
+4. SonarQube Rules — Code Smells
+
+These rules address maintainability, clarity, and reliability in Java code.
+
+java:S1541 — Methods Too Complex
+- Cyclomatic complexity counts independent execution paths (if, for, while, case, catch)
+- Default threshold is 10 — above this the method is too hard to test and maintain
+- Fix: extract private helper methods, use early returns
+
+java:S00108 — Empty Catch Blocks
+- An empty catch block silently swallows exceptions — no log, no rethrow, no recovery
+- This hides failures in JCR saves, workflow completions, and replication events
+- Minimum fix: log.error("message", e)
+
+java:S1166 — Exceptions Should Not Be Ignored
+- Similar to S00108 but also catches cases where the exception variable is declared but never used
+- The exception must be logged, rethrown, or explicitly handled
+
+java:S106 — Use SLF4J Instead of System.out
+- System.out bypasses the Sling Log Service — output is not routed, persisted, or throttled correctly
+- Fix: use Logger log = LoggerFactory.getLogger(getClass()) and parameterized messages
+
+java:S1874 — Deprecated API Usage
+- getAdministrativeResourceResolver() was removed in AEMaaCS — use getServiceResourceResolver() with a service user
+- WCMUsePojo is legacy — replace with Sling Models
+
+java:S1192 — String Literal Duplication
+- JCR property names like "jcr:title" repeated in multiple places should be extracted to constants
+- A typo in one occurrence causes silent data loss
+
+java:S109 — Magic Numbers
+- Inline numbers like 100 in "results.size() > 100" have no self-documenting name
+- Fix: private static final int MAX_SEARCH_RESULTS = 100
+
+java:S2972 — Classes Too Long
+- A class mixing rendering, business logic, and data access violates Single Responsibility
+- Fix: Sling Model handles view concerns, OSGi services handle business logic
+
+
+5. AEM Best Practices
+
+These are AEM-specific patterns that go beyond standard Java quality.
+
+ResourceResolver lifecycle (AEM-BP-001):
+- Every ResourceResolver obtained from ResourceResolverFactory must be closed in the same method
+- Use try-with-resources — it guarantees closure even on exceptions
+
+Service User pattern (AEM-BP-002):
+- getAdministrativeResourceResolver() grants unrestricted super-admin access with no audit trail
+- Replaced by getServiceResourceResolver() with a system user that has only the permissions it needs
+- The mapping is declared in ServiceUserMapperImpl.amended OSGi factory config
+
+Sling Models for business logic (AEM-BP-004):
+- HTL is intentionally limited — it cannot execute arbitrary Java
+- Business logic belongs in @Model classes, not in HTL scripts or Servlets
+- Sling Models are testable with AEM Mocks without a running AEM instance
+
+High-level APIs (AEM-BP-006):
+- Use PageManager, TagManager, and AssetManager instead of raw JCR node creation
+- These APIs apply AEM's internal business rules, node structures, and event triggers
+- Raw session.addNode() bypasses all of this
+
+Externalize paths (AEM-BP-008):
+- Never hardcode paths like "/content/mysite/en" in Java
+- Use OSGi configuration properties or Context-Aware Configurations (CAConfig)
+- CAConfig stores settings per site in /conf and resolves them automatically from the content context
+
+OSGi lifecycle:
+- @Activate — called when all @Reference dependencies are bound
+- @Modified — called when configuration changes, without restarting the component
+- @Deactivate — release all resources: close resolvers, stop threads, remove listeners
+
+
+6. OakPAL Content Rules
+
+OakPAL validates content packages for structural and architectural correctness.
+
+OAKPAL-001 — Scoped Filter Roots (Critical):
+- A filter of /apps/myproject deletes everything under that path on install
+- Fix: use specific child paths — /apps/myproject/components, /apps/myproject/templates
+
+OAKPAL-002 — No Writes to /libs (Blocker):
+- /libs is the immutable AEM platform layer — any change is overwritten by the next AEM update
+- Fix: use the overlay pattern — copy the resource to the same relative path under /apps
+- The Sling Resource Merger resolves /apps before /libs, so the overlay takes precedence
+
+oakpal:RequiredPrimaryType (Error):
+- Every JCR node must explicitly declare its jcr:primaryType
+- Common types: cq:Page, cq:Component, nt:unstructured, sling:Folder, cq:ClientLibraryFolder
+
+oakpal:ImmutableApps (Warning):
+- /apps is for code and structural definitions, not for runtime content values
+- Page content and authored data belong in /content
+
+OAKPAL-005 — Overlapping Filters (Major):
+- If one filter root is an ancestor of another, install order is undefined — one may delete what the other deployed
+- Fix: use non-overlapping sibling paths
+
+OAKPAL-006 — rep:policy Exclusion (Critical):
+- rep:policy nodes define JCR ACLs
+- Accidentally packaging them overwrites production security settings on every deployment
+
+OAKPAL-007 — No /var in Packages (Major):
+- /var holds runtime data: event queues, audit logs, workflow payloads, Oak indexes
+- Packaging /var freezes dynamic data into a static snapshot — do not include it
+
+OAKPAL-008 — Clientlib Category Naming (Minor):
+- Generic names like "utils" or "common" conflict with AEM Core Components and third-party libraries
+- Fix: namespace with the project name — "myproject.components.header"
+
+
+7. HTL / Sightly Rules
+
+HTL's security model relies on automatic output escaping. Breaking it introduces XSS vulnerabilities.
+
+HTL-001 — Never use context='unsafe':
+- context='unsafe' disables all escaping — raw HTML is written directly to the output
+- An attacker can inject <script>alert(1)</script> and it executes in the browser
+- context='html' is the correct alternative for RTE-sourced rich text — it applies Anti-Samy sanitization
+
+HTL-002 — data-sly-use for business logic:
+- HTL enforces strict separation between presentation and logic
+- Business logic goes in Java Sling Models accessed via data-sly-use.model="com.myproject.MyModel"
+
+HTL-003 — context='uri' for href values:
+- Without context='uri', an attacker can inject javascript:alert(1) as an href
+- context='uri' validates URI schemes and strips dangerous protocols like javascript: and data:
+
+HTL-004 — JavaScript context escaping:
+- For values inside JavaScript event handlers, use context='scriptToken' or context='scriptString'
+- Default HTML attribute escaping does not protect against JavaScript injection
+
+Key HTL attributes:
+- data-sly-test → conditional rendering; falsy values remove the element and its entire subtree
+- data-sly-list → iteration; provides itemList.index, itemList.first, itemList.last, itemList.odd
+- data-sly-unwrap → renders children while removing the wrapper element tag from the output
+- data-sly-include → includes another HTL script in the current context
+- data-sly-resource → dispatches a new Sling rendering for a JCR resource by path
+
+Client Libraries (HTL-005):
+- Inline CSS or JavaScript in HTL is not cached and cannot be combined with other assets
+- Use cq:ClientLibraryFolder, referenced via data-sly-call="${clientlib.all @ categories='...'}'"
+
+
+8. OSGi / Felix Rules
+
+OSGi provides strict module isolation. Violating its rules causes runtime failures that are hard to diagnose.
+
+OSGI-001 — Explicit Import-Package declarations (Critical):
+- Wildcard imports resolve lazily — the bundle activates but crashes with ClassNotFoundException at runtime
+- Explicit imports fail fast at install time if a dependency is missing
+
+OSGI-002 — Maven scope 'provided' for container APIs (Blocker):
+- servlet-api, jsp-api, and osgi.core must be scope="provided"
+- Scope="compile" bundles them inside the JAR, causing ClassCastException from classloader conflicts
+
+@Reference injection:
+- Use @Reference annotation to inject OSGi services — DS manages the full bind/unbind lifecycle
+- Avoid using BundleContext.getService() directly — it bypasses lifecycle management
+
+Reference cardinality:
+- MANDATORY (default) — the component won't activate if the service is absent
+- OPTIONAL — the component activates; the injected field is null and must be null-checked
+
+OSGi version ranges (OSGI-005):
+- Explicit version ranges prevent accidentally binding to a major API upgrade
+- Format: [3.0,4.0) means ≥ 3.0 and < 4.0
+
+Context classloader (OSGI-006 — Critical):
+- Thread.currentThread().getContextClassLoader() returns the caller's classloader
+- In OSGi, each bundle has its own classloader — the caller's loader cannot see this bundle's classes
+- Fix: use SomeClass.class.getClassLoader() instead
+
+Sling Scheduler for background tasks:
+- Never use raw Thread or ScheduledExecutorService — they survive bundle restarts
+- Implement Runnable and register with the Sling Scheduler via @Component(service=Runnable.class)
+
+@Deactivate lifecycle:
+- Release all resources when the component shuts down: close ResourceResolvers, stop background threads, remove event listeners
+
+
+9. Dispatcher Rules
+
+The Dispatcher is AEM's first security boundary. Its configuration must be explicitly restrictive.
+
+DISP-001 — Request validation (Critical):
+- Block path traversal sequences (/../, /./) to prevent directory traversal attacks
+- Allowlist only required HTTP methods (GET, POST) — reject DELETE, PUT, TRACE
+
+DISP-003 — Author isolation (Critical):
+- The AEM Author service (port 4502) must never be accessible through the Dispatcher
+- Author exposes CRXDE Lite, Package Manager, Felix Web Console, and all administrative endpoints
+- Only Publisher instances (port 4503) serve public traffic
+
+DISP-004 — Block dangerous default selectors (Critical):
+- /*.infinity.json returns the full JCR subtree as JSON — block it
+- /*.json should be denied unless specifically required for API endpoints
+- /bin/* endpoints including QueryBuilder (/bin/querybuilder.json) must be denied
+
+Dispatcher filter — deny by default:
+- Start with a rule that denies everything
+- Then explicitly allow only the paths that need to be accessible
+
+/allowedClients:
+- Only AEM Publisher IPs should be allowed to send cache invalidation requests to /dispatcher/invalidate.cache
+
+DISP-005 — Security headers (Major):
+- Inject X-Frame-Options: SAMEORIGIN to prevent clickjacking
+- Also apply Content-Security-Policy, X-Content-Type-Options, and Strict-Transport-Security
+
+Authentication and caching:
+- The Dispatcher cannot differentiate between users — never cache authenticated responses
+- Configure /auth_checker or exclude authenticated paths from cache rules
+
+Query string caching (DISP-006):
+- Unrestricted query string caching enables cache busting DoS attacks
+- Use /ignoreUrlParams to allowlist known parameters; all others are stripped for caching
+
+
+10. Performance Optimization
+
+AEM performance issues fall into a few predictable patterns. These are the most common.
+
+PERF-001 & PERF-002 — Unbounded JCR queries (Critical):
+- A JCR query without a matching Oak index causes a full repository traversal
+- Full traversals scale O(n) with repository size — they are catastrophic under load
+- Diagnose with the AEM Query Performance tool and Oak QueryExplain
+- Fix: create an Oak index definition (oak:QueryIndexDefinition) and deploy it as code
+
+Index type selection (PERF-005):
+- Property indexes (type='property') are efficient for exact-match equality queries
+- Lucene indexes are for full-text search only — they are larger and slower for equality lookups
+- Scope Lucene indexes with 'includedPaths' to avoid indexing the entire repository
+
+PERF-003 — session.save() in loops (Major):
+- Each session.save() creates a transaction boundary with disk I/O and Lucene index updates
+- Calling it once per item in a 100,000-node bulk import is catastrophically slow
+- Fix: batch changes and save every 500–1000 items
+
+Lazy loading (PERF-006):
+- resource.listChildren() returns a lazy Iterator backed by the JCR NodeIterator
+- Converting it to a new ArrayList immediately loads all children into memory
+- For large content trees, iterate lazily and never collect unless the full list is required
+
+Dispatcher caching:
+- A cached HTML response is served in <5ms directly from disk
+- An uncached AEM request takes 50–500ms through the full rendering pipeline
+- Cache aggressively, invalidate precisely
+
+
+11. Security Rules
+
+These are the patterns that protect AEM from attack.
+
+SEC-001 — JCR-SQL2 injection (Critical):
+- Never build queries via string concatenation with user-supplied values
+- An attacker can inject WHERE clause conditions to retrieve arbitrary repository content
+- Fix: use parameterized queries via QueryManager with variables set separately from the query
+
+SEC-002 — Default password (Blocker):
+- The default "admin" password is checked by automated scanners within seconds
+- AEMaaCS provisions randomized admin passwords automatically
+- Cloud Manager Health Checks block environment promotion if the default password is still in use
+
+SEC-003 — CSRF protection (Critical):
+- Cross-Site Request Forgery forces logged-in users to submit state-changing requests unknowingly
+- AEM's Granite CSRF Filter validates a token on all POST/DELETE/PUT requests
+- Custom API endpoints must include the :cq_csrf_token parameter in the request
+
+SEC-004 — Sling Servlet binding (Critical):
+- Servlets registered without explicit resource type binding can be triggered on any content node
+- Always bind servlets to a specific resource type: resourceTypes="myproject/components/product"
+
+SEC-005 — TLS/HTTPS (Blocker):
+- TLS provides confidentiality, integrity, and server authentication
+- All AEM environments — Author, Publish, Dispatcher — must use HTTPS
+
+SEC-006 — User audit (Critical):
+- Review all active accounts under /home/users regularly
+- Verify service users have minimal permissions (principle of least privilege)
+- Disable or remove inactive author accounts
+
+
+12. Severity Levels and Cloud Manager
+
+Severity levels determine how Cloud Manager responds to violations.
+
+Severity scale:
+- Blocker — build stops immediately, deployment is blocked, cannot be overridden
+- Critical — hard stop in the pipeline, code must be fixed
+- Important — pipeline pauses; a Deployment Manager or Business Owner can override and continue
+- Major — flagged in reporting, tracked but does not block by default
+- Minor / Warning — informational
+
+Key Blocker rules to memorize:
+- OAKPAL-002: writing to /libs
+- SEC-002: default admin password
+- SEC-005: no TLS
+- OSGI-002: container APIs bundled with compile scope
+
+Key Critical rules:
+- S2095 (resources not closed), S2885 (thread safety), S2259 (null pointer), S2068 (hardcoded credentials)
+- OAKPAL-001 (broad filter roots), OAKPAL-006 (rep:policy packaging)
+- DISP-001 (no request validation), DISP-003 (Author exposed), DISP-004 (JSON endpoints open)
+- SEC-001 (query injection), SEC-003 (no CSRF), SEC-004 (servlet binding)
+
+Cloud Manager integration:
+- SonarQube runs in the Code Quality pipeline step
+- The AEM Analyzer Maven Plugin runs in the Build step and catches AEMaaCS compatibility issues
+- SonarQube behavior can be customized with a sonar-project.properties file at the repository root
+- JaCoCo measures code coverage; the default Important failure threshold is 50% line coverage
+
+
+13. Closing
+
+Code Quality in AEM spans eight categories, each protecting a different dimension of the system.
+
+The way to remember them:
+
+- SonarQube Rules → Java code correctness and maintainability
+- AEM Best Practices → AEM-specific Java patterns (resources, service users, Sling Models, APIs)
+- OakPAL → content package structure and repository correctness
+- HTL Rules → template security and XSS prevention
+- OSGi / Felix → bundle modularity and lifecycle correctness
+- Dispatcher Rules → HTTP security and cache control
+- Performance Optimization → JCR queries, Oak indexes, and efficient data access
+- Security → injection, authentication, CSRF, TLS, and least privilege
+
+For the exam, focus on:
+- The Critical and Blocker rules by category
+- The fix pattern for each rule, not just the problem
+- The difference between Critical (hard stop) and Important (overridable) in Cloud Manager gates
+- The overlay pattern for /libs and the service user pattern for resource access

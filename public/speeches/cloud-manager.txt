@@ -1,0 +1,352 @@
+AEM Cloud Manager — Presentation Guide
+
+
+1. Introduction
+
+In this section we're going to do a full recap of Cloud Manager and the AEM as a Cloud Service platform.
+
+We've covered 100 concepts across nine categories.
+
+The goal here is to connect all those pieces and make sure the big picture is clear before the exam.
+
+Let's go through each category, hitting the most important points.
+
+
+2. AEMaaCS Overview
+
+AEM as a Cloud Service is Adobe's fully managed, cloud-native CMS.
+
+The key traits you need to remember:
+
+- Always on the latest version — no manual upgrades, Adobe handles it continuously
+- Auto-scaling — resources grow and shrink automatically based on traffic
+- Built-in CDN — content is served from edge nodes close to the user
+- Containers — AEMaaCS runs as Docker containers, not as a fixed Java process on a server
+
+Two fundamental architecture concepts:
+
+Immutable layer:
+- /apps and /libs are read-only at runtime
+- Changes only come in through a Cloud Manager pipeline deployment
+
+Mutable layer:
+- /content and /conf survive deployments
+- They are stored in a persistent repository backed by Azure Blob Storage
+
+Other important concepts:
+- Sling Content Distribution (SCD) replaces traditional replication agents
+- Asset Microservices handle rendition processing at scale via Adobe I/O Runtime
+- RDE — Rapid Development Environment — allows instant code deploys without running a full pipeline
+- Cloud Acceleration Manager (CAM) helps teams plan and track migrations from AEM 6.x
+
+
+3. Adobe Admin Console
+
+The Adobe Admin Console is the central identity and access management portal for all Adobe products.
+
+Key concepts:
+
+- IMS Organization — the top-level entity representing a company's entitlement to Adobe products
+- All AEMaaCS programs belong to an IMS Org
+- The IMS Org Admin has the highest level of access
+
+Two types of product profiles in Admin Console for AEMaaCS:
+
+Cloud Manager profiles:
+- Business Owner, Program Manager, Deployment Manager, Developer
+- These control what users can do inside Cloud Manager
+
+AEM environment profiles:
+- AEM Administrators and AEM Users — one set per environment tier
+- These control access to the AEM Author and Publish services
+- Cloud Manager roles do NOT automatically grant AEM Author access — they are separate
+
+
+4. Cloud Manager Overview
+
+Cloud Manager is Adobe's CI/CD and operational platform for AEMaaCS.
+
+It is the single hub for:
+- Deploying code via pipelines
+- Provisioning and managing environments
+- Monitoring and alerting
+- Accessing logs and developer tools
+
+Programs:
+
+A Program is the top-level container in Cloud Manager. It groups environments, pipelines, a Git repository, and user access.
+
+There are two program types:
+- Sandbox — for learning, demos, and PoCs. No production environment, no SLA, environments auto-hibernate after ~8 hours of inactivity
+- Production — full capacity, Adobe SLA-backed, used for real business workloads
+
+Git Repositories:
+
+Cloud Manager provides a built-in Adobe-hosted Git repo per program.
+External repositories (GitHub, GitLab, Bitbucket) can also be connected.
+This enables teams to keep using their existing VCS workflow.
+
+
+5. Roles and Permissions
+
+There are four Cloud Manager roles. Each has a clear scope.
+
+Business Owner:
+- Highest governance role
+- Creates programs, sets production KPI targets, approves Go Live
+- Must be assigned in Admin Console
+
+Program Manager:
+- Coordination and planning role
+- Manages timelines and cross-team visibility
+- No pipeline configuration or deployment rights
+
+Deployment Manager:
+- Configures and triggers pipelines, including production
+- Manages environment variables
+- Can override Important quality gate failures
+
+Developer:
+- Access to logs, AEM Developer Console, and environment details
+- Can trigger non-production pipelines
+- Cannot trigger production pipelines or manage program settings
+
+Important: all roles are assigned via product profiles in the Adobe Admin Console.
+
+
+6. Pipeline Types
+
+Cloud Manager supports several pipeline types. Choosing the right one matters.
+
+Full Stack Pipeline:
+- Builds and deploys everything: OSGi bundles, content packages, Dispatcher config, front-end assets
+- The standard pipeline for all-layer deployments
+
+Front End Pipeline:
+- Deploys only compiled CSS and JavaScript assets
+- Runs an npm/webpack build, skips the Maven backend build
+- Allows front-end teams to deploy independently and faster
+
+Config Pipeline:
+- Deploys only configuration files: OSGi run-mode configs, CDN rules, log forwarding settings
+- Skips compilation entirely — much faster than Full Stack
+- Use it when no Java or content changes are involved
+
+Web Tier Config Pipeline:
+- Specifically for Dispatcher and Apache HTTP configuration changes
+
+Code Quality Pipeline (standalone):
+- Runs SonarQube analysis without deploying to any environment
+- Useful for validating feature branches or pull requests early
+
+One important constraint:
+Each Cloud Manager program supports exactly one Production Pipeline.
+Multiple Non-Production, Config, Front End, and Code Quality pipelines are allowed.
+
+
+7. Production Pipeline — Step by Step
+
+The Production Pipeline is the primary deployment mechanism. Know this flow.
+
+Step 1 — Build:
+- Cloud Manager checks out the Git branch
+- Runs mvn clean package
+- Compiles Java, runs unit tests, measures coverage, produces the deployable artifact
+
+Step 2 — Code Quality:
+- Runs SonarQube static analysis on the build artifact
+- Evaluates Reliability, Security, and Maintainability ratings
+- Failures can be Critical (hard stop) or Important (overridable)
+
+Step 3 — Deploy to Stage:
+- Installs the artifact on the Stage environment (Author and Publish)
+- Stage is used for integration testing and UAT
+
+Step 4 — Testing:
+- Product Functional Tests, Custom Functional Tests, Custom UI Tests, and Performance Tests run against Stage
+
+Step 5 — Go Live Approval:
+- Manual gate — pauses the pipeline
+- A Business Owner or Deployment Manager must approve before Production deployment
+- Can also be scheduled for a future maintenance window
+
+Step 6 — Deploy to Production:
+- Blue/Green deployment — zero downtime
+- Dispatcher cache is automatically flushed after deployment
+
+
+8. Pipeline Triggers and Variables
+
+Pipeline triggers:
+
+Three ways to start a pipeline:
+- Manual — someone clicks Run in Cloud Manager UI or via the API
+- On Git Push — automatic CI trigger when code is pushed to the configured branch
+- Scheduled — runs at a defined time, for example nightly
+
+Environment variables:
+
+Cloud Manager supports two types of variables:
+- Plain text — for non-sensitive configuration values
+- Secrets — stored encrypted, never exposed in logs
+
+In OSGi .cfg.json files, they are referenced like this:
+- $[env:VARIABLE_NAME] for plain text
+- $[secret:SECRET_NAME] for secrets
+
+Variables can be scoped per environment (Dev, Stage, Production).
+
+Pull Request Validation:
+
+When using Connected Repositories, Cloud Manager can automatically trigger a Code Quality scan when a PR is opened.
+Results are posted back directly to GitHub, GitLab, or Bitbucket.
+
+
+9. Code Quality Gates
+
+Code quality is enforced at the Code Quality step using SonarQube.
+
+Three rating dimensions (each rated A through E):
+
+Reliability Rating:
+- Based on detected bugs
+- A = no bugs, E = at least one blocker bug
+
+Security Rating:
+- Based on vulnerabilities and security hotspots
+- Patterns like SQL injection, XSS, hardcoded credentials
+
+Maintainability Rating:
+- Based on code smells and technical debt ratio
+- Also includes code duplication percentage
+
+Additional checks:
+- Code coverage — default Important threshold is 50% line coverage (measured by JaCoCo)
+- AEM-specific rules — on top of standard SonarQube: ResourceResolver/Session not closed, use of admin sessions, deprecated AEM APIs, null-unsafe Sling Model injections
+- AEM Analyzer Maven Plugin — detects AEMaaCS compatibility issues during the Build step
+
+Two failure levels:
+- Critical — pipeline stops immediately, must be fixed, cannot be overridden
+- Important — pipeline pauses, a Deployment Manager or Business Owner can override and continue
+
+SonarQube behavior can be customized with a sonar-project.properties file at the repository root.
+
+
+10. Testing in Pipelines
+
+After Stage deployment, four types of tests can run:
+
+Product Functional Tests:
+- Developed and maintained by Adobe
+- Verify that core AEM features work correctly after your code is deployed
+- Always run automatically
+
+Custom Functional Tests:
+- Written by your team, packaged as Docker images
+- HTTP/REST tests against the deployed AEM environment
+- Validate application-specific behavior
+
+Custom UI Tests:
+- Browser automation tests, packaged as Docker images
+- Supports Selenium, Cypress, Playwright, WebdriverIO
+- Cloud Manager provides the Selenium Grid
+
+Performance Tests:
+- Simulates real user traffic against Stage
+- Measures: response time (avg and 95th percentile), error rate, CPU usage, page views per minute
+- Results compared against KPI thresholds set by the Business Owner
+
+If any step fails, the pipeline stops at that step.
+The previously deployed version stays active.
+The team must fix the issue and trigger a new run.
+
+
+11. Blue/Green Deployment
+
+Blue/Green is how AEMaaCS achieves zero-downtime deployments.
+
+How it works:
+- The current live environment is Blue
+- The new deployment goes to the idle Green environment
+- Once health checks pass, traffic switches from Blue to Green automatically
+- Blue remains briefly available for rollback if needed
+
+After every deployment, the Dispatcher cache is automatically flushed.
+This ensures users get the new content and code changes immediately, not cached stale responses.
+
+
+12. Monitoring and Logs
+
+Cloud Manager provides several monitoring and observability tools.
+
+Built-in dashboards:
+- System metrics: CPU, memory, disk utilization
+- HTTP metrics: request rate, error rate, response time
+- Environment health status
+
+AEM Developer Console:
+- Accessible from Cloud Manager per environment
+- Runtime inspection: OSGi bundle state, Sling servlet bindings, request logs, query debugging
+- Available to users with the Developer role
+
+Log access options:
+- Cloud Manager UI — download logs per environment, service, and date
+- Cloud Manager CLI or API — programmatic access
+- AEM Developer Console — view recent request logs interactively
+- Log Forwarding — continuous streaming to Splunk, Datadog, Azure Blob Storage, Amazon S3
+
+Custom Alerts:
+- Notify users when KPI thresholds are breached
+- For example: error rate above a percentage, or response time above a target
+
+Content Audit / Experience Audit:
+- Runs Google Lighthouse against configured URLs on Stage
+- Evaluates: Performance, SEO, Accessibility, Best Practices
+- Shows score trends across pipeline runs to detect regressions
+
+New Relic Integration:
+- Adobe provisions New Relic One automatically for AEMaaCS customers
+- Provides deep APM monitoring: JVM heap, GC, Sling request traces, error tracking
+- No separate New Relic subscription needed — accessible through Cloud Manager
+
+
+13. Cloud Manager API and CLI
+
+Cloud Manager is fully operable via API and command line.
+
+Cloud Manager REST API:
+- Available at cloudmanager.adobe.io
+- Authenticated via Adobe IMS using a Service Account (Technical Account) from Adobe Developer Console
+- Can trigger pipeline runs, poll execution status, download logs, manage variables, create or delete environments
+
+Key API use cases:
+- Triggering deployments from external CI/CD systems (Jenkins, GitHub Actions)
+- Automating environment variable and secret rotation
+- Programmatically approving the Go Live gate via the Advance endpoint
+
+Adobe I/O CLI (aio):
+- npm install -g @adobe/aio-cli
+- Add the Cloud Manager plugin: aio plugins:install @adobe/aio-cli-plugin-cloudmanager
+- Common commands: list programs, list environments, trigger pipelines, tail logs in real time
+
+Authentication uses OAuth Server-to-Server credentials.
+JWT credentials were fully removed in January 2025.
+
+
+14. Closing
+
+Cloud Manager is the operational backbone of AEM as a Cloud Service.
+
+The key connections to keep in mind:
+
+- AEMaaCS architecture → immutable code layer, mutable content layer
+- Admin Console → where all roles and profiles are assigned
+- Programs → the organizational container, Sandbox vs Production
+- Pipelines → Full Stack for everything, Front End for CSS/JS only, Config for settings only
+- Production Pipeline flow → Build → Code Quality → Stage → Testing → Go Live Approval → Production
+- Code Quality → SonarQube ratings, AEM-specific rules, Critical vs Important failures
+- Blue/Green → zero-downtime, automatic Dispatcher flush
+- Monitoring → Developer Console, Log Forwarding, New Relic, Experience Audit
+- API & CLI → full programmatic control via REST API and aio CLI
+
+If you can connect these nine categories, you are well prepared for the Cloud Manager questions on the exam.

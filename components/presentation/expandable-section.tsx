@@ -9,6 +9,7 @@ import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { ExpandableContent } from "@/lib/slides-content"
+import { SpeakerButton } from "@/components/ui/speaker-button"
 
 interface ExpandableSectionProps {
   section: ExpandableContent
@@ -22,6 +23,15 @@ export function ExpandableSection({
   className
 }: ExpandableSectionProps) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded)
+
+  const speechText = [
+    section.title,
+    ...(typeof section.content === "string"
+      ? [section.content]
+      : (section.content as Array<string | { text: string; url?: string }>).map((item) =>
+          typeof item === "string" ? item : item.text
+        )),
+  ].join(". ")
 
   const renderContent = () => {
     if (section.type === "list" && Array.isArray(section.content)) {
@@ -103,22 +113,31 @@ export function ExpandableSection({
   return (
     <div className={cn("rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm", className)}>
       {/* Header - Always Visible */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={cn(
-          "flex w-full items-center justify-between gap-4 px-5 py-4",
-          "text-left transition-colors hover:bg-white/5"
-        )}
-      >
-        <span className="font-semibold text-white">{section.title}</span>
-        <div className="shrink-0">
-          {isExpanded ? (
-            <ChevronUp className="h-5 w-5 text-white/70" />
-          ) : (
-            <ChevronDown className="h-5 w-5 text-white/70" />
-          )}
+      <div className="flex w-full items-center gap-2 px-5 py-4">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="flex flex-1 items-center gap-4 text-left transition-colors hover:opacity-80"
+        >
+          <span className="font-semibold text-white">{section.title}</span>
+        </button>
+        <div className="flex shrink-0 items-center gap-1">
+          <SpeakerButton
+            text={speechText}
+            className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
+          />
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center p-1 transition-colors hover:opacity-80"
+            aria-label={isExpanded ? "Collapse section" : "Expand section"}
+          >
+            {isExpanded ? (
+              <ChevronUp className="h-5 w-5 text-white/70" />
+            ) : (
+              <ChevronDown className="h-5 w-5 text-white/70" />
+            )}
+          </button>
         </div>
-      </button>
+      </div>
 
       {/* Expandable Content */}
       <div

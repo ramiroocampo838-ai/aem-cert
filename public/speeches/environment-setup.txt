@@ -1,0 +1,231 @@
+AEM Environment Setup — Presentation Guide
+
+
+1. Introduction
+
+Now that we understand what AEM is, how Cloud Manager works, and the code quality standards, it's time to set up a local development environment.
+
+The goal here is to be able to develop, build, and test AEM code on your own machine before sending anything to the cloud.
+
+This is one of the most practical lessons in the certification.
+
+
+2. The Three Components
+
+A local AEM environment has three logical parts:
+
+- The AEM Project: your custom code, configuration, and content
+- The Local AEM Runtime: a local version of the Author and Publish services
+- The Local Dispatcher Runtime: a local version of Apache HTTP Server with the Dispatcher module
+
+Think of it as a miniature version of what runs in the cloud, all on your laptop.
+
+The goal is to validate everything locally before it goes through Cloud Manager.
+
+
+3. Development Tools
+
+To work with AEM locally, you need four core tools:
+
+- Java JDK 21 — AEM is a Java application, Java 21 is the recommended version
+- Node.js — required for front-end tooling and the Adobe I/O CLI
+- Apache Maven — the build tool for all AEM projects
+- Git — source control
+
+After installing each one, always verify with a version command.
+
+For Java: java -version
+For Maven: mvn -v
+For Node: node --version
+
+
+4. Adobe I/O CLI
+
+The Adobe I/O CLI, known as aio, is a command-line tool that lets you interact with Adobe services.
+
+You install it as a global npm package:
+npm install -g @adobe/aio-cli
+
+Once installed, you add plugins for the services you need:
+- Cloud Manager plugin
+- AEM Rapid Development Environment plugin
+- Asset Compute plugin
+
+Important: the old JWT authentication was removed in January 2025.
+The only supported method now is OAuth Server-to-Server, configured through the Adobe Developer Console.
+
+
+5. File System Organization
+
+Adobe recommends a specific folder structure for local development:
+
+~/aem-sdk/
+  author/    → local Author service
+  publish/   → local Publish service
+  dispatcher/ → local Dispatcher Tools
+
+~/code/<project-name>/  → your AEM Maven project
+
+This keeps everything organized and makes it easy to manage multiple SDK versions.
+
+On Windows, the tilde (~) maps to %HOMEPATH%.
+
+
+6. The QuickStart Jar
+
+The AEMaaCS SDK includes a QuickStart Jar, which is a self-contained JAR file that runs a full AEM instance locally.
+
+You download it from Adobe Software Distribution, and you can use it to run either Author or Publish.
+
+Two important rules:
+- Never double-click the JAR file — it must be started from the command line
+- Always start it with: java -jar aem-author-p4502.jar
+
+Author runs on port 4502.
+Publish runs on port 4503.
+
+
+7. QuickStart Jar Naming Convention
+
+The filename of the JAR controls how AEM starts up.
+
+The format is:
+aem-<tier>_<environment>-p<port>.jar
+
+Examples:
+- aem-author-p4502.jar → Author in Dev mode on port 4502
+- aem-publish-p4503.jar → Publish in Dev mode on port 4503
+- aem-author_prod-p4502.jar → Author in Production mode
+
+The tier — author or publish — is locked on first startup.
+If you need to change it, you must delete the crx-quickstart folder and start fresh.
+
+The environment mode is useful for testing environment-specific OSGi configurations.
+
+
+8. Simulating Content Distribution
+
+In production, content moves from Author to Publish through the Adobe Pipeline, which is a cloud-only microservice.
+
+Locally, you simulate this using legacy Replication Agents.
+
+You enable it from the Author service:
+- Go to /etc/replication/agents.author.html
+- Open the Default Agent
+- Enable it and point the transport URI to localhost:4503
+
+After this, anything you publish on Author will replicate to your local Publish instance.
+
+
+9. Local Dispatcher
+
+The Dispatcher Tools are Docker-based.
+They run an Apache HTTP Server with the Dispatcher module inside a container.
+
+You start it with a single script:
+./bin/docker_run_hot_reload.sh ./src localhost:4503 8080
+
+This connects the Dispatcher to your local Publish service and exposes it on port 8080.
+
+The hot-reload variant is preferred because it reloads configuration automatically when files change.
+
+There is also a validator tool:
+./bin/validate ./src
+
+This checks your Apache and Dispatcher configuration for errors before you deploy.
+
+
+10. Maven Project Structure
+
+This is where things get important for the exam.
+
+AEM enforces a clear separation between code and content.
+
+The repository has two types of areas:
+
+Immutable — cannot be changed at runtime:
+- /apps → your custom components, scripts, clientlibs
+- /libs → AEM platform code, never touch this
+
+Mutable — can be changed at runtime:
+- /content, /conf, /var, /etc
+
+Each type of content belongs in a specific Maven module.
+
+
+11. Maven Modules and Package Types
+
+A standard AEM project has these key modules:
+
+- core → Java OSGi bundle (services, models, servlets)
+- ui.apps → code package, deploys to /apps
+- ui.content → content package, deploys to /content and /conf
+- ui.config → OSGi configurations and Repo Init scripts
+- all → the container package, the only artifact deployed by Cloud Manager
+
+Package types:
+- application → for code packages like ui.apps
+- content → for content packages like ui.content
+- container → for the all package
+
+The all package embeds all other modules and is the single deployment artifact.
+All other packages must set cloudManagerTarget to none so Cloud Manager ignores them.
+
+
+12. Repo Init and the AEM Archetype
+
+Repo Init is a mechanism that defines JCR structures as part of the application.
+
+You use it to create:
+- Folder structures
+- Service users
+- Groups
+- ACL permissions
+
+These scripts run early in the deployment lifecycle, before any application code.
+They live in ui.config and are scoped by run mode.
+
+To start a new project, you use the AEM Project Archetype.
+The current version is 56.
+
+It generates the full project structure with best practices already in place:
+all, core, ui.apps, ui.content, ui.config, ui.frontend, tests, and dispatcher configuration.
+
+
+13. Troubleshooting
+
+When something is not working, follow this sequence:
+
+1. Check Package Manager — was the package actually installed?
+   http://localhost:4502/crx/packmgr
+
+2. Check CRXDE Lite — is the file there and is the content correct?
+   http://localhost:4502/crx/de
+
+3. Check the Bundle Console — is the OSGi bundle Active?
+   http://localhost:4502/system/console/bundles
+
+4. Read the error.log — AEM logs everything there
+   Location: crx-quickstart/logs/error.log
+
+5. For front-end issues — use the clientlib debug tools
+   /libs/granite/ui/content/dumplibs.html
+
+The most common errors are wrong Java version and trying to double-click the QuickStart Jar.
+
+
+14. Closing
+
+Setting up a local AEM environment is not just a setup task — it is the foundation for everything that follows.
+
+You now have:
+- The tools to build AEM projects
+- A local runtime to test your code
+- An understanding of how Maven packages are structured
+- A troubleshooting process when things go wrong
+
+The key concepts to remember for the exam:
+- QuickStart Jar naming convention and startup rules
+- Mutable vs immutable repository areas
+- The role of each Maven module
+- The all package as the single Cloud Manager deployment artifact
