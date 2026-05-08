@@ -3,7 +3,25 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, BookOpen, HelpCircle, Link2, Info, GraduationCap, Moon, Sun, Presentation, Cloud, Brain, ShieldCheck, Music, Video, GalleryHorizontal, FolderOpen } from "lucide-react"
+import { 
+  Home, 
+  BookOpen, 
+  HelpCircle, 
+  Link2, 
+  Info, 
+  GraduationCap, 
+  Moon, 
+  Sun, 
+  Presentation, 
+  Cloud, 
+  Brain, 
+  ShieldCheck, 
+  Music, 
+  Video, 
+  GalleryHorizontal, 
+  FolderOpen, 
+  Terminal 
+} from "lucide-react"
 import { useTheme } from "next-themes"
 
 import {
@@ -26,6 +44,7 @@ const navItems = [
   { title: "Intro Presentation", href: "/intro", icon: Presentation },
   { title: "Cloud Manager", href: "/cloud-manager", icon: Cloud },
   { title: "Code Quality Rules", href: "/code-quality", icon: ShieldCheck },
+  { title: "Environment Setup", href: "/env-setup", icon: Terminal },
   { title: "Trivia", href: "/trivia", icon: Brain },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Resources", href: "/resources", icon: Link2 },

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620" width="680" height="620">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">HTL / Sightly rules</text>
+<text x="40" y="56" class="subtitle">Output escaping is the core security model</text>
+<text x="40" y="90" class="th" fill="#3C3489">Security contexts (always escape)</text>
+<g class="c-red">
+  <rect x="40" y="110" width="600" height="42" rx="8"/>
+  <text x="56" y="136" class="mono">context='unsafe'</text>
+  <text x="240" y="136" class="ts">Disables all escaping — XSS hole. Never use it.</text>
+</g>
+<g class="c-green">
+  <rect x="40" y="165" width="600" height="42" rx="8"/>
+  <text x="56" y="191" class="mono">context='html'</text>
+  <text x="240" y="191" class="ts">Sanitizes RTE rich text via Anti-Samy. The right choice.</text>
+</g>
+<g class="c-green">
+  <rect x="40" y="220" width="600" height="42" rx="8"/>
+  <text x="56" y="246" class="mono">context='uri'</text>
+  <text x="240" y="246" class="ts">Validates URI scheme. Blocks javascript: and data:</text>
+</g>
+<g class="c-green">
+  <rect x="40" y="275" width="600" height="42" rx="8"/>
+  <text x="56" y="301" class="mono">context='scriptToken'</text>
+  <text x="240" y="301" class="ts">Use inside JavaScript event handlers and scripts.</text>
+</g>
+<line x1="40" y1="345" x2="640" y2="345" class="divider"/>
+<text x="40" y="375" class="th" fill="#3C3489">Key HTL attributes</text>
+<g class="c-purple">
+  <rect x="40" y="395" width="600" height="40" rx="8"/>
+  <text x="56" y="419" class="mono">data-sly-test</text>
+  <text x="240" y="419" class="ts">Conditional rendering (falsy removes subtree)</text>
+</g>
+<g class="c-purple">
+  <rect x="40" y="445" width="600" height="40" rx="8"/>
+  <text x="56" y="469" class="mono">data-sly-list</text>
+  <text x="240" y="469" class="ts">Iteration with itemList.index/first/last/odd</text>
+</g>
+<g class="c-purple">
+  <rect x="40" y="495" width="600" height="40" rx="8"/>
+  <text x="56" y="519" class="mono">data-sly-use</text>
+  <text x="240" y="519" class="ts">Bind a Sling Model for business logic</text>
+</g>
+<g class="c-purple">
+  <rect x="40" y="545" width="600" height="40" rx="8"/>
+  <text x="56" y="569" class="mono">data-sly-resource</text>
+  <text x="240" y="569" class="ts">Dispatch a new Sling rendering by path</text>
+</g>
+</svg>

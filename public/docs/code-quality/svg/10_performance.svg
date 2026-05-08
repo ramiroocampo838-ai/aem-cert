@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 600" width="680" height="600">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">Performance optimization</text>
+<text x="40" y="56" class="subtitle">Common AEM bottlenecks and the speed difference</text>
+<text x="40" y="90" class="th" fill="#3C3489">Cached vs uncached request</text>
+<g class="c-green">
+  <rect x="40" y="105" width="290" height="80" rx="8"/>
+  <text x="56" y="130" class="th">Cached HTML (Dispatcher)</text>
+  <text x="56" y="152" class="ts">Served directly from disk</text>
+  <text x="56" y="172" class="mono">&lt; 5 ms</text>
+</g>
+<g class="c-red">
+  <rect x="350" y="105" width="290" height="80" rx="8"/>
+  <text x="366" y="130" class="th">Uncached AEM render</text>
+  <text x="366" y="152" class="ts">Full Sling pipeline</text>
+  <text x="366" y="172" class="mono">50 – 500 ms</text>
+</g>
+<line x1="40" y1="210" x2="640" y2="210" class="divider"/>
+<text x="40" y="235" class="th" fill="#3C3489">Critical performance rules</text>
+<g class="c-red">
+  <rect x="40" y="255" width="600" height="80" rx="8"/>
+  <text x="56" y="277" class="mono">PERF-001/002</text>
+  <text x="200" y="277" class="th">Unbounded JCR queries</text>
+  <text x="56" y="299" class="ts">No matching Oak index = full traversal, O(n) of repo size</text>
+  <text x="56" y="317" class="ts">Diagnose with QueryExplain + fix with oak:QueryIndexDefinition</text>
+</g>
+<g class="c-amber">
+  <rect x="40" y="350" width="600" height="80" rx="8"/>
+  <text x="56" y="372" class="mono">PERF-005</text>
+  <text x="200" y="372" class="th">Index type selection</text>
+  <text x="56" y="394" class="ts">Property index for equality lookups; Lucene only for full-text</text>
+  <text x="56" y="412" class="ts">Always scope with includedPaths — never index whole repo</text>
+</g>
+<g class="c-amber">
+  <rect x="40" y="445" width="600" height="80" rx="8"/>
+  <text x="56" y="467" class="mono">PERF-003</text>
+  <text x="200" y="467" class="th">session.save() in loops</text>
+  <text x="56" y="489" class="ts">Each save = transaction + disk + Lucene update</text>
+  <text x="56" y="507" class="ts">Batch every 500–1000 items in bulk imports</text>
+</g>
+<g class="c-blue">
+  <rect x="40" y="530" width="600" height="55" rx="8"/>
+  <text x="56" y="552" class="mono">PERF-006</text>
+  <text x="200" y="552" class="th">Lazy loading</text>
+  <text x="56" y="574" class="ts">listChildren() returns a lazy iterator — don’t collect into ArrayList unless the full list is truly required</text>
+</g>
+</svg>

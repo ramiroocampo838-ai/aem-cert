@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620" width="680" height="620">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">OSGi / Felix rules</text>
+<text x="40" y="56" class="subtitle">Module isolation, services, classloaders, lifecycle</text>
+<g class="c-red">
+  <rect x="40" y="90" width="600" height="85" rx="8"/>
+  <text x="56" y="112" class="mono">OSGI-001</text>
+  <text x="200" y="112" class="th">Explicit Import-Package</text>
+  <text x="56" y="136" class="ts">Wildcard imports resolve lazily and fail at runtime with</text>
+  <text x="56" y="156" class="ts">ClassNotFoundException — explicit imports fail at install time</text>
+</g>
+<g class="c-red">
+  <rect x="40" y="195" width="600" height="85" rx="8"/>
+  <text x="56" y="217" class="mono">OSGI-002</text>
+  <text x="200" y="217" class="th">Maven scope 'provided'</text>
+  <text x="56" y="241" class="ts">servlet-api, jsp-api, osgi.core must be 'provided' —</text>
+  <text x="56" y="261" class="ts">'compile' bundles them and causes ClassCastException</text>
+</g>
+<g class="c-blue">
+  <rect x="40" y="300" width="600" height="85" rx="8"/>
+  <text x="56" y="322" class="mono">@Reference</text>
+  <text x="200" y="322" class="th">Inject services via DS</text>
+  <text x="56" y="346" class="ts">Declarative Services manages bind/unbind lifecycle —</text>
+  <text x="56" y="366" class="ts">never call BundleContext.getService() directly</text>
+</g>
+<g class="c-blue">
+  <rect x="40" y="405" width="600" height="85" rx="8"/>
+  <text x="56" y="427" class="mono">Cardinality</text>
+  <text x="200" y="427" class="th">MANDATORY vs OPTIONAL</text>
+  <text x="56" y="451" class="ts">MANDATORY (default): component won't activate without it.</text>
+  <text x="56" y="471" class="ts">OPTIONAL: activates with null — must null-check.</text>
+</g>
+<g class="c-red">
+  <rect x="40" y="510" width="600" height="85" rx="8"/>
+  <text x="56" y="532" class="mono">OSGI-006</text>
+  <text x="200" y="532" class="th">Context classloader trap</text>
+  <text x="56" y="556" class="ts">Thread.currentThread().getContextClassLoader() returns the</text>
+  <text x="56" y="576" class="ts">caller's loader — use SomeClass.class.getClassLoader() instead</text>
+</g>
+</svg>
