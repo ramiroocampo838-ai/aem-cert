@@ -75,6 +75,31 @@ export const docPackages: DocPackage[] = [
       { id: "13", title: "API & CLI",               png: "/docs/cloud-manager/png/13_api_cli.png",                 svg: "/docs/cloud-manager/svg/13_api_cli.svg" },
     ],
   },
+  {
+    id: "code-quality",
+    title: "Code Quality",
+    subtitle: "Visual study companion — 13 diagrams",
+    description: "SonarQube, AEM best practices, OakPAL, HTL/Sightly, OSGi, Dispatcher, performance, security and Cloud Manager severity gates.",
+    icon: "ShieldCheck",
+    color: "blue",
+    docx: "/docs/code-quality/code-quality.docx",
+    pdf: "/docs/code-quality/code-quality.pdf",
+    diagrams: [
+      { id: "01", title: "Introduction",              png: "/docs/code-quality/png/01_introduction.png",              svg: "/docs/code-quality/svg/01_introduction.svg" },
+      { id: "02", title: "Why Quality Matters",       png: "/docs/code-quality/png/02_why_quality_matters.png",       svg: "/docs/code-quality/svg/02_why_quality_matters.svg" },
+      { id: "03", title: "SonarQube Critical Bugs",   png: "/docs/code-quality/png/03_sonarqube_critical_bugs.png",   svg: "/docs/code-quality/svg/03_sonarqube_critical_bugs.svg" },
+      { id: "04", title: "SonarQube Code Smells",     png: "/docs/code-quality/png/04_sonarqube_code_smells.png",     svg: "/docs/code-quality/svg/04_sonarqube_code_smells.svg" },
+      { id: "05", title: "AEM Best Practices",        png: "/docs/code-quality/png/05_aem_best_practices.png",        svg: "/docs/code-quality/svg/05_aem_best_practices.svg" },
+      { id: "06", title: "OakPAL Content Rules",      png: "/docs/code-quality/png/06_oakpal_content_rules.png",      svg: "/docs/code-quality/svg/06_oakpal_content_rules.svg" },
+      { id: "07", title: "HTL / Sightly",             png: "/docs/code-quality/png/07_htl_sightly.png",              svg: "/docs/code-quality/svg/07_htl_sightly.svg" },
+      { id: "08", title: "OSGi / Felix",              png: "/docs/code-quality/png/08_osgi_felix.png",               svg: "/docs/code-quality/svg/08_osgi_felix.svg" },
+      { id: "09", title: "Dispatcher",                png: "/docs/code-quality/png/09_dispatcher.png",               svg: "/docs/code-quality/svg/09_dispatcher.svg" },
+      { id: "10", title: "Performance",               png: "/docs/code-quality/png/10_performance.png",              svg: "/docs/code-quality/svg/10_performance.svg" },
+      { id: "11", title: "Security",                  png: "/docs/code-quality/png/11_security.png",                 svg: "/docs/code-quality/svg/11_security.svg" },
+      { id: "12", title: "Severity Cloud Manager",    png: "/docs/code-quality/png/12_severity_cloud_manager.png",   svg: "/docs/code-quality/svg/12_severity_cloud_manager.svg" },
+      { id: "13", title: "Closing",                   png: "/docs/code-quality/png/13_closing.png",                  svg: "/docs/code-quality/svg/13_closing.svg" },
+    ],
+  },
 ]
 
 export function getDocPackageById(id: string): DocPackage | undefined {

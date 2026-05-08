@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { GraduationCap, Cloud, ChevronRight, FileText, ImageIcon } from "lucide-react"
+import { GraduationCap, Cloud, ShieldCheck, ChevronRight, FileText, ImageIcon } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,11 +9,13 @@ import { docPackages } from "@/lib/docs"
 const iconMap: Record<string, React.ElementType> = {
   GraduationCap,
   Cloud,
+  ShieldCheck,
 }
 
 const colorMap: Record<string, { icon: string; bg: string; badge: string }> = {
   violet:  { icon: "text-violet-500",  bg: "bg-violet-500/10",  badge: "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300" },
   emerald: { icon: "text-emerald-500", bg: "bg-emerald-500/10", badge: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300" },
+  blue:    { icon: "text-blue-500",    bg: "bg-blue-500/10",    badge: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300" },
 }
 
 export default function DocsPage() {
