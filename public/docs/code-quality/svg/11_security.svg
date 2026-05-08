@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 540" width="680" height="540">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">Security rules</text>
+<text x="40" y="56" class="subtitle">Patterns that protect AEM from real attacks</text>
+<g class="c-red">
+  <rect x="40" y="90" width="290" height="120" rx="8"/>
+  <text x="56" y="114" class="mono">SEC-001</text>
+  <text x="314" y="114" class="ts" text-anchor="end" font-style="italic">Critical</text>
+  <text x="56" y="140" class="th">JCR-SQL2 injection</text>
+  <text x="56" y="168" class="ts">Never concatenate user input into queries.</text>
+  <text x="56" y="188" class="ts">Use parameterized queries via QueryManager.</text>
+</g>
+<g class="c-red">
+  <rect x="350" y="90" width="290" height="120" rx="8"/>
+  <text x="366" y="114" class="mono">SEC-002</text>
+  <text x="624" y="114" class="ts" text-anchor="end" font-style="italic">Blocker</text>
+  <text x="366" y="140" class="th">Default admin password</text>
+  <text x="366" y="168" class="ts">Auto-scanned within seconds. AEMaaCS</text>
+  <text x="366" y="188" class="ts">randomizes it; Cloud Manager blocks promotion.</text>
+</g>
+<g class="c-red">
+  <rect x="40" y="230" width="290" height="120" rx="8"/>
+  <text x="56" y="254" class="mono">SEC-003</text>
+  <text x="314" y="254" class="ts" text-anchor="end" font-style="italic">Critical</text>
+  <text x="56" y="280" class="th">CSRF protection</text>
+  <text x="56" y="308" class="ts">Granite CSRF Filter validates tokens.</text>
+  <text x="56" y="328" class="ts">POST/DELETE/PUT must include :cq_csrf_token.</text>
+</g>
+<g class="c-red">
+  <rect x="350" y="230" width="290" height="120" rx="8"/>
+  <text x="366" y="254" class="mono">SEC-004</text>
+  <text x="624" y="254" class="ts" text-anchor="end" font-style="italic">Critical</text>
+  <text x="366" y="280" class="th">Servlet binding</text>
+  <text x="366" y="308" class="ts">Bind to specific resourceTypes — never</text>
+  <text x="366" y="328" class="ts">let a Servlet match any content node.</text>
+</g>
+<g class="c-red">
+  <rect x="40" y="370" width="290" height="120" rx="8"/>
+  <text x="56" y="394" class="mono">SEC-005</text>
+  <text x="314" y="394" class="ts" text-anchor="end" font-style="italic">Blocker</text>
+  <text x="56" y="420" class="th">TLS / HTTPS everywhere</text>
+  <text x="56" y="448" class="ts">Author, Publish, Dispatcher all HTTPS.</text>
+  <text x="56" y="468" class="ts">Confidentiality + integrity + auth.</text>
+</g>
+<g class="c-amber">
+  <rect x="350" y="370" width="290" height="120" rx="8"/>
+  <text x="366" y="394" class="mono">SEC-006</text>
+  <text x="624" y="394" class="ts" text-anchor="end" font-style="italic">Critical</text>
+  <text x="366" y="420" class="th">User audit</text>
+  <text x="366" y="448" class="ts">Review /home/users regularly. Service</text>
+  <text x="366" y="468" class="ts">users get least privilege. Disable inactive.</text>
+</g>
+<line x1="40" y1="510" x2="640" y2="510" class="divider"/>
+<text x="40" y="532" class="ts" font-style="italic">Defense in depth: each layer assumes the others may fail.</text>
+</svg>

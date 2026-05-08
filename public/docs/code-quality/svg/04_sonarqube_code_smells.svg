@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 540" width="680" height="540">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">SonarQube — Code smell rules</text>
+<text x="40" y="56" class="subtitle">Maintainability, clarity, and reliability rules</text>
+<g class="c-amber">
+  <rect x="40" y="90" width="280" height="90" rx="8"/>
+  <text x="56" y="114" class="mono" fill="#633806">java:S1541</text>
+  <text x="56" y="136" class="th">Methods too complex</text>
+  <text x="56" y="158" class="ts">Cyclomatic > 10 — extract helpers</text>
+</g>
+<g class="c-amber">
+  <rect x="340" y="90" width="280" height="90" rx="8"/>
+  <text x="356" y="114" class="mono" fill="#633806">java:S00108</text>
+  <text x="356" y="136" class="th">Empty catch blocks</text>
+  <text x="356" y="158" class="ts">Hides JCR/workflow failures — log it</text>
+</g>
+<g class="c-amber">
+  <rect x="40" y="200" width="280" height="90" rx="8"/>
+  <text x="56" y="224" class="mono" fill="#633806">java:S1166</text>
+  <text x="56" y="246" class="th">Exceptions ignored</text>
+  <text x="56" y="268" class="ts">Variable declared, never used — handle it</text>
+</g>
+<g class="c-amber">
+  <rect x="340" y="200" width="280" height="90" rx="8"/>
+  <text x="356" y="224" class="mono" fill="#633806">java:S106</text>
+  <text x="356" y="246" class="th">System.out logging</text>
+  <text x="356" y="268" class="ts">Bypasses Sling Log Service — use SLF4J</text>
+</g>
+<g class="c-amber">
+  <rect x="40" y="310" width="280" height="90" rx="8"/>
+  <text x="56" y="334" class="mono" fill="#633806">java:S1874</text>
+  <text x="56" y="356" class="th">Deprecated APIs</text>
+  <text x="56" y="378" class="ts">WCMUsePojo, getAdministrativeRR()</text>
+</g>
+<g class="c-amber">
+  <rect x="340" y="310" width="280" height="90" rx="8"/>
+  <text x="356" y="334" class="mono" fill="#633806">java:S1192</text>
+  <text x="356" y="356" class="th">String literal duplication</text>
+  <text x="356" y="378" class="ts">'jcr:title' repeated → extract constant</text>
+</g>
+<g class="c-amber">
+  <rect x="40" y="420" width="280" height="90" rx="8"/>
+  <text x="56" y="444" class="mono" fill="#633806">java:S109</text>
+  <text x="56" y="466" class="th">Magic numbers</text>
+  <text x="56" y="488" class="ts">Inline 100, 500 → named constants</text>
+</g>
+<g class="c-amber">
+  <rect x="340" y="420" width="280" height="90" rx="8"/>
+  <text x="356" y="444" class="mono" fill="#633806">java:S2972</text>
+  <text x="356" y="466" class="th">Classes too long</text>
+  <text x="356" y="488" class="ts">Mixed concerns → split responsibilities</text>
+</g>
+</svg>
