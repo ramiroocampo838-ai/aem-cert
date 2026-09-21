@@ -3,7 +3,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Cloud, ShieldCheck, ChevronRight } from "lucide-react"
+import { GraduationCap, Cloud, ShieldCheck, Terminal, ChevronRight } from "lucide-react"
 
 const sections = [
   {
@@ -39,6 +39,17 @@ const sections = [
     color: "text-orange-500",
     bg: "bg-orange-500/10",
   },
+  {
+    key: "env-setup",
+    title: "Env Setup",
+    subtitle: "AEM Environment Setup",
+    description: "QuickStart Jar, Maven modules, Dispatcher, Repo Init, and local dev tools.",
+    icon: Terminal,
+    concepts: 104,
+    categories: 12,
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
 ]
 
 export default function TopicsPage() {
@@ -54,7 +65,7 @@ export default function TopicsPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Study Topics</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            300 concepts across 3 sections. Select a section to explore its concepts by category.
+            404 concepts across 4 sections. Select a section to explore its concepts by category.
           </p>
         </div>
 

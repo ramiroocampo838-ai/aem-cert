@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import fs from "fs"
 import path from "path"
 import Link from "next/link"
-import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, FileText, Download } from "lucide-react"
+import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Settings, FileText, Download } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
@@ -12,12 +12,13 @@ import { DiagramGallery } from "@/components/docs/diagram-gallery"
 import { ReadmeRenderer } from "@/components/docs/readme-renderer"
 import type { LucideIcon } from "lucide-react"
 
-const iconMap: Record<string, LucideIcon> = { GraduationCap, Cloud, ShieldCheck }
+const iconMap: Record<string, LucideIcon> = { GraduationCap, Cloud, ShieldCheck, Settings }
 
 const colorMap: Record<string, { icon: string; bg: string }> = {
   violet:  { icon: "text-violet-500",  bg: "bg-violet-500/10" },
   emerald: { icon: "text-emerald-500", bg: "bg-emerald-500/10" },
   blue:    { icon: "text-blue-500",    bg: "bg-blue-500/10" },
+  orange:  { icon: "text-orange-500",  bg: "bg-orange-500/10" },
 }
 
 export default async function DocSectionPage({

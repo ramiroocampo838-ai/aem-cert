@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 540" width="680" height="540">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">Setting up a local AEM environment</text>
+<text x="40" y="56" class="subtitle">A roadmap of what this guide covers</text>
+<g class="c-purple">
+  <rect x="40" y="90" width="125" height="110" rx="8"/>
+  <text x="52" y="114" class="th">Components</text>
+  <text x="52" y="140" class="ts">Project, Runtime,</text>
+  <text x="52" y="158" class="ts">Dispatcher</text>
+</g>
+<g class="c-blue">
+  <rect x="205" y="90" width="125" height="110" rx="8"/>
+  <text x="217" y="114" class="th">Dev Tools</text>
+  <text x="217" y="140" class="ts">Java, Node, Maven,</text>
+  <text x="217" y="158" class="ts">Git</text>
+</g>
+<g class="c-teal">
+  <rect x="370" y="90" width="125" height="110" rx="8"/>
+  <text x="382" y="114" class="th">Adobe I/O CLI</text>
+  <text x="382" y="140" class="ts">aio, plugins,</text>
+  <text x="382" y="158" class="ts">OAuth</text>
+</g>
+<g class="c-amber">
+  <rect x="535" y="90" width="125" height="110" rx="8"/>
+  <text x="547" y="114" class="th">File System</text>
+  <text x="547" y="140" class="ts">~/aem-sdk and</text>
+  <text x="547" y="158" class="ts">~/code</text>
+</g>
+<g class="c-coral">
+  <rect x="40" y="220" width="125" height="110" rx="8"/>
+  <text x="52" y="244" class="th">QuickStart Jar</text>
+  <text x="52" y="270" class="ts">Author 4502,</text>
+  <text x="52" y="288" class="ts">Publish 4503</text>
+</g>
+<g class="c-coral">
+  <rect x="205" y="220" width="125" height="110" rx="8"/>
+  <text x="217" y="244" class="th">JAR Naming</text>
+  <text x="217" y="270" class="ts">Tier and env at</text>
+  <text x="217" y="288" class="ts">startup</text>
+</g>
+<g class="c-teal">
+  <rect x="370" y="220" width="125" height="110" rx="8"/>
+  <text x="382" y="244" class="th">Distribution</text>
+  <text x="382" y="270" class="ts">Replication</text>
+  <text x="382" y="288" class="ts">Agents (local)</text>
+</g>
+<g class="c-red">
+  <rect x="535" y="220" width="125" height="110" rx="8"/>
+  <text x="547" y="244" class="th">Dispatcher</text>
+  <text x="547" y="270" class="ts">Docker + Apache</text>
+  <text x="547" y="288" class="ts">module</text>
+</g>
+<g class="c-purple">
+  <rect x="40" y="350" width="125" height="110" rx="8"/>
+  <text x="52" y="374" class="th">Maven Layout</text>
+  <text x="52" y="400" class="ts">Immutable vs</text>
+  <text x="52" y="418" class="ts">mutable</text>
+</g>
+<g class="c-purple">
+  <rect x="205" y="350" width="125" height="110" rx="8"/>
+  <text x="217" y="374" class="th">Modules</text>
+  <text x="217" y="400" class="ts">core, ui.apps,</text>
+  <text x="217" y="418" class="ts">ui.content, all</text>
+</g>
+<g class="c-amber">
+  <rect x="370" y="350" width="125" height="110" rx="8"/>
+  <text x="382" y="374" class="th">Repo Init</text>
+  <text x="382" y="400" class="ts">JCR setup +</text>
+  <text x="382" y="418" class="ts">Archetype</text>
+</g>
+<g class="c-green">
+  <rect x="535" y="350" width="125" height="110" rx="8"/>
+  <text x="547" y="374" class="th">Troubleshoot</text>
+  <text x="547" y="400" class="ts">Console, logs,</text>
+  <text x="547" y="418" class="ts">clientlibs</text>
+</g>
+<line x1="40" y1="490" x2="640" y2="490" class="divider"/>
+<text x="40" y="515" class="ts" font-style="italic">Goal: validate everything locally before pushing to Cloud Manager.</text>
+</svg>

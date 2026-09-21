@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, GraduationCap, Cloud, ShieldCheck } from "lucide-react"
+import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Terminal } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -8,6 +8,7 @@ import { ConceptCategorySection } from "@/components/topics/concept-category"
 import { introCategories } from "@/lib/concepts/intro"
 import { cloudManagerCategories } from "@/lib/concepts/cloud-manager"
 import { codeQualityCategories } from "@/lib/concepts/code-quality"
+import { envSetupCategories } from "@/lib/concepts/env-setup"
 import type { ConceptCategory } from "@/lib/concepts/types"
 import type { LucideIcon } from "lucide-react"
 
@@ -48,6 +49,15 @@ const SECTIONS: Record<string, SectionMeta> = {
     iconColor: "text-orange-500",
     iconBg: "bg-orange-500/10",
     categories: codeQualityCategories,
+  },
+  "env-setup": {
+    title: "Env Setup",
+    subtitle: "AEM Environment Setup",
+    description: "QuickStart Jar, Maven modules, Dispatcher, Repo Init, and local dev tools.",
+    icon: Terminal,
+    iconColor: "text-blue-500",
+    iconBg: "bg-blue-500/10",
+    categories: envSetupCategories,
   },
 }
 

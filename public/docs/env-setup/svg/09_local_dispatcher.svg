@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 600" width="680" height="600">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">Local Dispatcher</text>
+<text x="40" y="56" class="subtitle">Docker container running Apache HTTP Server with the Dispatcher module</text>
+<g class="c-gray">
+  <rect x="40" y="90" width="180" height="70" rx="8"/>
+  <text x="56" y="115" class="th">Browser</text>
+  <text x="56" y="138" class="ts">localhost:8080</text>
+</g>
+<g class="c-red">
+  <rect x="240" y="90" width="200" height="70" rx="8"/>
+  <text x="256" y="115" class="th">Dispatcher (Docker)</text>
+  <text x="256" y="138" class="ts">Apache + Dispatcher module</text>
+</g>
+<g class="c-teal">
+  <rect x="460" y="90" width="180" height="70" rx="8"/>
+  <text x="476" y="115" class="th">Publish</text>
+  <text x="476" y="138" class="ts">localhost:4503</text>
+</g>
+<path d="M 220 125 L 240 125" class="arr" marker-end="url(#arrow)"/>
+<path d="M 440 125 L 460 125" class="arr" marker-end="url(#arrow)"/>
+<line x1="40" y1="185" x2="640" y2="185" class="divider"/>
+<text x="40" y="210" class="th" fill="#3C3489">Start the Dispatcher (hot-reload variant)</text>
+<g class="c-purple">
+  <rect x="40" y="220" width="600" height="55" rx="8"/>
+  <text x="56" y="246" class="mono">./bin/docker_run_hot_reload.sh ./src localhost:4503 8080</text>
+  <text x="56" y="266" class="ts">Reloads configuration automatically when files change.</text>
+</g>
+<text x="40" y="305" class="th" fill="#3C3489">The three arguments</text>
+<g class="c-purple">
+  <rect x="40" y="320" width="600" height="50" rx="8"/>
+  <text x="56" y="342" class="mono">./src</text>
+  <text x="220" y="342" class="ts">Path to your Dispatcher configuration</text>
+</g>
+<g class="c-teal">
+  <rect x="40" y="380" width="600" height="50" rx="8"/>
+  <text x="56" y="402" class="mono">localhost:4503</text>
+  <text x="220" y="402" class="ts">Address of your local Publish service</text>
+</g>
+<g class="c-blue">
+  <rect x="40" y="440" width="600" height="50" rx="8"/>
+  <text x="56" y="462" class="mono">8080</text>
+  <text x="220" y="462" class="ts">Port the Dispatcher exposes on the host</text>
+</g>
+<line x1="40" y1="510" x2="640" y2="510" class="divider"/>
+<text x="40" y="535" class="th" fill="#3C3489">Validator tool</text>
+<g class="c-green">
+  <rect x="40" y="545" width="600" height="40" rx="8"/>
+  <text x="56" y="569" class="mono">./bin/validate ./src</text>
+</g>
+</svg>

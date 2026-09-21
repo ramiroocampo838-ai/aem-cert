@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 700" width="680" height="700">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">Troubleshooting checklist</text>
+<text x="40" y="56" class="subtitle">Run through these in order when something is not working</text>
+<g class="c-blue">
+  <rect x="40" y="90" width="600" height="85" rx="8"/>
+  <text x="56" y="118" class="th">1. Package Manager</text>
+  <text x="56" y="140" class="ts">Was the package actually installed?</text>
+  <text x="56" y="162" class="mono">http://localhost:4502/crx/packmgr</text>
+</g>
+<path d="M 340 175 L 340 195" class="arr" marker-end="url(#arrow)"/>
+<g class="c-blue">
+  <rect x="40" y="195" width="600" height="85" rx="8"/>
+  <text x="56" y="223" class="th">2. CRXDE Lite</text>
+  <text x="56" y="245" class="ts">Is the file there and is the content correct?</text>
+  <text x="56" y="267" class="mono">http://localhost:4502/crx/de</text>
+</g>
+<path d="M 340 280 L 340 300" class="arr" marker-end="url(#arrow)"/>
+<g class="c-blue">
+  <rect x="40" y="300" width="600" height="85" rx="8"/>
+  <text x="56" y="328" class="th">3. Bundle Console</text>
+  <text x="56" y="350" class="ts">Is the OSGi bundle Active?</text>
+  <text x="56" y="372" class="mono">http://localhost:4502/system/console/bundles</text>
+</g>
+<path d="M 340 385 L 340 405" class="arr" marker-end="url(#arrow)"/>
+<g class="c-amber">
+  <rect x="40" y="405" width="600" height="85" rx="8"/>
+  <text x="56" y="433" class="th">4. error.log</text>
+  <text x="56" y="455" class="ts">AEM logs everything there</text>
+  <text x="56" y="477" class="mono">crx-quickstart/logs/error.log</text>
+</g>
+<path d="M 340 490 L 340 510" class="arr" marker-end="url(#arrow)"/>
+<g class="c-purple">
+  <rect x="40" y="510" width="600" height="85" rx="8"/>
+  <text x="56" y="538" class="th">5. Clientlib debug tools</text>
+  <text x="56" y="560" class="ts">For front-end issues</text>
+  <text x="56" y="582" class="mono">/libs/granite/ui/content/dumplibs.html</text>
+</g>
+<line x1="40" y1="615" x2="640" y2="615" class="divider"/>
+<text x="40" y="640" class="th" fill="#791F1F">Most common errors</text>
+<text x="40" y="662" class="ts">&#8226; Wrong Java version</text>
+<text x="40" y="682" class="ts">&#8226; Trying to double-click the QuickStart Jar</text>
+</svg>

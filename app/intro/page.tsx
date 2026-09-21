@@ -157,8 +157,8 @@ function IntroContent() {
           </Button>
         </Link>
       </div>
-      <div className="fixed top-14 left-200 z-150">
-    <SidebarTrigger className="-ml-1" />
+      <div className="fixed top-16 z-150">
+    <SidebarTrigger className="bg-black text-white" />
     </div>
       <ProgressBar
         currentSlide={currentSlide}
