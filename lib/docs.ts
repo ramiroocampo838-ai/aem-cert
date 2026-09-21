@@ -100,6 +100,32 @@ export const docPackages: DocPackage[] = [
       { id: "13", title: "Closing",                   png: "/docs/code-quality/png/13_closing.png",                  svg: "/docs/code-quality/svg/13_closing.svg" },
     ],
   },
+  {
+    id: "env-setup",
+    title: "Environment Setup",
+    subtitle: "Visual study companion — 14 diagrams",
+    description: "Local AEM environment setup: development tools, Adobe I/O CLI, Quickstart JAR, Dispatcher, Maven structure, repo init archetype and troubleshooting.",
+    icon: "Settings",
+    color: "orange",
+    docx: "/docs/env-setup/AEM-Environment-Setup-Study-Guide.docx",
+    pdf: "/docs/env-setup/AEM-Environment-Setup-Study-Guide.pdf",
+    diagrams: [
+      { id: "01", title: "Introduction",         png: "/docs/env-setup/png/01_introduction.png",         svg: "/docs/env-setup/svg/01_introduction.svg" },
+      { id: "02", title: "Three Components",     png: "/docs/env-setup/png/02_three_components.png",     svg: "/docs/env-setup/svg/02_three_components.svg" },
+      { id: "03", title: "Development Tools",    png: "/docs/env-setup/png/03_development_tools.png",    svg: "/docs/env-setup/svg/03_development_tools.svg" },
+      { id: "04", title: "Adobe IO CLI",         png: "/docs/env-setup/png/04_adobe_io_cli.png",         svg: "/docs/env-setup/svg/04_adobe_io_cli.svg" },
+      { id: "05", title: "File System",          png: "/docs/env-setup/png/05_file_system.png",          svg: "/docs/env-setup/svg/05_file_system.svg" },
+      { id: "06", title: "Quickstart JAR",       png: "/docs/env-setup/png/06_quickstart_jar.png",       svg: "/docs/env-setup/svg/06_quickstart_jar.svg" },
+      { id: "07", title: "JAR Naming",           png: "/docs/env-setup/png/07_jar_naming.png",           svg: "/docs/env-setup/svg/07_jar_naming.svg" },
+      { id: "08", title: "Content Distribution", png: "/docs/env-setup/png/08_content_distribution.png", svg: "/docs/env-setup/svg/08_content_distribution.svg" },
+      { id: "09", title: "Local Dispatcher",     png: "/docs/env-setup/png/09_local_dispatcher.png",     svg: "/docs/env-setup/svg/09_local_dispatcher.svg" },
+      { id: "10", title: "Maven Structure",      png: "/docs/env-setup/png/10_maven_structure.png",      svg: "/docs/env-setup/svg/10_maven_structure.svg" },
+      { id: "11", title: "Maven Modules",        png: "/docs/env-setup/png/11_maven_modules.png",        svg: "/docs/env-setup/svg/11_maven_modules.svg" },
+      { id: "12", title: "Repo Init Archetype",  png: "/docs/env-setup/png/12_repo_init_archetype.png",  svg: "/docs/env-setup/svg/12_repo_init_archetype.svg" },
+      { id: "13", title: "Troubleshooting",      png: "/docs/env-setup/png/13_troubleshooting.png",      svg: "/docs/env-setup/svg/13_troubleshooting.svg" },
+      { id: "14", title: "Closing",              png: "/docs/env-setup/png/14_closing.png",              svg: "/docs/env-setup/svg/14_closing.svg" },
+    ],
+  },
 ]
 
 export function getDocPackageById(id: string): DocPackage | undefined {

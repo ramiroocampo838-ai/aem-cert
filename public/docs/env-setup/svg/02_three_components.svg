@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 460" width="680" height="460">
+  <style>
+    .t  { font-family: Helvetica, Arial; font-size: 14px; fill: #2C2C2A; }
+    .ts { font-family: Helvetica, Arial; font-size: 12px; fill: #5F5E5A; }
+    .th { font-family: Helvetica, Arial; font-size: 14px; font-weight: 500; }
+    .title    { font-size: 18px; font-weight: 500; fill: #2C2C2A; }
+    .subtitle { font-size: 12px; fill: #5F5E5A; }
+    .mono     { font-family: Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #2C2C2A; }
+    .c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .c-purple text { fill: #3C3489; }
+    .c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .c-teal   text { fill: #085041; }
+    .c-coral  rect { fill: #FAECE7; stroke: #993C1D; }
+    .c-coral  text { fill: #712B13; }
+    .c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
+    .c-amber  text { fill: #633806; }
+    .c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
+    .c-red    text { fill: #791F1F; }
+    .c-blue   rect { fill: #E6F1FB; stroke: #185FA5; }
+    .c-blue   text { fill: #0C447C; }
+    .c-green  rect { fill: #EAF3DE; stroke: #3B6D11; }
+    .c-green  text { fill: #27500A; }
+    .c-pink   rect { fill: #FCE8F1; stroke: #A8316E; }
+    .c-pink   text { fill: #7E2253; }
+    .c-gray   rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .c-gray   text { fill: #2C2C2A; }
+    .arr     { fill: none; stroke: #5F5E5A; stroke-width: 1.5; }
+    .divider { stroke: #888780; stroke-width: 0.5; stroke-dasharray: 3 3; }
+    rect { stroke-width: 0.5; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M2 1 L8 5 L2 9" fill="none"
+            stroke="context-stroke" stroke-width="1.5" />
+    </marker>
+  </defs>
+<text x="40" y="36" class="title">The three components of a local AEM environment</text>
+<text x="40" y="56" class="subtitle">A miniature version of what runs in the cloud</text>
+<g class="c-purple">
+  <rect x="40" y="95" width="600" height="85" rx="8"/>
+  <text x="56" y="121" class="th">AEM Project</text>
+  <text x="56" y="145" class="ts">Your custom code, configuration, and content</text>
+  <text x="56" y="163" class="ts">Maven project under ~/code</text>
+</g>
+<g class="c-coral">
+  <rect x="40" y="200" width="600" height="85" rx="8"/>
+  <text x="56" y="226" class="th">Local AEM Runtime</text>
+  <text x="56" y="250" class="ts">Local Author and Publish services</text>
+  <text x="56" y="268" class="ts">QuickStart Jar instances</text>
+</g>
+<g class="c-red">
+  <rect x="40" y="305" width="600" height="85" rx="8"/>
+  <text x="56" y="331" class="th">Local Dispatcher Runtime</text>
+  <text x="56" y="355" class="ts">Apache HTTP Server with the Dispatcher module</text>
+  <text x="56" y="373" class="ts">Docker-based, in front of Publish</text>
+</g>
+<line x1="40" y1="415" x2="640" y2="415" class="divider"/>
+<text x="40" y="440" class="ts" font-style="italic">Goal: develop, build, and test on your laptop before sending anything to the cloud.</text>
+</svg>

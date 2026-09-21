@@ -1,17 +1,19 @@
 "use client"
 
-import { BookOpen, Cloud, Brain, ShieldCheck } from "lucide-react"
+import { BookOpen, Cloud, Brain, ShieldCheck, Terminal } from "lucide-react"
 import type { TriviaSection, TriviaSectionConfig } from "@/lib/trivia-types"
 import { INTRO_SECTION_CONFIG } from "@/lib/trivia-intro-questions"
 import { CLOUD_MANAGER_SECTION_CONFIG } from "@/lib/trivia-cloud-manager-questions"
 import { CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-code-quality-questions"
+import { ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
 
-const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG]
+const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG]
 
 const ICON_MAP: Record<string, React.ElementType> = {
   BookOpen,
   Cloud,
   ShieldCheck,
+  Terminal,
 }
 
 const COLOR_CLASSES = {
@@ -38,6 +40,14 @@ const COLOR_CLASSES = {
     button:
       "bg-orange-600 hover:bg-orange-700 text-white shadow-orange-200 dark:bg-orange-700 dark:hover:bg-orange-600 dark:shadow-orange-900/50",
     glow: "group-hover:shadow-orange-200/60 dark:group-hover:shadow-orange-800/40",
+  },
+  blue: {
+    card: "border-blue-200 hover:border-blue-400 hover:shadow-blue-100 dark:border-blue-800 dark:hover:border-blue-500 dark:hover:shadow-blue-900/40",
+    icon: "bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400",
+    badge: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+    button:
+      "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-200 dark:bg-blue-700 dark:hover:bg-blue-600 dark:shadow-blue-900/50",
+    glow: "group-hover:shadow-blue-200/60 dark:group-hover:shadow-blue-800/40",
   },
 }
 

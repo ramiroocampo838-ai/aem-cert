@@ -42,6 +42,18 @@ const COLOR_CLASSES = {
     nextBtn:
       "bg-orange-600 hover:bg-orange-700 text-white dark:bg-orange-700 dark:hover:bg-orange-600",
   },
+  blue: {
+    topic: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+    progress: "bg-blue-500",
+    option: {
+      default:
+        "border-border hover:border-blue-400 hover:bg-blue-50 dark:hover:border-blue-500 dark:hover:bg-blue-900/20 hover:scale-[1.01]",
+      selected:
+        "border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30",
+    },
+    nextBtn:
+      "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-700 dark:hover:bg-blue-600",
+  },
 }
 
 interface QuestionCardProps {
