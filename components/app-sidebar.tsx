@@ -18,9 +18,10 @@ import {
   ShieldCheck, 
   Music, 
   Video, 
-  GalleryHorizontal, 
-  FolderOpen, 
-  Terminal 
+  GalleryHorizontal,
+  FolderOpen,
+  Terminal,
+  Fingerprint
 } from "lucide-react"
 import { useTheme } from "next-themes"
 
@@ -45,6 +46,7 @@ const navItems = [
   { title: "Cloud Manager", href: "/cloud-manager", icon: Cloud },
   { title: "Code Quality Rules", href: "/code-quality", icon: ShieldCheck },
   { title: "Environment Setup", href: "/env-setup", icon: Terminal },
+  { title: "Authentication", href: "/authentication", icon: Fingerprint },
   { title: "Trivia", href: "/trivia", icon: Brain },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Resources", href: "/resources", icon: Link2 },
