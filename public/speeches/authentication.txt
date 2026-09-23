@@ -1,0 +1,199 @@
+Authentication in AEM — Presentation Guide
+
+
+1. Introduction
+
+We've covered the platform, Cloud Manager, code quality, and how to set up a local environment. Now it's time to talk about who gets in, and how.
+
+Authentication in AEM is the process of verifying a user's identity before granting access to resources and functionality. This is the exam objective for Section 1.5: determining the correct steps to configure OOTB SAML or IMS integration.
+
+We'll walk through the four ways AEM as a Cloud Service handles authentication: Adobe IMS, SAML 2.0, Single Sign-On, and token-based authentication for programmatic access.
+
+
+2. Authentication Overview
+
+AEMaaCS supports several authentication mechanisms, and not all of them are available on both tiers. This table is worth memorizing:
+
+Method                    Author   Publish
+Adobe IMS                   Yes      No
+SAML 2.0 via Adobe IMS       Yes      Yes
+SAML 2.0                    No       Yes
+Single Sign-On (SSO)         No       Yes
+OAuth                       No       Yes
+OpenID Connect (OIDC)        No       Yes
+Token authentication         Yes      Yes
+Basic authentication         No       No
+
+The pattern to remember: Author is managed almost exclusively through Adobe IMS. Publish is where external identity providers live — SAML, SSO, OAuth, OIDC. Token authentication is the only method that works identically on both tiers, which is why it's the go-to for headless and programmatic access. Basic authentication is not supported anywhere in AEMaaCS.
+
+
+3. Adobe IMS Fundamentals
+
+AEMaaCS is cloud-native, so it leans on Adobe's Identity Management System, IMS, to log in both administrators and regular users to the Author service.
+
+Three building blocks make this work:
+
+- IMS Users — individuals who need access, managed centrally in Adobe Admin Console
+- IMS User Groups — logical groupings of users; they don't grant permissions by themselves, they're just organizational buckets
+- IMS Product Profiles — the mechanism that actually grants login access to AEM Author. Two built-in profiles matter most: AEM Users (read-only, maps to the Contributors group) and AEM Administrators (full admin access)
+
+So the chain is: a user gets assigned a Product Profile, and that profile is what lets them authenticate into AEM Author. Groups are for organization; profiles are for access.
+
+One caveat worth remembering: AEM does not support assigning IMS user groups directly to profiles. You add individual users to profiles instead.
+
+
+4. Admin Console and Organization Onboarding
+
+Before any of this works, your organization needs to exist as an IMS Organization in Adobe Admin Console. This is the prerequisite for everything else.
+
+Once the org is provisioned, setup follows this sequence:
+
+- The System Administrator logs into Cloud Manager and claims the domain (proving ownership, e.g. acme.com)
+- They set up user directories
+- They configure the Identity Provider (IDP) in Admin Console for SSO
+- The AEM Administrator then manages local groups, permissions, and privileges as usual, inside AEM itself
+
+Admin Console represents your Author and Publish instances as Product Context Instances. Product Profiles determine which instances a given user can reach.
+
+
+5. Onboarding Users
+
+There are three ways to bring users into Admin Console, and the right one depends on scale:
+
+- Manual creation — fine for small numbers, under roughly 50 users, through the Admin Console UI
+- CSV upload — bulk add, edit, or remove users via file upload; useful for mid-size batches
+- User Sync Tool (UST) — syncs from an enterprise Active Directory or OpenLDAP source. It's one-way: changes in the directory flow into Admin Console, never the other way around. It also lets you map directory groups to AEM product profiles automatically
+
+Sync happens through the Adobe User Management API, which keeps Admin Console aligned with your directory without manual intervention.
+
+
+6. Login Flows
+
+There are two distinct ways to log into AEM Author, and the exam likes to test the difference:
+
+Local administrator login: a dedicated "sign in locally" option, separate from IMS, meant strictly for admin tasks. This bypasses IMS entirely.
+
+IMS-based login: the standard path for everyone else. The user clicks "Sign in with Adobe," gets redirected to the IMS login screen, authenticates, and is redirected back to AEM. If your org has a federated IDP configured, IMS redirects the user one step further, to that IDP, for SSO — then back to IMS, then back to AEM.
+
+So the full chain for a federated user is: AEM to IMS to customer IDP to IMS to AEM. Two redirects, one seamless login.
+
+
+7. SAML 2.0 — The Flow
+
+SAML 2.0 is different from IMS: it authenticates end users of a public-facing site directly against a non-Adobe Identity Provider, and it only works on AEM Publish (or Preview) — never Author.
+
+The flow, step by step:
+
+- A user requests a protected resource on AEM Publish
+- AEM redirects them to its login endpoint, which triggers an AuthnRequest to the IDP
+- The user authenticates with the IDP — or is already authenticated and skips straight through
+- The IDP builds a SAML assertion with the user's data and signs it with its private certificate
+- The assertion comes back to AEM Publish via an HTTP POST from the browser
+- AEM validates the assertion's signature using the IDP's public certificate
+- Based on the assertion contents and the SAML OSGi config, AEM creates or updates the user, syncs attributes, and updates group membership
+- AEM sets a login-token cookie and redirects the user back to the originally requested page
+
+The trust is entirely certificate-based: the IDP signs with its private key, AEM verifies with the IDP's public key.
+
+
+8. SAML 2.0 — Configuration in Practice
+
+Setting this up has a handful of concrete steps worth remembering for the exam:
+
+- Install the IDP's public certificate into AEM's Global Trust Store (Tools > Security > Trust Store), then replicate that trust store to Publish, since SAML only runs there
+- Create an authentication-service keystore if you need logout handling or assertion encryption — this lives under the authentication-service system user
+- Define the SAML Authentication Handler as an OSGi factory configuration, so you can run different SAML setups for different site trees. Key properties: path, idpCertAlias, idpIdentifier, idpUrl, serviceProviderEntityId, createUser, synchronizeAttributes, addGroupMemberships, defaultGroups
+- If the IDP posts from a different origin, update the Referrer Filter to allow it
+- Configure CORS on the saml_login endpoint so cross-origin POSTs from the IDP are accepted — remember that testing locally against localhost can produce a null Origin header, which needs to be explicitly allowed
+- Deploy everything through Git and a Full Stack Cloud Manager pipeline — OSGi config changes are code, not console clicks, in AEMaaCS
+
+Environment-specific config files, like config.publish.dev versus config.publish.prod, let you vary IDP URLs and hosts per environment without duplicating the whole setup.
+
+
+9. Token-Based Authentication — Overview
+
+The third mechanism is built for machines, not people: token-based authentication lets external applications, scripts, and services call AEM's HTTP APIs — GraphQL, Content Services, Assets HTTP API — without a browser login.
+
+Every request carries an Authorization header:
+Authorization: Bearer ACCESS_TOKEN
+
+There are two ways to get that token, aimed at two different situations: local development, and production integrations.
+
+
+10. Local Development Access Token
+
+This is the quick option while you're coding. From the AEM Developer Console in Cloud Manager, under Integrations > Local Token, you generate a short-lived token tied to your own IMS identity and your own permissions.
+
+Requirements: you need to be a member of the Cloud Manager - Developer product profile to reach the Developer Console, plus membership in AEM Users or AEM Administrators for the target environment.
+
+It's meant for quick local testing only — it expires daily, it authenticates as you personally, and it should never be committed to source control.
+
+
+11. Service Credentials and OAuth Server-to-Server
+
+This is the production-grade option, and it's also where the certification material and reality have diverged — worth calling out explicitly.
+
+Older Adobe documentation describes Service Credentials generating a signed JWT that gets exchanged for an access token. That JWT-based flow is retired: Adobe stopped issuing new JWT credentials in mid-2024, and every existing JWT credential stopped working by mid-2025. The current, and only, supported method is OAuth Server-to-Server (S2S).
+
+The setup:
+
+- An Adobe IMS Org Administrator creates the OAuth Server-to-Server credential in the AEM Developer Console (or Adobe Developer Console), tied to a Technical Account
+- That credential is a JSON payload containing a client ID, a client secret, and the scopes it's allowed to request — no private key to sign anything, no JWT to build
+- To get an access token, you make a single POST request, no signing step required:
+
+POST https://ims-na1.adobelogin.com/ims/token/v3
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+client_id=YOUR_CLIENT_ID
+client_secret=YOUR_CLIENT_SECRET
+scope=YOUR_SCOPES
+
+- The response is an access token, used exactly like the local development token: as a Bearer token in the Authorization header
+
+Compared to the old JWT flow, this is simpler — a straightforward client-credentials exchange instead of constructing and signing a token yourself. An AEMaaCS environment can host up to ten technical accounts, each with its own Service Credentials, and certificates are valid for up to a year before rotation.
+
+
+12. Configuring AEM Permissions for Technical Accounts
+
+Getting a token doesn't automatically grant access to anything in AEM — the technical account still needs permissions, same as any other user.
+
+The flow:
+
+- The credential JSON includes a technical account email, something like a long UUID at techacct.adobe.com
+- The first API call using that token auto-creates a matching AEM user
+- An AEM Administrator then goes to Tools > Security > Users, finds that technical account user, and assigns it to the appropriate group — for example, DAM Users for write access to assets
+- From that point on, the technical account behaves like any AEM user: its permissions are whatever its group memberships grant
+
+This is a detail the exam likes: the access token alone doesn't equal access — it equals identity. Permissions are still governed by AEM's normal group-and-ACL model underneath.
+
+
+13. Choosing the Right Method
+
+A quick decision table for the exam:
+
+- Logging an admin or content author into AEM Author — Adobe IMS
+- Authenticating public site visitors on Publish against a corporate IDP — SAML 2.0 (or SAML 2.0 via IMS if you want it unified with Author's IMS setup)
+- Giving employees a seamless login across Adobe products and your own IDP — SSO through Admin Console
+- Letting a script or backend service call AEM APIs — Token authentication, using a Local Development Access Token while coding and OAuth Server-to-Server in production
+- Trying to use plain username/password Basic auth — not supported anywhere in AEMaaCS
+
+
+14. Closing
+
+Authentication in AEM comes down to four questions: who is logging in, onto which tier, through which identity system, and with what permissions once they're in.
+
+You now have the full picture:
+
+- Adobe IMS governs Author access, built from users, groups, and product profiles
+- SAML 2.0 governs Publish-side end-user authentication against external IDPs
+- Token authentication, via OAuth Server-to-Server, governs machine-to-machine access
+
+Key concepts to remember for the exam:
+
+- The Author/Publish support matrix — know exactly which method works where
+- IMS product profiles grant access; IMS groups are just organizational
+- The full SAML assertion flow, and that it's certificate-based trust
+- The Global Trust Store must be replicated from Author to Publish for SAML to work
+- OAuth Server-to-Server is the current standard for programmatic access — JWT-based Service Credentials are deprecated
+- A valid access token grants identity, not permissions — group membership still controls what a technical account can do

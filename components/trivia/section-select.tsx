@@ -1,19 +1,21 @@
 "use client"
 
-import { BookOpen, Cloud, Brain, ShieldCheck, Terminal } from "lucide-react"
+import { BookOpen, Cloud, Brain, ShieldCheck, Terminal, Fingerprint } from "lucide-react"
 import type { TriviaSection, TriviaSectionConfig } from "@/lib/trivia-types"
 import { INTRO_SECTION_CONFIG } from "@/lib/trivia-intro-questions"
 import { CLOUD_MANAGER_SECTION_CONFIG } from "@/lib/trivia-cloud-manager-questions"
 import { CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-code-quality-questions"
 import { ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
+import { AUTHENTICATION_SECTION_CONFIG } from "@/lib/trivia-authentication-questions"
 
-const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG]
+const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG, AUTHENTICATION_SECTION_CONFIG]
 
 const ICON_MAP: Record<string, React.ElementType> = {
   BookOpen,
   Cloud,
   ShieldCheck,
   Terminal,
+  Fingerprint,
 }
 
 const COLOR_CLASSES = {
@@ -48,6 +50,14 @@ const COLOR_CLASSES = {
     button:
       "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-200 dark:bg-blue-700 dark:hover:bg-blue-600 dark:shadow-blue-900/50",
     glow: "group-hover:shadow-blue-200/60 dark:group-hover:shadow-blue-800/40",
+  },
+  cyan: {
+    card: "border-cyan-200 hover:border-cyan-400 hover:shadow-cyan-100 dark:border-cyan-800 dark:hover:border-cyan-500 dark:hover:shadow-cyan-900/40",
+    icon: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900/40 dark:text-cyan-400",
+    badge: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300",
+    button:
+      "bg-cyan-600 hover:bg-cyan-700 text-white shadow-cyan-200 dark:bg-cyan-700 dark:hover:bg-cyan-600 dark:shadow-cyan-900/50",
+    glow: "group-hover:shadow-cyan-200/60 dark:group-hover:shadow-cyan-800/40",
   },
 }
 

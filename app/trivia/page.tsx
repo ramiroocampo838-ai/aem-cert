@@ -11,12 +11,14 @@ import { introQuestions, INTRO_SECTION_CONFIG } from "@/lib/trivia-intro-questio
 import { cloudManagerQuestions, CLOUD_MANAGER_SECTION_CONFIG } from "@/lib/trivia-cloud-manager-questions"
 import { codeQualityQuestions, CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-code-quality-questions"
 import { envSetupQuestions, ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
+import { authenticationQuestions, AUTHENTICATION_SECTION_CONFIG } from "@/lib/trivia-authentication-questions"
 
 const SECTION_CONFIGS = {
   intro: INTRO_SECTION_CONFIG,
   "cloud-manager": CLOUD_MANAGER_SECTION_CONFIG,
   "code-quality": CODE_QUALITY_SECTION_CONFIG,
   "env-setup": ENV_SETUP_SECTION_CONFIG,
+  authentication: AUTHENTICATION_SECTION_CONFIG,
 }
 
 const QUESTION_BANKS = {
@@ -24,6 +26,7 @@ const QUESTION_BANKS = {
   "cloud-manager": cloudManagerQuestions,
   "code-quality": codeQualityQuestions,
   "env-setup": envSetupQuestions,
+  authentication: authenticationQuestions,
 }
 
 const SESSION_SIZE = 10

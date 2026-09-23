@@ -3,7 +3,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Cloud, ShieldCheck, Terminal, ChevronRight } from "lucide-react"
+import { GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, ChevronRight } from "lucide-react"
 
 const sections = [
   {
@@ -50,6 +50,17 @@ const sections = [
     color: "text-blue-500",
     bg: "bg-blue-500/10",
   },
+  {
+    key: "authentication",
+    title: "Authentication",
+    subtitle: "Authentication in AEM",
+    description: "Adobe IMS, SAML 2.0, SSO, and token-based authentication for AEM as a Cloud Service.",
+    icon: Fingerprint,
+    concepts: 100,
+    categories: 11,
+    color: "text-cyan-500",
+    bg: "bg-cyan-500/10",
+  },
 ]
 
 export default function TopicsPage() {
@@ -65,7 +76,7 @@ export default function TopicsPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Study Topics</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            404 concepts across 4 sections. Select a section to explore its concepts by category.
+            504 concepts across 5 sections. Select a section to explore its concepts by category.
           </p>
         </div>
 

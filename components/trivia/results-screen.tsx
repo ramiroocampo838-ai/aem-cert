@@ -43,6 +43,13 @@ const COLOR_CLASSES = {
     retryBtn:
       "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-200 dark:bg-blue-700 dark:hover:bg-blue-600",
   },
+  cyan: {
+    accent: "text-cyan-600 dark:text-cyan-400",
+    ring: "ring-cyan-200 dark:ring-cyan-800",
+    badge: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300",
+    retryBtn:
+      "bg-cyan-600 hover:bg-cyan-700 text-white shadow-cyan-200 dark:bg-cyan-700 dark:hover:bg-cyan-600",
+  },
 }
 
 const BADGE_ICON_MAP: Record<string, React.ElementType> = {

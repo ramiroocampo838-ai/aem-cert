@@ -54,6 +54,18 @@ const COLOR_CLASSES = {
     nextBtn:
       "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-700 dark:hover:bg-blue-600",
   },
+  cyan: {
+    topic: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300",
+    progress: "bg-cyan-500",
+    option: {
+      default:
+        "border-border hover:border-cyan-400 hover:bg-cyan-50 dark:hover:border-cyan-500 dark:hover:bg-cyan-900/20 hover:scale-[1.01]",
+      selected:
+        "border-cyan-500 bg-cyan-50 dark:border-cyan-400 dark:bg-cyan-900/30",
+    },
+    nextBtn:
+      "bg-cyan-600 hover:bg-cyan-700 text-white dark:bg-cyan-700 dark:hover:bg-cyan-600",
+  },
 }
 
 interface QuestionCardProps {
