@@ -3,7 +3,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, ChevronRight } from "lucide-react"
+import { GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, ChevronRight } from "lucide-react"
 
 const sections = [
   {
@@ -61,6 +61,17 @@ const sections = [
     color: "text-cyan-500",
     bg: "bg-cyan-500/10",
   },
+  {
+    key: "templates",
+    title: "Templates",
+    subtitle: "Templates & Client Libraries",
+    description: "Components, editable templates, experience fragments, and client libraries in AEM.",
+    icon: LayoutTemplate,
+    concepts: 100,
+    categories: 11,
+    color: "text-amber-500",
+    bg: "bg-amber-500/10",
+  },
 ]
 
 export default function TopicsPage() {
@@ -76,7 +87,7 @@ export default function TopicsPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Study Topics</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            504 concepts across 5 sections. Select a section to explore its concepts by category.
+            604 concepts across 6 sections. Select a section to explore its concepts by category.
           </p>
         </div>
 

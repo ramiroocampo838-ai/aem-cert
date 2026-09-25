@@ -1,0 +1,177 @@
+AEM Templates & Client Libraries — Presentation Guide
+
+
+1. Introduction
+
+We've covered the platform, the cloud tooling, and how to authenticate into it. Now it's time to talk about how pages actually get built: templates, the components that go inside them, and the client libraries that deliver their CSS and JavaScript.
+
+This lesson maps to Section 2 of the exam: AEM Development. Specifically 2.1, determining the correct steps to implement core-based components, 2.2, connecting component functionality through HTL, models, and services, and 2.4, outlining the purpose of content and experience fragments.
+
+An AEM template is a pre-defined structure and initial content used to quickly create a new site — it saves you from starting from scratch and keeps every page consistent with your branding.
+
+
+2. Components and Core Components
+
+Components are the modular units that render your content. They're self-contained, live in one folder of the repository, have no hidden configuration files, can be nested inside each other, and are built with HTL.
+
+Because they're modular, the same component moves cleanly through your pipeline: developed locally, deployed to test, deployed to your live authoring environment for authors, then deployed to publish for visitors.
+
+Adobe ships a set of standardized components for this purpose — the Core Components. They cover the common building blocks: carousels, menus, content lists, and more, and they're designed to be extended rather than rebuilt. Adobe's WKND Tutorial is the reference project for learning how to use and extend them.
+
+There are three ways to see what components are available in an instance:
+- The AEM Console
+- A cq:dialog referencing /libs/wcm/core/components/dialog/components.dialog
+- A CRXDE Lite XPath query: //element(*, cq:Component)
+
+
+3. Editable Templates — Why They Matter
+
+Editable templates let specialized authors — template authors — create and manage advanced policy configurations for page templates, without needing a developer for every change.
+
+They define editable regions within the template. Content authors can add, remove, or modify components inside those regions, while everything outside stays locked to the branding and structure the template defines.
+
+Editable templates are the recommended way to build new AEM sites for three reasons: they increase author productivity, they improve consistency across every page, and they reduce development costs by letting a huge range of pages come from the same reusable definition.
+
+
+4. Roles: Admin, Developer, Template Author
+
+Building a template is a three-role collaboration, and the exam likes to test who does what:
+
+- Admin — creates the template folder and sets permissions. Requires admin rights, though a developer can often do this too.
+- Developer — handles the technical internals: building the template files and configuring template settings.
+- Template Author — configures how components are used and defines the high-level details of the template, working from information the developer provides.
+
+An administrator must configure the template folder in the Configuration Browser and apply proper permissions before a template author can create anything in it.
+
+
+5. Creating a Template Folder
+
+Template folders live under /conf and hold your project's templates, separate from the built-in global folder.
+
+Best practice: don't use the global folder for your own templates — create a dedicated folder instead. Folders must be created by a user with admin rights, and the default group assigned for template authoring is template-authors.
+
+The required structure under /conf is:
+<your-folder-name> [sling:Folder]
+  settings [sling:Folder]
+    wcm [cq:Page]
+      templates [cq:Page]
+      policies [cq:Page]
+
+Template types and policies are inherited by folder in this order of precedence: the current folder, its parents, /conf/global, /apps, then /libs. If configurations overlap, the closest one to the current folder wins.
+
+
+6. Template Types
+
+A template type is the blueprint for a template — it defines the resource type of the page component and the policy of the root node, which controls which components the template editor allows.
+
+Three tiers of template types exist:
+- Out-of-the-box types, under /libs/settings/wcm/template-types
+- Site-specific types, under /apps/settings/wcm/template-types
+- Custom types, under your own /conf/<folder>/settings/wcm/template-types (recommended) or /conf/global
+
+To create your own template type: build a regular page template first, copy it from the templates node to the template-types node using CRXDE Lite, delete the original, then strip out all cq:template and cq:templateType properties from every jcr:content node in the copy.
+
+
+7. Managing the Template Lifecycle
+
+A template goes through a clear lifecycle before it's usable: create, configure, enable, allow, and publish.
+
+- Enable — makes the template selectable in the Create Page wizard
+- Allow — specifies which content branches can use it, set in Page Properties > Advanced > Template Settings, supporting explicit paths or patterns like /conf/<folder>/settings/wcm/templates/.*
+- Publish — pushes the fully configured template, and optionally its content policies, to the publish environment
+
+Templates also carry properties: an Image (thumbnail), a Title, and an optional Description — all shown in the Templates Console and the Create Page wizard. A modified enabled template shows a warning, since existing pages already reference it.
+
+
+8. Editing a Template — Structure Mode
+
+The Template Editor has three modes, switched from a toolbar selector: Structure, Initial Content, and Layout.
+
+Structure mode is where you add components to the template's fixed skeleton. Components placed here cannot be moved or removed by page authors — if you want authors to add or remove components freely, you need to include a paragraph system in the structure.
+
+You can add components three ways: from the Components browser, via Insert Component on an existing component's toolbar, or by dragging an asset straight from the Assets browser. Each placed component shows a border, a type marker, and a lock-state marker.
+
+Unlocking a component in Structure mode lets you define initial content for it — and once unlocked, its content is hidden from Structure mode and only shown in Initial Content mode.
+
+
+9. Editing a Template — Initial Content and Layout
+
+Initial Content mode defines what appears the moment a page is created from the template — a starting point that page authors can then edit.
+
+Only unlocked components are selectable here. If a container was unlocked in Structure mode, you can add brand-new components to it in Initial Content mode, and those additions can be moved or deleted on the resulting pages.
+
+One detail worth remembering: updating a template's initial content after pages already exist does not retroactively change those pages — only pages created afterward pick up the new initial content.
+
+Layout mode is where you define the template's responsive behavior — how components arrange themselves across different device breakpoints, the same way layout works during page authoring.
+
+
+10. Policies and Properties
+
+Every configurable component — especially layout containers — exposes a Policy and a Properties panel.
+
+Policy defines the design rules: for a layout container, this is mandatory, since it's what determines which components are even allowed inside it.
+
+Properties has three relevant tabs for a layout container:
+- Allowed Components — which components can be placed here, organized into collapsible groups with search
+- Default Components — maps dragged asset types (by MIME type) to the component that should be created automatically
+- Responsive Settings — the number of grid columns for the container
+
+Unlocking and locking controls whether a component's content can be changed in Initial Content mode. Unlocking shows an open-padlock icon; the parent of an unlocked component can no longer be moved, cut, or deleted, preserving the overall structure.
+
+
+11. Experience Fragments
+
+An experience fragment is a grouped set of components that together form a reusable experience — a title, image, description, and call-to-action combined into a teaser, for example.
+
+They live in the Experience Fragments Library, organized by category — teasers, headers, footers, and so on. Once built, you reference an experience fragment from a page or component through the Component Inspector, and AEM creates a new instance that inherits the fragment's properties.
+
+Why they matter:
+- Reusability across owned channels and third-party touchpoints
+- Variation creation, so marketers can adapt one experience for different audiences
+- Live Copy synchronization, so edits to a master fragment propagate to its variations
+- Native social media integration, for posting fragments directly as social content
+
+
+12. Client Libraries — Fundamentals
+
+Clientlibs are AEM's built-in mechanism for delivering CSS and JavaScript. They centralize front-end code, let it be aggregated into single files for performance, and make it reusable across pages and components.
+
+A client library folder is a repository node of type cq:ClientLibraryFolder, stored under /apps. Its key properties:
+- categories — a multi-valued property identifying which category or categories the library belongs to
+- allowProxy — set to true to make the library accessible through the proxy servlet at /etc.clientlibs
+
+Inside the folder you'll find the source JS/CSS files, static resources like icons or fonts, and a js.txt and/or css.txt file listing which source files to merge, using a #base directive to anchor the path.
+
+For AEMaaCS projects specifically, all front-end source lives in the ui.frontend module of the AEM Project Archetype, and the archetype's build process compiles it into the cq:ClientLibraryFolder automatically.
+
+
+13. Client Libraries — Loading, Debugging, and Advanced Features
+
+In AEM as a Cloud Service, client libraries are loaded exclusively through HTL — using the helper template at libs/granite/sightly/templates/clientlib.html with data-sly-use, then calling it with data-sly-call and a categories option:
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
+<sly data-sly-call="${clientLib.all @ categories='apps.aem-learning'}"/>
+
+Older AEM documentation also shows a JSP taglib for this (ui:includeClientLib) — that's a legacy pattern from on-premise AEM. AEMaaCS component development is HTL-only, and current Cloud Service documentation doesn't reference the JSP approach at all, so treat it as historical context, not something to reach for on a cloud project.
+
+A few advanced, still-relevant features:
+- dependencies — a String[] property listing other categories your library needs, ensuring they load first
+- embed — a String[] property that inlines another library's compiled code into yours, useful for exposing an /apps-restricted library through an /etc-based public folder, or for reducing the number of requests on a page
+- Debugging — append ?debugClientLibs=true to a URL to see @import statements revealing exactly what's embedded, instead of the merged output
+- Preprocessors — AEM ships with YUI Compressor as the default minifier for CSS and JS, with Google Closure Compiler available as a pluggable alternative, configurable per-library or system-wide
+
+The dumplibs tool at /libs/granite/ui/content/dumplibs.html is your discovery and test surface — it lists every client library folder and lets you preview the generated output for any category.
+
+
+14. Closing
+
+Templates, components, and client libraries are the three pillars of how content actually gets authored and rendered in AEM — get these right and everything else, from experience fragments to page creation, follows the same patterns.
+
+Key concepts to remember for the exam:
+
+- The three roles — Admin creates the folder, Developer builds the template internals, Template Author configures usage
+- The template lifecycle — enable, allow, publish — and that allow controls where a template can be used, not whether it exists
+- Structure mode content is fixed for page authors unless unlocked or placed in a paragraph system; Initial Content mode is where that unlocked content lives
+- Experience fragments are reusable, support variations, and sync through Live Copy
+- Client libraries load through HTL only in AEMaaCS — the old JSP taglib pattern is legacy, not current practice
+- dependencies pulls in other libraries; embed inlines another library's code into yours

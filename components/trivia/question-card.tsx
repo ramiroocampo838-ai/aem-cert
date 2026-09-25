@@ -66,6 +66,18 @@ const COLOR_CLASSES = {
     nextBtn:
       "bg-cyan-600 hover:bg-cyan-700 text-white dark:bg-cyan-700 dark:hover:bg-cyan-600",
   },
+  amber: {
+    topic: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+    progress: "bg-amber-500",
+    option: {
+      default:
+        "border-border hover:border-amber-400 hover:bg-amber-50 dark:hover:border-amber-500 dark:hover:bg-amber-900/20 hover:scale-[1.01]",
+      selected:
+        "border-amber-500 bg-amber-50 dark:border-amber-400 dark:bg-amber-900/30",
+    },
+    nextBtn:
+      "bg-amber-600 hover:bg-amber-700 text-white dark:bg-amber-700 dark:hover:bg-amber-600",
+  },
 }
 
 interface QuestionCardProps {

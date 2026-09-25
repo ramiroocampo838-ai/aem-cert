@@ -1,4 +1,4 @@
-import { GraduationCap, Presentation, ArrowRight, Cloud, Brain, ShieldCheck, Terminal, Fingerprint } from "lucide-react"
+import { GraduationCap, Presentation, ArrowRight, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
 import Link from "next/link"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
@@ -235,6 +235,46 @@ export default function HomePage() {
               <div className="rounded-lg border border-border bg-background/50 p-3">
                 <div className="text-2xl font-bold text-blue-600">1.5</div>
                 <div className="text-xs text-muted-foreground">Exam Objective</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Templates & Client Libraries Presentation Feature */}
+        <Card className="border-2 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-orange-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600 text-white">
+                  <LayoutTemplate className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Templates & Client Libraries</CardTitle>
+                  <CardDescription>Components, editable templates, experience fragments, and client libraries in AEM</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/templates" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-amber-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-orange-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-yellow-600">2.1-2.4</div>
+                <div className="text-xs text-muted-foreground">Exam Objectives</div>
               </div>
             </div>
           </CardContent>

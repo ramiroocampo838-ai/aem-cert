@@ -1,14 +1,15 @@
 "use client"
 
-import { BookOpen, Cloud, Brain, ShieldCheck, Terminal, Fingerprint } from "lucide-react"
+import { BookOpen, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
 import type { TriviaSection, TriviaSectionConfig } from "@/lib/trivia-types"
 import { INTRO_SECTION_CONFIG } from "@/lib/trivia-intro-questions"
 import { CLOUD_MANAGER_SECTION_CONFIG } from "@/lib/trivia-cloud-manager-questions"
 import { CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-code-quality-questions"
 import { ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
 import { AUTHENTICATION_SECTION_CONFIG } from "@/lib/trivia-authentication-questions"
+import { TEMPLATES_SECTION_CONFIG } from "@/lib/trivia-templates-questions"
 
-const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG, AUTHENTICATION_SECTION_CONFIG]
+const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG, AUTHENTICATION_SECTION_CONFIG, TEMPLATES_SECTION_CONFIG]
 
 const ICON_MAP: Record<string, React.ElementType> = {
   BookOpen,
@@ -16,6 +17,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShieldCheck,
   Terminal,
   Fingerprint,
+  LayoutTemplate,
 }
 
 const COLOR_CLASSES = {
@@ -58,6 +60,14 @@ const COLOR_CLASSES = {
     button:
       "bg-cyan-600 hover:bg-cyan-700 text-white shadow-cyan-200 dark:bg-cyan-700 dark:hover:bg-cyan-600 dark:shadow-cyan-900/50",
     glow: "group-hover:shadow-cyan-200/60 dark:group-hover:shadow-cyan-800/40",
+  },
+  amber: {
+    card: "border-amber-200 hover:border-amber-400 hover:shadow-amber-100 dark:border-amber-800 dark:hover:border-amber-500 dark:hover:shadow-amber-900/40",
+    icon: "bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-400",
+    badge: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+    button:
+      "bg-amber-600 hover:bg-amber-700 text-white shadow-amber-200 dark:bg-amber-700 dark:hover:bg-amber-600 dark:shadow-amber-900/50",
+    glow: "group-hover:shadow-amber-200/60 dark:group-hover:shadow-amber-800/40",
   },
 }
 
