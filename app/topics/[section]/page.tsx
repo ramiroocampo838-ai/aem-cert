@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint } from "lucide-react"
+import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -10,6 +10,7 @@ import { cloudManagerCategories } from "@/lib/concepts/cloud-manager"
 import { codeQualityCategories } from "@/lib/concepts/code-quality"
 import { envSetupCategories } from "@/lib/concepts/env-setup"
 import { authenticationCategories } from "@/lib/concepts/authentication"
+import { templatesCategories } from "@/lib/concepts/templates"
 import type { ConceptCategory } from "@/lib/concepts/types"
 import type { LucideIcon } from "lucide-react"
 
@@ -68,6 +69,15 @@ const SECTIONS: Record<string, SectionMeta> = {
     iconColor: "text-cyan-500",
     iconBg: "bg-cyan-500/10",
     categories: authenticationCategories,
+  },
+  templates: {
+    title: "Templates",
+    subtitle: "Templates & Client Libraries",
+    description: "Components, editable templates, experience fragments, and client libraries in AEM.",
+    icon: LayoutTemplate,
+    iconColor: "text-amber-500",
+    iconBg: "bg-amber-500/10",
+    categories: templatesCategories,
   },
 }
 

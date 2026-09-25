@@ -47,9 +47,9 @@ export interface QuestionResult {
 
 // ─── Available trivia sections ────────────────────────────────────────────────
 
-export type TriviaSection = "intro" | "cloud-manager" | "code-quality" | "env-setup" | "authentication"
+export type TriviaSection = "intro" | "cloud-manager" | "code-quality" | "env-setup" | "authentication" | "templates"
 export type TriviaPhase = "select" | "playing" | "results"
-export type SectionColor = "purple" | "emerald" | "orange" | "blue" | "cyan"
+export type SectionColor = "purple" | "emerald" | "orange" | "blue" | "cyan" | "amber"
 
 export interface TriviaSectionConfig {
   id: TriviaSection

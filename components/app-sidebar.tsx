@@ -21,7 +21,8 @@ import {
   GalleryHorizontal,
   FolderOpen,
   Terminal,
-  Fingerprint
+  Fingerprint,
+  LayoutTemplate
 } from "lucide-react"
 import { useTheme } from "next-themes"
 
@@ -47,6 +48,7 @@ const navItems = [
   { title: "Code Quality Rules", href: "/code-quality", icon: ShieldCheck },
   { title: "Environment Setup", href: "/env-setup", icon: Terminal },
   { title: "Authentication", href: "/authentication", icon: Fingerprint },
+  { title: "Templates", href: "/templates", icon: LayoutTemplate },
   { title: "Trivia", href: "/trivia", icon: Brain },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Resources", href: "/resources", icon: Link2 },
