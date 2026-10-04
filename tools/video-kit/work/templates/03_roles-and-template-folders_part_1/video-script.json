@@ -1,0 +1,80 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Roles & Template Folders (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Roles & Template Folders (Part 1 of 2)",
+      "sub": "Templates · 5 key concepts",
+      "narration": "Templates. Roles & Template Folders (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-015",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What three roles collaborate to create a new template using the Templates Console and Template Editor?",
+      "heading": "Admin, Developer, and Template Author",
+      "body": "Building a template is a three-role collaboration: Admin, Developer, and Template Author. By working together, they create a template that meets the needs of the organization.",
+      "narration": "What three roles collaborate to create a new template using the Templates Console and Template Editor? Admin, Developer, and Template Author. Building a template is a three-role collaboration: Admin, Developer, and Template Author. By working together, they create a template that meets the needs of the organization."
+    },
+    {
+      "id": "02-tmpl-016",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the Admin role responsible for when creating a new template?",
+      "heading": "Creating a new folder for templates, which requires admin rights (though a developer can often also do it)",
+      "body": "The Admin is responsible for creating a new folder for templates. This requires admin rights, but it can often also be done by a developer.",
+      "narration": "What is the Admin role responsible for when creating a new template? Creating a new folder for templates, which requires admin rights (though a developer can often also do it). The Admin is responsible for creating a new folder for templates. This requires admin rights, but it can often also be done by a developer."
+    },
+    {
+      "id": "03-tmpl-017",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is the Developer role responsible for when creating a new template?",
+      "heading": "The technical/internal details — creating template files and configuring template settings",
+      "body": "The Developer is responsible for the technical/internal details of the template, including creating the template files and configuring template settings, and needs experience with the development environment.",
+      "narration": "What is the Developer role responsible for when creating a new template? The technical/internal details — creating template files and configuring template settings. The Developer is responsible for the technical/internal details of the template, including creating the template files and configuring template settings, and needs experience with the development environment."
+    },
+    {
+      "id": "04-tmpl-018",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is the Template Author role responsible for when creating a new template?",
+      "heading": "Configuring the use of components and other high-level details of the template",
+      "body": "The Template Author is responsible for configuring the use of components and other high-level details of the template, requiring some technical knowledge such as using patterns when defining paths, gathered from the developer.",
+      "narration": "What is the Template Author role responsible for when creating a new template? Configuring the use of components and other high-level details of the template. The Template Author is responsible for configuring the use of components and other high-level details of the template, requiring some technical knowledge such as using patterns when defining paths, gathered from the developer."
+    },
+    {
+      "id": "05-tmpl-019",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What must happen before a template author can create a template in a given folder?",
+      "heading": "An administrator must configure a template folder in the Configuration Browser and apply proper permissions first",
+      "body": "An administrator must configure a template folder in the Configurations Browser and apply proper permissions before a template author can create a template in that folder.",
+      "narration": "What must happen before a template author can create a template in a given folder? An administrator must configure a template folder in the Configuration Browser and apply proper permissions first. An administrator must configure a template folder in the Configurations Browser and apply proper permissions before a template author can create a template in that folder."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Admin, Developer, and Template Author",
+        "Creating a new folder for templates, which requires admin rights (though a developer can often also do it)",
+        "The technical/internal details — creating template files and configuring template settings",
+        "Configuring the use of components and other high-level details of the template",
+        "An administrator must configure a template folder in the Configuration Browser and apply proper permissions first"
+      ],
+      "narration": "Quick recap of Roles & Template Folders (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

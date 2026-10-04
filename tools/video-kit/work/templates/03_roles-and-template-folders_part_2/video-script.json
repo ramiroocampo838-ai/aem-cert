@@ -1,0 +1,69 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Roles & Template Folders (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Roles & Template Folders (Part 2 of 2)",
+      "sub": "Templates · 4 key concepts",
+      "narration": "Templates. Roles & Template Folders (Part 2 of 2). In this video we review 4 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-020",
+      "type": "concept",
+      "index": 1,
+      "total": 4,
+      "question": "What is the default group that must be assigned so authors can create templates in a new folder?",
+      "heading": "The template-authors group",
+      "body": "In addition to standard authoring permissions, you need to assign group(s) and define required ACLs for authors to create templates in a new folder — the template-authors group is the default group that needs to be assigned.",
+      "narration": "What is the default group that must be assigned so authors can create templates in a new folder? The template-authors group. In addition to standard authoring permissions, you need to assign group(s) and define required ACLs for authors to create templates in a new folder — the template-authors group is the default group that needs to be assigned."
+    },
+    {
+      "id": "02-tmpl-021",
+      "type": "concept",
+      "index": 2,
+      "total": 4,
+      "question": "What is the global folder in the Templates console?",
+      "heading": "The default folder for templates; it also acts as a fallback if no policies or template types are found in the current folder",
+      "body": "The global folder is the default folder for templates in a standard AEM instance, holding default templates and acting as a fallback if no policies and/or template types are found in the current folder.",
+      "narration": "What is the global folder in the Templates console? The default folder for templates; it also acts as a fallback if no policies or template types are found in the current folder. The global folder is the default folder for templates in a standard AEM instance, holding default templates and acting as a fallback if no policies and/or template types are found in the current folder."
+    },
+    {
+      "id": "03-tmpl-022",
+      "type": "concept",
+      "index": 3,
+      "total": 4,
+      "question": "What is the recommended best practice for organizing customized templates?",
+      "heading": "Create a new folder rather than use the global folder, since folders must be created by a user with admin rights",
+      "body": "It is best practice to create a new folder to hold your customized templates and not use the global folder. Folders must be created by a user with admin rights.",
+      "narration": "What is the recommended best practice for organizing customized templates? Create a new folder rather than use the global folder, since folders must be created by a user with admin rights. It is best practice to create a new folder to hold your customized templates and not use the global folder. Folders must be created by a user with admin rights."
+    },
+    {
+      "id": "04-tmpl-023",
+      "type": "concept",
+      "index": 4,
+      "total": 4,
+      "question": "What is the order of precedence for template types and policies across folders?",
+      "heading": "The current folder, then its parent(s), then /conf/global, then /apps, then /libs",
+      "body": "Template types and policies are inherited across all folders in this order of precedence: the current folder, parent(s) of the current folder, /conf/global, /apps, /libs. If configurations overlap, only the instance closest to the current folder is presented to the user.",
+      "narration": "What is the order of precedence for template types and policies across folders? The current folder, then its parent(s), then /conf/global, then /apps, then /libs. Template types and policies are inherited across all folders in this order of precedence: the current folder, parent(s) of the current folder, /conf/global, /apps, /libs. If configurations overlap, only the instance closest to the current folder is presented to the user."
+    },
+    {
+      "id": "05-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The template-authors group",
+        "The default folder for templates; it also acts as a fallback if no policies or template types are found in the current folder",
+        "Create a new folder rather than use the global folder, since folders must be created by a user with admin rights",
+        "The current folder, then its parent(s), then /conf/global, then /apps, then /libs"
+      ],
+      "narration": "Quick recap of Roles & Template Folders (Part 2 of 2). Take a moment to review these 4 key points.",
+      "hold": 10
+    }
+  ]
+}

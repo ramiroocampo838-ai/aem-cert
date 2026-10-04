@@ -1,0 +1,69 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Experience Fragments (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Experience Fragments (Part 2 of 2)",
+      "sub": "Templates · 4 key concepts",
+      "narration": "Templates. Experience Fragments (Part 2 of 2). In this video we review 4 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-075",
+      "type": "concept",
+      "index": 1,
+      "total": 4,
+      "question": "What reusability benefit do experience fragments provide across channels?",
+      "heading": "Reuse across owned channels (website, mobile app) and third-party touchpoints for consistent, cohesive brand experiences",
+      "body": "Experience fragments can be reused across different channels, whether owned (website, mobile app) or third-party touchpoints, allowing marketers to maintain consistency and deliver a cohesive brand experience.",
+      "narration": "What reusability benefit do experience fragments provide across channels? Reuse across owned channels (website, mobile app) and third-party touchpoints for consistent, cohesive brand experiences. Experience fragments can be reused across different channels, whether owned (website, mobile app) or third-party touchpoints, allowing marketers to maintain consistency and deliver a cohesive brand experience."
+    },
+    {
+      "id": "02-tmpl-076",
+      "type": "concept",
+      "index": 2,
+      "total": 4,
+      "question": "What does 'variation creation' mean for experience fragments?",
+      "heading": "Marketers can customize and adapt content/components within a fragment to suit specific use cases or audience segments",
+      "body": "Variation creation means marketers can create variations of an experience within experience fragments, customizing and adapting the content and components to suit specific use cases or target different audience segments.",
+      "narration": "What does 'variation creation' mean for experience fragments? Marketers can customize and adapt content/components within a fragment to suit specific use cases or audience segments. Variation creation means marketers can create variations of an experience within experience fragments, customizing and adapting the content and components to suit specific use cases or target different audience segments."
+    },
+    {
+      "id": "03-tmpl-077",
+      "type": "concept",
+      "index": 3,
+      "total": 4,
+      "question": "How does AEM's Live Copy feature relate to experience fragment variations?",
+      "heading": "Live Copy synchronizes variations, so updates to a master fragment automatically reflect in its variations",
+      "body": "AEM's Live Copy feature enables the synchronization of variations of experience fragments, ensuring that updates or changes made to a master experience fragment are automatically reflected in its variations, saving time and effort.",
+      "narration": "How does AEM's Live Copy feature relate to experience fragment variations? Live Copy synchronizes variations, so updates to a master fragment automatically reflect in its variations. AEM's Live Copy feature enables the synchronization of variations of experience fragments, ensuring that updates or changes made to a master experience fragment are automatically reflected in its variations, saving time and effort."
+    },
+    {
+      "id": "04-tmpl-078",
+      "type": "concept",
+      "index": 4,
+      "total": 4,
+      "question": "What native integration does AEM provide for posting experience fragments as social content?",
+      "heading": "Out-of-the-box integration with social media platforms like Facebook and Pinterest",
+      "body": "AEM provides out-of-the-box integration with social media platforms like Facebook and Pinterest, letting marketers easily post experience fragments as social media content and extend the reach of experiences to a wider audience.",
+      "narration": "What native integration does AEM provide for posting experience fragments as social content? Out-of-the-box integration with social media platforms like Facebook and Pinterest. AEM provides out-of-the-box integration with social media platforms like Facebook and Pinterest, letting marketers easily post experience fragments as social media content and extend the reach of experiences to a wider audience."
+    },
+    {
+      "id": "05-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Reuse across owned channels (website, mobile app) and third-party touchpoints for consistent, cohesive brand experiences",
+        "Marketers can customize and adapt content/components within a fragment to suit specific use cases or audience segments",
+        "Live Copy synchronizes variations, so updates to a master fragment automatically reflect in its variations",
+        "Out-of-the-box integration with social media platforms like Facebook and Pinterest"
+      ],
+      "narration": "Quick recap of Experience Fragments (Part 2 of 2). Take a moment to review these 4 key points.",
+      "hold": 10
+    }
+  ]
+}

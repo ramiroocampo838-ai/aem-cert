@@ -1,0 +1,113 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Transient, Multi Resource and Stages",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Transient, Multi Resource and Stages",
+      "sub": "Workflows · 8 key concepts",
+      "narration": "Workflows. Transient, Multi Resource and Stages. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-029",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is the key difference between a standard workflow and a transient workflow?",
+      "heading": "A transient workflow does not persist runtime history while it runs",
+      "body": "Section 5 says standard workflows save runtime history while they run, while transient workflows are flagged so that the history is not persisted.",
+      "narration": "What is the key difference between a standard workflow and a transient workflow? A transient workflow does not persist runtime history while it runs. Section 5 says standard workflows save runtime history while they run, while transient workflows are flagged so that the history is not persisted."
+    },
+    {
+      "id": "02-wf-030",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Why would a developer choose a transient workflow?",
+      "heading": "A transient workflow is a performance tuning option that saves time and resources",
+      "body": "The speech calls transient workflows a performance tuning option that saves time and resources and says they fit workflows that run often and do not need history.",
+      "narration": "Why would a developer choose a transient workflow? A transient workflow is a performance tuning option that saves time and resources. The speech calls transient workflows a performance tuning option that saves time and resources and says they fit workflows that run often and do not need history."
+    },
+    {
+      "id": "03-wf-031",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "For what kind of use case were transient workflows introduced?",
+      "heading": "Transient workflows were introduced for loading many assets",
+      "body": "Section 5 explicitly says transient workflows were introduced for loading many assets.",
+      "narration": "For what kind of use case were transient workflows introduced? Transient workflows were introduced for loading many assets. Section 5 explicitly says transient workflows were introduced for loading many assets."
+    },
+    {
+      "id": "04-wf-032",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "When must runtime information still be persisted even if the model is marked transient because of payload processing needs?",
+      "heading": "It must still be persisted when the payload type needs external processing steps, such as video",
+      "body": "The speech lists payload types such as video that need external processing steps as one case where runtime information must still be persisted even for transient workflows.",
+      "narration": "When must runtime information still be persisted even if the model is marked transient because of payload processing needs? It must still be persisted when the payload type needs external processing steps, such as video. The speech lists payload types such as video that need external processing steps as one case where runtime information must still be persisted even for transient workflows."
+    },
+    {
+      "id": "05-wf-033",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What happens to persistence behavior when a transient workflow enters an AND Split?",
+      "heading": "Runtime information must still be persisted when a transient workflow enters an AND Split",
+      "body": "Section 5 names entering an AND Split as a case where runtime information must still be persisted even when the model is transient.",
+      "narration": "What happens to persistence behavior when a transient workflow enters an AND Split? Runtime information must still be persisted when a transient workflow enters an AND Split. Section 5 names entering an AND Split as a case where runtime information must still be persisted even when the model is transient."
+    },
+    {
+      "id": "06-wf-034",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What happens when a transient workflow reaches a participant step?",
+      "heading": "It changes at runtime to non-transient because a person is involved",
+      "body": "The speech says that when a transient workflow reaches a participant step, it changes at runtime to non-transient because a person is involved.",
+      "narration": "What happens when a transient workflow reaches a participant step? It changes at runtime to non-transient because a person is involved. The speech says that when a transient workflow reaches a participant step, it changes at runtime to non-transient because a person is involved."
+    },
+    {
+      "id": "07-wf-035",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Why should a Goto Step not be used in a transient workflow, and what should be used instead?",
+      "heading": "Do not use Goto Step in a transient workflow; use an OR Split instead",
+      "body": "Section 5 says Goto Step creates a Sling job to continue at the target step, which defeats the purpose of being transient and generates an error in the log. It recommends using an OR Split instead.",
+      "narration": "Why should a Goto Step not be used in a transient workflow, and what should be used instead? Do not use Goto Step in a transient workflow; use an OR Split instead. Section 5 says Goto Step creates a Sling job to continue at the target step, which defeats the purpose of being transient and generates an error in the log. It recommends using an OR Split instead."
+    },
+    {
+      "id": "08-wf-036",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does Multi Resource Support do when several resources are selected?",
+      "heading": "Multi Resource Support starts one workflow instance and attaches each selected resource as a package",
+      "body": "The speech says Multi Resource Support starts a single workflow instance when several resources are selected and attaches each resource as a package.",
+      "narration": "What does Multi Resource Support do when several resources are selected? Multi Resource Support starts one workflow instance and attaches each selected resource as a package. The speech says Multi Resource Support starts a single workflow instance when several resources are selected and attaches each resource as a package."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A transient workflow does not persist runtime history while it runs",
+        "A transient workflow is a performance tuning option that saves time and resources",
+        "Transient workflows were introduced for loading many assets",
+        "It must still be persisted when the payload type needs external processing steps, such as video",
+        "Runtime information must still be persisted when a transient workflow enters an AND Split",
+        "It changes at runtime to non-transient because a person is involved",
+        "Do not use Goto Step in a transient workflow; use an OR Split instead",
+        "Multi Resource Support starts one workflow instance and attaches each selected resource as a package"
+      ],
+      "narration": "Quick recap of Transient, Multi Resource and Stages. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

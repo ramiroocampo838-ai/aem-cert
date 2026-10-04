@@ -1,0 +1,113 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "CI/CD Pipelines (Part 2 of 3)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "CI/CD Pipelines (Part 2 of 3)",
+      "sub": "Cloud Manager · 8 key concepts",
+      "narration": "Cloud Manager. CI/CD Pipelines (Part 2 of 3). In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-033",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is SonarQube's role in Cloud Manager pipelines?",
+      "heading": "A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities",
+      "body": "SonarQube is a static code analysis tool integrated into Cloud Manager's quality gates. It analyzes Java source code for bugs, code smells, security hotspots, and test coverage. Cloud Manager enforces custom AEM quality rules on top of standard SonarQube rules — builds fail if thresholds for critical issues are exceeded.",
+      "narration": "What is SonarQube's role in Cloud Manager pipelines? A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities. SonarQube is a static code analysis tool integrated into Cloud Manager's quality gates. It analyzes Java source code for bugs, code smells, security hotspots, and test coverage. Cloud Manager enforces custom AEM quality rules on top of standard SonarQube rules — builds fail if thresholds for critical issues are exceeded."
+    },
+    {
+      "id": "02-cm-034",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What is 'variable override' for pipelines in Cloud Manager?",
+      "heading": "Environment variables set in Cloud Manager that override OSGi config values at runtime",
+      "body": "Cloud Manager supports environment-specific variables (plain text and secrets) that are injected into AEMaaCS OSGi configurations. In .cfg.json files, values reference these variables using the $[env:VARIABLE_NAME] syntax, allowing environment-specific configuration without hardcoding sensitive values.",
+      "narration": "What is 'variable override' for pipelines in Cloud Manager? Environment variables set in Cloud Manager that override OSGi config values at runtime. Cloud Manager supports environment-specific variables (plain text and secrets) that are injected into AEMaaCS OSGi configurations. In .cfg.json files, values reference these variables using the $[env:VARIABLE_NAME] syntax, allowing environment-specific configuration without hardcoding sensitive values."
+    },
+    {
+      "id": "03-cm-045",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What is a Production Pipeline in Cloud Manager?",
+      "heading": "A two-stage pipeline deploying code through Stage testing and then to the Production environment",
+      "body": "A Production Pipeline in Cloud Manager is the primary deployment pipeline that includes: build, code quality analysis, deployment to Stage, testing on Stage, a Go Live approval gate, and finally deployment to Production. It requires Deployment Manager or Business Owner privileges to trigger and is the primary mechanism for releasing code changes into production.",
+      "narration": "What is a Production Pipeline in Cloud Manager? A two-stage pipeline deploying code through Stage testing and then to the Production environment. A Production Pipeline in Cloud Manager is the primary deployment pipeline that includes: build, code quality analysis, deployment to Stage, testing on Stage, a Go Live approval gate, and finally deployment to Production. It requires Deployment Manager or Business Owner privileges to trigger and is the primary mechanism for releasing code changes into production."
+    },
+    {
+      "id": "04-cm-046",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What happens during the Build step of a Cloud Manager pipeline?",
+      "heading": "Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles",
+      "body": "During the Build step, Cloud Manager checks out the configured Git branch and runs a Maven build (mvn clean package). This compiles Java source, runs unit tests, measures code coverage, and produces the deployable artifact — typically a ZIP containing OSGi bundles and content packages. The build artifact is then used by subsequent pipeline steps.",
+      "narration": "What happens during the Build step of a Cloud Manager pipeline? Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles. During the Build step, Cloud Manager checks out the configured Git branch and runs a Maven build (mvn clean package). This compiles Java source, runs unit tests, measures code coverage, and produces the deployable artifact — typically a ZIP containing OSGi bundles and content packages. The build artifact is then used by subsequent pipeline steps."
+    },
+    {
+      "id": "05-cm-047",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What is the Code Quality step in a Cloud Manager pipeline?",
+      "heading": "A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds",
+      "body": "The Code Quality step runs SonarQube static analysis on the build artifact. It evaluates Reliability Rating (bugs), Security Rating (vulnerabilities), Maintainability Rating (code smells), code coverage, and duplication. Results are compared against configured thresholds — failures can be 'Critical' (hard stop) or 'Important' (overridable by Deployment Manager/Business Owner).",
+      "narration": "What is the Code Quality step in a Cloud Manager pipeline? A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds. The Code Quality step runs SonarQube static analysis on the build artifact. It evaluates Reliability Rating (bugs), Security Rating (vulnerabilities), Maintainability Rating (code smells), code coverage, and duplication. Results are compared against configured thresholds — failures can be 'Critical' (hard stop) or 'Important' (overridable by Deployment Manager/Business Owner)."
+    },
+    {
+      "id": "06-cm-048",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What are the three SonarQube metric categories evaluated in Cloud Manager's Code Quality step?",
+      "heading": "Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt)",
+      "body": "Cloud Manager's Code Quality step evaluates three core SonarQube rating dimensions: Reliability Rating (bugs/crashes), Security Rating (vulnerabilities and hotspots), and Maintainability Rating (code smells and technical debt ratio). Each is rated A through E, and Cloud Manager configures thresholds that trigger Critical or Important failures.",
+      "narration": "What are the three SonarQube metric categories evaluated in Cloud Manager's Code Quality step? Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt). Cloud Manager's Code Quality step evaluates three core SonarQube rating dimensions: Reliability Rating (bugs/crashes), Security Rating (vulnerabilities and hotspots), and Maintainability Rating (code smells and technical debt ratio). Each is rated A through E, and Cloud Manager configures thresholds that trigger Critical or Important failures."
+    },
+    {
+      "id": "07-cm-049",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What is the difference between 'Critical' and 'Important' quality gate failures in Cloud Manager?",
+      "heading": "Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner",
+      "body": "Cloud Manager quality gates have two failure levels: Critical failures immediately stop the pipeline and cannot be overridden — the code must be fixed. Important failures pause the pipeline where a user with Deployment Manager or Business Owner role can choose to override and continue (accepting the risk) or reject. This gives teams flexibility without compromising on hard requirements.",
+      "narration": "What is the difference between 'Critical' and 'Important' quality gate failures in Cloud Manager? Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner. Cloud Manager quality gates have two failure levels: Critical failures immediately stop the pipeline and cannot be overridden — the code must be fixed. Important failures pause the pipeline where a user with Deployment Manager or Business Owner role can choose to override and continue (accepting the risk) or reject. This gives teams flexibility without compromising on hard requirements."
+    },
+    {
+      "id": "08-cm-050",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What triggers a Cloud Manager Production Pipeline execution?",
+      "heading": "A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured",
+      "body": "Production Pipelines can be triggered manually, by a Deployment Manager or Business Owner clicking 'Run' in the Cloud Manager UI (or via API); or automatically, when configured in 'Continuous Deployment' mode where pushes to the configured Git branch auto-trigger the pipeline. The Business Owner or Deployment Manager must handle the Go Live Approval gate.",
+      "narration": "What triggers a Cloud Manager Production Pipeline execution? A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured. Production Pipelines can be triggered manually, by a Deployment Manager or Business Owner clicking 'Run' in the Cloud Manager UI (or via API); or automatically, when configured in 'Continuous Deployment' mode where pushes to the configured Git branch auto-trigger the pipeline. The Business Owner or Deployment Manager must handle the Go Live Approval gate."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities",
+        "Environment variables set in Cloud Manager that override OSGi config values at runtime",
+        "A two-stage pipeline deploying code through Stage testing and then to the Production environment",
+        "Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles",
+        "A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds",
+        "Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt)",
+        "Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner",
+        "A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured"
+      ],
+      "narration": "Quick recap of CI/CD Pipelines (Part 2 of 3). Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

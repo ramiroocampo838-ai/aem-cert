@@ -1,0 +1,102 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "OakPAL Content Rules (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "OakPAL Content Rules (Part 1 of 2)",
+      "sub": "Code Quality · 7 key concepts",
+      "narration": "Code Quality. OakPAL Content Rules (Part 1 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-019",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which OakPAL rule (Key: OAKPAL-001, Severity: Critical) requires that content package filter roots be scoped to specific subtrees rather than using a broad parent path like /apps/myproject?",
+      "heading": "Disallow Direct Writes to /apps Without Proper Filtering",
+      "body": "OAKPAL-001 (Severity: Critical) requires scoped filter roots. A filter of <filter root='/apps/myproject'/> deletes everything currently under that path on install and replaces it with the package contents — silently overwriting components, templates, or clientlibs from other packages. The fix is to use specific child paths: /apps/myproject/components, /apps/myproject/templates, /apps/myproject/clientlibs.",
+      "narration": "Which OakPAL rule (Key: OAKPAL-001, Severity: Critical) requires that content package filter roots be scoped to specific subtrees rather than using a broad parent path like /apps/myproject? Disallow Direct Writes to /apps Without Proper Filtering. OAKPAL-001 (Severity: Critical) requires scoped filter roots. A filter of <filter root='/apps/myproject'/> deletes everything currently under that path on install and replaces it with the package contents — silently overwriting components, templates, or clientlibs from other packages. The fix is to use specific child paths: /apps/myproject/components, /apps/myproject/templates, /apps/myproject/clientlibs."
+    },
+    {
+      "id": "02-cq-020",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What happens at install time when a content package uses the broad filter root '/apps/myproject' instead of scoped child paths?",
+      "heading": "Everything currently under /apps/myproject is deleted and replaced with the package contents",
+      "body": "Content package installation is destructive for covered filter paths: when the filter root is /apps/myproject, the Package Manager first removes all existing JCR nodes under that path and then imports the package content. This means any component, template, or configuration committed by another team that is not in the current package will be permanently deleted on install.",
+      "narration": "What happens at install time when a content package uses the broad filter root '/apps/myproject' instead of scoped child paths? Everything currently under /apps/myproject is deleted and replaced with the package contents. Content package installation is destructive for covered filter paths: when the filter root is /apps/myproject, the Package Manager first removes all existing JCR nodes under that path and then imports the package content. This means any component, template, or configuration committed by another team that is not in the current package will be permanently deleted on install."
+    },
+    {
+      "id": "03-cq-021",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which OakPAL rule (Key: OAKPAL-002, Severity: Blocker) absolutely prohibits content packages from including any filter targeting paths under /libs?",
+      "heading": "Enforce Immutable Content Structure",
+      "body": "OAKPAL-002 (Severity: Blocker) protects the /libs area. In AEM, /libs is the immutable layer that contains all out-of-the-box components, templates, and configurations. Any modification to /libs will be overwritten by the next AEM upgrade or AEMaaCS continuous update. The correct approach is the overlay pattern: copy the resource to the same relative path under /apps, where it takes precedence over /libs via the Sling Resource Merger.",
+      "narration": "Which OakPAL rule (Key: OAKPAL-002, Severity: Blocker) absolutely prohibits content packages from including any filter targeting paths under /libs? Enforce Immutable Content Structure. OAKPAL-002 (Severity: Blocker) protects the /libs area. In AEM, /libs is the immutable layer that contains all out-of-the-box components, templates, and configurations. Any modification to /libs will be overwritten by the next AEM upgrade or AEMaaCS continuous update. The correct approach is the overlay pattern: copy the resource to the same relative path under /apps, where it takes precedence over /libs via the Sling Resource Merger."
+    },
+    {
+      "id": "04-cq-022",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the correct AEM pattern for customizing an out-of-the-box component that lives under /libs, without modifying /libs directly?",
+      "heading": "The overlay pattern — copy the resource to the same relative path under /apps",
+      "body": "The overlay pattern is the standard AEM mechanism for customizing /libs without modifying it. You copy the file or node from /libs to the exact same relative path under /apps (e.g., /libs/wcm/foundation/components/text → /apps/wcm/foundation/components/text). The Sling Resource Merger resolves /apps before /libs, so the overlay takes precedence. AEM upgrades update /libs but never touch /apps, preserving your customizations.",
+      "narration": "What is the correct AEM pattern for customizing an out-of-the-box component that lives under /libs, without modifying /libs directly? The overlay pattern — copy the resource to the same relative path under /apps. The overlay pattern is the standard AEM mechanism for customizing /libs without modifying it. You copy the file or node from /libs to the exact same relative path under /apps (e.g., /libs/wcm/foundation/components/text → /apps/wcm/foundation/components/text). The Sling Resource Merger resolves /apps before /libs, so the overlay takes precedence. AEM upgrades update /libs but never touch /apps, preserving your customizations."
+    },
+    {
+      "id": "05-cq-023",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which OakPAL rule requires that every JCR node in a content package explicitly declares its jcr:primaryType property?",
+      "heading": "oakpal:RequiredPrimaryType",
+      "body": "oakpal:RequiredPrimaryType (Severity: Error) requires that every JCR node explicitly declares jcr:primaryType. Nodes without a primary type may default to nt:base or cause import failures. Common correct types include: cq:Page for page nodes, cq:Component for component definitions, nt:unstructured for generic content nodes, sling:Folder for folder structures, and cq:ClientLibraryFolder for client libraries.",
+      "narration": "Which OakPAL rule requires that every JCR node in a content package explicitly declares its jcr:primaryType property? oakpal:RequiredPrimaryType. oakpal:RequiredPrimaryType (Severity: Error) requires that every JCR node explicitly declares jcr:primaryType. Nodes without a primary type may default to nt:base or cause import failures. Common correct types include: cq:Page for page nodes, cq:Component for component definitions, nt:unstructured for generic content nodes, sling:Folder for folder structures, and cq:ClientLibraryFolder for client libraries."
+    },
+    {
+      "id": "06-cq-024",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which OakPAL rule (oakpal:ImmutableApps) is violated when a content package stores page title data or runtime content values under /apps instead of /content?",
+      "heading": "No Mutable Properties in /apps",
+      "body": "oakpal:ImmutableApps (Severity: Warning) enforces the separation between /apps (code and structural definitions) and /content (mutable content). Under /apps, only component definitions (cq:Component), template structures, clientlibs (cq:ClientLibraryFolder), and OSGi configurations are appropriate. Content pages, user-generated data, and runtime values belong in /content. Mixing them makes deployments unpredictable and breaks the content/code separation.",
+      "narration": "Which OakPAL rule (oakpal:ImmutableApps) is violated when a content package stores page title data or runtime content values under /apps instead of /content? No Mutable Properties in /apps. oakpal:ImmutableApps (Severity: Warning) enforces the separation between /apps (code and structural definitions) and /content (mutable content). Under /apps, only component definitions (cq:Component), template structures, clientlibs (cq:ClientLibraryFolder), and OSGi configurations are appropriate. Content pages, user-generated data, and runtime values belong in /content. Mixing them makes deployments unpredictable and breaks the content/code separation."
+    },
+    {
+      "id": "07-cq-025",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What problem occurs when a content package has two filter roots where one is an ancestor of the other, violating OAKPAL-005?",
+      "heading": "The filters overlap — on install, the merge order is undefined and one filter may delete what the other deployed",
+      "body": "OAKPAL-005 (Severity: Major) flags overlapping filter roots. If filter A covers /apps/myproject and filter B covers /apps/myproject/components, B is fully contained within A's scope. On install, the order of application is undefined — one filter may completely delete what the other deployed. Fix: use non-overlapping sibling paths: /apps/myproject/components, /apps/myproject/templates, /apps/myproject/clientlibs.",
+      "narration": "What problem occurs when a content package has two filter roots where one is an ancestor of the other, violating OAKPAL-005? The filters overlap — on install, the merge order is undefined and one filter may delete what the other deployed. OAKPAL-005 (Severity: Major) flags overlapping filter roots. If filter A covers /apps/myproject and filter B covers /apps/myproject/components, B is fully contained within A's scope. On install, the order of application is undefined — one filter may completely delete what the other deployed. Fix: use non-overlapping sibling paths: /apps/myproject/components, /apps/myproject/templates, /apps/myproject/clientlibs."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Disallow Direct Writes to /apps Without Proper Filtering",
+        "Everything currently under /apps/myproject is deleted and replaced with the package contents",
+        "Enforce Immutable Content Structure",
+        "The overlay pattern — copy the resource to the same relative path under /apps",
+        "oakpal:RequiredPrimaryType",
+        "No Mutable Properties in /apps",
+        "The filters overlap — on install, the merge order is undefined and one filter may delete what the other deployed"
+      ],
+      "narration": "Quick recap of OakPAL Content Rules (Part 1 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

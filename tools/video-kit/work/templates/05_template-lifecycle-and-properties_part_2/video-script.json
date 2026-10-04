@@ -1,0 +1,69 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Template Lifecycle & Properties (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Template Lifecycle & Properties (Part 2 of 2)",
+      "sub": "Templates · 4 key concepts",
+      "narration": "Templates. Template Lifecycle & Properties (Part 2 of 2). In this video we review 4 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-036",
+      "type": "concept",
+      "index": 1,
+      "total": 4,
+      "question": "What are the three main properties a template can have?",
+      "heading": "Image (thumbnail), Title, and Description",
+      "body": "A template can have an Image property (thumbnail shown in the Templates Console and Create Page wizard), a Title (used to identify the template), and an optional Description providing more information about the template's use.",
+      "narration": "What are the three main properties a template can have? Image (thumbnail), Title, and Description. A template can have an Image property (thumbnail shown in the Templates Console and Create Page wizard), a Title (used to identify the template), and an optional Description providing more information about the template's use."
+    },
+    {
+      "id": "02-tmpl-037",
+      "type": "concept",
+      "index": 2,
+      "total": 4,
+      "question": "What are the possible statuses shown for a template in the Templates Console?",
+      "heading": "Draft, enabled, or disabled",
+      "body": "The status of a template — draft, enabled, or disabled — is indicated in the console, giving template authors a quick view of whether a template is ready to be used.",
+      "narration": "What are the possible statuses shown for a template in the Templates Console? Draft, enabled, or disabled. The status of a template — draft, enabled, or disabled — is indicated in the console, giving template authors a quick view of whether a template is ready to be used."
+    },
+    {
+      "id": "03-tmpl-038",
+      "type": "concept",
+      "index": 3,
+      "total": 4,
+      "question": "What are the two ways to set a template's thumbnail image?",
+      "heading": "Uploading a custom image, or generating one automatically from the template's content",
+      "body": "You can define a template's thumbnail image either by uploading a custom image file, or by having it generated automatically from the template's content using the Generate Preview option.",
+      "narration": "What are the two ways to set a template's thumbnail image? Uploading a custom image, or generating one automatically from the template's content. You can define a template's thumbnail image either by uploading a custom image file, or by having it generated automatically from the template's content using the Generate Preview option."
+    },
+    {
+      "id": "04-tmpl-039",
+      "type": "concept",
+      "index": 4,
+      "total": 4,
+      "question": "What happens when you modify an already-enabled template?",
+      "heading": "A warning is displayed, reminding the author that changes may impact pages already referencing the template",
+      "body": "When an enabled template is modified further, a warning message is displayed as a reminder that any changes made to the template may impact the pages already referencing it.",
+      "narration": "What happens when you modify an already-enabled template? A warning is displayed, reminding the author that changes may impact pages already referencing the template. When an enabled template is modified further, a warning message is displayed as a reminder that any changes made to the template may impact the pages already referencing it."
+    },
+    {
+      "id": "05-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Image (thumbnail), Title, and Description",
+        "Draft, enabled, or disabled",
+        "Uploading a custom image, or generating one automatically from the template's content",
+        "A warning is displayed, reminding the author that changes may impact pages already referencing the template"
+      ],
+      "narration": "Quick recap of Template Lifecycle & Properties (Part 2 of 2). Take a moment to review these 4 key points.",
+      "hold": 10
+    }
+  ]
+}

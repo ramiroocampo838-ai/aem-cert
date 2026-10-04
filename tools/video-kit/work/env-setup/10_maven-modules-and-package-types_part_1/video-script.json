@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Maven Modules & Package Types (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Maven Modules & Package Types (Part 1 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. Maven Modules & Package Types (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-079",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "Which Maven module contains the Java OSGi bundle (services, models, servlets)?",
+      "heading": "core",
+      "body": "The `core` module is the Java Maven module that compiles into an OSGi bundle (`.jar`). It contains Java code: OSGi services, Sling Models, servlets, workflow steps, and scheduled jobs.",
+      "narration": "Which Maven module contains the Java OSGi bundle (services, models, servlets)? core. The `core` module is the Java Maven module that compiles into an OSGi bundle (`.jar`). It contains Java code: OSGi services, Sling Models, servlets, workflow steps, and scheduled jobs."
+    },
+    {
+      "id": "02-env-080",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the package type of the ui.apps module?",
+      "heading": "application",
+      "body": "The `ui.apps` module has the package type `application`. This designates it as a code package that targets immutable repository paths (`/apps`). AEMaaCS uses the package type to enforce deployment rules.",
+      "narration": "What is the package type of the ui.apps module? application. The `ui.apps` module has the package type `application`. This designates it as a code package that targets immutable repository paths (`/apps`). AEMaaCS uses the package type to enforce deployment rules."
+    },
+    {
+      "id": "03-env-081",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is the package type of the ui.content module?",
+      "heading": "content",
+      "body": "The `ui.content` module has the package type `content`. This designates it as a content package that targets mutable repository paths (`/content`, `/conf`). It can be modified at runtime by authors.",
+      "narration": "What is the package type of the ui.content module? content. The `ui.content` module has the package type `content`. This designates it as a content package that targets mutable repository paths (`/content`, `/conf`). It can be modified at runtime by authors."
+    },
+    {
+      "id": "04-env-082",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is the package type of the 'all' module?",
+      "heading": "container",
+      "body": "The `all` module has the package type `container`. As a container package, it embeds all other modules (core bundle, ui.apps, ui.content, ui.config) and is the single artifact deployed by Cloud Manager.",
+      "narration": "What is the package type of the 'all' module? container. The `all` module has the package type `container`. As a container package, it embeds all other modules (core bundle, ui.apps, ui.content, ui.config) and is the single artifact deployed by Cloud Manager."
+    },
+    {
+      "id": "05-env-083",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is the role of the 'all' module in an AEM Maven project?",
+      "heading": "It is the container package and the single deployment artifact used by Cloud Manager",
+      "body": "The `all` module is the container package that embeds every other module (core OSGi bundle, ui.apps, ui.content, ui.config). Cloud Manager deploys only the `all` package — all other packages must have `cloudManagerTarget` set to `none`.",
+      "narration": "What is the role of the 'all' module in an AEM Maven project? It is the container package and the single deployment artifact used by Cloud Manager. The `all` module is the container package that embeds every other module (core OSGi bundle, ui.apps, ui.content, ui.config). Cloud Manager deploys only the `all` package — all other packages must have `cloudManagerTarget` set to `none`."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "core",
+        "application",
+        "content",
+        "container",
+        "It is the container package and the single deployment artifact used by Cloud Manager"
+      ],
+      "narration": "Quick recap of Maven Modules & Package Types (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

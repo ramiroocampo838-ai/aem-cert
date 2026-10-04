@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "dispatcher.any, Farms and Includes",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "dispatcher.any, Farms and Includes",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. dispatcher.any, Farms and Includes. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-009",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the default text file name that stores the Dispatcher configuration?",
+      "heading": "The default Dispatcher configuration file is named dispatcher.any",
+      "body": "Section 2 says the Dispatcher configuration is stored by default in a text file named dispatcher.any.",
+      "narration": "What is the default text file name that stores the Dispatcher configuration? The default Dispatcher configuration file is named dispatcher.any. Section 2 says the Dispatcher configuration is stored by default in a text file named dispatcher.any."
+    },
+    {
+      "id": "02-disp-010",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How are Dispatcher property names written in dispatcher.any?",
+      "heading": "Dispatcher property names are prefixed with a forward slash",
+      "body": "Section 2 says property names are prefixed with a forward slash.",
+      "narration": "How are Dispatcher property names written in dispatcher.any? Dispatcher property names are prefixed with a forward slash. Section 2 says property names are prefixed with a forward slash."
+    },
+    {
+      "id": "03-disp-011",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How are multi-valued properties represented in dispatcher.any?",
+      "heading": "Multi-valued properties enclose their child items in braces",
+      "body": "Section 2 explains that multi-valued properties enclose their child items in braces.",
+      "narration": "How are multi-valued properties represented in dispatcher.any? Multi-valued properties enclose their child items in braces. Section 2 explains that multi-valued properties enclose their child items in braces."
+    },
+    {
+      "id": "04-disp-012",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which two top-level properties does the speech name in dispatcher.any?",
+      "heading": "The top-level properties named are /name and /farms",
+      "body": "Section 2 says the top-level properties are /name and /farms.",
+      "narration": "Which two top-level properties does the speech name in dispatcher.any? The top-level properties named are /name and /farms. Section 2 says the top-level properties are /name and /farms."
+    },
+    {
+      "id": "05-disp-013",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "When should you use a single farm instead of several farms?",
+      "heading": "Use a single farm when all pages should be handled the same way",
+      "body": "Section 2 says to use a single farm when all pages should be handled the same way.",
+      "narration": "When should you use a single farm instead of several farms? Use a single farm when all pages should be handled the same way. Section 2 says to use a single farm when all pages should be handled the same way."
+    },
+    {
+      "id": "06-disp-014",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Why would you use several farms in a Dispatcher configuration?",
+      "heading": "Use several farms when different sites or URL areas need different behavior",
+      "body": "Section 2 says to use several farms when different sites or areas need different behavior.",
+      "narration": "Why would you use several farms in a Dispatcher configuration? Use several farms when different sites or URL areas need different behavior. Section 2 says to use several farms when different sites or areas need different behavior."
+    },
+    {
+      "id": "07-disp-015",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How can a large Dispatcher configuration be split and made environment-aware?",
+      "heading": "Use $include to split files, wildcards such as farm_*.any to include ranges, and ${variable_name} for environment variables",
+      "body": "Section 2 explains that $include splits a large configuration, wildcards can include a range of files, and string values can use environment variables like ${variable_name}.",
+      "narration": "How can a large Dispatcher configuration be split and made environment-aware? Use $include to split files, wildcards such as farm_*.any to include ranges, and ${variable_name} for environment variables. Section 2 explains that $include splits a large configuration, wildcards can include a range of files, and string values can use environment variables like ${variable_name}."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The default Dispatcher configuration file is named dispatcher.any",
+        "Dispatcher property names are prefixed with a forward slash",
+        "Multi-valued properties enclose their child items in braces",
+        "The top-level properties named are /name and /farms",
+        "Use a single farm when all pages should be handled the same way",
+        "Use several farms when different sites or URL areas need different behavior",
+        "Use $include to split files, wildcards such as farm_*.any to include ranges, and ${variable_name} for environment variables"
+      ],
+      "narration": "Quick recap of dispatcher.any, Farms and Includes. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

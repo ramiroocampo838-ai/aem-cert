@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Exporting Models as JSON",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Exporting Models as JSON",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Exporting Models as JSON. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-073",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "How do you annotate a Sling Model so it can be exported as JSON?",
+      "heading": "Add @Exporter(name = \"jackson\", extensions = \"json\")",
+      "body": "The speech says Sling Models can be exported as JSON with the Sling Model Exporter by annotating the model with @Exporter(name = \"jackson\", extensions = \"json\").",
+      "narration": "How do you annotate a Sling Model so it can be exported as JSON? Add @Exporter(name = \"jackson\", extensions = \"json\"). The speech says Sling Models can be exported as JSON with the Sling Model Exporter by annotating the model with @Exporter(name = \"jackson\", extensions = \"json\")."
+    },
+    {
+      "id": "02-comp-074",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What request pattern returns the serialized Sling Model JSON for a resource?",
+      "heading": "Request the resource with the .model.json selector and extension",
+      "body": "The speech says requesting the resource with the .model.json selector and extension returns the serialized model, such as /content/wknd/page/jcr:content/root/title.model.json.",
+      "narration": "What request pattern returns the serialized Sling Model JSON for a resource? Request the resource with the .model.json selector and extension. The speech says requesting the resource with the .model.json selector and extension returns the serialized model, such as /content/wknd/page/jcr:content/root/title.model.json."
+    },
+    {
+      "id": "03-comp-075",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Why do Core Components implement ComponentExporter and ContainerExporter?",
+      "heading": "So components can be exported as part of the page JSON, which underpins SPA Editor and headless consumption",
+      "body": "The speech says Core Components implement ComponentExporter and ContainerExporter so components can be exported as part of the page JSON. It adds that this is the base of the SPA editor and headless consumption of component content.",
+      "narration": "Why do Core Components implement ComponentExporter and ContainerExporter? So components can be exported as part of the page JSON, which underpins SPA Editor and headless consumption. The speech says Core Components implement ComponentExporter and ContainerExporter so components can be exported as part of the page JSON. It adds that this is the base of the SPA editor and headless consumption of component content."
+    },
+    {
+      "id": "04-comp-076",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which library does the Sling Model Exporter use according to the speech?",
+      "heading": "Jackson",
+      "body": "The speech explicitly says the exporter uses the Jackson library.",
+      "narration": "Which library does the Sling Model Exporter use according to the speech? Jackson. The speech explicitly says the exporter uses the Jackson library."
+    },
+    {
+      "id": "05-comp-077",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How do you exclude or rename properties in exported model JSON?",
+      "heading": "Use @JsonIgnore to exclude properties and @JsonProperty to rename them",
+      "body": "The speech says the exporter uses Jackson and specifically calls out @JsonIgnore for excluding properties and @JsonProperty for renaming them.",
+      "narration": "How do you exclude or rename properties in exported model JSON? Use @JsonIgnore to exclude properties and @JsonProperty to rename them. The speech says the exporter uses Jackson and specifically calls out @JsonIgnore for excluding properties and @JsonProperty for renaming them."
+    },
+    {
+      "id": "06-comp-078",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario where a model is exported as part of the page model, what else does the speech say the model needs besides the exporter annotation?",
+      "heading": "It needs the resourceType parameter and a ComponentExporter implementation",
+      "body": "The speech says to remember that the model needs the resourceType parameter and the ComponentExporter implementation when it is exported with the page model.",
+      "narration": "Given a scenario where a model is exported as part of the page model, what else does the speech say the model needs besides the exporter annotation? It needs the resourceType parameter and a ComponentExporter implementation. The speech says to remember that the model needs the resourceType parameter and the ComponentExporter implementation when it is exported with the page model."
+    },
+    {
+      "id": "07-comp-079",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When should you add an exporter to a Sling Model?",
+      "heading": "Only when the data is consumed as JSON",
+      "body": "The speech clearly says a model that is only for HTL needs no exporter, and that you add the exporter only when the data is consumed as JSON.",
+      "narration": "When should you add an exporter to a Sling Model? Only when the data is consumed as JSON. The speech clearly says a model that is only for HTL needs no exporter, and that you add the exporter only when the data is consumed as JSON."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Add @Exporter(name = \"jackson\", extensions = \"json\")",
+        "Request the resource with the .model.json selector and extension",
+        "So components can be exported as part of the page JSON, which underpins SPA Editor and headless consumption",
+        "Jackson",
+        "Use @JsonIgnore to exclude properties and @JsonProperty to rename them",
+        "It needs the resourceType parameter and a ComponentExporter implementation",
+        "Only when the data is consumed as JSON"
+      ],
+      "narration": "Quick recap of Exporting Models as JSON. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

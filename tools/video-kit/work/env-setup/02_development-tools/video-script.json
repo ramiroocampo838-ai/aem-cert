@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Development Tools",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Development Tools",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. Development Tools. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-009",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "Which Java version is recommended for local AEM development?",
+      "heading": "Java JDK 21",
+      "body": "Java JDK 21 is the recommended version for AEM development. AEM is a Java application, so the correct JDK must be installed before starting local development.",
+      "narration": "Which Java version is recommended for local AEM development? Java JDK 21. Java JDK 21 is the recommended version for AEM development. AEM is a Java application, so the correct JDK must be installed before starting local development."
+    },
+    {
+      "id": "02-env-010",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What command verifies that Java is correctly installed on your system?",
+      "heading": "java -version",
+      "body": "After installing Java JDK, you verify the installation with the command `java -version`. This prints the installed JDK version to confirm it is correctly set up.",
+      "narration": "What command verifies that Java is correctly installed on your system? java -version. After installing Java JDK, you verify the installation with the command `java -version`. This prints the installed JDK version to confirm it is correctly set up."
+    },
+    {
+      "id": "03-env-011",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What is the build tool used for all AEM projects?",
+      "heading": "Apache Maven",
+      "body": "Apache Maven is the build tool for all AEM projects. It compiles Java code, runs tests, and packages the code into OSGi bundles and content packages for deployment.",
+      "narration": "What is the build tool used for all AEM projects? Apache Maven. Apache Maven is the build tool for all AEM projects. It compiles Java code, runs tests, and packages the code into OSGi bundles and content packages for deployment."
+    },
+    {
+      "id": "04-env-012",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What command verifies that Apache Maven is correctly installed?",
+      "heading": "mvn -v",
+      "body": "You verify Maven is installed correctly with `mvn -v`, which prints the Maven version, Java version, and OS information. This confirms the Maven installation is working.",
+      "narration": "What command verifies that Apache Maven is correctly installed? mvn -v. You verify Maven is installed correctly with `mvn -v`, which prints the Maven version, Java version, and OS information. This confirms the Maven installation is working."
+    },
+    {
+      "id": "05-env-013",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Why is Node.js required in the AEM local development environment?",
+      "heading": "For front-end tooling and the Adobe I/O CLI",
+      "body": "Node.js is required for front-end tooling (like webpack, Sass compilation) and for the Adobe I/O CLI (`aio`), which is installed as a global npm package. It is not used to run AEM itself.",
+      "narration": "Why is Node.js required in the AEM local development environment? For front-end tooling and the Adobe I/O CLI. Node.js is required for front-end tooling (like webpack, Sass compilation) and for the Adobe I/O CLI (`aio`), which is installed as a global npm package. It is not used to run AEM itself."
+    },
+    {
+      "id": "06-env-014",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What command verifies that Node.js is correctly installed?",
+      "heading": "node --version",
+      "body": "After installing Node.js, you verify it with `node --version`, which prints the installed Node.js version number. This confirms Node.js is available in your PATH.",
+      "narration": "What command verifies that Node.js is correctly installed? node --version. After installing Node.js, you verify it with `node --version`, which prints the installed Node.js version number. This confirms Node.js is available in your PATH."
+    },
+    {
+      "id": "07-env-015",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Which of the following is one of the four core tools required for local AEM development?",
+      "heading": "Git — for source control",
+      "body": "The four core tools required for local AEM development are: Java JDK 21, Node.js, Apache Maven, and Git. Git is used for source control of the AEM project.",
+      "narration": "Which of the following is one of the four core tools required for local AEM development? Git — for source control. The four core tools required for local AEM development are: Java JDK 21, Node.js, Apache Maven, and Git. Git is used for source control of the AEM project."
+    },
+    {
+      "id": "08-env-016",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What is the recommended practice after installing each development tool for AEM?",
+      "heading": "Verify the installation with a version command",
+      "body": "After installing each tool (Java, Maven, Node.js, Git), you should always verify with a version command: `java -version`, `mvn -v`, `node --version`, and `git --version`. This confirms the tool is installed and on the PATH.",
+      "narration": "What is the recommended practice after installing each development tool for AEM? Verify the installation with a version command. After installing each tool (Java, Maven, Node.js, Git), you should always verify with a version command: `java -version`, `mvn -v`, `node --version`, and `git --version`. This confirms the tool is installed and on the PATH."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Java JDK 21",
+        "java -version",
+        "Apache Maven",
+        "mvn -v",
+        "For front-end tooling and the Adobe I/O CLI",
+        "node --version",
+        "Git — for source control",
+        "Verify the installation with a version command"
+      ],
+      "narration": "Quick recap of Development Tools. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

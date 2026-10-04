@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Content Fragments Concepts",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Content Fragments Concepts",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Content Fragments Concepts. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-073",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What best describes a Content Fragment?",
+      "heading": "A Content Fragment is channel-neutral structured content independent of a page",
+      "body": "The speech defines Content Fragments as channel-neutral, structured content that is managed as assets and is independent of any page.",
+      "narration": "What best describes a Content Fragment? A Content Fragment is channel-neutral structured content independent of a page. The speech defines Content Fragments as channel-neutral, structured content that is managed as assets and is independent of any page."
+    },
+    {
+      "id": "02-wf-074",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What must exist before authors can create a Content Fragment?",
+      "heading": "A Content Fragment Model must exist first",
+      "body": "The speech says that to create a fragment you need a Content Fragment Model, which is enabled with the Configuration Browser and created in the Content Fragment console.",
+      "narration": "What must exist before authors can create a Content Fragment? A Content Fragment Model must exist first. The speech says that to create a fragment you need a Content Fragment Model, which is enabled with the Configuration Browser and created in the Content Fragment console."
+    },
+    {
+      "id": "03-wf-075",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the minimum required structure for a Content Fragment Model according to the speech?",
+      "heading": "A Content Fragment Model requires a title and one data element",
+      "body": "The speech says a Content Fragment Model defines the structure and that a model requires a title and one data element.",
+      "narration": "What is the minimum required structure for a Content Fragment Model according to the speech? A Content Fragment Model requires a title and one data element. The speech says a Content Fragment Model defines the structure and that a model requires a title and one data element."
+    },
+    {
+      "id": "04-wf-076",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why can't authors change a fragment's structure while authoring?",
+      "heading": "Authors cannot change the structure because the Content Fragment Model defines it",
+      "body": "The speech says the model defines the structure of a fragment and that authors cannot change the structure while authoring.",
+      "narration": "Why can't authors change a fragment's structure while authoring? Authors cannot change the structure because the Content Fragment Model defines it. The speech says the model defines the structure of a fragment and that authors cannot change the structure while authoring."
+    },
+    {
+      "id": "05-wf-077",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What are the main parts of a Content Fragment?",
+      "heading": "A Content Fragment is made of elements, paragraphs, and metadata",
+      "body": "The speech says a fragment is made of elements, paragraphs, and metadata.",
+      "narration": "What are the main parts of a Content Fragment? A Content Fragment is made of elements, paragraphs, and metadata. The speech says a fragment is made of elements, paragraphs, and metadata."
+    },
+    {
+      "id": "06-wf-078",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is true about the Main variation of a Content Fragment?",
+      "heading": "Main is the basis of all variations and cannot be deleted",
+      "body": "The speech says every fragment has one Main, that Main is the basis of all variations, and that Main cannot be deleted. In the Assets console editor, Main is labeled Master.",
+      "narration": "What is true about the Main variation of a Content Fragment? Main is the basis of all variations and cannot be deleted. The speech says every fragment has one Main, that Main is the basis of all variations, and that Main cannot be deleted. In the Assets console editor, Main is labeled Master."
+    },
+    {
+      "id": "07-wf-079",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How can images be used with a Content Fragment according to the speech?",
+      "heading": "Images can be used as a Content Reference or inside a Multi line text field",
+      "body": "The speech says images can be used with a fragment as a Content Reference, or inside a Multi line text field.",
+      "narration": "How can images be used with a Content Fragment according to the speech? Images can be used as a Content Reference or inside a Multi line text field. The speech says images can be used with a fragment as a Content Reference, or inside a Multi line text field."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A Content Fragment is channel-neutral structured content independent of a page",
+        "A Content Fragment Model must exist first",
+        "A Content Fragment Model requires a title and one data element",
+        "Authors cannot change the structure because the Content Fragment Model defines it",
+        "A Content Fragment is made of elements, paragraphs, and metadata",
+        "Main is the basis of all variations and cannot be deleted",
+        "Images can be used as a Content Reference or inside a Multi line text field"
+      ],
+      "narration": "Quick recap of Content Fragments Concepts. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

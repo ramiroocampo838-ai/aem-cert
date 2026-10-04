@@ -1,0 +1,112 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "AEM Overview",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "AEM Overview",
+      "sub": "Intro · 8 key concepts",
+      "narration": "Intro. AEM Overview. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-001",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What does AEM stand for in the Adobe product suite?",
+      "heading": "Adobe Experience Manager",
+      "body": "AEM stands for Adobe Experience Manager. It is a comprehensive content management solution built on open standards (JCR, Sling, OSGi) and is part of the Adobe Experience Cloud suite of products.",
+      "narration": "What does AEM stand for in the Adobe product suite? Adobe Experience Manager. AEM stands for Adobe Experience Manager. It is a comprehensive content management solution built on open standards (JCR, Sling, OSGi) and is part of the Adobe Experience Cloud suite of products."
+    },
+    {
+      "id": "02-intro-002",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Which of the following best describes AEM's primary purpose?",
+      "heading": "A content management system for creating, managing, and delivering digital experiences",
+      "body": "AEM is a comprehensive content management system (CMS) designed to help organizations create, manage, and deliver digital experiences across websites, mobile apps, and social media platforms.",
+      "narration": "Which of the following best describes AEM's primary purpose? A content management system for creating, managing, and delivering digital experiences. AEM is a comprehensive content management system (CMS) designed to help organizations create, manage, and deliver digital experiences across websites, mobile apps, and social media platforms."
+    },
+    {
+      "id": "03-intro-003",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Which Adobe product suite does AEM belong to?",
+      "heading": "Adobe Experience Cloud",
+      "body": "AEM is part of the Adobe Experience Cloud suite, which includes products like Adobe Analytics, Adobe Target, Adobe Campaign, and Adobe Commerce, all designed to power digital marketing and customer experience.",
+      "narration": "Which Adobe product suite does AEM belong to? Adobe Experience Cloud. AEM is part of the Adobe Experience Cloud suite, which includes products like Adobe Analytics, Adobe Target, Adobe Campaign, and Adobe Commerce, all designed to power digital marketing and customer experience."
+    },
+    {
+      "id": "04-intro-004",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What capability does AEM's Digital Asset Management (DAM) provide?",
+      "heading": "Centralized storage and management of images, videos, and documents",
+      "body": "AEM's Digital Asset Management (DAM) module provides centralized storage, organization, and delivery of digital assets such as images, videos, PDFs, and fonts — enabling teams to manage binary content alongside web content.",
+      "narration": "What capability does AEM's Digital Asset Management (DAM) provide? Centralized storage and management of images, videos, and documents. AEM's Digital Asset Management (DAM) module provides centralized storage, organization, and delivery of digital assets such as images, videos, PDFs, and fonts — enabling teams to manage binary content alongside web content."
+    },
+    {
+      "id": "05-intro-005",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What does 'omnichannel' mean in the context of AEM content delivery?",
+      "heading": "Delivering consistent content across web, mobile, IoT, and other digital touchpoints",
+      "body": "Omnichannel in AEM means delivering consistent, personalized content across every digital touchpoint — websites, mobile apps, IoT devices, social media, and more — all managed from a single platform.",
+      "narration": "What does 'omnichannel' mean in the context of AEM content delivery? Delivering consistent content across web, mobile, IoT, and other digital touchpoints. Omnichannel in AEM means delivering consistent, personalized content across every digital touchpoint — websites, mobile apps, IoT devices, social media, and more — all managed from a single platform."
+    },
+    {
+      "id": "06-intro-006",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Which of these is NOT one of AEM's core capabilities?",
+      "heading": "Relational database management is NOT one of AEM's core capabilities",
+      "body": "AEM's core capabilities include web content management, digital asset management, personalization, multi-site management, workflows, and analytics integration. AEM uses a JCR (content repository) — not a relational database — as its content store.",
+      "narration": "Which of these is NOT one of AEM's core capabilities? Relational database management is NOT one of AEM's core capabilities. AEM's core capabilities include web content management, digital asset management, personalization, multi-site management, workflows, and analytics integration. AEM uses a JCR (content repository) — not a relational database — as its content store."
+    },
+    {
+      "id": "07-intro-007",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What type of content can the AEM DAM store and manage?",
+      "heading": "Images, videos, documents, and other binary assets",
+      "body": "AEM's DAM (Digital Asset Management) can store and manage any binary digital asset, including images (JPEG, PNG, SVG, TIFF), videos (MP4, AVI), audio, PDFs, Office documents, fonts, and more.",
+      "narration": "What type of content can the AEM DAM store and manage? Images, videos, documents, and other binary assets. AEM's DAM (Digital Asset Management) can store and manage any binary digital asset, including images (JPEG, PNG, SVG, TIFF), videos (MP4, AVI), audio, PDFs, Office documents, fonts, and more."
+    },
+    {
+      "id": "08-intro-008",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does AEM's multi-site management capability allow organizations to do?",
+      "heading": "Manage multiple websites and digital experiences from a single AEM instance",
+      "body": "AEM's Multi-Site Manager (MSM) allows organizations to manage multiple websites, regional variations, or brand sites from a single AEM instance — with live copies, rollout configurations, and language copies.",
+      "narration": "What does AEM's multi-site management capability allow organizations to do? Manage multiple websites and digital experiences from a single AEM instance. AEM's Multi-Site Manager (MSM) allows organizations to manage multiple websites, regional variations, or brand sites from a single AEM instance — with live copies, rollout configurations, and language copies."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Adobe Experience Manager",
+        "A content management system for creating, managing, and delivering digital experiences",
+        "Adobe Experience Cloud",
+        "Centralized storage and management of images, videos, and documents",
+        "Delivering consistent content across web, mobile, IoT, and other digital touchpoints",
+        "Relational database management is NOT one of AEM's core capabilities",
+        "Images, videos, documents, and other binary assets",
+        "Manage multiple websites and digital experiences from a single AEM instance"
+      ],
+      "narration": "Quick recap of AEM Overview. Adobe Experience Manager. A content management system for creating, managing, and delivering digital experiences. Adobe Experience Cloud. Centralized storage and management of images, videos, and documents. Delivering consistent content across web, mobile, IoT, and other digital touchpoints. Relational database management is NOT one of AEM's core capabilities. Images, videos, documents, and other binary assets. Manage multiple websites and digital experiences from a single AEM instance."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Sling Models Fundamentals",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Sling Models Fundamentals",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Sling Models Fundamentals. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-051",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What are Sling Models in AEM?",
+      "heading": "Annotation-driven Java POJOs mapped automatically from Sling objects",
+      "body": "The speech defines Sling Models as annotation-driven Java POJOs mapped automatically from Sling objects such as resources and requests, and notes that they can also receive OSGi services.",
+      "narration": "What are Sling Models in AEM? Annotation-driven Java POJOs mapped automatically from Sling objects. The speech defines Sling Models as annotation-driven Java POJOs mapped automatically from Sling objects such as resources and requests, and notes that they can also receive OSGi services."
+    },
+    {
+      "id": "02-comp-052",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "According to the speech, what is the recommended way to implement component logic in AEM?",
+      "heading": "Use Sling Models to implement component logic",
+      "body": "The speech explicitly says Sling Models are the recommended way to implement component logic.",
+      "narration": "According to the speech, what is the recommended way to implement component logic in AEM? Use Sling Models to implement component logic. The speech explicitly says Sling Models are the recommended way to implement component logic."
+    },
+    {
+      "id": "03-comp-053",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Given a scenario where a model only needs resource data and no request-specific bindings, which adaptable does Adobe advise using where possible?",
+      "heading": "Resource",
+      "body": "The speech says the common adaptables are Resource and SlingHttpServletRequest, and Adobe advises using Resource where possible because the model can then be used inside and outside a request context.",
+      "narration": "Given a scenario where a model only needs resource data and no request-specific bindings, which adaptable does Adobe advise using where possible? Resource. The speech says the common adaptables are Resource and SlingHttpServletRequest, and Adobe advises using Resource where possible because the model can then be used inside and outside a request context."
+    },
+    {
+      "id": "04-comp-054",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "When must the adaptable be SlingHttpServletRequest instead of Resource?",
+      "heading": "When the model uses injectors that need the request, such as request attributes or script bindings",
+      "body": "The speech states that if you use injectors needing the request, such as request attributes or script bindings, the adaptable must be SlingHttpServletRequest.",
+      "narration": "When must the adaptable be SlingHttpServletRequest instead of Resource? When the model uses injectors that need the request, such as request attributes or script bindings. The speech states that if you use injectors needing the request, such as request attributes or script bindings, the adaptable must be SlingHttpServletRequest."
+    },
+    {
+      "id": "05-comp-055",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How are Sling Models registered so AEM can discover them?",
+      "heading": "Through the Sling-Model-Packages or Sling-Model-Classes manifest headers",
+      "body": "The speech says models are registered through the Sling-Model-Packages header or the Sling-Model-Classes header, and that the Sling Models bnd plugin generates those headers at build time.",
+      "narration": "How are Sling Models registered so AEM can discover them? Through the Sling-Model-Packages or Sling-Model-Classes manifest headers. The speech says models are registered through the Sling-Model-Packages header or the Sling-Model-Classes header, and that the Sling Models bnd plugin generates those headers at build time."
+    },
+    {
+      "id": "06-comp-056",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the difference between using adaptTo and using the ModelFactory service to obtain a model?",
+      "heading": "adaptTo returns null on failure, while ModelFactory.createModel throws an explanatory exception",
+      "body": "The speech explains that client code commonly uses adaptTo, which returns null if adaptation cannot be made, while the ModelFactory OSGi service offers createModel, which throws an exception explaining the failure.",
+      "narration": "What is the difference between using adaptTo and using the ModelFactory service to obtain a model? adaptTo returns null on failure, while ModelFactory.createModel throws an explanatory exception. The speech explains that client code commonly uses adaptTo, which returns null if adaptation cannot be made, while the ModelFactory OSGi service offers createModel, which throws an exception explaining the failure."
+    },
+    {
+      "id": "07-comp-057",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a model with required injection by default, what happens if one required injection fails and the field was not marked optional?",
+      "heading": "The model cannot be instantiated and adaptTo returns null",
+      "body": "The speech says the default injection strategy is required, so if an injection fails the model cannot be instantiated and adaptTo returns null. Marking a field optional allows creation with a null or default value.",
+      "narration": "Given a model with required injection by default, what happens if one required injection fails and the field was not marked optional? The model cannot be instantiated and adaptTo returns null. The speech says the default injection strategy is required, so if an injection fails the model cannot be instantiated and adaptTo returns null. Marking a field optional allows creation with a null or default value."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Annotation-driven Java POJOs mapped automatically from Sling objects",
+        "Use Sling Models to implement component logic",
+        "Resource",
+        "When the model uses injectors that need the request, such as request attributes or script bindings",
+        "Through the Sling-Model-Packages or Sling-Model-Classes manifest headers",
+        "adaptTo returns null on failure, while ModelFactory.createModel throws an explanatory exception",
+        "The model cannot be instantiated and adaptTo returns null"
+      ],
+      "narration": "Quick recap of Sling Models Fundamentals. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Login Flows",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Login Flows",
+      "sub": "Authentication · 8 key concepts",
+      "narration": "Authentication. Login Flows. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-034",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What are the two distinct ways to log into AEM Author?",
+      "heading": "Local administrator login and IMS-based login",
+      "body": "There are two distinct login paths into AEM Author: a local administrator login that bypasses IMS entirely, and IMS-based login, the standard path used by everyone else via Adobe IMS.",
+      "narration": "What are the two distinct ways to log into AEM Author? Local administrator login and IMS-based login. There are two distinct login paths into AEM Author: a local administrator login that bypasses IMS entirely, and IMS-based login, the standard path used by everyone else via Adobe IMS."
+    },
+    {
+      "id": "02-auth-035",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What is local administrator login in AEM?",
+      "heading": "A dedicated sign-in option on the login screen meant strictly for admin tasks, bypassing IMS entirely",
+      "body": "Local administrator login lets an Admin user authenticate directly within AEM using local credentials, through a dedicated option on the login screen separate from any external authentication mechanism. It's meant strictly for admin tasks.",
+      "narration": "What is local administrator login in AEM? A dedicated sign-in option on the login screen meant strictly for admin tasks, bypassing IMS entirely. Local administrator login lets an Admin user authenticate directly within AEM using local credentials, through a dedicated option on the login screen separate from any external authentication mechanism. It's meant strictly for admin tasks."
+    },
+    {
+      "id": "03-auth-036",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "How does a non-administrator user log into AEM Author via IMS?",
+      "heading": "They click 'Sign in with Adobe' and are redirected to the IMS login screen to enter their credentials",
+      "body": "For IMS-based login, the user clicks the 'Sign in with Adobe' button, is redirected to the IMS login screen to authenticate, and is then redirected back to AEM once authentication succeeds.",
+      "narration": "How does a non-administrator user log into AEM Author via IMS? They click 'Sign in with Adobe' and are redirected to the IMS login screen to enter their credentials. For IMS-based login, the user clicks the 'Sign in with Adobe' button, is redirected to the IMS login screen to authenticate, and is then redirected back to AEM once authentication succeeds."
+    },
+    {
+      "id": "04-auth-037",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What happens during IMS-based login if a federated Identity Provider (IDP) is configured?",
+      "heading": "The user is redirected one step further, from IMS to that customer IDP, for SSO authentication",
+      "body": "If a federated IDP is configured in Admin Console, selecting IMS-based login redirects the user further, from IMS to the customer's IDP, for Single Sign-On. After authenticating with the IDP, the user is redirected back to AEM automatically logged in.",
+      "narration": "What happens during IMS-based login if a federated Identity Provider (IDP) is configured? The user is redirected one step further, from IMS to that customer IDP, for SSO authentication. If a federated IDP is configured in Admin Console, selecting IMS-based login redirects the user further, from IMS to the customer's IDP, for Single Sign-On. After authenticating with the IDP, the user is redirected back to AEM automatically logged in."
+    },
+    {
+      "id": "05-auth-038",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What is the full redirect chain for a federated (SSO) user logging into AEM Author?",
+      "heading": "AEM to IMS to the customer IDP, then back to IMS, then back to AEM",
+      "body": "The full chain for a federated user is: AEM redirects to IMS, IMS redirects to the customer IDP, the IDP authenticates the user and redirects back to IMS, and IMS redirects back to AEM — two redirects for one seamless login.",
+      "narration": "What is the full redirect chain for a federated (SSO) user logging into AEM Author? AEM to IMS to the customer IDP, then back to IMS, then back to AEM. The full chain for a federated user is: AEM redirects to IMS, IMS redirects to the customer IDP, the IDP authenticates the user and redirects back to IMS, and IMS redirects back to AEM — two redirects for one seamless login."
+    },
+    {
+      "id": "06-auth-039",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What does the general IMS Authentication user login flow involve?",
+      "heading": "Redirecting the user to IMS for authentication and, optionally, to the customer IDP for SSO, then back to AEM",
+      "body": "The user login flow involves redirecting the user to IMS for authentication, and optionally further to the customer IDP for Single Sign-On, before redirecting the user back to AEM with access granted to the Author service.",
+      "narration": "What does the general IMS Authentication user login flow involve? Redirecting the user to IMS for authentication and, optionally, to the customer IDP for SSO, then back to AEM. The user login flow involves redirecting the user to IMS for authentication, and optionally further to the customer IDP for Single Sign-On, before redirecting the user back to AEM with access granted to the Author service."
+    },
+    {
+      "id": "07-auth-040",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What happens if a user is already authenticated with IMS when they try to log into AEM Author?",
+      "heading": "No credentials are required again — the existing IMS session is reused",
+      "body": "If the user is already authenticated with IMS, they are not prompted for credentials again — the existing authenticated session is reused, and they are redirected straight back into AEM.",
+      "narration": "What happens if a user is already authenticated with IMS when they try to log into AEM Author? No credentials are required again — the existing IMS session is reused. If the user is already authenticated with IMS, they are not prompted for credentials again — the existing authenticated session is reused, and they are redirected straight back into AEM."
+    },
+    {
+      "id": "08-auth-041",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Why does AEM redirect users to IMS instead of validating credentials itself?",
+      "heading": "It ensures a seamless and secure authentication experience while keeping identity centralized in IMS",
+      "body": "Delegating authentication to IMS (and optionally a federated IDP) ensures a seamless and secure experience for users while keeping identity centrally managed outside of AEM, consistent with how the rest of Adobe's Experience Cloud handles authentication.",
+      "narration": "Why does AEM redirect users to IMS instead of validating credentials itself? It ensures a seamless and secure authentication experience while keeping identity centralized in IMS. Delegating authentication to IMS (and optionally a federated IDP) ensures a seamless and secure experience for users while keeping identity centrally managed outside of AEM, consistent with how the rest of Adobe's Experience Cloud handles authentication."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Local administrator login and IMS-based login",
+        "A dedicated sign-in option on the login screen meant strictly for admin tasks, bypassing IMS entirely",
+        "They click 'Sign in with Adobe' and are redirected to the IMS login screen to enter their credentials",
+        "The user is redirected one step further, from IMS to that customer IDP, for SSO authentication",
+        "AEM to IMS to the customer IDP, then back to IMS, then back to AEM",
+        "Redirecting the user to IMS for authentication and, optionally, to the customer IDP for SSO, then back to AEM",
+        "No credentials are required again — the existing IMS session is reused",
+        "It ensures a seamless and secure authentication experience while keeping identity centralized in IMS"
+      ],
+      "narration": "Quick recap of Login Flows. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

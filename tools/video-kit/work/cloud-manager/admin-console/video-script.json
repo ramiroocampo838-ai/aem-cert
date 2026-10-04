@@ -1,0 +1,134 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "cloud-manager",
+  "accent": "#a855f7",
+  "category": "Admin Console",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Admin Console",
+      "sub": "cloud-manager · 10 key concepts",
+      "narration": "cloud-manager. Admin Console. In this video we review 10 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-035",
+      "type": "concept",
+      "index": 1,
+      "total": 10,
+      "question": "What is the Adobe Admin Console used for in AEM as a Cloud Service?",
+      "heading": "Managing users, groups, product profiles, and IMS organization settings for AEMaaCS",
+      "body": "The Adobe Admin Console (adminconsole.adobe.com) is the central identity and access management portal for all Adobe products. For AEMaaCS, it is where IMS Org admins add users, create product profiles, and assign roles. It governs access to both Cloud Manager and the AEM environments.",
+      "narration": "What is the Adobe Admin Console used for in AEM as a Cloud Service? Managing users, groups, product profiles, and IMS organization settings for AEMaaCS. The Adobe Admin Console (adminconsole.adobe.com) is the central identity and access management portal for all Adobe products. For AEMaaCS, it is where IMS Org admins add users, create product profiles, and assign roles. It governs access to both Cloud Manager and the AEM environments."
+    },
+    {
+      "id": "02-cm-036",
+      "type": "concept",
+      "index": 2,
+      "total": 10,
+      "question": "What is an IMS Organization in the context of AEM as a Cloud Service?",
+      "heading": "A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS",
+      "body": "An IMS Organization (IMS Org) is the top-level entity in Adobe's Identity Management System representing a company that has licensed Adobe products. All AEMaaCS programs belong to an IMS Org, and all user identities are managed within it. The IMS Org Admin has the highest level of access in the Admin Console.",
+      "narration": "What is an IMS Organization in the context of AEM as a Cloud Service? A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS. An IMS Organization (IMS Org) is the top-level entity in Adobe's Identity Management System representing a company that has licensed Adobe products. All AEMaaCS programs belong to an IMS Org, and all user identities are managed within it. The IMS Org Admin has the highest level of access in the Admin Console."
+    },
+    {
+      "id": "03-cm-037",
+      "type": "concept",
+      "index": 3,
+      "total": 10,
+      "question": "Which product profiles exist by default for AEM as a Cloud Service in the Admin Console?",
+      "heading": "AEM Users and AEM Administrators — one set per environment tier (Author/Publish)",
+      "body": "AEMaaCS automatically creates AEM Users and AEM Administrators product profiles in the Admin Console for each Author and Publish environment tier. Users in AEM Administrators receive administrative access in AEM, while AEM Users get standard author/publish access. Cloud Manager roles are managed by separate Cloud Manager-specific product profiles.",
+      "narration": "Which product profiles exist by default for AEM as a Cloud Service in the Admin Console? AEM Users and AEM Administrators — one set per environment tier (Author/Publish). AEMaaCS automatically creates AEM Users and AEM Administrators product profiles in the Admin Console for each Author and Publish environment tier. Users in AEM Administrators receive administrative access in AEM, while AEM Users get standard author/publish access. Cloud Manager roles are managed by separate Cloud Manager-specific product profiles."
+    },
+    {
+      "id": "04-cm-038",
+      "type": "concept",
+      "index": 4,
+      "total": 10,
+      "question": "How are Cloud Manager roles assigned to users?",
+      "heading": "By adding users to specific Cloud Manager product profiles in the Admin Console",
+      "body": "Cloud Manager roles are managed through the Adobe Admin Console. An IMS Org Admin adds users to Cloud Manager product profiles (e.g., 'Cloud Manager - Business Owner', 'Cloud Manager - Deployment Manager') which grant specific permissions within Cloud Manager. These profiles are separate from AEM environment profiles.",
+      "narration": "How are Cloud Manager roles assigned to users? By adding users to specific Cloud Manager product profiles in the Admin Console. Cloud Manager roles are managed through the Adobe Admin Console. An IMS Org Admin adds users to Cloud Manager product profiles (e.g., 'Cloud Manager - Business Owner', 'Cloud Manager - Deployment Manager') which grant specific permissions within Cloud Manager. These profiles are separate from AEM environment profiles."
+    },
+    {
+      "id": "05-cm-039",
+      "type": "concept",
+      "index": 5,
+      "total": 10,
+      "question": "What is the Business Owner role in Cloud Manager?",
+      "heading": "The user responsible for a program who can create programs, configure pipelines, and manage business-level settings",
+      "body": "The Business Owner is the most privileged Cloud Manager role. They can create programs, define production KPI targets (error rate, page views/min), approve production deployments, and manage all program settings. There must be at least one Business Owner per program.",
+      "narration": "What is the Business Owner role in Cloud Manager? The user responsible for a program who can create programs, configure pipelines, and manage business-level settings. The Business Owner is the most privileged Cloud Manager role. They can create programs, define production KPI targets (error rate, page views/min), approve production deployments, and manage all program settings. There must be at least one Business Owner per program."
+    },
+    {
+      "id": "06-cm-040",
+      "type": "concept",
+      "index": 6,
+      "total": 10,
+      "question": "What is the Deployment Manager role in Cloud Manager?",
+      "heading": "A role that can configure and execute pipelines, manage environments, and trigger deployments including production",
+      "body": "The Deployment Manager role in Cloud Manager can configure pipelines, manage environments, set environment variables, and trigger all types of pipeline runs including production deployments. They can also override quality gate failures marked as 'Important'. This role works alongside the Business Owner for the full deployment lifecycle.",
+      "narration": "What is the Deployment Manager role in Cloud Manager? A role that can configure and execute pipelines, manage environments, and trigger deployments including production. The Deployment Manager role in Cloud Manager can configure pipelines, manage environments, set environment variables, and trigger all types of pipeline runs including production deployments. They can also override quality gate failures marked as 'Important'. This role works alongside the Business Owner for the full deployment lifecycle."
+    },
+    {
+      "id": "07-cm-041",
+      "type": "concept",
+      "index": 7,
+      "total": 10,
+      "question": "What permissions does the Developer role in Cloud Manager provide?",
+      "heading": "Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console",
+      "body": "Developers in Cloud Manager can access the AEM Developer Console per environment, download execution logs, retrieve git credentials, manage environment variables, and trigger non-production pipelines. They cannot trigger production pipelines or manage program-level settings — those require Deployment Manager or Business Owner roles.",
+      "narration": "What permissions does the Developer role in Cloud Manager provide? Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console. Developers in Cloud Manager can access the AEM Developer Console per environment, download execution logs, retrieve git credentials, manage environment variables, and trigger non-production pipelines. They cannot trigger production pipelines or manage program-level settings — those require Deployment Manager or Business Owner roles."
+    },
+    {
+      "id": "08-cm-042",
+      "type": "concept",
+      "index": 8,
+      "total": 10,
+      "question": "What is a 'Sandbox Program' in Cloud Manager?",
+      "heading": "A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA",
+      "body": "Sandbox Programs are a lightweight Cloud Manager program type intended for learning, demos, and PoCs. They don't include a Production environment, have limited resources, and environments auto-hibernate after periods of inactivity (~8 hours without traffic). They are not subject to 24x7 SLA guarantees that Production programs have.",
+      "narration": "What is a 'Sandbox Program' in Cloud Manager? A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA. Sandbox Programs are a lightweight Cloud Manager program type intended for learning, demos, and PoCs. They don't include a Production environment, have limited resources, and environments auto-hibernate after periods of inactivity (~8 hours without traffic). They are not subject to 24x7 SLA guarantees that Production programs have."
+    },
+    {
+      "id": "09-cm-043",
+      "type": "concept",
+      "index": 9,
+      "total": 10,
+      "question": "What is 'Environment Hibernation' in Cloud Manager Sandbox Programs?",
+      "heading": "Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action",
+      "body": "Environment Hibernation automatically shuts down sandbox environments after approximately 8 hours of inactivity (no HTTP traffic). This saves resources since sandbox programs have no SLA guarantees. Users can resume environments manually via the Cloud Manager UI, an API call, or by simply sending an HTTP request — which triggers an automatic wake-up.",
+      "narration": "What is 'Environment Hibernation' in Cloud Manager Sandbox Programs? Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action. Environment Hibernation automatically shuts down sandbox environments after approximately 8 hours of inactivity (no HTTP traffic). This saves resources since sandbox programs have no SLA guarantees. Users can resume environments manually via the Cloud Manager UI, an API call, or by simply sending an HTTP request — which triggers an automatic wake-up."
+    },
+    {
+      "id": "10-cm-044",
+      "type": "concept",
+      "index": 10,
+      "total": 10,
+      "question": "How does a user gain access to the AEM Author service in AEMaaCS?",
+      "heading": "By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment",
+      "body": "Access to the AEM Author service in AEMaaCS is managed through the Adobe Admin Console. An IMS Org admin must add users to either the 'AEM Administrators' or 'AEM Users' product profile associated with the Author service tier. Cloud Manager roles do NOT automatically grant AEM Author access — they are separate access controls.",
+      "narration": "How does a user gain access to the AEM Author service in AEMaaCS? By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment. Access to the AEM Author service in AEMaaCS is managed through the Adobe Admin Console. An IMS Org admin must add users to either the 'AEM Administrators' or 'AEM Users' product profile associated with the Author service tier. Cloud Manager roles do NOT automatically grant AEM Author access — they are separate access controls."
+    },
+    {
+      "id": "11-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Managing users, groups, product profiles, and IMS organization settings for AEMaaCS",
+        "A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS",
+        "AEM Users and AEM Administrators — one set per environment tier (Author/Publish)",
+        "By adding users to specific Cloud Manager product profiles in the Admin Console",
+        "The user responsible for a program who can create programs, configure pipelines, and manage business-level settings",
+        "A role that can configure and execute pipelines, manage environments, and trigger deployments including production",
+        "Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console",
+        "A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA",
+        "Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action",
+        "By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment"
+      ],
+      "narration": "Quick recap of Admin Console. Managing users, groups, product profiles, and IMS organization settings for AEMaaCS. A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS. AEM Users and AEM Administrators — one set per environment tier (Author/Publish). By adding users to specific Cloud Manager product profiles in the Admin Console. The user responsible for a program who can create programs, configure pipelines, and manage business-level settings. A role that can configure and execute pipelines, manage environments, and trigger deployments including production. Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console. A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA. Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action. By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment."
+    }
+  ]
+}

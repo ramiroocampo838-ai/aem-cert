@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Property and Lucene Indexes",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Property and Lucene Indexes",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Property and Lucene Indexes. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-015",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Where are indexes configured, and what node type must an index definition use?",
+      "heading": "Indexes are configured as nodes under oak:index, and the node type must be oak:QueryIndexDefinition",
+      "body": "Section 3 says indexes are configured as nodes under oak:index, using node type oak:QueryIndexDefinition.",
+      "narration": "Where are indexes configured, and what node type must an index definition use? Indexes are configured as nodes under oak:index, and the node type must be oak:QueryIndexDefinition. Section 3 says indexes are configured as nodes under oak:index, using node type oak:QueryIndexDefinition."
+    },
+    {
+      "id": "02-oak-016",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What kind of queries does the Property Index suit, and which two properties define it?",
+      "heading": "It suits property constraints that are not full-text, and it uses type set to property with propertyNames listing the properties",
+      "body": "Section 3 says the Property Index suits property constraints that are not full-text and uses type property with propertyNames.",
+      "narration": "What kind of queries does the Property Index suit, and which two properties define it? It suits property constraints that are not full-text, and it uses type set to property with propertyNames listing the properties. Section 3 says the Property Index suits property constraints that are not full-text and uses type property with propertyNames."
+    },
+    {
+      "id": "03-oak-017",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What do the unique flag, declaringNodeTypes, and reindex=true do on a Property Index?",
+      "heading": "The unique flag adds a uniqueness constraint, declaringNodeTypes restricts the index to a node type, and reindex=true triggers a full reindex",
+      "body": "Section 3 defines these directly: unique adds a uniqueness constraint, declaringNodeTypes restricts the node type, and reindex=true triggers a full reindex.",
+      "narration": "What do the unique flag, declaringNodeTypes, and reindex=true do on a Property Index? The unique flag adds a uniqueness constraint, declaringNodeTypes restricts the index to a node type, and reindex=true triggers a full reindex. Section 3 defines these directly: unique adds a uniqueness constraint, declaringNodeTypes restricts the node type, and reindex=true triggers a full reindex."
+    },
+    {
+      "id": "04-oak-018",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What does the speech say about the Ordered index?",
+      "heading": "The Ordered index is deprecated and should be replaced with a Lucene Property Index",
+      "body": "Section 3 says the Ordered index is deprecated and should be replaced with a Lucene Property Index.",
+      "narration": "What does the speech say about the Ordered index? The Ordered index is deprecated and should be replaced with a Lucene Property Index. Section 3 says the Ordered index is deprecated and should be replaced with a Lucene Property Index."
+    },
+    {
+      "id": "05-oak-019",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which two main settings does the Lucene full-text index use, and what delay tradeoff does the speech mention?",
+      "heading": "It uses type lucene and async set to async, so some full-text results can be unavailable briefly after a change",
+      "body": "Section 3 says the Lucene full-text index uses type lucene and async set to async, so some results can be briefly unavailable after changes.",
+      "narration": "Which two main settings does the Lucene full-text index use, and what delay tradeoff does the speech mention? It uses type lucene and async set to async, so some full-text results can be unavailable briefly after a change. Section 3 says the Lucene full-text index uses type lucene and async set to async, so some results can be briefly unavailable after changes."
+    },
+    {
+      "id": "06-oak-020",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What does the speech say happens when a full-text index is configured, and what if none is configured?",
+      "heading": "If a full-text index is configured, all queries with a full-text condition use it; if none is configured, full-text conditions do not work as expected",
+      "body": "Section 3 says a configured full-text index is used for all queries with a full-text condition, and without one those conditions do not work as expected.",
+      "narration": "What does the speech say happens when a full-text index is configured, and what if none is configured? If a full-text index is configured, all queries with a full-text condition use it; if none is configured, full-text conditions do not work as expected. Section 3 says a configured full-text index is used for all queries with a full-text condition, and without one those conditions do not work as expected."
+    },
+    {
+      "id": "07-oak-021",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How do you configure Lucene to index non-full-text property constraints, and what consistency note comes with it?",
+      "heading": "Set fulltextEnabled to false and list the properties in includePropertyNames; a Lucene Property Index is always async, so results may lag behind the latest state",
+      "body": "Section 3 says Lucene can index non-full-text property constraints with fulltextEnabled=false and includePropertyNames, but it remains async.",
+      "narration": "How do you configure Lucene to index non-full-text property constraints, and what consistency note comes with it? Set fulltextEnabled to false and list the properties in includePropertyNames; a Lucene Property Index is always async, so results may lag behind the latest state. Section 3 says Lucene can index non-full-text property constraints with fulltextEnabled=false and includePropertyNames, but it remains async."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Indexes are configured as nodes under oak:index, and the node type must be oak:QueryIndexDefinition",
+        "It suits property constraints that are not full-text, and it uses type set to property with propertyNames listing the properties",
+        "The unique flag adds a uniqueness constraint, declaringNodeTypes restricts the index to a node type, and reindex=true triggers a full reindex",
+        "The Ordered index is deprecated and should be replaced with a Lucene Property Index",
+        "It uses type lucene and async set to async, so some full-text results can be unavailable briefly after a change",
+        "If a full-text index is configured, all queries with a full-text condition use it; if none is configured, full-text conditions do not work as expected",
+        "Set fulltextEnabled to false and list the properties in includePropertyNames; a Lucene Property Index is always async, so results may lag behind the latest state"
+      ],
+      "narration": "Quick recap of Property and Lucene Indexes. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

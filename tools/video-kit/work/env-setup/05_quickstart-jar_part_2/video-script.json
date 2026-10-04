@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "QuickStart Jar (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "QuickStart Jar (Part 2 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. QuickStart Jar (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-038",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "On which port does the local AEM Publish instance run by default?",
+      "heading": "Port 4503",
+      "body": "The local AEM Publish instance runs on port 4503 by default. Author runs on 4502. These ports are specified in the QuickStart Jar filename and control where AEM listens for requests.",
+      "narration": "On which port does the local AEM Publish instance run by default? Port 4503. The local AEM Publish instance runs on port 4503 by default. Author runs on 4502. These ports are specified in the QuickStart Jar filename and control where AEM listens for requests."
+    },
+    {
+      "id": "02-env-039",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the crx-quickstart folder created by the QuickStart Jar?",
+      "heading": "The runtime folder containing AEM's repository, logs, and configuration",
+      "body": "On first startup, the QuickStart Jar creates a `crx-quickstart` folder in the same directory as the JAR. It contains the Oak JCR repository, logs, OSGi bundle cache, and all AEM runtime data.",
+      "narration": "What is the crx-quickstart folder created by the QuickStart Jar? The runtime folder containing AEM's repository, logs, and configuration. On first startup, the QuickStart Jar creates a `crx-quickstart` folder in the same directory as the JAR. It contains the Oak JCR repository, logs, OSGi bundle cache, and all AEM runtime data."
+    },
+    {
+      "id": "03-env-040",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What must you do if you need to change the tier (Author vs Publish) of a running QuickStart Jar instance?",
+      "heading": "Delete the crx-quickstart folder and start fresh",
+      "body": "The tier (author or publish) is locked on the first startup of the QuickStart Jar. To change it, you must delete the `crx-quickstart` folder and restart — AEM will re-read the tier from the JAR filename.",
+      "narration": "What must you do if you need to change the tier (Author vs Publish) of a running QuickStart Jar instance? Delete the crx-quickstart folder and start fresh. The tier (author or publish) is locked on the first startup of the QuickStart Jar. To change it, you must delete the `crx-quickstart` folder and restart — AEM will re-read the tier from the JAR filename."
+    },
+    {
+      "id": "04-env-041",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "Can the same QuickStart Jar run both Author and Publish instances simultaneously?",
+      "heading": "Yes, using two separate copies of the JAR in different directories with different filenames",
+      "body": "The same QuickStart Jar can run both Author and Publish simultaneously by placing two copies in separate directories (`~/aem-sdk/author/` and `~/aem-sdk/publish/`) with filenames that encode the correct tier and port.",
+      "narration": "Can the same QuickStart Jar run both Author and Publish instances simultaneously? Yes, using two separate copies of the JAR in different directories with different filenames. The same QuickStart Jar can run both Author and Publish simultaneously by placing two copies in separate directories (`~/aem-sdk/author/` and `~/aem-sdk/publish/`) with filenames that encode the correct tier and port."
+    },
+    {
+      "id": "05-env-042",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is the AEMaaCS SDK?",
+      "heading": "The AEM as a Cloud Service Software Development Kit, which includes the QuickStart Jar and Dispatcher Tools",
+      "body": "The AEMaaCS SDK (AEM as a Cloud Service Software Development Kit) is a package provided by Adobe that includes the QuickStart Jar (for local AEM runtime) and the Dispatcher Tools (for local Dispatcher). It is downloaded from Adobe Software Distribution.",
+      "narration": "What is the AEMaaCS SDK? The AEM as a Cloud Service Software Development Kit, which includes the QuickStart Jar and Dispatcher Tools. The AEMaaCS SDK (AEM as a Cloud Service Software Development Kit) is a package provided by Adobe that includes the QuickStart Jar (for local AEM runtime) and the Dispatcher Tools (for local Dispatcher). It is downloaded from Adobe Software Distribution."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Port 4503",
+        "The runtime folder containing AEM's repository, logs, and configuration",
+        "Delete the crx-quickstart folder and start fresh",
+        "Yes, using two separate copies of the JAR in different directories with different filenames",
+        "The AEM as a Cloud Service Software Development Kit, which includes the QuickStart Jar and Dispatcher Tools"
+      ],
+      "narration": "Quick recap of QuickStart Jar (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

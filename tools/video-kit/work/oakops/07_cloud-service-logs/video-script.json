@@ -1,0 +1,113 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Cloud Service Logs",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cloud Service Logs",
+      "sub": "Oak & Operations · 8 key concepts",
+      "narration": "Oak & Operations. Cloud Service Logs. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-043",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "How are log settings and levels managed in AEM as a Cloud Service?",
+      "heading": "They are configuration files stored in Git and deployed by Cloud Manager",
+      "body": "Section 7 says Cloud Service log settings and levels are configuration files stored in Git and deployed by Cloud Manager.",
+      "narration": "How are log settings and levels managed in AEM as a Cloud Service? They are configuration files stored in Git and deployed by Cloud Manager. Section 7 says Cloud Service log settings and levels are configuration files stored in Git and deployed by Cloud Manager."
+    },
+    {
+      "id": "02-oak-044",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What three logging sets does the speech say Cloud Service breaks into?",
+      "heading": "AEM application logging, Apache HTTPD web server and Dispatcher logging, and CDN logging",
+      "body": "Section 7 says Cloud Service logging breaks into AEM application logging, Apache HTTPD plus Dispatcher logging, and CDN logging.",
+      "narration": "What three logging sets does the speech say Cloud Service breaks into? AEM application logging, Apache HTTPD web server and Dispatcher logging, and CDN logging. Section 7 says Cloud Service logging breaks into AEM application logging, Apache HTTPD plus Dispatcher logging, and CDN logging."
+    },
+    {
+      "id": "03-oak-045",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Which three AEM application logs are named, and what requests do not appear in them?",
+      "heading": "The AEM Java log, the HTTP request log, and the HTTP access log; requests served from the Dispatcher cache or an upstream CDN do not appear in them",
+      "body": "Section 7 names the AEM Java, HTTP request, and HTTP access logs and says Dispatcher-cache or upstream-CDN-served requests do not appear in them.",
+      "narration": "Which three AEM application logs are named, and what requests do not appear in them? The AEM Java log, the HTTP request log, and the HTTP access log; requests served from the Dispatcher cache or an upstream CDN do not appear in them. Section 7 names the AEM Java, HTTP request, and HTTP access logs and says Dispatcher-cache or upstream-CDN-served requests do not appear in them."
+    },
+    {
+      "id": "04-oak-046",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "How are Java log levels configured per environment type in Cloud Service?",
+      "heading": "Through OSGi configuration in run mode folders: config for development, config.stage, and config.prod, using the Sling LogManager factory configuration",
+      "body": "Section 7 says Java log levels are configured through OSGi configuration in config, config.stage, and config.prod using the Sling LogManager factory configuration.",
+      "narration": "How are Java log levels configured per environment type in Cloud Service? Through OSGi configuration in run mode folders: config for development, config.stage, and config.prod, using the Sling LogManager factory configuration. Section 7 says Java log levels are configured through OSGi configuration in config, config.stage, and config.prod using the Sling LogManager factory configuration."
+    },
+    {
+      "id": "05-oak-047",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Which Sling LogManager factory properties does the speech say to use for package names and level, and what levels are recommended by environment?",
+      "heading": "Use org.apache.sling.commons.log.names for the Java packages and org.apache.sling.commons.log.level for the level; recommended levels are debug on development, warn on stage, and error on production",
+      "body": "Section 7 names org.apache.sling.commons.log.names and org.apache.sling.commons.log.level and recommends debug for development, warn for stage, and error for production.",
+      "narration": "Which Sling LogManager factory properties does the speech say to use for package names and level, and what levels are recommended by environment? Use org.apache.sling.commons.log.names for the Java packages and org.apache.sling.commons.log.level for the level; recommended levels are debug on development, warn on stage, and error on production. Section 7 names org.apache.sling.commons.log.names and org.apache.sling.commons.log.level and recommends debug for development, warn for stage, and error for production."
+    },
+    {
+      "id": "06-oak-048",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What must you not change on the default Apache Sling Logging Configuration in Cloud Service?",
+      "heading": "Do not change its default INFO level, its format, or the default file destination logs/error.log",
+      "body": "Section 7 says not to change the default INFO level, not to change the format, and not to change the logs/error.log destination.",
+      "narration": "What must you not change on the default Apache Sling Logging Configuration in Cloud Service? Do not change its default INFO level, its format, or the default file destination logs/error.log. Section 7 says not to change the default INFO level, not to change the format, and not to change the logs/error.log destination."
+    },
+    {
+      "id": "07-oak-049",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "How does the HTTP request log differ from the HTTP access log in the speech?",
+      "heading": "The request log pairs requests and responses by the numeric ID in brackets, while the access log shows requests in time order with status code and size and helps follow a specific user",
+      "body": "Section 7 says the request log pairs requests and responses by the numeric bracket ID, while the access log shows requests in time order with status and size and helps follow a user.",
+      "narration": "How does the HTTP request log differ from the HTTP access log in the speech? The request log pairs requests and responses by the numeric ID in brackets, while the access log shows requests in time order with status code and size and helps follow a specific user. Section 7 says the request log pairs requests and responses by the numeric bracket ID, while the access log shows requests in time order with status and size and helps follow a user."
+    },
+    {
+      "id": "08-oak-050",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does the speech say about CDN logs in Cloud Service?",
+      "heading": "The CDN log is JSON, cannot be customized or set to different modes, shows fields such as timestamp, ttfb, status, url, and cache with HIT, MISS, or PASS, and is useful for cache-hit optimization and seeing matched traffic filter and WAF flags",
+      "body": "Section 7 says the CDN log is JSON, not customizable, shows fields like timestamp, ttfb, status, url, and cache HIT/MISS/PASS, and records matched traffic filter rules and WAF flags.",
+      "narration": "What does the speech say about CDN logs in Cloud Service? The CDN log is JSON, cannot be customized or set to different modes, shows fields such as timestamp, ttfb, status, url, and cache with HIT, MISS, or PASS, and is useful for cache-hit optimization and seeing matched traffic filter and WAF flags. Section 7 says the CDN log is JSON, not customizable, shows fields like timestamp, ttfb, status, url, and cache HIT/MISS/PASS, and records matched traffic filter rules and WAF flags."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "They are configuration files stored in Git and deployed by Cloud Manager",
+        "AEM application logging, Apache HTTPD web server and Dispatcher logging, and CDN logging",
+        "The AEM Java log, the HTTP request log, and the HTTP access log; requests served from the Dispatcher cache or an upstream CDN do not appear in them",
+        "Through OSGi configuration in run mode folders: config for development, config.stage, and config.prod, using the Sling LogManager factory configuration",
+        "Use org.apache.sling.commons.log.names for the Java packages and org.apache.sling.commons.log.level for the level; recommended levels are debug on development, warn on stage, and error on production",
+        "Do not change its default INFO level, its format, or the default file destination logs/error.log",
+        "The request log pairs requests and responses by the numeric ID in brackets, while the access log shows requests in time order with status code and size and helps follow a specific user",
+        "The CDN log is JSON, cannot be customized or set to different modes, shows fields such as timestamp, ttfb, status, url, and cache with HIT, MISS, or PASS, and is useful for cache-hit optimization and seeing matched traffic filter and WAF flags"
+      ],
+      "narration": "Quick recap of Cloud Service Logs. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

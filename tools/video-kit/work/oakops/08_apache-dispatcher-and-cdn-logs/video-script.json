@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Apache, Dispatcher and CDN Logs",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Apache, Dispatcher and CDN Logs",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Apache, Dispatcher and CDN Logs. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-051",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which three extra logs exist only for the Publish tier in AEM as a Cloud Service?",
+      "heading": "The Publish-only logs are the Apache HTTPD access log, the Apache HTTPD error log, and the Dispatcher log",
+      "body": "Section 8 says the Publish tier has three more logs before AEM application logging: the Apache HTTPD access log, the Apache HTTPD error log, and the Dispatcher log.",
+      "narration": "Which three extra logs exist only for the Publish tier in AEM as a Cloud Service? The Publish-only logs are the Apache HTTPD access log, the Apache HTTPD error log, and the Dispatcher log. Section 8 says the Publish tier has three more logs before AEM application logging: the Apache HTTPD access log, the Apache HTTPD error log, and the Dispatcher log."
+    },
+    {
+      "id": "02-oak-052",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How is the mod_rewrite error log level configured in Cloud Service Dispatcher?",
+      "heading": "Set REWRITE_LOG_LEVEL in conf.d/variables/global.var",
+      "body": "The source states that the Apache error log level for mod_rewrite is set with REWRITE_LOG_LEVEL in conf.d/variables/global.var.",
+      "narration": "How is the mod_rewrite error log level configured in Cloud Service Dispatcher? Set REWRITE_LOG_LEVEL in conf.d/variables/global.var. The source states that the Apache error log level for mod_rewrite is set with REWRITE_LOG_LEVEL in conf.d/variables/global.var."
+    },
+    {
+      "id": "03-oak-053",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the maximum mod_rewrite log level supported in the cloud?",
+      "heading": "debug",
+      "body": "Section 8 says REWRITE_LOG_LEVEL values run from error through trace8, but the maximum supported in the cloud is debug.",
+      "narration": "What is the maximum mod_rewrite log level supported in the cloud? debug. Section 8 says REWRITE_LOG_LEVEL values run from error through trace8, but the maximum supported in the cloud is debug."
+    },
+    {
+      "id": "04-oak-054",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which variable sets the Dispatcher log level in Cloud Service?",
+      "heading": "DISP_LOG_LEVEL",
+      "body": "The speech explicitly says the Dispatcher log level is set with DISP_LOG_LEVEL in the same global.var file.",
+      "narration": "Which variable sets the Dispatcher log level in Cloud Service? DISP_LOG_LEVEL. The speech explicitly says the Dispatcher log level is set with DISP_LOG_LEVEL in the same global.var file."
+    },
+    {
+      "id": "05-oak-055",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What helpful details do Dispatcher log lines show for a request?",
+      "heading": "They show the farm and an action such as miss or none",
+      "body": "Section 8 says Dispatcher log lines show the farm and an action such as miss or none, which helps explain why a request reached AEM.",
+      "narration": "What helpful details do Dispatcher log lines show for a request? They show the farm and an action such as miss or none. Section 8 says Dispatcher log lines show the farm and an action such as miss or none, which helps explain why a request reached AEM."
+    },
+    {
+      "id": "06-oak-056",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What values can appear in the CDN log cache field?",
+      "heading": "HIT, MISS, or PASS",
+      "body": "The CDN log is described as JSON with fields such as timestamp, ttfb, status, url, and cache, where cache is HIT, MISS, or PASS.",
+      "narration": "What values can appear in the CDN log cache field? HIT, MISS, or PASS. The CDN log is described as JSON with fields such as timestamp, ttfb, status, url, and cache, where cache is HIT, MISS, or PASS."
+    },
+    {
+      "id": "07-oak-057",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How are cloud logs made available to engineers?",
+      "heading": "They can be downloaded through Cloud Manager or tailed with the Adobe I/O CLI",
+      "body": "Section 8 says logs are available either by downloading them through Cloud Manager or by tailing them with the Adobe I/O command line interface.",
+      "narration": "How are cloud logs made available to engineers? They can be downloaded through Cloud Manager or tailed with the Adobe I/O CLI. Section 8 says logs are available either by downloading them through Cloud Manager or by tailing them with the Adobe I/O command line interface."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The Publish-only logs are the Apache HTTPD access log, the Apache HTTPD error log, and the Dispatcher log",
+        "Set REWRITE_LOG_LEVEL in conf.d/variables/global.var",
+        "debug",
+        "DISP_LOG_LEVEL",
+        "They show the farm and an action such as miss or none",
+        "HIT, MISS, or PASS",
+        "They can be downloaded through Cloud Manager or tailed with the Adobe I/O CLI"
+      ],
+      "narration": "Quick recap of Apache, Dispatcher and CDN Logs. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

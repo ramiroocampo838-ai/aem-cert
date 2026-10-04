@@ -1,0 +1,102 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "SAML 2.0 — Configuration (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SAML 2.0 — Configuration (Part 1 of 2)",
+      "sub": "Authentication · 7 key concepts",
+      "narration": "Authentication. SAML 2.0 — Configuration (Part 1 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-052",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What access is required as a prerequisite for setting up SAML 2.0 authentication?",
+      "heading": "Deployment Manager access to Cloud Manager, AEM Administrator access to the environment, and administrator access to the IDP",
+      "body": "Prerequisites for SAML 2.0 setup include Deployment Manager access to Cloud Manager, AEM Administrator access to the AEMaaCS environment, administrator access to the IDP, and optionally a public/private keypair for encrypting SAML payloads.",
+      "narration": "What access is required as a prerequisite for setting up SAML 2.0 authentication? Deployment Manager access to Cloud Manager, AEM Administrator access to the environment, and administrator access to the IDP. Prerequisites for SAML 2.0 setup include Deployment Manager access to Cloud Manager, AEM Administrator access to the AEMaaCS environment, administrator access to the IDP, and optionally a public/private keypair for encrypting SAML payloads."
+    },
+    {
+      "id": "02-auth-053",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Where in AEM do you install the IDP's public certificate for SAML validation?",
+      "heading": "AEM's Global Trust Store, accessed via Tools > Security > Trust Store",
+      "body": "The IDP's public certificate is installed into AEM's Global Trust Store via Tools > Security > Trust Store. AEM uses this stored certificate to verify the digital signature of SAML assertions received from the IDP.",
+      "narration": "Where in AEM do you install the IDP's public certificate for SAML validation? AEM's Global Trust Store, accessed via Tools > Security > Trust Store. The IDP's public certificate is installed into AEM's Global Trust Store via Tools > Security > Trust Store. AEM uses this stored certificate to verify the digital signature of SAML assertions received from the IDP."
+    },
+    {
+      "id": "03-auth-054",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Why must the Global Trust Store be replicated after the IDP certificate is added on Author?",
+      "heading": "It must be replicated from Author to Publish, because SAML authentication only runs on Publish",
+      "body": "The Global Trust Store is configured on AEM Author, but since SAML only runs on AEM Publish, that trust store must be replicated to Publish so the IDP's public certificate is accessible where SAML validation actually happens.",
+      "narration": "Why must the Global Trust Store be replicated after the IDP certificate is added on Author? It must be replicated from Author to Publish, because SAML authentication only runs on Publish. The Global Trust Store is configured on AEM Author, but since SAML only runs on AEM Publish, that trust store must be replicated to Publish so the IDP's public certificate is accessible where SAML validation actually happens."
+    },
+    {
+      "id": "04-auth-055",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How do you replicate the Global Trust Store node to AEM Publish?",
+      "heading": "By creating a package with a filter on /etc/truststore and replicating it to Publish",
+      "body": "You create a package (Tools > Deployment > Packages) with a filter for the root path /etc/truststore, build it, and then use More > Replicate to activate the Global Trust Store node on AEM Publish.",
+      "narration": "How do you replicate the Global Trust Store node to AEM Publish? By creating a package with a filter on /etc/truststore and replicating it to Publish. You create a package (Tools > Deployment > Packages) with a filter for the root path /etc/truststore, build it, and then use More > Replicate to activate the Global Trust Store node on AEM Publish."
+    },
+    {
+      "id": "05-auth-056",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which AEM keystore is essential for authentication operations like SSL certificates and token signing?",
+      "heading": "The authentication-service keystore",
+      "body": "The authentication-service keystore is essential for the security and integrity of authentication operations: generating and storing SSL certificates, signing and verifying tokens, and encrypting/decrypting data.",
+      "narration": "Which AEM keystore is essential for authentication operations like SSL certificates and token signing? The authentication-service keystore. The authentication-service keystore is essential for the security and integrity of authentication operations: generating and storing SSL certificates, signing and verifying tokens, and encrypting/decrypting data."
+    },
+    {
+      "id": "06-auth-057",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "When is creating an authentication-service keystore required for SAML?",
+      "heading": "When handleLogout is set to true, or when AuthnRequest signing or SAML assertion encryption is required",
+      "body": "Creating an authentication-service keystore is required when the SAML 2.0 authentication handler's handleLogout OSGi property is set to true, or when AuthnRequest signing or SAML assertion encryption is needed.",
+      "narration": "When is creating an authentication-service keystore required for SAML? When handleLogout is set to true, or when AuthnRequest signing or SAML assertion encryption is required. Creating an authentication-service keystore is required when the SAML 2.0 authentication handler's handleLogout OSGi property is set to true, or when AuthnRequest signing or SAML assertion encryption is needed."
+    },
+    {
+      "id": "07-auth-058",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What OSGi component manages AEM's SAML configuration, and what kind of configuration is it?",
+      "heading": "The Adobe Granite SAML 2.0 Authentication Handler, implemented as an OSGi factory configuration",
+      "body": "AEM's SAML configuration is managed through the Adobe Granite SAML 2.0 Authentication Handler OSGi configuration. It's a factory configuration, meaning you can define multiple SAML setups for different resource trees within the AEMaaCS Publish service.",
+      "narration": "What OSGi component manages AEM's SAML configuration, and what kind of configuration is it? The Adobe Granite SAML 2.0 Authentication Handler, implemented as an OSGi factory configuration. AEM's SAML configuration is managed through the Adobe Granite SAML 2.0 Authentication Handler OSGi configuration. It's a factory configuration, meaning you can define multiple SAML setups for different resource trees within the AEMaaCS Publish service."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Deployment Manager access to Cloud Manager, AEM Administrator access to the environment, and administrator access to the IDP",
+        "AEM's Global Trust Store, accessed via Tools > Security > Trust Store",
+        "It must be replicated from Author to Publish, because SAML authentication only runs on Publish",
+        "By creating a package with a filter on /etc/truststore and replicating it to Publish",
+        "The authentication-service keystore",
+        "When handleLogout is set to true, or when AuthnRequest signing or SAML assertion encryption is required",
+        "The Adobe Granite SAML 2.0 Authentication Handler, implemented as an OSGi factory configuration"
+      ],
+      "narration": "Quick recap of SAML 2.0 — Configuration (Part 1 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "AEM Best Practices (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "AEM Best Practices (Part 1 of 2)",
+      "sub": "Code Quality · 7 key concepts",
+      "narration": "Code Quality. AEM Best Practices (Part 1 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-033",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "AEM-BP-001 (Severity: Critical) requires that every ResourceResolver obtained from a ResourceResolverFactory must be explicitly closed. What Java pattern guarantees the resolver is closed even if an exception occurs?",
+      "heading": "try-with-resources — ResourceResolver implements Closeable so it is automatically closed at the end of the try block",
+      "body": "AEM-BP-001 (Critical): ResourceResolver implements java.io.Closeable/AutoCloseable. The try-with-resources pattern guarantees resolver.close() is called regardless of whether the block exits normally or via an exception. An unclosed ResourceResolver leaks an active JCR Session, consuming memory and file handles. Over time, leaked resolvers exhaust the session pool and crash the system. Each resolver obtained must be closed in the same method that obtained it.",
+      "narration": "AEM-BP-001 (Severity: Critical) requires that every ResourceResolver obtained from a ResourceResolverFactory must be explicitly closed. What Java pattern guarantees the resolver is closed even if an exception occurs? try-with-resources — ResourceResolver implements Closeable so it is automatically closed at the end of the try block. AEM-BP-001 (Critical): ResourceResolver implements java.io.Closeable/AutoCloseable. The try-with-resources pattern guarantees resolver.close() is called regardless of whether the block exits normally or via an exception. An unclosed ResourceResolver leaks an active JCR Session, consuming memory and file handles. Over time, leaked resolvers exhaust the session pool and crash the system. Each resolver obtained must be closed in the same method that obtained it."
+    },
+    {
+      "id": "02-cq-034",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which specific Sling annotations are required to declare an OSGi service user mapping so a Sling Service can obtain a ResourceResolver without admin credentials, per AEM-BP-002?",
+      "heading": "@ServiceUserMapped with @Reference to get the ServiceUserMapped service, then use resolverFactory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE, subServiceName))",
+      "body": "AEM-BP-002 (Major): The deprecated ResourceResolverFactory.getAdministrativeResourceResolver() was removed in AEM 6.5+. The replacement is the Service User pattern: (1) Create a system user in the repository, (2) Grant it the minimum required JCR permissions, (3) Declare the mapping in an OSGi factory config (ServiceUserMapperImpl.amended), (4) Call factory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE, 'myproject-read')). This follows the principle of least privilege.",
+      "narration": "Which specific Sling annotations are required to declare an OSGi service user mapping so a Sling Service can obtain a ResourceResolver without admin credentials, per AEM-BP-002? @ServiceUserMapped with @Reference to get the ServiceUserMapped service, then use resolverFactory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE, subServiceName)). AEM-BP-002 (Major): The deprecated ResourceResolverFactory.getAdministrativeResourceResolver() was removed in AEM 6.5+. The replacement is the Service User pattern: (1) Create a system user in the repository, (2) Grant it the minimum required JCR permissions, (3) Declare the mapping in an OSGi factory config (ServiceUserMapperImpl.amended), (4) Call factory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE, 'myproject-read')). This follows the principle of least privilege."
+    },
+    {
+      "id": "03-cq-035",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "AEM-BP-003 warns against calling resourceResolver.getResource() repeatedly inside a loop for the same path. What is the recommended solution?",
+      "heading": "Cache the returned Resource object in a local variable before the loop and reuse it",
+      "body": "AEM-BP-003 (Warning): Each resourceResolver.getResource() call traverses the Sling Resource tree and may involve JCR reads. Calling it in a tight loop for the same path or repeatedly for the same set of items wastes CPU and causes unnecessary JCR session interaction. The fix is to resolve resources once, store them in local variables or a Map<String,Resource>, and reuse those references throughout the loop — especially important for loops processing hundreds of items.",
+      "narration": "AEM-BP-003 warns against calling resourceResolver.getResource() repeatedly inside a loop for the same path. What is the recommended solution? Cache the returned Resource object in a local variable before the loop and reuse it. AEM-BP-003 (Warning): Each resourceResolver.getResource() call traverses the Sling Resource tree and may involve JCR reads. Calling it in a tight loop for the same path or repeatedly for the same set of items wastes CPU and causes unnecessary JCR session interaction. The fix is to resolve resources once, store them in local variables or a Map<String,Resource>, and reuse those references throughout the loop — especially important for loops processing hundreds of items."
+    },
+    {
+      "id": "04-cq-036",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which AEM Best Practice rule (AEM-BP-004) recommends that business logic should be encapsulated in Sling Models rather than placed directly in HTL scripts or in Java Servlets?",
+      "heading": "Use Sling Models for Business Logic",
+      "body": "AEM-BP-004 (Major): The correct layering is: Sling Model (business logic and data transformation) → HTL template (pure presentation, no logic). HTL's design-by-contract intentionally makes it hard to write logic — no imperative code, only data access via expressions. Placing business logic in HTL or in Servlets that duplicate component data preparation violates this separation and makes code untestable.",
+      "narration": "Which AEM Best Practice rule (AEM-BP-004) recommends that business logic should be encapsulated in Sling Models rather than placed directly in HTL scripts or in Java Servlets? Use Sling Models for Business Logic. AEM-BP-004 (Major): The correct layering is: Sling Model (business logic and data transformation) → HTL template (pure presentation, no logic). HTL's design-by-contract intentionally makes it hard to write logic — no imperative code, only data access via expressions. Placing business logic in HTL or in Servlets that duplicate component data preparation violates this separation and makes code untestable."
+    },
+    {
+      "id": "05-cq-037",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "An OSGi service annotated with @Component is a singleton shared across all threads. What does AEM-BP-005 require regarding instance field usage?",
+      "heading": "Instance fields must be stateless or thread-safe — use method-local variables or AtomicReference/volatile for shared state",
+      "body": "AEM-BP-005 (Critical): An OSGi @Component is a singleton — one instance serves all concurrent requests and background tasks. Using instance fields to store request-specific data creates race conditions. Fix: always use method-local variables for per-request state, and use AtomicReference/volatile/synchronized only for truly shared state that needs to persist between calls.",
+      "narration": "An OSGi service annotated with @Component is a singleton shared across all threads. What does AEM-BP-005 require regarding instance field usage? Instance fields must be stateless or thread-safe — use method-local variables or AtomicReference/volatile for shared state. AEM-BP-005 (Critical): An OSGi @Component is a singleton — one instance serves all concurrent requests and background tasks. Using instance fields to store request-specific data creates race conditions. Fix: always use method-local variables for per-request state, and use AtomicReference/volatile/synchronized only for truly shared state that needs to persist between calls."
+    },
+    {
+      "id": "06-cq-038",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "AEM-BP-006 recommends using AEM's high-level APIs (PageManager, TagManager, AssetManager) instead of interacting directly with the JCR API. Why?",
+      "heading": "High-level APIs abstract JCR details, handle AEM business rules (version control, tagging, workflow), and are more stable across upgrades",
+      "body": "AEM-BP-006 (Major): Raw JCR API calls bypass AEM's higher-level business rules. PageManager.create() applies the correct cq:Page node structure, triggers page creation events, and handles template inheritance. AssetManager.createAsset() runs DAM workflows and sets the correct asset metadata. TagManager.resolve() handles tag namespacing and fallback resolution. Raw node creation via session.getNode().addNode() can create malformed content that violates AEM's assumptions.",
+      "narration": "AEM-BP-006 recommends using AEM's high-level APIs (PageManager, TagManager, AssetManager) instead of interacting directly with the JCR API. Why? High-level APIs abstract JCR details, handle AEM business rules (version control, tagging, workflow), and are more stable across upgrades. AEM-BP-006 (Major): Raw JCR API calls bypass AEM's higher-level business rules. PageManager.create() applies the correct cq:Page node structure, triggers page creation events, and handles template inheritance. AssetManager.createAsset() runs DAM workflows and sets the correct asset metadata. TagManager.resolve() handles tag namespacing and fallback resolution. Raw node creation via session.getNode().addNode() can create malformed content that violates AEM's assumptions."
+    },
+    {
+      "id": "07-cq-039",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What is the primary purpose of the @Activate and @Modified lifecycle methods in an OSGi @Component class, as required by AEM-BP-007?",
+      "heading": "They read the OSGi configuration annotation interface and initialize the component's state when the bundle activates or config changes",
+      "body": "AEM-BP-007 (Major): OSGi DS (Declarative Services) manages the @Component lifecycle. @Activate is called when all @Reference dependencies are bound and the component becomes active — typically on bundle installation or server startup. @Modified is called when the component's OSGi configuration changes without requiring a full restart. Both receive the typed @interface configuration object, allowing the component to read and cache configuration values.",
+      "narration": "What is the primary purpose of the @Activate and @Modified lifecycle methods in an OSGi @Component class, as required by AEM-BP-007? They read the OSGi configuration annotation interface and initialize the component's state when the bundle activates or config changes. AEM-BP-007 (Major): OSGi DS (Declarative Services) manages the @Component lifecycle. @Activate is called when all @Reference dependencies are bound and the component becomes active — typically on bundle installation or server startup. @Modified is called when the component's OSGi configuration changes without requiring a full restart. Both receive the typed @interface configuration object, allowing the component to read and cache configuration values."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "try-with-resources — ResourceResolver implements Closeable so it is automatically closed at the end of the try block",
+        "@ServiceUserMapped with @Reference to get the ServiceUserMapped service, then use resolverFactory.getServiceResourceResolver(Map.of(ResourceResolverFactory.SUBSERVICE, subServiceName))",
+        "Cache the returned Resource object in a local variable before the loop and reuse it",
+        "Use Sling Models for Business Logic",
+        "Instance fields must be stateless or thread-safe — use method-local variables or AtomicReference/volatile for shared state",
+        "High-level APIs abstract JCR details, handle AEM business rules (version control, tagging, workflow), and are more stable across upgrades",
+        "They read the OSGi configuration annotation interface and initialize the component's state when the bundle activates or config changes"
+      ],
+      "narration": "Quick recap of AEM Best Practices (Part 1 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

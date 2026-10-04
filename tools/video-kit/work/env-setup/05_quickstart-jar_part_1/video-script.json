@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "QuickStart Jar (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "QuickStart Jar (Part 1 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. QuickStart Jar (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-033",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the AEMaaCS SDK QuickStart Jar?",
+      "heading": "A self-contained JAR file that runs a full AEM instance locally",
+      "body": "The QuickStart Jar is a self-contained JAR file included in the AEMaaCS SDK. It runs a full AEM instance (Author or Publish) locally, providing the same JCR-based runtime as the cloud environment.",
+      "narration": "What is the AEMaaCS SDK QuickStart Jar? A self-contained JAR file that runs a full AEM instance locally. The QuickStart Jar is a self-contained JAR file included in the AEMaaCS SDK. It runs a full AEM instance (Author or Publish) locally, providing the same JCR-based runtime as the cloud environment."
+    },
+    {
+      "id": "02-env-034",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "Where do you download the AEMaaCS SDK QuickStart Jar from?",
+      "heading": "Adobe Software Distribution",
+      "body": "The AEMaaCS SDK, including the QuickStart Jar, is downloaded from Adobe Software Distribution (softwaredistribution.adobe.com). You need an Adobe ID and appropriate licenses to access it.",
+      "narration": "Where do you download the AEMaaCS SDK QuickStart Jar from? Adobe Software Distribution. The AEMaaCS SDK, including the QuickStart Jar, is downloaded from Adobe Software Distribution (softwaredistribution.adobe.com). You need an Adobe ID and appropriate licenses to access it."
+    },
+    {
+      "id": "03-env-035",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is the correct way to start the QuickStart Jar?",
+      "heading": "From the command line using: java -jar aem-author-p4502.jar",
+      "body": "The QuickStart Jar must always be started from the command line using `java -jar aem-author-p4502.jar`. Never double-click the JAR file — this can cause it to start incorrectly or corrupt the crx-quickstart folder.",
+      "narration": "What is the correct way to start the QuickStart Jar? From the command line using: java -jar aem-author-p4502.jar. The QuickStart Jar must always be started from the command line using `java -jar aem-author-p4502.jar`. Never double-click the JAR file — this can cause it to start incorrectly or corrupt the crx-quickstart folder."
+    },
+    {
+      "id": "04-env-036",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "Why should you never double-click the QuickStart Jar file?",
+      "heading": "It must be started from the command line to ensure it starts correctly",
+      "body": "The QuickStart Jar must be started via `java -jar` from the command line. Double-clicking may start it without proper parameters, potentially starting on a wrong port or in the wrong mode, and can corrupt the `crx-quickstart` folder.",
+      "narration": "Why should you never double-click the QuickStart Jar file? It must be started from the command line to ensure it starts correctly. The QuickStart Jar must be started via `java -jar` from the command line. Double-clicking may start it without proper parameters, potentially starting on a wrong port or in the wrong mode, and can corrupt the `crx-quickstart` folder."
+    },
+    {
+      "id": "05-env-037",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "On which port does the local AEM Author instance run by default?",
+      "heading": "Port 4502",
+      "body": "The local AEM Author instance runs on port 4502 by default, while the local Publish instance runs on port 4503. These ports are encoded in the QuickStart Jar filename.",
+      "narration": "On which port does the local AEM Author instance run by default? Port 4502. The local AEM Author instance runs on port 4502 by default, while the local Publish instance runs on port 4503. These ports are encoded in the QuickStart Jar filename."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A self-contained JAR file that runs a full AEM instance locally",
+        "Adobe Software Distribution",
+        "From the command line using: java -jar aem-author-p4502.jar",
+        "It must be started from the command line to ensure it starts correctly",
+        "Port 4502"
+      ],
+      "narration": "Quick recap of QuickStart Jar (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

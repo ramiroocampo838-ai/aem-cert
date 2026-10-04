@@ -1,0 +1,102 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "AEM Best Practices (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "AEM Best Practices (Part 2 of 2)",
+      "sub": "Code Quality · 7 key concepts",
+      "narration": "Code Quality. AEM Best Practices (Part 2 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-040",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "AEM-BP-008 forbids hardcoded paths like '/content/mysite/en' directly in Java code. What is the recommended alternative?",
+      "heading": "Externalize paths to OSGi configuration properties, Sling mappings, or Context-Aware Configurations (CAConfig)",
+      "body": "AEM-BP-008 (Major): Hardcoded paths like '/content/mysite/en' break across environments (different content trees) and tenant configurations. The recommended alternatives are: (1) OSGi @Component configuration with @AttributeDefinition for service-level paths, deployed as run-mode-specific .cfg.json files. (2) Context-Aware Configurations (CAConfig) for component-level paths that vary by site or locale. (3) Sling URL Mappings for runtime URL transformation.",
+      "narration": "AEM-BP-008 forbids hardcoded paths like '/content/mysite/en' directly in Java code. What is the recommended alternative? Externalize paths to OSGi configuration properties, Sling mappings, or Context-Aware Configurations (CAConfig). AEM-BP-008 (Major): Hardcoded paths like '/content/mysite/en' break across environments (different content trees) and tenant configurations. The recommended alternatives are: (1) OSGi @Component configuration with @AttributeDefinition for service-level paths, deployed as run-mode-specific .cfg.json files. (2) Context-Aware Configurations (CAConfig) for component-level paths that vary by site or locale. (3) Sling URL Mappings for runtime URL transformation."
+    },
+    {
+      "id": "02-cq-041",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is the critical difference between calling resourceResolverFactory.getAdministrativeResourceResolver() and getServiceResourceResolver() in modern AEM?",
+      "heading": "getAdministrativeResourceResolver() is deprecated/removed in AEM 6.5+ and uses super-admin credentials; getServiceResourceResolver() uses a least-privilege service user",
+      "body": "AEM-BP-002 and security best practices: getAdministrativeResourceResolver(null) was deprecated in AEM 6.2, blocked in AEM 6.4+, and removed in AEM as a Cloud Service. It gave the caller full super-administrator access to the entire JCR — a severe security risk. getServiceResourceResolver(Map.of(SUBSERVICE, 'name')) uses a system user with only the specific permissions it needs (principle of least privilege).",
+      "narration": "What is the critical difference between calling resourceResolverFactory.getAdministrativeResourceResolver() and getServiceResourceResolver() in modern AEM? getAdministrativeResourceResolver() is deprecated/removed in AEM 6.5+ and uses super-admin credentials; getServiceResourceResolver() uses a least-privilege service user. AEM-BP-002 and security best practices: getAdministrativeResourceResolver(null) was deprecated in AEM 6.2, blocked in AEM 6.4+, and removed in AEM as a Cloud Service. It gave the caller full super-administrator access to the entire JCR — a severe security risk. getServiceResourceResolver(Map.of(SUBSERVICE, 'name')) uses a system user with only the specific permissions it needs (principle of least privilege)."
+    },
+    {
+      "id": "03-cq-042",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which Java code properly adapts an AEM Resource to a Sling Model in a component's Use-Provider, following AEM-BP-004?",
+      "heading": "resource.adaptTo(MyModel.class) — Sling's adaptable mechanism binds to the @Model annotated class",
+      "body": "AEM-BP-004: Sling Models are adapters. The @Model(adaptables=Resource.class) annotation registers the class with Sling's AdapterManager. When adaptTo(MyModel.class) is called on a Resource, Sling finds the registered adapter, instantiates the model, and injects all @ValueMapValue, @ChildResource, @OSGiService, and other annotated fields. The method returns null if the adaptation fails.",
+      "narration": "Which Java code properly adapts an AEM Resource to a Sling Model in a component's Use-Provider, following AEM-BP-004? resource.adaptTo(MyModel.class) — Sling's adaptable mechanism binds to the @Model annotated class. AEM-BP-004: Sling Models are adapters. The @Model(adaptables=Resource.class) annotation registers the class with Sling's AdapterManager. When adaptTo(MyModel.class) is called on a Resource, Sling finds the registered adapter, instantiates the model, and injects all @ValueMapValue, @ChildResource, @OSGiService, and other annotated fields. The method returns null if the adaptation fails."
+    },
+    {
+      "id": "04-cq-043",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why must you never use an instance field 'private String currentPath;' in an OSGi @Component Servlet, per AEM-BP-005?",
+      "heading": "The Servlet is a singleton — concurrent requests from different users share the same instance, so writing to currentPath in one thread corrupts it for another",
+      "body": "AEM-BP-005 (Critical): An OSGi component annotated with @Component(service=Servlet.class) is a singleton — exactly one Java object instance is created and shared across all concurrent HTTP requests. If Thread A writes this.currentPath = '/content/page-A' and Thread B writes this.currentPath = '/content/page-B' at the same time, Thread A may read '/content/page-B'. Fix: always use method-local variables so each stack frame has its own copy.",
+      "narration": "Why must you never use an instance field 'private String currentPath;' in an OSGi @Component Servlet, per AEM-BP-005? The Servlet is a singleton — concurrent requests from different users share the same instance, so writing to currentPath in one thread corrupts it for another. AEM-BP-005 (Critical): An OSGi component annotated with @Component(service=Servlet.class) is a singleton — exactly one Java object instance is created and shared across all concurrent HTTP requests. If Thread A writes this.currentPath = '/content/page-A' and Thread B writes this.currentPath = '/content/page-B' at the same time, Thread A may read '/content/page-B'. Fix: always use method-local variables so each stack frame has its own copy."
+    },
+    {
+      "id": "05-cq-044",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is Context-Aware Configuration (CAConfig) in AEM and why is it preferred over hardcoded paths for site-specific settings?",
+      "heading": "CAConfig stores settings in the JCR at configurable paths (e.g., /conf/mysite) and resolves them automatically for the current content resource using Sling's lookup chain",
+      "body": "AEM-BP-008 and CAConfig: Context-Aware Configuration (org.apache.sling.caconfig) stores site-specific settings in /conf/<site-name> as JCR content nodes. When a component calls ConfigurationBuilder.as(MyConfig.class), Sling walks up the content tree from the current resource looking for a sling:configRef pointing to /conf. This allows the same code to return different API keys, paths, or settings for different sites without code changes.",
+      "narration": "What is Context-Aware Configuration (CAConfig) in AEM and why is it preferred over hardcoded paths for site-specific settings? CAConfig stores settings in the JCR at configurable paths (e.g., /conf/mysite) and resolves them automatically for the current content resource using Sling's lookup chain. AEM-BP-008 and CAConfig: Context-Aware Configuration (org.apache.sling.caconfig) stores site-specific settings in /conf/<site-name> as JCR content nodes. When a component calls ConfigurationBuilder.as(MyConfig.class), Sling walks up the content tree from the current resource looking for a sling:configRef pointing to /conf. This allows the same code to return different API keys, paths, or settings for different sites without code changes."
+    },
+    {
+      "id": "06-cq-045",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the minimum required information that must be declared in a Sling Service User Mapping configuration for getServiceResourceResolver() to work?",
+      "heading": "Bundle symbolic name (or bundle:subservice) mapped to a repository system user name in ServiceUserMapperImpl.amended",
+      "body": "AEM-BP-002: The ServiceUserMapperImpl.amended OSGi factory configuration maps a bundle/subservice pair to a repository system user. A minimal entry looks like: user.mapping=['com.myproject.bundle:mysubservice=myproject-service-user']. This tells Sling: 'when bundle com.myproject.bundle calls getServiceResourceResolver with SUBSERVICE=mysubservice, return a resolver backed by the system user myproject-service-user'. The system user must be created in /home/users/system and granted appropriate JCR ACL permissions.",
+      "narration": "What is the minimum required information that must be declared in a Sling Service User Mapping configuration for getServiceResourceResolver() to work? Bundle symbolic name (or bundle:subservice) mapped to a repository system user name in ServiceUserMapperImpl.amended. AEM-BP-002: The ServiceUserMapperImpl.amended OSGi factory configuration maps a bundle/subservice pair to a repository system user. A minimal entry looks like: user.mapping=['com.myproject.bundle:mysubservice=myproject-service-user']. This tells Sling: 'when bundle com.myproject.bundle calls getServiceResourceResolver with SUBSERVICE=mysubservice, return a resolver backed by the system user myproject-service-user'. The system user must be created in /home/users/system and granted appropriate JCR ACL permissions."
+    },
+    {
+      "id": "07-cq-046",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When should you use TagManager.resolve(String tagId) instead of directly accessing the tag node via resourceResolver.getResource()?",
+      "heading": "Always — TagManager handles AEM's tag namespacing convention, fallback resolution, and cross-namespace lookups automatically",
+      "body": "AEM-BP-006: AEM's tag system uses a namespaced identifier format (e.g., 'properties:orientation/landscape') that maps to JCR nodes under /content/cq:tags. TagManager.resolve(tagId) handles the namespace-to-path translation, fallback to default namespace, and tag hierarchy traversal. Using resourceResolver.getResource('/content/cq:tags/' + tagId) fails for tags with namespace separators, localized tag paths, or tags migrated from /etc/tags in older AEM versions.",
+      "narration": "When should you use TagManager.resolve(String tagId) instead of directly accessing the tag node via resourceResolver.getResource()? Always — TagManager handles AEM's tag namespacing convention, fallback resolution, and cross-namespace lookups automatically. AEM-BP-006: AEM's tag system uses a namespaced identifier format (e.g., 'properties:orientation/landscape') that maps to JCR nodes under /content/cq:tags. TagManager.resolve(tagId) handles the namespace-to-path translation, fallback to default namespace, and tag hierarchy traversal. Using resourceResolver.getResource('/content/cq:tags/' + tagId) fails for tags with namespace separators, localized tag paths, or tags migrated from /etc/tags in older AEM versions."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Externalize paths to OSGi configuration properties, Sling mappings, or Context-Aware Configurations (CAConfig)",
+        "getAdministrativeResourceResolver() is deprecated/removed in AEM 6.5+ and uses super-admin credentials; getServiceResourceResolver() uses a least-privilege service user",
+        "resource.adaptTo(MyModel.class) — Sling's adaptable mechanism binds to the @Model annotated class",
+        "The Servlet is a singleton — concurrent requests from different users share the same instance, so writing to currentPath in one thread corrupts it for another",
+        "CAConfig stores settings in the JCR at configurable paths (e.g., /conf/mysite) and resolves them automatically for the current content resource using Sling's lookup chain",
+        "Bundle symbolic name (or bundle:subservice) mapped to a repository system user name in ServiceUserMapperImpl.amended",
+        "Always — TagManager handles AEM's tag namespacing convention, fallback resolution, and cross-namespace lookups automatically"
+      ],
+      "narration": "Quick recap of AEM Best Practices (Part 2 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

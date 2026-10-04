@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Package Types",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Package Types",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Package Types. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-022",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Where is the package type configured for an AEM package?",
+      "heading": "In the packageType configuration of the filevault-package-maven-plugin",
+      "body": "Section 4 says every package must declare a package type, and that the type is set with the packageType configuration of the filevault-package-maven-plugin.",
+      "narration": "Where is the package type configured for an AEM package? In the packageType configuration of the filevault-package-maven-plugin. Section 4 says every package must declare a package type, and that the type is set with the packageType configuration of the filevault-package-maven-plugin."
+    },
+    {
+      "id": "02-mvn-023",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What packageType do code, immutable packages use?",
+      "heading": "application",
+      "body": "The speech says code, immutable packages set packageType to application, with ui.apps and ui.config given as examples.",
+      "narration": "What packageType do code, immutable packages use? application. The speech says code, immutable packages set packageType to application, with ui.apps and ui.config given as examples."
+    },
+    {
+      "id": "03-mvn-024",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What packageType should ui.content use?",
+      "heading": "content",
+      "body": "Section 4 states that content, mutable packages set packageType to content, and ui.content is the example given.",
+      "narration": "What packageType should ui.content use? content. Section 4 states that content, mutable packages set packageType to content, and ui.content is the example given."
+    },
+    {
+      "id": "04-mvn-025",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What packageType do container packages use?",
+      "heading": "container",
+      "body": "The lesson says container packages set packageType to container, and that the all package is a container.",
+      "narration": "What packageType do container packages use? container. The lesson says container packages set packageType to container, and that the all package is a container."
+    },
+    {
+      "id": "05-mvn-026",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which statement about the all package is correct?",
+      "heading": "The all package is a container package",
+      "body": "Section 4 directly states that the all package is a container.",
+      "narration": "Which statement about the all package is correct? The all package is a container package. Section 4 directly states that the all package is a container."
+    },
+    {
+      "id": "06-mvn-027",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario with a container package, what may it hold according to the speech?",
+      "heading": "Only OSGi bundles, configurations, and sub packages",
+      "body": "The speech says a container may hold only OSGi bundles, configurations, and sub packages, and must not contain regular nodes.",
+      "narration": "Given a scenario with a container package, what may it hold according to the speech? Only OSGi bundles, configurations, and sub packages. The speech says a container may hold only OSGi bundles, configurations, and sub packages, and must not contain regular nodes."
+    },
+    {
+      "id": "07-mvn-028",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What is the usual value mentioned for accessControlHandling when packages are installed?",
+      "heading": "merge",
+      "body": "Section 4 says another setting is accessControlHandling, usually set to merge, which keeps existing ACLs when the package is installed.",
+      "narration": "What is the usual value mentioned for accessControlHandling when packages are installed? merge. Section 4 says another setting is accessControlHandling, usually set to merge, which keeps existing ACLs when the package is installed."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "In the packageType configuration of the filevault-package-maven-plugin",
+        "application",
+        "content",
+        "container",
+        "The all package is a container package",
+        "Only OSGi bundles, configurations, and sub packages",
+        "merge"
+      ],
+      "narration": "Quick recap of Package Types. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

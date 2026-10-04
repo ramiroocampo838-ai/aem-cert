@@ -1,0 +1,102 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Policies & Properties (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Policies & Properties (Part 1 of 2)",
+      "sub": "Templates · 7 key concepts",
+      "narration": "Templates. Policies & Properties (Part 1 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-056",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Why is configuring a policy mandatory for a layout container?",
+      "heading": "It's mandatory, because it's what determines which components can be added to the container",
+      "body": "Configuring a policy is mandatory for a layout container as it defines the allowed components that can be placed within it, establishing the range of components available for use within the container.",
+      "narration": "Why is configuring a policy mandatory for a layout container? It's mandatory, because it's what determines which components can be added to the container. Configuring a policy is mandatory for a layout container as it defines the allowed components that can be placed within it, establishing the range of components available for use within the container."
+    },
+    {
+      "id": "02-tmpl-057",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What does the Properties setting configure for a layout container?",
+      "heading": "Customizing its specific attributes and behavior, such as spacing, alignment, or responsiveness",
+      "body": "The Properties setting for a layout container is used to customize its specific attributes and behavior, which may include options such as spacing, alignment, responsiveness, or other relevant settings.",
+      "narration": "What does the Properties setting configure for a layout container? Customizing its specific attributes and behavior, such as spacing, alignment, or responsiveness. The Properties setting for a layout container is used to customize its specific attributes and behavior, which may include options such as spacing, alignment, responsiveness, or other relevant settings."
+    },
+    {
+      "id": "03-tmpl-058",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How is the configuration window for a layout container divided?",
+      "heading": "Policy settings on the left side, properties settings on the right side",
+      "body": "The configuration window for a layout container is divided into two sections: the left side contains the policy settings (which components are allowed), and the right side is dedicated to the properties settings (customizing attributes and behavior).",
+      "narration": "How is the configuration window for a layout container divided? Policy settings on the left side, properties settings on the right side. The configuration window for a layout container is divided into two sections: the left side contains the policy settings (which components are allowed), and the right side is dedicated to the properties settings (customizing attributes and behavior)."
+    },
+    {
+      "id": "04-tmpl-059",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What are the three tabs under the Properties heading for a layout container?",
+      "heading": "Allowed Components, Default Components, and Responsive Settings",
+      "body": "The Properties heading for a layout container has three tabs: Allowed Components (which components are accessible), Default Components (media-type-to-component mapping), and Responsive Settings (grid column count).",
+      "narration": "What are the three tabs under the Properties heading for a layout container? Allowed Components, Default Components, and Responsive Settings. The Properties heading for a layout container has three tabs: Allowed Components (which components are accessible), Default Components (media-type-to-component mapping), and Responsive Settings (grid column count)."
+    },
+    {
+      "id": "05-tmpl-060",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does the Allowed Components tab let you configure?",
+      "heading": "You define which components are available for the layout container, organized into expandable/collapsible groups",
+      "body": "On the Allowed Components tab you define which components are available for the layout container. Components are organized into groups that can be expanded or collapsed, with search functionality to filter by name.",
+      "narration": "What does the Allowed Components tab let you configure? You define which components are available for the layout container, organized into expandable/collapsible groups. On the Allowed Components tab you define which components are available for the layout container. Components are organized into groups that can be expanded or collapsed, with search functionality to filter by name."
+    },
+    {
+      "id": "06-tmpl-061",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What indicator shows that only some, not all, items in a component group are selected in Allowed Components?",
+      "heading": "A minus symbol (-) next to a group name",
+      "body": "When a minus symbol (-) appears next to a group in the Allowed Components tab, it indicates that at least one but not all items in that group are selected, providing flexibility to choose specific components within a group.",
+      "narration": "What indicator shows that only some, not all, items in a component group are selected in Allowed Components? A minus symbol (-) next to a group name. When a minus symbol (-) appears next to a group in the Allowed Components tab, it indicates that at least one but not all items in that group are selected, providing flexibility to choose specific components within a group."
+    },
+    {
+      "id": "07-tmpl-062",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What does the Default Components tab configure?",
+      "heading": "Which components are automatically associated with specific media types when an author drags an asset from the browser",
+      "body": "The Default Components tab allows you to specify which components are automatically associated with specific media types — when an author drags an asset from the asset browser, AEM uses this configuration to determine which component to create.",
+      "narration": "What does the Default Components tab configure? Which components are automatically associated with specific media types when an author drags an asset from the browser. The Default Components tab allows you to specify which components are automatically associated with specific media types — when an author drags an asset from the asset browser, AEM uses this configuration to determine which component to create."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It's mandatory, because it's what determines which components can be added to the container",
+        "Customizing its specific attributes and behavior, such as spacing, alignment, or responsiveness",
+        "Policy settings on the left side, properties settings on the right side",
+        "Allowed Components, Default Components, and Responsive Settings",
+        "You define which components are available for the layout container, organized into expandable/collapsible groups",
+        "A minus symbol (-) next to a group name",
+        "Which components are automatically associated with specific media types when an author drags an asset from the browser"
+      ],
+      "narration": "Quick recap of Policies & Properties (Part 1 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

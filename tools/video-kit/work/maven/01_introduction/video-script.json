@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Introduction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Introduction",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Introduction. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-001",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does this lesson focus on after component construction has already been covered?",
+      "heading": "How everything is packaged and deployed",
+      "body": "The introduction says the lesson now looks at how everything is packaged and deployed, including project structure, content package types, the container package, and the AEM Project Archetype.",
+      "narration": "What does this lesson focus on after component construction has already been covered? How everything is packaged and deployed. The introduction says the lesson now looks at how everything is packaged and deployed, including project structure, content package types, the container package, and the AEM Project Archetype."
+    },
+    {
+      "id": "02-mvn-002",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which exam section does this lesson map to?",
+      "heading": "Section 3: Build and Deployment",
+      "body": "The speech explicitly says the lesson maps to Section 3 of the exam: Build and Deployment.",
+      "narration": "Which exam section does this lesson map to? Section 3: Build and Deployment. The speech explicitly says the lesson maps to Section 3 of the exam: Build and Deployment."
+    },
+    {
+      "id": "03-mvn-003",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which specific objective is called out for identifying the correct Maven project structure?",
+      "heading": "Objective 3.1",
+      "body": "The introduction says 3.1 is the objective for identifying the correct Maven project structure.",
+      "narration": "Which specific objective is called out for identifying the correct Maven project structure? Objective 3.1. The introduction says 3.1 is the objective for identifying the correct Maven project structure."
+    },
+    {
+      "id": "04-mvn-004",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Given a scenario, which objective covers identifying how to configure projects from archetypes?",
+      "heading": "Objective 3.2",
+      "body": "The speech states that 3.2 covers scenario-based identification of how to configure projects from archetypes.",
+      "narration": "Given a scenario, which objective covers identifying how to configure projects from archetypes? Objective 3.2. The speech states that 3.2 covers scenario-based identification of how to configure projects from archetypes."
+    },
+    {
+      "id": "05-mvn-005",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "About what percentage of the exam is Build and Deployment?",
+      "heading": "About 17 percent",
+      "body": "The introduction says Build and Deployment is about 17 percent of the exam, making it worth careful study.",
+      "narration": "About what percentage of the exam is Build and Deployment? About 17 percent. The introduction says Build and Deployment is about 17 percent of the exam, making it worth careful study."
+    },
+    {
+      "id": "06-mvn-006",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What kind of exam questions should you expect for this topic?",
+      "heading": "Scenario questions about modules, package types, deployment failures, and archetype properties",
+      "body": "The introduction says to expect scenario questions such as which module holds a file, which package type is correct, why deployment failed, and which Archetype property produced a result.",
+      "narration": "What kind of exam questions should you expect for this topic? Scenario questions about modules, package types, deployment failures, and archetype properties. The introduction says to expect scenario questions such as which module holds a file, which package type is correct, why deployment failed, and which Archetype property produced a result."
+    },
+    {
+      "id": "07-mvn-007",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which set of subjects is explicitly named in the introduction as part of this lesson?",
+      "heading": "Maven project structure, content package types, the container package, and the AEM Project Archetype",
+      "body": "The introduction names four study areas: the Maven project structure, the content package types, the container package, and the AEM Project Archetype.",
+      "narration": "Which set of subjects is explicitly named in the introduction as part of this lesson? Maven project structure, content package types, the container package, and the AEM Project Archetype. The introduction names four study areas: the Maven project structure, the content package types, the container package, and the AEM Project Archetype."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "How everything is packaged and deployed",
+        "Section 3: Build and Deployment",
+        "Objective 3.1",
+        "Objective 3.2",
+        "About 17 percent",
+        "Scenario questions about modules, package types, deployment failures, and archetype properties",
+        "Maven project structure, content package types, the container package, and the AEM Project Archetype"
+      ],
+      "narration": "Quick recap of Introduction. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

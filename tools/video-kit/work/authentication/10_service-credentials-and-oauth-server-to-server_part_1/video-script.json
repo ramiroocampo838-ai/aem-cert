@@ -1,0 +1,102 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Service Credentials & OAuth Server-to-Server (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Service Credentials & OAuth Server-to-Server (Part 1 of 2)",
+      "sub": "Authentication · 7 key concepts",
+      "narration": "Authentication. Service Credentials & OAuth Server-to-Server (Part 1 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-080",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the current standard mechanism for obtaining production access tokens to AEMaaCS?",
+      "heading": "OAuth Server-to-Server (S2S) — the current, and only, supported method for production programmatic access",
+      "body": "OAuth Server-to-Server (S2S) is the current standard for production-grade programmatic access to AEMaaCS. It replaced the older JWT-based Service Credentials flow, which Adobe fully deprecated.",
+      "narration": "What is the current standard mechanism for obtaining production access tokens to AEMaaCS? OAuth Server-to-Server (S2S) — the current, and only, supported method for production programmatic access. OAuth Server-to-Server (S2S) is the current standard for production-grade programmatic access to AEMaaCS. It replaced the older JWT-based Service Credentials flow, which Adobe fully deprecated."
+    },
+    {
+      "id": "02-auth-081",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is the exact deprecation timeline for JWT-based Service Credentials in Adobe Developer Console?",
+      "heading": "New JWT credentials could not be created after June 3, 2024, and all existing JWT credentials stopped working by June 30, 2025",
+      "body": "Adobe stopped allowing new JWT (Service Account) credentials to be created on or after June 3, 2024. Every existing JWT credential stopped functioning on or after June 30, 2025 — so any integration still built on JWT is broken today.",
+      "narration": "What is the exact deprecation timeline for JWT-based Service Credentials in Adobe Developer Console? New JWT credentials could not be created after June 3, 2024, and all existing JWT credentials stopped working by June 30, 2025. Adobe stopped allowing new JWT (Service Account) credentials to be created on or after June 3, 2024. Every existing JWT credential stopped functioning on or after June 30, 2025 — so any integration still built on JWT is broken today."
+    },
+    {
+      "id": "03-auth-082",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Who creates an OAuth Server-to-Server credential, and what is it tied to?",
+      "heading": "An Adobe IMS Org Administrator, tied to a Technical Account",
+      "body": "An Adobe IMS Org Administrator creates the OAuth Server-to-Server credential — via the AEM Developer Console or Adobe Developer Console — tied to a Technical Account, the identity the credential will authenticate as.",
+      "narration": "Who creates an OAuth Server-to-Server credential, and what is it tied to? An Adobe IMS Org Administrator, tied to a Technical Account. An Adobe IMS Org Administrator creates the OAuth Server-to-Server credential — via the AEM Developer Console or Adobe Developer Console — tied to a Technical Account, the identity the credential will authenticate as."
+    },
+    {
+      "id": "04-auth-083",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What does an OAuth Server-to-Server credential JSON payload contain?",
+      "heading": "A client ID, a client secret, and a set of scopes — no private key and no JWT to build or sign",
+      "body": "An OAuth Server-to-Server credential is a JSON payload containing a client ID, a client secret, and the scopes it's allowed to request. Unlike the old JWT flow, there's no private key to manage and no JWT to construct or sign.",
+      "narration": "What does an OAuth Server-to-Server credential JSON payload contain? A client ID, a client secret, and a set of scopes — no private key and no JWT to build or sign. An OAuth Server-to-Server credential is a JSON payload containing a client ID, a client secret, and the scopes it's allowed to request. Unlike the old JWT flow, there's no private key to manage and no JWT to construct or sign."
+    },
+    {
+      "id": "05-auth-084",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How do you exchange OAuth Server-to-Server credentials for an access token?",
+      "heading": "A single POST request with grant_type=client_credentials, client_id, client_secret, and scope — no signing step",
+      "body": "You make one POST request to https://ims-na1.adobelogin.com/ims/token/v3 with form-encoded parameters grant_type=client_credentials, client_id, client_secret, and scope. The response is an access token — no JWT construction or signing is involved, which is the main simplification over the old flow.",
+      "narration": "How do you exchange OAuth Server-to-Server credentials for an access token? A single POST request with grant_type=client_credentials, client_id, client_secret, and scope — no signing step. You make one POST request to https://ims-na1.adobelogin.com/ims/token/v3 with form-encoded parameters grant_type=client_credentials, client_id, client_secret, and scope. The response is an access token — no JWT construction or signing is involved, which is the main simplification over the old flow."
+    },
+    {
+      "id": "06-auth-085",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "How is the OAuth Server-to-Server access token used once obtained?",
+      "heading": "As a Bearer token in the Authorization header, the same way a Local Development Access Token is used",
+      "body": "The access token returned by the OAuth Server-to-Server exchange is used exactly like a Local Development Access Token: as a Bearer token in the Authorization header of requests made to AEM's APIs.",
+      "narration": "How is the OAuth Server-to-Server access token used once obtained? As a Bearer token in the Authorization header, the same way a Local Development Access Token is used. The access token returned by the OAuth Server-to-Server exchange is used exactly like a Local Development Access Token: as a Bearer token in the Authorization header of requests made to AEM's APIs."
+    },
+    {
+      "id": "07-auth-086",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How do Service Credentials relate to a Technical Account?",
+      "heading": "Tied to a Technical Account; multiple Service Credentials can be active for one Technical Account",
+      "body": "Service Credentials are tied to Technical Accounts, and a single Technical Account can have multiple active Service Credentials at once — each one a separate set of client ID/secret pairs authenticating as that same account.",
+      "narration": "How do Service Credentials relate to a Technical Account? Tied to a Technical Account; multiple Service Credentials can be active for one Technical Account. Service Credentials are tied to Technical Accounts, and a single Technical Account can have multiple active Service Credentials at once — each one a separate set of client ID/secret pairs authenticating as that same account."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "OAuth Server-to-Server (S2S) — the current, and only, supported method for production programmatic access",
+        "New JWT credentials could not be created after June 3, 2024, and all existing JWT credentials stopped working by June 30, 2025",
+        "An Adobe IMS Org Administrator, tied to a Technical Account",
+        "A client ID, a client secret, and a set of scopes — no private key and no JWT to build or sign",
+        "A single POST request with grant_type=client_credentials, client_id, client_secret, and scope — no signing step",
+        "As a Bearer token in the Authorization header, the same way a Local Development Access Token is used",
+        "Tied to a Technical Account; multiple Service Credentials can be active for one Technical Account"
+      ],
+      "narration": "Quick recap of Service Credentials & OAuth Server-to-Server (Part 1 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

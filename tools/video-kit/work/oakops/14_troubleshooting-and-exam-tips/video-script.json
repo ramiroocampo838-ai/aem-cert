@@ -1,0 +1,113 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Troubleshooting and Exam Tips",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Troubleshooting and Exam Tips",
+      "sub": "Oak & Operations · 8 key concepts",
+      "narration": "Oak & Operations. Troubleshooting and Exam Tips. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-093",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What log clue should make you suspect a slow Oak query?",
+      "heading": "A WARN message saying Oak traversed nodes and suggesting an index or query change",
+      "body": "Section 14 says that for a slow query, you should look for the WARN message about traversed nodes and then create a suitable Lucene index.",
+      "narration": "What log clue should make you suspect a slow Oak query? A WARN message saying Oak traversed nodes and suggesting an index or query change. Section 14 says that for a slow query, you should look for the WARN message about traversed nodes and then create a suitable Lucene index."
+    },
+    {
+      "id": "02-oak-094",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "How should a slow-query index fix be handled in AEM as a Cloud Service?",
+      "heading": "Deploy a suitable Lucene index through the pipeline with the correct custom name instead of editing the repository by hand",
+      "body": "The troubleshooting section says that in the cloud you deploy the suitable Lucene index through the pipeline with the correct custom name and do not edit the repository by hand.",
+      "narration": "How should a slow-query index fix be handled in AEM as a Cloud Service? Deploy a suitable Lucene index through the pipeline with the correct custom name instead of editing the repository by hand. The troubleshooting section says that in the cloud you deploy the suitable Lucene index through the pipeline with the correct custom name and do not edit the repository by hand."
+    },
+    {
+      "id": "03-oak-095",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "If a custom index is not being used in the cloud, what broad checklist does the speech recommend?",
+      "heading": "Check the custom naming pattern and prefix, confirm type lucene and async, verify includedPaths and tags, and verify allowIndexDefinitions, noIntermediateSaves, and the vault filter",
+      "body": "Section 14 lists a checklist for unused custom indexes that includes naming, type and async, includedPaths and tags, allowIndexDefinitions and noIntermediateSaves, and the vault filter.",
+      "narration": "If a custom index is not being used in the cloud, what broad checklist does the speech recommend? Check the custom naming pattern and prefix, confirm type lucene and async, verify includedPaths and tags, and verify allowIndexDefinitions, noIntermediateSaves, and the vault filter. Section 14 lists a checklist for unused custom indexes that includes naming, type and async, includedPaths and tags, allowIndexDefinitions and noIntermediateSaves, and the vault filter."
+    },
+    {
+      "id": "04-oak-096",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Where should you look in the cloud to troubleshoot specific request and cache behaviors?",
+      "heading": "Use the AEM Java log for application code, the request log to pair requests and responses, the access log to follow a user, the Dispatcher log for miss or none, the Apache error log for rewrite rules, and the CDN log for HIT, MISS, and PASS",
+      "body": "The troubleshooting section gives an explicit log map: Java log for app code, request log for paired requests and responses, access log to follow a user, Dispatcher for miss or none, Apache error for rewrites, and CDN for HIT/MISS/PASS.",
+      "narration": "Where should you look in the cloud to troubleshoot specific request and cache behaviors? Use the AEM Java log for application code, the request log to pair requests and responses, the access log to follow a user, the Dispatcher log for miss or none, the Apache error log for rewrite rules, and the CDN log for HIT, MISS, and PASS. The troubleshooting section gives an explicit log map: Java log for app code, request log for paired requests and responses, access log to follow a user, Dispatcher for miss or none, Apache error for rewrites, and CDN for HIT/MISS/PASS."
+    },
+    {
+      "id": "05-oak-097",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What cloud logging defaults should not be changed, and how should DEBUG be used?",
+      "heading": "Do not change the default INFO level, the log format, or the logs/error.log destination; raise a package to DEBUG only temporarily",
+      "body": "Section 14 repeats the cloud logging guidance: never change the default INFO level, the format, or the logs/error.log destination, and use DEBUG only temporarily for a package.",
+      "narration": "What cloud logging defaults should not be changed, and how should DEBUG be used? Do not change the default INFO level, the log format, or the logs/error.log destination; raise a package to DEBUG only temporarily. Section 14 repeats the cloud logging guidance: never change the default INFO level, the format, or the logs/error.log destination, and use DEBUG only temporarily for a package."
+    },
+    {
+      "id": "06-oak-098",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What are common reasons for a blocked publish queue, and what should you inspect?",
+      "heading": "The receiving instance may be disabled or unreachable, or the agent user may lack permissions; check the agent log and the Retry Delay",
+      "body": "The troubleshooting section says a blocked publish queue means the receiving instance is disabled or unreachable, or the agent user lacks permissions, and it tells you to check the agent log and Retry Delay.",
+      "narration": "What are common reasons for a blocked publish queue, and what should you inspect? The receiving instance may be disabled or unreachable, or the agent user may lack permissions; check the agent log and the Retry Delay. The troubleshooting section says a blocked publish queue means the receiving instance is disabled or unreachable, or the agent user lacks permissions, and it tells you to check the agent log and Retry Delay."
+    },
+    {
+      "id": "07-oak-099",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What replication call limits does the speech ask you to remember for Cloud Service?",
+      "heading": "Replicate fewer than 100 paths at a time, 500 is the hard limit, and content per call must not exceed 10 MB",
+      "body": "Section 14 repeats the Cloud Service replication numbers: fewer than 100 paths at a time, a limit of 500, and 10 MB of content per call.",
+      "narration": "What replication call limits does the speech ask you to remember for Cloud Service? Replicate fewer than 100 paths at a time, 500 is the hard limit, and content per call must not exceed 10 MB. Section 14 repeats the Cloud Service replication numbers: fewer than 100 paths at a time, a limit of 500, and 10 MB of content per call."
+    },
+    {
+      "id": "08-oak-100",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Which defaults does the speech tell you to remember for topology, replication, and logging?",
+      "heading": "Author is a single TarMK, Publish is a TarMK farm, TarMK is for performance, MongoMK is for scalability, only the publish agent is on by default in the cloud, and Dispatcher plus rewrite logs default to warn",
+      "body": "The final exam-tips section tells you to remember those defaults: single TarMK for Author, TarMK farm for Publish, TarMK for performance, MongoMK for scalability, only publish enabled by default in the cloud, and warn as the default for Dispatcher and rewrite logs.",
+      "narration": "Which defaults does the speech tell you to remember for topology, replication, and logging? Author is a single TarMK, Publish is a TarMK farm, TarMK is for performance, MongoMK is for scalability, only the publish agent is on by default in the cloud, and Dispatcher plus rewrite logs default to warn. The final exam-tips section tells you to remember those defaults: single TarMK for Author, TarMK farm for Publish, TarMK for performance, MongoMK for scalability, only publish enabled by default in the cloud, and warn as the default for Dispatcher and rewrite logs."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A WARN message saying Oak traversed nodes and suggesting an index or query change",
+        "Deploy a suitable Lucene index through the pipeline with the correct custom name instead of editing the repository by hand",
+        "Check the custom naming pattern and prefix, confirm type lucene and async, verify includedPaths and tags, and verify allowIndexDefinitions, noIntermediateSaves, and the vault filter",
+        "Use the AEM Java log for application code, the request log to pair requests and responses, the access log to follow a user, the Dispatcher log for miss or none, the Apache error log for rewrite rules, and the CDN log for HIT, MISS, and PASS",
+        "Do not change the default INFO level, the log format, or the logs/error.log destination; raise a package to DEBUG only temporarily",
+        "The receiving instance may be disabled or unreachable, or the agent user may lack permissions; check the agent log and the Retry Delay",
+        "Replicate fewer than 100 paths at a time, 500 is the hard limit, and content per call must not exceed 10 MB",
+        "Author is a single TarMK, Publish is a TarMK farm, TarMK is for performance, MongoMK is for scalability, only the publish agent is on by default in the cloud, and Dispatcher plus rewrite logs default to warn"
+      ],
+      "narration": "Quick recap of Troubleshooting and Exam Tips. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

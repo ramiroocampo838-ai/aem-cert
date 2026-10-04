@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Content Distribution",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Content Distribution",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. Content Distribution. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-053",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "How does content move from Author to Publish in a production AEMaaCS environment?",
+      "heading": "Through the Adobe Pipeline — a cloud-only microservice",
+      "body": "In production AEMaaCS, content moves from Author to Publish through the Adobe Pipeline — a cloud-only microservice. This mechanism is not available for local development, so Replication Agents are used instead.",
+      "narration": "How does content move from Author to Publish in a production AEMaaCS environment? Through the Adobe Pipeline — a cloud-only microservice. In production AEMaaCS, content moves from Author to Publish through the Adobe Pipeline — a cloud-only microservice. This mechanism is not available for local development, so Replication Agents are used instead."
+    },
+    {
+      "id": "02-env-054",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "How do you simulate content distribution from Author to Publish in a local AEM environment?",
+      "heading": "Using legacy Replication Agents configured on the local Author service",
+      "body": "Locally, you simulate the Adobe Pipeline by enabling legacy Replication Agents on the Author instance. These agents push content to the local Publish instance when you activate pages or assets.",
+      "narration": "How do you simulate content distribution from Author to Publish in a local AEM environment? Using legacy Replication Agents configured on the local Author service. Locally, you simulate the Adobe Pipeline by enabling legacy Replication Agents on the Author instance. These agents push content to the local Publish instance when you activate pages or assets."
+    },
+    {
+      "id": "03-env-055",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Where in AEM do you go to enable the local Replication Agent for content distribution?",
+      "heading": "/etc/replication/agents.author.html",
+      "body": "To configure Replication Agents, navigate to `/etc/replication/agents.author.html` on the local Author instance. From there you can open the Default Agent, enable it, and set the transport URI.",
+      "narration": "Where in AEM do you go to enable the local Replication Agent for content distribution? /etc/replication/agents.author.html. To configure Replication Agents, navigate to `/etc/replication/agents.author.html` on the local Author instance. From there you can open the Default Agent, enable it, and set the transport URI."
+    },
+    {
+      "id": "04-env-056",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Which Replication Agent do you enable for local content distribution?",
+      "heading": "The Default Agent",
+      "body": "The Default Agent is the standard Replication Agent for pushing content from Author to Publish. For local development, you enable the Default Agent and point its transport URI to the local Publish instance.",
+      "narration": "Which Replication Agent do you enable for local content distribution? The Default Agent. The Default Agent is the standard Replication Agent for pushing content from Author to Publish. For local development, you enable the Default Agent and point its transport URI to the local Publish instance."
+    },
+    {
+      "id": "05-env-057",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What transport URI should the Default Replication Agent use to point to the local Publish instance?",
+      "heading": "localhost:4503",
+      "body": "The Default Replication Agent's transport URI should point to the local Publish instance at `localhost:4503`. The full URI is typically `http://localhost:4503/bin/receive?sling:authRequestLogin=1`.",
+      "narration": "What transport URI should the Default Replication Agent use to point to the local Publish instance? localhost:4503. The Default Replication Agent's transport URI should point to the local Publish instance at `localhost:4503`. The full URI is typically `http://localhost:4503/bin/receive?sling:authRequestLogin=1`."
+    },
+    {
+      "id": "06-env-058",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Why can't the Adobe Pipeline be used for local AEM development?",
+      "heading": "Because the Adobe Pipeline is a cloud-only microservice not available locally",
+      "body": "The Adobe Pipeline is a cloud-only microservice. It exists only in AEMaaCS cloud environments and has no local equivalent. Developers use legacy Replication Agents to simulate the same Author-to-Publish flow locally.",
+      "narration": "Why can't the Adobe Pipeline be used for local AEM development? Because the Adobe Pipeline is a cloud-only microservice not available locally. The Adobe Pipeline is a cloud-only microservice. It exists only in AEMaaCS cloud environments and has no local equivalent. Developers use legacy Replication Agents to simulate the same Author-to-Publish flow locally."
+    },
+    {
+      "id": "07-env-059",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What happens after you enable the Default Replication Agent and point it to localhost:4503?",
+      "heading": "Content published on Author will replicate to the local Publish instance",
+      "body": "Once the Default Replication Agent is enabled and pointed to `localhost:4503`, any page or asset you activate (publish) on the local Author instance will be replicated to the local Publish instance — simulating the cloud content distribution behavior.",
+      "narration": "What happens after you enable the Default Replication Agent and point it to localhost:4503? Content published on Author will replicate to the local Publish instance. Once the Default Replication Agent is enabled and pointed to `localhost:4503`, any page or asset you activate (publish) on the local Author instance will be replicated to the local Publish instance — simulating the cloud content distribution behavior."
+    },
+    {
+      "id": "08-env-060",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Why are Replication Agents described as 'legacy' in the context of AEMaaCS?",
+      "heading": "Because AEMaaCS uses the Adobe Pipeline for content distribution, making Replication Agents a legacy approach",
+      "body": "In AEMaaCS, content distribution between Author and Publish is handled by the Adobe Pipeline (a cloud microservice). Replication Agents are considered 'legacy' because they were the original mechanism from older AEM versions. They are still available locally but are not the primary cloud mechanism.",
+      "narration": "Why are Replication Agents described as 'legacy' in the context of AEMaaCS? Because AEMaaCS uses the Adobe Pipeline for content distribution, making Replication Agents a legacy approach. In AEMaaCS, content distribution between Author and Publish is handled by the Adobe Pipeline (a cloud microservice). Replication Agents are considered 'legacy' because they were the original mechanism from older AEM versions. They are still available locally but are not the primary cloud mechanism."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Through the Adobe Pipeline — a cloud-only microservice",
+        "Using legacy Replication Agents configured on the local Author service",
+        "/etc/replication/agents.author.html",
+        "The Default Agent",
+        "localhost:4503",
+        "Because the Adobe Pipeline is a cloud-only microservice not available locally",
+        "Content published on Author will replicate to the local Publish instance",
+        "Because AEMaaCS uses the Adobe Pipeline for content distribution, making Replication Agents a legacy approach"
+      ],
+      "narration": "Quick recap of Content Distribution. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

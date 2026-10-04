@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Invalidating from Author or Publish",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Invalidating from Author or Publish",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Invalidating from Author or Publish. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-066",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the standard Dispatcher Flush agent do when it is configured on Author?",
+      "heading": "On Author, the standard Dispatcher Flush agent sends an invalidation request when a page is activated",
+      "body": "The speech says the standard Dispatcher Flush agent is installed by default and, when configured on Author, sends an invalidation request to Dispatcher when a page is activated.",
+      "narration": "What does the standard Dispatcher Flush agent do when it is configured on Author? On Author, the standard Dispatcher Flush agent sends an invalidation request when a page is activated. The speech says the standard Dispatcher Flush agent is installed by default and, when configured on Author, sends an invalidation request to Dispatcher when a page is activated."
+    },
+    {
+      "id": "02-disp-067",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Where should the Transport URI of a standard Dispatcher Flush agent point?",
+      "heading": "The Transport URI should point to /dispatcher/invalidate.cache on the Dispatcher host",
+      "body": "The speech says the flush agent's Transport URI points to /dispatcher/invalidate.cache on the Dispatcher host.",
+      "narration": "Where should the Transport URI of a standard Dispatcher Flush agent point? The Transport URI should point to /dispatcher/invalidate.cache on the Dispatcher host. The speech says the flush agent's Transport URI points to /dispatcher/invalidate.cache on the Dispatcher host."
+    },
+    {
+      "id": "03-disp-068",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "When is the flush agent's URI property used to target a specific farm?",
+      "heading": "The URI property is used only with path-based virtual hosts to target a specific farm",
+      "body": "The speech states that the URI property is used only with path-based virtual hosts, to target a specific farm.",
+      "narration": "When is the flush agent's URI property used to target a specific farm? The URI property is used only with path-based virtual hosts to target a specific farm. The speech states that the URI property is used only with path-based virtual hosts, to target a specific farm."
+    },
+    {
+      "id": "04-disp-069",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the recommended credential practice for Dispatcher Flush agents?",
+      "heading": "If credentials are used, create a dedicated replication user instead of using admin",
+      "body": "The source says the agent does not need a user name and password, but if they are set they are sent with basic authentication, and it recommends creating a dedicated user instead of using admin.",
+      "narration": "What is the recommended credential practice for Dispatcher Flush agents? If credentials are used, create a dedicated replication user instead of using admin. The source says the agent does not need a user name and password, but if they are set they are sent with basic authentication, and it recommends creating a dedicated user instead of using admin."
+    },
+    {
+      "id": "05-disp-070",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Why can invalidating Dispatcher directly from Author be difficult in some network topologies?",
+      "heading": "Author-side invalidation can fail because Dispatcher must be reachable from the Author instance",
+      "body": "The speech lists reachability as one of the two issues with invalidating from Author: Dispatcher must be reachable from the Author instance, which a firewall may block.",
+      "narration": "Why can invalidating Dispatcher directly from Author be difficult in some network topologies? Author-side invalidation can fail because Dispatcher must be reachable from the Author instance. The speech lists reachability as one of the two issues with invalidating from Author: Dispatcher must be reachable from the Author instance, which a firewall may block."
+    },
+    {
+      "id": "06-disp-071",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What race condition can occur when invalidation and publication happen at the same time?",
+      "heading": "Dispatcher can cache the old page again if a user requests it after invalidation but before the new publication arrives",
+      "body": "The speech explains that publication and invalidation happen at the same time, so a user can request the page after it is removed from cache but before the new page is published, leading Dispatcher to cache the old page again.",
+      "narration": "What race condition can occur when invalidation and publication happen at the same time? Dispatcher can cache the old page again if a user requests it after invalidation but before the new publication arrives. The speech explains that publication and invalidation happen at the same time, so a user can request the page after it is removed from cache but before the new page is published, leading Dispatcher to cache the old page again."
+    },
+    {
+      "id": "07-disp-072",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What changes when cache invalidation is moved from Author to Publish?",
+      "heading": "With publish-side invalidation, each Publish instance sends the invalidation request when it receives the published page",
+      "body": "The speech says invalidating from the publish instance moves cache management to Publish: the publish instance sends the invalidation request when it receives a published page. It also notes the agent must be configured on every affected Publish instance.",
+      "narration": "What changes when cache invalidation is moved from Author to Publish? With publish-side invalidation, each Publish instance sends the invalidation request when it receives the published page. The speech says invalidating from the publish instance moves cache management to Publish: the publish instance sends the invalidation request when it receives a published page. It also notes the agent must be configured on every affected Publish instance."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "On Author, the standard Dispatcher Flush agent sends an invalidation request when a page is activated",
+        "The Transport URI should point to /dispatcher/invalidate.cache on the Dispatcher host",
+        "The URI property is used only with path-based virtual hosts to target a specific farm",
+        "If credentials are used, create a dedicated replication user instead of using admin",
+        "Author-side invalidation can fail because Dispatcher must be reachable from the Author instance",
+        "Dispatcher can cache the old page again if a user requests it after invalidation but before the new publication arrives",
+        "With publish-side invalidation, each Publish instance sends the invalidation request when it receives the published page"
+      ],
+      "narration": "Quick recap of Invalidating from Author or Publish. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

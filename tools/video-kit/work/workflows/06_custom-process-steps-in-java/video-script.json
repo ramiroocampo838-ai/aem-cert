@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Custom Process Steps in Java",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Custom Process Steps in Java",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Custom Process Steps in Java. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-037",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does WorkflowSession provide to a custom Java process step?",
+      "heading": "WorkflowSession gives access to workflow operations",
+      "body": "Section 7 says the WorkflowSession gives access to workflow operations in a custom Java process step.",
+      "narration": "What does WorkflowSession provide to a custom Java process step? WorkflowSession gives access to workflow operations. Section 7 says the WorkflowSession gives access to workflow operations in a custom Java process step."
+    },
+    {
+      "id": "02-wf-045",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How is a custom process step implemented in Java?",
+      "heading": "A custom process step is implemented as an OSGi service that implements WorkflowProcess",
+      "body": "Section 7 says a custom process step is implemented as an OSGi service that implements the WorkflowProcess interface.",
+      "narration": "How is a custom process step implemented in Java? A custom process step is implemented as an OSGi service that implements WorkflowProcess. Section 7 says a custom process step is implemented as an OSGi service that implements the WorkflowProcess interface."
+    },
+    {
+      "id": "03-wf-046",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the execute method signature conceptually required by WorkflowProcess?",
+      "heading": "The execute method receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException",
+      "body": "The speech says WorkflowProcess has a single execute method that receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException.",
+      "narration": "What is the execute method signature conceptually required by WorkflowProcess? The execute method receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException. The speech says WorkflowProcess has a single execute method that receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException."
+    },
+    {
+      "id": "04-wf-047",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How is the Java service registered so authors see a friendly step name in the Process Step dialog?",
+      "heading": "Register it as an OSGi Declarative Services component and set process.label for the display name",
+      "body": "Section 7 says the service is registered with the OSGi Declarative Services annotation as a component with service WorkflowProcess, and process.label gives the step a display name.",
+      "narration": "How is the Java service registered so authors see a friendly step name in the Process Step dialog? Register it as an OSGi Declarative Services component and set process.label for the display name. Section 7 says the service is registered with the OSGi Declarative Services annotation as a component with service WorkflowProcess, and process.label gives the step a display name."
+    },
+    {
+      "id": "05-wf-048",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What information does the WorkItem give a custom Java process step?",
+      "heading": "The WorkItem gives access to the workflow instance and its WorkflowData, which holds the payload",
+      "body": "The speech says the WorkItem gives you the workflow instance and its WorkflowData, and that the WorkflowData holds the payload.",
+      "narration": "What information does the WorkItem give a custom Java process step? The WorkItem gives access to the workflow instance and its WorkflowData, which holds the payload. The speech says the WorkItem gives you the workflow instance and its WorkflowData, and that the WorkflowData holds the payload."
+    },
+    {
+      "id": "06-wf-049",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "How do you work with repository content from a custom Java process step?",
+      "heading": "Use the WorkflowSession and adapt the session to a ResourceResolver or JCR Session",
+      "body": "Section 7 says the WorkflowSession gives access to workflow operations, and for repository content the session can be adapted to a ResourceResolver or JCR Session.",
+      "narration": "How do you work with repository content from a custom Java process step? Use the WorkflowSession and adapt the session to a ResourceResolver or JCR Session. Section 7 says the WorkflowSession gives access to workflow operations, and for repository content the session can be adapted to a ResourceResolver or JCR Session."
+    },
+    {
+      "id": "07-wf-050",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Where do Process Step arguments go, and what are the ECMA script variables for the current work item and arguments?",
+      "heading": "Process Step arguments are carried in the MetaDataMap under PROCESS_ARGS, and ECMA scripts use graniteWorkItem and args",
+      "body": "Section 7 says the MetaDataMap passed to execute carries the step arguments, that Process Step Arguments are stored under the PROCESS_ARGS key, and that ECMA scripts use graniteWorkItem and args.",
+      "narration": "Where do Process Step arguments go, and what are the ECMA script variables for the current work item and arguments? Process Step arguments are carried in the MetaDataMap under PROCESS_ARGS, and ECMA scripts use graniteWorkItem and args. Section 7 says the MetaDataMap passed to execute carries the step arguments, that Process Step Arguments are stored under the PROCESS_ARGS key, and that ECMA scripts use graniteWorkItem and args."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "WorkflowSession gives access to workflow operations",
+        "A custom process step is implemented as an OSGi service that implements WorkflowProcess",
+        "The execute method receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException",
+        "Register it as an OSGi Declarative Services component and set process.label for the display name",
+        "The WorkItem gives access to the workflow instance and its WorkflowData, which holds the payload",
+        "Use the WorkflowSession and adapt the session to a ResourceResolver or JCR Session",
+        "Process Step arguments are carried in the MetaDataMap under PROCESS_ARGS, and ECMA scripts use graniteWorkItem and args"
+      ],
+      "narration": "Quick recap of Custom Process Steps in Java. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

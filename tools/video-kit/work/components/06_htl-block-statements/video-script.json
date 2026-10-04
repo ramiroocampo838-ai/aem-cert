@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "HTL Block Statements",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "HTL Block Statements",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. HTL Block Statements. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-037",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What are HTL block statements?",
+      "heading": "data-sly attributes on HTML elements",
+      "body": "The block statements section begins by defining block statements as data-sly attributes on HTML elements.",
+      "narration": "What are HTL block statements? data-sly attributes on HTML elements. The block statements section begins by defining block statements as data-sly attributes on HTML elements."
+    },
+    {
+      "id": "02-comp-038",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is data-sly-use for?",
+      "heading": "Initializing a helper object such as a Sling Model",
+      "body": "The speech says data-sly-use initializes a helper object such as a Sling Model.",
+      "narration": "What is data-sly-use for? Initializing a helper object such as a Sling Model. The speech says data-sly-use initializes a helper object such as a Sling Model."
+    },
+    {
+      "id": "03-comp-039",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the difference between data-sly-list and data-sly-repeat?",
+      "heading": "data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself",
+      "body": "The block statements section explicitly contrasts them: data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself.",
+      "narration": "What is the difference between data-sly-list and data-sly-repeat? data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself. The block statements section explicitly contrasts them: data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself."
+    },
+    {
+      "id": "04-comp-040",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What identifiers does data-sly-list expose by default?",
+      "heading": "item and itemList",
+      "body": "The speech says data-sly-list exposes an item and itemList by default.",
+      "narration": "What identifiers does data-sly-list expose by default? item and itemList. The speech says data-sly-list exposes an item and itemList by default."
+    },
+    {
+      "id": "05-comp-041",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What information does itemList provide in a data-sly-list loop?",
+      "heading": "index, count, first, middle, last, odd, and even",
+      "body": "The block statements section lists the itemList properties as index, count, first, middle, last, odd, and even.",
+      "narration": "What information does itemList provide in a data-sly-list loop? index, count, first, middle, last, odd, and even. The block statements section lists the itemList properties as index, count, first, middle, last, odd, and even."
+    },
+    {
+      "id": "06-comp-042",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What useful pattern does data-sly-test support besides conditional rendering?",
+      "heading": "It can store its result in a variable that can be reused later and is not scoped to the element",
+      "body": "The speech gives the example data-sly-test.hasTitle=\"${properties.jcr:title}\" and explains that the result can be stored in a variable, reused later, and is not scoped to the element.",
+      "narration": "What useful pattern does data-sly-test support besides conditional rendering? It can store its result in a variable that can be reused later and is not scoped to the element. The speech gives the example data-sly-test.hasTitle=\"${properties.jcr:title}\" and explains that the result can be stored in a variable, reused later, and is not scoped to the element."
+    },
+    {
+      "id": "07-comp-043",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a scenario where data-sly-test and data-sly-list are on the same element, when is the test evaluated?",
+      "heading": "It is evaluated once before the loop starts",
+      "body": "The speech explains that list runs after test in the priority order, so a data-sly-test on the same element as data-sly-list is evaluated once before the loop starts.",
+      "narration": "Given a scenario where data-sly-test and data-sly-list are on the same element, when is the test evaluated? It is evaluated once before the loop starts. The speech explains that list runs after test in the priority order, so a data-sly-test on the same element as data-sly-list is evaluated once before the loop starts."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "data-sly attributes on HTML elements",
+        "Initializing a helper object such as a Sling Model",
+        "data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself",
+        "item and itemList",
+        "index, count, first, middle, last, odd, and even",
+        "It can store its result in a variable that can be reused later and is not scoped to the element",
+        "It is evaluated once before the loop starts"
+      ],
+      "narration": "Quick recap of HTL Block Statements. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

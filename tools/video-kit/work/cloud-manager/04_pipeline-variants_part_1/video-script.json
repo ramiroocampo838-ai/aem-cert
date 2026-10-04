@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Pipeline Variants (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Pipeline Variants (Part 1 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Pipeline Variants (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-068",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is a 'Front End Pipeline' in Cloud Manager?",
+      "heading": "A pipeline that builds and deploys only front-end assets (CSS, JS, images) independently from the back-end AEM code",
+      "body": "Front End Pipelines in Cloud Manager allow front-end teams to deploy CSS, JavaScript, and other front-end assets independently from the back-end AEM Java code. They run an npm/webpack build of the ui.frontend module and deploy the compiled artifacts to AEM, enabling front-end developers to iterate faster without waiting for full Maven builds or back-end deployments.",
+      "narration": "What is a 'Front End Pipeline' in Cloud Manager? A pipeline that builds and deploys only front-end assets (CSS, JS, images) independently from the back-end AEM code. Front End Pipelines in Cloud Manager allow front-end teams to deploy CSS, JavaScript, and other front-end assets independently from the back-end AEM Java code. They run an npm/webpack build of the ui.frontend module and deploy the compiled artifacts to AEM, enabling front-end developers to iterate faster without waiting for full Maven builds or back-end deployments."
+    },
+    {
+      "id": "02-cm-069",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the 'Full Stack Pipeline' in Cloud Manager?",
+      "heading": "A pipeline that builds and deploys all AEM layers: OSGi bundles, content packages, Dispatcher config, and front-end assets together",
+      "body": "A Full Stack Pipeline deploys the entire AEM project — all Maven modules including OSGi bundles (ui.apps), JCR content (ui.content), OSGi configurations (ui.config), front-end resources (ui.frontend), and Dispatcher configuration. It is the standard deployment pipeline for teams that manage all layers together.",
+      "narration": "What is the 'Full Stack Pipeline' in Cloud Manager? A pipeline that builds and deploys all AEM layers: OSGi bundles, content packages, Dispatcher config, and front-end assets together. A Full Stack Pipeline deploys the entire AEM project — all Maven modules including OSGi bundles (ui.apps), JCR content (ui.content), OSGi configurations (ui.config), front-end resources (ui.frontend), and Dispatcher configuration. It is the standard deployment pipeline for teams that manage all layers together."
+    },
+    {
+      "id": "03-cm-070",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is the difference between a Full Stack Pipeline and a Front End Pipeline in Cloud Manager?",
+      "heading": "Full Stack deploys all AEM layers (Java + content + Dispatcher); Front End deploys only compiled CSS/JS front-end assets",
+      "body": "The key distinction: a Full Stack Pipeline runs a complete Maven build deploying Java OSGi bundles, JCR content packages, OSGi configurations, and all other layers. A Front End Pipeline runs only an npm build (webpack/Vite) and deploys compiled CSS/JS/image assets independently. Front End Pipelines enable front-end developers to deploy faster without waiting for back-end Java builds.",
+      "narration": "What is the difference between a Full Stack Pipeline and a Front End Pipeline in Cloud Manager? Full Stack deploys all AEM layers (Java + content + Dispatcher); Front End deploys only compiled CSS/JS front-end assets. The key distinction: a Full Stack Pipeline runs a complete Maven build deploying Java OSGi bundles, JCR content packages, OSGi configurations, and all other layers. A Front End Pipeline runs only an npm build (webpack/Vite) and deploys compiled CSS/JS/image assets independently. Front End Pipelines enable front-end developers to deploy faster without waiting for back-end Java builds."
+    },
+    {
+      "id": "04-cm-071",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "When would you use a Config Pipeline instead of a Full Stack Pipeline?",
+      "heading": "When deploying only OSGi configurations, CDN rules, or log forwarding settings without changing Java code or content",
+      "body": "Config Pipelines are the right choice when the only change is in configuration files — OSGi run-mode properties, CDN traffic filter rules, log forwarding configs, or other files in the /config directory. Since they skip Maven compilation and content package deployment, they run much faster than Full Stack Pipelines. For any Java or content changes, a Full Stack Pipeline is required.",
+      "narration": "When would you use a Config Pipeline instead of a Full Stack Pipeline? When deploying only OSGi configurations, CDN rules, or log forwarding settings without changing Java code or content. Config Pipelines are the right choice when the only change is in configuration files — OSGi run-mode properties, CDN traffic filter rules, log forwarding configs, or other files in the /config directory. Since they skip Maven compilation and content package deployment, they run much faster than Full Stack Pipelines. For any Java or content changes, a Full Stack Pipeline is required."
+    },
+    {
+      "id": "05-cm-072",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is a 'Code Quality Pipeline' (standalone) in Cloud Manager?",
+      "heading": "A pipeline that only runs SonarQube code quality analysis without deploying any code to any environment",
+      "body": "A standalone Code Quality Pipeline in Cloud Manager runs Maven build + SonarQube analysis without deploying any code to an environment. This is useful for validating code quality on feature branches or PRs before merging, giving developers early quality feedback without consuming deployment pipeline resources or touching any AEM environment.",
+      "narration": "What is a 'Code Quality Pipeline' (standalone) in Cloud Manager? A pipeline that only runs SonarQube code quality analysis without deploying any code to any environment. A standalone Code Quality Pipeline in Cloud Manager runs Maven build + SonarQube analysis without deploying any code to an environment. This is useful for validating code quality on feature branches or PRs before merging, giving developers early quality feedback without consuming deployment pipeline resources or touching any AEM environment."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A pipeline that builds and deploys only front-end assets (CSS, JS, images) independently from the back-end AEM code",
+        "A pipeline that builds and deploys all AEM layers: OSGi bundles, content packages, Dispatcher config, and front-end assets together",
+        "Full Stack deploys all AEM layers (Java + content + Dispatcher); Front End deploys only compiled CSS/JS front-end assets",
+        "When deploying only OSGi configurations, CDN rules, or log forwarding settings without changing Java code or content",
+        "A pipeline that only runs SonarQube code quality analysis without deploying any code to any environment"
+      ],
+      "narration": "Quick recap of Pipeline Variants (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

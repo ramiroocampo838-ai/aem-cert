@@ -1,0 +1,91 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "CI/CD Pipelines (Part 3 of 3)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "CI/CD Pipelines (Part 3 of 3)",
+      "sub": "Cloud Manager · 6 key concepts",
+      "narration": "Cloud Manager. CI/CD Pipelines (Part 3 of 3). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-051",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "What is the 'Go Live Approval' step in a Production Pipeline?",
+      "heading": "A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment",
+      "body": "The Go Live Approval pauses the Production pipeline after Stage testing is complete. A Business Owner or Deployment Manager must explicitly approve the deployment to proceed to Production. They can also schedule the deployment for a future time window. If not approved within the configured expiry period, the pipeline expires and must be re-run.",
+      "narration": "What is the 'Go Live Approval' step in a Production Pipeline? A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment. The Go Live Approval pauses the Production pipeline after Stage testing is complete. A Business Owner or Deployment Manager must explicitly approve the deployment to proceed to Production. They can also schedule the deployment for a future time window. If not approved within the configured expiry period, the pipeline expires and must be re-run."
+    },
+    {
+      "id": "02-cm-052",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "What is Blue/Green deployment in AEM as a Cloud Service?",
+      "heading": "A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches",
+      "body": "Blue/Green deployment is AEMaaCS's built-in zero-downtime deployment mechanism. The current live environment is 'Blue' and the new deployment goes to 'Green' (the standby). Once the new version is validated via health checks, traffic is automatically switched from Blue to Green. The old Blue environment remains briefly available for rollback.",
+      "narration": "What is Blue/Green deployment in AEM as a Cloud Service? A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches. Blue/Green deployment is AEMaaCS's built-in zero-downtime deployment mechanism. The current live environment is 'Blue' and the new deployment goes to 'Green' (the standby). Once the new version is validated via health checks, traffic is automatically switched from Blue to Green. The old Blue environment remains briefly available for rollback."
+    },
+    {
+      "id": "03-cm-053",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "What is the purpose of 'Dispatcher Flush' after a pipeline deployment?",
+      "heading": "Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses",
+      "body": "After deployment, the Dispatcher (which caches AEM Publish responses) must have its cache cleared to ensure visitors receive newly deployed content rather than stale cached responses. AEMaaCS handles this by sending flush/invalidation requests to the Dispatcher automatically as part of the deployment pipeline, targeting pages associated with changed content paths.",
+      "narration": "What is the purpose of 'Dispatcher Flush' after a pipeline deployment? Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses. After deployment, the Dispatcher (which caches AEM Publish responses) must have its cache cleared to ensure visitors receive newly deployed content rather than stale cached responses. AEMaaCS handles this by sending flush/invalidation requests to the Dispatcher automatically as part of the deployment pipeline, targeting pages associated with changed content paths."
+    },
+    {
+      "id": "04-cm-054",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Where does Cloud Manager store the AEM project source code?",
+      "heading": "In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection",
+      "body": "Cloud Manager provides a built-in Adobe-hosted Git repository for each program. Additionally, Cloud Manager supports connecting external repositories — GitHub (Cloud and Enterprise), GitLab, and Bitbucket — so teams can continue using their existing VCS workflows. Pipelines can be configured to pull from any connected repository and branch.",
+      "narration": "Where does Cloud Manager store the AEM project source code? In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection. Cloud Manager provides a built-in Adobe-hosted Git repository for each program. Additionally, Cloud Manager supports connecting external repositories — GitHub (Cloud and Enterprise), GitLab, and Bitbucket — so teams can continue using their existing VCS workflows. Pipelines can be configured to pull from any connected repository and branch."
+    },
+    {
+      "id": "05-cm-055",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What is a Non-Production Pipeline in Cloud Manager?",
+      "heading": "A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production",
+      "body": "Non-Production Pipelines in Cloud Manager target Dev environments (and optionally Stage). They run the same steps as a Production pipeline (build, code quality, deployment) but don't include the Production deployment or Go Live Approval gate. This enables faster feedback loops — developers can validate changes in a real AEM environment without going through the full Production pipeline flow.",
+      "narration": "What is a Non-Production Pipeline in Cloud Manager? A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production. Non-Production Pipelines in Cloud Manager target Dev environments (and optionally Stage). They run the same steps as a Production pipeline (build, code quality, deployment) but don't include the Production deployment or Go Live Approval gate. This enables faster feedback loops — developers can validate changes in a real AEM environment without going through the full Production pipeline flow."
+    },
+    {
+      "id": "06-cm-056",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What is a 'Web Tier Config Pipeline' in Cloud Manager?",
+      "heading": "A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build",
+      "body": "Web Tier Config Pipelines are a Cloud Manager pipeline type that deploy only Dispatcher/httpd configuration changes (filter rules, rewrite rules, virtual host configs) without triggering a full Maven build or OSGi bundle deployment. This allows teams to quickly iterate on Dispatcher configuration independently from the main codebase deployment cycle.",
+      "narration": "What is a 'Web Tier Config Pipeline' in Cloud Manager? A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build. Web Tier Config Pipelines are a Cloud Manager pipeline type that deploy only Dispatcher/httpd configuration changes (filter rules, rewrite rules, virtual host configs) without triggering a full Maven build or OSGi bundle deployment. This allows teams to quickly iterate on Dispatcher configuration independently from the main codebase deployment cycle."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment",
+        "A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches",
+        "Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses",
+        "In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection",
+        "A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production",
+        "A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build"
+      ],
+      "narration": "Quick recap of CI/CD Pipelines (Part 3 of 3). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

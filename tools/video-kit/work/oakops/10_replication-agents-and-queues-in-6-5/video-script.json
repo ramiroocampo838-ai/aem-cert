@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Replication Agents and Queues in 6.5",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Replication Agents and Queues in 6.5",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Replication Agents and Queues in 6.5. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-065",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which agents are part of a standard AEM 6.5 installation?",
+      "heading": "The Default Agent, Dispatcher Flush, Reverse Replication, and the Static Agent",
+      "body": "Section 10 says a standard 6.5 installation has the Default Agent for Author to Publish, Dispatcher Flush, Reverse Replication, and the Static Agent.",
+      "narration": "Which agents are part of a standard AEM 6.5 installation? The Default Agent, Dispatcher Flush, Reverse Replication, and the Static Agent. Section 10 says a standard 6.5 installation has the Default Agent for Author to Publish, Dispatcher Flush, Reverse Replication, and the Static Agent."
+    },
+    {
+      "id": "02-oak-066",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What do the queue states Active, Idle, and Blocked mean?",
+      "heading": "Active means items are being processed, Idle means the queue is empty, and Blocked means items are queued but cannot be processed",
+      "body": "The source defines Active, Idle, and Blocked exactly in terms of processing items, emptiness, and queued items that cannot be processed.",
+      "narration": "What do the queue states Active, Idle, and Blocked mean? Active means items are being processed, Idle means the queue is empty, and Blocked means items are queued but cannot be processed. The source defines Active, Idle, and Blocked exactly in terms of processing items, emptiness, and queued items that cannot be processed."
+    },
+    {
+      "id": "03-oak-067",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the default Retry Delay for a replication agent in AEM 6.5?",
+      "heading": "60000 milliseconds",
+      "body": "Section 10 says agent settings include Retry Delay with a default of 60000 milliseconds.",
+      "narration": "What is the default Retry Delay for a replication agent in AEM 6.5? 60000 milliseconds. Section 10 says agent settings include Retry Delay with a default of 60000 milliseconds."
+    },
+    {
+      "id": "04-oak-068",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What access must the Agent User Id have, and what happens if it is left empty?",
+      "heading": "It needs read access to all replicated paths on Author and create/write access on Publish; if empty, the system user is used",
+      "body": "The source specifies that the Agent User Id must have read access to all replicated paths on Author and create/write access on Publish, and if it is empty the system user is used.",
+      "narration": "What access must the Agent User Id have, and what happens if it is left empty? It needs read access to all replicated paths on Author and create/write access on Publish; if empty, the system user is used. The source specifies that the Agent User Id must have read access to all replicated paths on Author and create/write access on Publish, and if it is empty the system user is used."
+    },
+    {
+      "id": "05-oak-069",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which log levels are available for a replication agent, and what is the default?",
+      "heading": "Error, Info, and Debug, with Info as the default",
+      "body": "Section 10 states that the agent Log Level options are Error, Info, and Debug, and that Info is the default.",
+      "narration": "Which log levels are available for a replication agent, and what is the default? Error, Info, and Debug, with Info as the default. Section 10 states that the agent Log Level options are Error, Info, and Debug, and that Info is the default."
+    },
+    {
+      "id": "06-oak-070",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What endpoint does the Default Agent's URI point to?",
+      "heading": "bin/receive",
+      "body": "The speech says the Transport tab holds the URI, and for a Default Agent that URI points to bin/receive.",
+      "narration": "What endpoint does the Default Agent's URI point to? bin/receive. The speech says the Transport tab holds the URI, and for a Default Agent that URI points to bin/receive."
+    },
+    {
+      "id": "07-oak-071",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When do path-based virtual hosts affect the Dispatcher Flush agent URI?",
+      "heading": "With path-based virtual hosts, the URI chooses which farm is invalidated",
+      "body": "Section 10 says that with path-based virtual hosts, the Dispatcher Flush agent URI chooses which farm is invalidated.",
+      "narration": "When do path-based virtual hosts affect the Dispatcher Flush agent URI? With path-based virtual hosts, the URI chooses which farm is invalidated. Section 10 says that with path-based virtual hosts, the Dispatcher Flush agent URI chooses which farm is invalidated."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The Default Agent, Dispatcher Flush, Reverse Replication, and the Static Agent",
+        "Active means items are being processed, Idle means the queue is empty, and Blocked means items are queued but cannot be processed",
+        "60000 milliseconds",
+        "It needs read access to all replicated paths on Author and create/write access on Publish; if empty, the system user is used",
+        "Error, Info, and Debug, with Info as the default",
+        "bin/receive",
+        "With path-based virtual hosts, the URI chooses which farm is invalidated"
+      ],
+      "narration": "Quick recap of Replication Agents and Queues in 6.5. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

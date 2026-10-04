@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Content Fragments Delivery and Best Practices",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Content Fragments Delivery and Best Practices",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Content Fragments Delivery and Best Practices. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-080",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "For page authoring, which component references a Content Fragment on a page?",
+      "heading": "The Content Fragment Component references the fragment on the page",
+      "body": "The speech says that for page authoring, a fragment is referenced on a page with the Content Fragment Component, which is a core component.",
+      "narration": "For page authoring, which component references a Content Fragment on a page? The Content Fragment Component references the fragment on the page. The speech says that for page authoring, a fragment is referenced on a page with the Content Fragment Component, which is a core component."
+    },
+    {
+      "id": "02-wf-081",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "For headless delivery, in what format are Content Fragments delivered?",
+      "heading": "Content Fragments are delivered as JSON for headless use",
+      "body": "The speech says that for headless delivery, fragments are delivered as JSON.",
+      "narration": "For headless delivery, in what format are Content Fragments delivered? Content Fragments are delivered as JSON for headless use. The speech says that for headless delivery, fragments are delivered as JSON."
+    },
+    {
+      "id": "03-wf-082",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which query mechanism is used for headless delivery of Content Fragments?",
+      "heading": "GraphQL is the query mechanism for headless delivery of Content Fragments",
+      "body": "The speech says GraphQL is the query mechanism for headless delivery of fragments.",
+      "narration": "Which query mechanism is used for headless delivery of Content Fragments? GraphQL is the query mechanism for headless delivery of Content Fragments. The speech says GraphQL is the query mechanism for headless delivery of fragments."
+    },
+    {
+      "id": "04-wf-083",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is true about the Content Fragments console mentioned in the speech?",
+      "heading": "The Content Fragments console is optimized for headless use and exists only in AEM as a Cloud Service",
+      "body": "The speech says the Content Fragments console is optimized for headless use and is available only in AEM as a Cloud Service.",
+      "narration": "What is true about the Content Fragments console mentioned in the speech? The Content Fragments console is optimized for headless use and exists only in AEM as a Cloud Service. The speech says the Content Fragments console is optimized for headless use and is available only in AEM as a Cloud Service."
+    },
+    {
+      "id": "05-wf-084",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Why does Adobe recommend keeping the number of Content Fragment models to a small set, usually at most low tens?",
+      "heading": "Too many models slow GraphQL queries and complicate governance",
+      "body": "The speech says to create as many models as needed but no more, and that too many slows GraphQL queries and complicates governance.",
+      "narration": "Why does Adobe recommend keeping the number of Content Fragment models to a small set, usually at most low tens? Too many models slow GraphQL queries and complicate governance. The speech says to create as many models as needed but no more, and that too many slows GraphQL queries and complicates governance."
+    },
+    {
+      "id": "06-wf-085",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the recommended limit for deep nesting of Content Fragment References?",
+      "heading": "Keep Content Fragment Reference nesting to no more than ten levels",
+      "body": "The speech says to avoid deep nesting of Content Fragment References and to keep nesting to no more than ten levels.",
+      "narration": "What is the recommended limit for deep nesting of Content Fragment References? Keep Content Fragment Reference nesting to no more than ten levels. The speech says to avoid deep nesting of Content Fragment References and to keep nesting to no more than ten levels."
+    },
+    {
+      "id": "07-wf-086",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why should a Content Fragment avoid having more than ten variations?",
+      "heading": "More than ten variations add processing time on author and on delivery",
+      "body": "The speech says not to exceed ten variations per fragment because variations add processing time on author and on delivery.",
+      "narration": "Why should a Content Fragment avoid having more than ten variations? More than ten variations add processing time on author and on delivery. The speech says not to exceed ten variations per fragment because variations add processing time on author and on delivery."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The Content Fragment Component references the fragment on the page",
+        "Content Fragments are delivered as JSON for headless use",
+        "GraphQL is the query mechanism for headless delivery of Content Fragments",
+        "The Content Fragments console is optimized for headless use and exists only in AEM as a Cloud Service",
+        "Too many models slow GraphQL queries and complicate governance",
+        "Keep Content Fragment Reference nesting to no more than ten levels",
+        "More than ten variations add processing time on author and on delivery"
+      ],
+      "narration": "Quick recap of Content Fragments Delivery and Best Practices. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

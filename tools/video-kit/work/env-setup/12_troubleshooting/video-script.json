@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Troubleshooting",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Troubleshooting",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. Troubleshooting. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-097",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is the first troubleshooting step when something is not working in a local AEM environment?",
+      "heading": "Check Package Manager to verify the package was actually installed",
+      "body": "The first troubleshooting step is to check Package Manager (`http://localhost:4502/crx/packmgr`) to confirm the package was actually installed. Many issues arise from packages that failed to install silently.",
+      "narration": "What is the first troubleshooting step when something is not working in a local AEM environment? Check Package Manager to verify the package was actually installed. The first troubleshooting step is to check Package Manager (`http://localhost:4502/crx/packmgr`) to confirm the package was actually installed. Many issues arise from packages that failed to install silently."
+    },
+    {
+      "id": "02-env-098",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What is the URL of the AEM Package Manager on a local Author instance?",
+      "heading": "http://localhost:4502/crx/packmgr",
+      "body": "The Package Manager is accessed at `http://localhost:4502/crx/packmgr` on a local Author instance. It shows all installed packages and their status, letting you verify that a deployment succeeded.",
+      "narration": "What is the URL of the AEM Package Manager on a local Author instance? http://localhost:4502/crx/packmgr. The Package Manager is accessed at `http://localhost:4502/crx/packmgr` on a local Author instance. It shows all installed packages and their status, letting you verify that a deployment succeeded."
+    },
+    {
+      "id": "03-env-099",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What AEM tool do you use to verify that a node exists in the JCR and has the correct content?",
+      "heading": "CRXDE Lite",
+      "body": "CRXDE Lite (accessed at `http://localhost:4502/crx/de`) is the browser-based JCR explorer. It lets you browse the full repository node tree, check node properties, and verify that deployed content landed in the correct paths.",
+      "narration": "What AEM tool do you use to verify that a node exists in the JCR and has the correct content? CRXDE Lite. CRXDE Lite (accessed at `http://localhost:4502/crx/de`) is the browser-based JCR explorer. It lets you browse the full repository node tree, check node properties, and verify that deployed content landed in the correct paths."
+    },
+    {
+      "id": "04-env-100",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What is the URL of CRXDE Lite on a local Author instance?",
+      "heading": "http://localhost:4502/crx/de",
+      "body": "CRXDE Lite is accessed at `http://localhost:4502/crx/de` on a local Author instance. It provides a browser-based interface for exploring and editing the JCR repository.",
+      "narration": "What is the URL of CRXDE Lite on a local Author instance? http://localhost:4502/crx/de. CRXDE Lite is accessed at `http://localhost:4502/crx/de` on a local Author instance. It provides a browser-based interface for exploring and editing the JCR repository."
+    },
+    {
+      "id": "05-env-101",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What AEM console do you use to check whether an OSGi bundle is in Active state?",
+      "heading": "The Bundle Console at /system/console/bundles",
+      "body": "The OSGi Bundle Console at `http://localhost:4502/system/console/bundles` shows all installed OSGi bundles and their states. An `Active` state means the bundle is running correctly. `Installed` or `Resolved` states usually indicate a missing dependency.",
+      "narration": "What AEM console do you use to check whether an OSGi bundle is in Active state? The Bundle Console at /system/console/bundles. The OSGi Bundle Console at `http://localhost:4502/system/console/bundles` shows all installed OSGi bundles and their states. An `Active` state means the bundle is running correctly. `Installed` or `Resolved` states usually indicate a missing dependency."
+    },
+    {
+      "id": "06-env-102",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Where is the AEM error.log file located?",
+      "heading": "crx-quickstart/logs/error.log",
+      "body": "The `error.log` file is located at `crx-quickstart/logs/error.log` — inside the `crx-quickstart` folder created by the QuickStart Jar. AEM logs all errors, warnings, and info messages here. It is the primary log for troubleshooting.",
+      "narration": "Where is the AEM error.log file located? crx-quickstart/logs/error.log. The `error.log` file is located at `crx-quickstart/logs/error.log` — inside the `crx-quickstart` folder created by the QuickStart Jar. AEM logs all errors, warnings, and info messages here. It is the primary log for troubleshooting."
+    },
+    {
+      "id": "07-env-103",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Which AEM URL provides clientlib debug tools for front-end troubleshooting?",
+      "heading": "/libs/granite/ui/content/dumplibs.html",
+      "body": "The clientlib debug page is at `/libs/granite/ui/content/dumplibs.html`. It shows all registered client libraries, their categories, dependencies, and included files — useful for debugging missing CSS, JavaScript, or incorrect clientlib loading order.",
+      "narration": "Which AEM URL provides clientlib debug tools for front-end troubleshooting? /libs/granite/ui/content/dumplibs.html. The clientlib debug page is at `/libs/granite/ui/content/dumplibs.html`. It shows all registered client libraries, their categories, dependencies, and included files — useful for debugging missing CSS, JavaScript, or incorrect clientlib loading order."
+    },
+    {
+      "id": "08-env-104",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What are the two most common errors when setting up a local AEM environment?",
+      "heading": "Wrong Java version and trying to double-click the QuickStart Jar",
+      "body": "The two most common errors are: (1) using the wrong Java version — AEM requires JDK 21, and (2) double-clicking the QuickStart Jar instead of starting it with `java -jar` from the command line. Both cause the AEM instance to fail to start correctly.",
+      "narration": "What are the two most common errors when setting up a local AEM environment? Wrong Java version and trying to double-click the QuickStart Jar. The two most common errors are: (1) using the wrong Java version — AEM requires JDK 21, and (2) double-clicking the QuickStart Jar instead of starting it with `java -jar` from the command line. Both cause the AEM instance to fail to start correctly."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Check Package Manager to verify the package was actually installed",
+        "http://localhost:4502/crx/packmgr",
+        "CRXDE Lite",
+        "http://localhost:4502/crx/de",
+        "The Bundle Console at /system/console/bundles",
+        "crx-quickstart/logs/error.log",
+        "/libs/granite/ui/content/dumplibs.html",
+        "Wrong Java version and trying to double-click the QuickStart Jar"
+      ],
+      "narration": "Quick recap of Troubleshooting. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

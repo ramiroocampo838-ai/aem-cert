@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "OSGi / Felix (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "OSGi / Felix (Part 2 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. OSGi / Felix (Part 2 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-065",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "What happens to an OSGi component's state when the @Deactivate lifecycle method is called?",
+      "heading": "The component is being shut down — @Deactivate should release all resources (close streams, unregister listeners, stop threads) before the component is destroyed",
+      "body": "OSGi Lifecycle @Deactivate: This method is called when: (1) the bundle is stopped, (2) the component is disabled, (3) a MANDATORY @Reference service is no longer available. It is the correct place to release all resources: close ResourceResolvers to release JCR sessions, shutdown ScheduledExecutorService to stop background threads, remove registered event listeners, close database connections. Failure to release resources in @Deactivate leads to memory leaks and JCR session exhaustion.",
+      "narration": "What happens to an OSGi component's state when the @Deactivate lifecycle method is called? The component is being shut down — @Deactivate should release all resources (close streams, unregister listeners, stop threads) before the component is destroyed. OSGi Lifecycle @Deactivate: This method is called when: (1) the bundle is stopped, (2) the component is disabled, (3) a MANDATORY @Reference service is no longer available. It is the correct place to release all resources: close ResourceResolvers to release JCR sessions, shutdown ScheduledExecutorService to stop background threads, remove registered event listeners, close database connections. Failure to release resources in @Deactivate leads to memory leaks and JCR session exhaustion."
+    },
+    {
+      "id": "02-cq-066",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "OSGI-005 (Severity: Major) requires all OSGi bundle packages to declare explicit version ranges in their Import-Package statements. What is the correct version range syntax for requiring version 3.x but not 4.x?",
+      "heading": "version=\"[3.0,4.0)\" — square bracket means inclusive lower bound, parenthesis means exclusive upper bound",
+      "body": "OSGI-005: OSGi uses mathematical interval notation for version ranges. Square brackets [] indicate inclusive bounds; parentheses () indicate exclusive bounds. [3.0,4.0) means: lower bound 3.0 inclusive (>= 3.0) AND upper bound 4.0 exclusive (< 4.0). This precisely captures OSGi semantic versioning: major version changes are breaking; minor versions are backward-compatible additions. Declaring a range prevents accidentally binding to a major version upgrade with breaking API changes.",
+      "narration": "OSGI-005 (Severity: Major) requires all OSGi bundle packages to declare explicit version ranges in their Import-Package statements. What is the correct version range syntax for requiring version 3.x but not 4.x? version=\"[3.0,4.0)\" — square bracket means inclusive lower bound, parenthesis means exclusive upper bound. OSGI-005: OSGi uses mathematical interval notation for version ranges. Square brackets [] indicate inclusive bounds; parentheses () indicate exclusive bounds. [3.0,4.0) means: lower bound 3.0 inclusive (>= 3.0) AND upper bound 4.0 exclusive (< 4.0). This precisely captures OSGi semantic versioning: major version changes are breaking; minor versions are backward-compatible additions. Declaring a range prevents accidentally binding to a major version upgrade with breaking API changes."
+    },
+    {
+      "id": "03-cq-067",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "In an OSGi @Component, what is the difference between declaring a @Reference with policy=ReferencePolicy.DYNAMIC versus the default STATIC policy?",
+      "heading": "DYNAMIC allows the component to continue running while its references change without deactivation; STATIC requires the component to be deactivated if a reference service registers or unregisters",
+      "body": "OSGi Reference Policy: STATIC (default) — when the bound service registers or unregisters, the OSGi container deactivates the component and reactivates it with the new binding. Component state is reset. DYNAMIC — the container calls the declared bind/unbind methods at runtime without stopping the component. DYNAMIC is more complex (requires thread-safe bind/unbind methods) but avoids service interruptions in high-availability scenarios.",
+      "narration": "In an OSGi @Component, what is the difference between declaring a @Reference with policy=ReferencePolicy.DYNAMIC versus the default STATIC policy? DYNAMIC allows the component to continue running while its references change without deactivation; STATIC requires the component to be deactivated if a reference service registers or unregisters. OSGi Reference Policy: STATIC (default) — when the bound service registers or unregisters, the OSGi container deactivates the component and reactivates it with the new binding. Component state is reset. DYNAMIC — the container calls the declared bind/unbind methods at runtime without stopping the component. DYNAMIC is more complex (requires thread-safe bind/unbind methods) but avoids service interruptions in high-availability scenarios."
+    },
+    {
+      "id": "04-cq-068",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "OSGI-006 (Severity: Critical) prohibits using Thread.currentThread().getContextClassLoader() in OSGi components. Why?",
+      "heading": "In OSGi, each bundle has its own classloader — the context classloader is the caller's classloader, which may not have access to the current bundle's classes, causing ClassNotFoundException",
+      "body": "OSGI-006 (Critical): OSGi enforces strict classloader isolation — each bundle has its own classloader that knows only about its own classes and explicitly imported packages. When code in Bundle A calls code in Bundle B, the executing thread's context classloader is Bundle A's loader — which cannot see Bundle B's internal classes. The correct approach is to use the bundle's own classloader: SomeClass.class.getClassLoader() or BundleContext.getBundle().adapt(BundleWiring.class).getClassLoader().",
+      "narration": "OSGI-006 (Severity: Critical) prohibits using Thread.currentThread().getContextClassLoader() in OSGi components. Why? In OSGi, each bundle has its own classloader — the context classloader is the caller's classloader, which may not have access to the current bundle's classes, causing ClassNotFoundException. OSGI-006 (Critical): OSGi enforces strict classloader isolation — each bundle has its own classloader that knows only about its own classes and explicitly imported packages. When code in Bundle A calls code in Bundle B, the executing thread's context classloader is Bundle A's loader — which cannot see Bundle B's internal classes. The correct approach is to use the bundle's own classloader: SomeClass.class.getClassLoader() or BundleContext.getBundle().adapt(BundleWiring.class).getClassLoader()."
+    },
+    {
+      "id": "05-cq-069",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What is the OSGi @ObjectClassDefinition annotation used for in DS component configuration?",
+      "heading": "It marks an @interface as an OSGi configuration annotation, defining the schema for the component's Felix Web Console configuration form",
+      "body": "OSGi Metatype: @ObjectClassDefinition (OCD) annotates a Java @interface to define the configuration schema. Each method on the @interface becomes a configurable property — @AttributeDefinition provides the label, description, type, and default value that appear in the Felix Web Console as form fields. The @Designate(ocd=MyConfig.class) annotation on the @Component links the component to its OCD. The DS runtime reads the deployed metatype XML and injects the typed config into @Activate and @Modified methods.",
+      "narration": "What is the OSGi @ObjectClassDefinition annotation used for in DS component configuration? It marks an @interface as an OSGi configuration annotation, defining the schema for the component's Felix Web Console configuration form. OSGi Metatype: @ObjectClassDefinition (OCD) annotates a Java @interface to define the configuration schema. Each method on the @interface becomes a configurable property — @AttributeDefinition provides the label, description, type, and default value that appear in the Felix Web Console as form fields. The @Designate(ocd=MyConfig.class) annotation on the @Component links the component to its OCD. The DS runtime reads the deployed metatype XML and injects the typed config into @Activate and @Modified methods."
+    },
+    {
+      "id": "06-cq-070",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "In an AEM OSGi component, what is the safe way to schedule a recurring background task that runs every 5 minutes?",
+      "heading": "Implement the Runnable interface and register with the Sling Scheduler via @Component(service=Runnable.class) with @Designate configuration defining the cron expression",
+      "body": "OSGi Scheduling in AEM: The Sling Scheduler (org.apache.sling.commons.scheduler.Scheduler) is the OSGi-integrated scheduling mechanism. A clean modern approach: implement Runnable, annotate with @Component(service=Runnable.class), and set properties via @Designate with a config @interface containing the cron expression. Never use raw Thread or ScheduledExecutorService — they don't integrate with OSGi lifecycle, causing threads to survive bundle restarts.",
+      "narration": "In an AEM OSGi component, what is the safe way to schedule a recurring background task that runs every 5 minutes? Implement the Runnable interface and register with the Sling Scheduler via @Component(service=Runnable.class) with @Designate configuration defining the cron expression. OSGi Scheduling in AEM: The Sling Scheduler (org.apache.sling.commons.scheduler.Scheduler) is the OSGi-integrated scheduling mechanism. A clean modern approach: implement Runnable, annotate with @Component(service=Runnable.class), and set properties via @Designate with a config @interface containing the cron expression. Never use raw Thread or ScheduledExecutorService — they don't integrate with OSGi lifecycle, causing threads to survive bundle restarts."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The component is being shut down — @Deactivate should release all resources (close streams, unregister listeners, stop threads) before the component is destroyed",
+        "version=\"[3.0,4.0)\" — square bracket means inclusive lower bound, parenthesis means exclusive upper bound",
+        "DYNAMIC allows the component to continue running while its references change without deactivation; STATIC requires the component to be deactivated if a reference service registers or unregisters",
+        "In OSGi, each bundle has its own classloader — the context classloader is the caller's classloader, which may not have access to the current bundle's classes, causing ClassNotFoundException",
+        "It marks an @interface as an OSGi configuration annotation, defining the schema for the component's Felix Web Console configuration form",
+        "Implement the Runnable interface and register with the Sling Scheduler via @Component(service=Runnable.class) with @Designate configuration defining the cron expression"
+      ],
+      "narration": "Quick recap of OSGi / Felix (Part 2 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

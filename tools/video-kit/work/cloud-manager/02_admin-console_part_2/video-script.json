@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Admin Console (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Admin Console (Part 2 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Admin Console (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-040",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the Deployment Manager role in Cloud Manager?",
+      "heading": "A role that can configure and execute pipelines, manage environments, and trigger deployments including production",
+      "body": "The Deployment Manager role in Cloud Manager can configure pipelines, manage environments, set environment variables, and trigger all types of pipeline runs including production deployments. They can also override quality gate failures marked as 'Important'. This role works alongside the Business Owner for the full deployment lifecycle.",
+      "narration": "What is the Deployment Manager role in Cloud Manager? A role that can configure and execute pipelines, manage environments, and trigger deployments including production. The Deployment Manager role in Cloud Manager can configure pipelines, manage environments, set environment variables, and trigger all types of pipeline runs including production deployments. They can also override quality gate failures marked as 'Important'. This role works alongside the Business Owner for the full deployment lifecycle."
+    },
+    {
+      "id": "02-cm-041",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What permissions does the Developer role in Cloud Manager provide?",
+      "heading": "Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console",
+      "body": "Developers in Cloud Manager can access the AEM Developer Console per environment, download execution logs, retrieve git credentials, manage environment variables, and trigger non-production pipelines. They cannot trigger production pipelines or manage program-level settings — those require Deployment Manager or Business Owner roles.",
+      "narration": "What permissions does the Developer role in Cloud Manager provide? Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console. Developers in Cloud Manager can access the AEM Developer Console per environment, download execution logs, retrieve git credentials, manage environment variables, and trigger non-production pipelines. They cannot trigger production pipelines or manage program-level settings — those require Deployment Manager or Business Owner roles."
+    },
+    {
+      "id": "03-cm-042",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is a 'Sandbox Program' in Cloud Manager?",
+      "heading": "A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA",
+      "body": "Sandbox Programs are a lightweight Cloud Manager program type intended for learning, demos, and PoCs. They don't include a Production environment, have limited resources, and environments auto-hibernate after periods of inactivity (~8 hours without traffic). They are not subject to 24x7 SLA guarantees that Production programs have.",
+      "narration": "What is a 'Sandbox Program' in Cloud Manager? A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA. Sandbox Programs are a lightweight Cloud Manager program type intended for learning, demos, and PoCs. They don't include a Production environment, have limited resources, and environments auto-hibernate after periods of inactivity (~8 hours without traffic). They are not subject to 24x7 SLA guarantees that Production programs have."
+    },
+    {
+      "id": "04-cm-043",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is 'Environment Hibernation' in Cloud Manager Sandbox Programs?",
+      "heading": "Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action",
+      "body": "Environment Hibernation automatically shuts down sandbox environments after approximately 8 hours of inactivity (no HTTP traffic). This saves resources since sandbox programs have no SLA guarantees. Users can resume environments manually via the Cloud Manager UI, an API call, or by simply sending an HTTP request — which triggers an automatic wake-up.",
+      "narration": "What is 'Environment Hibernation' in Cloud Manager Sandbox Programs? Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action. Environment Hibernation automatically shuts down sandbox environments after approximately 8 hours of inactivity (no HTTP traffic). This saves resources since sandbox programs have no SLA guarantees. Users can resume environments manually via the Cloud Manager UI, an API call, or by simply sending an HTTP request — which triggers an automatic wake-up."
+    },
+    {
+      "id": "05-cm-044",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "How does a user gain access to the AEM Author service in AEMaaCS?",
+      "heading": "By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment",
+      "body": "Access to the AEM Author service in AEMaaCS is managed through the Adobe Admin Console. An IMS Org admin must add users to either the 'AEM Administrators' or 'AEM Users' product profile associated with the Author service tier. Cloud Manager roles do NOT automatically grant AEM Author access — they are separate access controls.",
+      "narration": "How does a user gain access to the AEM Author service in AEMaaCS? By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment. Access to the AEM Author service in AEMaaCS is managed through the Adobe Admin Console. An IMS Org admin must add users to either the 'AEM Administrators' or 'AEM Users' product profile associated with the Author service tier. Cloud Manager roles do NOT automatically grant AEM Author access — they are separate access controls."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A role that can configure and execute pipelines, manage environments, and trigger deployments including production",
+        "Access to developer tokens, pipeline execution logs, environment variables, and AEM Developer Console",
+        "A low-cost Cloud Manager program type for learning and demos with no production environment and limited SLA",
+        "Automatic suspension of sandbox environment resources after prolonged inactivity, resumable via a manual 'resume' action",
+        "By being assigned to the AEM Users or AEM Administrators product profile in the Admin Console for that Author environment"
+      ],
+      "narration": "Quick recap of Admin Console (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

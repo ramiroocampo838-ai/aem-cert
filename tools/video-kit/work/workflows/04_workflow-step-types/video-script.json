@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Workflow Step Types",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Workflow Step Types",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Workflow Step Types. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-022",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which step type should be used when a person must complete assigned work before the workflow can continue?",
+      "heading": "A Participant step generates a work item for a user or group and waits for a person",
+      "body": "Participant steps generate a work item, assign it to a user or group, and require a person to complete that item before the workflow advances.",
+      "narration": "Which step type should be used when a person must complete assigned work before the workflow can continue? A Participant step generates a work item for a user or group and waits for a person. Participant steps generate a work item, assign it to a user or group, and require a person to complete that item before the workflow advances."
+    },
+    {
+      "id": "02-wf-023",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which step type runs automatically by the system and can be implemented in Java or ECMA script?",
+      "heading": "A Process step runs automatically and is implemented by an ECMA script or a Java class",
+      "body": "Section 4 says Process steps are executed automatically by the system and are implemented either by an ECMA script or a Java class.",
+      "narration": "Which step type runs automatically by the system and can be implemented in Java or ECMA script? A Process step runs automatically and is implemented by an ECMA script or a Java class. Section 4 says Process steps are executed automatically by the system and are implemented either by an ECMA script or a Java class."
+    },
+    {
+      "id": "03-wf-024",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What does a Container step do?",
+      "heading": "A Container step starts another workflow model as a sub-workflow",
+      "body": "The lesson says Container steps start another workflow model as a sub-workflow.",
+      "narration": "What does a Container step do? A Container step starts another workflow model as a sub-workflow. The lesson says Container steps start another workflow model as a sub-workflow."
+    },
+    {
+      "id": "04-wf-025",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "A scenario requires logic to choose which step should execute next. Which step type fits best?",
+      "heading": "An OR Split and Join uses logic to decide which step to execute next",
+      "body": "Section 4 says OR Split and Join use logic to decide which step to execute next.",
+      "narration": "A scenario requires logic to choose which step should execute next. Which step type fits best? An OR Split and Join uses logic to decide which step to execute next. Section 4 says OR Split and Join use logic to decide which step to execute next."
+    },
+    {
+      "id": "05-wf-026",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which step type allows multiple steps to run simultaneously?",
+      "heading": "AND Split and Join allow multiple steps to run simultaneously",
+      "body": "The speech states that AND Split and Join allow multiple steps to run simultaneously.",
+      "narration": "Which step type allows multiple steps to run simultaneously? AND Split and Join allow multiple steps to run simultaneously. The speech states that AND Split and Join allow multiple steps to run simultaneously."
+    },
+    {
+      "id": "06-wf-027",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which properties are shared by all workflow steps?",
+      "heading": "All steps share Autoadvance and Timeout alerts, and the timeouts are scriptable",
+      "body": "Section 4 says all steps share the common properties Autoadvance and Timeout alerts, and that timeouts are scriptable.",
+      "narration": "Which properties are shared by all workflow steps? All steps share Autoadvance and Timeout alerts, and the timeouts are scriptable. Section 4 says all steps share the common properties Autoadvance and Timeout alerts, and that timeouts are scriptable."
+    },
+    {
+      "id": "07-wf-028",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How does the Dynamic Participant step determine the assignee?",
+      "heading": "It uses a service or script to choose the user at runtime instead of a fixed user",
+      "body": "The Dynamic Participant step uses a service or script to choose the user who receives the work item at runtime instead of using a fixed user.",
+      "narration": "How does the Dynamic Participant step determine the assignee? It uses a service or script to choose the user at runtime instead of a fixed user. The Dynamic Participant step uses a service or script to choose the user who receives the work item at runtime instead of using a fixed user."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A Participant step generates a work item for a user or group and waits for a person",
+        "A Process step runs automatically and is implemented by an ECMA script or a Java class",
+        "A Container step starts another workflow model as a sub-workflow",
+        "An OR Split and Join uses logic to decide which step to execute next",
+        "AND Split and Join allow multiple steps to run simultaneously",
+        "All steps share Autoadvance and Timeout alerts, and the timeouts are scriptable",
+        "It uses a service or script to choose the user at runtime instead of a fixed user"
+      ],
+      "narration": "Quick recap of Workflow Step Types. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Cloud Manager (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cloud Manager (Part 2 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Cloud Manager (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-020",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the 'Program Manager' role responsible for in Cloud Manager?",
+      "heading": "Managing program features, timelines, and coordinating with other roles",
+      "body": "The Program Manager role in Cloud Manager is a coordination and planning role — managing program delivery timelines, coordinating between teams, tracking SLA adherence, and having visibility across all aspects of the program including environments and pipelines.",
+      "narration": "What is the 'Program Manager' role responsible for in Cloud Manager? Managing program features, timelines, and coordinating with other roles. The Program Manager role in Cloud Manager is a coordination and planning role — managing program delivery timelines, coordinating between teams, tracking SLA adherence, and having visibility across all aspects of the program including environments and pipelines."
+    },
+    {
+      "id": "02-cm-021",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is a 'program' in Cloud Manager?",
+      "heading": "A logical container in Cloud Manager that groups related AEM environments and pipelines",
+      "body": "In Cloud Manager, a Program is a logical organizational container that groups together AEM environments (dev, stage, production), CI/CD pipelines, a Git repository, SLA targets, and user access. A company typically has one or more programs (e.g., one per brand or major site).",
+      "narration": "What is a 'program' in Cloud Manager? A logical container in Cloud Manager that groups related AEM environments and pipelines. In Cloud Manager, a Program is a logical organizational container that groups together AEM environments (dev, stage, production), CI/CD pipelines, a Git repository, SLA targets, and user access. A company typically has one or more programs (e.g., one per brand or major site)."
+    },
+    {
+      "id": "03-cm-022",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What types of programs exist in Cloud Manager?",
+      "heading": "Sandbox programs and production programs — the two program types in Cloud Manager",
+      "body": "Cloud Manager has two program types: Sandbox Programs (free, limited capacity, used for learning, demos, and exploration — no SLA guarantees) and Production Programs (full capacity, Adobe SLA-backed, used for real business workloads).",
+      "narration": "What types of programs exist in Cloud Manager? Sandbox programs and production programs — the two program types in Cloud Manager. Cloud Manager has two program types: Sandbox Programs (free, limited capacity, used for learning, demos, and exploration — no SLA guarantees) and Production Programs (full capacity, Adobe SLA-backed, used for real business workloads)."
+    },
+    {
+      "id": "04-cm-023",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is the purpose of a Sandbox program in Cloud Manager?",
+      "heading": "Exploration, learning, demos, and POCs — not subject to production SLAs",
+      "body": "Sandbox programs in Cloud Manager are provided for learning, exploration, demos, and proof-of-concept work. They have limited capacity and no Adobe SLA guarantees. They are free (included with AEMaaCS licensing) and ideal for training developers on the platform.",
+      "narration": "What is the purpose of a Sandbox program in Cloud Manager? Exploration, learning, demos, and POCs — not subject to production SLAs. Sandbox programs in Cloud Manager are provided for learning, exploration, demos, and proof-of-concept work. They have limited capacity and no Adobe SLA guarantees. They are free (included with AEMaaCS licensing) and ideal for training developers on the platform."
+    },
+    {
+      "id": "05-cm-024",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What Git repository does Cloud Manager use for code management?",
+      "heading": "Adobe-managed Git repositories provided per Cloud Manager program",
+      "body": "Cloud Manager provides an Adobe-managed Git repository for each program. Teams push their code to this repository, and Cloud Manager's pipelines build and deploy from it. Private repositories (GitHub, Bitbucket, GitLab) can also be connected as external repositories.",
+      "narration": "What Git repository does Cloud Manager use for code management? Adobe-managed Git repositories provided per Cloud Manager program. Cloud Manager provides an Adobe-managed Git repository for each program. Teams push their code to this repository, and Cloud Manager's pipelines build and deploy from it. Private repositories (GitHub, Bitbucket, GitLab) can also be connected as external repositories."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Managing program features, timelines, and coordinating with other roles",
+        "A logical container in Cloud Manager that groups related AEM environments and pipelines",
+        "Sandbox programs and production programs — the two program types in Cloud Manager",
+        "Exploration, learning, demos, and POCs — not subject to production SLAs",
+        "Adobe-managed Git repositories provided per Cloud Manager program"
+      ],
+      "narration": "Quick recap of Cloud Manager (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

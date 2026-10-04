@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Experience Fragments Development and Tips",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Experience Fragments Development and Tips",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Experience Fragments Development and Tips. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-094",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which sling:resourceType is used by an Experience Fragment master or variation?",
+      "heading": "Experience Fragment masters and variations use sling:resourceType cq/experience-fragments/components/xfpage",
+      "body": "The speech says a fragment master or variation uses the sling:resourceType cq/experience-fragments/components/xfpage, which falls back to the core page component through sling:resourceSuperType.",
+      "narration": "Which sling:resourceType is used by an Experience Fragment master or variation? Experience Fragment masters and variations use sling:resourceType cq/experience-fragments/components/xfpage. The speech says a fragment master or variation uses the sling:resourceType cq/experience-fragments/components/xfpage, which falls back to the core page component through sling:resourceSuperType."
+    },
+    {
+      "id": "02-wf-095",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which selector requests the plain HTML rendition of an Experience Fragment for third-party consumption?",
+      "heading": "Use the .plain. selector to request the plain HTML rendition",
+      "body": "The speech says the plain HTML rendition is requested with the .plain. selector, for example master.plain.html, so third-party applications can read the fragment by URL.",
+      "narration": "Which selector requests the plain HTML rendition of an Experience Fragment for third-party consumption? Use the .plain. selector to request the plain HTML rendition. The speech says the plain HTML rendition is requested with the .plain. selector, for example master.plain.html, so third-party applications can read the fragment by URL."
+    },
+    {
+      "id": "03-wf-096",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What does the plain HTML rendition rewrite in links and resource attributes?",
+      "heading": "It adds protocol, host, and context path, and its links point to the publish instance",
+      "body": "The speech says the plain HTML rendition adds protocol, host, and context path to src, href, and action attributes and attributes ending in -src or -href, and that links always reference the publish instance.",
+      "narration": "What does the plain HTML rendition rewrite in links and resource attributes? It adds protocol, host, and context path, and its links point to the publish instance. The speech says the plain HTML rendition adds protocol, host, and context path to src, href, and action attributes and attributes ending in -src or -href, and that links always reference the publish instance."
+    },
+    {
+      "id": "04-wf-097",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How is the plain Experience Fragment rendition built, and what customization rule accompanies it?",
+      "heading": "It is built by the Sling Rewriter pipeline, and you should overlay the configuration instead of editing /libs",
+      "body": "The speech says the plain rendition is built by the Sling Rewriter pipeline under the experience-fragments rewriter configuration and says to overlay the configuration rather than editing it in /libs.",
+      "narration": "How is the plain Experience Fragment rendition built, and what customization rule accompanies it? It is built by the Sling Rewriter pipeline, and you should overlay the configuration instead of editing /libs. The speech says the plain rendition is built by the Sling Rewriter pipeline under the experience-fragments rewriter configuration and says to overlay the configuration rather than editing it in /libs."
+    },
+    {
+      "id": "05-wf-098",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How can an Experience Fragment template be recognized by the Create wizard?",
+      "heading": "Its resource type must inherit from cq/experience-fragments/components/xfpage and its name begin with experience-fragment, or Allowed Templates must be configured",
+      "body": "The speech says an Experience Fragment template must either inherit from cq/experience-fragments/components/xfpage and have a name beginning with experience-fragment, or Allowed Templates must be configured in the console.",
+      "narration": "How can an Experience Fragment template be recognized by the Create wizard? Its resource type must inherit from cq/experience-fragments/components/xfpage and its name begin with experience-fragment, or Allowed Templates must be configured. The speech says an Experience Fragment template must either inherit from cq/experience-fragments/components/xfpage and have a name beginning with experience-fragment, or Allowed Templates must be configured in the console."
+    },
+    {
+      "id": "06-wf-099",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What extra development step applies to components that will be used inside Experience Fragments?",
+      "heading": "Allow the components on the template with the content policy",
+      "body": "The speech says components used in fragments follow standard component practices, and the only extra step is allowing them on the template with the content policy.",
+      "narration": "What extra development step applies to components that will be used inside Experience Fragments? Allow the components on the template with the content policy. The speech says components used in fragments follow standard component practices, and the only extra step is allowing them on the template with the content policy."
+    },
+    {
+      "id": "07-wf-100",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What does Export to Target do for an Experience Fragment?",
+      "heading": "Export to Target sends the Experience Fragment to Adobe Target as an offer in HTML or JSON",
+      "body": "The speech says Export to Target sends a fragment to Adobe Target as an offer, in HTML or JSON format.",
+      "narration": "What does Export to Target do for an Experience Fragment? Export to Target sends the Experience Fragment to Adobe Target as an offer in HTML or JSON. The speech says Export to Target sends a fragment to Adobe Target as an offer, in HTML or JSON format."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Experience Fragment masters and variations use sling:resourceType cq/experience-fragments/components/xfpage",
+        "Use the .plain. selector to request the plain HTML rendition",
+        "It adds protocol, host, and context path, and its links point to the publish instance",
+        "It is built by the Sling Rewriter pipeline, and you should overlay the configuration instead of editing /libs",
+        "Its resource type must inherit from cq/experience-fragments/components/xfpage and its name begin with experience-fragment, or Allowed Templates must be configured",
+        "Allow the components on the template with the content policy",
+        "Export to Target sends the Experience Fragment to Adobe Target as an offer in HTML or JSON"
+      ],
+      "narration": "Quick recap of Experience Fragments Development and Tips. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

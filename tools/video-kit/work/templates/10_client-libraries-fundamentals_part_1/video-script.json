@@ -1,0 +1,80 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Client Libraries — Fundamentals (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Client Libraries — Fundamentals (Part 1 of 2)",
+      "sub": "Templates · 5 key concepts",
+      "narration": "Templates. Client Libraries — Fundamentals (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-079",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What are clientlibs in AEM?",
+      "heading": "The built-in solution in AEM for delivering CSS and JavaScript",
+      "body": "Clientlibs are the built-in solution in AEM for delivering CSS and JavaScript, streamlining the organization, management, and delivery of front-end code within an AEM project.",
+      "narration": "What are clientlibs in AEM? The built-in solution in AEM for delivering CSS and JavaScript. Clientlibs are the built-in solution in AEM for delivering CSS and JavaScript, streamlining the organization, management, and delivery of front-end code within an AEM project."
+    },
+    {
+      "id": "02-tmpl-080",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What are the advantages of using clientlibs?",
+      "heading": "Centralized management, improved performance via aggregation, reusability, scalability, security, auditing, and versioning",
+      "body": "Clientlibs offer centralized management (single repository location), improved performance (aggregated into single files, reducing requests), reusability across pages/components, scalability, security via access controls, auditing, and versioning.",
+      "narration": "What are the advantages of using clientlibs? Centralized management, improved performance via aggregation, reusability, scalability, security, auditing, and versioning. Clientlibs offer centralized management (single repository location), improved performance (aggregated into single files, reducing requests), reusability across pages/components, scalability, security via access controls, auditing, and versioning."
+    },
+    {
+      "id": "03-tmpl-081",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is a client-side library folder, structurally?",
+      "heading": "A repository node of type cq:ClientLibraryFolder, typically stored under /apps",
+      "body": "A client-side library folder is a repository node of type cq:ClientLibraryFolder. It is a collection of JavaScript, CSS, and other resources reusable across multiple pages or components, typically stored under /apps.",
+      "narration": "What is a client-side library folder, structurally? A repository node of type cq:ClientLibraryFolder, typically stored under /apps. A client-side library folder is a repository node of type cq:ClientLibraryFolder. It is a collection of JavaScript, CSS, and other resources reusable across multiple pages or components, typically stored under /apps."
+    },
+    {
+      "id": "04-tmpl-082",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What are the two important properties of a client-side library folder?",
+      "heading": "categories (identifies which category or categories the library belongs to) and allowProxy (allows proxy servlet access)",
+      "body": "The important properties of a client-side library folder are categories, a multi-valued property identifying the categories the JS/CSS files fall into, and allowProxy, which allows access to the library via the proxy servlet.",
+      "narration": "What are the two important properties of a client-side library folder? categories (identifies which category or categories the library belongs to) and allowProxy (allows proxy servlet access). The important properties of a client-side library folder are categories, a multi-valued property identifying the categories the JS/CSS files fall into, and allowProxy, which allows access to the library via the proxy servlet."
+    },
+    {
+      "id": "05-tmpl-083",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What does a client-side library folder typically contain?",
+      "heading": "Source JS/CSS files, static resources like icons/fonts, and a js.txt and/or css.txt file listing which files to merge",
+      "body": "A client-side library folder contains the JS and/or CSS source files, static resources that support styles (icons, web fonts, etc.), and one js.txt and/or one css.txt file identifying the source files to merge into the generated output.",
+      "narration": "What does a client-side library folder typically contain? Source JS/CSS files, static resources like icons/fonts, and a js.txt and/or css.txt file listing which files to merge. A client-side library folder contains the JS and/or CSS source files, static resources that support styles (icons, web fonts, etc.), and one js.txt and/or one css.txt file identifying the source files to merge into the generated output."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The built-in solution in AEM for delivering CSS and JavaScript",
+        "Centralized management, improved performance via aggregation, reusability, scalability, security, auditing, and versioning",
+        "A repository node of type cq:ClientLibraryFolder, typically stored under /apps",
+        "categories (identifies which category or categories the library belongs to) and allowProxy (allows proxy servlet access)",
+        "Source JS/CSS files, static resources like icons/fonts, and a js.txt and/or css.txt file listing which files to merge"
+      ],
+      "narration": "Quick recap of Client Libraries — Fundamentals (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

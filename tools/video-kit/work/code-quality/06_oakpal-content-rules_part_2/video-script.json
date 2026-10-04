@@ -1,0 +1,102 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "OakPAL Content Rules (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "OakPAL Content Rules (Part 2 of 2)",
+      "sub": "Code Quality · 7 key concepts",
+      "narration": "Code Quality. OakPAL Content Rules (Part 2 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-026",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Why must rep:policy nodes (JCR ACL definitions) be explicitly excluded from content packages that are not specifically designed for security management, per OAKPAL-006?",
+      "heading": "Accidentally packaging rep:policy nodes overwrites production security settings (ACLs) on every install",
+      "body": "OAKPAL-006 (Severity: Critical) protects production access control configurations. rep:policy nodes define JCR ACLs (who can read/write/delete which nodes). If a development content package accidentally includes these nodes and is deployed to production, the carefully configured production security settings are overwritten with development values. Fix: explicitly exclude rep:policy from all non-security-specific packages using <exclude pattern='.*rep:policy.*'/> in the filter.",
+      "narration": "Why must rep:policy nodes (JCR ACL definitions) be explicitly excluded from content packages that are not specifically designed for security management, per OAKPAL-006? Accidentally packaging rep:policy nodes overwrites production security settings (ACLs) on every install. OAKPAL-006 (Severity: Critical) protects production access control configurations. rep:policy nodes define JCR ACLs (who can read/write/delete which nodes). If a development content package accidentally includes these nodes and is deployed to production, the carefully configured production security settings are overwritten with development values. Fix: explicitly exclude rep:policy from all non-security-specific packages using <exclude pattern='.*rep:policy.*'/> in the filter."
+    },
+    {
+      "id": "02-cq-027",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which OakPAL rule (OAKPAL-007) prohibits content packages from including filter roots targeting /var/eventing, /var/audit, or /var/workflow?",
+      "heading": "No /var Nodes in Content Packages",
+      "body": "OAKPAL-007 (Severity: Major) protects the /var area. In AEM, /var holds runtime-managed data including: /var/eventing (OSGi event queue), /var/audit (audit log), /var/workflow (workflow payloads and history), and /var/oak:index (Lucene search indexes). Packaging this content freezes dynamic runtime data into a static snapshot, breaking AEM's ability to manage these areas. Deploying a package with /var content to production can corrupt all of these systems.",
+      "narration": "Which OakPAL rule (OAKPAL-007) prohibits content packages from including filter roots targeting /var/eventing, /var/audit, or /var/workflow? No /var Nodes in Content Packages. OAKPAL-007 (Severity: Major) protects the /var area. In AEM, /var holds runtime-managed data including: /var/eventing (OSGi event queue), /var/audit (audit log), /var/workflow (workflow payloads and history), and /var/oak:index (Lucene search indexes). Packaging this content freezes dynamic runtime data into a static snapshot, breaking AEM's ability to manage these areas. Deploying a package with /var content to production can corrupt all of these systems."
+    },
+    {
+      "id": "03-cq-028",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the naming convention violation that OAKPAL-008 prevents when defining a client library category as 'utils' or 'common'?",
+      "heading": "Generic category names conflict with AEM core libraries or third-party integrations that use the same name",
+      "body": "OAKPAL-008 (Severity: Minor) enforces clientlib category namespacing. Client library categories are strings referenced by HTL (data-sly-call='${clientlib.all @ categories=\"myname\"}') and must be globally unique within the AEM instance. Generic names like 'utils', 'common', or 'styles' are likely already used by AEM Core Components, third-party integrations, or other project packages. The fix: namespace with the project name: 'myproject.components.header', 'myproject.base'.",
+      "narration": "What is the naming convention violation that OAKPAL-008 prevents when defining a client library category as 'utils' or 'common'? Generic category names conflict with AEM core libraries or third-party integrations that use the same name. OAKPAL-008 (Severity: Minor) enforces clientlib category namespacing. Client library categories are strings referenced by HTL (data-sly-call='${clientlib.all @ categories=\"myname\"}') and must be globally unique within the AEM instance. Generic names like 'utils', 'common', or 'styles' are likely already used by AEM Core Components, third-party integrations, or other project packages. The fix: namespace with the project name: 'myproject.components.header', 'myproject.base'."
+    },
+    {
+      "id": "04-cq-029",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which two repository areas in AEM are considered 'immutable' and must never be modified by content packages?",
+      "heading": "/libs (AEM core) and /var (runtime area) — direct /libs writes are Blocker violations; /var packaging is Major",
+      "body": "Two areas have strict OakPAL protections: (1) /libs — OAKPAL-002 (Blocker) makes it completely off-limits for content packages; any customization must use the /apps overlay pattern. (2) /var — OAKPAL-007 (Major) prohibits packaging runtime data areas like eventing, audit logs, and workflow payloads. Both are managed by AEM itself and must never be overwritten by deployments.",
+      "narration": "Which two repository areas in AEM are considered 'immutable' and must never be modified by content packages? /libs (AEM core) and /var (runtime area) — direct /libs writes are Blocker violations; /var packaging is Major. Two areas have strict OakPAL protections: (1) /libs — OAKPAL-002 (Blocker) makes it completely off-limits for content packages; any customization must use the /apps overlay pattern. (2) /var — OAKPAL-007 (Major) prohibits packaging runtime data areas like eventing, audit logs, and workflow payloads. Both are managed by AEM itself and must never be overwritten by deployments."
+    },
+    {
+      "id": "05-cq-030",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "In a compliant AEM content package filter.xml, which of the following filter configurations is correct for deploying components and templates?",
+      "heading": "<filter root='/apps/myproject/components'/> and <filter root='/apps/myproject/templates'/> as separate non-overlapping entries",
+      "body": "Compliant filter configurations use scoped, non-overlapping filter roots for each distinct content area. Instead of <filter root='/apps/myproject'/> (which destructively overwrites the entire project on install), you use separate, focused filters: <filter root='/apps/myproject/components'/>, <filter root='/apps/myproject/templates'/>, <filter root='/apps/myproject/clientlibs'/>. Each filter covers only its specific area and does not overlap with the others.",
+      "narration": "In a compliant AEM content package filter.xml, which of the following filter configurations is correct for deploying components and templates? <filter root='/apps/myproject/components'/> and <filter root='/apps/myproject/templates'/> as separate non-overlapping entries. Compliant filter configurations use scoped, non-overlapping filter roots for each distinct content area. Instead of <filter root='/apps/myproject'/> (which destructively overwrites the entire project on install), you use separate, focused filters: <filter root='/apps/myproject/components'/>, <filter root='/apps/myproject/templates'/>, <filter root='/apps/myproject/clientlibs'/>. Each filter covers only its specific area and does not overlap with the others."
+    },
+    {
+      "id": "06-cq-031",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the Severity level of OAKPAL-002 (Enforce Immutable Content Structure — /libs must not be modified)?",
+      "heading": "Blocker — the highest severity level; the build fails and deployment is blocked",
+      "body": "OAKPAL-002 carries Blocker severity — the most severe level in both SonarQube and OakPAL. A Blocker means the build absolutely cannot proceed; Cloud Manager stops the pipeline and requires the issue to be fixed before any deployment can happen. Modifying /libs is categorized as Blocker because it is guaranteed to break on the next AEM upgrade.",
+      "narration": "What is the Severity level of OAKPAL-002 (Enforce Immutable Content Structure — /libs must not be modified)? Blocker — the highest severity level; the build fails and deployment is blocked. OAKPAL-002 carries Blocker severity — the most severe level in both SonarQube and OakPAL. A Blocker means the build absolutely cannot proceed; Cloud Manager stops the pipeline and requires the issue to be fixed before any deployment can happen. Modifying /libs is categorized as Blocker because it is guaranteed to break on the next AEM upgrade."
+    },
+    {
+      "id": "07-cq-032",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which OakPAL check validates that jcr:primaryType is explicitly set on every JCR node in a content package, and what severity does it carry?",
+      "heading": "oakpal:RequiredPrimaryType — Error severity",
+      "body": "oakpal:RequiredPrimaryType carries Error severity and requires that every JCR node explicitly declares its jcr:primaryType property. The most common valid types are: cq:Page (for page nodes), cq:Component (for component definitions), nt:unstructured (for generic content), sling:Folder (for folder structures), and cq:ClientLibraryFolder (for clientlibs). Missing primary types can cause Sling resource resolution failures and repository import errors.",
+      "narration": "Which OakPAL check validates that jcr:primaryType is explicitly set on every JCR node in a content package, and what severity does it carry? oakpal:RequiredPrimaryType — Error severity. oakpal:RequiredPrimaryType carries Error severity and requires that every JCR node explicitly declares its jcr:primaryType property. The most common valid types are: cq:Page (for page nodes), cq:Component (for component definitions), nt:unstructured (for generic content), sling:Folder (for folder structures), and cq:ClientLibraryFolder (for clientlibs). Missing primary types can cause Sling resource resolution failures and repository import errors."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Accidentally packaging rep:policy nodes overwrites production security settings (ACLs) on every install",
+        "No /var Nodes in Content Packages",
+        "Generic category names conflict with AEM core libraries or third-party integrations that use the same name",
+        "/libs (AEM core) and /var (runtime area) — direct /libs writes are Blocker violations; /var packaging is Major",
+        "<filter root='/apps/myproject/components'/> and <filter root='/apps/myproject/templates'/> as separate non-overlapping entries",
+        "Blocker — the highest severity level; the build fails and deployment is blocked",
+        "oakpal:RequiredPrimaryType — Error severity"
+      ],
+      "narration": "Quick recap of OakPAL Content Rules (Part 2 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

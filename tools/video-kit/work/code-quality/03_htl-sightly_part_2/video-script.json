@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "HTL / Sightly (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "HTL / Sightly (Part 2 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. HTL / Sightly (Part 2 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-053",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "Which HTL attribute and syntax is used to include another HTL component template by calling a defined template from the same or a different HTL file?",
+      "heading": "data-sly-call='${templates.myTemplate @ param1=value1}' after importing the template file with data-sly-use",
+      "body": "HTL Template Calling: To call a template, first import the file containing it: '<div data-sly-use.t='/apps/project/components/base/base.html'></div>', then call the specific template: '<sly data-sly-call='${t.myBlock @ title=model.title}'/>'. data-sly-template defines a reusable HTML block with parameters; data-sly-call invokes it. Note: data-sly-include includes a full HTL script (passing the current context); data-sly-call invokes just the named template block.",
+      "narration": "Which HTL attribute and syntax is used to include another HTL component template by calling a defined template from the same or a different HTL file? data-sly-call='${templates.myTemplate @ param1=value1}' after importing the template file with data-sly-use. HTL Template Calling: To call a template, first import the file containing it: '<div data-sly-use.t='/apps/project/components/base/base.html'></div>', then call the specific template: '<sly data-sly-call='${t.myBlock @ title=model.title}'/>'. data-sly-template defines a reusable HTML block with parameters; data-sly-call invokes it. Note: data-sly-include includes a full HTL script (passing the current context); data-sly-call invokes just the named template block."
+    },
+    {
+      "id": "02-cq-054",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "In HTL, what is the difference between data-sly-include and data-sly-resource?",
+      "heading": "data-sly-include includes another HTL script in the same component context; data-sly-resource includes a JCR resource resolved by path, running its full Sling rendering pipeline",
+      "body": "HTL includes: data-sly-include evaluates the referenced HTL/JSP script in the current Sling rendering context — same request, same resource, same resolver. data-sly-resource dispatches a new Sling include request for a JCR resource, which causes Sling to look up its sling:resourceType and render it through the full component rendering pipeline, including any associated Use-API objects and child scripts.",
+      "narration": "In HTL, what is the difference between data-sly-include and data-sly-resource? data-sly-include includes another HTL script in the same component context; data-sly-resource includes a JCR resource resolved by path, running its full Sling rendering pipeline. HTL includes: data-sly-include evaluates the referenced HTL/JSP script in the current Sling rendering context — same request, same resource, same resolver. data-sly-resource dispatches a new Sling include request for a JCR resource, which causes Sling to look up its sling:resourceType and render it through the full component rendering pipeline, including any associated Use-API objects and child scripts."
+    },
+    {
+      "id": "03-cq-055",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "HTL-003 requires always specifying an explicit output context for URI expressions. Which context prevents open redirect and XSS attacks for href attribute values?",
+      "heading": "context='uri' — validates the URI structure and strips dangerous javascript: and data: scheme prefixes",
+      "body": "HTL-003 (Major): Without context='uri', an attacker can inject javascript:alert(1) as an href value. The default attribute context encodes HTML special characters but does NOT validate URI schemes. context='uri' applies URI scheme validation, blocking javascript:, data:, vbscript:, and other dangerous schemes. Safe schemes (http, https, relative paths, mailto, #anchors) pass through; unsafe ones are replaced with an empty string or '#', preventing protocol injection.",
+      "narration": "HTL-003 requires always specifying an explicit output context for URI expressions. Which context prevents open redirect and XSS attacks for href attribute values? context='uri' — validates the URI structure and strips dangerous javascript: and data: scheme prefixes. HTL-003 (Major): Without context='uri', an attacker can inject javascript:alert(1) as an href value. The default attribute context encodes HTML special characters but does NOT validate URI schemes. context='uri' applies URI scheme validation, blocking javascript:, data:, vbscript:, and other dangerous schemes. Safe schemes (http, https, relative paths, mailto, #anchors) pass through; unsafe ones are replaced with an empty string or '#', preventing protocol injection."
+    },
+    {
+      "id": "04-cq-056",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "How does HTL's data-sly-list attribute iterate over a collection, and what implicit loop variables does it provide?",
+      "heading": "data-sly-list.item='${model.items}' iterates the collection; provides itemList.index (0-based), itemList.count (1-based), itemList.first, itemList.last, itemList.odd, itemList.even",
+      "body": "HTL data-sly-list: The syntax 'data-sly-list.item=\"${model.items}\"' binds each element to 'item'. HTL automatically creates a companion variable 'itemList' (the loop variable name + 'List') with helper properties: .index (0-based), .count (1-based), .first (boolean), .last (boolean), .odd/.even (alternating booleans). These allow CSS class conditionals and element separators without Java logic.",
+      "narration": "How does HTL's data-sly-list attribute iterate over a collection, and what implicit loop variables does it provide? data-sly-list.item='${model.items}' iterates the collection; provides itemList.index (0-based), itemList.count (1-based), itemList.first, itemList.last, itemList.odd, itemList.even. HTL data-sly-list: The syntax 'data-sly-list.item=\"${model.items}\"' binds each element to 'item'. HTL automatically creates a companion variable 'itemList' (the loop variable name + 'List') with helper properties: .index (0-based), .count (1-based), .first (boolean), .last (boolean), .odd/.even (alternating booleans). These allow CSS class conditionals and element separators without Java logic."
+    },
+    {
+      "id": "05-cq-057",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "HTL-005 (Severity: Minor) discourages inline CSS or JavaScript within HTL templates. What is the recommended approach for component styling and behavior?",
+      "heading": "Use AEM Client Libraries (cq:ClientLibraryFolder) to deliver CSS and JS as versioned, cacheable assets linked via data-sly-call='${clientlib.all @ categories=...}'",
+      "body": "HTL-005 (Minor): AEM Client Libraries (cq:ClientLibraryFolder) are the correct way to deliver CSS and JavaScript. They are versioned (via md5 fingerprinting in AEM CS), cached by the Dispatcher as long-lived static assets, combinable via categories to reduce HTTP requests, and tree-shaken in modern AEM setups. Inline CSS/JS in HTL is not cached, cannot be combined with other component styles, and pollutes the HTML response.",
+      "narration": "HTL-005 (Severity: Minor) discourages inline CSS or JavaScript within HTL templates. What is the recommended approach for component styling and behavior? Use AEM Client Libraries (cq:ClientLibraryFolder) to deliver CSS and JS as versioned, cacheable assets linked via data-sly-call='${clientlib.all @ categories=...}'. HTL-005 (Minor): AEM Client Libraries (cq:ClientLibraryFolder) are the correct way to deliver CSS and JavaScript. They are versioned (via md5 fingerprinting in AEM CS), cached by the Dispatcher as long-lived static assets, combinable via categories to reduce HTTP requests, and tree-shaken in modern AEM setups. Inline CSS/JS in HTL is not cached, cannot be combined with other component styles, and pollutes the HTML response."
+    },
+    {
+      "id": "06-cq-058",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What is the purpose of HTL's context='numberLiteral' and context='styleToken' output contexts?",
+      "heading": "numberLiteral allows only numeric characters (no quotes) for JS numeric values; styleToken allows only safe CSS identifiers (no special chars) for CSS values",
+      "body": "HTL strict contexts: context='numberLiteral' restricts output to numeric characters only (digits, plus/minus signs, decimal point, exponent notation) — safe for embedding in JavaScript number literals without quotes. context='styleToken' restricts output to CSS-safe identifier characters (alphanumerics, hyphens, underscores) — safe for dynamic CSS class names or property values in style attributes. Both use allowlist filtering: any character not in the allowed set is stripped.",
+      "narration": "What is the purpose of HTL's context='numberLiteral' and context='styleToken' output contexts? numberLiteral allows only numeric characters (no quotes) for JS numeric values; styleToken allows only safe CSS identifiers (no special chars) for CSS values. HTL strict contexts: context='numberLiteral' restricts output to numeric characters only (digits, plus/minus signs, decimal point, exponent notation) — safe for embedding in JavaScript number literals without quotes. context='styleToken' restricts output to CSS-safe identifier characters (alphanumerics, hyphens, underscores) — safe for dynamic CSS class names or property values in style attributes. Both use allowlist filtering: any character not in the allowed set is stripped."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "data-sly-call='${templates.myTemplate @ param1=value1}' after importing the template file with data-sly-use",
+        "data-sly-include includes another HTL script in the same component context; data-sly-resource includes a JCR resource resolved by path, running its full Sling rendering pipeline",
+        "context='uri' — validates the URI structure and strips dangerous javascript: and data: scheme prefixes",
+        "data-sly-list.item='${model.items}' iterates the collection; provides itemList.index (0-based), itemList.count (1-based), itemList.first, itemList.last, itemList.odd, itemList.even",
+        "Use AEM Client Libraries (cq:ClientLibraryFolder) to deliver CSS and JS as versioned, cacheable assets linked via data-sly-call='${clientlib.all @ categories=...}'",
+        "numberLiteral allows only numeric characters (no quotes) for JS numeric values; styleToken allows only safe CSS identifiers (no special chars) for CSS values"
+      ],
+      "narration": "Quick recap of HTL / Sightly (Part 2 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

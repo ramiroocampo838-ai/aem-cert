@@ -1,0 +1,113 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Local Development Access Token",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Local Development Access Token",
+      "sub": "Authentication · 8 key concepts",
+      "narration": "Authentication. Local Development Access Token. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-072",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is a Local Development Access Token?",
+      "heading": "A temporary token that grants access to AEM Author and Publish services, with the user's own permissions, in a specific AEMaaCS environment",
+      "body": "A Local Development Access Token is a temporary authentication token that lets a developer access AEM Author and Publish services in a specific AEMaaCS environment, carrying the same permissions and privileges the developer already has.",
+      "narration": "What is a Local Development Access Token? A temporary token that grants access to AEM Author and Publish services, with the user's own permissions, in a specific AEMaaCS environment. A Local Development Access Token is a temporary authentication token that lets a developer access AEM Author and Publish services in a specific AEMaaCS environment, carrying the same permissions and privileges the developer already has."
+    },
+    {
+      "id": "02-auth-073",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Where do you generate a Local Development Access Token?",
+      "heading": "Through the AEM Developer Console, under Integrations > Local Token",
+      "body": "Local Development Access Tokens are generated through the AEM Developer Console, reached from Cloud Manager: open the environment's Developer Console, go to the Integrations tab, then the Local Token tab.",
+      "narration": "Where do you generate a Local Development Access Token? Through the AEM Developer Console, under Integrations > Local Token. Local Development Access Tokens are generated through the AEM Developer Console, reached from Cloud Manager: open the environment's Developer Console, go to the Integrations tab, then the Local Token tab."
+    },
+    {
+      "id": "03-auth-074",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What Admin Console memberships does a developer need to generate a Local Development Access Token?",
+      "heading": "Membership in the Cloud Manager - Developer product profile, plus AEM Users or AEM Administrators for the target environment",
+      "body": "A developer needs to be a member of the Cloud Manager - Developer IMS Product Profile to access the Developer Console, plus membership in either the AEM Administrators or AEM Users Product Profile for the specific environment's service the token will integrate with.",
+      "narration": "What Admin Console memberships does a developer need to generate a Local Development Access Token? Membership in the Cloud Manager - Developer product profile, plus AEM Users or AEM Administrators for the target environment. A developer needs to be a member of the Cloud Manager - Developer IMS Product Profile to access the Developer Console, plus membership in either the AEM Administrators or AEM Users Product Profile for the specific environment's service the token will integrate with."
+    },
+    {
+      "id": "04-auth-075",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What's the reduced requirement for generating a Local Development Access Token against a Sandbox AEMaaCS environment?",
+      "heading": "Only membership in either the AEM Administrators or AEM Users Product Profile is required",
+      "body": "For a Sandbox AEMaaCS environment specifically, only membership in either the AEM Administrators or AEM Users Product Profile is required to generate a Local Development Access Token — the Cloud Manager - Developer profile requirement is relaxed for sandboxes.",
+      "narration": "What's the reduced requirement for generating a Local Development Access Token against a Sandbox AEMaaCS environment? Only membership in either the AEM Administrators or AEM Users Product Profile is required. For a Sandbox AEMaaCS environment specifically, only membership in either the AEM Administrators or AEM Users Product Profile is required to generate a Local Development Access Token — the Cloud Manager - Developer profile requirement is relaxed for sandboxes."
+    },
+    {
+      "id": "05-auth-076",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "How long is a Local Development Access Token valid for before it expires?",
+      "heading": "It expires daily",
+      "body": "A Local Development Access Token expires daily. It's meant purely for quick local testing, not for any kind of persistent or production integration.",
+      "narration": "How long is a Local Development Access Token valid for before it expires? It expires daily. A Local Development Access Token expires daily. It's meant purely for quick local testing, not for any kind of persistent or production integration."
+    },
+    {
+      "id": "06-auth-077",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "As whom does a Local Development Access Token authenticate when used?",
+      "heading": "As the individual user who generated it, with that user's own permissions",
+      "body": "A Local Development Access Token authenticates as the specific developer who generated it, carrying that individual's own permissions — unlike Service Credentials, which authenticate as a dedicated Technical Account.",
+      "narration": "As whom does a Local Development Access Token authenticate when used? As the individual user who generated it, with that user's own permissions. A Local Development Access Token authenticates as the specific developer who generated it, carrying that individual's own permissions — unlike Service Credentials, which authenticate as a dedicated Technical Account."
+    },
+    {
+      "id": "07-auth-078",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What's the key security rule for handling a downloaded Local Development Access Token JSON file?",
+      "heading": "It should never be committed to source control or shared, since it grants access to the environment",
+      "body": "The downloaded token JSON file must never be committed to Git or shared with others — anyone holding it can access the AEMaaCS environment as that developer until the token expires.",
+      "narration": "What's the key security rule for handling a downloaded Local Development Access Token JSON file? It should never be committed to source control or shared, since it grants access to the environment. The downloaded token JSON file must never be committed to Git or shared with others — anyone holding it can access the AEMaaCS environment as that developer until the token expires."
+    },
+    {
+      "id": "08-auth-079",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "How is a Local Development Access Token included in an HTTP request to AEM?",
+      "heading": "As the value of the Authorization header, using the Bearer scheme",
+      "body": "Once obtained, the Local Development Access Token is included in the Authorization header of each HTTP request to AEM, using the Bearer scheme: Authorization: Bearer <access_token>.",
+      "narration": "How is a Local Development Access Token included in an HTTP request to AEM? As the value of the Authorization header, using the Bearer scheme. Once obtained, the Local Development Access Token is included in the Authorization header of each HTTP request to AEM, using the Bearer scheme: Authorization: Bearer <access_token>."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A temporary token that grants access to AEM Author and Publish services, with the user's own permissions, in a specific AEMaaCS environment",
+        "Through the AEM Developer Console, under Integrations > Local Token",
+        "Membership in the Cloud Manager - Developer product profile, plus AEM Users or AEM Administrators for the target environment",
+        "Only membership in either the AEM Administrators or AEM Users Product Profile is required",
+        "It expires daily",
+        "As the individual user who generated it, with that user's own permissions",
+        "It should never be committed to source control or shared, since it grants access to the environment",
+        "As the value of the Authorization header, using the Bearer scheme"
+      ],
+      "narration": "Quick recap of Local Development Access Token. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

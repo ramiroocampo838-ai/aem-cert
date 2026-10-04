@@ -1,0 +1,80 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Experience Fragments (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Experience Fragments (Part 1 of 2)",
+      "sub": "Templates · 5 key concepts",
+      "narration": "Templates. Experience Fragments (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-070",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is an experience fragment in AEMaaCS?",
+      "heading": "A grouped set of components that, when combined, create an experience",
+      "body": "An experience fragment in AEMaaCS is a grouped set of components that, when combined, create an experience — for example, a title, image, description, and call-to-action button combined to form a teaser experience.",
+      "narration": "What is an experience fragment in AEMaaCS? A grouped set of components that, when combined, create an experience. An experience fragment in AEMaaCS is a grouped set of components that, when combined, create an experience — for example, a title, image, description, and call-to-action button combined to form a teaser experience."
+    },
+    {
+      "id": "02-tmpl-071",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "Where are experience fragments stored, and how are they organized?",
+      "heading": "The Experience Fragments Library, organized by categories such as teasers, headers, and footers",
+      "body": "Experience fragments are stored in the Experience Fragments Library, a central repository for all experience fragments in an AEMaaCS project, organized by categories such as teasers, headers, and footers.",
+      "narration": "Where are experience fragments stored, and how are they organized? The Experience Fragments Library, organized by categories such as teasers, headers, and footers. Experience fragments are stored in the Experience Fragments Library, a central repository for all experience fragments in an AEMaaCS project, organized by categories such as teasers, headers, and footers."
+    },
+    {
+      "id": "03-tmpl-072",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What are the first steps to create an experience fragment?",
+      "heading": "Create a new component in the Experience Fragments Library, add components and properties to it, such as title, description, and image",
+      "body": "To create an experience fragment, you first create a new component in the Experience Fragments Library, then add other components to it, along with properties like a title, description, and image.",
+      "narration": "What are the first steps to create an experience fragment? Create a new component in the Experience Fragments Library, add components and properties to it, such as title, description, and image. To create an experience fragment, you first create a new component in the Experience Fragments Library, then add other components to it, along with properties like a title, description, and image."
+    },
+    {
+      "id": "04-tmpl-073",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "How do you use an existing experience fragment inside a page or component?",
+      "heading": "Add a reference to it via the Component Inspector; AEM creates a new instance inheriting the fragment's properties",
+      "body": "To use an experience fragment, you add a reference to it in the Component Inspector. AEMaaCS automatically creates a new instance of the experience fragment in your page or component, inheriting its properties, which you can then modify as needed.",
+      "narration": "How do you use an existing experience fragment inside a page or component? Add a reference to it via the Component Inspector; AEM creates a new instance inheriting the fragment's properties. To use an experience fragment, you add a reference to it in the Component Inspector. AEMaaCS automatically creates a new instance of the experience fragment in your page or component, inheriting its properties, which you can then modify as needed."
+    },
+    {
+      "id": "05-tmpl-074",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "How do experience fragments improve reusability and maintainability?",
+      "heading": "Avoiding duplicated code and ensuring components are consistent across the project",
+      "body": "By using experience fragments, you can avoid duplicating code and ensure that your components are consistent across your project, improving both reusability and maintainability.",
+      "narration": "How do experience fragments improve reusability and maintainability? Avoiding duplicated code and ensuring components are consistent across the project. By using experience fragments, you can avoid duplicating code and ensure that your components are consistent across your project, improving both reusability and maintainability."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A grouped set of components that, when combined, create an experience",
+        "The Experience Fragments Library, organized by categories such as teasers, headers, and footers",
+        "Create a new component in the Experience Fragments Library, add components and properties to it, such as title, description, and image",
+        "Add a reference to it via the Component Inspector; AEM creates a new instance inheriting the fragment's properties",
+        "Avoiding duplicated code and ensuring components are consistent across the project"
+      ],
+      "narration": "Quick recap of Experience Fragments (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

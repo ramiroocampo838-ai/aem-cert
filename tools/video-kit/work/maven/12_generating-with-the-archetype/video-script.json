@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Generating with the Archetype",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Generating with the Archetype",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Generating with the Archetype. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-079",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the AEM Project Archetype?",
+      "heading": "A Maven template that creates a minimal, best-practices-based AEM project",
+      "body": "The speech defines the AEM Project Archetype as a Maven template that creates a minimal, best-practices-based AEM project.",
+      "narration": "What is the AEM Project Archetype? A Maven template that creates a minimal, best-practices-based AEM project. The speech defines the AEM Project Archetype as a Maven template that creates a minimal, best-practices-based AEM project."
+    },
+    {
+      "id": "02-mvn-080",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which command-line tool is used to generate the project?",
+      "heading": "The maven-archetype-plugin",
+      "body": "The speech says to generate a project with the maven-archetype-plugin, version 3.3.1 or later.",
+      "narration": "Which command-line tool is used to generate the project? The maven-archetype-plugin. The speech says to generate a project with the maven-archetype-plugin, version 3.3.1 or later."
+    },
+    {
+      "id": "03-mvn-081",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What minimum archetype plugin version does the speech specify?",
+      "heading": "3.3.1 or later",
+      "body": "The speech says to use the maven-archetype-plugin, version 3.3.1 or later.",
+      "narration": "What minimum archetype plugin version does the speech specify? 3.3.1 or later. The speech says to use the maven-archetype-plugin, version 3.3.1 or later."
+    },
+    {
+      "id": "04-mvn-082",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "According to the speech, when is the older archetype group ID com.adobe.granite.archetype needed?",
+      "heading": "Only for older versions of the archetype",
+      "body": "The speech says the older archetype group ID, com.adobe.granite.archetype, is needed only for older versions of the archetype.",
+      "narration": "According to the speech, when is the older archetype group ID com.adobe.granite.archetype needed? Only for older versions of the archetype. The speech says the older archetype group ID, com.adobe.granite.archetype, is needed only for older versions of the archetype."
+    },
+    {
+      "id": "05-mvn-083",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does appTitle set?",
+      "heading": "The website title and the component groups",
+      "body": "The speech says appTitle sets the website title and the component groups.",
+      "narration": "What does appTitle set? The website title and the component groups. The speech says appTitle sets the website title and the component groups."
+    },
+    {
+      "id": "06-mvn-084",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario where you need the technical name for component, config, and content folder names, which property does the speech use?",
+      "heading": "appId",
+      "body": "The speech says appId is the technical name used for the component, config, and content folder names, and the client library names.",
+      "narration": "Given a scenario where you need the technical name for component, config, and content folder names, which property does the speech use? appId. The speech says appId is the technical name used for the component, config, and content folder names, and the client library names."
+    },
+    {
+      "id": "07-mvn-085",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What defaults does the speech give for artifactId, package, and version?",
+      "heading": "artifactId defaults to appId, package defaults to groupId, and version defaults to 1.0-SNAPSHOT",
+      "body": "The speech lists the defaults directly: artifactId defaults to the appId, package defaults to the groupId, and version defaults to 1.0-SNAPSHOT.",
+      "narration": "What defaults does the speech give for artifactId, package, and version? artifactId defaults to appId, package defaults to groupId, and version defaults to 1.0-SNAPSHOT. The speech lists the defaults directly: artifactId defaults to the appId, package defaults to the groupId, and version defaults to 1.0-SNAPSHOT."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A Maven template that creates a minimal, best-practices-based AEM project",
+        "The maven-archetype-plugin",
+        "3.3.1 or later",
+        "Only for older versions of the archetype",
+        "The website title and the component groups",
+        "appId",
+        "artifactId defaults to appId, package defaults to groupId, and version defaults to 1.0-SNAPSHOT"
+      ],
+      "narration": "Quick recap of Generating with the Archetype. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

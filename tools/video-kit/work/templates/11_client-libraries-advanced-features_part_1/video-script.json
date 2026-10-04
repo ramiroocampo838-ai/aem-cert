@@ -1,0 +1,91 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Client Libraries — Advanced Features (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Client Libraries — Advanced Features (Part 1 of 2)",
+      "sub": "Templates · 6 key concepts",
+      "narration": "Templates. Client Libraries — Advanced Features (Part 1 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-089",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "How are client libraries loaded in AEM as a Cloud Service?",
+      "heading": "HTL, via the helper template at libs/granite/sightly/templates/clientlib.html — the only method current AEMaaCS docs describe",
+      "body": "In AEM as a Cloud Service, client libraries are loaded through HTL, using the helper template at libs/granite/sightly/templates/clientlib.html, accessed via data-sly-use and invoked with data-sly-call, passing the desired categories. Current Cloud Service documentation only covers this approach.",
+      "narration": "How are client libraries loaded in AEM as a Cloud Service? HTL, via the helper template at libs/granite/sightly/templates/clientlib.html — the only method current AEMaaCS docs describe. In AEM as a Cloud Service, client libraries are loaded through HTL, using the helper template at libs/granite/sightly/templates/clientlib.html, accessed via data-sly-use and invoked with data-sly-call, passing the desired categories. Current Cloud Service documentation only covers this approach."
+    },
+    {
+      "id": "02-tmpl-090",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "What is the HTL syntax pattern for loading a client library by category?",
+      "heading": "data-sly-use.clientlib=\"libs/granite/sightly/templates/clientlib.html\", then data-sly-call passing categories",
+      "body": "The pattern is: use data-sly-use to instantiate the clientlib helper template, then data-sly-call to invoke it (e.g. clientlib.css or clientlib.all), passing the desired categories as an array or comma-separated string.",
+      "narration": "What is the HTL syntax pattern for loading a client library by category? data-sly-use.clientlib=\"libs/granite/sightly/templates/clientlib.html\", then data-sly-call passing categories. The pattern is: use data-sly-use to instantiate the clientlib helper template, then data-sly-call to invoke it (e.g. clientlib.css or clientlib.all), passing the desired categories as an array or comma-separated string."
+    },
+    {
+      "id": "03-tmpl-091",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "Is the older JSP taglib approach (ui:includeClientLib) still a current, valid way to load clientlibs in AEMaaCS?",
+      "heading": "It's a legacy, on-premise-era pattern — current AEMaaCS Cloud Service documentation doesn't reference it, and cloud component scripting is HTL-only",
+      "body": "The JSP taglib pattern using ui:includeClientLib is legacy, historical context from on-premise AEM. AEM as a Cloud Service component development is HTL-only, and the current Cloud Service documentation for client libraries doesn't reference the JSP approach at all.",
+      "narration": "Is the older JSP taglib approach (ui:includeClientLib) still a current, valid way to load clientlibs in AEMaaCS? It's a legacy, on-premise-era pattern — current AEMaaCS Cloud Service documentation doesn't reference it, and cloud component scripting is HTL-only. The JSP taglib pattern using ui:includeClientLib is legacy, historical context from on-premise AEM. AEM as a Cloud Service component development is HTL-only, and the current Cloud Service documentation for client libraries doesn't reference the JSP approach at all."
+    },
+    {
+      "id": "04-tmpl-092",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "What does the dependencies property on a cq:ClientLibraryFolder node do?",
+      "heading": "A String[] property listing the categories of other client library folders that the current one depends on",
+      "body": "The dependencies property is a String[] listing other client library categories that the current library folder depends on — useful when code in one folder requires a file in another to function properly.",
+      "narration": "What does the dependencies property on a cq:ClientLibraryFolder node do? A String[] property listing the categories of other client library folders that the current one depends on. The dependencies property is a String[] listing other client library categories that the current library folder depends on — useful when code in one folder requires a file in another to function properly."
+    },
+    {
+      "id": "05-tmpl-093",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What effect does the dependencies property have on the HTML generated by ui:includeClientLib (or its HTL equivalent)?",
+      "heading": "It generates HTML that includes a link to your library file as well as links to its declared dependencies",
+      "body": "When you link a client library folder that declares dependencies, the generated HTML includes a link to your generated library file as well as links to its dependencies, ensuring all required resources load together.",
+      "narration": "What effect does the dependencies property have on the HTML generated by ui:includeClientLib (or its HTL equivalent)? It generates HTML that includes a link to your library file as well as links to its declared dependencies. When you link a client library folder that declares dependencies, the generated HTML includes a link to your generated library file as well as links to its dependencies, ensuring all required resources load together."
+    },
+    {
+      "id": "06-tmpl-094",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What does the embed property on a client library folder do?",
+      "heading": "The embedding library's generated JS/CSS files include the code from the embedded library at runtime",
+      "body": "The embed property lets you embed code from one client library into another — at runtime, the generated JS and CSS files of the embedding library will include the code from the embedded library.",
+      "narration": "What does the embed property on a client library folder do? The embedding library's generated JS/CSS files include the code from the embedded library at runtime. The embed property lets you embed code from one client library into another — at runtime, the generated JS and CSS files of the embedding library will include the code from the embedded library."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "HTL, via the helper template at libs/granite/sightly/templates/clientlib.html — the only method current AEMaaCS docs describe",
+        "data-sly-use.clientlib=\"libs/granite/sightly/templates/clientlib.html\", then data-sly-call passing categories",
+        "It's a legacy, on-premise-era pattern — current AEMaaCS Cloud Service documentation doesn't reference it, and cloud component scripting is HTL-only",
+        "A String[] property listing the categories of other client library folders that the current one depends on",
+        "It generates HTML that includes a link to your library file as well as links to its declared dependencies",
+        "The embedding library's generated JS/CSS files include the code from the embedded library at runtime"
+      ],
+      "narration": "Quick recap of Client Libraries — Advanced Features (Part 1 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

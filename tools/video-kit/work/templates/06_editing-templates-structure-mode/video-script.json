@@ -1,0 +1,113 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Editing Templates — Structure Mode",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Editing Templates — Structure Mode",
+      "sub": "Templates · 8 key concepts",
+      "narration": "Templates. Editing Templates — Structure Mode. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-040",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What are the three modes available in the Template Editor's mode selector?",
+      "heading": "Structure, Initial Content, and Layout",
+      "body": "The Template Editor's toolbar mode selector offers three modes: Structure, Initial Content, and Layout — each used to define a different aspect of the template.",
+      "narration": "What are the three modes available in the Template Editor's mode selector? Structure, Initial Content, and Layout. The Template Editor's toolbar mode selector offers three modes: Structure, Initial Content, and Layout — each used to define a different aspect of the template."
+    },
+    {
+      "id": "02-tmpl-041",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What content cannot be moved or deleted on resulting pages when editing a template in Structure mode?",
+      "heading": "Components defined in the template's structure — they remain fixed as defined in the template",
+      "body": "Components defined in the template structure cannot be moved or deleted on resulting pages. They remain fixed as defined in the template, unless a paragraph system is included.",
+      "narration": "What content cannot be moved or deleted on resulting pages when editing a template in Structure mode? Components defined in the template's structure — they remain fixed as defined in the template. Components defined in the template structure cannot be moved or deleted on resulting pages. They remain fixed as defined in the template, unless a paragraph system is included."
+    },
+    {
+      "id": "03-tmpl-042",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What must you include in a template if you want page authors to be able to add and remove components on resulting pages?",
+      "heading": "Include a paragraph system in the template",
+      "body": "If you want page authors to have the ability to add and remove components on resulting pages, you need to include a paragraph system in the template, allowing authors to customize the layout within that system.",
+      "narration": "What must you include in a template if you want page authors to be able to add and remove components on resulting pages? Include a paragraph system in the template. If you want page authors to have the ability to add and remove components on resulting pages, you need to include a paragraph system in the template, allowing authors to customize the layout within that system."
+    },
+    {
+      "id": "04-tmpl-043",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What are the three ways to add a component to a template in Structure mode?",
+      "heading": "The Components browser, the Insert Component toolbar option, or dragging an asset from the Assets browser",
+      "body": "You can add components using the Components browser in the side panel, the Insert Component option in the toolbar of components already present, or by dragging an asset directly from the Assets browser onto the template.",
+      "narration": "What are the three ways to add a component to a template in Structure mode? The Components browser, the Insert Component toolbar option, or dragging an asset from the Assets browser. You can add components using the Components browser in the side panel, the Insert Component option in the toolbar of components already present, or by dragging an asset directly from the Assets browser onto the template."
+    },
+    {
+      "id": "05-tmpl-044",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What visual indicators mark a component once it's added to a template in Structure mode?",
+      "heading": "A border, a marker indicating its type, and a marker indicating whether it has been unlocked",
+      "body": "Each added component is marked with a border to distinguish it, a marker indicating the type of component, and a marker indicating whether the component has been unlocked, allowing content modification.",
+      "narration": "What visual indicators mark a component once it's added to a template in Structure mode? A border, a marker indicating its type, and a marker indicating whether it has been unlocked. Each added component is marked with a border to distinguish it, a marker indicating the type of component, and a marker indicating whether the component has been unlocked, allowing content modification."
+    },
+    {
+      "id": "06-tmpl-045",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is the purpose of a content (design) policy on a component in the template editor?",
+      "heading": "To define design properties of a component, such as allowed sub-components or minimum/maximum dimensions",
+      "body": "Content or design policies define the design properties of a component — for example the components available, or minimum/maximum dimensions — applicable to the template and to pages created with it.",
+      "narration": "What is the purpose of a content (design) policy on a component in the template editor? To define design properties of a component, such as allowed sub-components or minimum/maximum dimensions. Content or design policies define the design properties of a component — for example the components available, or minimum/maximum dimensions — applicable to the template and to pages created with it."
+    },
+    {
+      "id": "07-tmpl-046",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What are the two tabs under the Properties heading when configuring a component's policy?",
+      "heading": "Main and Features",
+      "body": "The Properties heading has two tabs: Main, where the most important settings of the component are defined (e.g. allowed widths, lazy loading for images), and Features, which enables or disables additional features (e.g. cropping proportions, allowed orientations).",
+      "narration": "What are the two tabs under the Properties heading when configuring a component's policy? Main and Features. The Properties heading has two tabs: Main, where the most important settings of the component are defined (e.g. allowed widths, lazy loading for images), and Features, which enables or disables additional features (e.g. cropping proportions, allowed orientations)."
+    },
+    {
+      "id": "08-tmpl-047",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "How are crop ratios defined in AEM, and why does the ordering differ from convention?",
+      "heading": "Height/width — the reverse of the conventional width/height ordering, kept for legacy compatibility",
+      "body": "In AEM, crop ratios are defined as height/width, differing from the conventional width/height definition, done for legacy compatibility reasons. As long as the Name is defined clearly, page authors won't notice the difference.",
+      "narration": "How are crop ratios defined in AEM, and why does the ordering differ from convention? Height/width — the reverse of the conventional width/height ordering, kept for legacy compatibility. In AEM, crop ratios are defined as height/width, differing from the conventional width/height definition, done for legacy compatibility reasons. As long as the Name is defined clearly, page authors won't notice the difference."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Structure, Initial Content, and Layout",
+        "Components defined in the template's structure — they remain fixed as defined in the template",
+        "Include a paragraph system in the template",
+        "The Components browser, the Insert Component toolbar option, or dragging an asset from the Assets browser",
+        "A border, a marker indicating its type, and a marker indicating whether it has been unlocked",
+        "To define design properties of a component, such as allowed sub-components or minimum/maximum dimensions",
+        "Main and Features",
+        "Height/width — the reverse of the conventional width/height ordering, kept for legacy compatibility"
+      ],
+      "narration": "Quick recap of Editing Templates — Structure Mode. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

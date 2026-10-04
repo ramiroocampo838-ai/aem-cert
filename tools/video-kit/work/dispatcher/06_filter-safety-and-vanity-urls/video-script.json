@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Filter Safety and Vanity URLs",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Filter Safety and Vanity URLs",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Filter Safety and Vanity URLs. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-037",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Why does the Dispatcher validator fail a filter rule that uses a glob to allow requests in AEM as a Cloud Service?",
+      "heading": "The validator fails glob-based allow rules because of CVE-2016-0957",
+      "body": "Section 6 says the Dispatcher validator fails a filter rule that uses a glob to allow requests because of CVE-2016-0957.",
+      "narration": "Why does the Dispatcher validator fail a filter rule that uses a glob to allow requests in AEM as a Cloud Service? The validator fails glob-based allow rules because of CVE-2016-0957. Section 6 says the Dispatcher validator fails a filter rule that uses a glob to allow requests because of CVE-2016-0957."
+    },
+    {
+      "id": "02-disp-038",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What makes an allow rule like GET *.css* dangerous according to the speech?",
+      "heading": "It could also allow any resource followed by a query string such as ?a=.css",
+      "body": "Section 6 explains that allowing GET *.css* would also allow any resource followed by a query string such as ?a=.css.",
+      "narration": "What makes an allow rule like GET *.css* dangerous according to the speech? It could also allow any resource followed by a query string such as ?a=.css. Section 6 explains that allowing GET *.css* would also allow any resource followed by a query string such as ?a=.css."
+    },
+    {
+      "id": "03-disp-039",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What other validation failure does the speech call out besides unsafe glob allow rules?",
+      "heading": "The validator also fails if an admin feature such as /crx/de or /system/console is exposed",
+      "body": "Section 6 says the validator also fails if an admin feature is exposed, such as /crx/de or /system/console.",
+      "narration": "What other validation failure does the speech call out besides unsafe glob allow rules? The validator also fails if an admin feature such as /crx/de or /system/console is exposed. Section 6 says the validator also fails if an admin feature is exposed, such as /crx/de or /system/console."
+    },
+    {
+      "id": "04-disp-040",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which security checklist item explains why an unauthorized request to /dispatcher/invalidate.cache should return 403?",
+      "heading": "You must restrict who can flush the cache",
+      "body": "Section 6 says the security checklist includes restricting who can flush the cache, and that an unauthorized request to /dispatcher/invalidate.cache should return 403.",
+      "narration": "Which security checklist item explains why an unauthorized request to /dispatcher/invalidate.cache should return 403? You must restrict who can flush the cache. Section 6 says the security checklist includes restricting who can flush the cache, and that an unauthorized request to /dispatcher/invalidate.cache should return 403."
+    },
+    {
+      "id": "05-disp-041",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "If a page request is denied by a filter, what does Dispatcher do next for vanity URL handling?",
+      "heading": "If a page request is denied by a filter, Dispatcher consults its list of vanity URLs",
+      "body": "Section 6 says that if a page request is denied by a filter, Dispatcher consults its list of vanity URLs.",
+      "narration": "If a page request is denied by a filter, what does Dispatcher do next for vanity URL handling? If a page request is denied by a filter, Dispatcher consults its list of vanity URLs. Section 6 says that if a page request is denied by a filter, Dispatcher consults its list of vanity URLs."
+    },
+    {
+      "id": "06-disp-042",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which /vanity_urls settings does the speech name, and what must /url be set to?",
+      "heading": "The /vanity_urls section uses /url, /file, and /delay, and /url must be /libs/granite/dispatcher/content/vanityUrls.html",
+      "body": "Section 6 says the /vanity_urls section has /url, /file, and /delay, and that /url must be /libs/granite/dispatcher/content/vanityUrls.html.",
+      "narration": "Which /vanity_urls settings does the speech name, and what must /url be set to? The /vanity_urls section uses /url, /file, and /delay, and /url must be /libs/granite/dispatcher/content/vanityUrls.html. Section 6 says the /vanity_urls section has /url, /file, and /delay, and that /url must be /libs/granite/dispatcher/content/vanityUrls.html."
+    },
+    {
+      "id": "07-disp-043",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Even when vanity URL support is configured, what must still be true of the filter rule for the vanity URL?",
+      "heading": "A filter must still deny the vanity URL",
+      "body": "Section 6 explicitly says that a filter must still deny the vanity URL.",
+      "narration": "Even when vanity URL support is configured, what must still be true of the filter rule for the vanity URL? A filter must still deny the vanity URL. Section 6 explicitly says that a filter must still deny the vanity URL."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The validator fails glob-based allow rules because of CVE-2016-0957",
+        "It could also allow any resource followed by a query string such as ?a=.css",
+        "The validator also fails if an admin feature such as /crx/de or /system/console is exposed",
+        "You must restrict who can flush the cache",
+        "If a page request is denied by a filter, Dispatcher consults its list of vanity URLs",
+        "The /vanity_urls section uses /url, /file, and /delay, and /url must be /libs/granite/dispatcher/content/vanityUrls.html",
+        "A filter must still deny the vanity URL"
+      ],
+      "narration": "Quick recap of Filter Safety and Vanity URLs. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

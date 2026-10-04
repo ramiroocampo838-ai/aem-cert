@@ -1,0 +1,134 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "Sling Models",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Sling Models",
+      "sub": "Intro · 10 key concepts",
+      "narration": "Intro. Sling Models. In this video we review 10 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-085",
+      "type": "concept",
+      "index": 1,
+      "total": 10,
+      "question": "What is a Sling Model in AEM?",
+      "heading": "A POJO class annotated with @Model that provides backend business logic for AEM components",
+      "body": "A Sling Model is a POJO (Plain Old Java Object) annotated with @Model that AEM instantiates by adapting a JCR Resource or SlingHttpServletRequest. It uses annotations like @ValueMapValue, @ChildResource, and @OSGiService to inject dependencies automatically — and is exposed to HTL via data-sly-use.",
+      "narration": "What is a Sling Model in AEM? A POJO class annotated with @Model that provides backend business logic for AEM components. A Sling Model is a POJO (Plain Old Java Object) annotated with @Model that AEM instantiates by adapting a JCR Resource or SlingHttpServletRequest. It uses annotations like @ValueMapValue, @ChildResource, and @OSGiService to inject dependencies automatically — and is exposed to HTL via data-sly-use."
+    },
+    {
+      "id": "02-intro-086",
+      "type": "concept",
+      "index": 2,
+      "total": 10,
+      "question": "What does the @ValueMapValue annotation do in a Sling Model?",
+      "heading": "Injects the value of a JCR property from the current resource's ValueMap into the field",
+      "body": "@ValueMapValue reads a property from the current resource's ValueMap (the map of JCR node properties) and injects it into the annotated field. For example, @ValueMapValue private String title; reads the 'title' property from the content node.",
+      "narration": "What does the @ValueMapValue annotation do in a Sling Model? Injects the value of a JCR property from the current resource's ValueMap into the field. @ValueMapValue reads a property from the current resource's ValueMap (the map of JCR node properties) and injects it into the annotated field. For example, @ValueMapValue private String title; reads the 'title' property from the content node."
+    },
+    {
+      "id": "03-intro-087",
+      "type": "concept",
+      "index": 3,
+      "total": 10,
+      "question": "What does the @ChildResource annotation inject in a Sling Model?",
+      "heading": "Injects a child resource (JCR child node) of the current resource",
+      "body": "@ChildResource in a Sling Model injects a child Resource node. For example, @ChildResource private Resource items; injects the /jcr:content/items child node of the current resource, useful for accessing sub-nodes like multi-field entries or nested structures.",
+      "narration": "What does the @ChildResource annotation inject in a Sling Model? Injects a child resource (JCR child node) of the current resource. @ChildResource in a Sling Model injects a child Resource node. For example, @ChildResource private Resource items; injects the /jcr:content/items child node of the current resource, useful for accessing sub-nodes like multi-field entries or nested structures."
+    },
+    {
+      "id": "04-intro-088",
+      "type": "concept",
+      "index": 4,
+      "total": 10,
+      "question": "What does @Self inject in a Sling Model?",
+      "heading": "Injects the adaptable itself — the Resource or SlingHttpServletRequest the model was adapted from",
+      "body": "@Self in a Sling Model injects the adaptable that was used to create the model. If the model adapts from Resource.class, @Self gives you the Resource. If it adapts from SlingHttpServletRequest.class, you get the Request. Useful for accessing the source object directly.",
+      "narration": "What does @Self inject in a Sling Model? Injects the adaptable itself — the Resource or SlingHttpServletRequest the model was adapted from. @Self in a Sling Model injects the adaptable that was used to create the model. If the model adapts from Resource.class, @Self gives you the Resource. If it adapts from SlingHttpServletRequest.class, you get the Request. Useful for accessing the source object directly."
+    },
+    {
+      "id": "05-intro-089",
+      "type": "concept",
+      "index": 5,
+      "total": 10,
+      "question": "What does the @OSGiService annotation do in a Sling Model?",
+      "heading": "Injects an OSGi service from the service registry into the Sling Model field",
+      "body": "@OSGiService in a Sling Model injects an OSGi service registered in the service registry. This enables Sling Models to use services like QueryBuilder, ResourceResolverFactory, or custom services — bridging the Sling rendering layer with the OSGi service layer.",
+      "narration": "What does the @OSGiService annotation do in a Sling Model? Injects an OSGi service from the service registry into the Sling Model field. @OSGiService in a Sling Model injects an OSGi service registered in the service registry. This enables Sling Models to use services like QueryBuilder, ResourceResolverFactory, or custom services — bridging the Sling rendering layer with the OSGi service layer."
+    },
+    {
+      "id": "06-intro-090",
+      "type": "concept",
+      "index": 6,
+      "total": 10,
+      "question": "What is @PostConstruct used for in a Sling Model?",
+      "heading": "Marks the initialization method called after all injections are complete",
+      "body": "@PostConstruct marks the initialization method in a Sling Model, called after ALL injections (@ValueMapValue, @ChildResource, @OSGiService, etc.) have been completed. It is the right place to perform initialization logic that depends on multiple injected values.",
+      "narration": "What is @PostConstruct used for in a Sling Model? Marks the initialization method called after all injections are complete. @PostConstruct marks the initialization method in a Sling Model, called after ALL injections (@ValueMapValue, @ChildResource, @OSGiService, etc.) have been completed. It is the right place to perform initialization logic that depends on multiple injected values."
+    },
+    {
+      "id": "07-intro-091",
+      "type": "concept",
+      "index": 7,
+      "total": 10,
+      "question": "What is the difference in adaptables between Resource.class and SlingHttpServletRequest.class in Sling Models?",
+      "heading": "Resource.class is lighter and repository-focused; SlingHttpServletRequest.class includes request awareness (params, sessions)",
+      "body": "A Sling Model adapted from Resource.class works only with JCR content — lighter and cacheable. A model adapted from SlingHttpServletRequest.class has access to the HTTP context (query parameters, request attributes, session). Best practice: use Resource when possible, use Request only when you genuinely need request-scope data.",
+      "narration": "What is the difference in adaptables between Resource.class and SlingHttpServletRequest.class in Sling Models? Resource.class is lighter and repository-focused; SlingHttpServletRequest.class includes request awareness (params, sessions). A Sling Model adapted from Resource.class works only with JCR content — lighter and cacheable. A model adapted from SlingHttpServletRequest.class has access to the HTTP context (query parameters, request attributes, session). Best practice: use Resource when possible, use Request only when you genuinely need request-scope data."
+    },
+    {
+      "id": "08-intro-092",
+      "type": "concept",
+      "index": 8,
+      "total": 10,
+      "question": "What is the @Default annotation used for in Sling Models?",
+      "heading": "Provides a default value for a @ValueMapValue field when the JCR property is not present",
+      "body": "@Default provides a fallback value when the JCR property doesn't exist on the resource. Example: @ValueMapValue @Default(values='Untitled Article') private String title; — if no 'title' property is found in the JCR node, 'Untitled Article' is used instead.",
+      "narration": "What is the @Default annotation used for in Sling Models? Provides a default value for a @ValueMapValue field when the JCR property is not present. @Default provides a fallback value when the JCR property doesn't exist on the resource. Example: @ValueMapValue @Default(values='Untitled Article') private String title; — if no 'title' property is found in the JCR node, 'Untitled Article' is used instead."
+    },
+    {
+      "id": "09-intro-093",
+      "type": "concept",
+      "index": 9,
+      "total": 10,
+      "question": "What is the best practice regarding business logic placement in AEM components?",
+      "heading": "All business logic should be in Sling Models — none in HTL templates",
+      "body": "Best practice: all business logic stays in Sling Models (Java). HTL should be pure presentation — display data from the model, apply conditionals, iterate over collections. No Java scriplets, no complex logic in templates. This ensures testability, maintainability, and the separation of concerns that AEM's architecture promotes.",
+      "narration": "What is the best practice regarding business logic placement in AEM components? All business logic should be in Sling Models — none in HTL templates. Best practice: all business logic stays in Sling Models (Java). HTL should be pure presentation — display data from the model, apply conditionals, iterate over collections. No Java scriplets, no complex logic in templates. This ensures testability, maintainability, and the separation of concerns that AEM's architecture promotes."
+    },
+    {
+      "id": "10-intro-094",
+      "type": "concept",
+      "index": 10,
+      "total": 10,
+      "question": "Which annotation enables unit testing of Sling Models by providing a test resource?",
+      "heading": "AEM Mocks — using AemContext from io.wcm.testing.mock.aem provides a mock JCR environment",
+      "body": "AEM Mocks (from io.wcm.testing.mock.aem) provides AemContext, which creates a mock JCR + Sling environment for unit testing Sling Models without a running AEM instance. With AemContext you can define resources, set properties, adapt to Sling Models, and assert on the model's output.",
+      "narration": "Which annotation enables unit testing of Sling Models by providing a test resource? AEM Mocks — using AemContext from io.wcm.testing.mock.aem provides a mock JCR environment. AEM Mocks (from io.wcm.testing.mock.aem) provides AemContext, which creates a mock JCR + Sling environment for unit testing Sling Models without a running AEM instance. With AemContext you can define resources, set properties, adapt to Sling Models, and assert on the model's output."
+    },
+    {
+      "id": "11-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A POJO class annotated with @Model that provides backend business logic for AEM components",
+        "Injects the value of a JCR property from the current resource's ValueMap into the field",
+        "Injects a child resource (JCR child node) of the current resource",
+        "Injects the adaptable itself — the Resource or SlingHttpServletRequest the model was adapted from",
+        "Injects an OSGi service from the service registry into the Sling Model field",
+        "Marks the initialization method called after all injections are complete",
+        "Resource.class is lighter and repository-focused; SlingHttpServletRequest.class includes request awareness (params, sessions)",
+        "Provides a default value for a @ValueMapValue field when the JCR property is not present",
+        "All business logic should be in Sling Models — none in HTL templates",
+        "AEM Mocks — using AemContext from io.wcm.testing.mock.aem provides a mock JCR environment"
+      ],
+      "narration": "Quick recap of Sling Models. A POJO class annotated with @Model that provides backend business logic for AEM components. Injects the value of a JCR property from the current resource's ValueMap into the field. Injects a child resource (JCR child node) of the current resource. Injects the adaptable itself — the Resource or SlingHttpServletRequest the model was adapted from. Injects an OSGi service from the service registry into the Sling Model field. Marks the initialization method called after all injections are complete. Resource.class is lighter and repository-focused; SlingHttpServletRequest.class includes request awareness (params, sessions). Provides a default value for a @ValueMapValue field when the JCR property is not present. All business logic should be in Sling Models — none in HTL templates. AEM Mocks — using AemContext from io.wcm.testing.mock.aem provides a mock JCR environment."
+    }
+  ]
+}

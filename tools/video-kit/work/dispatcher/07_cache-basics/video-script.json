@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Cache Basics",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cache Basics",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Cache Basics. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-044",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the /cache section control in Dispatcher?",
+      "heading": "The /cache section controls how Dispatcher caches documents",
+      "body": "Section 7 says the /cache section controls how Dispatcher caches documents.",
+      "narration": "What does the /cache section control in Dispatcher? The /cache section controls how Dispatcher caches documents. Section 7 says the /cache section controls how Dispatcher caches documents."
+    },
+    {
+      "id": "02-disp-045",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What requirement does the speech place on /docroot, and what changes when multiple farms are used?",
+      "heading": "The /docroot must match the web server document root, and with multiple farms each farm needs a different document root",
+      "body": "Section 7 says /docroot is the directory where cached files are stored, it must be the same path as the web server document root, and with multiple farms each farm needs a different document root.",
+      "narration": "What requirement does the speech place on /docroot, and what changes when multiple farms are used? The /docroot must match the web server document root, and with multiple farms each farm needs a different document root. Section 7 says /docroot is the directory where cached files are stored, it must be the same path as the web server document root, and with multiple farms each farm needs a different document root."
+    },
+    {
+      "id": "03-disp-046",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What does the /rules property control, and what do its rule types mean?",
+      "heading": "The /rules property controls which documents are cached by path, where allow means cache and deny means render every time",
+      "body": "Section 7 says /rules controls which documents are cached by path. Each rule has a glob pattern and a type: allow means cache, while deny means render every time.",
+      "narration": "What does the /rules property control, and what do its rule types mean? The /rules property controls which documents are cached by path, where allow means cache and deny means render every time. Section 7 says /rules controls which documents are cached by path. Each rule has a glob pattern and a type: allow means cache, while deny means render every time."
+    },
+    {
+      "id": "04-disp-047",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "According to the speech, how do you configure Dispatcher to cache everything except dynamic sections?",
+      "heading": "Use a rule with glob asterisk and type allow, then add deny exceptions for the dynamic sections",
+      "body": "Section 7 says that to cache everything, use glob asterisk with type allow, then add deny exceptions for dynamic sections.",
+      "narration": "According to the speech, how do you configure Dispatcher to cache everything except dynamic sections? Use a rule with glob asterisk and type allow, then add deny exceptions for the dynamic sections. Section 7 says that to cache everything, use glob asterisk with type allow, then add deny exceptions for dynamic sections."
+    },
+    {
+      "id": "05-disp-048",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which request characteristic alone is enough to stop caching regardless of the configured cache rules?",
+      "heading": "A request URI that contains a question mark is not cached regardless of the cache rules",
+      "body": "Section 7 says Dispatcher never caches a document when the request URI contains a question mark, regardless of the cache rules.",
+      "narration": "Which request characteristic alone is enough to stop caching regardless of the configured cache rules? A request URI that contains a question mark is not cached regardless of the cache rules. Section 7 says Dispatcher never caches a document when the request URI contains a question mark, regardless of the cache rules."
+    },
+    {
+      "id": "06-disp-049",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Besides a question mark in the URI, which other built-in conditions prevent Dispatcher from caching a document?",
+      "heading": "Dispatcher also will not cache when the file extension is missing, when the authentication header is set, or when AEM responds with no-cache, no-store, or must-revalidate headers",
+      "body": "Section 7 says Dispatcher also does not cache when the file extension is missing, when the authentication header is set, or when AEM responds with no-cache, no-store, or must-revalidate headers.",
+      "narration": "Besides a question mark in the URI, which other built-in conditions prevent Dispatcher from caching a document? Dispatcher also will not cache when the file extension is missing, when the authentication header is set, or when AEM responds with no-cache, no-store, or must-revalidate headers. Section 7 says Dispatcher also does not cache when the file extension is missing, when the authentication header is set, or when AEM responds with no-cache, no-store, or must-revalidate headers."
+    },
+    {
+      "id": "07-disp-050",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which HTTP methods are cacheable, and why should closed user groups not be cached?",
+      "heading": "Only GET and HEAD requests are cacheable, and closed user groups should not be cached because user rights are not checked for cached pages",
+      "body": "Section 7 says only GET and HEAD requests are cacheable, and closed user groups should not be cached because user rights are not checked for cached pages.",
+      "narration": "Which HTTP methods are cacheable, and why should closed user groups not be cached? Only GET and HEAD requests are cacheable, and closed user groups should not be cached because user rights are not checked for cached pages. Section 7 says only GET and HEAD requests are cacheable, and closed user groups should not be cached because user rights are not checked for cached pages."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The /cache section controls how Dispatcher caches documents",
+        "The /docroot must match the web server document root, and with multiple farms each farm needs a different document root",
+        "The /rules property controls which documents are cached by path, where allow means cache and deny means render every time",
+        "Use a rule with glob asterisk and type allow, then add deny exceptions for the dynamic sections",
+        "A request URI that contains a question mark is not cached regardless of the cache rules",
+        "Dispatcher also will not cache when the file extension is missing, when the authentication header is set, or when AEM responds with no-cache, no-store, or must-revalidate headers",
+        "Only GET and HEAD requests are cacheable, and closed user groups should not be cached because user rights are not checked for cached pages"
+      ],
+      "narration": "Quick recap of Cache Basics. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

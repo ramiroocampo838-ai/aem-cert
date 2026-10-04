@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Virtual Hosts",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Virtual Hosts",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Virtual Hosts. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-016",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the /virtualhosts property list for a farm?",
+      "heading": "The /virtualhosts property lists every hostname and URI combination the farm accepts",
+      "body": "Section 3 says /virtualhosts lists every hostname and URI combination that Dispatcher accepts for the farm.",
+      "narration": "What does the /virtualhosts property list for a farm? The /virtualhosts property lists every hostname and URI combination the farm accepts. Section 3 says /virtualhosts lists every hostname and URI combination that Dispatcher accepts for the farm."
+    },
+    {
+      "id": "02-disp-017",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is the effect of using a single asterisk in /virtualhosts?",
+      "heading": "A single asterisk handles all requests",
+      "body": "Section 3 states that a single asterisk handles all requests.",
+      "narration": "What is the effect of using a single asterisk in /virtualhosts? A single asterisk handles all requests. Section 3 states that a single asterisk handles all requests."
+    },
+    {
+      "id": "03-disp-018",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "When a request arrives, in what overall order does Dispatcher evaluate farms and virtual host entries?",
+      "heading": "Dispatcher evaluates farms from the bottom up, and within a farm it checks virtual host entries from top to bottom",
+      "body": "Section 3 says Dispatcher starts at the lowest farm and works upward, and within each farm it starts at the top value and works down.",
+      "narration": "When a request arrives, in what overall order does Dispatcher evaluate farms and virtual host entries? Dispatcher evaluates farms from the bottom up, and within a farm it checks virtual host entries from top to bottom. Section 3 says Dispatcher starts at the lowest farm and works upward, and within each farm it starts at the top value and works down."
+    },
+    {
+      "id": "04-disp-019",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which matching rule has first priority when Dispatcher chooses a virtual host?",
+      "heading": "The first priority is the first virtual host that matches the host, the scheme, and the URI",
+      "body": "Section 3 says the first virtual host that matches the host, the scheme, and the URI is used.",
+      "narration": "Which matching rule has first priority when Dispatcher chooses a virtual host? The first priority is the first virtual host that matches the host, the scheme, and the URI. Section 3 says the first virtual host that matches the host, the scheme, and the URI is used."
+    },
+    {
+      "id": "05-disp-020",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "If no virtual host matches both scheme and URI, what fallback does Dispatcher use next?",
+      "heading": "It uses the first virtual host that matches the host",
+      "body": "Section 3 says that if none match both scheme and URI, the first virtual host that matches the host is used.",
+      "narration": "If no virtual host matches both scheme and URI, what fallback does Dispatcher use next? It uses the first virtual host that matches the host. Section 3 says that if none match both scheme and URI, the first virtual host that matches the host is used."
+    },
+    {
+      "id": "06-disp-021",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "If no host matches at all, what does Dispatcher use?",
+      "heading": "Dispatcher uses the topmost virtual host of the topmost farm",
+      "body": "Section 3 says that if no host matches, the topmost virtual host of the topmost farm is used.",
+      "narration": "If no host matches at all, what does Dispatcher use? Dispatcher uses the topmost virtual host of the topmost farm. Section 3 says that if no host matches, the topmost virtual host of the topmost farm is used."
+    },
+    {
+      "id": "07-disp-022",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why should the default virtual host be placed at the top of the virtualhosts property in the topmost farm?",
+      "heading": "The default virtual host should be there because the final fallback uses the topmost virtual host of the topmost farm",
+      "body": "Section 3 explicitly says to put the default virtual host at the top of the virtualhosts property in the topmost farm because of the fallback behavior.",
+      "narration": "Why should the default virtual host be placed at the top of the virtualhosts property in the topmost farm? The default virtual host should be there because the final fallback uses the topmost virtual host of the topmost farm. Section 3 explicitly says to put the default virtual host at the top of the virtualhosts property in the topmost farm because of the fallback behavior."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The /virtualhosts property lists every hostname and URI combination the farm accepts",
+        "A single asterisk handles all requests",
+        "Dispatcher evaluates farms from the bottom up, and within a farm it checks virtual host entries from top to bottom",
+        "The first priority is the first virtual host that matches the host, the scheme, and the URI",
+        "It uses the first virtual host that matches the host",
+        "Dispatcher uses the topmost virtual host of the topmost farm",
+        "The default virtual host should be there because the final fallback uses the topmost virtual host of the topmost farm"
+      ],
+      "narration": "Quick recap of Virtual Hosts. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

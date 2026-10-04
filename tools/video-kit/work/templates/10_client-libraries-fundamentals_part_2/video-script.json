@@ -1,0 +1,80 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Client Libraries — Fundamentals (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Client Libraries — Fundamentals (Part 2 of 2)",
+      "sub": "Templates · 5 key concepts",
+      "narration": "Templates. Client Libraries — Fundamentals (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-084",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the syntax used in js.txt and css.txt files to identify source files?",
+      "heading": "#base = [root], specifying the path to the root of the client library folder, followed by the file names to merge",
+      "body": "The js.txt and css.txt syntax uses a #base directive specifying the path to the root of the client library folder, followed by [file] directives naming the source files to merge into the generated JS and CSS output.",
+      "narration": "What is the syntax used in js.txt and css.txt files to identify source files? #base = [root], specifying the path to the root of the client library folder, followed by the file names to merge. The js.txt and css.txt syntax uses a #base directive specifying the path to the root of the client library folder, followed by [file] directives naming the source files to merge into the generated JS and CSS output."
+    },
+    {
+      "id": "02-tmpl-085",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "How is the name of the generated merged JS/CSS file determined?",
+      "heading": "The node name plus a .js or .css extension, e.g. a node named cq.jquery generates cq.jquery.js or cq.jquery.css",
+      "body": "When a client library folder is used, AEM merges the source files into a single JS and CSS file, named after the library node with a .js or .css extension — for example, a node named cq.jquery generates cq.jquery.js or cq.jquery.css.",
+      "narration": "How is the name of the generated merged JS/CSS file determined? The node name plus a .js or .css extension, e.g. a node named cq.jquery generates cq.jquery.js or cq.jquery.css. When a client library folder is used, AEM merges the source files into a single JS and CSS file, named after the library node with a .js or .css extension — for example, a node named cq.jquery generates cq.jquery.js or cq.jquery.css."
+    },
+    {
+      "id": "03-tmpl-086",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "Where should JavaScript, CSS, and other front-end assets be stored for AEMaaCS front-end development?",
+      "heading": "The ui.frontend module of the AEM Project Archetype",
+      "body": "For AEMaaCS, it's recommended to store all JavaScript, CSS, and other front-end assets in the ui.frontend module of the AEM Project Archetype, which provides flexibility to use modern web tools.",
+      "narration": "Where should JavaScript, CSS, and other front-end assets be stored for AEMaaCS front-end development? The ui.frontend module of the AEM Project Archetype. For AEMaaCS, it's recommended to store all JavaScript, CSS, and other front-end assets in the ui.frontend module of the AEM Project Archetype, which provides flexibility to use modern web tools."
+    },
+    {
+      "id": "04-tmpl-087",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What does the AEM Project Archetype's build script do with the ui.frontend module's assets?",
+      "heading": "It compiles front-end resources into single CSS/JS files and automatically embeds them into a cq:clientLibraryFolder",
+      "body": "The AEM Project Archetype can compile front-end resources from ui.frontend into single CSS and JS files, which are then automatically embedded into a cq:clientLibraryFolder in the AEM repository, optimizing delivery.",
+      "narration": "What does the AEM Project Archetype's build script do with the ui.frontend module's assets? It compiles front-end resources into single CSS/JS files and automatically embeds them into a cq:clientLibraryFolder. The AEM Project Archetype can compile front-end resources from ui.frontend into single CSS and JS files, which are then automatically embedded into a cq:clientLibraryFolder in the AEM repository, optimizing delivery."
+    },
+    {
+      "id": "05-tmpl-088",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "Why must client libraries be located under /apps, and how are they made accessible?",
+      "heading": "It's used to isolate code from content/configuration; a proxy servlet then exposes it via /etc.clientlibs when allowProxy is true",
+      "body": "Client libraries must be located under /apps to better isolate code from content and configuration. ACLs are still enforced on the folder, but a proxy servlet allows the content to be read via /etc.clientlibs/ when the allowProxy property is set to true.",
+      "narration": "Why must client libraries be located under /apps, and how are they made accessible? It's used to isolate code from content/configuration; a proxy servlet then exposes it via /etc.clientlibs when allowProxy is true. Client libraries must be located under /apps to better isolate code from content and configuration. ACLs are still enforced on the folder, but a proxy servlet allows the content to be read via /etc.clientlibs/ when the allowProxy property is set to true."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "#base = [root], specifying the path to the root of the client library folder, followed by the file names to merge",
+        "The node name plus a .js or .css extension, e.g. a node named cq.jquery generates cq.jquery.js or cq.jquery.css",
+        "The ui.frontend module of the AEM Project Archetype",
+        "It compiles front-end resources into single CSS/JS files and automatically embeds them into a cq:clientLibraryFolder",
+        "It's used to isolate code from content/configuration; a proxy servlet then exposes it via /etc.clientlibs when allowProxy is true"
+      ],
+      "narration": "Quick recap of Client Libraries — Fundamentals (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

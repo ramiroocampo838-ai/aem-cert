@@ -1,0 +1,113 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Configuring Technical Account Permissions",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Configuring Technical Account Permissions",
+      "sub": "Authentication · 8 key concepts",
+      "narration": "Authentication. Configuring Technical Account Permissions. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-093",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "Does obtaining a valid access token automatically grant access to content or actions in AEM?",
+      "heading": "No — a valid access token grants identity, not permissions; the technical account still needs AEM group membership",
+      "body": "A valid access token alone does not equal access — it equals identity. The technical account behind that token still needs explicit permissions in AEM, governed by AEM's normal group-and-ACL model, same as any other user.",
+      "narration": "Does obtaining a valid access token automatically grant access to content or actions in AEM? No — a valid access token grants identity, not permissions; the technical account still needs AEM group membership. A valid access token alone does not equal access — it equals identity. The technical account behind that token still needs explicit permissions in AEM, governed by AEM's normal group-and-ACL model, same as any other user."
+    },
+    {
+      "id": "02-auth-094",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "When does the technical account's corresponding AEM user actually get created?",
+      "heading": "After the first API call made with the token, which auto-creates the matching AEM user",
+      "body": "The technical account AEM user doesn't exist until the first HTTP request is made using its access token. That first call auto-creates the matching AEM user, after which its permissions can be managed like any other AEM user.",
+      "narration": "When does the technical account's corresponding AEM user actually get created? After the first API call made with the token, which auto-creates the matching AEM user. The technical account AEM user doesn't exist until the first HTTP request is made using its access token. That first call auto-creates the matching AEM user, after which its permissions can be managed like any other AEM user."
+    },
+    {
+      "id": "03-auth-095",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "How do you identify the AEM login name of a technical account?",
+      "heading": "The integration.email value in the credential JSON — a login name like a UUID at techacct.adobe.com",
+      "body": "The Service Credentials JSON includes an integration.email value, which represents the technical account's AEM login name — typically a long UUID-style identifier at the techacct.adobe.com domain.",
+      "narration": "How do you identify the AEM login name of a technical account? The integration.email value in the credential JSON — a login name like a UUID at techacct.adobe.com. The Service Credentials JSON includes an integration.email value, which represents the technical account's AEM login name — typically a long UUID-style identifier at the techacct.adobe.com domain."
+    },
+    {
+      "id": "04-auth-096",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Where in AEM does an Administrator assign group membership to a technical account user?",
+      "heading": "Tools > Security > Users, then finding the user by its technical account login name",
+      "body": "An AEM Administrator navigates to Tools > Security > Users, locates the technical account user by its login name (the integration.email value), and adds it to the appropriate group from its Properties.",
+      "narration": "Where in AEM does an Administrator assign group membership to a technical account user? Tools > Security > Users, then finding the user by its technical account login name. An AEM Administrator navigates to Tools > Security > Users, locates the technical account user by its login name (the integration.email value), and adds it to the appropriate group from its Properties."
+    },
+    {
+      "id": "05-auth-097",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Which AEM group would you add a technical account to for write access to digital assets?",
+      "heading": "The DAM Users group",
+      "body": "To grant write access to assets — for example, updating metadata via the Assets HTTP API — the technical account user is added to the DAM Users group, the same as it would be for a human user needing that same access.",
+      "narration": "Which AEM group would you add a technical account to for write access to digital assets? The DAM Users group. To grant write access to assets — for example, updating metadata via the Assets HTTP API — the technical account user is added to the DAM Users group, the same as it would be for a human user needing that same access."
+    },
+    {
+      "id": "06-auth-098",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What group is a Service Credentials-derived access token's technical account typically assigned to by default?",
+      "heading": "The Contributors group, by default, for the technical account behind the local development token",
+      "body": "The Service Credentials-derived access token is associated with a technical account AEM user, typically assigned membership in the Contributors AEM user group by default, granting the baseline permissions needed to interact with AEM.",
+      "narration": "What group is a Service Credentials-derived access token's technical account typically assigned to by default? The Contributors group, by default, for the technical account behind the local development token. The Service Credentials-derived access token is associated with a technical account AEM user, typically assigned membership in the Contributors AEM user group by default, granting the baseline permissions needed to interact with AEM."
+    },
+    {
+      "id": "07-auth-099",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Once created, does a technical account AEM user follow the same permission model as a human user?",
+      "heading": "Yes — its permissions are governed entirely by its group memberships, exactly like a human user's",
+      "body": "Once the technical account AEM user exists, its permissions can be managed exactly like any other AEM user's — through group membership and ACLs. There's no separate, special permission model for machine identities.",
+      "narration": "Once created, does a technical account AEM user follow the same permission model as a human user? Yes — its permissions are governed entirely by its group memberships, exactly like a human user's. Once the technical account AEM user exists, its permissions can be managed exactly like any other AEM user's — through group membership and ACLs. There's no separate, special permission model for machine identities."
+    },
+    {
+      "id": "08-auth-100",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "How do you verify that a technical account's API request actually applied a permission-dependent change, like a metadata update?",
+      "heading": "Reviewing the Advanced tab of an asset's Properties and checking the updated metadata value against what the request set",
+      "body": "To verify a change made via a technical account's access token — for example an updated dc:rights metadata property — log into the AEM environment, navigate to the asset, open its Properties, go to the Advanced tab, and confirm the value matches what the request specified.",
+      "narration": "How do you verify that a technical account's API request actually applied a permission-dependent change, like a metadata update? Reviewing the Advanced tab of an asset's Properties and checking the updated metadata value against what the request set. To verify a change made via a technical account's access token — for example an updated dc:rights metadata property — log into the AEM environment, navigate to the asset, open its Properties, go to the Advanced tab, and confirm the value matches what the request specified."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "No — a valid access token grants identity, not permissions; the technical account still needs AEM group membership",
+        "After the first API call made with the token, which auto-creates the matching AEM user",
+        "The integration.email value in the credential JSON — a login name like a UUID at techacct.adobe.com",
+        "Tools > Security > Users, then finding the user by its technical account login name",
+        "The DAM Users group",
+        "The Contributors group, by default, for the technical account behind the local development token",
+        "Yes — its permissions are governed entirely by its group memberships, exactly like a human user's",
+        "Reviewing the Advanced tab of an asset's Properties and checking the updated metadata value against what the request set"
+      ],
+      "narration": "Quick recap of Configuring Technical Account Permissions. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

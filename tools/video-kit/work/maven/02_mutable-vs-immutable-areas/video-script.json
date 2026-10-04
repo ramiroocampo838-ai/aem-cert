@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Mutable vs Immutable Areas",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Mutable vs Immutable Areas",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Mutable vs Immutable Areas. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "In AEM as a Cloud Service, which repository areas are immutable after startup?",
+      "heading": "/apps and /libs",
+      "body": "Section 2 says AEM as a Cloud Service requires strict separation of code and content, and specifically marks /apps and /libs as immutable.",
+      "narration": "In AEM as a Cloud Service, which repository areas are immutable after startup? /apps and /libs. Section 2 says AEM as a Cloud Service requires strict separation of code and content, and specifically marks /apps and /libs as immutable."
+    },
+    {
+      "id": "02-mvn-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What happens if code tries to create, update, or delete something in /apps at runtime after AEM starts?",
+      "heading": "The attempt fails",
+      "body": "The speech states that after AEM starts, you cannot create, update, or delete anything in /apps or /libs at runtime, and any attempt fails.",
+      "narration": "What happens if code tries to create, update, or delete something in /apps at runtime after AEM starts? The attempt fails. The speech states that after AEM starts, you cannot create, update, or delete anything in /apps or /libs at runtime, and any attempt fails."
+    },
+    {
+      "id": "03-mvn-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which of these paths is listed as mutable in the speech?",
+      "heading": "/conf",
+      "body": "The mutable list includes /content, /conf, /var, /etc, /system, /tmp, /home, and /oak:index.",
+      "narration": "Which of these paths is listed as mutable in the speech? /conf. The mutable list includes /content, /conf, /var, /etc, /system, /tmp, /home, and /oak:index."
+    },
+    {
+      "id": "04-mvn-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why can't a single content package deploy to both /apps and a mutable area in AEM as a Cloud Service?",
+      "heading": "Because the application must split code and content into discrete packages",
+      "body": "The speech says that due to the separation of immutable code and mutable content, a single package cannot deploy to both /apps and a mutable area, so the application must split them into discrete packages.",
+      "narration": "Why can't a single content package deploy to both /apps and a mutable area in AEM as a Cloud Service? Because the application must split code and content into discrete packages. The speech says that due to the separation of immutable code and mutable content, a single package cannot deploy to both /apps and a mutable area, so the application must split them into discrete packages."
+    },
+    {
+      "id": "05-mvn-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which statement about /libs is correct?",
+      "heading": "/libs must never be modified because only AEM product code is deployed there",
+      "body": "The lesson says that, as in earlier versions, /libs must never be modified and only AEM product code is deployed there.",
+      "narration": "Which statement about /libs is correct? /libs must never be modified because only AEM product code is deployed there. The lesson says that, as in earlier versions, /libs must never be modified and only AEM product code is deployed there."
+    },
+    {
+      "id": "06-mvn-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario with Oak indexes in Cloud Service, how are index definitions treated for deployment?",
+      "heading": "They are deployed as code in ui.apps",
+      "body": "The speech calls Oak indexes a special case: although /oak:index is mutable at runtime, Cloud Manager waits for reindexing before switching code, so index definitions are deployed as code in ui.apps.",
+      "narration": "Given a scenario with Oak indexes in Cloud Service, how are index definitions treated for deployment? They are deployed as code in ui.apps. The speech calls Oak indexes a special case: although /oak:index is mutable at runtime, Cloud Manager waits for reindexing before switching code, so index definitions are deployed as code in ui.apps."
+    },
+    {
+      "id": "07-mvn-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why are Oak index definitions not treated like ordinary mutable content?",
+      "heading": "Because Cloud Manager waits for the new index to be deployed and fully reindexed before switching to the new code image",
+      "body": "The reason given is that Cloud Manager waits until a new index is deployed and fully reindexed before switching to the new code image.",
+      "narration": "Why are Oak index definitions not treated like ordinary mutable content? Because Cloud Manager waits for the new index to be deployed and fully reindexed before switching to the new code image. The reason given is that Cloud Manager waits until a new index is deployed and fully reindexed before switching to the new code image."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "/apps and /libs",
+        "The attempt fails",
+        "/conf",
+        "Because the application must split code and content into discrete packages",
+        "/libs must never be modified because only AEM product code is deployed there",
+        "They are deployed as code in ui.apps",
+        "Because Cloud Manager waits for the new index to be deployed and fully reindexed before switching to the new code image"
+      ],
+      "narration": "Quick recap of Mutable vs Immutable Areas. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

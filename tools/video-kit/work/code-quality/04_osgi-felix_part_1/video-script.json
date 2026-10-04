@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "OSGi / Felix (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "OSGi / Felix (Part 1 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. OSGi / Felix (Part 1 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-059",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "OSGI-001 (Severity: Critical) requires all OSGi bundles to have explicit Export-Package and Import-Package declarations. Why is using 'Import-Package: *' dangerous?",
+      "heading": "Wildcard imports resolve at runtime, causing ClassNotFoundException if a package is missing — explicit imports fail fast at install time",
+      "body": "OSGI-001 (Critical): OSGi's module layer provides fail-fast dependency validation. With explicit 'Import-Package: com.mypackage;version=\"[1.2,2.0)\"' declarations, OSGi verifies all required packages are available at bundle install time — the bundle won't even activate if a dependency is missing. With wildcard import, packages are resolved lazily at first class load. If a package is missing, the bundle activates successfully but crashes at runtime with ClassNotFoundException exactly when the code path is first executed.",
+      "narration": "OSGI-001 (Severity: Critical) requires all OSGi bundles to have explicit Export-Package and Import-Package declarations. Why is using 'Import-Package: *' dangerous? Wildcard imports resolve at runtime, causing ClassNotFoundException if a package is missing — explicit imports fail fast at install time. OSGI-001 (Critical): OSGi's module layer provides fail-fast dependency validation. With explicit 'Import-Package: com.mypackage;version=\"[1.2,2.0)\"' declarations, OSGi verifies all required packages are available at bundle install time — the bundle won't even activate if a dependency is missing. With wildcard import, packages are resolved lazily at first class load. If a package is missing, the bundle activates successfully but crashes at runtime with ClassNotFoundException exactly when the code path is first executed."
+    },
+    {
+      "id": "02-cq-060",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "OSGI-002 (Severity: Blocker) prohibits declaring servlet-api, jsp-api, or other container-provided dependencies with Maven scope 'compile'. What scope must they use?",
+      "heading": "provided — the container supplies these JARs at runtime and they must not be bundled inside the OSGi bundle",
+      "body": "OSGI-002 (Blocker): Container-provided APIs (servlet-api, jsp-api, osgi.core, org.osgi.compendium) must use Maven scope 'provided'. Using scope 'compile' (the default) includes the JAR inside the OSGi bundle, causing: (1) ClassCastException when the bundled class and the container class are loaded by different class loaders, (2) ClassLoader conflicts and LinkageError, (3) Unnecessary bundle size bloat. The 'provided' scope tells Maven 'this JAR exists in the classpath at compile time but must not be packaged'.",
+      "narration": "OSGI-002 (Severity: Blocker) prohibits declaring servlet-api, jsp-api, or other container-provided dependencies with Maven scope 'compile'. What scope must they use? provided — the container supplies these JARs at runtime and they must not be bundled inside the OSGi bundle. OSGI-002 (Blocker): Container-provided APIs (servlet-api, jsp-api, osgi.core, org.osgi.compendium) must use Maven scope 'provided'. Using scope 'compile' (the default) includes the JAR inside the OSGi bundle, causing: (1) ClassCastException when the bundled class and the container class are loaded by different class loaders, (2) ClassLoader conflicts and LinkageError, (3) Unnecessary bundle size bloat. The 'provided' scope tells Maven 'this JAR exists in the classpath at compile time but must not be packaged'."
+    },
+    {
+      "id": "03-cq-061",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "What does an OSGi @Reference annotation with cardinality = ReferenceCardinality.OPTIONAL do when the referenced service is not available?",
+      "heading": "The component still activates even if the referenced service is absent; the injected field is null and must be null-checked before use",
+      "body": "OSGi Reference Cardinality: MANDATORY (default) means the component won't activate if the service is absent. OPTIONAL means the component activates even without the service — but the injected field will be null. Code that uses an OPTIONAL reference must perform a null check: 'if (myOptionalService != null) { myOptionalService.doWork(); }'. This is useful for integration points where the feature should degrade gracefully if the optional service is not installed.",
+      "narration": "What does an OSGi @Reference annotation with cardinality = ReferenceCardinality.OPTIONAL do when the referenced service is not available? The component still activates even if the referenced service is absent; the injected field is null and must be null-checked before use. OSGi Reference Cardinality: MANDATORY (default) means the component won't activate if the service is absent. OPTIONAL means the component activates even without the service — but the injected field will be null. Code that uses an OPTIONAL reference must perform a null check: 'if (myOptionalService != null) { myOptionalService.doWork(); }'. This is useful for integration points where the feature should degrade gracefully if the optional service is not installed."
+    },
+    {
+      "id": "04-cq-062",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "OSGI-003 warns against calling OSGi ServiceReference directly in application code. What is the preferred injection pattern in DS (Declarative Services)?",
+      "heading": "@Reference — inject the service interface directly into a field; OSGi DS handles bind/unbind lifecycle automatically",
+      "body": "OSGI-003 (Major): OSGi Declarative Services (DS) annotation @Reference provides the cleanest, safest service injection. The runtime manages the full service lifecycle: when the referenced service registers, DS injects the field before the component activates. When the service unregisters, DS either waits for a replacement or deactivates this component. Directly using BundleContext.getService() or ServiceTracker bypasses DS lifecycle management and creates manual reference counting bugs.",
+      "narration": "OSGI-003 warns against calling OSGi ServiceReference directly in application code. What is the preferred injection pattern in DS (Declarative Services)? @Reference — inject the service interface directly into a field; OSGi DS handles bind/unbind lifecycle automatically. OSGI-003 (Major): OSGi Declarative Services (DS) annotation @Reference provides the cleanest, safest service injection. The runtime manages the full service lifecycle: when the referenced service registers, DS injects the field before the component activates. When the service unregisters, DS either waits for a replacement or deactivates this component. Directly using BundleContext.getService() or ServiceTracker bypasses DS lifecycle management and creates manual reference counting bugs."
+    },
+    {
+      "id": "05-cq-063",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "In an OSGi @Component, what is the recommended way to read a configuration value that may change at runtime without restarting the bundle?",
+      "heading": "Declare an @interface configuration annotation, read it in @Activate and @Modified, and cache the value in an instance field",
+      "body": "OSGi DS Configuration: DS supports dynamic reconfiguration through the @Modified lifecycle method. When an administrator changes a configuration in the Felix Web Console or a run-mode .cfg.json is deployed, OSGi calls @Modified with the new @interface configuration object — without deactivating and reactivating the component. The pattern: cache config values as instance fields in @Activate, update them in @Modified. The service continues running throughout the update with zero downtime.",
+      "narration": "In an OSGi @Component, what is the recommended way to read a configuration value that may change at runtime without restarting the bundle? Declare an @interface configuration annotation, read it in @Activate and @Modified, and cache the value in an instance field. OSGi DS Configuration: DS supports dynamic reconfiguration through the @Modified lifecycle method. When an administrator changes a configuration in the Felix Web Console or a run-mode .cfg.json is deployed, OSGi calls @Modified with the new @interface configuration object — without deactivating and reactivating the component. The pattern: cache config values as instance fields in @Activate, update them in @Modified. The service continues running throughout the update with zero downtime."
+    },
+    {
+      "id": "06-cq-064",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "OSGI-004 (Severity: Major) flags any OSGi bundle that declares Bundle-SymbolicName with dots used inconsistently with the Java package convention. What is the correct BSN format?",
+      "heading": "Reverse domain notation matching the project's main Java package: com.mycompany.myproject.core",
+      "body": "OSGI-004 (Major): The OSGi Bundle-SymbolicName (BSN) must be a unique identifier for the bundle. The convention is to use Java reverse-domain package notation matching the bundle's root package: if the Java classes are in package 'com.mycompany.myproject', the BSN should be 'com.mycompany.myproject.core' (or .api, .ui.apps etc.). This ensures global uniqueness and makes it easy to identify the bundle's origin.",
+      "narration": "OSGI-004 (Severity: Major) flags any OSGi bundle that declares Bundle-SymbolicName with dots used inconsistently with the Java package convention. What is the correct BSN format? Reverse domain notation matching the project's main Java package: com.mycompany.myproject.core. OSGI-004 (Major): The OSGi Bundle-SymbolicName (BSN) must be a unique identifier for the bundle. The convention is to use Java reverse-domain package notation matching the bundle's root package: if the Java classes are in package 'com.mycompany.myproject', the BSN should be 'com.mycompany.myproject.core' (or .api, .ui.apps etc.). This ensures global uniqueness and makes it easy to identify the bundle's origin."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Wildcard imports resolve at runtime, causing ClassNotFoundException if a package is missing — explicit imports fail fast at install time",
+        "provided — the container supplies these JARs at runtime and they must not be bundled inside the OSGi bundle",
+        "The component still activates even if the referenced service is absent; the injected field is null and must be null-checked before use",
+        "@Reference — inject the service interface directly into a field; OSGi DS handles bind/unbind lifecycle automatically",
+        "Declare an @interface configuration annotation, read it in @Activate and @Modified, and cache the value in an instance field",
+        "Reverse domain notation matching the project's main Java package: com.mycompany.myproject.core"
+      ],
+      "narration": "Quick recap of OSGi / Felix (Part 1 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

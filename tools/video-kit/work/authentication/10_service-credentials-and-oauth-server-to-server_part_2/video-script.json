@@ -1,0 +1,91 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Service Credentials & OAuth Server-to-Server (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Service Credentials & OAuth Server-to-Server (Part 2 of 2)",
+      "sub": "Authentication · 6 key concepts",
+      "narration": "Authentication. Service Credentials & OAuth Server-to-Server (Part 2 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-087",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "What's the distinction between Service Credentials and an access token?",
+      "heading": "Service Credentials serve as credentials to obtain access tokens; the token itself is the short-lived artifact used for requests",
+      "body": "Service Credentials (client ID, client secret) are long-lived and serve as the means to obtain access tokens — they are not access tokens themselves. The access token is the short-lived artifact actually presented on each API request.",
+      "narration": "What's the distinction between Service Credentials and an access token? Service Credentials serve as credentials to obtain access tokens; the token itself is the short-lived artifact used for requests. Service Credentials (client ID, client secret) are long-lived and serve as the means to obtain access tokens — they are not access tokens themselves. The access token is the short-lived artifact actually presented on each API request."
+    },
+    {
+      "id": "02-auth-088",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "How does the lifespan of Service Credentials compare to a Local Development Access Token?",
+      "heading": "Certificates are valid for up to a year before requiring rotation, unlike the daily-expiring Local Development Access Token",
+      "body": "Service Credentials have a much longer lifespan than a Local Development Access Token: their certificates are valid for up to a year before rotation, and they remain unchanged unless explicitly revoked — versus the daily expiry of a local dev token.",
+      "narration": "How does the lifespan of Service Credentials compare to a Local Development Access Token? Certificates are valid for up to a year before requiring rotation, unlike the daily-expiring Local Development Access Token. Service Credentials have a much longer lifespan than a Local Development Access Token: their certificates are valid for up to a year before rotation, and they remain unchanged unless explicitly revoked — versus the daily expiry of a local dev token."
+    },
+    {
+      "id": "03-auth-089",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "How many Technical Accounts can a single AEMaaCS environment have?",
+      "heading": "Up to ten technical accounts, each with its own Service Credentials, each mapping to a discrete technical account AEM user",
+      "body": "An AEMaaCS environment can host up to ten Technical Accounts. Each has its own Service Credentials, and each Service Credential maps to a discrete technical account AEM user with its own identity and permissions.",
+      "narration": "How many Technical Accounts can a single AEMaaCS environment have? Up to ten technical accounts, each with its own Service Credentials, each mapping to a discrete technical account AEM user. An AEMaaCS environment can host up to ten Technical Accounts. Each has its own Service Credentials, and each Service Credential maps to a discrete technical account AEM user with its own identity and permissions."
+    },
+    {
+      "id": "04-auth-090",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Why must Service Credentials and the access tokens they produce be treated as sensitive information?",
+      "heading": "Because both can grant access to the AEMaaCS environment, and unauthorized access to either poses a real security risk",
+      "body": "Both Service Credentials and the access tokens generated from them (as well as Local Development Access Tokens) grant access to the AEMaaCS environment. Anyone who obtains them without authorization can access the environment, so they must be kept confidential and protected accordingly.",
+      "narration": "Why must Service Credentials and the access tokens they produce be treated as sensitive information? Because both can grant access to the AEMaaCS environment, and unauthorized access to either poses a real security risk. Both Service Credentials and the access tokens generated from them (as well as Local Development Access Tokens) grant access to the AEMaaCS environment. Anyone who obtains them without authorization can access the environment, so they must be kept confidential and protected accordingly."
+    },
+    {
+      "id": "05-auth-091",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "How does OAuth Server-to-Server simplify programmatic authentication compared to the old JWT flow?",
+      "heading": "It's a straightforward client-credentials exchange instead of constructing and signing a token yourself",
+      "body": "Where the old JWT flow required generating a JWT from Service Credentials and signing it before exchanging it for an access token, OAuth Server-to-Server reduces this to a single client-credentials POST request — no signing step, no JWT library needed on the client side.",
+      "narration": "How does OAuth Server-to-Server simplify programmatic authentication compared to the old JWT flow? It's a straightforward client-credentials exchange instead of constructing and signing a token yourself. Where the old JWT flow required generating a JWT from Service Credentials and signing it before exchanging it for an access token, OAuth Server-to-Server reduces this to a single client-credentials POST request — no signing step, no JWT library needed on the client side."
+    },
+    {
+      "id": "06-auth-092",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What migration paths exist for customers still using JWT-based Cloud Manager API access?",
+      "heading": "Migrate Cloud Manager API integrations to OAuth credentials; auto-generated projects are migrated by Adobe starting from development environments",
+      "body": "Customers using JWT credentials for Cloud Manager API access needed to migrate to OAuth credentials, which Cloud Manager supports. For auto-generated Developer Console projects, Adobe handled the migration automatically starting with development environments, with no customer action required.",
+      "narration": "What migration paths exist for customers still using JWT-based Cloud Manager API access? Migrate Cloud Manager API integrations to OAuth credentials; auto-generated projects are migrated by Adobe starting from development environments. Customers using JWT credentials for Cloud Manager API access needed to migrate to OAuth credentials, which Cloud Manager supports. For auto-generated Developer Console projects, Adobe handled the migration automatically starting with development environments, with no customer action required."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Service Credentials serve as credentials to obtain access tokens; the token itself is the short-lived artifact used for requests",
+        "Certificates are valid for up to a year before requiring rotation, unlike the daily-expiring Local Development Access Token",
+        "Up to ten technical accounts, each with its own Service Credentials, each mapping to a discrete technical account AEM user",
+        "Because both can grant access to the AEMaaCS environment, and unauthorized access to either poses a real security risk",
+        "It's a straightforward client-credentials exchange instead of constructing and signing a token yourself",
+        "Migrate Cloud Manager API integrations to OAuth credentials; auto-generated projects are migrated by Adobe starting from development environments"
+      ],
+      "narration": "Quick recap of Service Credentials & OAuth Server-to-Server (Part 2 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

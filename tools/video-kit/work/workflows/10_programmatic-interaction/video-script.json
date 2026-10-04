@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Programmatic Interaction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Programmatic Interaction",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Programmatic Interaction. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-066",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "In Java or an OSGi service, how do you obtain a WorkflowSession?",
+      "heading": "Adapt a ResourceResolver to WorkflowSession",
+      "body": "The speech says that to start or manage workflows from code, you obtain a WorkflowSession by adapting a ResourceResolver to WorkflowSession.",
+      "narration": "In Java or an OSGi service, how do you obtain a WorkflowSession? Adapt a ResourceResolver to WorkflowSession. The speech says that to start or manage workflows from code, you obtain a WorkflowSession by adapting a ResourceResolver to WorkflowSession."
+    },
+    {
+      "id": "02-wf-067",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "In an ECMA script, how do you reach a WorkflowSession?",
+      "heading": "Use sling's resource resolver and adapt it to WorkflowSession",
+      "body": "The speech says that in ECMA scripts, sling is a ScriptHelper that gives access to the request and its resource resolver, which can be adapted to WorkflowSession.",
+      "narration": "In an ECMA script, how do you reach a WorkflowSession? Use sling's resource resolver and adapt it to WorkflowSession. The speech says that in ECMA scripts, sling is a ScriptHelper that gives access to the request and its resource resolver, which can be adapted to WorkflowSession."
+    },
+    {
+      "id": "03-wf-068",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which API does the Workflow console itself use to manage workflows over HTTP?",
+      "heading": "The Workflow REST API",
+      "body": "The speech says workflows can also be managed through the Workflow REST API and that the Workflow console itself uses it.",
+      "narration": "Which API does the Workflow console itself use to manage workflows over HTTP? The Workflow REST API. The speech says workflows can also be managed through the Workflow REST API and that the Workflow console itself uses it."
+    },
+    {
+      "id": "04-wf-069",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How do GET requests return JSON from the Workflow REST API?",
+      "heading": "Add the .json extension to the URL",
+      "body": "The speech states that GET requests return JSON when the Workflow REST API URL has the .json extension.",
+      "narration": "How do GET requests return JSON from the Workflow REST API? Add the .json extension to the URL. The speech states that GET requests return JSON when the Workflow REST API URL has the .json extension."
+    },
+    {
+      "id": "05-wf-070",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which states are used when listing workflow instances by state through the Workflow REST API?",
+      "heading": "Workflow instance states are RUNNING, SUSPENDED, ABORTED, and COMPLETED",
+      "body": "The speech says workflow instances are listed by state and names the states as RUNNING, SUSPENDED, ABORTED, and COMPLETED.",
+      "narration": "Which states are used when listing workflow instances by state through the Workflow REST API? Workflow instance states are RUNNING, SUSPENDED, ABORTED, and COMPLETED. The speech says workflow instances are listed by state and names the states as RUNNING, SUSPENDED, ABORTED, and COMPLETED."
+    },
+    {
+      "id": "06-wf-071",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Where are workflow models listed in the Workflow REST API?",
+      "heading": "Workflow models are listed under the models URL",
+      "body": "The speech says models are listed under the models URL, and that a specific model returns its id, title, version, description, nodes, and transitions.",
+      "narration": "Where are workflow models listed in the Workflow REST API? Workflow models are listed under the models URL. The speech says models are listed under the models URL, and that a specific model returns its id, title, version, description, nodes, and transitions."
+    },
+    {
+      "id": "07-wf-072",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When you inspect a model through the REST API, what kind of values appear in a node's metaData?",
+      "heading": "A node's metaData can contain properties such as PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE",
+      "body": "The speech says that in a model, each node has a type and its metaData holds properties like PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE.",
+      "narration": "When you inspect a model through the REST API, what kind of values appear in a node's metaData? A node's metaData can contain properties such as PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE. The speech says that in a model, each node has a type and its metaData holds properties like PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Adapt a ResourceResolver to WorkflowSession",
+        "Use sling's resource resolver and adapt it to WorkflowSession",
+        "The Workflow REST API",
+        "Add the .json extension to the URL",
+        "Workflow instance states are RUNNING, SUSPENDED, ABORTED, and COMPLETED",
+        "Workflow models are listed under the models URL",
+        "A node's metaData can contain properties such as PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE"
+      ],
+      "narration": "Quick recap of Programmatic Interaction. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

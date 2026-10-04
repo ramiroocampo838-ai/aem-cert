@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Maven Project Structure (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Maven Project Structure (Part 2 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. Maven Project Structure (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-074",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "Which Maven module deploys code to the /apps path?",
+      "heading": "ui.apps",
+      "body": "`ui.apps` is the Maven module that packages and deploys content to the `/apps` path. It contains HTL components, scripts, clientlibs, and OSGi component configurations. It is a code package of type `application`.",
+      "narration": "Which Maven module deploys code to the /apps path? ui.apps. `ui.apps` is the Maven module that packages and deploys content to the `/apps` path. It contains HTL components, scripts, clientlibs, and OSGi component configurations. It is a code package of type `application`."
+    },
+    {
+      "id": "02-env-075",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "Which Maven module deploys content to /content and /conf?",
+      "heading": "ui.content",
+      "body": "`ui.content` is the Maven module that deploys mutable content to `/content` and `/conf`. It contains page templates, initial content, editable template policies, and Content Fragment models. It is a content package of type `content`.",
+      "narration": "Which Maven module deploys content to /content and /conf? ui.content. `ui.content` is the Maven module that deploys mutable content to `/content` and `/conf`. It contains page templates, initial content, editable template policies, and Content Fragment models. It is a content package of type `content`."
+    },
+    {
+      "id": "03-env-076",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What type of content goes in the /conf repository path?",
+      "heading": "Configuration content — editable templates, CF models, and similar configurations",
+      "body": "`/conf` is a mutable repository path used for configuration content — editable templates, Content Fragment models, global configurations, and similar settings that can be modified at runtime by administrators.",
+      "narration": "What type of content goes in the /conf repository path? Configuration content — editable templates, CF models, and similar configurations. `/conf` is a mutable repository path used for configuration content — editable templates, Content Fragment models, global configurations, and similar settings that can be modified at runtime by administrators."
+    },
+    {
+      "id": "04-env-077",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What repository path is used for custom components, HTL scripts, and clientlibs?",
+      "heading": "/apps",
+      "body": "Custom components, HTL scripts, clientlibs, and other code assets are stored under `/apps`. This is the immutable area for developer-created code. `/libs` is reserved for Adobe's out-of-the-box platform code.",
+      "narration": "What repository path is used for custom components, HTL scripts, and clientlibs? /apps. Custom components, HTL scripts, clientlibs, and other code assets are stored under `/apps`. This is the immutable area for developer-created code. `/libs` is reserved for Adobe's out-of-the-box platform code."
+    },
+    {
+      "id": "05-env-078",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is the key principle behind AEM's Immutable vs Mutable repository separation?",
+      "heading": "Code lives in immutable paths (/apps); content lives in mutable paths (/content, /conf)",
+      "body": "The core principle is separating code (immutable, deployed via pipeline) from content (mutable, changeable at runtime). Immutable paths like `/apps` hold developer code that changes only through deployments. Mutable paths like `/content` hold content that authors can create and edit at runtime.",
+      "narration": "What is the key principle behind AEM's Immutable vs Mutable repository separation? Code lives in immutable paths (/apps); content lives in mutable paths (/content, /conf). The core principle is separating code (immutable, deployed via pipeline) from content (mutable, changeable at runtime). Immutable paths like `/apps` hold developer code that changes only through deployments. Mutable paths like `/content` hold content that authors can create and edit at runtime."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "ui.apps",
+        "ui.content",
+        "Configuration content — editable templates, CF models, and similar configurations",
+        "/apps",
+        "Code lives in immutable paths (/apps); content lives in mutable paths (/content, /conf)"
+      ],
+      "narration": "Quick recap of Maven Project Structure (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

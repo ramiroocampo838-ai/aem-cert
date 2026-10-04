@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "CDN and Cache Headers",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "CDN and Cache Headers",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. CDN and Cache Headers. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-087",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which origin response headers control caching in the AEM as a Cloud Service CDN?",
+      "heading": "The Cloud Service CDN is controlled by Cache-Control, Surrogate-Control, or Expires from the origin response",
+      "body": "The speech says caching of HTTP responses in the Cloud Service CDN is controlled by the origin response headers Cache-Control, Surrogate-Control, or Expires.",
+      "narration": "Which origin response headers control caching in the AEM as a Cloud Service CDN? The Cloud Service CDN is controlled by Cache-Control, Surrogate-Control, or Expires from the origin response. The speech says caching of HTTP responses in the Cloud Service CDN is controlled by the origin response headers Cache-Control, Surrogate-Control, or Expires."
+    },
+    {
+      "id": "02-disp-088",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How do query parameters affect the CDN cache key in AEM as a Cloud Service?",
+      "heading": "The CDN cache key includes the full request URL, so different query parameters create different cache entries",
+      "body": "The source says the CDN cache key includes the full request URL, including query parameters, so each different query parameter produces a different cache entry.",
+      "narration": "How do query parameters affect the CDN cache key in AEM as a Cloud Service? The CDN cache key includes the full request URL, so different query parameters create different cache entries. The source says the CDN cache key includes the full request URL, including query parameters, so each different query parameter produces a different cache entry."
+    },
+    {
+      "id": "03-disp-089",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which responses will the Cloud Service CDN refuse to cache?",
+      "heading": "Responses with Cache-Control private, no-cache, or no-store, or with a Set-Cookie header, are not cached by the CDN",
+      "body": "The speech states that responses containing private, no-cache, or no-store in Cache-Control, or a Set-Cookie header, are not cached by the CDN.",
+      "narration": "Which responses will the Cloud Service CDN refuse to cache? Responses with Cache-Control private, no-cache, or no-store, or with a Set-Cookie header, are not cached by the CDN. The speech states that responses containing private, no-cache, or no-store in Cache-Control, or a Set-Cookie header, are not cached by the CDN."
+    },
+    {
+      "id": "04-disp-090",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the default caching behavior for text and HTML responses in Cloud Service Dispatcher setups?",
+      "heading": "By default, browsers cache text and HTML for five minutes, and the CDN respects that",
+      "body": "The source says that for text and HTML, Dispatcher sets default headers so the browser caches for five minutes, and the CDN respects this.",
+      "narration": "What is the default caching behavior for text and HTML responses in Cloud Service Dispatcher setups? By default, browsers cache text and HTML for five minutes, and the CDN respects that. The source says that for text and HTML, Dispatcher sets default headers so the browser caches for five minutes, and the CDN respects this."
+    },
+    {
+      "id": "05-disp-091",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How can the default text and HTML caching behavior be disabled or overridden globally in Cloud Service?",
+      "heading": "Define DISABLE_DEFAULT_CACHING in global.vars to disable it, or use EXPIRATION_TIME in global.vars to override it",
+      "body": "The speech says you can disable the default by defining DISABLE_DEFAULT_CACHING in global.vars and override it for all HTML and text with the EXPIRATION_TIME variable in global.vars.",
+      "narration": "How can the default text and HTML caching behavior be disabled or overridden globally in Cloud Service? Define DISABLE_DEFAULT_CACHING in global.vars to disable it, or use EXPIRATION_TIME in global.vars to override it. The speech says you can disable the default by defining DISABLE_DEFAULT_CACHING in global.vars and override it for all HTML and text with the EXPIRATION_TIME variable in global.vars."
+    },
+    {
+      "id": "06-disp-092",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which header should be used when you want to control Adobe-managed CDN caching independently of browser caching?",
+      "heading": "Use Surrogate-Control to control the Adobe-managed CDN independently of the browser",
+      "body": "The source says Surrogate-Control applies to the Adobe managed CDN and lets you control the CDN cache independently of the browser.",
+      "narration": "Which header should be used when you want to control Adobe-managed CDN caching independently of browser caching? Use Surrogate-Control to control the Adobe-managed CDN independently of the browser. The source says Surrogate-Control applies to the Adobe managed CDN and lets you control the CDN cache independently of the browser."
+    },
+    {
+      "id": "07-disp-093",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How should a response be marked when it must stay out of the CDN cache?",
+      "heading": "Set Cache-Control to private to keep the response out of the CDN",
+      "body": "The speech says that to keep content out of the CDN, set Cache-Control to private. It also notes that private HTML can still be cached at Dispatcher with permission-sensitive caching.",
+      "narration": "How should a response be marked when it must stay out of the CDN cache? Set Cache-Control to private to keep the response out of the CDN. The speech says that to keep content out of the CDN, set Cache-Control to private. It also notes that private HTML can still be cached at Dispatcher with permission-sensitive caching."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The Cloud Service CDN is controlled by Cache-Control, Surrogate-Control, or Expires from the origin response",
+        "The CDN cache key includes the full request URL, so different query parameters create different cache entries",
+        "Responses with Cache-Control private, no-cache, or no-store, or with a Set-Cookie header, are not cached by the CDN",
+        "By default, browsers cache text and HTML for five minutes, and the CDN respects that",
+        "Define DISABLE_DEFAULT_CACHING in global.vars to disable it, or use EXPIRATION_TIME in global.vars to override it",
+        "Use Surrogate-Control to control the Adobe-managed CDN independently of the browser",
+        "Set Cache-Control to private to keep the response out of the CDN"
+      ],
+      "narration": "Quick recap of CDN and Cache Headers. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

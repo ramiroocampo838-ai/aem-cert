@@ -1,0 +1,113 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "User Onboarding Methods",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "User Onboarding Methods",
+      "sub": "Authentication · 8 key concepts",
+      "narration": "Authentication. User Onboarding Methods. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-026",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What are the three ways to onboard users into Adobe Admin Console?",
+      "heading": "Manual creation, CSV file upload, and the User Sync Tool (UST) syncing from an enterprise directory",
+      "body": "There are three ways to onboard users, chosen based on customer size and preference: manually creating users through the Admin Console UI, uploading a CSV file for bulk operations, or syncing from an enterprise Active Directory (or OpenLDAP) using the User Sync Tool.",
+      "narration": "What are the three ways to onboard users into Adobe Admin Console? Manual creation, CSV file upload, and the User Sync Tool (UST) syncing from an enterprise directory. There are three ways to onboard users, chosen based on customer size and preference: manually creating users through the Admin Console UI, uploading a CSV file for bulk operations, or syncing from an enterprise Active Directory (or OpenLDAP) using the User Sync Tool."
+    },
+    {
+      "id": "02-auth-027",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "When is manual user creation through the Admin Console UI the right choice?",
+      "heading": "For small numbers of users — generally under roughly 50 — or when already managing other Adobe products this way",
+      "body": "Manual addition through the Admin Console UI works well when you don't have a large number of users to manage, for example fewer than 50 AEM users, or if you're already using this method for other Adobe products like Analytics, Target, or Creative Cloud.",
+      "narration": "When is manual user creation through the Admin Console UI the right choice? For small numbers of users — generally under roughly 50 — or when already managing other Adobe products this way. Manual addition through the Admin Console UI works well when you don't have a large number of users to manage, for example fewer than 50 AEM users, or if you're already using this method for other Adobe products like Analytics, Target, or Creative Cloud."
+    },
+    {
+      "id": "03-auth-028",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What bulk operations does CSV file upload support in Admin Console?",
+      "heading": "Add, edit, remove, and export users in bulk via CSV file upload",
+      "body": "CSV upload in Admin Console supports adding users by CSV, editing user details by CSV, removing users by CSV, exporting the user list to CSV, and exporting a migration report — making it well suited to mid-size batches of users.",
+      "narration": "What bulk operations does CSV file upload support in Admin Console? Add, edit, remove, and export users in bulk via CSV file upload. CSV upload in Admin Console supports adding users by CSV, editing user details by CSV, removing users by CSV, exporting the user list to CSV, and exporting a migration report — making it well suited to mid-size batches of users."
+    },
+    {
+      "id": "04-auth-029",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What is the User Sync Tool (UST)?",
+      "heading": "A tool that enables enterprise customers to create and manage Adobe users utilizing Active Directory (or OpenLDAP)",
+      "body": "The User Sync Tool (UST) enables enterprise customers to create and manage Adobe users using their Active Directory, and it's also tested to work with other OpenLDAP directory services. It's targeted at IT Identity Administrators who install and configure it.",
+      "narration": "What is the User Sync Tool (UST)? A tool that enables enterprise customers to create and manage Adobe users utilizing Active Directory (or OpenLDAP). The User Sync Tool (UST) enables enterprise customers to create and manage Adobe users using their Active Directory, and it's also tested to work with other OpenLDAP directory services. It's targeted at IT Identity Administrators who install and configure it."
+    },
+    {
+      "id": "05-auth-030",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "In which direction does the User Sync Tool synchronize data?",
+      "heading": "One-way — from the directory into Admin Console; edits made in Admin Console are never pushed back to the directory",
+      "body": "User Sync is entirely one-way: it fetches users from the organization's Active Directory and pushes changes into Admin Console via the Adobe User Management API. Edits made directly in Admin Console never flow back out to the directory.",
+      "narration": "In which direction does the User Sync Tool synchronize data? One-way — from the directory into Admin Console; edits made in Admin Console are never pushed back to the directory. User Sync is entirely one-way: it fetches users from the organization's Active Directory and pushes changes into Admin Console via the Adobe User Management API. Edits made directly in Admin Console never flow back out to the directory."
+    },
+    {
+      "id": "06-auth-031",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What API does the User Sync Tool call to keep Admin Console synchronized with the organization's directory?",
+      "heading": "The Adobe User Management API",
+      "body": "When the User Sync Tool runs, it compares the directory's user list against Admin Console and calls the Adobe User Management API to bring Admin Console in line with the organization's Active Directory.",
+      "narration": "What API does the User Sync Tool call to keep Admin Console synchronized with the organization's directory? The Adobe User Management API. When the User Sync Tool runs, it compares the directory's user list against Admin Console and calls the Adobe User Management API to bring Admin Console in line with the organization's Active Directory."
+    },
+    {
+      "id": "07-auth-032",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What mapping capability does the User Sync Tool give a system administrator?",
+      "heading": "Mapping user groups in the customer's directory to product configurations and user groups in Admin Console",
+      "body": "The User Sync Tool lets the system admin map user groups in the customer's directory to product configurations and user groups in Admin Console, so directory-side group membership translates into the right AEM access.",
+      "narration": "What mapping capability does the User Sync Tool give a system administrator? Mapping user groups in the customer's directory to product configurations and user groups in Admin Console. The User Sync Tool lets the system admin map user groups in the customer's directory to product configurations and user groups in Admin Console, so directory-side group membership translates into the right AEM access."
+    },
+    {
+      "id": "08-auth-033",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What two features improve the scalability of LDAP-based user management in Admin Console?",
+      "heading": "Dynamic mapping of new LDAP groups, and dynamic user group creation based on specified criteria",
+      "body": "Two features improve scalability: dynamic mapping of new LDAP groups for user membership as they change on the directory side, and dynamic user group creation, which automatically creates user groups based on specified criteria.",
+      "narration": "What two features improve the scalability of LDAP-based user management in Admin Console? Dynamic mapping of new LDAP groups, and dynamic user group creation based on specified criteria. Two features improve scalability: dynamic mapping of new LDAP groups for user membership as they change on the directory side, and dynamic user group creation, which automatically creates user groups based on specified criteria."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Manual creation, CSV file upload, and the User Sync Tool (UST) syncing from an enterprise directory",
+        "For small numbers of users — generally under roughly 50 — or when already managing other Adobe products this way",
+        "Add, edit, remove, and export users in bulk via CSV file upload",
+        "A tool that enables enterprise customers to create and manage Adobe users utilizing Active Directory (or OpenLDAP)",
+        "One-way — from the directory into Admin Console; edits made in Admin Console are never pushed back to the directory",
+        "The Adobe User Management API",
+        "Mapping user groups in the customer's directory to product configurations and user groups in Admin Console",
+        "Dynamic mapping of new LDAP groups, and dynamic user group creation based on specified criteria"
+      ],
+      "narration": "Quick recap of User Onboarding Methods. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

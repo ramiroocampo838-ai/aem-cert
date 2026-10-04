@@ -1,0 +1,113 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Build, Deploy & Best Practices",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Build, Deploy & Best Practices",
+      "sub": "Maven · 8 key concepts",
+      "narration": "Maven. Build, Deploy & Best Practices. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-093",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What does mvn clean install do in this project?",
+      "heading": "It builds all modules and produces the packages and the bundle",
+      "body": "The speech says mvn clean install builds all modules and produces the packages and the bundle.",
+      "narration": "What does mvn clean install do in this project? It builds all modules and produces the packages and the bundle. The speech says mvn clean install builds all modules and produces the packages and the bundle."
+    },
+    {
+      "id": "02-mvn-094",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Which Maven profile installs the all package on the author instance from the project root?",
+      "heading": "autoInstallSinglePackage",
+      "body": "The speech says autoInstallSinglePackage, at the project root, installs the all package on the author instance.",
+      "narration": "Which Maven profile installs the all package on the author instance from the project root? autoInstallSinglePackage. The speech says autoInstallSinglePackage, at the project root, installs the all package on the author instance."
+    },
+    {
+      "id": "03-mvn-095",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Which profile installs the all package on the publish instance?",
+      "heading": "autoInstallSinglePackagePublish",
+      "body": "The speech says autoInstallSinglePackagePublish installs the all package on the publish instance.",
+      "narration": "Which profile installs the all package on the publish instance? autoInstallSinglePackagePublish. The speech says autoInstallSinglePackagePublish installs the all package on the publish instance."
+    },
+    {
+      "id": "04-mvn-096",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Given a scenario where you are actively developing Java code and want the fastest deployment option, which profile should you use?",
+      "heading": "autoInstallBundle in the core module",
+      "body": "The speech says autoInstallBundle in the core module installs only the OSGi bundle and is the fast option while developing Java code.",
+      "narration": "Given a scenario where you are actively developing Java code and want the fastest deployment option, which profile should you use? autoInstallBundle in the core module. The speech says autoInstallBundle in the core module installs only the OSGi bundle and is the fast option while developing Java code."
+    },
+    {
+      "id": "05-mvn-097",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What does Cloud Manager deploy, according to the speech?",
+      "heading": "Only the all package",
+      "body": "The speech says Cloud Manager builds the project from Git with Maven and deploys only the all package.",
+      "narration": "What does Cloud Manager deploy, according to the speech? Only the all package. The speech says Cloud Manager builds the project from Git with Maven and deploys only the all package."
+    },
+    {
+      "id": "06-mvn-098",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "According to the best practices list, where should Oak indexes be deployed?",
+      "heading": "As code in ui.apps",
+      "body": "The best practices section explicitly says to deploy Oak indexes as code in ui.apps.",
+      "narration": "According to the best practices list, where should Oak indexes be deployed? As code in ui.apps. The best practices section explicitly says to deploy Oak indexes as code in ui.apps."
+    },
+    {
+      "id": "07-mvn-099",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What should cloudManagerTarget be set to on every package except all?",
+      "heading": "none",
+      "body": "The best practices list says to set cloudManagerTarget to none on every package except all.",
+      "narration": "What should cloudManagerTarget be set to on every package except all? none. The best practices list says to set cloudManagerTarget to none on every package except all."
+    },
+    {
+      "id": "08-mvn-100",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Given a scenario where a team wants to store environment-specific values directly in Java code, what does the speech say instead?",
+      "heading": "Put environment-specific values in run-mode folders and Cloud Manager variables, never in code",
+      "body": "The best practices section says to put environment-specific values in run-mode folders and Cloud Manager variables, never in code.",
+      "narration": "Given a scenario where a team wants to store environment-specific values directly in Java code, what does the speech say instead? Put environment-specific values in run-mode folders and Cloud Manager variables, never in code. The best practices section says to put environment-specific values in run-mode folders and Cloud Manager variables, never in code."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It builds all modules and produces the packages and the bundle",
+        "autoInstallSinglePackage",
+        "autoInstallSinglePackagePublish",
+        "autoInstallBundle in the core module",
+        "Only the all package",
+        "As code in ui.apps",
+        "none",
+        "Put environment-specific values in run-mode folders and Cloud Manager variables, never in code"
+      ],
+      "narration": "Quick recap of Build, Deploy & Best Practices. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

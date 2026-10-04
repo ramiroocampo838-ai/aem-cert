@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Index Names and Simplified Index Management",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Index Names and Simplified Index Management",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Index Names and Simplified Index Management. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-029",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What three categories of indexes does the speech define?",
+      "heading": "An out-of-the-box index, a customization of an out-of-the-box index, and a fully custom index",
+      "body": "Section 5 says an index falls into three categories: out-of-the-box, customization of an out-of-the-box index, and fully custom.",
+      "narration": "What three categories of indexes does the speech define? An out-of-the-box index, a customization of an out-of-the-box index, and a fully custom index. Section 5 says an index falls into three categories: out-of-the-box, customization of an out-of-the-box index, and fully custom."
+    },
+    {
+      "id": "02-oak-030",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What naming pattern does the speech show for customizing an out-of-the-box index?",
+      "heading": "It appends -custom- and a number, as in damAssetLucene-8-custom-1",
+      "body": "Section 5 says a customization of an out-of-the-box index appends -custom- and a number, for example damAssetLucene-8-custom-1.",
+      "narration": "What naming pattern does the speech show for customizing an out-of-the-box index? It appends -custom- and a number, as in damAssetLucene-8-custom-1. Section 5 says a customization of an out-of-the-box index appends -custom- and a number, for example damAssetLucene-8-custom-1."
+    },
+    {
+      "id": "03-oak-031",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How should a fully custom index be named according to the speech?",
+      "heading": "It should use a prefix and a dot before the name, and end with -custom- and a version number, such as acme.product-1-custom-2",
+      "body": "Section 5 says a fully custom index should use a prefix and dot to avoid conflicts and end with -custom- plus a version number.",
+      "narration": "How should a fully custom index be named according to the speech? It should use a prefix and a dot before the name, and end with -custom- and a version number, such as acme.product-1-custom-2. Section 5 says a fully custom index should use a prefix and dot to avoid conflicts and end with -custom- plus a version number."
+    },
+    {
+      "id": "04-oak-032",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How do you customize an out-of-the-box index in Cloud Service according to the speech?",
+      "heading": "Copy its latest definition from a Cloud Service environment using the CRX DE Package Manager, rename it with the custom suffix, and add your changes",
+      "body": "Section 5 says to copy the latest definition from a Cloud Service environment using CRX DE Package Manager, rename it with the custom suffix, and add changes.",
+      "narration": "How do you customize an out-of-the-box index in Cloud Service according to the speech? Copy its latest definition from a Cloud Service environment using the CRX DE Package Manager, rename it with the custom suffix, and add your changes. Section 5 says to copy the latest definition from a Cloud Service environment using CRX DE Package Manager, rename it with the custom suffix, and add changes."
+    },
+    {
+      "id": "05-oak-033",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "If the cloud index you copied is of type elasticsearch, what two changes does the speech require?",
+      "heading": "Change type to lucene and change async to async and nrt",
+      "body": "Section 5 says that if the cloud index is of type elasticsearch, change type to lucene and async to async and nrt.",
+      "narration": "If the cloud index you copied is of type elasticsearch, what two changes does the speech require? Change type to lucene and change async to async and nrt. Section 5 says that if the cloud index is of type elasticsearch, change type to lucene and async to async and nrt."
+    },
+    {
+      "id": "06-oak-034",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What does the speech say about introducing new full-text indexes on dam:Asset?",
+      "heading": "It is strongly discouraged; instead customize damAssetLucene",
+      "body": "Section 5 says introducing new full-text indexes on dam:Asset is strongly discouraged and recommends customizing damAssetLucene instead.",
+      "narration": "What does the speech say about introducing new full-text indexes on dam:Asset? It is strongly discouraged; instead customize damAssetLucene. Section 5 says introducing new full-text indexes on dam:Asset is strongly discouraged and recommends customizing damAssetLucene instead."
+    },
+    {
+      "id": "07-oak-035",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What is Simplified Index Management, and where does its diff-based configuration live?",
+      "heading": "It uses a diff.index so out-of-the-box customizations and custom indexes can be defined with a single diff.json file, stored under _oak_index/diff.index with a placeholder .content.xml and a diff.json file",
+      "body": "Section 5 says Simplified Index Management uses diff.index and a single diff.json under _oak_index/diff.index together with a placeholder .content.xml.",
+      "narration": "What is Simplified Index Management, and where does its diff-based configuration live? It uses a diff.index so out-of-the-box customizations and custom indexes can be defined with a single diff.json file, stored under _oak_index/diff.index with a placeholder .content.xml and a diff.json file. Section 5 says Simplified Index Management uses diff.index and a single diff.json under _oak_index/diff.index together with a placeholder .content.xml."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "An out-of-the-box index, a customization of an out-of-the-box index, and a fully custom index",
+        "It appends -custom- and a number, as in damAssetLucene-8-custom-1",
+        "It should use a prefix and a dot before the name, and end with -custom- and a version number, such as acme.product-1-custom-2",
+        "Copy its latest definition from a Cloud Service environment using the CRX DE Package Manager, rename it with the custom suffix, and add your changes",
+        "Change type to lucene and change async to async and nrt",
+        "It is strongly discouraged; instead customize damAssetLucene",
+        "It uses a diff.index so out-of-the-box customizations and custom indexes can be defined with a single diff.json file, stored under _oak_index/diff.index with a placeholder .content.xml and a diff.json file"
+      ],
+      "narration": "Quick recap of Index Names and Simplified Index Management. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

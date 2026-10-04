@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Local Dispatcher",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Local Dispatcher",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. Local Dispatcher. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-061",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What technology do the local Dispatcher Tools use to run the Dispatcher?",
+      "heading": "Docker",
+      "body": "The local Dispatcher Tools are Docker-based. They run an Apache HTTP Server with the AEM Dispatcher module inside a Docker container, providing the same caching and filtering behavior as the cloud Dispatcher.",
+      "narration": "What technology do the local Dispatcher Tools use to run the Dispatcher? Docker. The local Dispatcher Tools are Docker-based. They run an Apache HTTP Server with the AEM Dispatcher module inside a Docker container, providing the same caching and filtering behavior as the cloud Dispatcher."
+    },
+    {
+      "id": "02-env-062",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What script do you use to start the local Dispatcher with hot-reload enabled?",
+      "heading": "./bin/docker_run_hot_reload.sh",
+      "body": "The local Dispatcher is started with `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`. The hot-reload variant is preferred because it automatically reloads Dispatcher configuration when files change.",
+      "narration": "What script do you use to start the local Dispatcher with hot-reload enabled? ./bin/docker_run_hot_reload.sh. The local Dispatcher is started with `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`. The hot-reload variant is preferred because it automatically reloads Dispatcher configuration when files change."
+    },
+    {
+      "id": "03-env-063",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What is the full command to start the local Dispatcher with hot-reload?",
+      "heading": "./bin/docker_run_hot_reload.sh ./src localhost:4503 8080",
+      "body": "The full command is `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`. This connects the Dispatcher to the local Publish instance at `localhost:4503` and exposes the Dispatcher on port 8080.",
+      "narration": "What is the full command to start the local Dispatcher with hot-reload? ./bin/docker_run_hot_reload.sh ./src localhost:4503 8080. The full command is `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`. This connects the Dispatcher to the local Publish instance at `localhost:4503` and exposes the Dispatcher on port 8080."
+    },
+    {
+      "id": "04-env-064",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "On which port does the local Dispatcher expose the site when using the standard startup command?",
+      "heading": "Port 8080",
+      "body": "The startup command `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080` exposes the local Dispatcher on port 8080. This is where you access the site as it would appear through the Dispatcher (cached, filtered requests).",
+      "narration": "On which port does the local Dispatcher expose the site when using the standard startup command? Port 8080. The startup command `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080` exposes the local Dispatcher on port 8080. This is where you access the site as it would appear through the Dispatcher (cached, filtered requests)."
+    },
+    {
+      "id": "05-env-065",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Which local Publish port does the Dispatcher connect to in the standard startup command?",
+      "heading": "localhost:4503",
+      "body": "In the command `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`, `localhost:4503` is the address of the local Publish instance. The Dispatcher proxies requests from port 8080 to Publish at 4503.",
+      "narration": "Which local Publish port does the Dispatcher connect to in the standard startup command? localhost:4503. In the command `./bin/docker_run_hot_reload.sh ./src localhost:4503 8080`, `localhost:4503` is the address of the local Publish instance. The Dispatcher proxies requests from port 8080 to Publish at 4503."
+    },
+    {
+      "id": "06-env-066",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is the advantage of using docker_run_hot_reload.sh over docker_run.sh?",
+      "heading": "It reloads Dispatcher configuration automatically when files change",
+      "body": "The `docker_run_hot_reload.sh` script monitors the Dispatcher configuration directory and reloads the configuration automatically when files change. This avoids needing to restart the Docker container during development.",
+      "narration": "What is the advantage of using docker_run_hot_reload.sh over docker_run.sh? It reloads Dispatcher configuration automatically when files change. The `docker_run_hot_reload.sh` script monitors the Dispatcher configuration directory and reloads the configuration automatically when files change. This avoids needing to restart the Docker container during development."
+    },
+    {
+      "id": "07-env-067",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What tool do you use to validate local Dispatcher configuration before deploying?",
+      "heading": "./bin/validate ./src",
+      "body": "The command `./bin/validate ./src` checks your Apache and Dispatcher configuration for errors before deploying. It helps catch configuration mistakes locally, before they reach Cloud Manager.",
+      "narration": "What tool do you use to validate local Dispatcher configuration before deploying? ./bin/validate ./src. The command `./bin/validate ./src` checks your Apache and Dispatcher configuration for errors before deploying. It helps catch configuration mistakes locally, before they reach Cloud Manager."
+    },
+    {
+      "id": "08-env-068",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does the local Dispatcher run inside?",
+      "heading": "A Docker container running Apache HTTP Server with the Dispatcher module",
+      "body": "The local Dispatcher runs inside a Docker container. The container runs Apache HTTP Server with the AEM Dispatcher module installed — the same combination used in cloud environments.",
+      "narration": "What does the local Dispatcher run inside? A Docker container running Apache HTTP Server with the Dispatcher module. The local Dispatcher runs inside a Docker container. The container runs Apache HTTP Server with the AEM Dispatcher module installed — the same combination used in cloud environments."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Docker",
+        "./bin/docker_run_hot_reload.sh",
+        "./bin/docker_run_hot_reload.sh ./src localhost:4503 8080",
+        "Port 8080",
+        "localhost:4503",
+        "It reloads Dispatcher configuration automatically when files change",
+        "./bin/validate ./src",
+        "A Docker container running Apache HTTP Server with the Dispatcher module"
+      ],
+      "narration": "Quick recap of Local Dispatcher. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

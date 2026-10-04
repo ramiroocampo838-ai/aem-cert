@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Pipeline Variants (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Pipeline Variants (Part 2 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Pipeline Variants (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-073",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is 'Connected Repositories' in Cloud Manager?",
+      "heading": "A Cloud Manager feature allowing external Git repositories (GitHub, GitLab, Bitbucket) to be linked to Cloud Manager pipelines",
+      "body": "Connected Repositories (also called External Repository support) allows Cloud Manager to link external Git repositories hosted on GitHub (cloud or enterprise), GitLab, or Bitbucket as pipeline sources. This enables teams to continue using their existing versioning and PR workflows while still leveraging Cloud Manager for CI/CD.",
+      "narration": "What is 'Connected Repositories' in Cloud Manager? A Cloud Manager feature allowing external Git repositories (GitHub, GitLab, Bitbucket) to be linked to Cloud Manager pipelines. Connected Repositories (also called External Repository support) allows Cloud Manager to link external Git repositories hosted on GitHub (cloud or enterprise), GitLab, or Bitbucket as pipeline sources. This enables teams to continue using their existing versioning and PR workflows while still leveraging Cloud Manager for CI/CD."
+    },
+    {
+      "id": "02-cm-074",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is a 'Private Repository' validation check in Cloud Manager Connected Repositories?",
+      "heading": "A validation step where Cloud Manager installs a GitHub App or webhook to verify it can access and receive events from the external repository",
+      "body": "When connecting an external repository to Cloud Manager, a validation check is performed to confirm Cloud Manager can access the repository. For GitHub, this involves installing the Cloud Manager GitHub App on the repository; for other providers, a validation secret or webhook token is used. This proves ownership and grants Cloud Manager the permissions needed to clone code and receive push/PR events.",
+      "narration": "What is a 'Private Repository' validation check in Cloud Manager Connected Repositories? A validation step where Cloud Manager installs a GitHub App or webhook to verify it can access and receive events from the external repository. When connecting an external repository to Cloud Manager, a validation check is performed to confirm Cloud Manager can access the repository. For GitHub, this involves installing the Cloud Manager GitHub App on the repository; for other providers, a validation secret or webhook token is used. This proves ownership and grants Cloud Manager the permissions needed to clone code and receive push/PR events."
+    },
+    {
+      "id": "03-cm-075",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is 'Pull Request Validation' in Cloud Manager?",
+      "heading": "Automatic triggering of a Code Quality pipeline when a PR is opened against the configured branch, providing quality feedback before merge",
+      "body": "Pull Request Validation is a Cloud Manager feature (available with Connected Repositories) that automatically triggers a Code Quality scan when a PR is opened against the configured branch. Results are reported directly back to the PR in GitHub, GitLab, or Bitbucket. This gives developers code quality feedback before merging, helping catch issues earlier in the development cycle.",
+      "narration": "What is 'Pull Request Validation' in Cloud Manager? Automatic triggering of a Code Quality pipeline when a PR is opened against the configured branch, providing quality feedback before merge. Pull Request Validation is a Cloud Manager feature (available with Connected Repositories) that automatically triggers a Code Quality scan when a PR is opened against the configured branch. Results are reported directly back to the PR in GitHub, GitLab, or Bitbucket. This gives developers code quality feedback before merging, helping catch issues earlier in the development cycle."
+    },
+    {
+      "id": "04-cm-076",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is an 'Edge Delivery Services Pipeline' in Cloud Manager?",
+      "heading": "A Cloud Manager pipeline for deploying code and configurations for Adobe Edge Delivery Services websites",
+      "body": "Edge Delivery Services (EDS) Pipelines in Cloud Manager support CI/CD for projects built on Adobe Edge Delivery Services — Adobe's high-performance, CDN-first content delivery platform. EDS projects use a GitHub-based workflow with document authoring (Google Docs/SharePoint) and can be connected to Cloud Manager for quality checks and deployment management.",
+      "narration": "What is an 'Edge Delivery Services Pipeline' in Cloud Manager? A Cloud Manager pipeline for deploying code and configurations for Adobe Edge Delivery Services websites. Edge Delivery Services (EDS) Pipelines in Cloud Manager support CI/CD for projects built on Adobe Edge Delivery Services — Adobe's high-performance, CDN-first content delivery platform. EDS projects use a GitHub-based workflow with document authoring (Google Docs/SharePoint) and can be connected to Cloud Manager for quality checks and deployment management."
+    },
+    {
+      "id": "05-cm-077",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "How many Production Pipelines can a Cloud Manager program have?",
+      "heading": "One Production Pipeline per program — Cloud Manager programs support exactly one Production pipeline",
+      "body": "Each Cloud Manager program supports exactly one Production Pipeline. This reflects the architecture where there is a single Production environment per program. A program can have multiple Non-Production pipelines (targeting Dev environments), multiple Web Tier Config pipelines, multiple Front End pipelines, and multiple Code Quality pipelines — but only one Production Pipeline.",
+      "narration": "How many Production Pipelines can a Cloud Manager program have? One Production Pipeline per program — Cloud Manager programs support exactly one Production pipeline. Each Cloud Manager program supports exactly one Production Pipeline. This reflects the architecture where there is a single Production environment per program. A program can have multiple Non-Production pipelines (targeting Dev environments), multiple Web Tier Config pipelines, multiple Front End pipelines, and multiple Code Quality pipelines — but only one Production Pipeline."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A Cloud Manager feature allowing external Git repositories (GitHub, GitLab, Bitbucket) to be linked to Cloud Manager pipelines",
+        "A validation step where Cloud Manager installs a GitHub App or webhook to verify it can access and receive events from the external repository",
+        "Automatic triggering of a Code Quality pipeline when a PR is opened against the configured branch, providing quality feedback before merge",
+        "A Cloud Manager pipeline for deploying code and configurations for Adobe Edge Delivery Services websites",
+        "One Production Pipeline per program — Cloud Manager programs support exactly one Production pipeline"
+      ],
+      "narration": "Quick recap of Pipeline Variants (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

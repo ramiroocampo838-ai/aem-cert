@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "URL Parameters, Headers, TTL and Authentication",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "URL Parameters, Headers, TTL and Authentication",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. URL Parameters, Headers, TTL and Authentication. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-059",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the recommended /ignoreUrlParams strategy when most query parameters should not prevent caching?",
+      "heading": "Ignore all parameters first, then deny only the ones that must bypass the cache",
+      "body": "The speech recommends an allowlist approach: ignore everything with an allow rule on *, then deny only parameters that must bypass the cache, such as nocache.",
+      "narration": "What is the recommended /ignoreUrlParams strategy when most query parameters should not prevent caching? Ignore all parameters first, then deny only the ones that must bypass the cache. The speech recommends an allowlist approach: ignore everything with an allow rule on *, then deny only parameters that must bypass the cache, such as nocache."
+    },
+    {
+      "id": "02-disp-060",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "A request URL has three query parameters, and one of them is not ignored by /ignoreUrlParams. What happens?",
+      "heading": "If any parameter is not ignored, the page is not cached",
+      "body": "The source says that if all parameters are ignored, the page is cached, but if any parameter is not ignored, the page is not cached.",
+      "narration": "A request URL has three query parameters, and one of them is not ignored by /ignoreUrlParams. What happens? If any parameter is not ignored, the page is not cached. The source says that if all parameters are ignored, the page is cached, but if any parameter is not ignored, the page is not cached."
+    },
+    {
+      "id": "03-disp-061",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the purpose of the /headers property in the Dispatcher cache configuration?",
+      "heading": "/headers tells Dispatcher which response headers to store with the cached file and add back later",
+      "body": "The speech says /headers lists the response headers Dispatcher stores next to the cached file and adds on later responses.",
+      "narration": "What is the purpose of the /headers property in the Dispatcher cache configuration? /headers tells Dispatcher which response headers to store with the cached file and add back later. The speech says /headers lists the response headers Dispatcher stores next to the cached file and adds on later responses."
+    },
+    {
+      "id": "04-disp-062",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What must be done if a project wants Dispatcher to store ETag values for cached responses?",
+      "heading": "Add ETag to /headers and set the Apache directive FileETag none",
+      "body": "The speech explicitly says that to store ETag, you must add it to /headers and set the Apache directive FileETag none.",
+      "narration": "What must be done if a project wants Dispatcher to store ETag values for cached responses? Add ETag to /headers and set the Apache directive FileETag none. The speech explicitly says that to store ETag, you must add it to /headers and set the Apache directive FileETag none."
+    },
+    {
+      "id": "05-disp-063",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How does Dispatcher implement time-based invalidation when /enableTTL is set to 1?",
+      "heading": "Dispatcher reads Cache-Control max-age or Expires and creates an auxiliary file whose mtime equals the expiry",
+      "body": "The speech says /enableTTL reads Cache-Control max-age or Expires from the backend response and creates an empty auxiliary file whose modification time equals the expiry.",
+      "narration": "How does Dispatcher implement time-based invalidation when /enableTTL is set to 1? Dispatcher reads Cache-Control max-age or Expires and creates an auxiliary file whose mtime equals the expiry. The speech says /enableTTL reads Cache-Control max-age or Expires from the backend response and creates an empty auxiliary file whose modification time equals the expiry."
+    },
+    {
+      "id": "06-disp-064",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What does /allowAuthorized control?",
+      "heading": "/allowAuthorized controls whether requests carrying authentication information may be cached",
+      "body": "The speech says /allowAuthorized controls whether requests with authentication information are cached, including the Authorization header and cookies named authorization or login-token.",
+      "narration": "What does /allowAuthorized control? /allowAuthorized controls whether requests carrying authentication information may be cached. The speech says /allowAuthorized controls whether requests with authentication information are cached, including the Authorization header and cookies named authorization or login-token."
+    },
+    {
+      "id": "07-disp-065",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why must /allowAuthorized remain 0 when Dispatcher session management is used?",
+      "heading": "Session management requires /allowAuthorized to stay at 0",
+      "body": "The source explicitly states that session management requires /allowAuthorized to be 0.",
+      "narration": "Why must /allowAuthorized remain 0 when Dispatcher session management is used? Session management requires /allowAuthorized to stay at 0. The source explicitly states that session management requires /allowAuthorized to be 0."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Ignore all parameters first, then deny only the ones that must bypass the cache",
+        "If any parameter is not ignored, the page is not cached",
+        "/headers tells Dispatcher which response headers to store with the cached file and add back later",
+        "Add ETag to /headers and set the Apache directive FileETag none",
+        "Dispatcher reads Cache-Control max-age or Expires and creates an auxiliary file whose mtime equals the expiry",
+        "/allowAuthorized controls whether requests carrying authentication information may be cached",
+        "Session management requires /allowAuthorized to stay at 0"
+      ],
+      "narration": "Quick recap of URL Parameters, Headers, TTL and Authentication. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

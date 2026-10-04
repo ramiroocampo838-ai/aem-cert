@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Workflows in Cloud Service",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Workflows in Cloud Service",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Workflows in Cloud Service. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-038",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "In AEM as a Cloud Service, how are workflow models and launchers classified and where does that configuration live?",
+      "heading": "Workflow models and launchers are configuration, and that configuration lives under /conf",
+      "body": "Section 6 says that in AEM as a Cloud Service, models and launchers are configuration, and configuration lives under /conf.",
+      "narration": "In AEM as a Cloud Service, how are workflow models and launchers classified and where does that configuration live? Workflow models and launchers are configuration, and that configuration lives under /conf. Section 6 says that in AEM as a Cloud Service, models and launchers are configuration, and configuration lives under /conf."
+    },
+    {
+      "id": "02-wf-039",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Where are custom workflow models stored in AEM as a Cloud Service?",
+      "heading": "Custom workflow models are stored under /conf/global/settings/workflow/models",
+      "body": "The speech gives the exact Cloud Service location for custom workflow models as /conf/global/settings/workflow/models.",
+      "narration": "Where are custom workflow models stored in AEM as a Cloud Service? Custom workflow models are stored under /conf/global/settings/workflow/models. The speech gives the exact Cloud Service location for custom workflow models as /conf/global/settings/workflow/models."
+    },
+    {
+      "id": "03-wf-040",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Where are workflow launchers stored in AEM as a Cloud Service?",
+      "heading": "Workflow launchers are stored under /conf/global/settings/workflow/launcher",
+      "body": "Section 6 says workflow launchers are stored under /conf/global/settings/workflow/launcher.",
+      "narration": "Where are workflow launchers stored in AEM as a Cloud Service? Workflow launchers are stored under /conf/global/settings/workflow/launcher. Section 6 says workflow launchers are stored under /conf/global/settings/workflow/launcher."
+    },
+    {
+      "id": "04-wf-041",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Where should custom workflow models never be placed in Cloud Service, and why?",
+      "heading": "Never place custom workflow models in /libs because /apps and /libs are immutable",
+      "body": "The speech explicitly warns never to place custom models in /libs because /apps and /libs are immutable in Cloud Service.",
+      "narration": "Where should custom workflow models never be placed in Cloud Service, and why? Never place custom workflow models in /libs because /apps and /libs are immutable. The speech explicitly warns never to place custom models in /libs because /apps and /libs are immutable in Cloud Service."
+    },
+    {
+      "id": "05-wf-042",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How are workflow models and launchers deployed in AEM as a Cloud Service?",
+      "heading": "They are deployed as code through the Cloud Manager pipeline as part of the project packages",
+      "body": "Section 6 states that models and launchers are deployed as code through the Cloud Manager pipeline, as part of the project packages.",
+      "narration": "How are workflow models and launchers deployed in AEM as a Cloud Service? They are deployed as code through the Cloud Manager pipeline as part of the project packages. Section 6 states that models and launchers are deployed as code through the Cloud Manager pipeline, as part of the project packages."
+    },
+    {
+      "id": "06-wf-043",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Where is the runtime model generated for running instances when the model is synced in Cloud Service?",
+      "heading": "The runtime model is generated under /var/workflow/models when the model is synced",
+      "body": "The speech says that the runtime model used by running instances is generated under /var/workflow/models when the model is synced.",
+      "narration": "Where is the runtime model generated for running instances when the model is synced in Cloud Service? The runtime model is generated under /var/workflow/models when the model is synced. The speech says that the runtime model used by running instances is generated under /var/workflow/models when the model is synced."
+    },
+    {
+      "id": "07-wf-044",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What does a workflow launcher do, and which conditions does it define?",
+      "heading": "A launcher starts a workflow automatically on matching repository events and defines the event type, node type, path, and model",
+      "body": "Section 6 says a workflow launcher starts a workflow automatically when a repository event occurs on a matching path and defines the event type, node type, path, and model to start.",
+      "narration": "What does a workflow launcher do, and which conditions does it define? A launcher starts a workflow automatically on matching repository events and defines the event type, node type, path, and model. Section 6 says a workflow launcher starts a workflow automatically when a repository event occurs on a matching path and defines the event type, node type, path, and model to start."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Workflow models and launchers are configuration, and that configuration lives under /conf",
+        "Custom workflow models are stored under /conf/global/settings/workflow/models",
+        "Workflow launchers are stored under /conf/global/settings/workflow/launcher",
+        "Never place custom workflow models in /libs because /apps and /libs are immutable",
+        "They are deployed as code through the Cloud Manager pipeline as part of the project packages",
+        "The runtime model is generated under /var/workflow/models when the model is synced",
+        "A launcher starts a workflow automatically on matching repository events and defines the event type, node type, path, and model"
+      ],
+      "narration": "Quick recap of Workflows in Cloud Service. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

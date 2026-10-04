@@ -1,0 +1,102 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "SAML 2.0 — Configuration (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SAML 2.0 — Configuration (Part 2 of 2)",
+      "sub": "Authentication · 7 key concepts",
+      "narration": "Authentication. SAML 2.0 — Configuration (Part 2 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-059",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What are the key properties of the SAML Authentication Handler OSGi configuration?",
+      "heading": "path, idpCertAlias, idpIdentifier, idpUrl, serviceProviderEntityId, createUser, synchronizeAttributes, addGroupMemberships, defaultGroups",
+      "body": "Key properties include: path (which content trees SAML protects), idpCertAlias, idpIdentifier, idpUrl (IDP details), serviceProviderEntityId (AEM's own identity), createUser, synchronizeAttributes, addGroupMemberships, and defaultGroups — controlling how AEM handles the resulting user.",
+      "narration": "What are the key properties of the SAML Authentication Handler OSGi configuration? path, idpCertAlias, idpIdentifier, idpUrl, serviceProviderEntityId, createUser, synchronizeAttributes, addGroupMemberships, defaultGroups. Key properties include: path (which content trees SAML protects), idpCertAlias, idpIdentifier, idpUrl (IDP details), serviceProviderEntityId (AEM's own identity), createUser, synchronizeAttributes, addGroupMemberships, and defaultGroups — controlling how AEM handles the resulting user."
+    },
+    {
+      "id": "02-auth-060",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Why does it matter that the SAML Authentication Handler is a factory configuration?",
+      "heading": "It's multi-site friendly — different SAML configurations can target different site trees via the path property",
+      "body": "Because it's a factory configuration, you can create multiple named instances of the SAML handler, each scoped to a different path. This is particularly useful for multi-site AEM deployments that need distinct SAML setups per site.",
+      "narration": "Why does it matter that the SAML Authentication Handler is a factory configuration? It's multi-site friendly — different SAML configurations can target different site trees via the path property. Because it's a factory configuration, you can create multiple named instances of the SAML handler, each scoped to a different path. This is particularly useful for multi-site AEM deployments that need distinct SAML setups per site."
+    },
+    {
+      "id": "03-auth-061",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the file naming pattern for a SAML Authentication Handler OSGi configuration file, and where does it live?",
+      "heading": "com.adobe.granite.auth.saml.SamlAuthenticationHandler~<name>.cfg.json under /ui.config/.../osgiconfig/config.publish/",
+      "body": "The configuration file is named com.adobe.granite.auth.saml.SamlAuthenticationHandler~<identifier>.cfg.json, placed at /ui.config/src/main/content/jcr_root/<project>/osgiconfig/config.publish/ — the config.publish run-mode folder, since SAML only applies to Publish.",
+      "narration": "What is the file naming pattern for a SAML Authentication Handler OSGi configuration file, and where does it live? com.adobe.granite.auth.saml.SamlAuthenticationHandler~<name>.cfg.json under /ui.config/.../osgiconfig/config.publish/. The configuration file is named com.adobe.granite.auth.saml.SamlAuthenticationHandler~<identifier>.cfg.json, placed at /ui.config/src/main/content/jcr_root/<project>/osgiconfig/config.publish/ — the config.publish run-mode folder, since SAML only applies to Publish."
+    },
+    {
+      "id": "04-auth-062",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "When does the AEM Publish Referrer Filter need to be updated for SAML to work?",
+      "heading": "If the IDP posts from a different origin than AEM Publish, its requests must be explicitly allowed",
+      "body": "During SAML authentication, the IDP sends an HTTP POST to AEM Publish's saml_login endpoint. If the IDP and AEM Publish are on different origins, the Referrer Filter must be configured via OSGi to allow POST requests from the IDP's origin.",
+      "narration": "When does the AEM Publish Referrer Filter need to be updated for SAML to work? If the IDP posts from a different origin than AEM Publish, its requests must be explicitly allowed. During SAML authentication, the IDP sends an HTTP POST to AEM Publish's saml_login endpoint. If the IDP and AEM Publish are on different origins, the Referrer Filter must be configured via OSGi to allow POST requests from the IDP's origin."
+    },
+    {
+      "id": "05-auth-063",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Why does AEM Publish's CORS policy need to be configured for SAML authentication?",
+      "heading": "Because the IDP's POST to saml_login often comes from a different host/domain, requiring CORS to accept it",
+      "body": "When the IDP initiates a client-side HTTP POST to AEM Publish's saml_login endpoint from a different host or domain, CORS must be configured to allow that cross-origin request, listing the IDP's origin, the saml_login path, and the POST method.",
+      "narration": "Why does AEM Publish's CORS policy need to be configured for SAML authentication? Because the IDP's POST to saml_login often comes from a different host/domain, requiring CORS to accept it. When the IDP initiates a client-side HTTP POST to AEM Publish's saml_login endpoint from a different host or domain, CORS must be configured to allow that cross-origin request, listing the IDP's origin, the saml_login path, and the POST method."
+    },
+    {
+      "id": "06-auth-064",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What special CORS consideration applies when testing SAML locally against localhost:4503?",
+      "heading": "Include \"null\" in the alloworigin list, since local testing can produce a null Origin header",
+      "body": "When testing SAML with the local AEM SDK on localhost:4503, the IDP might set the Origin header to null. To handle this, you need to include the literal string \"null\" in the CORS configuration's alloworigin list.",
+      "narration": "What special CORS consideration applies when testing SAML locally against localhost:4503? Include \"null\" in the alloworigin list, since local testing can produce a null Origin header. When testing SAML with the local AEM SDK on localhost:4503, the IDP might set the Origin header to null. To handle this, you need to include the literal string \"null\" in the CORS configuration's alloworigin list."
+    },
+    {
+      "id": "07-auth-065",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How do you deploy SAML configuration changes to an AEMaaCS environment?",
+      "heading": "Committing the OSGi configuration to Git and deploying it through a Full Stack Cloud Manager pipeline",
+      "body": "SAML configuration changes are code, not console clicks: OSGi configuration files are committed to the Cloud Manager Git branch (e.g. develop) and deployed using a Full Stack deployment pipeline, ensuring the settings are applied consistently across the environment.",
+      "narration": "How do you deploy SAML configuration changes to an AEMaaCS environment? Committing the OSGi configuration to Git and deploying it through a Full Stack Cloud Manager pipeline. SAML configuration changes are code, not console clicks: OSGi configuration files are committed to the Cloud Manager Git branch (e.g. develop) and deployed using a Full Stack deployment pipeline, ensuring the settings are applied consistently across the environment."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "path, idpCertAlias, idpIdentifier, idpUrl, serviceProviderEntityId, createUser, synchronizeAttributes, addGroupMemberships, defaultGroups",
+        "It's multi-site friendly — different SAML configurations can target different site trees via the path property",
+        "com.adobe.granite.auth.saml.SamlAuthenticationHandler~<name>.cfg.json under /ui.config/.../osgiconfig/config.publish/",
+        "If the IDP posts from a different origin than AEM Publish, its requests must be explicitly allowed",
+        "Because the IDP's POST to saml_login often comes from a different host/domain, requiring CORS to accept it",
+        "Include \"null\" in the alloworigin list, since local testing can produce a null Origin header",
+        "Committing the OSGi configuration to Git and deploying it through a Full Stack Cloud Manager pipeline"
+      ],
+      "narration": "Quick recap of SAML 2.0 — Configuration (Part 2 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

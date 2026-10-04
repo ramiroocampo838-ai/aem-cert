@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Introduction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Introduction",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Introduction. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-001",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What do templates define before this lesson turns to the components themselves?",
+      "heading": "Templates define where components can go",
+      "body": "The speech opens by saying that templates define where components can go, and the lesson then shifts to the internal structure and implementation of the components themselves.",
+      "narration": "What do templates define before this lesson turns to the components themselves? Templates define where components can go. The speech opens by saying that templates define where components can go, and the lesson then shifts to the internal structure and implementation of the components themselves."
+    },
+    {
+      "id": "02-comp-002",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is the main focus of this lesson after templates?",
+      "heading": "Looking inside components: their structure, extension, markup, logic, dialogs, and supporting services",
+      "body": "According to the introduction, the lesson looks inside components themselves: their structure, extension, HTL markup, Sling Model logic, dialogs, and the way OSGi services and servlets support them.",
+      "narration": "What is the main focus of this lesson after templates? Looking inside components: their structure, extension, markup, logic, dialogs, and supporting services. According to the introduction, the lesson looks inside components themselves: their structure, extension, HTL markup, Sling Model logic, dialogs, and the way OSGi services and servlets support them."
+    },
+    {
+      "id": "03-comp-003",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which exam section does this lesson primarily map to?",
+      "heading": "Section 2 of the exam: AEM Development",
+      "body": "The introduction explicitly states that the lesson maps to Section 2 of the exam: \"AEM Development.\"",
+      "narration": "Which exam section does this lesson primarily map to? Section 2 of the exam: AEM Development. The introduction explicitly states that the lesson maps to Section 2 of the exam: \"AEM Development.\""
+    },
+    {
+      "id": "04-comp-004",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which exam objective is explicitly called out in relation to proxy components?",
+      "heading": "2.1, identifying how to implement a proxy of a core component",
+      "body": "The speech specifically says the lesson maps to exam objective 2.1, identifying how to implement a proxy of a core component.",
+      "narration": "Which exam objective is explicitly called out in relation to proxy components? 2.1, identifying how to implement a proxy of a core component. The speech specifically says the lesson maps to exam objective 2.1, identifying how to implement a proxy of a core component."
+    },
+    {
+      "id": "05-comp-005",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which exam objective is explicitly called out for creating component functionality?",
+      "heading": "2.2, given a scenario, identifying how to create component functionality including HTL, models, and services",
+      "body": "The introduction says objective 2.2 covers scenario-based identification of how to create component functionality, including HTL, models, and services.",
+      "narration": "Which exam objective is explicitly called out for creating component functionality? 2.2, given a scenario, identifying how to create component functionality including HTL, models, and services. The introduction says objective 2.2 covers scenario-based identification of how to create component functionality, including HTL, models, and services."
+    },
+    {
+      "id": "06-comp-006",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Besides Section 2, what other exam section does the lesson touch through OSGi configurations?",
+      "heading": "Section 1, Configurations",
+      "body": "The speech says the lesson also touches Section 1, Configurations, specifically through OSGi configurations.",
+      "narration": "Besides Section 2, what other exam section does the lesson touch through OSGi configurations? Section 1, Configurations. The speech says the lesson also touches Section 1, Configurations, specifically through OSGi configurations."
+    },
+    {
+      "id": "07-comp-007",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How does the speech describe the exam style you should expect?",
+      "heading": "The exam is scenario-based and asks which file, property, annotation, or outcome applies",
+      "body": "The introduction says the exam is scenario-based and that you should expect questions such as which file to change, which property to set, which annotation to use, and what happens if you get it wrong.",
+      "narration": "How does the speech describe the exam style you should expect? The exam is scenario-based and asks which file, property, annotation, or outcome applies. The introduction says the exam is scenario-based and that you should expect questions such as which file to change, which property to set, which annotation to use, and what happens if you get it wrong."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Templates define where components can go",
+        "Looking inside components: their structure, extension, markup, logic, dialogs, and supporting services",
+        "Section 2 of the exam: AEM Development",
+        "2.1, identifying how to implement a proxy of a core component",
+        "2.2, given a scenario, identifying how to create component functionality including HTL, models, and services",
+        "Section 1, Configurations",
+        "The exam is scenario-based and asks which file, property, annotation, or outcome applies"
+      ],
+      "narration": "Quick recap of Introduction. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

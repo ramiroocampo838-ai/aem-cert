@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Logging Basics and OSGi Configuration",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Logging Basics and OSGi Configuration",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Logging Basics and OSGi Configuration. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-036",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is logging in AEM based on, and how is it configured?",
+      "heading": "Logging in AEM is based on Sling logging and is configured with OSGi configurations",
+      "body": "Section 6 says logging in AEM is based on Sling logging and configured with OSGi configurations.",
+      "narration": "What is logging in AEM based on, and how is it configured? Logging in AEM is based on Sling logging and is configured with OSGi configurations. Section 6 says logging in AEM is based on Sling logging and configured with OSGi configurations."
+    },
+    {
+      "id": "02-oak-037",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What three logging areas does the speech list?",
+      "heading": "Global parameters for the central logging service, request data logging, and settings for individual services",
+      "body": "Section 6 names three logging areas: global parameters, request data logging, and settings for individual services.",
+      "narration": "What three logging areas does the speech list? Global parameters for the central logging service, request data logging, and settings for individual services. Section 6 names three logging areas: global parameters, request data logging, and settings for individual services."
+    },
+    {
+      "id": "03-oak-038",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What does the Apache Sling Logging Configuration set on the root logger?",
+      "heading": "It configures the log level, the location of the central log file, the number of versions to keep, rotation by size or time interval, and the message format",
+      "body": "Section 6 says the Apache Sling Logging Configuration sets the root logger's level, file location, retained versions, rotation, and message format.",
+      "narration": "What does the Apache Sling Logging Configuration set on the root logger? It configures the log level, the location of the central log file, the number of versions to keep, rotation by size or time interval, and the message format. Section 6 says the Apache Sling Logging Configuration sets the root logger's level, file location, retained versions, rotation, and message format."
+    },
+    {
+      "id": "04-oak-039",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What three elements does AEM use for logging an individual service?",
+      "heading": "An OSGi service writes a message, a Logging Logger formats it, and a Logging Writer writes it to the physical file",
+      "body": "Section 6 describes three elements for service logging: the OSGi service, the Logging Logger, and the Logging Writer.",
+      "narration": "What three elements does AEM use for logging an individual service? An OSGi service writes a message, a Logging Logger formats it, and a Logging Writer writes it to the physical file. Section 6 describes three elements for service logging: the OSGi service, the Logging Logger, and the Logging Writer."
+    },
+    {
+      "id": "05-oak-040",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How are a Logger and a Writer linked, and what happens if there is no match?",
+      "heading": "The Log File parameter links them and the values must be identical; if there is no match, an implicit writer is created with default configuration and daily rotation",
+      "body": "Section 6 says the Log File parameter links Logger and Writer, the values must match, and otherwise an implicit default writer with daily rotation is created.",
+      "narration": "How are a Logger and a Writer linked, and what happens if there is no match? The Log File parameter links them and the values must be identical; if there is no match, an implicit writer is created with default configuration and daily rotation. Section 6 says the Log File parameter links Logger and Writer, the values must match, and otherwise an implicit default writer with daily rotation is created."
+    },
+    {
+      "id": "06-oak-041",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Why might you route one service's messages into a separate log file?",
+      "heading": "It helps during development when you need a higher log level for a single service",
+      "body": "Section 6 says separate service log files help during development, for example when only one service needs a higher log level.",
+      "narration": "Why might you route one service's messages into a separate log file? It helps during development when you need a higher log level for a single service. Section 6 says separate service log files help during development, for example when only one service needs a higher log level."
+    },
+    {
+      "id": "07-oak-042",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "On the AEM 6.5 side, which three main log files does the speech name?",
+      "heading": "error.log, request.log, and access.log",
+      "body": "Section 6 says the main AEM 6.5 files are error.log, request.log, and access.log.",
+      "narration": "On the AEM 6.5 side, which three main log files does the speech name? error.log, request.log, and access.log. Section 6 says the main AEM 6.5 files are error.log, request.log, and access.log."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Logging in AEM is based on Sling logging and is configured with OSGi configurations",
+        "Global parameters for the central logging service, request data logging, and settings for individual services",
+        "It configures the log level, the location of the central log file, the number of versions to keep, rotation by size or time interval, and the message format",
+        "An OSGi service writes a message, a Logging Logger formats it, and a Logging Writer writes it to the physical file",
+        "The Log File parameter links them and the values must be identical; if there is no match, an implicit writer is created with default configuration and daily rotation",
+        "It helps during development when you need a higher log level for a single service",
+        "error.log, request.log, and access.log"
+      ],
+      "narration": "Quick recap of Logging Basics and OSGi Configuration. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Repo Init & AEM Archetype",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Repo Init & AEM Archetype",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. Repo Init & AEM Archetype. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-089",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is Repo Init in AEM?",
+      "heading": "A mechanism that defines JCR structures (folders, users, groups, ACLs) as part of the application",
+      "body": "Repo Init is a mechanism in AEM that lets you define JCR structures — folder hierarchies, service users, groups, and ACL permissions — as part of the application. These definitions are scripts that run early in the deployment lifecycle.",
+      "narration": "What is Repo Init in AEM? A mechanism that defines JCR structures (folders, users, groups, ACLs) as part of the application. Repo Init is a mechanism in AEM that lets you define JCR structures — folder hierarchies, service users, groups, and ACL permissions — as part of the application. These definitions are scripts that run early in the deployment lifecycle."
+    },
+    {
+      "id": "02-env-090",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What types of JCR structures can Repo Init create?",
+      "heading": "Folder structures, service users, groups, and ACL permissions",
+      "body": "Repo Init scripts can create: folder structures (JCR node hierarchies), service users (system accounts for OSGi services), user groups, and ACL permissions (access control entries). This eliminates manual repository setup steps.",
+      "narration": "What types of JCR structures can Repo Init create? Folder structures, service users, groups, and ACL permissions. Repo Init scripts can create: folder structures (JCR node hierarchies), service users (system accounts for OSGi services), user groups, and ACL permissions (access control entries). This eliminates manual repository setup steps."
+    },
+    {
+      "id": "03-env-091",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "In which Maven module do Repo Init scripts live?",
+      "heading": "ui.config",
+      "body": "Repo Init scripts live in `ui.config`, the module that holds OSGi run mode configurations. Repo Init scripts are themselves delivered as OSGi configurations and are scoped by run mode.",
+      "narration": "In which Maven module do Repo Init scripts live? ui.config. Repo Init scripts live in `ui.config`, the module that holds OSGi run mode configurations. Repo Init scripts are themselves delivered as OSGi configurations and are scoped by run mode."
+    },
+    {
+      "id": "04-env-092",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "When do Repo Init scripts run during the AEM deployment lifecycle?",
+      "heading": "Early in the deployment lifecycle, before any application code runs",
+      "body": "Repo Init scripts run early in the deployment lifecycle, before application code (OSGi bundles and services) starts. This ensures the required JCR structures (service user accounts, folder hierarchies, ACLs) exist before the application needs them.",
+      "narration": "When do Repo Init scripts run during the AEM deployment lifecycle? Early in the deployment lifecycle, before any application code runs. Repo Init scripts run early in the deployment lifecycle, before application code (OSGi bundles and services) starts. This ensures the required JCR structures (service user accounts, folder hierarchies, ACLs) exist before the application needs them."
+    },
+    {
+      "id": "05-env-093",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What is the AEM Project Archetype?",
+      "heading": "A Maven archetype that generates a standard AEM project structure with best practices",
+      "body": "The AEM Project Archetype is a Maven archetype provided by Adobe. Running it generates a complete, correctly-structured AEM Maven project with all standard modules (`core`, `ui.apps`, `ui.content`, `ui.config`, `all`, `ui.frontend`, `dispatcher`, and test modules) pre-configured with best practices.",
+      "narration": "What is the AEM Project Archetype? A Maven archetype that generates a standard AEM project structure with best practices. The AEM Project Archetype is a Maven archetype provided by Adobe. Running it generates a complete, correctly-structured AEM Maven project with all standard modules (`core`, `ui.apps`, `ui.content`, `ui.config`, `all`, `ui.frontend`, `dispatcher`, and test modules) pre-configured with best practices."
+    },
+    {
+      "id": "06-env-094",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is the current version of the AEM Project Archetype mentioned in the certification content?",
+      "heading": "Version 56",
+      "body": "The AEM Project Archetype version referenced in the certification content is version 56. Adobe regularly updates the archetype — always use the latest version for new projects to get current best practices.",
+      "narration": "What is the current version of the AEM Project Archetype mentioned in the certification content? Version 56. The AEM Project Archetype version referenced in the certification content is version 56. Adobe regularly updates the archetype — always use the latest version for new projects to get current best practices."
+    },
+    {
+      "id": "07-env-095",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What modules does the AEM Archetype generate when you scaffold a new project?",
+      "heading": "all, core, ui.apps, ui.content, ui.config, ui.frontend, tests, and dispatcher configuration",
+      "body": "The AEM Archetype generates a complete project including: `all` (container), `core` (Java OSGi), `ui.apps` (code package), `ui.content` (content package), `ui.config` (OSGi configs + Repo Init), `ui.frontend` (front-end build), test modules, and Dispatcher configuration.",
+      "narration": "What modules does the AEM Archetype generate when you scaffold a new project? all, core, ui.apps, ui.content, ui.config, ui.frontend, tests, and dispatcher configuration. The AEM Archetype generates a complete project including: `all` (container), `core` (Java OSGi), `ui.apps` (code package), `ui.content` (content package), `ui.config` (OSGi configs + Repo Init), `ui.frontend` (front-end build), test modules, and Dispatcher configuration."
+    },
+    {
+      "id": "08-env-096",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does 'run mode scoping' mean for Repo Init scripts?",
+      "heading": "Repo Init scripts can be scoped to specific run modes so they only activate in the matching environment",
+      "body": "Repo Init scripts in `ui.config` can be placed in run mode-specific directories (e.g., `config.author/`, `config.publish/`, `config.prod/`). AEM activates only the scripts matching the current run mode — e.g., a script in `config.author/` only runs on Author instances.",
+      "narration": "What does 'run mode scoping' mean for Repo Init scripts? Repo Init scripts can be scoped to specific run modes so they only activate in the matching environment. Repo Init scripts in `ui.config` can be placed in run mode-specific directories (e.g., `config.author/`, `config.publish/`, `config.prod/`). AEM activates only the scripts matching the current run mode — e.g., a script in `config.author/` only runs on Author instances."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A mechanism that defines JCR structures (folders, users, groups, ACLs) as part of the application",
+        "Folder structures, service users, groups, and ACL permissions",
+        "ui.config",
+        "Early in the deployment lifecycle, before any application code runs",
+        "A Maven archetype that generates a standard AEM project structure with best practices",
+        "Version 56",
+        "all, core, ui.apps, ui.content, ui.config, ui.frontend, tests, and dispatcher configuration",
+        "Repo Init scripts can be scoped to specific run modes so they only activate in the matching environment"
+      ],
+      "narration": "Quick recap of Repo Init & AEM Archetype. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

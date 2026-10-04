@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Dispatcher in Cloud Service",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Dispatcher in Cloud Service",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Dispatcher in Cloud Service. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-073",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What do the Dispatcher Tools in the AEM as a Cloud Service SDK provide?",
+      "heading": "They provide a vanilla project file structure, validation tooling, and a Docker image for local Dispatcher",
+      "body": "The speech says the Dispatcher Tools are part of the Cloud Service SDK and provide a vanilla file structure, tooling to validate supported directives and syntax, and a Docker image that runs Dispatcher locally.",
+      "narration": "What do the Dispatcher Tools in the AEM as a Cloud Service SDK provide? They provide a vanilla project file structure, validation tooling, and a Docker image for local Dispatcher. The speech says the Dispatcher Tools are part of the Cloud Service SDK and provide a vanilla file structure, tooling to validate supported directives and syntax, and a Docker image that runs Dispatcher locally."
+    },
+    {
+      "id": "02-disp-074",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which Dispatcher mode is recommended in AEM as a Cloud Service, and how is it activated?",
+      "heading": "Flexible mode is recommended and is activated by the file opt-in/USE_SOURCES_DIRECTLY",
+      "body": "The source says flexible mode is recommended, is the default for archetype 28 and higher, and is activated by the file opt-in/USE_SOURCES_DIRECTLY.",
+      "narration": "Which Dispatcher mode is recommended in AEM as a Cloud Service, and how is it activated? Flexible mode is recommended and is activated by the file opt-in/USE_SOURCES_DIRECTLY. The source says flexible mode is recommended, is the default for archetype 28 and higher, and is activated by the file opt-in/USE_SOURCES_DIRECTLY."
+    },
+    {
+      "id": "03-disp-075",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What limitation applied in legacy mode that flexible mode removes?",
+      "heading": "Legacy mode required a single rewrite.rules file",
+      "body": "The speech states that legacy mode required a single rewrite.rules file, while flexible mode removes that limit.",
+      "narration": "What limitation applied in legacy mode that flexible mode removes? Legacy mode required a single rewrite.rules file. The speech states that legacy mode required a single rewrite.rules file, while flexible mode removes that limit."
+    },
+    {
+      "id": "04-disp-076",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the main difference between conf.d and conf.dispatcher.d in a Cloud Service Dispatcher project?",
+      "heading": "conf.d holds Apache configuration, while conf.dispatcher.d holds Dispatcher configuration",
+      "body": "The speech says the project Dispatcher folder has two main subfolders: conf.d for Apache configuration and conf.dispatcher.d for Dispatcher configuration.",
+      "narration": "What is the main difference between conf.d and conf.dispatcher.d in a Cloud Service Dispatcher project? conf.d holds Apache configuration, while conf.dispatcher.d holds Dispatcher configuration. The speech says the project Dispatcher folder has two main subfolders: conf.d for Apache configuration and conf.dispatcher.d for Dispatcher configuration."
+    },
+    {
+      "id": "05-disp-077",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How should a virtual host or farm be enabled in Cloud Service Dispatcher configuration?",
+      "heading": "Create it in the available folder and enable it with a relative symbolic link in the enabled folder",
+      "body": "The source says a virtual host or farm is created in the available folder and enabled by a relative symbolic link in the enabled folder, and specifically warns not to copy default.vhost directly into enabled_vhosts.",
+      "narration": "How should a virtual host or farm be enabled in Cloud Service Dispatcher configuration? Create it in the available folder and enable it with a relative symbolic link in the enabled folder. The source says a virtual host or farm is created in the available folder and enabled by a relative symbolic link in the enabled folder, and specifically warns not to copy default.vhost directly into enabled_vhosts."
+    },
+    {
+      "id": "06-disp-078",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which aliases must at least one virtual host match so Dispatcher invalidation works in Cloud Service local setups?",
+      "heading": "At least one virtual host must match *.local, localhost, and 127.0.0.1",
+      "body": "The speech says at least one virtual host must match the ServerAlias values *.local, localhost, and 127.0.0.1 because they are needed for Dispatcher invalidation.",
+      "narration": "Which aliases must at least one virtual host match so Dispatcher invalidation works in Cloud Service local setups? At least one virtual host must match *.local, localhost, and 127.0.0.1. The speech says at least one virtual host must match the ServerAlias values *.local, localhost, and 127.0.0.1 because they are needed for Dispatcher invalidation."
+    },
+    {
+      "id": "07-disp-079",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why are the aliases *.adobeaemcloud.net and *.adobeaemcloud.com also required in Cloud Service?",
+      "heading": "Those aliases are required for internal Adobe processes",
+      "body": "The source says the aliases *.adobeaemcloud.net and *.adobeaemcloud.com are also required, for internal Adobe processes.",
+      "narration": "Why are the aliases *.adobeaemcloud.net and *.adobeaemcloud.com also required in Cloud Service? Those aliases are required for internal Adobe processes. The source says the aliases *.adobeaemcloud.net and *.adobeaemcloud.com are also required, for internal Adobe processes."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "They provide a vanilla project file structure, validation tooling, and a Docker image for local Dispatcher",
+        "Flexible mode is recommended and is activated by the file opt-in/USE_SOURCES_DIRECTLY",
+        "Legacy mode required a single rewrite.rules file",
+        "conf.d holds Apache configuration, while conf.dispatcher.d holds Dispatcher configuration",
+        "Create it in the available folder and enable it with a relative symbolic link in the enabled folder",
+        "At least one virtual host must match *.local, localhost, and 127.0.0.1",
+        "Those aliases are required for internal Adobe processes"
+      ],
+      "narration": "Quick recap of Dispatcher in Cloud Service. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

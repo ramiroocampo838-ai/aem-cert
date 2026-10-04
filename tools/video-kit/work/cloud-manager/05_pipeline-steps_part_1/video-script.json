@@ -1,0 +1,91 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Pipeline Steps (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Pipeline Steps (Part 1 of 2)",
+      "sub": "Cloud Manager · 6 key concepts",
+      "narration": "Cloud Manager. Pipeline Steps (Part 1 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-057",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "What is the order of steps in a standard Cloud Manager Production Pipeline?",
+      "heading": "Build → Code Quality → Deploy to Stage → Testing → Go Live Approval → Deploy to Production",
+      "body": "A standard Cloud Manager Production Pipeline follows: (1) Build — Maven compile, unit tests, packaging; (2) Code Quality — SonarQube analysis; (3) Deploy to Stage — deploy artifact to Stage; (4) Testing — product functional, custom functional, UI, and/or performance tests on Stage; (5) Go Live Approval — manual gate; (6) Deploy to Production — Blue/Green deployment.",
+      "narration": "What is the order of steps in a standard Cloud Manager Production Pipeline? Build → Code Quality → Deploy to Stage → Testing → Go Live Approval → Deploy to Production. A standard Cloud Manager Production Pipeline follows: (1) Build — Maven compile, unit tests, packaging; (2) Code Quality — SonarQube analysis; (3) Deploy to Stage — deploy artifact to Stage; (4) Testing — product functional, custom functional, UI, and/or performance tests on Stage; (5) Go Live Approval — manual gate; (6) Deploy to Production — Blue/Green deployment."
+    },
+    {
+      "id": "02-cm-058",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "What testing types can be configured in Cloud Manager pipeline test steps?",
+      "heading": "Product Functional Tests, Custom Functional Tests, Custom UI Tests, and Performance Tests",
+      "body": "Cloud Manager supports four categories of post-deployment testing: (1) Product Functional Tests — Adobe-provided tests for core AEM features; (2) Custom Functional Tests — customer-written HTTP tests in Docker; (3) Custom UI Tests — browser automation (Selenium, Cypress, Playwright) in Docker; (4) Performance Tests — load simulation against Stage.",
+      "narration": "What testing types can be configured in Cloud Manager pipeline test steps? Product Functional Tests, Custom Functional Tests, Custom UI Tests, and Performance Tests. Cloud Manager supports four categories of post-deployment testing: (1) Product Functional Tests — Adobe-provided tests for core AEM features; (2) Custom Functional Tests — customer-written HTTP tests in Docker; (3) Custom UI Tests — browser automation (Selenium, Cypress, Playwright) in Docker; (4) Performance Tests — load simulation against Stage."
+    },
+    {
+      "id": "03-cm-059",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "What does Cloud Manager's Performance Testing step measure?",
+      "heading": "Page response times, error rates, CPU usage, bandwidth, and page views per minute under simulated load on Stage",
+      "body": "Cloud Manager's Performance Testing step simulates real user traffic against the Stage environment. It measures: average and 95th-percentile page response time, peak page views per minute, error rate (%), CPU utilization spike, and bandwidth consumption. Results are compared against KPI thresholds set by the Business Owner, and failures can block the pipeline.",
+      "narration": "What does Cloud Manager's Performance Testing step measure? Page response times, error rates, CPU usage, bandwidth, and page views per minute under simulated load on Stage. Cloud Manager's Performance Testing step simulates real user traffic against the Stage environment. It measures: average and 95th-percentile page response time, peak page views per minute, error rate (%), CPU utilization spike, and bandwidth consumption. Results are compared against KPI thresholds set by the Business Owner, and failures can block the pipeline."
+    },
+    {
+      "id": "04-cm-060",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "What is a 'Custom Functional Test' in a Cloud Manager pipeline?",
+      "heading": "Customer-written HTTP/REST tests packaged in a Docker image that run against the deployed AEM environment after deployment",
+      "body": "Custom Functional Tests are post-deployment test suites written by the customer's team. They are packaged as Docker images and executed by Cloud Manager against the deployed Stage environment. They typically use HTTP testing libraries (e.g., REST Assured, Apache HttpClient) to call AEM APIs and page endpoints, validating application-specific behavior beyond what Adobe's product tests cover.",
+      "narration": "What is a 'Custom Functional Test' in a Cloud Manager pipeline? Customer-written HTTP/REST tests packaged in a Docker image that run against the deployed AEM environment after deployment. Custom Functional Tests are post-deployment test suites written by the customer's team. They are packaged as Docker images and executed by Cloud Manager against the deployed Stage environment. They typically use HTTP testing libraries (e.g., REST Assured, Apache HttpClient) to call AEM APIs and page endpoints, validating application-specific behavior beyond what Adobe's product tests cover."
+    },
+    {
+      "id": "05-cm-061",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What testing frameworks do Cloud Manager Custom UI Tests support?",
+      "heading": "Any browser-automated test framework runnable in a Docker container, commonly Selenium WebDriver or Cypress",
+      "body": "Cloud Manager Custom UI Tests are framework-agnostic — they are packaged as Docker images and can use any browser automation framework inside the container: Selenium WebDriver, Cypress, Playwright, WebdriverIO, or others. Cloud Manager provides the Selenium Grid for browser execution. The customer's Docker image runs its tests against the deployed Stage AEM environment.",
+      "narration": "What testing frameworks do Cloud Manager Custom UI Tests support? Any browser-automated test framework runnable in a Docker container, commonly Selenium WebDriver or Cypress. Cloud Manager Custom UI Tests are framework-agnostic — they are packaged as Docker images and can use any browser automation framework inside the container: Selenium WebDriver, Cypress, Playwright, WebdriverIO, or others. Cloud Manager provides the Selenium Grid for browser execution. The customer's Docker image runs its tests against the deployed Stage AEM environment."
+    },
+    {
+      "id": "06-cm-062",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What is the 'Product Functional Test' step in Cloud Manager?",
+      "heading": "A mandatory test step where Adobe runs its own functional test suite against the deployed AEM environment to verify core functionality",
+      "body": "Product Functional Tests are a suite of automated tests developed and maintained by Adobe. They run automatically on the deployed Stage environment, verifying that core AEM product features (page authoring, asset management, workflows) function correctly after the customer's code is deployed. These tests protect against regressions in fundamental AEM capabilities.",
+      "narration": "What is the 'Product Functional Test' step in Cloud Manager? A mandatory test step where Adobe runs its own functional test suite against the deployed AEM environment to verify core functionality. Product Functional Tests are a suite of automated tests developed and maintained by Adobe. They run automatically on the deployed Stage environment, verifying that core AEM product features (page authoring, asset management, workflows) function correctly after the customer's code is deployed. These tests protect against regressions in fundamental AEM capabilities."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Build → Code Quality → Deploy to Stage → Testing → Go Live Approval → Deploy to Production",
+        "Product Functional Tests, Custom Functional Tests, Custom UI Tests, and Performance Tests",
+        "Page response times, error rates, CPU usage, bandwidth, and page views per minute under simulated load on Stage",
+        "Customer-written HTTP/REST tests packaged in a Docker image that run against the deployed AEM environment after deployment",
+        "Any browser-automated test framework runnable in a Docker container, commonly Selenium WebDriver or Cypress",
+        "A mandatory test step where Adobe runs its own functional test suite against the deployed AEM environment to verify core functionality"
+      ],
+      "narration": "Quick recap of Pipeline Steps (Part 1 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

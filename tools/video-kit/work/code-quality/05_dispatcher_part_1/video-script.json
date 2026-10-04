@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "Dispatcher (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Dispatcher (Part 1 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. Dispatcher (Part 1 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-071",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "DISP-001 (Severity: Critical) states that the Dispatcher must always validate incoming HTTP requests before forwarding them to AEM Publishers. Which two validations are most critical?",
+      "heading": "Validate URL path characters (no ../ traversal sequences) and enforce HTTP method allowlisting (only GET/POST for content)",
+      "body": "DISP-001 (Critical): The Dispatcher is AEM's first security boundary. Two critical validations: (1) Path traversal prevention — reject requests where the URL contains /../, /./, or percent-encoded equivalents that could reach files outside the webroot. (2) Method allowlisting — only permit GET and POST for public traffic; any other verb (DELETE, PUT, TRACE, CONNECT) should return 405 Method Not Allowed unless specifically required.",
+      "narration": "DISP-001 (Severity: Critical) states that the Dispatcher must always validate incoming HTTP requests before forwarding them to AEM Publishers. Which two validations are most critical? Validate URL path characters (no ../ traversal sequences) and enforce HTTP method allowlisting (only GET/POST for content). DISP-001 (Critical): The Dispatcher is AEM's first security boundary. Two critical validations: (1) Path traversal prevention — reject requests where the URL contains /../, /./, or percent-encoded equivalents that could reach files outside the webroot. (2) Method allowlisting — only permit GET and POST for public traffic; any other verb (DELETE, PUT, TRACE, CONNECT) should return 405 Method Not Allowed unless specifically required."
+    },
+    {
+      "id": "02-cq-072",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "DISP-002 requires configuring Dispatcher cache invalidation to use only the /invalidate request from AEM Publisher, not direct cache file deletion. Why?",
+      "heading": "The /invalidate request uses stat file touch-based invalidation that is atomic and handles cluster sync — direct file deletion is not cluster-aware",
+      "body": "DISP-002: Dispatcher uses a stat file (.stat) based invalidation model. When AEM Publisher sends a flush request to /dispatcher/invalidate.cache, the Dispatcher touches the .stat file in the invalidation path hierarchy. On the next request for any cached file under that path, the Dispatcher compares the file's modification time against the .stat file — if .stat is newer, the cache entry is stale. Direct file deletion bypasses this mechanism and doesn't propagate to other Dispatcher instances.",
+      "narration": "DISP-002 requires configuring Dispatcher cache invalidation to use only the /invalidate request from AEM Publisher, not direct cache file deletion. Why? The /invalidate request uses stat file touch-based invalidation that is atomic and handles cluster sync — direct file deletion is not cluster-aware. DISP-002: Dispatcher uses a stat file (.stat) based invalidation model. When AEM Publisher sends a flush request to /dispatcher/invalidate.cache, the Dispatcher touches the .stat file in the invalidation path hierarchy. On the next request for any cached file under that path, the Dispatcher compares the file's modification time against the .stat file — if .stat is newer, the cache entry is stale. Direct file deletion bypasses this mechanism and doesn't propagate to other Dispatcher instances."
+    },
+    {
+      "id": "03-cq-073",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "DISP-003 (Severity: Critical) requires that the AEM Author instance never be accessible through the Dispatcher to end users. Why?",
+      "heading": "Author exposes CRXDE Lite, Felix Web Console, and unrestricted JCR traversal — routing it through Dispatcher for public access is a severe security breach",
+      "body": "DISP-003 (Critical): AEM Author (typically port 4502) contains privileged tools that must never be publicly accessible: CRXDE Lite (full JCR read/write), Package Manager (arbitrary code deployment), Felix Web Console (OSGi bundle management), QueryBuilder/SQL2 endpoints (arbitrary repository traversal), and all administrative Sling servlets. Author should only be reachable from trusted network ranges (VPN, office IP). Publisher instances (4503) serve public traffic through the Dispatcher.",
+      "narration": "DISP-003 (Severity: Critical) requires that the AEM Author instance never be accessible through the Dispatcher to end users. Why? Author exposes CRXDE Lite, Felix Web Console, and unrestricted JCR traversal — routing it through Dispatcher for public access is a severe security breach. DISP-003 (Critical): AEM Author (typically port 4502) contains privileged tools that must never be publicly accessible: CRXDE Lite (full JCR read/write), Package Manager (arbitrary code deployment), Felix Web Console (OSGi bundle management), QueryBuilder/SQL2 endpoints (arbitrary repository traversal), and all administrative Sling servlets. Author should only be reachable from trusted network ranges (VPN, office IP). Publisher instances (4503) serve public traffic through the Dispatcher."
+    },
+    {
+      "id": "04-cq-074",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Which Dispatcher configuration controls which client IP addresses or hostnames are allowed to send invalidation flush requests to /dispatcher/invalidate.cache?",
+      "heading": "/allowedClients in /cache — restricts which IPs can send cache invalidation requests to the Dispatcher",
+      "body": "Dispatcher Security: /allowedClients in the /cache block restricts which IP addresses can send cache flush/invalidation requests to /dispatcher/invalidate.cache. Only AEM Publisher IPs should be whitelisted. Without this, any server that can reach the Dispatcher can flush the entire cache — a significant availability attack vector (DoS by repeated cache invalidation).",
+      "narration": "Which Dispatcher configuration controls which client IP addresses or hostnames are allowed to send invalidation flush requests to /dispatcher/invalidate.cache? /allowedClients in /cache — restricts which IPs can send cache invalidation requests to the Dispatcher. Dispatcher Security: /allowedClients in the /cache block restricts which IP addresses can send cache flush/invalidation requests to /dispatcher/invalidate.cache. Only AEM Publisher IPs should be whitelisted. Without this, any server that can reach the Dispatcher can flush the entire cache — a significant availability attack vector (DoS by repeated cache invalidation)."
+    },
+    {
+      "id": "05-cq-075",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "DISP-004 requires that the Dispatcher's /filter rules block access to AEM's sling.get.json traversal endpoint. What path pattern should be denied?",
+      "heading": "Deny all requests matching /*.json or /*.infinity.json — these expose the entire JCR tree as JSON",
+      "body": "DISP-004 (Critical): AEM's Sling GET servlet exposes any JCR node as JSON by appending .json (or .infinity.json for the full subtree). The URL '/content/mysite.infinity.json' returns the entire content tree as JSON, exposing user data, configuration, and potentially credentials. The Dispatcher must block these patterns: deny URLs matching '/*.infinity.json', '/*.4.2.1.json', '/*.tidy.json', and '/*.json' unless specifically required for API endpoints.",
+      "narration": "DISP-004 requires that the Dispatcher's /filter rules block access to AEM's sling.get.json traversal endpoint. What path pattern should be denied? Deny all requests matching /*.json or /*.infinity.json — these expose the entire JCR tree as JSON. DISP-004 (Critical): AEM's Sling GET servlet exposes any JCR node as JSON by appending .json (or .infinity.json for the full subtree). The URL '/content/mysite.infinity.json' returns the entire content tree as JSON, exposing user data, configuration, and potentially credentials. The Dispatcher must block these patterns: deny URLs matching '/*.infinity.json', '/*.4.2.1.json', '/*.tidy.json', and '/*.json' unless specifically required for API endpoints."
+    },
+    {
+      "id": "06-cq-076",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What does DISP-005 require regarding Dispatcher security headers, and specifically which header prevents browsers from loading the cached page in an iframe on an untrusted origin?",
+      "heading": "X-Frame-Options header — set to SAMEORIGIN or DENY to prevent clickjacking attacks",
+      "body": "DISP-005 (Major): Security response headers must be injected by the Dispatcher to be included in all cached responses. X-Frame-Options prevents clickjacking — the attack where a malicious page embeds a target site in an invisible iframe and tricks users into clicking on its elements. SAMEORIGIN allows framing by pages on the same origin; DENY blocks all framing. Modern alternative: Content-Security-Policy: frame-ancestors 'self' which allows more granular control.",
+      "narration": "What does DISP-005 require regarding Dispatcher security headers, and specifically which header prevents browsers from loading the cached page in an iframe on an untrusted origin? X-Frame-Options header — set to SAMEORIGIN or DENY to prevent clickjacking attacks. DISP-005 (Major): Security response headers must be injected by the Dispatcher to be included in all cached responses. X-Frame-Options prevents clickjacking — the attack where a malicious page embeds a target site in an invisible iframe and tricks users into clicking on its elements. SAMEORIGIN allows framing by pages on the same origin; DENY blocks all framing. Modern alternative: Content-Security-Policy: frame-ancestors 'self' which allows more granular control."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Validate URL path characters (no ../ traversal sequences) and enforce HTTP method allowlisting (only GET/POST for content)",
+        "The /invalidate request uses stat file touch-based invalidation that is atomic and handles cluster sync — direct file deletion is not cluster-aware",
+        "Author exposes CRXDE Lite, Felix Web Console, and unrestricted JCR traversal — routing it through Dispatcher for public access is a severe security breach",
+        "/allowedClients in /cache — restricts which IPs can send cache invalidation requests to the Dispatcher",
+        "Deny all requests matching /*.json or /*.infinity.json — these expose the entire JCR tree as JSON",
+        "X-Frame-Options header — set to SAMEORIGIN or DENY to prevent clickjacking attacks"
+      ],
+      "narration": "Quick recap of Dispatcher (Part 1 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

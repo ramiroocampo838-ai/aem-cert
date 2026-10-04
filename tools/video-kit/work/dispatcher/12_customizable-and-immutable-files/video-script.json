@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Customizable and Immutable Files",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Customizable and Immutable Files",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Customizable and Immutable Files. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-080",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the key difference between customizable and immutable Dispatcher files in Cloud Service?",
+      "heading": "Customizable files are deployed to Cloud, while immutable files are part of the base framework and local edits to them are ignored",
+      "body": "The speech says customizable files are transferred to the Cloud environment on deployment, while immutable files are part of the base framework and modifying them locally has no effect.",
+      "narration": "What is the key difference between customizable and immutable Dispatcher files in Cloud Service? Customizable files are deployed to Cloud, while immutable files are part of the base framework and local edits to them are ignored. The speech says customizable files are transferred to the Cloud environment on deployment, while immutable files are part of the base framework and modifying them locally has no effect."
+    },
+    {
+      "id": "02-disp-081",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which file can be used to change the Dispatcher and rewrite log level in Cloud Service?",
+      "heading": "global.vars is where you can change the Dispatcher and rewrite log level",
+      "body": "The source says that in global.vars you can change the Dispatcher and rewrite log level.",
+      "narration": "Which file can be used to change the Dispatcher and rewrite log level in Cloud Service? global.vars is where you can change the Dispatcher and rewrite log level. The source says that in global.vars you can change the Dispatcher and rewrite log level."
+    },
+    {
+      "id": "03-disp-082",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What happens to local modifications of immutable Dispatcher files when deploying to AEM as a Cloud Service?",
+      "heading": "They have no effect because the latest immutable framework version is used on deployment",
+      "body": "The speech states that immutable files are part of the base framework, modifying them locally has no effect, and the latest version is always used on deployment.",
+      "narration": "What happens to local modifications of immutable Dispatcher files when deploying to AEM as a Cloud Service? They have no effect because the latest immutable framework version is used on deployment. The speech states that immutable files are part of the base framework, modifying them locally has no effect, and the latest version is always used on deployment."
+    },
+    {
+      "id": "04-disp-083",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which file must every farm include in its /renders section?",
+      "heading": "Every farm must include default_renders.any in /renders",
+      "body": "The speech explicitly says every farm must include default_renders.any in its /renders section.",
+      "narration": "Which file must every farm include in its /renders section? Every farm must include default_renders.any in /renders. The speech explicitly says every farm must include default_renders.any in its /renders section."
+    },
+    {
+      "id": "05-disp-084",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which file must every farm include in the /allowedClients section of /cache?",
+      "heading": "Every farm must include default_invalidate.any in /cache /allowedClients",
+      "body": "The source says every farm must include default_invalidate.any in the /allowedClients section of /cache.",
+      "narration": "Which file must every farm include in the /allowedClients section of /cache? Every farm must include default_invalidate.any in /cache /allowedClients. The source says every farm must include default_invalidate.any in the /allowedClients section of /cache."
+    },
+    {
+      "id": "06-disp-085",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Where are your own include files allowed in Cloud Service Dispatcher configuration, and what naming rule applies?",
+      "heading": "Custom includes are allowed only in /clientheaders, /filters, /cache /rules, and /virtualhosts, using the names clientheaders.any, filters.any, rules.any, or virtualhosts.any",
+      "body": "The speech says customer files may be included only in /clientheaders, /filters, /rules in /cache, and /virtualhosts, and they must be named clientheaders.any, filters.any, rules.any, and virtualhosts.any, or the default_ version.",
+      "narration": "Where are your own include files allowed in Cloud Service Dispatcher configuration, and what naming rule applies? Custom includes are allowed only in /clientheaders, /filters, /cache /rules, and /virtualhosts, using the names clientheaders.any, filters.any, rules.any, or virtualhosts.any. The speech says customer files may be included only in /clientheaders, /filters, /rules in /cache, and /virtualhosts, and they must be named clientheaders.any, filters.any, rules.any, and virtualhosts.any, or the default_ version."
+    },
+    {
+      "id": "07-disp-086",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why should default_virtualhosts.any not be included in a custom Cloud Service configuration?",
+      "heading": "Do not include default_virtualhosts.any because it matches every incoming request",
+      "body": "The source says not to include default_virtualhosts.any in a customization because it matches every incoming request.",
+      "narration": "Why should default_virtualhosts.any not be included in a custom Cloud Service configuration? Do not include default_virtualhosts.any because it matches every incoming request. The source says not to include default_virtualhosts.any in a customization because it matches every incoming request."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Customizable files are deployed to Cloud, while immutable files are part of the base framework and local edits to them are ignored",
+        "global.vars is where you can change the Dispatcher and rewrite log level",
+        "They have no effect because the latest immutable framework version is used on deployment",
+        "Every farm must include default_renders.any in /renders",
+        "Every farm must include default_invalidate.any in /cache /allowedClients",
+        "Custom includes are allowed only in /clientheaders, /filters, /cache /rules, and /virtualhosts, using the names clientheaders.any, filters.any, rules.any, or virtualhosts.any",
+        "Do not include default_virtualhosts.any because it matches every incoming request"
+      ],
+      "narration": "Quick recap of Customizable and Immutable Files. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

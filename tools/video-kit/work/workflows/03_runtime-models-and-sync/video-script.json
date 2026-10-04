@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Runtime Models and Sync",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Runtime Models and Sync",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Runtime Models and Sync. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-015",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "How are workflow models described with respect to versioning?",
+      "heading": "Workflow models are versioned",
+      "body": "Section 3 opens by stating that workflow models are versioned.",
+      "narration": "How are workflow models described with respect to versioning? Workflow models are versioned. Section 3 opens by stating that workflow models are versioned."
+    },
+    {
+      "id": "02-wf-016",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which runtime model does a running workflow instance use?",
+      "heading": "A running instance uses the runtime model that existed when the instance started",
+      "body": "The speech says that when a workflow instance runs, it uses the runtime model that was available when that instance started.",
+      "narration": "Which runtime model does a running workflow instance use? A running instance uses the runtime model that existed when the instance started. The speech says that when a workflow instance runs, it uses the runtime model that was available when that instance started."
+    },
+    {
+      "id": "03-wf-017",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What action generates a runtime model in the workflow model editor?",
+      "heading": "Triggering Sync generates the runtime model",
+      "body": "Section 3 explicitly says that a runtime model is generated when you trigger Sync in the workflow model editor.",
+      "narration": "What action generates a runtime model in the workflow model editor? Triggering Sync generates the runtime model. Section 3 explicitly says that a runtime model is generated when you trigger Sync in the workflow model editor."
+    },
+    {
+      "id": "04-wf-018",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "A developer edits a workflow model but does not trigger Sync. What is the result?",
+      "heading": "Neither running instances nor new instances reflect the change until a new runtime model is synced",
+      "body": "The speech says that if you edit a model but do not Sync, running instances and new instances do not reflect the change.",
+      "narration": "A developer edits a workflow model but does not trigger Sync. What is the result? Neither running instances nor new instances reflect the change until a new runtime model is synced. The speech says that if you edit a model but do not Sync, running instances and new instances do not reflect the change."
+    },
+    {
+      "id": "05-wf-019",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What happens if a runtime model is generated after a workflow instance has already started?",
+      "heading": "That later runtime model is not applied to the instance that already started",
+      "body": "Section 3 says edits made, or runtime models generated, after an instance has started are not applied to that instance.",
+      "narration": "What happens if a runtime model is generated after a workflow instance has already started? That later runtime model is not applied to the instance that already started. Section 3 says edits made, or runtime models generated, after an instance has started are not applied to that instance."
+    },
+    {
+      "id": "06-wf-020",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the exception to the rule that started instances do not pick up later changes?",
+      "heading": "Changes to the underlying ECMA scripts are picked up",
+      "body": "The speech gives one exception: the underlying ECMA scripts are held only once, so changes to them are picked up.",
+      "narration": "What is the exception to the rule that started instances do not pick up later changes? Changes to the underlying ECMA scripts are picked up. The speech gives one exception: the underlying ECMA scripts are held only once, so changes to them are picked up."
+    },
+    {
+      "id": "07-wf-021",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What does the Legacy workflow type indicate in the console?",
+      "heading": "Legacy workflows were created in a prior version of AEM",
+      "body": "Section 3 says the console types are Default, Custom, and Legacy, and that Legacy workflows were created in a prior version of AEM.",
+      "narration": "What does the Legacy workflow type indicate in the console? Legacy workflows were created in a prior version of AEM. Section 3 says the console types are Default, Custom, and Legacy, and that Legacy workflows were created in a prior version of AEM."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Workflow models are versioned",
+        "A running instance uses the runtime model that existed when the instance started",
+        "Triggering Sync generates the runtime model",
+        "Neither running instances nor new instances reflect the change until a new runtime model is synced",
+        "That later runtime model is not applied to the instance that already started",
+        "Changes to the underlying ECMA scripts are picked up",
+        "Legacy workflows were created in a prior version of AEM"
+      ],
+      "narration": "Quick recap of Runtime Models and Sync. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

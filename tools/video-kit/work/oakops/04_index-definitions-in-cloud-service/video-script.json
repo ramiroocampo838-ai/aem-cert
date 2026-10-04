@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Index Definitions in Cloud Service",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Index Definitions in Cloud Service",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Index Definitions in Cloud Service. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-022",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "How does the Cloud Service model change index configuration compared with single-instance thinking?",
+      "heading": "In Cloud Service, index configuration is specified before deployment and not changed on a running instance",
+      "body": "Section 4 says index configuration in Cloud Service is specified before a deployment, not changed on a running instance.",
+      "narration": "How does the Cloud Service model change index configuration compared with single-instance thinking? In Cloud Service, index configuration is specified before deployment and not changed on a running instance. Section 4 says index configuration in Cloud Service is specified before a deployment, not changed on a running instance."
+    },
+    {
+      "id": "02-oak-023",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What does the speech say about user access to the Index Manager in Cloud Service?",
+      "heading": "Users do not have access to the Index Manager of a single instance in the cloud",
+      "body": "Section 4 says users do not have access to the Index Manager of a single instance in Cloud Service.",
+      "narration": "What does the speech say about user access to the Index Manager in Cloud Service? Users do not have access to the Index Manager of a single instance in the cloud. Section 4 says users do not have access to the Index Manager of a single instance in Cloud Service."
+    },
+    {
+      "id": "03-oak-024",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What happens to indexes during a rolling deployment, and where can you see job completion?",
+      "heading": "Two sets of indexes exist, one for the old version and one for the new version, and the Cloud Manager build page shows whether indexing is complete",
+      "body": "Section 4 says that rolling deployments use two index sets and that the Cloud Manager build page shows whether the indexing job is complete.",
+      "narration": "What happens to indexes during a rolling deployment, and where can you see job completion? Two sets of indexes exist, one for the old version and one for the new version, and the Cloud Manager build page shows whether indexing is complete. Section 4 says that rolling deployments use two index sets and that the Cloud Manager build page shows whether the indexing job is complete."
+    },
+    {
+      "id": "04-oak-025",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which index type is supported for customer customization in Cloud Service?",
+      "heading": "Only indexes of type lucene are supported for customization",
+      "body": "Section 4 states that only indexes of type lucene are supported for customization in Cloud Service.",
+      "narration": "Which index type is supported for customer customization in Cloud Service? Only indexes of type lucene are supported for customization. Section 4 states that only indexes of type lucene are supported for customization in Cloud Service."
+    },
+    {
+      "id": "05-oak-026",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which async values are allowed for customized Cloud Service indexes?",
+      "heading": "The async property can be async, async and nrt, or fulltext-async",
+      "body": "Section 4 names the allowed async values: async, async and nrt, or fulltext-async.",
+      "narration": "Which async values are allowed for customized Cloud Service indexes? The async property can be async, async and nrt, or fulltext-async. Section 4 names the allowed async values: async, async and nrt, or fulltext-async."
+    },
+    {
+      "id": "06-oak-027",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which two customization limitations does the speech call out about analyzers and similarity?",
+      "heading": "Only standard product analyzers are supported, so custom analyzers are not, and useInSimilarity is not supported",
+      "body": "Section 4 says only standard shipped analyzers are supported, not custom analyzers, and useInSimilarity is not supported.",
+      "narration": "Which two customization limitations does the speech call out about analyzers and similarity? Only standard product analyzers are supported, so custom analyzers are not, and useInSimilarity is not supported. Section 4 says only standard shipped analyzers are supported, not custom analyzers, and useInSimilarity is not supported."
+    },
+    {
+      "id": "07-oak-028",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which project setup steps does the speech require for Cloud Service index definitions?",
+      "heading": "Use filevault-package-maven-plugin 1.3.2 or later, add oak:index to immutableRootNodeNames, enable allowIndexDefinitions and noIntermediateSaves in ui.apps and ui.apps.structure, and add a filter for /oak:index in ui.apps.structure",
+      "body": "Section 4 lists these setup requirements directly, including filevault-package-maven-plugin 1.3.2+, immutableRootNodeNames, allowIndexDefinitions, noIntermediateSaves, and the /oak:index filter.",
+      "narration": "Which project setup steps does the speech require for Cloud Service index definitions? Use filevault-package-maven-plugin 1.3.2 or later, add oak:index to immutableRootNodeNames, enable allowIndexDefinitions and noIntermediateSaves in ui.apps and ui.apps.structure, and add a filter for /oak:index in ui.apps.structure. Section 4 lists these setup requirements directly, including filevault-package-maven-plugin 1.3.2+, immutableRootNodeNames, allowIndexDefinitions, noIntermediateSaves, and the /oak:index filter."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "In Cloud Service, index configuration is specified before deployment and not changed on a running instance",
+        "Users do not have access to the Index Manager of a single instance in the cloud",
+        "Two sets of indexes exist, one for the old version and one for the new version, and the Cloud Manager build page shows whether indexing is complete",
+        "Only indexes of type lucene are supported for customization",
+        "The async property can be async, async and nrt, or fulltext-async",
+        "Only standard product analyzers are supported, so custom analyzers are not, and useInSimilarity is not supported",
+        "Use filevault-package-maven-plugin 1.3.2 or later, add oak:index to immutableRootNodeNames, enable allowIndexDefinitions and noIntermediateSaves in ui.apps and ui.apps.structure, and add a filter for /oak:index in ui.apps.structure"
+      ],
+      "narration": "Quick recap of Index Definitions in Cloud Service. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

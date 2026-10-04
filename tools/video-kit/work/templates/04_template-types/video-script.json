@@ -1,0 +1,102 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Template Types",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Template Types",
+      "sub": "Templates · 7 key concepts",
+      "narration": "Templates. Template Types. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-024",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is a template type?",
+      "heading": "A blueprint for the template, determining its structure, initial content, resource type, and root node policy",
+      "body": "A template type is necessary as it provides a blueprint for the template, determining its structure and initial content. Template types define the resource type of the page component and the policy of the root node, which controls the components allowed in the template editor.",
+      "narration": "What is a template type? A blueprint for the template, determining its structure, initial content, resource type, and root node policy. A template type is necessary as it provides a blueprint for the template, determining its structure and initial content. Template types define the resource type of the page component and the policy of the root node, which controls the components allowed in the template editor."
+    },
+    {
+      "id": "02-tmpl-025",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What responsiveness-related configuration is recommended within a template type?",
+      "heading": "It's advisable to define breakpoints for the responsive grid and configure the mobile emulator within the template type",
+      "body": "It is advisable to define breakpoints for the responsive grid and configure the mobile emulator within the template type for optimal responsiveness across the templates built from it.",
+      "narration": "What responsiveness-related configuration is recommended within a template type? It's advisable to define breakpoints for the responsive grid and configure the mobile emulator within the template type. It is advisable to define breakpoints for the responsive grid and configure the mobile emulator within the template type for optimal responsiveness across the templates built from it."
+    },
+    {
+      "id": "03-tmpl-026",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Where are out-of-the-box template types stored?",
+      "heading": "/libs/settings/wcm/template-types",
+      "body": "Out-of-the-box template types provided by AEM are stored under /libs/settings/wcm/template-types.",
+      "narration": "Where are out-of-the-box template types stored? /libs/settings/wcm/template-types. Out-of-the-box template types provided by AEM are stored under /libs/settings/wcm/template-types."
+    },
+    {
+      "id": "04-tmpl-027",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Where should site-specific template types be stored?",
+      "heading": "/apps/settings/wcm/template-types",
+      "body": "Site-specific template types should be stored in the comparable location of /apps/settings/wcm/template-types.",
+      "narration": "Where should site-specific template types be stored? /apps/settings/wcm/template-types. Site-specific template types should be stored in the comparable location of /apps/settings/wcm/template-types."
+    },
+    {
+      "id": "05-tmpl-028",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Where should custom template types be stored?",
+      "heading": "In a user-defined folder such as /conf/<my-folder>/settings/wcm/template-types (recommended), or in /conf/global",
+      "body": "Custom template types should be stored in user-defined folders (recommended), or alternatively in global, for example /conf/<my-folder-01>/<my-folder-02>/settings/wcm/template-types or /conf/global/settings/wcm/template-types.",
+      "narration": "Where should custom template types be stored? In a user-defined folder such as /conf/<my-folder>/settings/wcm/template-types (recommended), or in /conf/global. Custom template types should be stored in user-defined folders (recommended), or alternatively in global, for example /conf/<my-folder-01>/<my-folder-02>/settings/wcm/template-types or /conf/global/settings/wcm/template-types."
+    },
+    {
+      "id": "06-tmpl-029",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What are the steps to create a custom template type from an existing template?",
+      "heading": "Build a regular template, copy it to the template-types node via CRXDE Lite, delete the original, then strip cq:template/cq:templateType properties",
+      "body": "Create a template as you would any Page Template, use CRXDE Lite to copy it from the templates node to the template-types node under the template folder, delete the original from the templates node, then delete all cq:template and cq:templateType properties from all jcr:content nodes in the copy.",
+      "narration": "What are the steps to create a custom template type from an existing template? Build a regular template, copy it to the template-types node via CRXDE Lite, delete the original, then strip cq:template/cq:templateType properties. Create a template as you would any Page Template, use CRXDE Lite to copy it from the templates node to the template-types node under the template folder, delete the original from the templates node, then delete all cq:template and cq:templateType properties from all jcr:content nodes in the copy."
+    },
+    {
+      "id": "07-tmpl-030",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Besides manually copying and stripping a template, what other approach can you use to build a template type?",
+      "heading": "Developing your own template type using an example editable template available on GitHub as a basis",
+      "body": "You can also develop your own template type using an example editable template as a basis, available on GitHub, rather than manually building one from scratch through the copy-and-strip process.",
+      "narration": "Besides manually copying and stripping a template, what other approach can you use to build a template type? Developing your own template type using an example editable template available on GitHub as a basis. You can also develop your own template type using an example editable template as a basis, available on GitHub, rather than manually building one from scratch through the copy-and-strip process."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A blueprint for the template, determining its structure, initial content, resource type, and root node policy",
+        "It's advisable to define breakpoints for the responsive grid and configure the mobile emulator within the template type",
+        "/libs/settings/wcm/template-types",
+        "/apps/settings/wcm/template-types",
+        "In a user-defined folder such as /conf/<my-folder>/settings/wcm/template-types (recommended), or in /conf/global",
+        "Build a regular template, copy it to the template-types node via CRXDE Lite, delete the original, then strip cq:template/cq:templateType properties",
+        "Developing your own template type using an example editable template available on GitHub as a basis"
+      ],
+      "narration": "Quick recap of Template Types. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

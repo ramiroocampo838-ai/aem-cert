@@ -1,0 +1,178 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "cloud-manager",
+  "accent": "#a855f7",
+  "category": "AEMaaCS Overview",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "AEMaaCS Overview",
+      "sub": "cloud-manager · 14 key concepts",
+      "narration": "cloud-manager. AEMaaCS Overview. In this video we review 14 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-001",
+      "type": "concept",
+      "index": 1,
+      "total": 14,
+      "question": "What does AEMaaCS stand for?",
+      "heading": "AEM as a Cloud Service — Adobe's fully managed, cloud-native CMS offering",
+      "body": "AEMaaCS stands for AEM as a Cloud Service — the latest offering of the Adobe Experience Manager product line. It is a fully managed, cloud-native CMS where Adobe handles all infrastructure, continuous updates, and scaling.",
+      "narration": "What does AEMaaCS stand for? AEM as a Cloud Service — Adobe's fully managed, cloud-native CMS offering. AEMaaCS stands for AEM as a Cloud Service — the latest offering of the Adobe Experience Manager product line. It is a fully managed, cloud-native CMS where Adobe handles all infrastructure, continuous updates, and scaling."
+    },
+    {
+      "id": "02-cm-002",
+      "type": "concept",
+      "index": 2,
+      "total": 14,
+      "question": "What is the main benefit of AEMaaCS being 'always on the latest version'?",
+      "heading": "No manual upgrades — Adobe continuously and automatically deploys updates",
+      "body": "Because Adobe manages continuous delivery for AEMaaCS, customers are always on the latest version — eliminating the costly and risky upgrade projects that AEM 6.x on-premise customers face every few years. Teams shift focus from maintenance to building experiences.",
+      "narration": "What is the main benefit of AEMaaCS being 'always on the latest version'? No manual upgrades — Adobe continuously and automatically deploys updates. Because Adobe manages continuous delivery for AEMaaCS, customers are always on the latest version — eliminating the costly and risky upgrade projects that AEM 6.x on-premise customers face every few years. Teams shift focus from maintenance to building experiences."
+    },
+    {
+      "id": "03-cm-003",
+      "type": "concept",
+      "index": 3,
+      "total": 14,
+      "question": "What handles global content delivery performance in AEMaaCS?",
+      "heading": "A built-in CDN (Content Delivery Network) managed by Adobe handles global content delivery performance",
+      "body": "AEMaaCS includes a built-in CDN (Content Delivery Network) managed by Adobe. This CDN serves content from globally distributed edge nodes closest to end users, reducing latency and improving performance without any customer-side infrastructure configuration.",
+      "narration": "What handles global content delivery performance in AEMaaCS? A built-in CDN (Content Delivery Network) managed by Adobe handles global content delivery performance. AEMaaCS includes a built-in CDN (Content Delivery Network) managed by Adobe. This CDN serves content from globally distributed edge nodes closest to end users, reducing latency and improving performance without any customer-side infrastructure configuration."
+    },
+    {
+      "id": "04-cm-004",
+      "type": "concept",
+      "index": 4,
+      "total": 14,
+      "question": "How does AEMaaCS handle fluctuating traffic demands?",
+      "heading": "Automatic auto-scaling — AEMaaCS scales resources up or down based on real-time traffic",
+      "body": "AEMaaCS auto-scales its compute resources automatically based on real-time traffic demand. This eliminates the need for capacity planning and manual scaling — a major advantage over AEM 6.x on-premise where over-provisioning or under-provisioning was a constant challenge.",
+      "narration": "How does AEMaaCS handle fluctuating traffic demands? Automatic auto-scaling — AEMaaCS scales resources up or down based on real-time traffic. AEMaaCS auto-scales its compute resources automatically based on real-time traffic demand. This eliminates the need for capacity planning and manual scaling — a major advantage over AEM 6.x on-premise where over-provisioning or under-provisioning was a constant challenge."
+    },
+    {
+      "id": "05-cm-005",
+      "type": "concept",
+      "index": 5,
+      "total": 14,
+      "question": "What does 'immutable repository' mean in AEMaaCS architecture?",
+      "heading": "/apps and /libs are read-only at runtime — changes only come via CI/CD pipeline deployments",
+      "body": "In AEMaaCS, the application code layer (/apps, /libs) is immutable — it is built into container images and cannot be modified at runtime. All code changes must go through the Cloud Manager CI/CD pipeline, which produces a new immutable container image and deploys it.",
+      "narration": "What does 'immutable repository' mean in AEMaaCS architecture? /apps and /libs are read-only at runtime — changes only come via CI/CD pipeline deployments. In AEMaaCS, the application code layer (/apps, /libs) is immutable — it is built into container images and cannot be modified at runtime. All code changes must go through the Cloud Manager CI/CD pipeline, which produces a new immutable container image and deploys it."
+    },
+    {
+      "id": "06-cm-006",
+      "type": "concept",
+      "index": 6,
+      "total": 14,
+      "question": "What is the mutable content store in AEMaaCS?",
+      "heading": "/content and /conf — the author-created, mutable repository content",
+      "body": "In AEMaaCS architecture, /content (pages, assets) and /conf (editable templates, policies, cloud configs) are the mutable content stores. This content survives deployments because it is stored in a persistent Azure Blob Storage / MongoDB-backed repository, separate from the immutable code layer.",
+      "narration": "What is the mutable content store in AEMaaCS? /content and /conf — the author-created, mutable repository content. In AEMaaCS architecture, /content (pages, assets) and /conf (editable templates, policies, cloud configs) are the mutable content stores. This content survives deployments because it is stored in a persistent Azure Blob Storage / MongoDB-backed repository, separate from the immutable code layer."
+    },
+    {
+      "id": "07-cm-007",
+      "type": "concept",
+      "index": 7,
+      "total": 14,
+      "question": "What is Asset Microservices in AEMaaCS?",
+      "heading": "Scalable cloud services that process uploaded DAM assets, replacing traditional AEM workflow processing",
+      "body": "Asset Microservices in AEMaaCS use Adobe I/O Runtime to process uploaded digital assets in a massively scalable, parallel fashion. They replace the traditional AEM workflow-based processing pipeline, generating renditions (thumbnails, crops), extracting metadata, and running smart tagging automatically.",
+      "narration": "What is Asset Microservices in AEMaaCS? Scalable cloud services that process uploaded DAM assets, replacing traditional AEM workflow processing. Asset Microservices in AEMaaCS use Adobe I/O Runtime to process uploaded digital assets in a massively scalable, parallel fashion. They replace the traditional AEM workflow-based processing pipeline, generating renditions (thumbnails, crops), extracting metadata, and running smart tagging automatically."
+    },
+    {
+      "id": "08-cm-008",
+      "type": "concept",
+      "index": 8,
+      "total": 14,
+      "question": "What is 'Sling Content Distribution' (SCD) used for in AEMaaCS?",
+      "heading": "Distributing content from Author to Publish instances — replacing traditional replication agents",
+      "body": "Sling Content Distribution (SCD) in AEMaaCS replaces the traditional byte-for-byte replication from Author to Publish. It is a queue-driven, push-based distribution service — more scalable and cloud-native, handling distribution to multiple publish instances automatically.",
+      "narration": "What is 'Sling Content Distribution' (SCD) used for in AEMaaCS? Distributing content from Author to Publish instances — replacing traditional replication agents. Sling Content Distribution (SCD) in AEMaaCS replaces the traditional byte-for-byte replication from Author to Publish. It is a queue-driven, push-based distribution service — more scalable and cloud-native, handling distribution to multiple publish instances automatically."
+    },
+    {
+      "id": "09-cm-009",
+      "type": "concept",
+      "index": 9,
+      "total": 14,
+      "question": "What is a Rapid Development Environment (RDE) in AEMaaCS?",
+      "heading": "A special AEMaaCS environment for rapid code iteration without running full pipeline deployments",
+      "body": "A Rapid Development Environment (RDE) is a developer-focused environment type in AEMaaCS that allows near-instant code deployment (OSGi bundles, content packages) without running a full Cloud Manager pipeline. This dramatically speeds up the feedback loop during development.",
+      "narration": "What is a Rapid Development Environment (RDE) in AEMaaCS? A special AEMaaCS environment for rapid code iteration without running full pipeline deployments. A Rapid Development Environment (RDE) is a developer-focused environment type in AEMaaCS that allows near-instant code deployment (OSGi bundles, content packages) without running a full Cloud Manager pipeline. This dramatically speeds up the feedback loop during development."
+    },
+    {
+      "id": "10-cm-010",
+      "type": "concept",
+      "index": 10,
+      "total": 14,
+      "question": "How is an AEMaaCS instance fundamentally different from AEM 6.5 in terms of infrastructure?",
+      "heading": "AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server",
+      "body": "AEMaaCS runs as Docker containers orchestrated by Adobe on cloud infrastructure (auto-scaling, managed), while AEM 6.5 runs as a traditional Java process on a customer-managed server or AMS-managed virtual machine with fixed capacity.",
+      "narration": "How is an AEMaaCS instance fundamentally different from AEM 6.5 in terms of infrastructure? AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server. AEMaaCS runs as Docker containers orchestrated by Adobe on cloud infrastructure (auto-scaling, managed), while AEM 6.5 runs as a traditional Java process on a customer-managed server or AMS-managed virtual machine with fixed capacity."
+    },
+    {
+      "id": "11-cm-011",
+      "type": "concept",
+      "index": 11,
+      "total": 14,
+      "question": "What security capability is automatically included in AEMaaCS?",
+      "heading": "Automated security scanning — vulnerability tests run continuously as part of the pipeline",
+      "body": "AEMaaCS includes automated security scanning as part of the Cloud Manager CI/CD pipeline. Every deployment is scanned for common vulnerabilities and security issues, and deployments can be blocked if critical security issues are detected.",
+      "narration": "What security capability is automatically included in AEMaaCS? Automated security scanning — vulnerability tests run continuously as part of the pipeline. AEMaaCS includes automated security scanning as part of the Cloud Manager CI/CD pipeline. Every deployment is scanned for common vulnerabilities and security issues, and deployments can be blocked if critical security issues are detected."
+    },
+    {
+      "id": "12-cm-012",
+      "type": "concept",
+      "index": 12,
+      "total": 14,
+      "question": "What is the benefit of AEMaaCS's 'cloud-native architecture' for developers?",
+      "heading": "Developers focus on building features instead of managing infrastructure",
+      "body": "AEMaaCS's cloud-native architecture abstracts all infrastructure management. Developers focus on building features, components, and integrations instead of spending time on server maintenance, capacity planning, operating system updates, and AEM upgrade projects.",
+      "narration": "What is the benefit of AEMaaCS's 'cloud-native architecture' for developers? Developers focus on building features instead of managing infrastructure. AEMaaCS's cloud-native architecture abstracts all infrastructure management. Developers focus on building features, components, and integrations instead of spending time on server maintenance, capacity planning, operating system updates, and AEM upgrade projects."
+    },
+    {
+      "id": "13-cm-013",
+      "type": "concept",
+      "index": 13,
+      "total": 14,
+      "question": "What analytics integrations are built into AEMaaCS?",
+      "heading": "Deep integration with Adobe Experience Cloud including Adobe Analytics",
+      "body": "AEMaaCS has deep, native integration with the Adobe Experience Cloud suite, including Adobe Analytics for user behavior tracking, Adobe Target for personalization, and Adobe Campaign for marketing automation — all manageable from Cloud Manager.",
+      "narration": "What analytics integrations are built into AEMaaCS? Deep integration with Adobe Experience Cloud including Adobe Analytics. AEMaaCS has deep, native integration with the Adobe Experience Cloud suite, including Adobe Analytics for user behavior tracking, Adobe Target for personalization, and Adobe Campaign for marketing automation — all manageable from Cloud Manager."
+    },
+    {
+      "id": "14-cm-014",
+      "type": "concept",
+      "index": 14,
+      "total": 14,
+      "question": "What is the Cloud Acceleration Manager (CAM) used for?",
+      "heading": "Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service",
+      "body": "Cloud Acceleration Manager (CAM) is Adobe's tool that helps teams plan, track, and manage every step of the migration from AEM 6.x to AEMaaCS — from readiness assessment and code analysis to go-live validation — helping organizations reach production faster.",
+      "narration": "What is the Cloud Acceleration Manager (CAM) used for? Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service. Cloud Acceleration Manager (CAM) is Adobe's tool that helps teams plan, track, and manage every step of the migration from AEM 6.x to AEMaaCS — from readiness assessment and code analysis to go-live validation — helping organizations reach production faster."
+    },
+    {
+      "id": "15-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "AEM as a Cloud Service — Adobe's fully managed, cloud-native CMS offering",
+        "No manual upgrades — Adobe continuously and automatically deploys updates",
+        "A built-in CDN (Content Delivery Network) managed by Adobe handles global content delivery performance",
+        "Automatic auto-scaling — AEMaaCS scales resources up or down based on real-time traffic",
+        "/apps and /libs are read-only at runtime — changes only come via CI/CD pipeline deployments",
+        "/content and /conf — the author-created, mutable repository content",
+        "Scalable cloud services that process uploaded DAM assets, replacing traditional AEM workflow processing",
+        "Distributing content from Author to Publish instances — replacing traditional replication agents",
+        "A special AEMaaCS environment for rapid code iteration without running full pipeline deployments",
+        "AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server",
+        "Automated security scanning — vulnerability tests run continuously as part of the pipeline",
+        "Developers focus on building features instead of managing infrastructure",
+        "Deep integration with Adobe Experience Cloud including Adobe Analytics",
+        "Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service"
+      ],
+      "narration": "Quick recap of AEMaaCS Overview. AEM as a Cloud Service — Adobe's fully managed, cloud-native CMS offering. No manual upgrades — Adobe continuously and automatically deploys updates. A built-in CDN (Content Delivery Network) managed by Adobe handles global content delivery performance. Automatic auto-scaling — AEMaaCS scales resources up or down based on real-time traffic. /apps and /libs are read-only at runtime — changes only come via CI/CD pipeline deployments. /content and /conf — the author-created, mutable repository content. Scalable cloud services that process uploaded DAM assets, replacing traditional AEM workflow processing. Distributing content from Author to Publish instances — replacing traditional replication agents. A special AEMaaCS environment for rapid code iteration without running full pipeline deployments. AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server. Automated security scanning — vulnerability tests run continuously as part of the pipeline. Developers focus on building features instead of managing infrastructure. Deep integration with Adobe Experience Cloud including Adobe Analytics. Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service."
+    }
+  ]
+}

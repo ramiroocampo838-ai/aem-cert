@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Replication in Cloud Service",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Replication in Cloud Service",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Replication in Cloud Service. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-072",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What mechanism does AEM as a Cloud Service use to move content for replication?",
+      "heading": "Sling Content Distribution to a pipeline service outside the AEM runtime",
+      "body": "Section 11 says AEM as a Cloud Service uses Sling Content Distribution to move content to a pipeline service outside the AEM runtime.",
+      "narration": "What mechanism does AEM as a Cloud Service use to move content for replication? Sling Content Distribution to a pipeline service outside the AEM runtime. Section 11 says AEM as a Cloud Service uses Sling Content Distribution to move content to a pipeline service outside the AEM runtime."
+    },
+    {
+      "id": "02-oak-073",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What are the two predefined Cloud Service distribution agents and their default state?",
+      "heading": "The publish agent is enabled by default, and the preview agent exists but is not enabled by default",
+      "body": "Section 11 says there are two predefined agents: publish, which is enabled by default, and preview, which is not enabled by default.",
+      "narration": "What are the two predefined Cloud Service distribution agents and their default state? The publish agent is enabled by default, and the preview agent exists but is not enabled by default. Section 11 says there are two predefined agents: publish, which is enabled by default, and preview, which is not enabled by default."
+    },
+    {
+      "id": "03-oak-074",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Where are Cloud Service distribution agents monitored?",
+      "heading": "Tools, Deployment, Distribution",
+      "body": "The source says the publish and preview agents are monitored from Tools, Deployment, Distribution.",
+      "narration": "Where are Cloud Service distribution agents monitored? Tools, Deployment, Distribution. The source says the publish and preview agents are monitored from Tools, Deployment, Distribution."
+    },
+    {
+      "id": "04-oak-075",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the recommended way to handle bulk publishing in Cloud Service?",
+      "heading": "Use a workflow with the Tree Activation step",
+      "body": "Section 11 says that for bulk publishing you should use a workflow with the Tree Activation step and that building your own bulk code is not recommended.",
+      "narration": "What is the recommended way to handle bulk publishing in Cloud Service? Use a workflow with the Tree Activation step. Section 11 says that for bulk publishing you should use a workflow with the Tree Activation step and that building your own bulk code is not recommended."
+    },
+    {
+      "id": "05-oak-076",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What happens when the Replication API is used without an agent filter?",
+      "heading": "It uses only the agents enabled by default, which means publish",
+      "body": "The source states that replicating without a filter uses only the agents enabled by default, which means the publish agent.",
+      "narration": "What happens when the Replication API is used without an agent filter? It uses only the agents enabled by default, which means publish. The source states that replicating without a filter uses only the agents enabled by default, which means the publish agent."
+    },
+    {
+      "id": "06-oak-077",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "How do you target the preview tier with the Replication API?",
+      "heading": "Pass ReplicationOptions with an AgentFilter",
+      "body": "Section 11 explains that to target preview you pass ReplicationOptions with an AgentFilter.",
+      "narration": "How do you target the preview tier with the Replication API? Pass ReplicationOptions with an AgentFilter. Section 11 explains that to target preview you pass ReplicationOptions with an AgentFilter."
+    },
+    {
+      "id": "07-oak-078",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What do the two Cloud Service agent queues mean?",
+      "heading": "Persisted means the change is durably stored on the publish tier, and Fully published means it is live on all publish pods and Dispatcher cache has been cleared",
+      "body": "The source says each Cloud Service agent shows two queues: Persisted for durable storage on the publish tier, and Fully published for content live on all publish pods with Dispatcher cache cleared for the paths.",
+      "narration": "What do the two Cloud Service agent queues mean? Persisted means the change is durably stored on the publish tier, and Fully published means it is live on all publish pods and Dispatcher cache has been cleared. The source says each Cloud Service agent shows two queues: Persisted for durable storage on the publish tier, and Fully published for content live on all publish pods with Dispatcher cache cleared for the paths."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Sling Content Distribution to a pipeline service outside the AEM runtime",
+        "The publish agent is enabled by default, and the preview agent exists but is not enabled by default",
+        "Tools, Deployment, Distribution",
+        "Use a workflow with the Tree Activation step",
+        "It uses only the agents enabled by default, which means publish",
+        "Pass ReplicationOptions with an AgentFilter",
+        "Persisted means the change is durably stored on the publish tier, and Fully published means it is live on all publish pods and Dispatcher cache has been cleared"
+      ],
+      "narration": "Quick recap of Replication in Cloud Service. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Anatomy of a Component",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Anatomy of a Component",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Anatomy of a Component. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is an AEM component in repository terms?",
+      "heading": "A node of type cq:Component stored under /apps",
+      "body": "The anatomy section defines a component as a node of type cq:Component stored in the repository under /apps.",
+      "narration": "What is an AEM component in repository terms? A node of type cq:Component stored under /apps. The anatomy section defines a component as a node of type cq:Component stored in the repository under /apps."
+    },
+    {
+      "id": "02-comp-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Where do a project's components typically live, and in which Maven module are they packaged?",
+      "heading": "They live under /apps/<project>/components and are packaged in the ui.apps module",
+      "body": "The speech says a project's components live in /apps/<project>/components, and in the Maven project they are packaged in the ui.apps module.",
+      "narration": "Where do a project's components typically live, and in which Maven module are they packaged? They live under /apps/<project>/components and are packaged in the ui.apps module. The speech says a project's components live in /apps/<project>/components, and in the Maven project they are packaged in the ui.apps module."
+    },
+    {
+      "id": "03-comp-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What file typically defines the cq:Component node and properties such as jcr:title, componentGroup, and sling:resourceSuperType?",
+      "heading": "The .content.xml file in the component folder",
+      "body": "The anatomy section lists .content.xml as the file that defines the cq:Component node and properties such as jcr:title, componentGroup, and sling:resourceSuperType.",
+      "narration": "What file typically defines the cq:Component node and properties such as jcr:title, componentGroup, and sling:resourceSuperType? The .content.xml file in the component folder. The anatomy section lists .content.xml as the file that defines the cq:Component node and properties such as jcr:title, componentGroup, and sling:resourceSuperType."
+    },
+    {
+      "id": "04-comp-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How is the main HTL script typically named in a component folder?",
+      "heading": "It is named after the component, for example title.html",
+      "body": "The speech says a component folder typically contains an HTL script named after the component, for example title.html.",
+      "narration": "How is the main HTL script typically named in a component folder? It is named after the component, for example title.html. The speech says a component folder typically contains an HTL script named after the component, for example title.html."
+    },
+    {
+      "id": "05-comp-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does the jcr:title property represent on a component?",
+      "heading": "The name shown to authors",
+      "body": "The anatomy section says jcr:title is the name shown to authors.",
+      "narration": "What does the jcr:title property represent on a component? The name shown to authors. The anatomy section says jcr:title is the name shown to authors."
+    },
+    {
+      "id": "06-comp-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What happens if a componentGroup value starts with a dot?",
+      "heading": "The component group is hidden",
+      "body": "The speech explicitly says componentGroup controls grouping in the components browser, and a group starting with a dot is hidden.",
+      "narration": "What happens if a componentGroup value starts with a dot? The component group is hidden. The speech explicitly says componentGroup controls grouping in the components browser, and a group starting with a dot is hidden."
+    },
+    {
+      "id": "07-comp-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a scenario where authors need to place other components inside a component, which property marks it as a container?",
+      "heading": "cq:isContainer",
+      "body": "The anatomy section identifies cq:isContainer as the property that marks a component as a container for other components.",
+      "narration": "Given a scenario where authors need to place other components inside a component, which property marks it as a container? cq:isContainer. The anatomy section identifies cq:isContainer as the property that marks a component as a container for other components."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A node of type cq:Component stored under /apps",
+        "They live under /apps/<project>/components and are packaged in the ui.apps module",
+        "The .content.xml file in the component folder",
+        "It is named after the component, for example title.html",
+        "The name shown to authors",
+        "The component group is hidden",
+        "cq:isContainer"
+      ],
+      "narration": "Quick recap of Anatomy of a Component. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

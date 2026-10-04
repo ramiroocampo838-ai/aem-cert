@@ -1,0 +1,113 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Custom Step Components",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Custom Step Components",
+      "sub": "Workflows · 8 key concepts",
+      "narration": "Workflows. Custom Step Components. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-058",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What does a workflow step component define for model authors?",
+      "heading": "A workflow step component defines the step's authoring behavior, appearance, dialog, and runtime implementation",
+      "body": "The speech says a workflow step component defines how a step looks and behaves when building models, including its category and name, appearance, edit dialog, and the service or script that runs at runtime.",
+      "narration": "What does a workflow step component define for model authors? A workflow step component defines the step's authoring behavior, appearance, dialog, and runtime implementation. The speech says a workflow step component defines how a step looks and behaves when building models, including its category and name, appearance, edit dialog, and the service or script that runs at runtime."
+    },
+    {
+      "id": "02-wf-059",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Which base step resource super type should a custom automatic process step inherit from?",
+      "heading": "cq/workflow/components/model/process",
+      "body": "The speech lists the three base paths and says process steps inherit from cq/workflow/components/model/process.",
+      "narration": "Which base step resource super type should a custom automatic process step inherit from? cq/workflow/components/model/process. The speech lists the three base paths and says process steps inherit from cq/workflow/components/model/process."
+    },
+    {
+      "id": "03-wf-060",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "If a custom step should choose the assignee at runtime, which base step should it extend?",
+      "heading": "cq/workflow/components/model/dynamic_participant",
+      "body": "The speech says the dynamic participant base path is cq/workflow/components/model/dynamic_participant.",
+      "narration": "If a custom step should choose the assignee at runtime, which base step should it extend? cq/workflow/components/model/dynamic_participant. The speech says the dynamic participant base path is cq/workflow/components/model/dynamic_participant."
+    },
+    {
+      "id": "04-wf-061",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Why should custom workflow step components never be modified under /libs?",
+      "heading": "Never change /libs; recreate the item under /apps and change it there",
+      "body": "The speech is explicit: never change anything in /libs; recreate the item under /apps and make the changes there.",
+      "narration": "Why should custom workflow step components never be modified under /libs? Never change /libs; recreate the item under /apps and change it there. The speech is explicit: never change anything in /libs; recreate the item under /apps and make the changes there."
+    },
+    {
+      "id": "05-wf-062",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Where do design-time defaults for a workflow step component belong?",
+      "heading": "In cq:editConfig with child cq:formParameters",
+      "body": "The speech says design-time defaults go in a cq:editConfig node of type cq:EditConfig, with a child node named cq:formParameters of type nt:unstructured.",
+      "narration": "Where do design-time defaults for a workflow step component belong? In cq:editConfig with child cq:formParameters. The speech says design-time defaults go in a cq:editConfig node of type cq:EditConfig, with a child node named cq:formParameters of type nt:unstructured."
+    },
+    {
+      "id": "06-wf-063",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Which cq:formParameters property fixes the implementation of a process step so model authors cannot change it?",
+      "heading": "PROCESS fixes the process implementation",
+      "body": "The speech says properties on cq:formParameters include PROCESS, PARTICIPANT, and DYNAMIC_PARTICIPANT, and that setting them removes the model author's ability to change the value.",
+      "narration": "Which cq:formParameters property fixes the implementation of a process step so model authors cannot change it? PROCESS fixes the process implementation. The speech says properties on cq:formParameters include PROCESS, PARTICIPANT, and DYNAMIC_PARTICIPANT, and that setting them removes the model author's ability to change the value."
+    },
+    {
+      "id": "07-wf-064",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "For a participant step, which cq:formParameters property should be used to show a form when the user opens the work item?",
+      "heading": "FORM_PATH shows a form when the user opens the work item",
+      "body": "The speech says FORM_PATH is used to present a form when the user opens a work item, and that it applies to participant steps.",
+      "narration": "For a participant step, which cq:formParameters property should be used to show a form when the user opens the work item? FORM_PATH shows a form when the user opens the work item. The speech says FORM_PATH is used to present a form when the user opens a work item, and that it applies to participant steps."
+    },
+    {
+      "id": "08-wf-065",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "For a participant step, which cq:formParameters property presents a custom dialog when the user completes the work item?",
+      "heading": "DIALOG_PATH presents the completion dialog",
+      "body": "The speech says DIALOG_PATH is used to present a custom dialog when the user completes a participant step.",
+      "narration": "For a participant step, which cq:formParameters property presents a custom dialog when the user completes the work item? DIALOG_PATH presents the completion dialog. The speech says DIALOG_PATH is used to present a custom dialog when the user completes a participant step."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A workflow step component defines the step's authoring behavior, appearance, dialog, and runtime implementation",
+        "cq/workflow/components/model/process",
+        "cq/workflow/components/model/dynamic_participant",
+        "Never change /libs; recreate the item under /apps and change it there",
+        "In cq:editConfig with child cq:formParameters",
+        "PROCESS fixes the process implementation",
+        "FORM_PATH shows a form when the user opens the work item",
+        "DIALOG_PATH presents the completion dialog"
+      ],
+      "narration": "Quick recap of Custom Step Components. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

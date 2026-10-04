@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Filters",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Filters",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Filters. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-030",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the /filter section specify in Dispatcher?",
+      "heading": "The /filter section specifies which HTTP requests Dispatcher accepts",
+      "body": "Section 5 says the /filter section specifies which HTTP requests Dispatcher accepts.",
+      "narration": "What does the /filter section specify in Dispatcher? The /filter section specifies which HTTP requests Dispatcher accepts. Section 5 says the /filter section specifies which HTTP requests Dispatcher accepts."
+    },
+    {
+      "id": "02-disp-031",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What happens to requests that are not accepted by the /filter section?",
+      "heading": "Requests that are not accepted are sent back to the web server with a 404 status",
+      "body": "Section 5 says requests that are not accepted are sent back to the web server with a 404 status.",
+      "narration": "What happens to requests that are not accepted by the /filter section? Requests that are not accepted are sent back to the web server with a 404 status. Section 5 says requests that are not accepted are sent back to the web server with a 404 status."
+    },
+    {
+      "id": "03-disp-032",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "If there is no /filter section at all, how does Dispatcher behave?",
+      "heading": "If there is no /filter section, all requests are accepted",
+      "body": "Section 5 says that if there is no /filter section, all requests are accepted.",
+      "narration": "If there is no /filter section at all, how does Dispatcher behave? If there is no /filter section, all requests are accepted. Section 5 says that if there is no /filter section, all requests are accepted."
+    },
+    {
+      "id": "04-disp-033",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What allowlist strategy does the speech recommend for /filter rules?",
+      "heading": "Use an allowlist strategy: first deny everything, then allow only what is needed",
+      "body": "Section 5 recommends an allowlist strategy: first deny everything, then allow only what is needed.",
+      "narration": "What allowlist strategy does the speech recommend for /filter rules? Use an allowlist strategy: first deny everything, then allow only what is needed. Section 5 recommends an allowlist strategy: first deny everything, then allow only what is needed."
+    },
+    {
+      "id": "05-disp-034",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is the classic first deny-all rule described in the speech?",
+      "heading": "The first deny-all rule is type deny with url asterisk",
+      "body": "Section 5 explicitly gives the first deny-all rule as type deny and url asterisk.",
+      "narration": "What is the classic first deny-all rule described in the speech? The first deny-all rule is type deny with url asterisk. Section 5 explicitly gives the first deny-all rule as type deny and url asterisk."
+    },
+    {
+      "id": "06-disp-035",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which request-line elements are preferred for filtering instead of matching the whole line?",
+      "heading": "The preferred request-line elements are /method, /url, /query, /protocol, /path, /selectors, /extension, and /suffix",
+      "body": "Section 5 says filtering on elements of the request line is preferred, naming /method, /url, /query, /protocol, and from Dispatcher 4.2.0 also /path, /selectors, /extension, and /suffix.",
+      "narration": "Which request-line elements are preferred for filtering instead of matching the whole line? The preferred request-line elements are /method, /url, /query, /protocol, /path, /selectors, /extension, and /suffix. Section 5 says filtering on elements of the request line is preferred, naming /method, /url, /query, /protocol, and from Dispatcher 4.2.0 also /path, /selectors, /extension, and /suffix."
+    },
+    {
+      "id": "07-disp-036",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why should you avoid the older /glob property in filters?",
+      "heading": "The older /glob should be avoided because it matches the entire request line, is deprecated, and can lead to security issues",
+      "body": "Section 5 says the older /glob property matches the entire request line, is deprecated, and can lead to security issues.",
+      "narration": "Why should you avoid the older /glob property in filters? The older /glob should be avoided because it matches the entire request line, is deprecated, and can lead to security issues. Section 5 says the older /glob property matches the entire request line, is deprecated, and can lead to security issues."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The /filter section specifies which HTTP requests Dispatcher accepts",
+        "Requests that are not accepted are sent back to the web server with a 404 status",
+        "If there is no /filter section, all requests are accepted",
+        "Use an allowlist strategy: first deny everything, then allow only what is needed",
+        "The first deny-all rule is type deny with url asterisk",
+        "The preferred request-line elements are /method, /url, /query, /protocol, /path, /selectors, /extension, and /suffix",
+        "The older /glob should be avoided because it matches the entire request line, is deprecated, and can lead to security issues"
+      ],
+      "narration": "Quick recap of Filters. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

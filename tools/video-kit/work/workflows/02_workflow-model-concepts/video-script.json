@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Workflow Model Concepts",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Workflow Model Concepts",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Workflow Model Concepts. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is a WorkflowModel in AEM?",
+      "heading": "A WorkflowModel is the definition of a workflow",
+      "body": "Section 2 says a WorkflowModel is the definition of a workflow, made of nodes and transitions.",
+      "narration": "What is a WorkflowModel in AEM? A WorkflowModel is the definition of a workflow. Section 2 says a WorkflowModel is the definition of a workflow, made of nodes and transitions."
+    },
+    {
+      "id": "02-wf-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is a workflow transition?",
+      "heading": "A transition is the link between two consecutive steps",
+      "body": "The speech defines a transition as the link between two consecutive steps, and says rules can be applied to it.",
+      "narration": "What is a workflow transition? A transition is the link between two consecutive steps. The speech defines a transition as the link between two consecutive steps, and says rules can be applied to it."
+    },
+    {
+      "id": "03-wf-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What nodes must every workflow model have?",
+      "heading": "A model always has a start node and an end node",
+      "body": "Section 2 explicitly says a model always has a start node and an end node.",
+      "narration": "What nodes must every workflow model have? A model always has a start node and an end node. Section 2 explicitly says a model always has a start node and an end node."
+    },
+    {
+      "id": "04-wf-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which payload forms are explicitly mentioned in the speech?",
+      "heading": "The payload can reference a repository resource by path, UUID, or URL, or be a serialized Java object",
+      "body": "Section 2 says the payload is the resource advanced through the workflow and can be referenced by path, UUID, or URL, or be a serialized Java object.",
+      "narration": "Which payload forms are explicitly mentioned in the speech? The payload can reference a repository resource by path, UUID, or URL, or be a serialized Java object. Section 2 says the payload is the resource advanced through the workflow and can be referenced by path, UUID, or URL, or be a serialized Java object."
+    },
+    {
+      "id": "05-wf-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does a WorkItem contain?",
+      "heading": "A WorkItem contains the WorkflowData and a reference to the current WorkflowNode",
+      "body": "The speech defines a WorkItem as the unit passed through a workflow instance, containing the WorkflowData and a reference to the WorkflowNode for the current step.",
+      "narration": "What does a WorkItem contain? A WorkItem contains the WorkflowData and a reference to the current WorkflowNode. The speech defines a WorkItem as the unit passed through a workflow instance, containing the WorkflowData and a reference to the WorkflowNode for the current step."
+    },
+    {
+      "id": "06-wf-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "How are workflow inbox assignments described?",
+      "heading": "Each user has a workflow inbox, and work items are assigned directly or through a group",
+      "body": "Section 2 says each user account has its own workflow inbox, and work items are assigned either directly to a user or to a group the user belongs to.",
+      "narration": "How are workflow inbox assignments described? Each user has a workflow inbox, and work items are assigned directly or through a group. Section 2 says each user account has its own workflow inbox, and work items are assigned either directly to a user or to a group the user belongs to."
+    },
+    {
+      "id": "07-wf-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which actions are available on a workflow instance during its lifecycle?",
+      "heading": "Terminate, suspend, resume, and restart are the available instance actions",
+      "body": "The speech says an instance is created when you choose a model and define the payload, ends when the end node is processed, and offers terminate, suspend, resume, and restart.",
+      "narration": "Which actions are available on a workflow instance during its lifecycle? Terminate, suspend, resume, and restart are the available instance actions. The speech says an instance is created when you choose a model and define the payload, ends when the end node is processed, and offers terminate, suspend, resume, and restart."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A WorkflowModel is the definition of a workflow",
+        "A transition is the link between two consecutive steps",
+        "A model always has a start node and an end node",
+        "The payload can reference a repository resource by path, UUID, or URL, or be a serialized Java object",
+        "A WorkItem contains the WorkflowData and a reference to the current WorkflowNode",
+        "Each user has a workflow inbox, and work items are assigned directly or through a group",
+        "Terminate, suspend, resume, and restart are the available instance actions"
+      ],
+      "narration": "Quick recap of Workflow Model Concepts. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

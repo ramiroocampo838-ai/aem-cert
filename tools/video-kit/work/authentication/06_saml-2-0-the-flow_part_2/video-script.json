@@ -1,0 +1,80 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "SAML 2.0 — The Flow (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SAML 2.0 — The Flow (Part 2 of 2)",
+      "sub": "Authentication · 5 key concepts",
+      "narration": "Authentication. SAML 2.0 — The Flow (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-047",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "How does AEM Publish validate the integrity and authenticity of an incoming SAML assertion?",
+      "heading": "By validating the assertion's signature using the IDP's public certificate",
+      "body": "AEM Publish receives the SAML assertion and validates its integrity and authenticity using the IDP's public certificate — the counterpart to the private key the IDP used to sign it.",
+      "narration": "How does AEM Publish validate the integrity and authenticity of an incoming SAML assertion? By validating the assertion's signature using the IDP's public certificate. AEM Publish receives the SAML assertion and validates its integrity and authenticity using the IDP's public certificate — the counterpart to the private key the IDP used to sign it."
+    },
+    {
+      "id": "02-auth-048",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What does AEM Publish do with the AEM user record once a SAML assertion is validated?",
+      "heading": "Creates the user if needed, synchronizes user attributes, and updates AEM group membership",
+      "body": "Based on the SAML 2.0 OSGi configuration and the assertion's contents, AEM Publish manages the AEM user record: it creates the user if they don't exist, synchronizes user attributes, and updates AEM user group membership.",
+      "narration": "What does AEM Publish do with the AEM user record once a SAML assertion is validated? Creates the user if needed, synchronizes user attributes, and updates AEM group membership. Based on the SAML 2.0 OSGi configuration and the assertion's contents, AEM Publish manages the AEM user record: it creates the user if they don't exist, synchronizes user attributes, and updates AEM user group membership."
+    },
+    {
+      "id": "03-auth-049",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What does AEM Publish set on the HTTP response after a successful SAML login?",
+      "heading": "A login-token cookie, used to authenticate subsequent requests to AEM Publish",
+      "body": "AEM Publish sets a login-token cookie on the HTTP response after successful SAML authentication. That cookie authenticates the user's subsequent requests without repeating the full SAML flow each time.",
+      "narration": "What does AEM Publish set on the HTTP response after a successful SAML login? A login-token cookie, used to authenticate subsequent requests to AEM Publish. AEM Publish sets a login-token cookie on the HTTP response after successful SAML authentication. That cookie authenticates the user's subsequent requests without repeating the full SAML flow each time."
+    },
+    {
+      "id": "04-auth-050",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "Where does AEM Publish redirect the user after completing SAML login?",
+      "heading": "The URL stored in the saml_request_path cookie — the originally requested page",
+      "body": "AEM Publish redirects the user to the URL specified by the saml_request_path cookie, which is the page they originally requested before being sent through the authentication flow.",
+      "narration": "Where does AEM Publish redirect the user after completing SAML login? The URL stored in the saml_request_path cookie — the originally requested page. AEM Publish redirects the user to the URL specified by the saml_request_path cookie, which is the page they originally requested before being sent through the authentication flow."
+    },
+    {
+      "id": "05-auth-051",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is the trust model underlying the SAML assertion signing flow?",
+      "heading": "Certificate-based — the IDP signs with its private key, and AEM verifies with the IDP's public key",
+      "body": "The trust between the IDP and AEM is entirely certificate-based: the IDP digitally signs the SAML assertion with its private key, and the Service Provider (AEM Publish) verifies that signature using the IDP's public key, ensuring the assertion wasn't tampered with and genuinely came from the trusted IDP.",
+      "narration": "What is the trust model underlying the SAML assertion signing flow? Certificate-based — the IDP signs with its private key, and AEM verifies with the IDP's public key. The trust between the IDP and AEM is entirely certificate-based: the IDP digitally signs the SAML assertion with its private key, and the Service Provider (AEM Publish) verifies that signature using the IDP's public key, ensuring the assertion wasn't tampered with and genuinely came from the trusted IDP."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "By validating the assertion's signature using the IDP's public certificate",
+        "Creates the user if needed, synchronizes user attributes, and updates AEM group membership",
+        "A login-token cookie, used to authenticate subsequent requests to AEM Publish",
+        "The URL stored in the saml_request_path cookie — the originally requested page",
+        "Certificate-based — the IDP signs with its private key, and AEM verifies with the IDP's public key"
+      ],
+      "narration": "Quick recap of SAML 2.0 — The Flow (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

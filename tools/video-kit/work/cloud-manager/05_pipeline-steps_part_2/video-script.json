@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Pipeline Steps (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Pipeline Steps (Part 2 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Pipeline Steps (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-063",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What happens if a Pipeline step fails mid-execution in Cloud Manager?",
+      "heading": "The pipeline stops at the failed step; the previously deployed version remains active; the team must fix and re-run",
+      "body": "When a pipeline step fails, the pipeline execution is stopped immediately at that step. Environments are left in their last known-good state (the previous successful deployment remains active). Cloud Manager notifies the team via the UI and configured channels. The team must investigate the failure, push a fix, and trigger a new pipeline run.",
+      "narration": "What happens if a Pipeline step fails mid-execution in Cloud Manager? The pipeline stops at the failed step; the previously deployed version remains active; the team must fix and re-run. When a pipeline step fails, the pipeline execution is stopped immediately at that step. Environments are left in their last known-good state (the previous successful deployment remains active). Cloud Manager notifies the team via the UI and configured channels. The team must investigate the failure, push a fix, and trigger a new pipeline run."
+    },
+    {
+      "id": "02-cm-064",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the 'Schedule' option for a Production Pipeline deployment in Cloud Manager?",
+      "heading": "Allows scheduling the Production deployment for a specific future date/time rather than running immediately after Stage testing",
+      "body": "After Stage testing is complete, instead of immediately approving Production deployment, an authorized user (Business Owner or Deployment Manager) can schedule it for a specific future date and time. This enables teams to plan go-lives during low-traffic maintenance windows without needing to be online at that exact moment — Cloud Manager automatically triggers the Production deployment at the scheduled time.",
+      "narration": "What is the 'Schedule' option for a Production Pipeline deployment in Cloud Manager? Allows scheduling the Production deployment for a specific future date/time rather than running immediately after Stage testing. After Stage testing is complete, instead of immediately approving Production deployment, an authorized user (Business Owner or Deployment Manager) can schedule it for a specific future date and time. This enables teams to plan go-lives during low-traffic maintenance windows without needing to be online at that exact moment — Cloud Manager automatically triggers the Production deployment at the scheduled time."
+    },
+    {
+      "id": "03-cm-065",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What is a 'Config Pipeline' in Cloud Manager?",
+      "heading": "A specialized pipeline for deploying OSGi configurations and environment-specific settings without a full code build",
+      "body": "Config Pipelines (Configuration Pipelines) deploy only configuration files from the repository's /config directory: OSGi run-mode configurations, CDN traffic filtering rules, log forwarding configurations, and other environment-specific settings. They skip the full Maven build and don't deploy bundles or content — making them fast and ideal for operational configuration updates.",
+      "narration": "What is a 'Config Pipeline' in Cloud Manager? A specialized pipeline for deploying OSGi configurations and environment-specific settings without a full code build. Config Pipelines (Configuration Pipelines) deploy only configuration files from the repository's /config directory: OSGi run-mode configurations, CDN traffic filtering rules, log forwarding configurations, and other environment-specific settings. They skip the full Maven build and don't deploy bundles or content — making them fast and ideal for operational configuration updates."
+    },
+    {
+      "id": "04-cm-066",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "How does Cloud Manager handle an 'Important' quality gate override?",
+      "heading": "A Deployment Manager or Business Owner can click 'Override' to acknowledge the failure and continue the pipeline past the Important gate",
+      "body": "When a pipeline pauses at an 'Important' quality gate failure, the Cloud Manager UI presents override options for users with the Deployment Manager or Business Owner role. They can 'Override and Continue' (accepting the risk) or 'Reject and Stop' (fixing the issue first). The override decision is logged in pipeline execution history for auditing.",
+      "narration": "How does Cloud Manager handle an 'Important' quality gate override? A Deployment Manager or Business Owner can click 'Override' to acknowledge the failure and continue the pipeline past the Important gate. When a pipeline pauses at an 'Important' quality gate failure, the Cloud Manager UI presents override options for users with the Deployment Manager or Business Owner role. They can 'Override and Continue' (accepting the risk) or 'Reject and Stop' (fixing the issue first). The override decision is logged in pipeline execution history for auditing."
+    },
+    {
+      "id": "05-cm-067",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What metrics are shown in the Cloud Manager pipeline execution detail view?",
+      "heading": "Step-by-step execution time, test results (pass/fail counts), SonarQube quality gate result, performance scores, and deployment status",
+      "body": "The Cloud Manager pipeline execution detail view provides granular visibility into each pipeline run: duration per step, Maven build outcome and unit test count, SonarQube quality gate scores (Reliability, Security, Maintainability, coverage %), functional test pass/fail counts, performance test KPI results (response time, error rate), and per-environment deployment confirmation. Log files for each step can be downloaded for deeper debugging.",
+      "narration": "What metrics are shown in the Cloud Manager pipeline execution detail view? Step-by-step execution time, test results (pass/fail counts), SonarQube quality gate result, performance scores, and deployment status. The Cloud Manager pipeline execution detail view provides granular visibility into each pipeline run: duration per step, Maven build outcome and unit test count, SonarQube quality gate scores (Reliability, Security, Maintainability, coverage %), functional test pass/fail counts, performance test KPI results (response time, error rate), and per-environment deployment confirmation. Log files for each step can be downloaded for deeper debugging."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The pipeline stops at the failed step; the previously deployed version remains active; the team must fix and re-run",
+        "Allows scheduling the Production deployment for a specific future date/time rather than running immediately after Stage testing",
+        "A specialized pipeline for deploying OSGi configurations and environment-specific settings without a full code build",
+        "A Deployment Manager or Business Owner can click 'Override' to acknowledge the failure and continue the pipeline past the Important gate",
+        "Step-by-step execution time, test results (pass/fail counts), SonarQube quality gate result, performance scores, and deployment status"
+      ],
+      "narration": "Quick recap of Pipeline Steps (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

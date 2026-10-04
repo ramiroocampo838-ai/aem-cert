@@ -1,0 +1,113 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Dependencies & Repository Structure",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Dependencies & Repository Structure",
+      "sub": "Maven · 8 key concepts",
+      "narration": "Maven. Dependencies & Repository Structure. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-043",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is the general dependency rule between ui.content and ui.apps?",
+      "heading": "ui.content depends on ui.apps",
+      "body": "Section 7 gives the general rule that packages with mutable content, ui.content, depend on the immutable code, ui.apps, that supports them.",
+      "narration": "What is the general dependency rule between ui.content and ui.apps? ui.content depends on ui.apps. Section 7 gives the general rule that packages with mutable content, ui.content, depend on the immutable code, ui.apps, that supports them."
+    },
+    {
+      "id": "02-mvn-044",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "In the simple case described by the speech, which package has no dependencies?",
+      "heading": "ui.apps has no dependencies",
+      "body": "The simple example in Section 7 says all has no dependencies, ui.apps has no dependencies, and ui.content depends on ui.apps.",
+      "narration": "In the simple case described by the speech, which package has no dependencies? ui.apps has no dependencies. The simple example in Section 7 says all has no dependencies, ui.apps has no dependencies, and ui.content depends on ui.apps."
+    },
+    {
+      "id": "03-mvn-045",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What is the exception involving a code package that contains only OSGi bundles?",
+      "heading": "No AEM package should declare a dependency on it",
+      "body": "Section 7 says that if a code package contains only OSGi bundles, no AEM package should declare a dependency on it.",
+      "narration": "What is the exception involving a code package that contains only OSGi bundles? No AEM package should declare a dependency on it. Section 7 says that if a code package contains only OSGi bundles, no AEM package should declare a dependency on it."
+    },
+    {
+      "id": "04-mvn-046",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Why is depending on a package that contains only OSGi bundles a problem?",
+      "heading": "Because it is not registered with Package Manager, so the dependency is unsatisfied and installation fails",
+      "body": "The lesson explains that such a package is not registered with Package Manager, so any AEM package that depends on it has an unsatisfied dependency and fails to install.",
+      "narration": "Why is depending on a package that contains only OSGi bundles a problem? Because it is not registered with Package Manager, so the dependency is unsatisfied and installation fails. The lesson explains that such a package is not registered with Package Manager, so any AEM package that depends on it has an unsatisfied dependency and fails to install."
+    },
+    {
+      "id": "05-mvn-047",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "In a complex deployment with several sites, what dependency chain does the speech give for site-specific packages?",
+      "heading": "site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps",
+      "body": "Section 7 gives a multi-site example where site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps.",
+      "narration": "In a complex deployment with several sites, what dependency chain does the speech give for site-specific packages? site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps. Section 7 gives a multi-site example where site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps."
+    },
+    {
+      "id": "06-mvn-048",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What additional requirement applies to code packages with packageType application?",
+      "heading": "They need a repository structure package",
+      "body": "Section 7 says code packages, those with packageType application, also need a repository structure package.",
+      "narration": "What additional requirement applies to code packages with packageType application? They need a repository structure package. Section 7 says code packages, those with packageType application, also need a repository structure package."
+    },
+    {
+      "id": "07-mvn-049",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Which FileVault plugin element configures the repository structure package?",
+      "heading": "repositoryStructurePackage",
+      "body": "The speech says the repository structure package is configured with the repositoryStructurePackage element in the FileVault package Maven plugin.",
+      "narration": "Which FileVault plugin element configures the repository structure package? repositoryStructurePackage. The speech says the repository structure package is configured with the repositoryStructurePackage element in the FileVault package Maven plugin."
+    },
+    {
+      "id": "08-mvn-050",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What does the repository structure package enforce, and which module does the archetype generate for it?",
+      "heading": "It enforces structural dependency correctness so one code package does not install over another's folders, and the archetype generates ui.apps.structure",
+      "body": "Section 7 says the repository structure package enforces correctness of structural dependencies so one code package does not install over another's folders, and that the archetype generates a ui.apps.structure module for this.",
+      "narration": "What does the repository structure package enforce, and which module does the archetype generate for it? It enforces structural dependency correctness so one code package does not install over another's folders, and the archetype generates ui.apps.structure. Section 7 says the repository structure package enforces correctness of structural dependencies so one code package does not install over another's folders, and that the archetype generates a ui.apps.structure module for this."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "ui.content depends on ui.apps",
+        "ui.apps has no dependencies",
+        "No AEM package should declare a dependency on it",
+        "Because it is not registered with Package Manager, so the dependency is unsatisfied and installation fails",
+        "site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps",
+        "They need a repository structure package",
+        "repositoryStructurePackage",
+        "It enforces structural dependency correctness so one code package does not install over another's folders, and the archetype generates ui.apps.structure"
+      ],
+      "narration": "Quick recap of Dependencies & Repository Structure. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Introduction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Introduction",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Introduction. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-001",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What four operational areas does the introduction say this lesson covers?",
+      "heading": "It covers how Oak finds content with indexes, how AEM writes logs, how content moves from Author to Publish with replication, and how AEM instances are arranged in a topology",
+      "body": "Section 1 says the lesson covers four operational areas: indexes, logs, replication, and topology.",
+      "narration": "What four operational areas does the introduction say this lesson covers? It covers how Oak finds content with indexes, how AEM writes logs, how content moves from Author to Publish with replication, and how AEM instances are arranged in a topology. Section 1 says the lesson covers four operational areas: indexes, logs, replication, and topology."
+    },
+    {
+      "id": "02-oak-002",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which exam area does this topic map to, and about what percentage does the speech assign to it?",
+      "heading": "It maps to Analyzing and Debugging, about 18 percent of the exam",
+      "body": "The introduction explicitly says the topic maps to Analyzing and Debugging, about 18 percent of the exam.",
+      "narration": "Which exam area does this topic map to, and about what percentage does the speech assign to it? It maps to Analyzing and Debugging, about 18 percent of the exam. The introduction explicitly says the topic maps to Analyzing and Debugging, about 18 percent of the exam."
+    },
+    {
+      "id": "03-oak-003",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which second exam area is also named in the introduction, and at about what percentage?",
+      "heading": "It also maps to Environment Maintenance, about 13 percent",
+      "body": "Section 1 says the topic also maps to Environment Maintenance, about 13 percent of the exam.",
+      "narration": "Which second exam area is also named in the introduction, and at about what percentage? It also maps to Environment Maintenance, about 13 percent. Section 1 says the topic also maps to Environment Maintenance, about 13 percent of the exam."
+    },
+    {
+      "id": "04-oak-004",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why does the introduction say this lesson also supports Build and Deployment?",
+      "heading": "Because index definitions and log configurations are deployed as code",
+      "body": "The introduction ties the lesson to Build and Deployment because index definitions and log configurations are deployed as code.",
+      "narration": "Why does the introduction say this lesson also supports Build and Deployment? Because index definitions and log configurations are deployed as code. The introduction ties the lesson to Build and Deployment because index definitions and log configurations are deployed as code."
+    },
+    {
+      "id": "05-oak-005",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What kind of exam questions should you expect according to the introduction?",
+      "heading": "Expect scenario questions",
+      "body": "Section 1 warns that exam items in this area are scenario questions.",
+      "narration": "What kind of exam questions should you expect according to the introduction? Expect scenario questions. Section 1 warns that exam items in this area are scenario questions."
+    },
+    {
+      "id": "06-oak-006",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which of these is one of the example scenario questions named in the introduction?",
+      "heading": "Why is this query slow",
+      "body": "The introduction gives example scenario questions including why a query is slow.",
+      "narration": "Which of these is one of the example scenario questions named in the introduction? Why is this query slow. The introduction gives example scenario questions including why a query is slow."
+    },
+    {
+      "id": "07-oak-007",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When Experience Manager 6.5 documentation and Cloud Service documentation differ, what does the lesson say it will do?",
+      "heading": "It will say which one applies",
+      "body": "Section 1 says that where the 6.5 and Cloud Service documentation differ, the lesson will say which one applies.",
+      "narration": "When Experience Manager 6.5 documentation and Cloud Service documentation differ, what does the lesson say it will do? It will say which one applies. Section 1 says that where the 6.5 and Cloud Service documentation differ, the lesson will say which one applies."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It covers how Oak finds content with indexes, how AEM writes logs, how content moves from Author to Publish with replication, and how AEM instances are arranged in a topology",
+        "It maps to Analyzing and Debugging, about 18 percent of the exam",
+        "It also maps to Environment Maintenance, about 13 percent",
+        "Because index definitions and log configurations are deployed as code",
+        "Expect scenario questions",
+        "Why is this query slow",
+        "It will say which one applies"
+      ],
+      "narration": "Quick recap of Introduction. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

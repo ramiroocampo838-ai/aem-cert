@@ -1,0 +1,80 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Adobe IMS Fundamentals (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Adobe IMS Fundamentals (Part 2 of 2)",
+      "sub": "Authentication · 5 key concepts",
+      "narration": "Authentication. Adobe IMS Fundamentals (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-013",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What access does the AEM Users product profile grant?",
+      "heading": "Read-only access to AEM — users must be members of the Contributors group",
+      "body": "The AEM Users product profile grants read-only access to AEM. Users assigned this profile can view content and perform read operations, and they need to be members of AEM's Contributors group to have that access.",
+      "narration": "What access does the AEM Users product profile grant? Read-only access to AEM — users must be members of the Contributors group. The AEM Users product profile grants read-only access to AEM. Users assigned this profile can view content and perform read operations, and they need to be members of AEM's Contributors group to have that access."
+    },
+    {
+      "id": "02-auth-014",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What access does the AEM Administrators product profile grant?",
+      "heading": "Full administrative access to AEM, including configuration and content management",
+      "body": "The AEM Administrators product profile provides full administrative access. Users with this profile can perform administrative tasks, configure settings, manage content, and have overall control over the AEM environment.",
+      "narration": "What access does the AEM Administrators product profile grant? Full administrative access to AEM, including configuration and content management. The AEM Administrators product profile provides full administrative access. Users with this profile can perform administrative tasks, configure settings, manage content, and have overall control over the AEM environment."
+    },
+    {
+      "id": "03-auth-015",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "Can you assign an entire IMS user group directly to a product profile?",
+      "heading": "No — AEM does not support assigning IMS user groups to product profiles; individual users must be added instead",
+      "body": "AEM currently does not support assigning IMS user groups directly to product profiles. Individual users must be added to profiles one by one, even though groups exist for organizational purposes.",
+      "narration": "Can you assign an entire IMS user group directly to a product profile? No — AEM does not support assigning IMS user groups to product profiles; individual users must be added instead. AEM currently does not support assigning IMS user groups directly to product profiles. Individual users must be added to profiles one by one, even though groups exist for organizational purposes."
+    },
+    {
+      "id": "04-auth-016",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "How do AEM groups and permissions relate to IMS product profiles?",
+      "heading": "AEM groups and permissions provide fine-grained control layered on top of the base access IMS product profiles grant",
+      "body": "IMS product profiles grant the base level of access to log in. AEM groups and permissions complement this by providing fine-grained control over specific resources and functionality once the user is inside AEM, working in harmony with the IMS abstractions.",
+      "narration": "How do AEM groups and permissions relate to IMS product profiles? AEM groups and permissions provide fine-grained control layered on top of the base access IMS product profiles grant. IMS product profiles grant the base level of access to log in. AEM groups and permissions complement this by providing fine-grained control over specific resources and functionality once the user is inside AEM, working in harmony with the IMS abstractions."
+    },
+    {
+      "id": "05-auth-017",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What protocol does IMS Authentication use under the hood?",
+      "heading": "IMS Authentication uses the OAuth protocol to establish a secure connection between AEM and the Adobe IMS endpoint",
+      "body": "IMS Authentication in AEM utilizes the OAuth protocol to establish a secure connection between AEM and the Adobe IMS endpoint. Once a user has an Adobe Identity and is added to IMS, they can authenticate into AEM Author using their IMS credentials.",
+      "narration": "What protocol does IMS Authentication use under the hood? IMS Authentication uses the OAuth protocol to establish a secure connection between AEM and the Adobe IMS endpoint. IMS Authentication in AEM utilizes the OAuth protocol to establish a secure connection between AEM and the Adobe IMS endpoint. Once a user has an Adobe Identity and is added to IMS, they can authenticate into AEM Author using their IMS credentials."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Read-only access to AEM — users must be members of the Contributors group",
+        "Full administrative access to AEM, including configuration and content management",
+        "No — AEM does not support assigning IMS user groups to product profiles; individual users must be added instead",
+        "AEM groups and permissions provide fine-grained control layered on top of the base access IMS product profiles grant",
+        "IMS Authentication uses the OAuth protocol to establish a secure connection between AEM and the Adobe IMS endpoint"
+      ],
+      "narration": "Quick recap of Adobe IMS Fundamentals (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

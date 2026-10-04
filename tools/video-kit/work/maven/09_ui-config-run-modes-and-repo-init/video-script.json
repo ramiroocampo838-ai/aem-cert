@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "ui.config, Run Modes & Repo Init",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "ui.config, Run Modes & Repo Init",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. ui.config, Run Modes & Repo Init. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-058",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the ui.config package contain?",
+      "heading": "OSGi configurations",
+      "body": "The speech says the ui.config package contains the OSGi configurations.",
+      "narration": "What does the ui.config package contain? OSGi configurations. The speech says the ui.config package contains the OSGi configurations."
+    },
+    {
+      "id": "02-mvn-059",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Why is ui.config considered code in the speech?",
+      "heading": "Because the configurations belong to OSGi bundles and have no regular content nodes",
+      "body": "The speech explains that ui.config is considered code because the configurations belong to OSGi bundles and have no regular content nodes.",
+      "narration": "Why is ui.config considered code in the speech? Because the configurations belong to OSGi bundles and have no regular content nodes. The speech explains that ui.config is considered code because the configurations belong to OSGi bundles and have no regular content nodes."
+    },
+    {
+      "id": "03-mvn-060",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Where are the configurations stored inside the repository?",
+      "heading": "In /apps/<appId>/osgiconfig",
+      "body": "The speech states that the configurations are in /apps/<appId>/osgiconfig.",
+      "narration": "Where are the configurations stored inside the repository? In /apps/<appId>/osgiconfig. The speech states that the configurations are in /apps/<appId>/osgiconfig."
+    },
+    {
+      "id": "04-mvn-061",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Given a scenario where you need defaults that apply everywhere, which folder does the speech use?",
+      "heading": "config",
+      "body": "The speech says a common folder named config holds defaults that apply everywhere.",
+      "narration": "Given a scenario where you need defaults that apply everywhere, which folder does the speech use? config. The speech says a common folder named config holds defaults that apply everywhere."
+    },
+    {
+      "id": "05-mvn-062",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which folder name matches the run-mode naming pattern described in the speech?",
+      "heading": "config.publish.prod",
+      "body": "The speech gives examples such as config.author, config.publish.prod, and config.dev, and says the run-mode names are author and publish for the service plus dev, stage, and prod for the environment type.",
+      "narration": "Which folder name matches the run-mode naming pattern described in the speech? config.publish.prod. The speech gives examples such as config.author, config.publish.prod, and config.dev, and says the run-mode names are author and publish for the service plus dev, stage, and prod for the environment type."
+    },
+    {
+      "id": "06-mvn-063",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which format is best for Repo Init according to the speech, and why?",
+      "heading": ".config because it supports multi-line values",
+      "body": "The speech says configuration files use cfg.json, with one exception: Repo Init is best written with the .config format because it supports multi-line values.",
+      "narration": "Which format is best for Repo Init according to the speech, and why? .config because it supports multi-line values. The speech says configuration files use cfg.json, with one exception: Repo Init is best written with the .config format because it supports multi-line values."
+    },
+    {
+      "id": "07-mvn-064",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a scenario where an application needs baseline content structures and service users before code runs, what is the recommended deployment mechanism?",
+      "heading": "Repo Init",
+      "body": "The speech says Repo Init is the recommended way to deploy mutable content that is logically part of the application, including baseline structures, users, service users, groups, and ACLs, and that it runs early in the deployment lifecycle.",
+      "narration": "Given a scenario where an application needs baseline content structures and service users before code runs, what is the recommended deployment mechanism? Repo Init. The speech says Repo Init is the recommended way to deploy mutable content that is logically part of the application, including baseline structures, users, service users, groups, and ACLs, and that it runs early in the deployment lifecycle."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "OSGi configurations",
+        "Because the configurations belong to OSGi bundles and have no regular content nodes",
+        "In /apps/<appId>/osgiconfig",
+        "config",
+        "config.publish.prod",
+        ".config because it supports multi-line values",
+        "Repo Init"
+      ],
+      "narration": "Quick recap of ui.config, Run Modes & Repo Init. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

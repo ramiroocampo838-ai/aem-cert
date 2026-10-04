@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "SonarQube Rules (Part 1 of 3)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SonarQube Rules (Part 1 of 3)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. SonarQube Rules (Part 1 of 3). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-001",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "Which SonarQube rule requires that ResourceResolvers, streams, and other closeable resources must always be closed in AEM Java code?",
+      "heading": "java:S2095 — Resources Should Be Closed",
+      "body": "java:S2095 (Severity: Critical, Type: Bug) requires that all resources implementing AutoCloseable — including ResourceResolver, InputStream, and JCR Session — are closed after use. The recommended fix is try-with-resources, which guarantees closure even when exceptions occur. Unclosed ResourceResolvers exhaust the JCR connection pool and cause production outages.",
+      "narration": "Which SonarQube rule requires that ResourceResolvers, streams, and other closeable resources must always be closed in AEM Java code? java:S2095 — Resources Should Be Closed. java:S2095 (Severity: Critical, Type: Bug) requires that all resources implementing AutoCloseable — including ResourceResolver, InputStream, and JCR Session — are closed after use. The recommended fix is try-with-resources, which guarantees closure even when exceptions occur. Unclosed ResourceResolvers exhaust the JCR connection pool and cause production outages."
+    },
+    {
+      "id": "02-cq-002",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "What is the recommended Java pattern for ensuring a ResourceResolver is always closed, even when an exception is thrown?",
+      "heading": "try-with-resources (try (ResourceResolver resolver = ...))",
+      "body": "The Java try-with-resources statement (introduced in Java 7) automatically calls close() on any AutoCloseable object when the try block exits — whether normally or via exception. This is the correct fix for java:S2095 and prevents ResourceResolver leaks that exhaust the JCR repository connection pool.",
+      "narration": "What is the recommended Java pattern for ensuring a ResourceResolver is always closed, even when an exception is thrown? try-with-resources (try (ResourceResolver resolver = ...)). The Java try-with-resources statement (introduced in Java 7) automatically calls close() on any AutoCloseable object when the try block exits — whether normally or via exception. This is the correct fix for java:S2095 and prevents ResourceResolver leaks that exhaust the JCR repository connection pool."
+    },
+    {
+      "id": "03-cq-003",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "Which SonarQube rule has Key java:S2068 and is classified as a Critical Vulnerability?",
+      "heading": "Avoid Hardcoded Credentials",
+      "body": "java:S2068 (Severity: Critical, Type: Vulnerability) detects hardcoded credentials — passwords, API keys, and tokens stored as string literals in source code. Source code is committed to Git and visible to anyone with repository access. The AEM solution is to use OSGi configuration with AEM Crypto Support encryption ({cipher} prefix) or Cloud Manager environment variables.",
+      "narration": "Which SonarQube rule has Key java:S2068 and is classified as a Critical Vulnerability? Avoid Hardcoded Credentials. java:S2068 (Severity: Critical, Type: Vulnerability) detects hardcoded credentials — passwords, API keys, and tokens stored as string literals in source code. Source code is committed to Git and visible to anyone with repository access. The AEM solution is to use OSGi configuration with AEM Crypto Support encryption ({cipher} prefix) or Cloud Manager environment variables."
+    },
+    {
+      "id": "04-cq-004",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "In AEM, what is the correct alternative to storing a password as a hardcoded string literal in Java source code?",
+      "heading": "Use OSGi configuration with AEM Crypto Support encryption (cipher prefix)",
+      "body": "The AEM-recommended solutions for java:S2068 are: (1) OSGi configuration with AEM Crypto Support — values prefixed with {cipher} are encrypted at rest and safe to commit to Git, and (2) Cloud Manager environment variables — injected at pipeline execution time. Both prevent secrets from appearing as plaintext in VCS.",
+      "narration": "In AEM, what is the correct alternative to storing a password as a hardcoded string literal in Java source code? Use OSGi configuration with AEM Crypto Support encryption (cipher prefix). The AEM-recommended solutions for java:S2068 are: (1) OSGi configuration with AEM Crypto Support — values prefixed with {cipher} are encrypted at rest and safe to commit to Git, and (2) Cloud Manager environment variables — injected at pipeline execution time. Both prevent secrets from appearing as plaintext in VCS."
+    },
+    {
+      "id": "05-cq-005",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "Which SonarQube rule (Key: java:S2259, Severity: Critical) addresses a very common runtime crash in AEM caused by not checking return values from Sling APIs like adaptTo() or getChild()?",
+      "heading": "Null Pointers Should Not Be Dereferenced",
+      "body": "java:S2259 (Severity: Critical, Type: Bug) detects null pointer dereferences. AEM APIs such as adaptTo(), getChild(), getContentResource(), and getResource() frequently return null when the resource or adaptation target does not exist. Calling any method on a null reference throws NullPointerException at runtime. Every result from these APIs must be null-checked before use.",
+      "narration": "Which SonarQube rule (Key: java:S2259, Severity: Critical) addresses a very common runtime crash in AEM caused by not checking return values from Sling APIs like adaptTo() or getChild()? Null Pointers Should Not Be Dereferenced. java:S2259 (Severity: Critical, Type: Bug) detects null pointer dereferences. AEM APIs such as adaptTo(), getChild(), getContentResource(), and getResource() frequently return null when the resource or adaptation target does not exist. Calling any method on a null reference throws NullPointerException at runtime. Every result from these APIs must be null-checked before use."
+    },
+    {
+      "id": "06-cq-006",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "Which SonarQube rule (Key: java:S1541) is triggered when an AEM service method has too many conditional branches and independent execution paths?",
+      "heading": "Methods Should Not Be Too Complex",
+      "body": "java:S1541 (Severity: Major, Type: Code Smell) measures cyclomatic complexity — the number of independent execution paths through a method. The default threshold is 10. In AEM, Sling Models and OSGi services with deeply nested conditionals are common offenders. The fix is to extract private methods for each responsibility, use early returns, and delegate sub-tasks to separate services.",
+      "narration": "Which SonarQube rule (Key: java:S1541) is triggered when an AEM service method has too many conditional branches and independent execution paths? Methods Should Not Be Too Complex. java:S1541 (Severity: Major, Type: Code Smell) measures cyclomatic complexity — the number of independent execution paths through a method. The default threshold is 10. In AEM, Sling Models and OSGi services with deeply nested conditionals are common offenders. The fix is to extract private methods for each responsibility, use early returns, and delegate sub-tasks to separate services."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "java:S2095 — Resources Should Be Closed",
+        "try-with-resources (try (ResourceResolver resolver = ...))",
+        "Avoid Hardcoded Credentials",
+        "Use OSGi configuration with AEM Crypto Support encryption (cipher prefix)",
+        "Null Pointers Should Not Be Dereferenced",
+        "Methods Should Not Be Too Complex"
+      ],
+      "narration": "Quick recap of SonarQube Rules (Part 1 of 3). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

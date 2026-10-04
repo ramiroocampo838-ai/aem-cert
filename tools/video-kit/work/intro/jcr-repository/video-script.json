@@ -1,0 +1,156 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "JCR Repository",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "JCR Repository",
+      "sub": "Intro · 12 key concepts",
+      "narration": "Intro. JCR Repository. In this video we review 12 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-017",
+      "type": "concept",
+      "index": 1,
+      "total": 12,
+      "question": "What does JCR stand for in the AEM technology stack?",
+      "heading": "Java Content Repository",
+      "body": "JCR stands for Java Content Repository. It is a standardized API (defined by JSR-170 and JSR-283) for storing and accessing content in a hierarchical, tree-structured repository. AEM uses Apache Jackrabbit Oak as its JCR implementation.",
+      "narration": "What does JCR stand for in the AEM technology stack? Java Content Repository. JCR stands for Java Content Repository. It is a standardized API (defined by JSR-170 and JSR-283) for storing and accessing content in a hierarchical, tree-structured repository. AEM uses Apache Jackrabbit Oak as its JCR implementation."
+    },
+    {
+      "id": "02-intro-018",
+      "type": "concept",
+      "index": 2,
+      "total": 12,
+      "question": "What is Apache Jackrabbit Oak in relation to AEM?",
+      "heading": "The JCR implementation used by AEM as its content repository",
+      "body": "Apache Jackrabbit Oak is the specific open-source implementation of the Java Content Repository (JCR) specification used by AEM. It provides hierarchical content storage with support for versioning, access control, and full-text search.",
+      "narration": "What is Apache Jackrabbit Oak in relation to AEM? The JCR implementation used by AEM as its content repository. Apache Jackrabbit Oak is the specific open-source implementation of the Java Content Repository (JCR) specification used by AEM. It provides hierarchical content storage with support for versioning, access control, and full-text search."
+    },
+    {
+      "id": "03-intro-019",
+      "type": "concept",
+      "index": 3,
+      "total": 12,
+      "question": "Where is AEM page content stored in the JCR repository?",
+      "heading": "Under /content in the JCR tree",
+      "body": "AEM page content is stored under /content in the JCR repository. For example, a page at /content/mysite/en/home. Other important paths: /apps (application code), /libs (AEM core), /conf (configurations), /var (variable data).",
+      "narration": "Where is AEM page content stored in the JCR repository? Under /content in the JCR tree. AEM page content is stored under /content in the JCR repository. For example, a page at /content/mysite/en/home. Other important paths: /apps (application code), /libs (AEM core), /conf (configurations), /var (variable data)."
+    },
+    {
+      "id": "04-intro-020",
+      "type": "concept",
+      "index": 4,
+      "total": 12,
+      "question": "What JCR path stores AEM application code such as components and templates?",
+      "heading": "/apps",
+      "body": "Custom application code including components, templates, OSGi configurations, and scripts is stored under /apps. The /libs path contains AEM's own core code, which should not be modified — instead override by creating overlays under /apps.",
+      "narration": "What JCR path stores AEM application code such as components and templates? /apps. Custom application code including components, templates, OSGi configurations, and scripts is stored under /apps. The /libs path contains AEM's own core code, which should not be modified — instead override by creating overlays under /apps."
+    },
+    {
+      "id": "05-intro-021",
+      "type": "concept",
+      "index": 5,
+      "total": 12,
+      "question": "What is the node type 'cq:Page' used for in the JCR?",
+      "heading": "Representing an AEM page node in the content repository",
+      "body": "cq:Page is the JCR primary node type used for AEM pages. A page node typically has a child node jcr:content (of type cq:PageContent) that holds the page's actual properties and content.",
+      "narration": "What is the node type 'cq:Page' used for in the JCR? Representing an AEM page node in the content repository. cq:Page is the JCR primary node type used for AEM pages. A page node typically has a child node jcr:content (of type cq:PageContent) that holds the page's actual properties and content."
+    },
+    {
+      "id": "06-intro-022",
+      "type": "concept",
+      "index": 6,
+      "total": 12,
+      "question": "What is a 'jcr:content' node in AEM?",
+      "heading": "The special child node under a page that holds the actual content properties",
+      "body": "The jcr:content node is a standard child node of AEM page (cq:Page) nodes. It holds the actual content properties of the page, such as jcr:title, sling:resourceType (the template), and all the component instances placed on the page.",
+      "narration": "What is a 'jcr:content' node in AEM? The special child node under a page that holds the actual content properties. The jcr:content node is a standard child node of AEM page (cq:Page) nodes. It holds the actual content properties of the page, such as jcr:title, sling:resourceType (the template), and all the component instances placed on the page."
+    },
+    {
+      "id": "07-intro-023",
+      "type": "concept",
+      "index": 7,
+      "total": 12,
+      "question": "What node type is used for flexible nodes without structural constraints in JCR?",
+      "heading": "nt:unstructured",
+      "body": "nt:unstructured is a JCR node type that imposes no constraints — any property or child node can be added. It is commonly used for component content storage under jcr:content nodes because AEM components often store varied properties.",
+      "narration": "What node type is used for flexible nodes without structural constraints in JCR? nt:unstructured. nt:unstructured is a JCR node type that imposes no constraints — any property or child node can be added. It is commonly used for component content storage under jcr:content nodes because AEM components often store varied properties."
+    },
+    {
+      "id": "08-intro-024",
+      "type": "concept",
+      "index": 8,
+      "total": 12,
+      "question": "In the JCR, what is the path '/conf' used for?",
+      "heading": "Storing configurations such as editable template definitions and content policies",
+      "body": "The /conf path stores configuration data in AEM, particularly editable template definitions (/conf/<site>/settings/wcm/templates), content policies, and cloud service configurations. It replaced the older /etc path for many configurations.",
+      "narration": "In the JCR, what is the path '/conf' used for? Storing configurations such as editable template definitions and content policies. The /conf path stores configuration data in AEM, particularly editable template definitions (/conf/<site>/settings/wcm/templates), content policies, and cloud service configurations. It replaced the older /etc path for many configurations."
+    },
+    {
+      "id": "09-intro-025",
+      "type": "concept",
+      "index": 9,
+      "total": 12,
+      "question": "What AEM query language uses SQL-like syntax for JCR queries?",
+      "heading": "JCR-SQL2",
+      "body": "JCR-SQL2 is the SQL-like query language for querying the JCR content repository, defined in the JSR-283 specification. AEM also supports XPath queries. Example: SELECT * FROM [cq:Page] WHERE ISDESCENDANTNODE('/content/mysite').",
+      "narration": "What AEM query language uses SQL-like syntax for JCR queries? JCR-SQL2. JCR-SQL2 is the SQL-like query language for querying the JCR content repository, defined in the JSR-283 specification. AEM also supports XPath queries. Example: SELECT * FROM [cq:Page] WHERE ISDESCENDANTNODE('/content/mysite')."
+    },
+    {
+      "id": "10-intro-026",
+      "type": "concept",
+      "index": 10,
+      "total": 12,
+      "question": "What is the purpose of the '/var' path in the AEM JCR repository?",
+      "heading": "Storing variable, runtime-generated data like workflow instances and reports",
+      "body": "The /var path stores variable, runtime-generated data in AEM, including workflow instances, audit logs, replication queue data, package manager data, and reports. Unlike /content or /apps, /var data is generated by AEM at runtime.",
+      "narration": "What is the purpose of the '/var' path in the AEM JCR repository? Storing variable, runtime-generated data like workflow instances and reports. The /var path stores variable, runtime-generated data in AEM, including workflow instances, audit logs, replication queue data, package manager data, and reports. Unlike /content or /apps, /var data is generated by AEM at runtime."
+    },
+    {
+      "id": "11-intro-027",
+      "type": "concept",
+      "index": 11,
+      "total": 12,
+      "question": "What does the 'dam:Asset' node type represent in the JCR?",
+      "heading": "A digital asset stored in the AEM DAM (Digital Asset Manager)",
+      "body": "dam:Asset is the JCR node type for digital assets stored in the AEM DAM. Assets are typically stored under /content/dam and include images, videos, PDFs, and other binary files, each with metadata stored in their jcr:content child.",
+      "narration": "What does the 'dam:Asset' node type represent in the JCR? A digital asset stored in the AEM DAM (Digital Asset Manager). dam:Asset is the JCR node type for digital assets stored in the AEM DAM. Assets are typically stored under /content/dam and include images, videos, PDFs, and other binary files, each with metadata stored in their jcr:content child."
+    },
+    {
+      "id": "12-intro-028",
+      "type": "concept",
+      "index": 12,
+      "total": 12,
+      "question": "Where are user and group definitions stored in the AEM JCR?",
+      "heading": "Under /home in the JCR repository",
+      "body": "User and group definitions are stored under /home in the JCR. Specifically, users are at /home/users/<path> and groups at /home/groups/<path>. This is managed by AEM's User Administration module backed by Apache Oak.",
+      "narration": "Where are user and group definitions stored in the AEM JCR? Under /home in the JCR repository. User and group definitions are stored under /home in the JCR. Specifically, users are at /home/users/<path> and groups at /home/groups/<path>. This is managed by AEM's User Administration module backed by Apache Oak."
+    },
+    {
+      "id": "13-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Java Content Repository",
+        "The JCR implementation used by AEM as its content repository",
+        "Under /content in the JCR tree",
+        "/apps",
+        "Representing an AEM page node in the content repository",
+        "The special child node under a page that holds the actual content properties",
+        "nt:unstructured",
+        "Storing configurations such as editable template definitions and content policies",
+        "JCR-SQL2",
+        "Storing variable, runtime-generated data like workflow instances and reports",
+        "A digital asset stored in the AEM DAM (Digital Asset Manager)",
+        "Under /home in the JCR repository"
+      ],
+      "narration": "Quick recap of JCR Repository. Java Content Repository. The JCR implementation used by AEM as its content repository. Under /content in the JCR tree. /apps. Representing an AEM page node in the content repository. The special child node under a page that holds the actual content properties. nt:unstructured. Storing configurations such as editable template definitions and content policies. JCR-SQL2. Storing variable, runtime-generated data like workflow instances and reports. A digital asset stored in the AEM DAM (Digital Asset Manager). Under /home in the JCR repository."
+    }
+  ]
+}

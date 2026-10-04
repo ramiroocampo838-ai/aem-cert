@@ -1,0 +1,134 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "cloud-manager",
+  "accent": "#a855f7",
+  "category": "Cloud Manager",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cloud Manager",
+      "sub": "cloud-manager · 10 key concepts",
+      "narration": "cloud-manager. Cloud Manager. In this video we review 10 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-015",
+      "type": "concept",
+      "index": 1,
+      "total": 10,
+      "question": "What is Cloud Manager in AEMaaCS?",
+      "heading": "Adobe's CI/CD platform for deploying code, managing environments, and operating AEMaaCS",
+      "body": "Cloud Manager is Adobe's operational platform for AEM as a Cloud Service. It provides CI/CD pipelines for deploying code, environment provisioning and management, code quality gates, monitoring dashboards, API access, and governance controls — it is the single operational hub for running AEMaaCS.",
+      "narration": "What is Cloud Manager in AEMaaCS? Adobe's CI/CD platform for deploying code, managing environments, and operating AEMaaCS. Cloud Manager is Adobe's operational platform for AEM as a Cloud Service. It provides CI/CD pipelines for deploying code, environment provisioning and management, code quality gates, monitoring dashboards, API access, and governance controls — it is the single operational hub for running AEMaaCS."
+    },
+    {
+      "id": "02-cm-016",
+      "type": "concept",
+      "index": 2,
+      "total": 10,
+      "question": "What is the 'Business Owner' role in Cloud Manager?",
+      "heading": "Responsible for defining programs and managing organizational access in Cloud Manager",
+      "body": "The Business Owner role in Cloud Manager is the highest governance role — responsible for creating and managing programs, defining program types (Sites, Assets, Commerce), and being accountable for overall program value. Must be assigned in Adobe Admin Console.",
+      "narration": "What is the 'Business Owner' role in Cloud Manager? Responsible for defining programs and managing organizational access in Cloud Manager. The Business Owner role in Cloud Manager is the highest governance role — responsible for creating and managing programs, defining program types (Sites, Assets, Commerce), and being accountable for overall program value. Must be assigned in Adobe Admin Console."
+    },
+    {
+      "id": "03-cm-017",
+      "type": "concept",
+      "index": 3,
+      "total": 10,
+      "question": "What can a 'Deployment Manager' do in Cloud Manager?",
+      "heading": "Create and manage CI/CD pipelines and trigger deployments",
+      "body": "A Deployment Manager in Cloud Manager can create and configure CI/CD pipelines (production and non-production), trigger deployments, manage environment variables, and control the deployment lifecycle — but cannot create programs or manage user roles.",
+      "narration": "What can a 'Deployment Manager' do in Cloud Manager? Create and manage CI/CD pipelines and trigger deployments. A Deployment Manager in Cloud Manager can create and configure CI/CD pipelines (production and non-production), trigger deployments, manage environment variables, and control the deployment lifecycle — but cannot create programs or manage user roles."
+    },
+    {
+      "id": "04-cm-018",
+      "type": "concept",
+      "index": 4,
+      "total": 10,
+      "question": "What is the 'Developer' role allowed to do in Cloud Manager?",
+      "heading": "Access developer tools: log files, developer console, and environment details",
+      "body": "The Developer role in Cloud Manager provides read access to developer tooling: viewing pipeline execution history, downloading log files, accessing the AEM Developer Console for debugging OSGi services, and viewing environment configurations. They cannot trigger or configure pipelines.",
+      "narration": "What is the 'Developer' role allowed to do in Cloud Manager? Access developer tools: log files, developer console, and environment details. The Developer role in Cloud Manager provides read access to developer tooling: viewing pipeline execution history, downloading log files, accessing the AEM Developer Console for debugging OSGi services, and viewing environment configurations. They cannot trigger or configure pipelines."
+    },
+    {
+      "id": "05-cm-019",
+      "type": "concept",
+      "index": 5,
+      "total": 10,
+      "question": "Where are Cloud Manager user roles assigned?",
+      "heading": "In Adobe Admin Console — where Cloud Manager user roles are assigned",
+      "body": "Cloud Manager user roles (Business Owner, Program Manager, Deployment Manager, Developer) are managed in the Adobe Admin Console. An Organization Administrator assigns users to Cloud Manager product profiles, which map to these roles.",
+      "narration": "Where are Cloud Manager user roles assigned? In Adobe Admin Console — where Cloud Manager user roles are assigned. Cloud Manager user roles (Business Owner, Program Manager, Deployment Manager, Developer) are managed in the Adobe Admin Console. An Organization Administrator assigns users to Cloud Manager product profiles, which map to these roles."
+    },
+    {
+      "id": "06-cm-020",
+      "type": "concept",
+      "index": 6,
+      "total": 10,
+      "question": "What is the 'Program Manager' role responsible for in Cloud Manager?",
+      "heading": "Managing program features, timelines, and coordinating with other roles",
+      "body": "The Program Manager role in Cloud Manager is a coordination and planning role — managing program delivery timelines, coordinating between teams, tracking SLA adherence, and having visibility across all aspects of the program including environments and pipelines.",
+      "narration": "What is the 'Program Manager' role responsible for in Cloud Manager? Managing program features, timelines, and coordinating with other roles. The Program Manager role in Cloud Manager is a coordination and planning role — managing program delivery timelines, coordinating between teams, tracking SLA adherence, and having visibility across all aspects of the program including environments and pipelines."
+    },
+    {
+      "id": "07-cm-021",
+      "type": "concept",
+      "index": 7,
+      "total": 10,
+      "question": "What is a 'program' in Cloud Manager?",
+      "heading": "A logical container in Cloud Manager that groups related AEM environments and pipelines",
+      "body": "In Cloud Manager, a Program is a logical organizational container that groups together AEM environments (dev, stage, production), CI/CD pipelines, a Git repository, SLA targets, and user access. A company typically has one or more programs (e.g., one per brand or major site).",
+      "narration": "What is a 'program' in Cloud Manager? A logical container in Cloud Manager that groups related AEM environments and pipelines. In Cloud Manager, a Program is a logical organizational container that groups together AEM environments (dev, stage, production), CI/CD pipelines, a Git repository, SLA targets, and user access. A company typically has one or more programs (e.g., one per brand or major site)."
+    },
+    {
+      "id": "08-cm-022",
+      "type": "concept",
+      "index": 8,
+      "total": 10,
+      "question": "What types of programs exist in Cloud Manager?",
+      "heading": "Sandbox programs and production programs — the two program types in Cloud Manager",
+      "body": "Cloud Manager has two program types: Sandbox Programs (free, limited capacity, used for learning, demos, and exploration — no SLA guarantees) and Production Programs (full capacity, Adobe SLA-backed, used for real business workloads).",
+      "narration": "What types of programs exist in Cloud Manager? Sandbox programs and production programs — the two program types in Cloud Manager. Cloud Manager has two program types: Sandbox Programs (free, limited capacity, used for learning, demos, and exploration — no SLA guarantees) and Production Programs (full capacity, Adobe SLA-backed, used for real business workloads)."
+    },
+    {
+      "id": "09-cm-023",
+      "type": "concept",
+      "index": 9,
+      "total": 10,
+      "question": "What is the purpose of a Sandbox program in Cloud Manager?",
+      "heading": "Exploration, learning, demos, and POCs — not subject to production SLAs",
+      "body": "Sandbox programs in Cloud Manager are provided for learning, exploration, demos, and proof-of-concept work. They have limited capacity and no Adobe SLA guarantees. They are free (included with AEMaaCS licensing) and ideal for training developers on the platform.",
+      "narration": "What is the purpose of a Sandbox program in Cloud Manager? Exploration, learning, demos, and POCs — not subject to production SLAs. Sandbox programs in Cloud Manager are provided for learning, exploration, demos, and proof-of-concept work. They have limited capacity and no Adobe SLA guarantees. They are free (included with AEMaaCS licensing) and ideal for training developers on the platform."
+    },
+    {
+      "id": "10-cm-024",
+      "type": "concept",
+      "index": 10,
+      "total": 10,
+      "question": "What Git repository does Cloud Manager use for code management?",
+      "heading": "Adobe-managed Git repositories provided per Cloud Manager program",
+      "body": "Cloud Manager provides an Adobe-managed Git repository for each program. Teams push their code to this repository, and Cloud Manager's pipelines build and deploy from it. Private repositories (GitHub, Bitbucket, GitLab) can also be connected as external repositories.",
+      "narration": "What Git repository does Cloud Manager use for code management? Adobe-managed Git repositories provided per Cloud Manager program. Cloud Manager provides an Adobe-managed Git repository for each program. Teams push their code to this repository, and Cloud Manager's pipelines build and deploy from it. Private repositories (GitHub, Bitbucket, GitLab) can also be connected as external repositories."
+    },
+    {
+      "id": "11-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Adobe's CI/CD platform for deploying code, managing environments, and operating AEMaaCS",
+        "Responsible for defining programs and managing organizational access in Cloud Manager",
+        "Create and manage CI/CD pipelines and trigger deployments",
+        "Access developer tools: log files, developer console, and environment details",
+        "In Adobe Admin Console — where Cloud Manager user roles are assigned",
+        "Managing program features, timelines, and coordinating with other roles",
+        "A logical container in Cloud Manager that groups related AEM environments and pipelines",
+        "Sandbox programs and production programs — the two program types in Cloud Manager",
+        "Exploration, learning, demos, and POCs — not subject to production SLAs",
+        "Adobe-managed Git repositories provided per Cloud Manager program"
+      ],
+      "narration": "Quick recap of Cloud Manager. Adobe's CI/CD platform for deploying code, managing environments, and operating AEMaaCS. Responsible for defining programs and managing organizational access in Cloud Manager. Create and manage CI/CD pipelines and trigger deployments. Access developer tools: log files, developer console, and environment details. In Adobe Admin Console — where Cloud Manager user roles are assigned. Managing program features, timelines, and coordinating with other roles. A logical container in Cloud Manager that groups related AEM environments and pipelines. Sandbox programs and production programs — the two program types in Cloud Manager. Exploration, learning, demos, and POCs — not subject to production SLAs. Adobe-managed Git repositories provided per Cloud Manager program."
+    }
+  ]
+}

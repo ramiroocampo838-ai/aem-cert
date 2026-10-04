@@ -1,0 +1,113 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Sling Models Injectors",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Sling Models Injectors",
+      "sub": "Components · 8 key concepts",
+      "narration": "Components. Sling Models Injectors. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-058",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "Which annotation injects a property from the resource's ValueMap?",
+      "heading": "@ValueMapValue",
+      "body": "The speech explicitly says @ValueMapValue injects a property from the resource's ValueMap.",
+      "narration": "Which annotation injects a property from the resource's ValueMap? @ValueMapValue. The speech explicitly says @ValueMapValue injects a property from the resource's ValueMap."
+    },
+    {
+      "id": "02-comp-059",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Which annotation injects a child resource or a list of child resources?",
+      "heading": "@ChildResource",
+      "body": "The speech states that @ChildResource injects a child resource or a list of child resources.",
+      "narration": "Which annotation injects a child resource or a list of child resources? @ChildResource. The speech states that @ChildResource injects a child resource or a list of child resources."
+    },
+    {
+      "id": "03-comp-060",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Given a scenario where a model needs currentPage or properties from HTL bindings, which annotation is used and what adaptable is required?",
+      "heading": "@ScriptVariable, and the adaptable must be the request",
+      "body": "The speech says @ScriptVariable injects an HTL and scripting binding such as currentPage, resource, or properties, and that it needs the request as adaptable.",
+      "narration": "Given a scenario where a model needs currentPage or properties from HTL bindings, which annotation is used and what adaptable is required? @ScriptVariable, and the adaptable must be the request. The speech says @ScriptVariable injects an HTL and scripting binding such as currentPage, resource, or properties, and that it needs the request as adaptable."
+    },
+    {
+      "id": "04-comp-061",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Which annotation injects Sling objects such as the ResourceResolver, Resource, request, or response?",
+      "heading": "@SlingObject",
+      "body": "The speech lists @SlingObject as the injector for Sling objects like the ResourceResolver, the Resource, or the request and response.",
+      "narration": "Which annotation injects Sling objects such as the ResourceResolver, Resource, request, or response? @SlingObject. The speech lists @SlingObject as the injector for Sling objects like the ResourceResolver, the Resource, or the request and response."
+    },
+    {
+      "id": "05-comp-062",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Which annotation injects an OSGi service into a Sling Model?",
+      "heading": "@OSGiService",
+      "body": "The speech explicitly says @OSGiService injects an OSGi service.",
+      "narration": "Which annotation injects an OSGi service into a Sling Model? @OSGiService. The speech explicitly says @OSGiService injects an OSGi service."
+    },
+    {
+      "id": "06-comp-063",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What does the @Via annotation do in Sling Models?",
+      "heading": "It changes the object from which the value is read",
+      "body": "The speech says @Via changes the object from which the value is read, for example @Via(\"resource\") or @Via(type = ResourceSuperType.class).",
+      "narration": "What does the @Via annotation do in Sling Models? It changes the object from which the value is read. The speech says @Via changes the object from which the value is read, for example @Via(\"resource\") or @Via(type = ResourceSuperType.class)."
+    },
+    {
+      "id": "07-comp-064",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Why does the speech discourage using the generic @Inject annotation when a specific injector annotation exists?",
+      "heading": "Because specific annotations are faster, clearer, and fix which injector is used",
+      "body": "The speech says @Inject is the generic annotation and is discouraged because the specific annotations are faster and clearer, and they fix which injector is used.",
+      "narration": "Why does the speech discourage using the generic @Inject annotation when a specific injector annotation exists? Because specific annotations are faster, clearer, and fix which injector is used. The speech says @Inject is the generic annotation and is discouraged because the specific annotations are faster and clearer, and they fix which injector is used."
+    },
+    {
+      "id": "08-comp-065",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "In an interface-only model, what is true according to the speech?",
+      "heading": "Sling Models creates interface-only models with dynamic proxies, and default interface methods are not executed",
+      "body": "The speech says interface-only models use methods for injection, Sling Models creates them with dynamic proxies, and default interface methods are not executed.",
+      "narration": "In an interface-only model, what is true according to the speech? Sling Models creates interface-only models with dynamic proxies, and default interface methods are not executed. The speech says interface-only models use methods for injection, Sling Models creates them with dynamic proxies, and default interface methods are not executed."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "@ValueMapValue",
+        "@ChildResource",
+        "@ScriptVariable, and the adaptable must be the request",
+        "@SlingObject",
+        "@OSGiService",
+        "It changes the object from which the value is read",
+        "Because specific annotations are faster, clearer, and fix which injector is used",
+        "Sling Models creates interface-only models with dynamic proxies, and default interface methods are not executed"
+      ],
+      "narration": "Quick recap of Sling Models Injectors. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

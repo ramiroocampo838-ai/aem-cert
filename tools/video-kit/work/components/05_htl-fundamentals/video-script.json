@@ -1,0 +1,113 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "HTL Fundamentals",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "HTL Fundamentals",
+      "sub": "Components · 8 key concepts",
+      "narration": "Components. HTL Fundamentals. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-029",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is HTL in AEM?",
+      "heading": "The server-side template language for AEM that replaces JSP",
+      "body": "The HTL fundamentals section says HTL, the HTML Template Language, is the server-side template language for AEM and that it replaces JSP.",
+      "narration": "What is HTL in AEM? The server-side template language for AEM that replaces JSP. The HTL fundamentals section says HTL, the HTML Template Language, is the server-side template language for AEM and that it replaces JSP."
+    },
+    {
+      "id": "02-comp-030",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "How does the speech describe the design goal of HTL regarding security?",
+      "heading": "It was designed to be secure and simple, with automatic context-aware XSS protection",
+      "body": "The speech says HTL was designed to be secure and simple and that it automatically applies context-aware XSS protection.",
+      "narration": "How does the speech describe the design goal of HTL regarding security? It was designed to be secure and simple, with automatic context-aware XSS protection. The speech says HTL was designed to be secure and simple and that it automatically applies context-aware XSS protection."
+    },
+    {
+      "id": "03-comp-031",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What is the expression syntax used in HTL?",
+      "heading": "A dollar sign and braces, like ${properties.jcr:title}",
+      "body": "The speech states that HTL expressions use a dollar sign and braces, like ${properties.jcr:title}.",
+      "narration": "What is the expression syntax used in HTL? A dollar sign and braces, like ${properties.jcr:title}. The speech states that HTL expressions use a dollar sign and braces, like ${properties.jcr:title}."
+    },
+    {
+      "id": "04-comp-032",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "How are options added to an HTL expression?",
+      "heading": "They follow an at sign, as in ${text @ context='html'}",
+      "body": "The speech says HTL options follow an at sign, and the example given is ${text @ context='html'}.",
+      "narration": "How are options added to an HTL expression? They follow an at sign, as in ${text @ context='html'}. The speech says HTL options follow an at sign, and the example given is ${text @ context='html'}."
+    },
+    {
+      "id": "05-comp-033",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What does the or operator do in an expression such as ${properties.pageTitle || properties.jcr:title || resource.name}?",
+      "heading": "It can provide defaults by falling back through values",
+      "body": "The HTL fundamentals section says the or operator can provide defaults, and gives a fallback example using pageTitle, jcr:title, and resource.name.",
+      "narration": "What does the or operator do in an expression such as ${properties.pageTitle || properties.jcr:title || resource.name}? It can provide defaults by falling back through values. The HTL fundamentals section says the or operator can provide defaults, and gives a fallback example using pageTitle, jcr:title, and resource.name."
+    },
+    {
+      "id": "06-comp-034",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "How do equality comparisons behave in HTL?",
+      "heading": "They are strict, like triple equals in JavaScript, with no type conversion",
+      "body": "The speech says comparison operators are strict and that the equality operators work like triple equals in JavaScript, with no type conversion.",
+      "narration": "How do equality comparisons behave in HTL? They are strict, like triple equals in JavaScript, with no type conversion. The speech says comparison operators are strict and that the equality operators work like triple equals in JavaScript, with no type conversion."
+    },
+    {
+      "id": "07-comp-035",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Which global objects are named as available in HTL?",
+      "heading": "properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode",
+      "body": "The HTL fundamentals section explicitly names properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode as global objects available in HTL.",
+      "narration": "Which global objects are named as available in HTL? properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode. The HTL fundamentals section explicitly names properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode as global objects available in HTL."
+    },
+    {
+      "id": "08-comp-036",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What must you do for script and style contexts in HTL?",
+      "heading": "Set a context explicitly, otherwise nothing is output",
+      "body": "The speech says that for script and style contexts you must set a context explicitly; otherwise nothing is output.",
+      "narration": "What must you do for script and style contexts in HTL? Set a context explicitly, otherwise nothing is output. The speech says that for script and style contexts you must set a context explicitly; otherwise nothing is output."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The server-side template language for AEM that replaces JSP",
+        "It was designed to be secure and simple, with automatic context-aware XSS protection",
+        "A dollar sign and braces, like ${properties.jcr:title}",
+        "They follow an at sign, as in ${text @ context='html'}",
+        "It can provide defaults by falling back through values",
+        "They are strict, like triple equals in JavaScript, with no type conversion",
+        "properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode",
+        "Set a context explicitly, otherwise nothing is output"
+      ],
+      "narration": "Quick recap of HTL Fundamentals. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

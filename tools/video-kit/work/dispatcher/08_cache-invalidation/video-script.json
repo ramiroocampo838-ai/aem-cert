@@ -1,0 +1,113 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Cache Invalidation",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cache Invalidation",
+      "sub": "Dispatcher · 8 key concepts",
+      "narration": "Dispatcher. Cache Invalidation. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-051",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "How does Dispatcher mark cached content as invalid after activation?",
+      "heading": "Dispatcher invalidates cached files by touching a .stat file",
+      "body": "The speech says Dispatcher invalidates files by touching a .stat file and then compares that file's modification date with the cached document's modification date.",
+      "narration": "How does Dispatcher mark cached content as invalid after activation? Dispatcher invalidates cached files by touching a .stat file. The speech says Dispatcher invalidates files by touching a .stat file and then compares that file's modification date with the cached document's modification date."
+    },
+    {
+      "id": "02-disp-052",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What does /statfileslevel control in Dispatcher cache invalidation?",
+      "heading": "/statfileslevel limits .stat touching to the docroot-to-resource path depth",
+      "body": "The speech explains that /statfileslevel controls how many folder levels get a .stat file and that only .stat files from docroot down to the file's level, or the configured depth, are touched.",
+      "narration": "What does /statfileslevel control in Dispatcher cache invalidation? /statfileslevel limits .stat touching to the docroot-to-resource path depth. The speech explains that /statfileslevel controls how many folder levels get a .stat file and that only .stat files from docroot down to the file's level, or the configured depth, are touched."
+    },
+    {
+      "id": "03-disp-053",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "A team configured a custom /statfile name, but Dispatcher still uses .stat files. Why?",
+      "heading": "When /statfileslevel is set, Dispatcher ignores /statfile and uses .stat",
+      "body": "The source says that if /statfileslevel is set, the /statfile property is ignored and .stat is used.",
+      "narration": "A team configured a custom /statfile name, but Dispatcher still uses .stat files. Why? When /statfileslevel is set, Dispatcher ignores /statfile and uses .stat. The source says that if /statfileslevel is set, the /statfile property is ignored and .stat is used."
+    },
+    {
+      "id": "04-disp-054",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What happens to auto-invalidated files defined by /invalidate?",
+      "heading": "Auto-invalidated files stay on disk and are revalidated on the next request",
+      "body": "The speech says auto-invalidated files are not deleted right away; their validity is checked at the next request.",
+      "narration": "What happens to auto-invalidated files defined by /invalidate? Auto-invalidated files stay on disk and are revalidated on the next request. The speech says auto-invalidated files are not deleted right away; their validity is checked at the next request."
+    },
+    {
+      "id": "05-disp-055",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "Which pattern is typically used in /invalidate for linked page content?",
+      "heading": "A common /invalidate setup denies everything and allows *.html",
+      "body": "The speech says /invalidate is typically used for HTML pages because pages link to each other, and the usual configuration denies everything and allows *.html.",
+      "narration": "Which pattern is typically used in /invalidate for linked page content? A common /invalidate setup denies everything and allows *.html. The speech says /invalidate is typically used for HTML pages because pages link to each other, and the usual configuration denies everything and allows *.html."
+    },
+    {
+      "id": "06-disp-056",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is required for a manual Dispatcher flush request?",
+      "heading": "A manual flush is an HTTP POST to /dispatcher/invalidate.cache with CQ-Action and CQ-Handle",
+      "body": "The speech defines a manual flush as an HTTP POST to /dispatcher/invalidate.cache with headers including CQ-Action and CQ-Handle.",
+      "narration": "What is required for a manual Dispatcher flush request? A manual flush is an HTTP POST to /dispatcher/invalidate.cache with CQ-Action and CQ-Handle. The speech defines a manual flush as an HTTP POST to /dispatcher/invalidate.cache with headers including CQ-Action and CQ-Handle."
+    },
+    {
+      "id": "07-disp-057",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "Which header value should be used when only the targeted resource should be flushed without invalidating other cache areas?",
+      "heading": "CQ-Action-Scope: ResourceOnly flushes only the targeted resource",
+      "body": "The speech states that the header CQ-Action-Scope with value ResourceOnly flushes a resource without invalidating other parts of the cache.",
+      "narration": "Which header value should be used when only the targeted resource should be flushed without invalidating other cache areas? CQ-Action-Scope: ResourceOnly flushes only the targeted resource. The speech states that the header CQ-Action-Scope with value ResourceOnly flushes a resource without invalidating other parts of the cache."
+    },
+    {
+      "id": "08-disp-058",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Why is defining /allowedClients recommended in the cache section?",
+      "heading": "Without /allowedClients, any client can clear the cache",
+      "body": "The speech recommends defining /allowedClients because, if it is not defined, any client can clear the cache and repeated flushes can severely hurt performance.",
+      "narration": "Why is defining /allowedClients recommended in the cache section? Without /allowedClients, any client can clear the cache. The speech recommends defining /allowedClients because, if it is not defined, any client can clear the cache and repeated flushes can severely hurt performance."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Dispatcher invalidates cached files by touching a .stat file",
+        "/statfileslevel limits .stat touching to the docroot-to-resource path depth",
+        "When /statfileslevel is set, Dispatcher ignores /statfile and uses .stat",
+        "Auto-invalidated files stay on disk and are revalidated on the next request",
+        "A common /invalidate setup denies everything and allows *.html",
+        "A manual flush is an HTTP POST to /dispatcher/invalidate.cache with CQ-Action and CQ-Handle",
+        "CQ-Action-Scope: ResourceOnly flushes only the targeted resource",
+        "Without /allowedClients, any client can clear the cache"
+      ],
+      "narration": "Quick recap of Cache Invalidation. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

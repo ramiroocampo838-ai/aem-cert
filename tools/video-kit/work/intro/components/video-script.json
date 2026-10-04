@@ -1,0 +1,156 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "Components",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Components",
+      "sub": "Intro · 12 key concepts",
+      "narration": "Intro. Components. In this video we review 12 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-053",
+      "type": "concept",
+      "index": 1,
+      "total": 12,
+      "question": "What file defines the component's metadata and properties in AEM?",
+      "heading": ".content.xml — the component definition file with jcr:primaryType, title, and group",
+      "body": "Every AEM component must have a .content.xml file in its folder that defines the component node (jcr:primaryType='cq:Component'), along with metadata like jcr:title (display name in editor), componentGroup (for the component palette), and sling:resourceSuperType (for inheritance).",
+      "narration": "What file defines the component's metadata and properties in AEM? .content.xml — the component definition file with jcr:primaryType, title, and group. Every AEM component must have a .content.xml file in its folder that defines the component node (jcr:primaryType='cq:Component'), along with metadata like jcr:title (display name in editor), componentGroup (for the component palette), and sling:resourceSuperType (for inheritance)."
+    },
+    {
+      "id": "02-intro-054",
+      "type": "concept",
+      "index": 2,
+      "total": 12,
+      "question": "What does HTL stand for in AEM component development?",
+      "heading": "HTML Template Language — AEM's server-side templating language",
+      "body": "HTL stands for HTML Template Language (formerly known as Sightly). It is Adobe's recommended server-side templating language for AEM component development — designed for security (XSS protection by default), separation of concerns, and ease of use for both developers and designers.",
+      "narration": "What does HTL stand for in AEM component development? HTML Template Language — AEM's server-side templating language. HTL stands for HTML Template Language (formerly known as Sightly). It is Adobe's recommended server-side templating language for AEM component development — designed for security (XSS protection by default), separation of concerns, and ease of use for both developers and designers."
+    },
+    {
+      "id": "03-intro-055",
+      "type": "concept",
+      "index": 3,
+      "total": 12,
+      "question": "What is 'data-sly-use' in HTL?",
+      "heading": "A block statement that instantiates a Sling Model or Use-API class for use in the template",
+      "body": "The data-sly-use block statement in HTL instantiates a Use-API class or Sling Model and binds it to a variable. Example: <div data-sly-use.model='com.example.MyModel'>${model.title}</div> instantiates MyModel and makes its getTitle() available via ${model.title}.",
+      "narration": "What is 'data-sly-use' in HTL? A block statement that instantiates a Sling Model or Use-API class for use in the template. The data-sly-use block statement in HTL instantiates a Use-API class or Sling Model and binds it to a variable. Example: <div data-sly-use.model='com.example.MyModel'>${model.title}</div> instantiates MyModel and makes its getTitle() available via ${model.title}."
+    },
+    {
+      "id": "04-intro-056",
+      "type": "concept",
+      "index": 4,
+      "total": 12,
+      "question": "What is the HTL block statement 'data-sly-list' used for?",
+      "heading": "Iterating over a collection and rendering an element for each item",
+      "body": "data-sly-list iterates over a collection in HTL. Example: <li data-sly-list.item='${model.tags}'>${item.name}</li> renders an <li> for each tag. The loop variable is defined by the attribute name (item in this case).",
+      "narration": "What is the HTL block statement 'data-sly-list' used for? Iterating over a collection and rendering an element for each item. data-sly-list iterates over a collection in HTL. Example: <li data-sly-list.item='${model.tags}'>${item.name}</li> renders an <li> for each tag. The loop variable is defined by the attribute name (item in this case)."
+    },
+    {
+      "id": "05-intro-057",
+      "type": "concept",
+      "index": 5,
+      "total": 12,
+      "question": "What is 'data-sly-test' used for in HTL?",
+      "heading": "Conditionally rendering an element — only outputs the element if the expression is truthy",
+      "body": "data-sly-test is HTL's conditional statement. When the expression evaluates to truthy, the element and its contents are rendered; when falsy, nothing is output. Example: <div data-sly-test='${model.description}'>${model.description}</div>.",
+      "narration": "What is 'data-sly-test' used for in HTL? Conditionally rendering an element — only outputs the element if the expression is truthy. data-sly-test is HTL's conditional statement. When the expression evaluates to truthy, the element and its contents are rendered; when falsy, nothing is output. Example: <div data-sly-test='${model.description}'>${model.description}</div>."
+    },
+    {
+      "id": "06-intro-058",
+      "type": "concept",
+      "index": 6,
+      "total": 12,
+      "question": "What is the '@ context' syntax in HTL used for?",
+      "heading": "Specifying the XSS escaping context for an expression — e.g. @ context='html' or 'text'",
+      "body": "The @ context option in HTL explicitly sets the XSS escaping strategy for an output expression. Example: ${model.body @ context='html'} outputs safe HTML content. Options include: html, text, attribute, uri, number, unsafe (no escaping — use carefully).",
+      "narration": "What is the '@ context' syntax in HTL used for? Specifying the XSS escaping context for an expression — e.g. @ context='html' or 'text'. The @ context option in HTL explicitly sets the XSS escaping strategy for an output expression. Example: ${model.body @ context='html'} outputs safe HTML content. Options include: html, text, attribute, uri, number, unsafe (no escaping — use carefully)."
+    },
+    {
+      "id": "07-intro-059",
+      "type": "concept",
+      "index": 7,
+      "total": 12,
+      "question": "What does 'sling:resourceSuperType' do for AEM components?",
+      "heading": "Enables component inheritance — the component inherits scripts and dialogs from the parent",
+      "body": "sling:resourceSuperType enables component inheritance in AEM. A child component only needs to override the specific files (HTL, dialogs, Sling Models) it wants to change — everything else falls back to the parent component via Sling's script resolution.",
+      "narration": "What does 'sling:resourceSuperType' do for AEM components? Enables component inheritance — the component inherits scripts and dialogs from the parent. sling:resourceSuperType enables component inheritance in AEM. A child component only needs to override the specific files (HTL, dialogs, Sling Models) it wants to change — everything else falls back to the parent component via Sling's script resolution."
+    },
+    {
+      "id": "08-intro-060",
+      "type": "concept",
+      "index": 8,
+      "total": 12,
+      "question": "What are AEM Core Components?",
+      "heading": "Adobe's library of pre-built, production-ready, best-practice AEM components",
+      "body": "AEM Core Components are Adobe's official library of production-ready, best-practice components (hosted on GitHub: adobe/aem-core-wcm-components). They include Text, Image, Title, Teaser, Carousel, Container, Breadcrumb, Navigation, and many more — regularly updated and recommended for all new AEM projects.",
+      "narration": "What are AEM Core Components? Adobe's library of pre-built, production-ready, best-practice AEM components. AEM Core Components are Adobe's official library of production-ready, best-practice components (hosted on GitHub: adobe/aem-core-wcm-components). They include Text, Image, Title, Teaser, Carousel, Container, Breadcrumb, Navigation, and many more — regularly updated and recommended for all new AEM projects."
+    },
+    {
+      "id": "09-intro-061",
+      "type": "concept",
+      "index": 9,
+      "total": 12,
+      "question": "What is 'component proxying' in AEM development?",
+      "heading": "Creating a component in /apps that extends a Core Component without modifying /libs",
+      "body": "Component proxying means creating a lightweight component under /apps that sets its sling:resourceSuperType to a Core Component (e.g., core/wcm/components/text/v2/text). This gives you a custom component that inherits everything from Core but allows you to override specific dialogs, scripts, or policies without modifying /libs.",
+      "narration": "What is 'component proxying' in AEM development? Creating a component in /apps that extends a Core Component without modifying /libs. Component proxying means creating a lightweight component under /apps that sets its sling:resourceSuperType to a Core Component (e.g., core/wcm/components/text/v2/text). This gives you a custom component that inherits everything from Core but allows you to override specific dialogs, scripts, or policies without modifying /libs."
+    },
+    {
+      "id": "10-intro-062",
+      "type": "concept",
+      "index": 10,
+      "total": 12,
+      "question": "What are AEM client libraries (clientlibs)?",
+      "heading": "AEM's mechanism for packaging and serving JavaScript and CSS assets to the browser",
+      "body": "AEM Client Libraries (clientlibs) are a mechanism for organizing, versioning, and serving client-side CSS and JavaScript to the browser. They support dependency management, automatic concatenation, minification, and browser caching. Defined by nodes of type cq:ClientLibraryFolder with categories property.",
+      "narration": "What are AEM client libraries (clientlibs)? AEM's mechanism for packaging and serving JavaScript and CSS assets to the browser. AEM Client Libraries (clientlibs) are a mechanism for organizing, versioning, and serving client-side CSS and JavaScript to the browser. They support dependency management, automatic concatenation, minification, and browser caching. Defined by nodes of type cq:ClientLibraryFolder with categories property."
+    },
+    {
+      "id": "11-intro-063",
+      "type": "concept",
+      "index": 11,
+      "total": 12,
+      "question": "What is a component's '_cq_dialog.xml' file?",
+      "heading": "The Touch UI dialog definition that authors use to configure the component's content",
+      "body": "_cq_dialog.xml defines the Touch UI author dialog for an AEM component. It specifies the Granite UI form fields (tabs, text fields, checkboxes, path pickers, etc.) that content authors see when clicking 'Edit' on a component in the Page Editor.",
+      "narration": "What is a component's '_cq_dialog.xml' file? The Touch UI dialog definition that authors use to configure the component's content. _cq_dialog.xml defines the Touch UI author dialog for an AEM component. It specifies the Granite UI form fields (tabs, text fields, checkboxes, path pickers, etc.) that content authors see when clicking 'Edit' on a component in the Page Editor."
+    },
+    {
+      "id": "12-intro-064",
+      "type": "concept",
+      "index": 12,
+      "total": 12,
+      "question": "What is the difference between a dialog and a design dialog in AEM?",
+      "heading": "Dialog: content-level config by authors per component instance. Design dialog: template-level policies set by template admins",
+      "body": "The dialog (_cq_dialog.xml) allows authors to set content properties per component instance on individual pages. The design dialog (_cq_design_dialog.xml) configures design-time policies (Style System options, allowed variations) that apply to all instances sharing the same template policy.",
+      "narration": "What is the difference between a dialog and a design dialog in AEM? Dialog: content-level config by authors per component instance. Design dialog: template-level policies set by template admins. The dialog (_cq_dialog.xml) allows authors to set content properties per component instance on individual pages. The design dialog (_cq_design_dialog.xml) configures design-time policies (Style System options, allowed variations) that apply to all instances sharing the same template policy."
+    },
+    {
+      "id": "13-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        ".content.xml — the component definition file with jcr:primaryType, title, and group",
+        "HTML Template Language — AEM's server-side templating language",
+        "A block statement that instantiates a Sling Model or Use-API class for use in the template",
+        "Iterating over a collection and rendering an element for each item",
+        "Conditionally rendering an element — only outputs the element if the expression is truthy",
+        "Specifying the XSS escaping context for an expression — e.g. @ context='html' or 'text'",
+        "Enables component inheritance — the component inherits scripts and dialogs from the parent",
+        "Adobe's library of pre-built, production-ready, best-practice AEM components",
+        "Creating a component in /apps that extends a Core Component without modifying /libs",
+        "AEM's mechanism for packaging and serving JavaScript and CSS assets to the browser",
+        "The Touch UI dialog definition that authors use to configure the component's content",
+        "Dialog: content-level config by authors per component instance. Design dialog: template-level policies set by template admins"
+      ],
+      "narration": "Quick recap of Components. .content.xml — the component definition file with jcr:primaryType, title, and group. HTML Template Language — AEM's server-side templating language. A block statement that instantiates a Sling Model or Use-API class for use in the template. Iterating over a collection and rendering an element for each item. Conditionally rendering an element — only outputs the element if the expression is truthy. Specifying the XSS escaping context for an expression — e.g. @ context='html' or 'text'. Enables component inheritance — the component inherits scripts and dialogs from the parent. Adobe's library of pre-built, production-ready, best-practice AEM components. Creating a component in /apps that extends a Core Component without modifying /libs. AEM's mechanism for packaging and serving JavaScript and CSS assets to the browser. The Touch UI dialog definition that authors use to configure the component's content. Dialog: content-level config by authors per component instance. Design dialog: template-level policies set by template admins."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "SonarQube Rules (Part 3 of 3)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SonarQube Rules (Part 3 of 3)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. SonarQube Rules (Part 3 of 3). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-013",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "Which SonarQube rule (Key: java:S2972) is violated when an AEM OSGi service or Sling Model grows to hundreds of methods, mixing rendering, business logic, and data access?",
+      "heading": "Classes Should Not Be Too Long",
+      "body": "java:S2972 (Severity: Major, Type: Code Smell) flags classes that are too large. A class mixing rendering, business logic, and data access violates the Single Responsibility Principle and becomes difficult to comprehend, test, and maintain. The fix is to split responsibilities: the Sling Model handles view concerns, dedicated OSGi services handle business logic, and repositories handle data access.",
+      "narration": "Which SonarQube rule (Key: java:S2972) is violated when an AEM OSGi service or Sling Model grows to hundreds of methods, mixing rendering, business logic, and data access? Classes Should Not Be Too Long. java:S2972 (Severity: Major, Type: Code Smell) flags classes that are too large. A class mixing rendering, business logic, and data access violates the Single Responsibility Principle and becomes difficult to comprehend, test, and maintain. The fix is to split responsibilities: the Sling Model handles view concerns, dedicated OSGi services handle business logic, and repositories handle data access."
+    },
+    {
+      "id": "02-cq-014",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "What does java:S1166 (Exceptions Should Not Be Ignored) require when a WorkflowException or ReplicationException is caught in AEM code?",
+      "heading": "The exception must be logged, rethrown, or handled — never silently discarded",
+      "body": "java:S1166 (Severity: Major, Type: Code Smell) requires that caught exceptions are not silently discarded. Unlike java:S00108 which flags completely empty catch blocks, S1166 also flags cases where the exception variable is declared but never used. The correct approach: log.error('Operation failed: {}', e.getMessage(), e) and either rethrow, return a failure indicator, or take a documented recovery action.",
+      "narration": "What does java:S1166 (Exceptions Should Not Be Ignored) require when a WorkflowException or ReplicationException is caught in AEM code? The exception must be logged, rethrown, or handled — never silently discarded. java:S1166 (Severity: Major, Type: Code Smell) requires that caught exceptions are not silently discarded. Unlike java:S00108 which flags completely empty catch blocks, S1166 also flags cases where the exception variable is declared but never used. The correct approach: log.error('Operation failed: {}', e.getMessage(), e) and either rethrow, return a failure indicator, or take a documented recovery action."
+    },
+    {
+      "id": "03-cq-015",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "Which SonarQube rule (Key: java:S109) is violated when an AEM developer writes 'if (results.size() > 100)' without extracting the number 100 as a named constant?",
+      "heading": "Avoid Magic Numbers",
+      "body": "java:S109 (Severity: Minor, Type: Code Smell) flags numeric literals embedded directly in code ('magic numbers'). A number like 100 in 'results.size() > 100' has no self-documenting name. Extracting it as 'private static final int MAX_SEARCH_RESULTS = 100' makes the intent clear and centralizes the value for easy maintenance.",
+      "narration": "Which SonarQube rule (Key: java:S109) is violated when an AEM developer writes 'if (results.size() > 100)' without extracting the number 100 as a named constant? Avoid Magic Numbers. java:S109 (Severity: Minor, Type: Code Smell) flags numeric literals embedded directly in code ('magic numbers'). A number like 100 in 'results.size() > 100' has no self-documenting name. Extracting it as 'private static final int MAX_SEARCH_RESULTS = 100' makes the intent clear and centralizes the value for easy maintenance."
+    },
+    {
+      "id": "04-cq-016",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Why do OSGi services in AEM require thread-safe data structures for any mutable instance fields, as flagged by java:S2885?",
+      "heading": "OSGi services are singletons shared across ALL concurrent HTTP request threads simultaneously",
+      "body": "OSGi @Component services are singletons — a single instance is created and shared across all concurrent HTTP request threads. Any mutable instance field (like an ArrayList or HashMap) is therefore accessed by multiple threads simultaneously, creating race conditions. The fix: use ConcurrentHashMap, CopyOnWriteArrayList, AtomicReference, or keep the service stateless by storing state in request scope instead.",
+      "narration": "Why do OSGi services in AEM require thread-safe data structures for any mutable instance fields, as flagged by java:S2885? OSGi services are singletons shared across ALL concurrent HTTP request threads simultaneously. OSGi @Component services are singletons — a single instance is created and shared across all concurrent HTTP request threads. Any mutable instance field (like an ArrayList or HashMap) is therefore accessed by multiple threads simultaneously, creating race conditions. The fix: use ConcurrentHashMap, CopyOnWriteArrayList, AtomicReference, or keep the service stateless by storing state in request scope instead."
+    },
+    {
+      "id": "05-cq-017",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "Which is a correct thread-safe alternative to 'private List<String> cache = new ArrayList<>()' in an OSGi service, according to java:S2885?",
+      "heading": "Collections.synchronizedList(new ArrayList<>())",
+      "body": "java:S2885 requires thread-safe data structures for mutable fields in OSGi singletons. Correct options include: Collections.synchronizedList(new ArrayList<>()), CopyOnWriteArrayList (safe for read-heavy scenarios), ConcurrentHashMap for maps, and AtomicReference for single object references. Simply adding 'volatile' to an ArrayList does NOT make it thread-safe — it only ensures visibility of the reference, not of the list contents.",
+      "narration": "Which is a correct thread-safe alternative to 'private List<String> cache = new ArrayList<>()' in an OSGi service, according to java:S2885? Collections.synchronizedList(new ArrayList<>()). java:S2885 requires thread-safe data structures for mutable fields in OSGi singletons. Correct options include: Collections.synchronizedList(new ArrayList<>()), CopyOnWriteArrayList (safe for read-heavy scenarios), ConcurrentHashMap for maps, and AtomicReference for single object references. Simply adding 'volatile' to an ArrayList does NOT make it thread-safe — it only ensures visibility of the reference, not of the list contents."
+    },
+    {
+      "id": "06-cq-018",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What is the severity level of java:S2095 (Resources Should Be Closed) and java:S2885 (Thread Safety in OSGi Services) in SonarQube?",
+      "heading": "Critical — both rules are classified as Critical severity",
+      "body": "Both java:S2095 and java:S2885 are classified as Critical severity Bug rules. java:S2095 is Critical because unclosed ResourceResolvers exhaust the JCR connection pool and crash the repository under load. java:S2885 is Critical because race conditions in OSGi singletons cause intermittent data corruption and NullPointerExceptions that are extremely difficult to debug in production.",
+      "narration": "What is the severity level of java:S2095 (Resources Should Be Closed) and java:S2885 (Thread Safety in OSGi Services) in SonarQube? Critical — both rules are classified as Critical severity. Both java:S2095 and java:S2885 are classified as Critical severity Bug rules. java:S2095 is Critical because unclosed ResourceResolvers exhaust the JCR connection pool and crash the repository under load. java:S2885 is Critical because race conditions in OSGi singletons cause intermittent data corruption and NullPointerExceptions that are extremely difficult to debug in production."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Classes Should Not Be Too Long",
+        "The exception must be logged, rethrown, or handled — never silently discarded",
+        "Avoid Magic Numbers",
+        "OSGi services are singletons shared across ALL concurrent HTTP request threads simultaneously",
+        "Collections.synchronizedList(new ArrayList<>())",
+        "Critical — both rules are classified as Critical severity"
+      ],
+      "narration": "Quick recap of SonarQube Rules (Part 3 of 3). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

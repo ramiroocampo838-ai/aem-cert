@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Proxy Component Pattern",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Proxy Component Pattern",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Proxy Component Pattern. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-015",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "According to best practice, what should a content resource's sling:resourceType point to?",
+      "heading": "A site-specific component, not a component shared by multiple sites",
+      "body": "The proxy pattern section says best practice is for sling:resourceType on content to point to a site-specific component, not one shared directly by multiple sites.",
+      "narration": "According to best practice, what should a content resource's sling:resourceType point to? A site-specific component, not a component shared by multiple sites. The proxy pattern section says best practice is for sling:resourceType on content to point to a site-specific component, not one shared directly by multiple sites."
+    },
+    {
+      "id": "02-comp-016",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Why is it better for content to point to a site-specific component instead of a shared one?",
+      "heading": "It lets one site customize behavior without affecting other sites",
+      "body": "The speech explains that site-specific components give flexibility: if one site needs different behavior, the customization happens on its own component without affecting other sites.",
+      "narration": "Why is it better for content to point to a site-specific component instead of a shared one? It lets one site customize behavior without affecting other sites. The speech explains that site-specific components give flexibility: if one site needs different behavior, the customization happens on its own component without affecting other sites."
+    },
+    {
+      "id": "03-comp-017",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How does a project component avoid duplicating shared component code?",
+      "heading": "It points to the shared parent with sling:resourceSuperType",
+      "body": "The speech says the project component refers to the shared parent with sling:resourceSuperType so code does not have to be duplicated.",
+      "narration": "How does a project component avoid duplicating shared component code? It points to the shared parent with sling:resourceSuperType. The speech says the project component refers to the shared parent with sling:resourceSuperType so code does not have to be duplicated."
+    },
+    {
+      "id": "04-comp-018",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is a proxy component?",
+      "heading": "A project component that mostly refers to a parent through sling:resourceSuperType",
+      "body": "The proxy component pattern section says a project component that mostly just refers to a parent through sling:resourceSuperType is called a proxy component.",
+      "narration": "What is a proxy component? A project component that mostly refers to a parent through sling:resourceSuperType. The proxy component pattern section says a project component that mostly just refers to a parent through sling:resourceSuperType is called a proxy component."
+    },
+    {
+      "id": "05-comp-019",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Can a proxy component be completely empty?",
+      "heading": "Yes. It can be only a cq:Component node with a resourceSuperType when it fully inherits everything",
+      "body": "The speech explicitly says a proxy can be entirely empty, only a cq:Component node with a resourceSuperType, if it fully inherits the functionality.",
+      "narration": "Can a proxy component be completely empty? Yes. It can be only a cq:Component node with a resourceSuperType when it fully inherits everything. The speech explicitly says a proxy can be entirely empty, only a cq:Component node with a resourceSuperType, if it fully inherits the functionality."
+    },
+    {
+      "id": "06-comp-020",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "In the example from the speech, where does the Core Component parent for Title live?",
+      "heading": "core/wcm/components/title/v3/title",
+      "body": "The proxy example in the speech uses the Core Component parent path core/wcm/components/title/v3/title.",
+      "narration": "In the example from the speech, where does the Core Component parent for Title live? core/wcm/components/title/v3/title. The proxy example in the speech uses the Core Component parent path core/wcm/components/title/v3/title."
+    },
+    {
+      "id": "07-comp-021",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why should you never modify Core Components code directly?",
+      "heading": "Because it makes them unsupported and breaks upgrades",
+      "body": "The speech says never modify Core Components code directly because doing so makes them unsupported and breaks upgrades.",
+      "narration": "Why should you never modify Core Components code directly? Because it makes them unsupported and breaks upgrades. The speech says never modify Core Components code directly because doing so makes them unsupported and breaks upgrades."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A site-specific component, not a component shared by multiple sites",
+        "It lets one site customize behavior without affecting other sites",
+        "It points to the shared parent with sling:resourceSuperType",
+        "A project component that mostly refers to a parent through sling:resourceSuperType",
+        "Yes. It can be only a cq:Component node with a resourceSuperType when it fully inherits everything",
+        "core/wcm/components/title/v3/title",
+        "Because it makes them unsupported and breaks upgrades"
+      ],
+      "narration": "Quick recap of Proxy Component Pattern. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

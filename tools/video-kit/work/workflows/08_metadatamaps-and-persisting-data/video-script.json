@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "MetaDataMaps and Persisting Data",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "MetaDataMaps and Persisting Data",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. MetaDataMaps and Persisting Data. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-051",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is workflow metadata used for in AEM workflows?",
+      "heading": "Workflow metadata persists information needed during the workflow and between steps",
+      "body": "The speech says workflow metadata persists information needed during the life of the workflow and between steps, and that it is stored in MetaDataMap objects.",
+      "narration": "What is workflow metadata used for in AEM workflows? Workflow metadata persists information needed during the workflow and between steps. The speech says workflow metadata persists information needed during the life of the workflow and between steps, and that it is stored in MetaDataMap objects."
+    },
+    {
+      "id": "02-wf-052",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which MetaDataMap is recommended when you need data shared over the entire workflow?",
+      "heading": "Use the WorkflowData MetaDataMap for shared workflow data",
+      "body": "The speech lists MetaDataMaps for Workflow, WorkflowData, and WorkItem, then recommends using only the WorkflowData map for shared workflow data.",
+      "narration": "Which MetaDataMap is recommended when you need data shared over the entire workflow? Use the WorkflowData MetaDataMap for shared workflow data. The speech lists MetaDataMaps for Workflow, WorkflowData, and WorkItem, then recommends using only the WorkflowData map for shared workflow data."
+    },
+    {
+      "id": "03-wf-053",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "In Java, where should a process step write a value if a later step must read it?",
+      "heading": "Write it to workItem.getWorkflow().getWorkflowData().getMetaDataMap()",
+      "body": "The speech says that to persist data for later steps in Java, you call getWorkflow().getWorkflowData().getMetaDataMap() on the WorkItem and put a key and value there.",
+      "narration": "In Java, where should a process step write a value if a later step must read it? Write it to workItem.getWorkflow().getWorkflowData().getMetaDataMap(). The speech says that to persist data for later steps in Java, you call getWorkflow().getWorkflowData().getMetaDataMap() on the WorkItem and put a key and value there."
+    },
+    {
+      "id": "04-wf-054",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which MetaDataMap is limited to the lifetime of the current step's work item?",
+      "heading": "The WorkItem MetaDataMap only lasts while that work item is running",
+      "body": "The speech says a WorkItem map can only be used while that work item, meaning that step, is running.",
+      "narration": "Which MetaDataMap is limited to the lifetime of the current step's work item? The WorkItem MetaDataMap only lasts while that work item is running. The speech says a WorkItem map can only be used while that work item, meaning that step, is running."
+    },
+    {
+      "id": "05-wf-055",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Values entered below a step component's \"./metaData\" node end up where at runtime?",
+      "heading": "They are added to the workflow MetaDataMap",
+      "body": "The speech states that dialog values stored below the \"./metaData\" node of a step component are added to the workflow MetaDataMap.",
+      "narration": "Values entered below a step component's \"./metaData\" node end up where at runtime? They are added to the workflow MetaDataMap. The speech states that dialog values stored below the \"./metaData\" node of a step component are added to the workflow MetaDataMap."
+    },
+    {
+      "id": "06-wf-056",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "When the metadata key is PROCESS_ARGS, how are those arguments exposed to implementations?",
+      "heading": "PROCESS_ARGS is available as args in ECMA and through the MetaDataMap argument in Java",
+      "body": "The speech says that when the key is PROCESS_ARGS, the value is available directly as args in ECMA scripts and as the MetaDataMap argument in Java.",
+      "narration": "When the metadata key is PROCESS_ARGS, how are those arguments exposed to implementations? PROCESS_ARGS is available as args in ECMA and through the MetaDataMap argument in Java. The speech says that when the key is PROCESS_ARGS, the value is available directly as args in ECMA scripts and as the MetaDataMap argument in Java."
+    },
+    {
+      "id": "07-wf-057",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "In an ECMA workflow script, why should you not confuse \"metaData\" with workflow metadata?",
+      "heading": "In ECMA, metaData refers to the step metadata, not the workflow metadata",
+      "body": "The speech explicitly says that in ECMA scripts, the variable metaData is the metadata of the step, which is different from the workflow metadata.",
+      "narration": "In an ECMA workflow script, why should you not confuse \"metaData\" with workflow metadata? In ECMA, metaData refers to the step metadata, not the workflow metadata. The speech explicitly says that in ECMA scripts, the variable metaData is the metadata of the step, which is different from the workflow metadata."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Workflow metadata persists information needed during the workflow and between steps",
+        "Use the WorkflowData MetaDataMap for shared workflow data",
+        "Write it to workItem.getWorkflow().getWorkflowData().getMetaDataMap()",
+        "The WorkItem MetaDataMap only lasts while that work item is running",
+        "They are added to the workflow MetaDataMap",
+        "PROCESS_ARGS is available as args in ECMA and through the MetaDataMap argument in Java",
+        "In ECMA, metaData refers to the step metadata, not the workflow metadata"
+      ],
+      "narration": "Quick recap of MetaDataMaps and Persisting Data. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

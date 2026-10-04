@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Oak Query Engine and Indexers",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Oak Query Engine and Indexers",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Oak Query Engine and Indexers. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Compared with Jackrabbit 2, what does the speech say about Oak indexing by default?",
+      "heading": "Unlike Jackrabbit 2, Oak does not index content by default",
+      "body": "Section 2 explicitly says Oak does not index content by default, unlike Jackrabbit 2.",
+      "narration": "Compared with Jackrabbit 2, what does the speech say about Oak indexing by default? Unlike Jackrabbit 2, Oak does not index content by default. Section 2 explicitly says Oak does not index content by default, unlike Jackrabbit 2."
+    },
+    {
+      "id": "02-oak-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "When should custom indexes be created according to the speech?",
+      "heading": "Custom indexes must be created when necessary",
+      "body": "Section 2 says custom indexes must be created when necessary, much like in a relational database.",
+      "narration": "When should custom indexes be created according to the speech? Custom indexes must be created when necessary. Section 2 says custom indexes must be created when necessary, much like in a relational database."
+    },
+    {
+      "id": "03-oak-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What happens if a query has no index?",
+      "heading": "Many nodes may be traversed, and the query still works but is likely slow",
+      "body": "Section 2 says a query without an index still works, but many nodes may be traversed so it is likely slow.",
+      "narration": "What happens if a query has no index? Many nodes may be traversed, and the query still works but is likely slow. Section 2 says a query without an index still works, but many nodes may be traversed so it is likely slow."
+    },
+    {
+      "id": "04-oak-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What WARN message behavior does Oak show when it runs a query without an index?",
+      "heading": "It logs a WARN saying it traversed a number of nodes and suggests creating an index or changing the query",
+      "body": "Section 2 says Oak prints a WARN about traversed nodes and suggests creating an index or changing the query.",
+      "narration": "What WARN message behavior does Oak show when it runs a query without an index? It logs a WARN saying it traversed a number of nodes and suggests creating an index or changing the query. Section 2 says Oak prints a WARN about traversed nodes and suggests creating an index or changing the query."
+    },
+    {
+      "id": "05-oak-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which query languages does the speech say the query engine supports, and which one is recommended?",
+      "heading": "It supports XPath, SQL-2, the deprecated SQL, and JQOM, and XPath is recommended",
+      "body": "Section 2 says the query engine supports XPath, SQL-2, deprecated SQL, and JQOM, and that XPath is recommended.",
+      "narration": "Which query languages does the speech say the query engine supports, and which one is recommended? It supports XPath, SQL-2, the deprecated SQL, and JQOM, and XPath is recommended. Section 2 says the query engine supports XPath, SQL-2, deprecated SQL, and JQOM, and that XPath is recommended."
+    },
+    {
+      "id": "06-oak-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Into what native language are queries ultimately transformed in Oak?",
+      "heading": "They are transformed into SQL-2",
+      "body": "Section 2 says a query is parsed into an abstract syntax tree and then transformed into SQL-2, the native language of Oak.",
+      "narration": "Into what native language are queries ultimately transformed in Oak? They are transformed into SQL-2. Section 2 says a query is parsed into an abstract syntax tree and then transformed into SQL-2, the native language of Oak."
+    },
+    {
+      "id": "07-oak-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How does Oak choose among several indexers that can answer a query?",
+      "heading": "Each indexer estimates cost, Oak picks the lowest-cost one, retrieves results, and then filters them for read access and full-query match",
+      "body": "Section 2 says each applicable indexer estimates cost, Oak picks the lowest estimated cost, and then filters results for read access and complete query matching.",
+      "narration": "How does Oak choose among several indexers that can answer a query? Each indexer estimates cost, Oak picks the lowest-cost one, retrieves results, and then filters them for read access and full-query match. Section 2 says each applicable indexer estimates cost, Oak picks the lowest estimated cost, and then filters results for read access and complete query matching."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Unlike Jackrabbit 2, Oak does not index content by default",
+        "Custom indexes must be created when necessary",
+        "Many nodes may be traversed, and the query still works but is likely slow",
+        "It logs a WARN saying it traversed a number of nodes and suggests creating an index or changing the query",
+        "It supports XPath, SQL-2, the deprecated SQL, and JQOM, and XPath is recommended",
+        "They are transformed into SQL-2",
+        "Each indexer estimates cost, Oak picks the lowest-cost one, retrieves results, and then filters them for read access and full-query match"
+      ],
+      "narration": "Quick recap of Oak Query Engine and Indexers. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

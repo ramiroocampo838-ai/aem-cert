@@ -1,0 +1,112 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "cloud-manager",
+  "accent": "#a855f7",
+  "category": "Code Quality",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Code Quality",
+      "sub": "cloud-manager · 8 key concepts",
+      "narration": "cloud-manager. Code Quality. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-093",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What AEM-specific code quality rules does Cloud Manager add to standard SonarQube?",
+      "heading": "AEM-specific rules checking for incorrect API usage (deprecated APIs, Sling/JCR antipatterns, session handling issues)",
+      "body": "Cloud Manager includes a curated set of AEM-specific SonarQube rules on top of the standard rule set. These cover AEM API best practices: ResourceResolver/Session not closed (resource leaks), use of admin sessions (security risk), synchronous workflow execution, deprecated AEM API usage, null-unsafe Sling Model injections, thread-unsafe singleton patterns, and other AEM-specific antipatterns that standard SonarQube rules would not detect.",
+      "narration": "What AEM-specific code quality rules does Cloud Manager add to standard SonarQube? AEM-specific rules checking for incorrect API usage (deprecated APIs, Sling/JCR antipatterns, session handling issues). Cloud Manager includes a curated set of AEM-specific SonarQube rules on top of the standard rule set. These cover AEM API best practices: ResourceResolver/Session not closed (resource leaks), use of admin sessions (security risk), synchronous workflow execution, deprecated AEM API usage, null-unsafe Sling Model injections, thread-unsafe singleton patterns, and other AEM-specific antipatterns that standard SonarQube rules would not detect."
+    },
+    {
+      "id": "02-cm-094",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What code coverage threshold does Cloud Manager enforce by default?",
+      "heading": "50% line coverage is the default Important threshold; falling below 50% is an Important (overridable) failure",
+      "body": "Cloud Manager uses JaCoCo for code coverage measurement. The default Important failure threshold for line coverage is 50% — if the deployed code has less than 50% line coverage, the pipeline pauses at the Code Quality step with an Important failure. Since it is an Important failure, it can be overridden by a Deployment Manager or Business Owner. Custom thresholds can be configured per pipeline.",
+      "narration": "What code coverage threshold does Cloud Manager enforce by default? 50% line coverage is the default Important threshold; falling below 50% is an Important (overridable) failure. Cloud Manager uses JaCoCo for code coverage measurement. The default Important failure threshold for line coverage is 50% — if the deployed code has less than 50% line coverage, the pipeline pauses at the Code Quality step with an Important failure. Since it is an Important failure, it can be overridden by a Deployment Manager or Business Owner. Custom thresholds can be configured per pipeline."
+    },
+    {
+      "id": "03-cm-095",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "How are custom SonarQube rules or exclusions configured in a Cloud Manager pipeline?",
+      "heading": "By adding a sonar-project.properties file to the repository root with SonarQube exclusion patterns or rule configurations",
+      "body": "SonarQube configurations for Cloud Manager pipelines are controlled via the standard sonar-project.properties file placed in the repository root. This file can define file exclusions (sonar.exclusions), coverage exclusions (sonar.coverage.exclusions), and other standard SonarQube properties. Cloud Manager automatically uses this file when running the Code Quality step, allowing teams to customize scanning behavior without Adobe intervention.",
+      "narration": "How are custom SonarQube rules or exclusions configured in a Cloud Manager pipeline? By adding a sonar-project.properties file to the repository root with SonarQube exclusion patterns or rule configurations. SonarQube configurations for Cloud Manager pipelines are controlled via the standard sonar-project.properties file placed in the repository root. This file can define file exclusions (sonar.exclusions), coverage exclusions (sonar.coverage.exclusions), and other standard SonarQube properties. Cloud Manager automatically uses this file when running the Code Quality step, allowing teams to customize scanning behavior without Adobe intervention."
+    },
+    {
+      "id": "04-cm-096",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What is the 'Dispatcher Optimization Tool' (DOT) / 'Dispatcher Validator' in AEMaaCS?",
+      "heading": "A tool that validates Dispatcher configuration files for syntax errors and AEMaaCS compatibility before deployment",
+      "body": "The Dispatcher Validator (part of the AEM as a Cloud Service SDK) is a local developer tool that validates Dispatcher configuration files (dispatcher.any, httpd virtual host configs, and include files) against AEMaaCS compatibility rules. Developers run it locally to catch syntax errors and unsupported directives before committing — avoiding pipeline failures from configuration issues.",
+      "narration": "What is the 'Dispatcher Optimization Tool' (DOT) / 'Dispatcher Validator' in AEMaaCS? A tool that validates Dispatcher configuration files for syntax errors and AEMaaCS compatibility before deployment. The Dispatcher Validator (part of the AEM as a Cloud Service SDK) is a local developer tool that validates Dispatcher configuration files (dispatcher.any, httpd virtual host configs, and include files) against AEMaaCS compatibility rules. Developers run it locally to catch syntax errors and unsupported directives before committing — avoiding pipeline failures from configuration issues."
+    },
+    {
+      "id": "05-cm-097",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What is the 'AEM Analyzer Maven Plugin' and its role in Cloud Manager?",
+      "heading": "A Maven plugin that runs during the build phase to detect AEM incompatibilities: deprecated API usage, missing OSGi dependencies, package filter issues",
+      "body": "The AEM Analyzer Maven Plugin runs during the Maven build in Cloud Manager's Build step. It analyzes the built artifact for AEMaaCS compatibility issues: deprecated Java API usage, missing OSGi package imports, mutable/immutable content structure violations, Oak index configuration problems, and other AEMaaCS deployment-time incompatibilities. Failures block the build, preventing deployment of incompatible code.",
+      "narration": "What is the 'AEM Analyzer Maven Plugin' and its role in Cloud Manager? A Maven plugin that runs during the build phase to detect AEM incompatibilities: deprecated API usage, missing OSGi dependencies, package filter issues. The AEM Analyzer Maven Plugin runs during the Maven build in Cloud Manager's Build step. It analyzes the built artifact for AEMaaCS compatibility issues: deprecated Java API usage, missing OSGi package imports, mutable/immutable content structure violations, Oak index configuration problems, and other AEMaaCS deployment-time incompatibilities. Failures block the build, preventing deployment of incompatible code."
+    },
+    {
+      "id": "06-cm-098",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is 'code duplication' as a quality metric in Cloud Manager's Code Quality step?",
+      "heading": "A SonarQube metric measuring the percentage of duplicated code blocks, which is evaluated as part of the Maintainability Rating",
+      "body": "Code duplication is a SonarQube metric that detects copy-pasted code blocks. SonarQube identifies lines of duplicated code and calculates a duplication percentage. High duplication indicates technical debt: bugs fixed in one copy may not be fixed in duplicates. In Cloud Manager, high code duplication contributes to a lower Maintainability rating, which can trigger Important quality gate failures.",
+      "narration": "What is 'code duplication' as a quality metric in Cloud Manager's Code Quality step? A SonarQube metric measuring the percentage of duplicated code blocks, which is evaluated as part of the Maintainability Rating. Code duplication is a SonarQube metric that detects copy-pasted code blocks. SonarQube identifies lines of duplicated code and calculates a duplication percentage. High duplication indicates technical debt: bugs fixed in one copy may not be fixed in duplicates. In Cloud Manager, high code duplication contributes to a lower Maintainability rating, which can trigger Important quality gate failures."
+    },
+    {
+      "id": "07-cm-099",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What is a 'Reliability Rating' in SonarQube as evaluated by Cloud Manager?",
+      "heading": "A rating (A-E) measuring code reliability based on detected bugs — bugs likely to produce incorrect code behavior at runtime",
+      "body": "SonarQube's Reliability Rating is based on detected bugs — code issues that represent behavior that is clearly wrong or likely to cause incorrect behavior at runtime (e.g., null pointer dereferences, unreachable catch blocks, wrong boolean operators). Ratings are: A = no bugs, B = at least one minor bug, C = at least one major bug, D = at least one critical bug, E = at least one blocker bug. Cloud Manager uses this rating in its quality gates.",
+      "narration": "What is a 'Reliability Rating' in SonarQube as evaluated by Cloud Manager? A rating (A-E) measuring code reliability based on detected bugs — bugs likely to produce incorrect code behavior at runtime. SonarQube's Reliability Rating is based on detected bugs — code issues that represent behavior that is clearly wrong or likely to cause incorrect behavior at runtime (e.g., null pointer dereferences, unreachable catch blocks, wrong boolean operators). Ratings are: A = no bugs, B = at least one minor bug, C = at least one major bug, D = at least one critical bug, E = at least one blocker bug. Cloud Manager uses this rating in its quality gates."
+    },
+    {
+      "id": "08-cm-100",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What is a 'Security Rating' in SonarQube as evaluated by Cloud Manager?",
+      "heading": "A rating (A-E) based on detected security vulnerabilities and security hotspots that could be exploited by attackers",
+      "body": "SonarQube's Security Rating is based on detected security vulnerabilities — code patterns that could be directly exploited by attackers (e.g., SQL injection, command injection, hardcoded credentials, XSS-prone patterns, insecure cryptography usage). It also includes Security Hotspots — code that requires human review to determine if it is a real risk. Cloud Manager's quality gates use this rating, with Critical and Important thresholds to block deployments with serious security issues.",
+      "narration": "What is a 'Security Rating' in SonarQube as evaluated by Cloud Manager? A rating (A-E) based on detected security vulnerabilities and security hotspots that could be exploited by attackers. SonarQube's Security Rating is based on detected security vulnerabilities — code patterns that could be directly exploited by attackers (e.g., SQL injection, command injection, hardcoded credentials, XSS-prone patterns, insecure cryptography usage). It also includes Security Hotspots — code that requires human review to determine if it is a real risk. Cloud Manager's quality gates use this rating, with Critical and Important thresholds to block deployments with serious security issues."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "AEM-specific rules checking for incorrect API usage (deprecated APIs, Sling/JCR antipatterns, session handling issues)",
+        "50% line coverage is the default Important threshold; falling below 50% is an Important (overridable) failure",
+        "By adding a sonar-project.properties file to the repository root with SonarQube exclusion patterns or rule configurations",
+        "A tool that validates Dispatcher configuration files for syntax errors and AEMaaCS compatibility before deployment",
+        "A Maven plugin that runs during the build phase to detect AEM incompatibilities: deprecated API usage, missing OSGi dependencies, package filter issues",
+        "A SonarQube metric measuring the percentage of duplicated code blocks, which is evaluated as part of the Maintainability Rating",
+        "A rating (A-E) measuring code reliability based on detected bugs — bugs likely to produce incorrect code behavior at runtime",
+        "A rating (A-E) based on detected security vulnerabilities and security hotspots that could be exploited by attackers"
+      ],
+      "narration": "Quick recap of Code Quality. AEM-specific rules checking for incorrect API usage (deprecated APIs, Sling/JCR antipatterns, session handling issues). 50% line coverage is the default Important threshold; falling below 50% is an Important (overridable) failure. By adding a sonar-project.properties file to the repository root with SonarQube exclusion patterns or rule configurations. A tool that validates Dispatcher configuration files for syntax errors and AEMaaCS compatibility before deployment. A Maven plugin that runs during the build phase to detect AEM incompatibilities: deprecated API usage, missing OSGi dependencies, package filter issues. A SonarQube metric measuring the percentage of duplicated code blocks, which is evaluated as part of the Maintainability Rating. A rating (A-E) measuring code reliability based on detected bugs — bugs likely to produce incorrect code behavior at runtime. A rating (A-E) based on detected security vulnerabilities and security hotspots that could be exploited by attackers."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Component Dialogs",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Component Dialogs",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Component Dialogs. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-080",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is the difference between cq:dialog and cq:design_dialog?",
+      "heading": "cq:dialog is the edit dialog for page authors, while cq:design_dialog is the design dialog for template authors to set policies",
+      "body": "The speech says AEM components have two kinds of dialogs: the edit dialog named cq:dialog for page authors to set content, and the design dialog named cq:design_dialog for template authors to set policies.",
+      "narration": "What is the difference between cq:dialog and cq:design_dialog? cq:dialog is the edit dialog for page authors, while cq:design_dialog is the design dialog for template authors to set policies. The speech says AEM components have two kinds of dialogs: the edit dialog named cq:dialog for page authors to set content, and the design dialog named cq:design_dialog for template authors to set policies."
+    },
+    {
+      "id": "02-comp-081",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What UI framework and node type are used for these component dialogs?",
+      "heading": "They are built with Granite UI, the Coral 3 based Touch UI framework, and stored as nt:unstructured nodes",
+      "body": "The speech states that both dialogs are built with Granite UI, the Coral 3 based Touch UI framework, and both are stored as nodes of type nt:unstructured.",
+      "narration": "What UI framework and node type are used for these component dialogs? They are built with Granite UI, the Coral 3 based Touch UI framework, and stored as nt:unstructured nodes. The speech states that both dialogs are built with Granite UI, the Coral 3 based Touch UI framework, and both are stored as nodes of type nt:unstructured."
+    },
+    {
+      "id": "03-comp-082",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "In a Granite UI dialog field, what does the name property represent?",
+      "heading": "The JCR property where the field value is saved",
+      "body": "The speech says the name property of a field is the JCR property where the value is saved, for example ./jcr:title.",
+      "narration": "In a Granite UI dialog field, what does the name property represent? The JCR property where the field value is saved. The speech says the name property of a field is the JCR property where the value is saved, for example ./jcr:title."
+    },
+    {
+      "id": "04-comp-083",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What does the ./ prefix mean in a dialog field name like ./jcr:title?",
+      "heading": "It means the property is relative to the component's content resource",
+      "body": "The speech explicitly says the path prefix ./ means relative to the component's content resource.",
+      "narration": "What does the ./ prefix mean in a dialog field name like ./jcr:title? It means the property is relative to the component's content resource. The speech explicitly says the path prefix ./ means relative to the component's content resource."
+    },
+    {
+      "id": "05-comp-084",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How are dialogs inherited and customized in proxy components?",
+      "heading": "They are inherited through sling:resourceSuperType and merged with Sling Resource Merger",
+      "body": "The speech says dialogs are inherited through sling:resourceSuperType and that the Sling Resource Merger lets a proxy merge its dialog with the parent's dialog.",
+      "narration": "How are dialogs inherited and customized in proxy components? They are inherited through sling:resourceSuperType and merged with Sling Resource Merger. The speech says dialogs are inherited through sling:resourceSuperType and that the Sling Resource Merger lets a proxy merge its dialog with the parent's dialog."
+    },
+    {
+      "id": "06-comp-085",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario where you need to remove an inherited tab from a dialog, what should you do?",
+      "heading": "Create a node with the same name and set sling:hideResource to true",
+      "body": "The speech says to remove an inherited tab, create a node with the same name and set the property sling:hideResource to true.",
+      "narration": "Given a scenario where you need to remove an inherited tab from a dialog, what should you do? Create a node with the same name and set sling:hideResource to true. The speech says to remove an inherited tab, create a node with the same name and set the property sling:hideResource to true."
+    },
+    {
+      "id": "07-comp-086",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What customization guideline does Adobe give for dialog inheritance below the tab item level?",
+      "heading": "Replicate the parent structure only up to the tab item level and never touch structures below a tab item; hide the whole tab and add your own instead",
+      "body": "The speech says to replicate the parent dialog structure up to the tab item level and never touch structures below a tab item. Instead, hide the whole tab and add your own tab to stay compatible with Core Component updates.",
+      "narration": "What customization guideline does Adobe give for dialog inheritance below the tab item level? Replicate the parent structure only up to the tab item level and never touch structures below a tab item; hide the whole tab and add your own instead. The speech says to replicate the parent dialog structure up to the tab item level and never touch structures below a tab item. Instead, hide the whole tab and add your own tab to stay compatible with Core Component updates."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "cq:dialog is the edit dialog for page authors, while cq:design_dialog is the design dialog for template authors to set policies",
+        "They are built with Granite UI, the Coral 3 based Touch UI framework, and stored as nt:unstructured nodes",
+        "The JCR property where the field value is saved",
+        "It means the property is relative to the component's content resource",
+        "They are inherited through sling:resourceSuperType and merged with Sling Resource Merger",
+        "Create a node with the same name and set sling:hideResource to true",
+        "Replicate the parent structure only up to the tab item level and never touch structures below a tab item; hide the whole tab and add your own instead"
+      ],
+      "narration": "Quick recap of Component Dialogs. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

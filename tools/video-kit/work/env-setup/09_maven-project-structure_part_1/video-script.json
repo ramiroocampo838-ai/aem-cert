@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Maven Project Structure (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Maven Project Structure (Part 1 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. Maven Project Structure (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-069",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What are the two types of repository areas in AEM's Maven project structure?",
+      "heading": "Immutable and Mutable",
+      "body": "AEM enforces a clear separation between two repository areas: Immutable (cannot be changed at runtime — `/apps`, `/libs`) and Mutable (can be changed at runtime — `/content`, `/conf`, `/var`, `/etc`). This separation is critical for AEMaaCS.",
+      "narration": "What are the two types of repository areas in AEM's Maven project structure? Immutable and Mutable. AEM enforces a clear separation between two repository areas: Immutable (cannot be changed at runtime — `/apps`, `/libs`) and Mutable (can be changed at runtime — `/content`, `/conf`, `/var`, `/etc`). This separation is critical for AEMaaCS."
+    },
+    {
+      "id": "02-env-070",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "Which of the following repository paths is considered Immutable in AEM?",
+      "heading": "/apps",
+      "body": "`/apps` is an immutable repository path. It stores custom components, HTL scripts, clientlibs, and OSGi bundle overlays. It cannot be changed at runtime — all changes must go through the deployment pipeline.",
+      "narration": "Which of the following repository paths is considered Immutable in AEM? /apps. `/apps` is an immutable repository path. It stores custom components, HTL scripts, clientlibs, and OSGi bundle overlays. It cannot be changed at runtime — all changes must go through the deployment pipeline."
+    },
+    {
+      "id": "03-env-071",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "Which of the following repository paths is considered Mutable in AEM?",
+      "heading": "/content",
+      "body": "`/content` is a mutable repository path. It holds site content (pages, assets) that can be created, edited, and published at runtime by authors. Other mutable paths include `/conf`, `/var`, and `/etc`.",
+      "narration": "Which of the following repository paths is considered Mutable in AEM? /content. `/content` is a mutable repository path. It holds site content (pages, assets) that can be created, edited, and published at runtime by authors. Other mutable paths include `/conf`, `/var`, and `/etc`."
+    },
+    {
+      "id": "04-env-072",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What does /libs contain in the AEM repository?",
+      "heading": "AEM platform code — the out-of-the-box components and libraries provided by Adobe",
+      "body": "`/libs` contains AEM's own platform code — the out-of-the-box components, templates, and libraries provided by Adobe. This path is immutable and should never be modified directly. Custom overlays go in `/apps`.",
+      "narration": "What does /libs contain in the AEM repository? AEM platform code — the out-of-the-box components and libraries provided by Adobe. `/libs` contains AEM's own platform code — the out-of-the-box components, templates, and libraries provided by Adobe. This path is immutable and should never be modified directly. Custom overlays go in `/apps`."
+    },
+    {
+      "id": "05-env-073",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "Why should you never modify content directly under /libs?",
+      "heading": "Because /libs is AEM's platform code — modifications are overwritten on AEM upgrades",
+      "body": "You should never modify `/libs` because it contains Adobe's platform code. On AEM upgrades, `/libs` is overwritten, so any direct modifications would be lost. The correct approach is to create overlays in `/apps` — AEM's Sling resource merger picks up `/apps` first.",
+      "narration": "Why should you never modify content directly under /libs? Because /libs is AEM's platform code — modifications are overwritten on AEM upgrades. You should never modify `/libs` because it contains Adobe's platform code. On AEM upgrades, `/libs` is overwritten, so any direct modifications would be lost. The correct approach is to create overlays in `/apps` — AEM's Sling resource merger picks up `/apps` first."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Immutable and Mutable",
+        "/apps",
+        "/content",
+        "AEM platform code — the out-of-the-box components and libraries provided by Adobe",
+        "Because /libs is AEM's platform code — modifications are overwritten on AEM upgrades"
+      ],
+      "narration": "Quick recap of Maven Project Structure (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

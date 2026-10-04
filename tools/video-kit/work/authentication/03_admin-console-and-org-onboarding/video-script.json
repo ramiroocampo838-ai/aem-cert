@@ -1,0 +1,113 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "Admin Console & Org Onboarding",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Admin Console & Org Onboarding",
+      "sub": "Authentication · 8 key concepts",
+      "narration": "Authentication. Admin Console & Org Onboarding. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-018",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is the prerequisite before an AEMaaCS customer can use Adobe IMS for authentication?",
+      "heading": "Having an organization provisioned as an IMS Organization in Adobe Admin Console",
+      "body": "Before IMS authentication can work, the customer's organization must exist as an IMS Organization in Adobe Admin Console — the portal Adobe customers use to manage product entitlements for their users and groups.",
+      "narration": "What is the prerequisite before an AEMaaCS customer can use Adobe IMS for authentication? Having an organization provisioned as an IMS Organization in Adobe Admin Console. Before IMS authentication can work, the customer's organization must exist as an IMS Organization in Adobe Admin Console — the portal Adobe customers use to manage product entitlements for their users and groups."
+    },
+    {
+      "id": "02-auth-019",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "What is the sequence of steps a System Administrator follows to set up AEMaaCS authentication?",
+      "heading": "The System Administrator logs into Cloud Manager, then claims the domain, sets up user directories, and configures the IDP",
+      "body": "The System Administrator receives an invite, logs into Cloud Manager, claims the organization's domain to confirm ownership (e.g. acme.com), sets up user directories, and configures the Identity Provider in Admin Console for Single Sign-On.",
+      "narration": "What is the sequence of steps a System Administrator follows to set up AEMaaCS authentication? The System Administrator logs into Cloud Manager, then claims the domain, sets up user directories, and configures the IDP. The System Administrator receives an invite, logs into Cloud Manager, claims the organization's domain to confirm ownership (e.g. acme.com), sets up user directories, and configures the Identity Provider in Admin Console for Single Sign-On."
+    },
+    {
+      "id": "03-auth-020",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What does 'claiming a domain' mean during AEMaaCS onboarding?",
+      "heading": "Confirming ownership of the organization's domain, for example acme.com",
+      "body": "Claiming a domain is a verification step where the System Administrator proves ownership of the organization's domain (for example acme.com) as part of setting up Admin Console for the organization.",
+      "narration": "What does 'claiming a domain' mean during AEMaaCS onboarding? Confirming ownership of the organization's domain, for example acme.com. Claiming a domain is a verification step where the System Administrator proves ownership of the organization's domain (for example acme.com) as part of setting up Admin Console for the organization."
+    },
+    {
+      "id": "04-auth-021",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "Who manages local groups, permissions, and privileges once IMS onboarding is done?",
+      "heading": "The AEM Administrator, working inside AEM itself after the IMS setup is complete",
+      "body": "Once the System Administrator has finished the IMS-level setup (domain, directories, IDP), the AEM Administrator takes over managing local groups, permissions, and privileges inside AEM, the same way they always have.",
+      "narration": "Who manages local groups, permissions, and privileges once IMS onboarding is done? The AEM Administrator, working inside AEM itself after the IMS setup is complete. Once the System Administrator has finished the IMS-level setup (domain, directories, IDP), the AEM Administrator takes over managing local groups, permissions, and privileges inside AEM, the same way they always have."
+    },
+    {
+      "id": "05-auth-022",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "How does Admin Console represent an organization's Author and Publish instances?",
+      "heading": "As Product Context Instances",
+      "body": "Admin Console represents customers' Author and Publish instances as Product Context Instances. This lets System and Product Administrators manage access to each instance individually.",
+      "narration": "How does Admin Console represent an organization's Author and Publish instances? As Product Context Instances. Admin Console represents customers' Author and Publish instances as Product Context Instances. This lets System and Product Administrators manage access to each instance individually."
+    },
+    {
+      "id": "06-auth-023",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What do Product Profiles determine within a Product Context Instance in Admin Console?",
+      "heading": "Which instances a given user can access",
+      "body": "Product Profiles in Admin Console determine which instances a user can access. Administrators assign users to the appropriate profile for each Author or Publish instance they should be able to reach.",
+      "narration": "What do Product Profiles determine within a Product Context Instance in Admin Console? Which instances a given user can access. Product Profiles in Admin Console determine which instances a user can access. Administrators assign users to the appropriate profile for each Author or Publish instance they should be able to reach."
+    },
+    {
+      "id": "07-auth-024",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What kind of identity provider can a customer use for their own Single Sign-On, and what account types does it support?",
+      "heading": "A SAML 2.0 compliant Identity Provider — but only Enterprise or Federated IDs are supported for customer SSO, not personal Adobe IDs",
+      "body": "Customers can use their own SAML 2 compliant IDP for Single Sign-On. Only Enterprise or Federated IDs are supported for this — personal Adobe IDs are not permitted for customer SSO.",
+      "narration": "What kind of identity provider can a customer use for their own Single Sign-On, and what account types does it support? A SAML 2.0 compliant Identity Provider — but only Enterprise or Federated IDs are supported for customer SSO, not personal Adobe IDs. Customers can use their own SAML 2 compliant IDP for Single Sign-On. Only Enterprise or Federated IDs are supported for this — personal Adobe IDs are not permitted for customer SSO."
+    },
+    {
+      "id": "08-auth-025",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Which user types does AEMaaCS IMS authentication support?",
+      "heading": "Author, Admin, and Dev users — not external end users of customer sites like site visitors",
+      "body": "AEMaaCS offers IMS authentication support only for Author, Admin, and Dev users — the people who work inside AEM. It does not support external end users of customer-facing sites, such as public site visitors; those are handled through SAML on Publish instead.",
+      "narration": "Which user types does AEMaaCS IMS authentication support? Author, Admin, and Dev users — not external end users of customer sites like site visitors. AEMaaCS offers IMS authentication support only for Author, Admin, and Dev users — the people who work inside AEM. It does not support external end users of customer-facing sites, such as public site visitors; those are handled through SAML on Publish instead."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Having an organization provisioned as an IMS Organization in Adobe Admin Console",
+        "The System Administrator logs into Cloud Manager, then claims the domain, sets up user directories, and configures the IDP",
+        "Confirming ownership of the organization's domain, for example acme.com",
+        "The AEM Administrator, working inside AEM itself after the IMS setup is complete",
+        "As Product Context Instances",
+        "Which instances a given user can access",
+        "A SAML 2.0 compliant Identity Provider — but only Enterprise or Federated IDs are supported for customer SSO, not personal Adobe IDs",
+        "Author, Admin, and Dev users — not external end users of customer sites like site visitors"
+      ],
+      "narration": "Quick recap of Admin Console & Org Onboarding. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "QuickStart Jar Naming Convention (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "QuickStart Jar Naming Convention (Part 2 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. QuickStart Jar Naming Convention (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-048",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "Which part of the QuickStart Jar filename controls the listening port?",
+      "heading": "The number after -p in the filename",
+      "body": "The port is specified by the `-p<port>` segment in the filename. For example, `-p4502` means AEM will listen on port 4502. The port can be customized by changing this number in the filename.",
+      "narration": "Which part of the QuickStart Jar filename controls the listening port? The number after -p in the filename. The port is specified by the `-p<port>` segment in the filename. For example, `-p4502` means AEM will listen on port 4502. The port can be customized by changing this number in the filename."
+    },
+    {
+      "id": "02-env-049",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is the purpose of the environment segment (e.g., _prod, _stage) in the QuickStart Jar filename?",
+      "heading": "It sets the environment run mode, activating environment-specific OSGi configurations",
+      "body": "The environment segment (e.g., `_prod`, `_stage`, `_dev`) sets the AEM run mode for that environment. This allows environment-specific OSGi configurations to be loaded — for example, production configs that use different endpoints than dev configs.",
+      "narration": "What is the purpose of the environment segment (e.g., _prod, _stage) in the QuickStart Jar filename? It sets the environment run mode, activating environment-specific OSGi configurations. The environment segment (e.g., `_prod`, `_stage`, `_dev`) sets the AEM run mode for that environment. This allows environment-specific OSGi configurations to be loaded — for example, production configs that use different endpoints than dev configs."
+    },
+    {
+      "id": "03-env-050",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What happens to the tier when the QuickStart Jar is started for the first time?",
+      "heading": "The tier is locked and cannot be changed without deleting crx-quickstart",
+      "body": "The tier (author or publish) is locked on first startup and stored in the `crx-quickstart` folder. If you rename the JAR file to change the tier and restart, AEM will use the stored tier — not the new filename. You must delete `crx-quickstart` to reset it.",
+      "narration": "What happens to the tier when the QuickStart Jar is started for the first time? The tier is locked and cannot be changed without deleting crx-quickstart. The tier (author or publish) is locked on first startup and stored in the `crx-quickstart` folder. If you rename the JAR file to change the tier and restart, AEM will use the stored tier — not the new filename. You must delete `crx-quickstart` to reset it."
+    },
+    {
+      "id": "04-env-051",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What are the two valid values for the tier segment of the QuickStart Jar filename?",
+      "heading": "author and publish",
+      "body": "The tier segment in the QuickStart Jar filename accepts exactly two values: `author` (for the Author service on port 4502) and `publish` (for the Publish service on port 4503).",
+      "narration": "What are the two valid values for the tier segment of the QuickStart Jar filename? author and publish. The tier segment in the QuickStart Jar filename accepts exactly two values: `author` (for the Author service on port 4502) and `publish` (for the Publish service on port 4503)."
+    },
+    {
+      "id": "05-env-052",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "If you rename the QuickStart Jar from aem-author-p4502.jar to aem-publish-p4503.jar after the first startup, what happens?",
+      "heading": "AEM still starts as Author because the tier is locked in crx-quickstart",
+      "body": "After the first startup, the tier is locked in the `crx-quickstart` folder. Renaming the JAR does not change the tier — AEM reads the stored tier from `crx-quickstart`. To change the tier, you must delete `crx-quickstart` and start fresh.",
+      "narration": "If you rename the QuickStart Jar from aem-author-p4502.jar to aem-publish-p4503.jar after the first startup, what happens? AEM still starts as Author because the tier is locked in crx-quickstart. After the first startup, the tier is locked in the `crx-quickstart` folder. Renaming the JAR does not change the tier — AEM reads the stored tier from `crx-quickstart`. To change the tier, you must delete `crx-quickstart` and start fresh."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The number after -p in the filename",
+        "It sets the environment run mode, activating environment-specific OSGi configurations",
+        "The tier is locked and cannot be changed without deleting crx-quickstart",
+        "author and publish",
+        "AEM still starts as Author because the tier is locked in crx-quickstart"
+      ],
+      "narration": "Quick recap of QuickStart Jar Naming Convention (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

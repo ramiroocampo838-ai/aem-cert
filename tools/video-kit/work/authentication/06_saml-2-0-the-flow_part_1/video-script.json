@@ -1,0 +1,80 @@
+{
+  "section": "authentication",
+  "sectionLabel": "Authentication",
+  "accent": "#06b6d4",
+  "category": "SAML 2.0 — The Flow (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SAML 2.0 — The Flow (Part 1 of 2)",
+      "sub": "Authentication · 5 key concepts",
+      "narration": "Authentication. SAML 2.0 — The Flow (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-auth-042",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What does SAML 2.0 integration allow in AEM, and where does it work?",
+      "heading": "It lets end users of a public-facing AEM site authenticate against a non-Adobe Identity Provider, working only on Publish",
+      "body": "SAML 2.0 integration with AEM Publish (or Preview) allows end users of an AEM-based web experience to authenticate to a non-Adobe IDP and access AEM as a named, authorized user. It never works on Author — only Publish or Preview.",
+      "narration": "What does SAML 2.0 integration allow in AEM, and where does it work? It lets end users of a public-facing AEM site authenticate against a non-Adobe Identity Provider, working only on Publish. SAML 2.0 integration with AEM Publish (or Preview) allows end users of an AEM-based web experience to authenticate to a non-Adobe IDP and access AEM as a named, authorized user. It never works on Author — only Publish or Preview."
+    },
+    {
+      "id": "02-auth-043",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is AEM's login endpoint that explicitly requests the login action in a SAML flow?",
+      "heading": "/system/sling/login",
+      "body": "The user follows a link to AEM's login endpoint, /system/sling/login, which explicitly requests the login action and kicks off the SAML authentication flow.",
+      "narration": "What is AEM's login endpoint that explicitly requests the login action in a SAML flow? /system/sling/login. The user follows a link to AEM's login endpoint, /system/sling/login, which explicitly requests the login action and kicks off the SAML authentication flow."
+    },
+    {
+      "id": "03-auth-044",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What does AEM Publish send to the IDP to begin SAML authentication?",
+      "heading": "An AuthnRequest — AEM asks the IDP to start the authentication process",
+      "body": "After the user hits the login endpoint, AEM makes an AuthnRequest to the IDP, requesting that the IDP start the authentication process for that user.",
+      "narration": "What does AEM Publish send to the IDP to begin SAML authentication? An AuthnRequest — AEM asks the IDP to start the authentication process. After the user hits the login endpoint, AEM makes an AuthnRequest to the IDP, requesting that the IDP start the authentication process for that user."
+    },
+    {
+      "id": "04-auth-045",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What does the IDP generate once the user has authenticated?",
+      "heading": "A SAML assertion containing the user's data, signed with the IDP's private certificate",
+      "body": "Once the user authenticates with the IDP, the IDP generates a SAML assertion containing the user's data and signs it using the IDP's private certificate, establishing a verifiable, tamper-evident credential.",
+      "narration": "What does the IDP generate once the user has authenticated? A SAML assertion containing the user's data, signed with the IDP's private certificate. Once the user authenticates with the IDP, the IDP generates a SAML assertion containing the user's data and signs it using the IDP's private certificate, establishing a verifiable, tamper-evident credential."
+    },
+    {
+      "id": "05-auth-046",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "How does the signed SAML assertion get from the IDP to AEM Publish?",
+      "heading": "Via an HTTP POST, sent through the user's web browser, to AEM Publish's SAML endpoint",
+      "body": "The IDP sends the SAML assertion via an HTTP POST, relayed through the user's web browser, to AEM Publish's SAML login endpoint (…/saml_login).",
+      "narration": "How does the signed SAML assertion get from the IDP to AEM Publish? Via an HTTP POST, sent through the user's web browser, to AEM Publish's SAML endpoint. The IDP sends the SAML assertion via an HTTP POST, relayed through the user's web browser, to AEM Publish's SAML login endpoint (…/saml_login)."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It lets end users of a public-facing AEM site authenticate against a non-Adobe Identity Provider, working only on Publish",
+        "/system/sling/login",
+        "An AuthnRequest — AEM asks the IDP to start the authentication process",
+        "A SAML assertion containing the user's data, signed with the IDP's private certificate",
+        "Via an HTTP POST, sent through the user's web browser, to AEM Publish's SAML endpoint"
+      ],
+      "narration": "Quick recap of SAML 2.0 — The Flow (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

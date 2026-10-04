@@ -1,0 +1,102 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Editable Templates Fundamentals",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Editable Templates Fundamentals",
+      "sub": "Templates · 7 key concepts",
+      "narration": "Templates. Editable Templates Fundamentals. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is an AEM template?",
+      "heading": "A pre-defined structure and initial content that can be used to quickly create a new site",
+      "body": "An AEM template is a pre-defined structure and initial content that can be used to quickly create a new site, eliminating the need to start from scratch and ensuring sites are consistent with branding and design standards.",
+      "narration": "What is an AEM template? A pre-defined structure and initial content that can be used to quickly create a new site. An AEM template is a pre-defined structure and initial content that can be used to quickly create a new site, eliminating the need to start from scratch and ensuring sites are consistent with branding and design standards."
+    },
+    {
+      "id": "02-tmpl-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Where were AEM templates historically stored in the repository?",
+      "heading": "In the /apps folder of the AEMaaCS installation",
+      "body": "AEM templates are stored in the /apps folder of the AEMaaCS installation, in a new folder created for the template, with files and folders determining the site's structure and content.",
+      "narration": "Where were AEM templates historically stored in the repository? In the /apps folder of the AEMaaCS installation. AEM templates are stored in the /apps folder of the AEMaaCS installation, in a new folder created for the template, with files and folders determining the site's structure and content."
+    },
+    {
+      "id": "03-tmpl-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What capability do editable page templates give specialized authors?",
+      "heading": "The ability to create, update, and manage advanced policy configurations for page templates",
+      "body": "Editable page templates in AEM Sites provide specialized authors with the ability to create, update, and manage advanced policy configurations for page templates, offering a flexible, customizable framework for designing pages.",
+      "narration": "What capability do editable page templates give specialized authors? The ability to create, update, and manage advanced policy configurations for page templates. Editable page templates in AEM Sites provide specialized authors with the ability to create, update, and manage advanced policy configurations for page templates, offering a flexible, customizable framework for designing pages."
+    },
+    {
+      "id": "04-tmpl-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What do editable templates define to let content authors customize a page?",
+      "heading": "Editable regions where content authors can modify specific areas while the rest stays locked to the template",
+      "body": "Editable templates allow authors to define editable regions within the template, letting content authors modify and customize specific areas while maintaining consistency and adherence to branding guidelines elsewhere.",
+      "narration": "What do editable templates define to let content authors customize a page? Editable regions where content authors can modify specific areas while the rest stays locked to the template. Editable templates allow authors to define editable regions within the template, letting content authors modify and customize specific areas while maintaining consistency and adherence to branding guidelines elsewhere."
+    },
+    {
+      "id": "05-tmpl-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What are the three main advantages of using editable templates for new AEM sites?",
+      "heading": "Increased author productivity, improved consistency, and reduced development costs",
+      "body": "Editable templates increase author productivity by letting authors create/update templates without developers, improve consistency since all pages share the same policies and settings, and reduce development costs by avoiding custom code for every page variation.",
+      "narration": "What are the three main advantages of using editable templates for new AEM sites? Increased author productivity, improved consistency, and reduced development costs. Editable templates increase author productivity by letting authors create/update templates without developers, improve consistency since all pages share the same policies and settings, and reduce development costs by avoiding custom code for every page variation."
+    },
+    {
+      "id": "06-tmpl-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What does the Layout Container policy configure?",
+      "heading": "Configuring allowed components, drag-and-drop asset mapping, and the number of responsive grid columns",
+      "body": "The Layout Container policy allows you to configure the allowed components, manage the drag-and-drop mapping of assets, and set the number of responsive grid columns for that container.",
+      "narration": "What does the Layout Container policy configure? Configuring allowed components, drag-and-drop asset mapping, and the number of responsive grid columns. The Layout Container policy allows you to configure the allowed components, manage the drag-and-drop mapping of assets, and set the number of responsive grid columns for that container."
+    },
+    {
+      "id": "07-tmpl-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Where can you find Editable Templates in the AEM Sites console?",
+      "heading": "Tools > General > Templates in the AEM Sites console",
+      "body": "Editable Templates can be found under Tools > General > Templates in the AEM Sites console, or locally at http://localhost:4502/libs/wcm/core/content/sites/templates.html/conf.",
+      "narration": "Where can you find Editable Templates in the AEM Sites console? Tools > General > Templates in the AEM Sites console. Editable Templates can be found under Tools > General > Templates in the AEM Sites console, or locally at http://localhost:4502/libs/wcm/core/content/sites/templates.html/conf."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A pre-defined structure and initial content that can be used to quickly create a new site",
+        "In the /apps folder of the AEMaaCS installation",
+        "The ability to create, update, and manage advanced policy configurations for page templates",
+        "Editable regions where content authors can modify specific areas while the rest stays locked to the template",
+        "Increased author productivity, improved consistency, and reduced development costs",
+        "Configuring allowed components, drag-and-drop asset mapping, and the number of responsive grid columns",
+        "Tools > General > Templates in the AEM Sites console"
+      ],
+      "narration": "Quick recap of Editable Templates Fundamentals. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

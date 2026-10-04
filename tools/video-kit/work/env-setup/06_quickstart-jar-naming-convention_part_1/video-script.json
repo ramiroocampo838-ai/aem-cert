@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "QuickStart Jar Naming Convention (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "QuickStart Jar Naming Convention (Part 1 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. QuickStart Jar Naming Convention (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-043",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the format of the QuickStart Jar filename?",
+      "heading": "aem-<tier>_<environment>-p<port>.jar",
+      "body": "The QuickStart Jar filename follows the format `aem-<tier>_<environment>-p<port>.jar`. The tier (author/publish) and optional environment segment control how AEM starts up. The port after `-p` determines the listening port.",
+      "narration": "What is the format of the QuickStart Jar filename? aem-<tier>_<environment>-p<port>.jar. The QuickStart Jar filename follows the format `aem-<tier>_<environment>-p<port>.jar`. The tier (author/publish) and optional environment segment control how AEM starts up. The port after `-p` determines the listening port."
+    },
+    {
+      "id": "02-env-044",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What does the filename aem-author-p4502.jar tell AEM when it starts?",
+      "heading": "Start as an Author instance in Dev mode on port 4502",
+      "body": "`aem-author-p4502.jar` tells AEM to start as an Author instance in the default Dev mode, listening on port 4502. No environment segment means the default dev run mode is used.",
+      "narration": "What does the filename aem-author-p4502.jar tell AEM when it starts? Start as an Author instance in Dev mode on port 4502. `aem-author-p4502.jar` tells AEM to start as an Author instance in the default Dev mode, listening on port 4502. No environment segment means the default dev run mode is used."
+    },
+    {
+      "id": "03-env-045",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What does the filename aem-publish-p4503.jar tell AEM when it starts?",
+      "heading": "Start as a Publish instance in Dev mode on port 4503",
+      "body": "`aem-publish-p4503.jar` tells AEM to start as a Publish instance in the default Dev mode, listening on port 4503.",
+      "narration": "What does the filename aem-publish-p4503.jar tell AEM when it starts? Start as a Publish instance in Dev mode on port 4503. `aem-publish-p4503.jar` tells AEM to start as a Publish instance in the default Dev mode, listening on port 4503."
+    },
+    {
+      "id": "04-env-046",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What does the filename aem-author_prod-p4502.jar tell AEM when it starts?",
+      "heading": "Start as Author in Production mode on port 4502",
+      "body": "`aem-author_prod-p4502.jar` starts AEM as an Author instance in Production mode on port 4502. The `_prod` segment sets the environment run mode, which activates production-specific OSGi configurations.",
+      "narration": "What does the filename aem-author_prod-p4502.jar tell AEM when it starts? Start as Author in Production mode on port 4502. `aem-author_prod-p4502.jar` starts AEM as an Author instance in Production mode on port 4502. The `_prod` segment sets the environment run mode, which activates production-specific OSGi configurations."
+    },
+    {
+      "id": "05-env-047",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "Which part of the QuickStart Jar filename controls the AEM tier?",
+      "heading": "The segment after aem- and before the port (author or publish)",
+      "body": "In the filename `aem-<tier>_<environment>-p<port>.jar`, the tier is the segment immediately after `aem-`. It must be either `author` or `publish`, and it is locked on first startup.",
+      "narration": "Which part of the QuickStart Jar filename controls the AEM tier? The segment after aem- and before the port (author or publish). In the filename `aem-<tier>_<environment>-p<port>.jar`, the tier is the segment immediately after `aem-`. It must be either `author` or `publish`, and it is locked on first startup."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "aem-<tier>_<environment>-p<port>.jar",
+        "Start as an Author instance in Dev mode on port 4502",
+        "Start as a Publish instance in Dev mode on port 4503",
+        "Start as Author in Production mode on port 4502",
+        "The segment after aem- and before the port (author or publish)"
+      ],
+      "narration": "Quick recap of QuickStart Jar Naming Convention (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

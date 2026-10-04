@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Cloud Service Architecture and Operations",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cloud Service Architecture and Operations",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Cloud Service Architecture and Operations. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-086",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What architectural shift does AEM as a Cloud Service make?",
+      "heading": "It moves from instance-centric to service-based, using n-x AEM containers driven by Cloud Manager CI/CD pipelines",
+      "body": "Section 13 says AEM as a Cloud Service moves from an instance-centric model to a service-based one with n-x AEM containers driven by Cloud Manager CI/CD pipelines.",
+      "narration": "What architectural shift does AEM as a Cloud Service make? It moves from instance-centric to service-based, using n-x AEM containers driven by Cloud Manager CI/CD pipelines. Section 13 says AEM as a Cloud Service moves from an instance-centric model to a service-based one with n-x AEM containers driven by Cloud Manager CI/CD pipelines."
+    },
+    {
+      "id": "02-oak-087",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What platform choices are no longer managed directly by customers in Cloud Service?",
+      "heading": "Customers do not choose TarMK or MongoMK, do not manage Author clusters or Publish farms themselves, and the publish tier scales automatically",
+      "body": "Section 13 says customers do not choose TarMK or MongoMK and do not manage Author clusters or Publish farms themselves; the publish tier scales automatically.",
+      "narration": "What platform choices are no longer managed directly by customers in Cloud Service? Customers do not choose TarMK or MongoMK, do not manage Author clusters or Publish farms themselves, and the publish tier scales automatically. Section 13 says customers do not choose TarMK or MongoMK and do not manage Author clusters or Publish farms themselves; the publish tier scales automatically."
+    },
+    {
+      "id": "03-oak-088",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which kinds of changes must be deployed through Cloud Manager in AEM as a Cloud Service?",
+      "heading": "Code, OSGi configurations, Dispatcher configuration, log configuration, and index definitions",
+      "body": "The source says code, OSGi configurations, Dispatcher configuration, log configuration, and index definitions are all deployed through Cloud Manager.",
+      "narration": "Which kinds of changes must be deployed through Cloud Manager in AEM as a Cloud Service? Code, OSGi configurations, Dispatcher configuration, log configuration, and index definitions. The source says code, OSGi configurations, Dispatcher configuration, log configuration, and index definitions are all deployed through Cloud Manager."
+    },
+    {
+      "id": "04-oak-089",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why are production configuration changes outside the pipeline a problem in Cloud Service?",
+      "heading": "Because configuration changes in production that bypass the pipeline break the CI/CD policy",
+      "body": "Section 13 explicitly says that configuration changes in production that bypass the pipeline break the CI/CD policy.",
+      "narration": "Why are production configuration changes outside the pipeline a problem in Cloud Service? Because configuration changes in production that bypass the pipeline break the CI/CD policy. Section 13 explicitly says that configuration changes in production that bypass the pipeline break the CI/CD policy."
+    },
+    {
+      "id": "05-oak-090",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is true about indexes during a rolling deployment in Cloud Service?",
+      "heading": "Old and new versions run side by side for a time, so two sets of indexes exist, and the new version is built and reindexed before the traffic switch",
+      "body": "The source says rolling deployments run the old and new version side by side, so two index sets exist, and the new version's indexes are built and repositories reindexed before the traffic switch.",
+      "narration": "What is true about indexes during a rolling deployment in Cloud Service? Old and new versions run side by side for a time, so two sets of indexes exist, and the new version is built and reindexed before the traffic switch. The source says rolling deployments run the old and new version side by side, so two index sets exist, and the new version's indexes are built and repositories reindexed before the traffic switch."
+    },
+    {
+      "id": "06-oak-091",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Why can checking only AEM logs miss a request in Cloud Service?",
+      "heading": "Because traffic flows from the CDN to Apache and Dispatcher on Publish and then to AEM, and a request may be answered earlier in that chain",
+      "body": "Section 13 says traffic flows CDN to Apache and Dispatcher to AEM, and each layer has its own log, so AEM logs alone can miss a request answered earlier in the chain.",
+      "narration": "Why can checking only AEM logs miss a request in Cloud Service? Because traffic flows from the CDN to Apache and Dispatcher on Publish and then to AEM, and a request may be answered earlier in that chain. Section 13 says traffic flows CDN to Apache and Dispatcher to AEM, and each layer has its own log, so AEM logs alone can miss a request answered earlier in the chain."
+    },
+    {
+      "id": "07-oak-092",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What runtime operational support does the speech mention for Cloud Service customers?",
+      "heading": "SREs monitor system health around the clock, and customers can set up alerts and see metrics including search performance",
+      "body": "The source says SREs monitor system health around the clock, and customers can set up alerts and see runtime metrics, including search performance.",
+      "narration": "What runtime operational support does the speech mention for Cloud Service customers? SREs monitor system health around the clock, and customers can set up alerts and see metrics including search performance. The source says SREs monitor system health around the clock, and customers can set up alerts and see runtime metrics, including search performance."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It moves from instance-centric to service-based, using n-x AEM containers driven by Cloud Manager CI/CD pipelines",
+        "Customers do not choose TarMK or MongoMK, do not manage Author clusters or Publish farms themselves, and the publish tier scales automatically",
+        "Code, OSGi configurations, Dispatcher configuration, log configuration, and index definitions",
+        "Because configuration changes in production that bypass the pipeline break the CI/CD policy",
+        "Old and new versions run side by side for a time, so two sets of indexes exist, and the new version is built and reindexed before the traffic switch",
+        "Because traffic flows from the CDN to Apache and Dispatcher on Publish and then to AEM, and a request may be answered earlier in that chain",
+        "SREs monitor system health around the clock, and customers can set up alerts and see metrics including search performance"
+      ],
+      "narration": "Quick recap of Cloud Service Architecture and Operations. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

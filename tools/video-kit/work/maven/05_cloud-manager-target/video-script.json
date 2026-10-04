@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Cloud Manager Target",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Cloud Manager Target",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Cloud Manager Target. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-029",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "By default, what does Cloud Manager harvest from the Maven build?",
+      "heading": "Every package produced by the Maven build",
+      "body": "Section 5 says that by default, Cloud Manager harvests every package produced by the Maven build.",
+      "narration": "By default, what does Cloud Manager harvest from the Maven build? Every package produced by the Maven build. Section 5 says that by default, Cloud Manager harvests every package produced by the Maven build."
+    },
+    {
+      "id": "02-mvn-030",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Why must ui.apps or ui.content not be deployed individually by Cloud Manager when all already embeds them?",
+      "heading": "Because they would be installed twice",
+      "body": "The speech explains that the all package already embeds the other packages, so if ui.apps or ui.content were also deployed individually, they would be installed twice.",
+      "narration": "Why must ui.apps or ui.content not be deployed individually by Cloud Manager when all already embeds them? Because they would be installed twice. The speech explains that the all package already embeds the other packages, so if ui.apps or ui.content were also deployed individually, they would be installed twice."
+    },
+    {
+      "id": "03-mvn-031",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What property value should package-producing projects except all set in the filevault-package-maven-plugin?",
+      "heading": "cloudManagerTarget set to none",
+      "body": "Section 5 says that every package-producing project except all adds properties with cloudManagerTarget set to none in the FileVault plugin configuration.",
+      "narration": "What property value should package-producing projects except all set in the filevault-package-maven-plugin? cloudManagerTarget set to none. Section 5 says that every package-producing project except all adds properties with cloudManagerTarget set to none in the FileVault plugin configuration."
+    },
+    {
+      "id": "04-mvn-032",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which package is the only one Cloud Manager should deploy?",
+      "heading": "all",
+      "body": "The rule in the speech is explicit: all is the only package that Cloud Manager deploys.",
+      "narration": "Which package is the only one Cloud Manager should deploy? all. The rule in the speech is explicit: all is the only package that Cloud Manager deploys."
+    },
+    {
+      "id": "05-mvn-033",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Given an application deployment in Cloud Manager, how many AEM packages should compose that deployment artifact?",
+      "heading": "A single AEM package",
+      "body": "Section 5 says an application deployment must be composed of a single AEM package.",
+      "narration": "Given an application deployment in Cloud Manager, how many AEM packages should compose that deployment artifact? A single AEM package. Section 5 says an application deployment must be composed of a single AEM package."
+    },
+    {
+      "id": "06-mvn-034",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What should that single deployment package contain?",
+      "heading": "Sub packages for code, configuration, and any baseline content the application needs",
+      "body": "The speech says the single deployment package contains sub packages for everything the application needs: code, configuration, and any baseline content.",
+      "narration": "What should that single deployment package contain? Sub packages for code, configuration, and any baseline content the application needs. The speech says the single deployment package contains sub packages for everything the application needs: code, configuration, and any baseline content."
+    },
+    {
+      "id": "07-mvn-035",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "A deployment installed ui.apps once through all and then again directly. Which rule from the speech was violated?",
+      "heading": "Every package except all should set cloudManagerTarget to none",
+      "body": "The lesson's rule is to deploy only all, while every other package-producing project sets cloudManagerTarget to none to avoid duplicate installation.",
+      "narration": "A deployment installed ui.apps once through all and then again directly. Which rule from the speech was violated? Every package except all should set cloudManagerTarget to none. The lesson's rule is to deploy only all, while every other package-producing project sets cloudManagerTarget to none to avoid duplicate installation."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Every package produced by the Maven build",
+        "Because they would be installed twice",
+        "cloudManagerTarget set to none",
+        "all",
+        "A single AEM package",
+        "Sub packages for code, configuration, and any baseline content the application needs",
+        "Every package except all should set cloudManagerTarget to none"
+      ],
+      "narration": "Quick recap of Cloud Manager Target. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

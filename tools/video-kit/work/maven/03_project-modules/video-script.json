@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Project Modules",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Project Modules",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Project Modules. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-015",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which module is the Java OSGi bundle with Sling Models, servlets, listeners, schedulers, services, and request filters?",
+      "heading": "core",
+      "body": "Section 3 says core is the Java OSGi bundle and lists OSGi services, listeners, schedulers, Sling Models, servlets, and request filters there.",
+      "narration": "Which module is the Java OSGi bundle with Sling Models, servlets, listeners, schedulers, services, and request filters? core. Section 3 says core is the Java OSGi bundle and lists OSGi services, listeners, schedulers, Sling Models, servlets, and request filters there."
+    },
+    {
+      "id": "02-mvn-016",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which module contains the /apps part of the project, including components, clientlibs, templates code, and Oak index definitions?",
+      "heading": "ui.apps",
+      "body": "The speech says ui.apps contains the /apps part of the project: components, clientlibs, templates code, and Oak index definitions.",
+      "narration": "Which module contains the /apps part of the project, including components, clientlibs, templates code, and Oak index definitions? ui.apps. The speech says ui.apps contains the /apps part of the project: components, clientlibs, templates code, and Oak index definitions."
+    },
+    {
+      "id": "03-mvn-017",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Given a scenario with OSGi configurations in run-mode folders and Repo Init scripts, which module should hold them?",
+      "heading": "ui.config",
+      "body": "Section 3 defines ui.config as the module containing OSGi configurations in run-mode specific folders plus the Repo Init scripts.",
+      "narration": "Given a scenario with OSGi configurations in run-mode folders and Repo Init scripts, which module should hold them? ui.config. Section 3 defines ui.config as the module containing OSGi configurations in run-mode specific folders plus the Repo Init scripts."
+    },
+    {
+      "id": "04-mvn-018",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which module contains mutable content and configuration such as /content, /conf, /content/dam, context-aware configurations, and governed tag taxonomies?",
+      "heading": "ui.content",
+      "body": "The speech says ui.content contains mutable content and configuration such as /content, /conf, /content/dam, context-aware configurations, and governed tag taxonomies.",
+      "narration": "Which module contains mutable content and configuration such as /content, /conf, /content/dam, context-aware configurations, and governed tag taxonomies? ui.content. The speech says ui.content contains mutable content and configuration such as /content, /conf, /content/dam, context-aware configurations, and governed tag taxonomies."
+    },
+    {
+      "id": "05-mvn-019",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is the role of the all module?",
+      "heading": "It is the container package that embeds everything into one deployable artifact",
+      "body": "Section 3 explicitly says all is the container package that embeds everything into one deployable artifact.",
+      "narration": "What is the role of the all module? It is the container package that embeds everything into one deployable artifact. Section 3 explicitly says all is the container package that embeds everything into one deployable artifact."
+    },
+    {
+      "id": "06-mvn-020",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which module is optional and contains the webpack-based front-end build that generates clientlibs?",
+      "heading": "ui.frontend",
+      "body": "The speech says ui.frontend is optional and contains the webpack-based front-end build that generates the clientlibs.",
+      "narration": "Which module is optional and contains the webpack-based front-end build that generates clientlibs? ui.frontend. The speech says ui.frontend is optional and contains the webpack-based front-end build that generates the clientlibs."
+    },
+    {
+      "id": "07-mvn-021",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which statement about testing modules is correct?",
+      "heading": "it.tests contains Java-based integration tests on the AEM server, ui.tests contains Selenium UI tests, and unit tests live in core",
+      "body": "Section 3 says it.tests contains Java-based integration tests that run on the AEM server, ui.tests contains Selenium-based UI tests, and unit tests live in core.",
+      "narration": "Which statement about testing modules is correct? it.tests contains Java-based integration tests on the AEM server, ui.tests contains Selenium UI tests, and unit tests live in core. Section 3 says it.tests contains Java-based integration tests that run on the AEM server, ui.tests contains Selenium-based UI tests, and unit tests live in core."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "core",
+        "ui.apps",
+        "ui.config",
+        "ui.content",
+        "It is the container package that embeds everything into one deployable artifact",
+        "ui.frontend",
+        "it.tests contains Java-based integration tests on the AEM server, ui.tests contains Selenium UI tests, and unit tests live in core"
+      ],
+      "narration": "Quick recap of Project Modules. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

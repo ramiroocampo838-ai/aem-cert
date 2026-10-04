@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "OSGi Services & Configurations",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "OSGi Services & Configurations",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. OSGi Services & Configurations. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-087",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What role do OSGi services play in AEM according to the speech?",
+      "heading": "They provide reusable logic, such as search or integrations with external systems",
+      "body": "The speech says AEM is built on OSGi and that services provide reusable logic, such as search or integration with external systems.",
+      "narration": "What role do OSGi services play in AEM according to the speech? They provide reusable logic, such as search or integrations with external systems. The speech says AEM is built on OSGi and that services provide reusable logic, such as search or integration with external systems."
+    },
+    {
+      "id": "02-comp-088",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How is a basic OSGi service class declared in the speech's example?",
+      "heading": "As a class annotated with @Component(service = MyService.class) that implements an interface",
+      "body": "The speech says a service is a class annotated with @Component(service = MyService.class), using Declarative Services annotations, and that it implements an interface.",
+      "narration": "How is a basic OSGi service class declared in the speech's example? As a class annotated with @Component(service = MyService.class) that implements an interface. The speech says a service is a class annotated with @Component(service = MyService.class), using Declarative Services annotations, and that it implements an interface."
+    },
+    {
+      "id": "03-comp-089",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which annotation is used to inject one OSGi service into another service?",
+      "heading": "@Reference",
+      "body": "The speech says services are injected with @Reference. It separately notes that Sling Models get services with @OSGiService.",
+      "narration": "Which annotation is used to inject one OSGi service into another service? @Reference. The speech says services are injected with @Reference. It separately notes that Sling Models get services with @OSGiService."
+    },
+    {
+      "id": "04-comp-090",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Given a configurable service, which annotations and method does the speech say to use for its OSGi configuration?",
+      "heading": "Define @ObjectClassDefinition with @AttributeDefinition entries, add @Designate on the service, and receive the config in the @Activate method",
+      "body": "The speech says configurable services use OSGi Metatype annotations: define an @ObjectClassDefinition on an annotation type with @AttributeDefinition for each property, then add @Designate(ocd = Config.class) on the service and receive the config in @Activate.",
+      "narration": "Given a configurable service, which annotations and method does the speech say to use for its OSGi configuration? Define @ObjectClassDefinition with @AttributeDefinition entries, add @Designate on the service, and receive the config in the @Activate method. The speech says configurable services use OSGi Metatype annotations: define an @ObjectClassDefinition on an annotation type with @AttributeDefinition for each property, then add @Designate(ocd = Config.class) on the service and receive the config in @Activate."
+    },
+    {
+      "id": "05-comp-091",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Where are OSGi configurations stored in an AEM project?",
+      "heading": "As .cfg.json files in config folders of the ui.config module",
+      "body": "The speech says configurations are stored as .cfg.json files in the repository in a config folder of ui.config.",
+      "narration": "Where are OSGi configurations stored in an AEM project? As .cfg.json files in config folders of the ui.config module. The speech says configurations are stored as .cfg.json files in the repository in a config folder of ui.config."
+    },
+    {
+      "id": "06-comp-092",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "How should environment-specific values and secrets be referenced in AEM as a Cloud Service configurations?",
+      "heading": "Use Cloud Manager environment variables with $[env:VARIABLE_NAME] and secrets with $[secret:SECRET_NAME], and never commit secrets to Git",
+      "body": "The speech says secrets and environment-specific values should not be hard-coded. In AEM as a Cloud Service, use Cloud Manager environment variables referenced as $[env:VARIABLE_NAME] and secrets as $[secret:SECRET_NAME], and never commit secrets to Git.",
+      "narration": "How should environment-specific values and secrets be referenced in AEM as a Cloud Service configurations? Use Cloud Manager environment variables with $[env:VARIABLE_NAME] and secrets with $[secret:SECRET_NAME], and never commit secrets to Git. The speech says secrets and environment-specific values should not be hard-coded. In AEM as a Cloud Service, use Cloud Manager environment variables referenced as $[env:VARIABLE_NAME] and secrets as $[secret:SECRET_NAME], and never commit secrets to Git."
+    },
+    {
+      "id": "07-comp-093",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why do configurations belong in code rather than being changed through the web console in a deployed AEM as a Cloud Service environment?",
+      "heading": "Because AEM as a Cloud Service has an immutable /apps, so deployed environments cannot rely on web console config changes",
+      "body": "The speech says that because AEM as a Cloud Service has an immutable /apps, you cannot change configuration through the web console in a deployed environment. Configurations belong in code.",
+      "narration": "Why do configurations belong in code rather than being changed through the web console in a deployed AEM as a Cloud Service environment? Because AEM as a Cloud Service has an immutable /apps, so deployed environments cannot rely on web console config changes. The speech says that because AEM as a Cloud Service has an immutable /apps, you cannot change configuration through the web console in a deployed environment. Configurations belong in code."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "They provide reusable logic, such as search or integrations with external systems",
+        "As a class annotated with @Component(service = MyService.class) that implements an interface",
+        "@Reference",
+        "Define @ObjectClassDefinition with @AttributeDefinition entries, add @Designate on the service, and receive the config in the @Activate method",
+        "As .cfg.json files in config folders of the ui.config module",
+        "Use Cloud Manager environment variables with $[env:VARIABLE_NAME] and secrets with $[secret:SECRET_NAME], and never commit secrets to Git",
+        "Because AEM as a Cloud Service has an immutable /apps, so deployed environments cannot rely on web console config changes"
+      ],
+      "narration": "Quick recap of OSGi Services & Configurations. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

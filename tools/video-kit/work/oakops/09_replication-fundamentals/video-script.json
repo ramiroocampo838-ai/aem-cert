@@ -1,0 +1,102 @@
+{
+  "section": "oakops",
+  "sectionLabel": "Oak & Operations",
+  "accent": "#84cc16",
+  "category": "Replication Fundamentals",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Replication Fundamentals",
+      "sub": "Oak & Operations · 7 key concepts",
+      "narration": "Oak & Operations. Replication Fundamentals. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-oak-058",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What are replication agents used for according to the speech?",
+      "heading": "They publish content from Author to Publish, flush Dispatcher cache, and return user input from Publish to Author",
+      "body": "Section 9 defines replication agents as the mechanism for publishing content from Author to Publish, flushing Dispatcher cache, and returning user input from Publish to Author.",
+      "narration": "What are replication agents used for according to the speech? They publish content from Author to Publish, flush Dispatcher cache, and return user input from Publish to Author. Section 9 defines replication agents as the mechanism for publishing content from Author to Publish, flushing Dispatcher cache, and returning user input from Publish to Author."
+    },
+    {
+      "id": "02-oak-059",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "In Author-to-Publish replication, what does the default replication agent do before content reaches Publish?",
+      "heading": "It packages the content and places it in the replication queue",
+      "body": "The speech says a publish request is passed to the default replication agent, which packages the content and places it in the replication queue.",
+      "narration": "In Author-to-Publish replication, what does the default replication agent do before content reaches Publish? It packages the content and places it in the replication queue. The speech says a publish request is passed to the default replication agent, which packages the content and places it in the replication queue."
+    },
+    {
+      "id": "03-oak-060",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which servlet receives replicated content on Publish by default?",
+      "heading": "bin/receive",
+      "body": "Section 9 states that a servlet on Publish receives the content and that the default servlet is bin/receive.",
+      "narration": "Which servlet receives replicated content on Publish by default? bin/receive. Section 9 states that a servlet on Publish receives the content and that the default servlet is bin/receive."
+    },
+    {
+      "id": "04-oak-061",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which data is explicitly not replicated between Author and Publish?",
+      "heading": "User data such as users, groups, and profiles",
+      "body": "The source explicitly says that user data such as users, groups, and profiles is not replicated between Author and Publish.",
+      "narration": "Which data is explicitly not replicated between Author and Publish? User data such as users, groups, and profiles. The source explicitly says that user data such as users, groups, and profiles is not replicated between Author and Publish."
+    },
+    {
+      "id": "05-oak-062",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How does reverse replication return data from Publish to Author?",
+      "heading": "The Publish agent puts data in an outbox, and Author listeners poll the outboxes",
+      "body": "Section 9 says reverse replication works by having the agent on Publish place data in an outbox, while replication listeners on Author poll the outboxes.",
+      "narration": "How does reverse replication return data from Publish to Author? The Publish agent puts data in an outbox, and Author listeners poll the outboxes. Section 9 says reverse replication works by having the agent on Publish place data in an outbox, while replication listeners on Author poll the outboxes."
+    },
+    {
+      "id": "06-oak-063",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the default state of reverse replication since AEM 6.1?",
+      "heading": "It is effectively disabled by default",
+      "body": "The speech says reverse replication is effectively disabled by default since AEM 6.1.",
+      "narration": "What is the default state of reverse replication since AEM 6.1? It is effectively disabled by default. The speech says reverse replication is effectively disabled by default since AEM 6.1."
+    },
+    {
+      "id": "07-oak-064",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "How is AEM Communities user-generated content handled?",
+      "heading": "It is never replicated; a common store is used instead",
+      "body": "Section 9 explicitly says that for AEM Communities, user-generated content is never replicated and a common store is used instead.",
+      "narration": "How is AEM Communities user-generated content handled? It is never replicated; a common store is used instead. Section 9 explicitly says that for AEM Communities, user-generated content is never replicated and a common store is used instead."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "They publish content from Author to Publish, flush Dispatcher cache, and return user input from Publish to Author",
+        "It packages the content and places it in the replication queue",
+        "bin/receive",
+        "User data such as users, groups, and profiles",
+        "The Publish agent puts data in an outbox, and Author listeners poll the outboxes",
+        "It is effectively disabled by default",
+        "It is never replicated; a common store is used instead"
+      ],
+      "narration": "Quick recap of Replication Fundamentals. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

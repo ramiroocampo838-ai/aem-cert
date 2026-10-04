@@ -1,0 +1,102 @@
+{
+  "section": "workflows",
+  "sectionLabel": "Workflows",
+  "accent": "#14b8a6",
+  "category": "Introduction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Introduction",
+      "sub": "Workflows · 7 key concepts",
+      "narration": "Workflows. Introduction. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-wf-001",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "After components and the Maven project structure, which three features does this lesson turn to?",
+      "heading": "The lesson covers Workflows, Content Fragments, and Experience Fragments",
+      "body": "The introduction says that after components and Maven project structure, the lesson looks at Workflows, Content Fragments, and Experience Fragments.",
+      "narration": "After components and the Maven project structure, which three features does this lesson turn to? The lesson covers Workflows, Content Fragments, and Experience Fragments. The introduction says that after components and Maven project structure, the lesson looks at Workflows, Content Fragments, and Experience Fragments."
+    },
+    {
+      "id": "02-wf-002",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which exam domain does this lesson support, and about how much of the exam is it?",
+      "heading": "It supports the AEM Development domain at about 37 percent",
+      "body": "The speech says this lesson supports the AEM Development part of the exam, the largest domain at about 37 percent.",
+      "narration": "Which exam domain does this lesson support, and about how much of the exam is it? It supports the AEM Development domain at about 37 percent. The speech says this lesson supports the AEM Development part of the exam, the largest domain at about 37 percent."
+    },
+    {
+      "id": "03-wf-003",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How are workflows characterized in the introduction?",
+      "heading": "Workflows move a payload through steps",
+      "body": "The introduction summarizes workflows as automation that moves a payload through steps.",
+      "narration": "How are workflows characterized in the introduction? Workflows move a payload through steps. The introduction summarizes workflows as automation that moves a payload through steps."
+    },
+    {
+      "id": "04-wf-004",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the lesson's definition of Content Fragments?",
+      "heading": "Content Fragments are structured, channel-neutral content",
+      "body": "In the introduction, Content Fragments are defined as structured, channel-neutral content.",
+      "narration": "What is the lesson's definition of Content Fragments? Content Fragments are structured, channel-neutral content. In the introduction, Content Fragments are defined as structured, channel-neutral content."
+    },
+    {
+      "id": "05-wf-005",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is the lesson's definition of Experience Fragments?",
+      "heading": "Experience Fragments are reusable groups of components with layout",
+      "body": "The introduction describes Experience Fragments as reusable groups of components with layout.",
+      "narration": "What is the lesson's definition of Experience Fragments? Experience Fragments are reusable groups of components with layout. The introduction describes Experience Fragments as reusable groups of components with layout."
+    },
+    {
+      "id": "06-wf-006",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What kind of exam questions should you expect around workflow step selection and custom steps?",
+      "heading": "Expect scenario questions about which step type fits and where a custom step is implemented",
+      "body": "The introduction explicitly says to expect scenario questions such as which step type fits a requirement and where a custom step is implemented.",
+      "narration": "What kind of exam questions should you expect around workflow step selection and custom steps? Expect scenario questions about which step type fits and where a custom step is implemented. The introduction explicitly says to expect scenario questions such as which step type fits a requirement and where a custom step is implemented."
+    },
+    {
+      "id": "07-wf-007",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What other scenario style does the introduction call out for fragment-related exam questions?",
+      "heading": "Expect scenario questions about which fragment type to use and how a fragment is delivered to a third party",
+      "body": "The introduction says you should expect scenario questions on which fragment type fits a use case and how a fragment is delivered to a third party.",
+      "narration": "What other scenario style does the introduction call out for fragment-related exam questions? Expect scenario questions about which fragment type to use and how a fragment is delivered to a third party. The introduction says you should expect scenario questions on which fragment type fits a use case and how a fragment is delivered to a third party."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The lesson covers Workflows, Content Fragments, and Experience Fragments",
+        "It supports the AEM Development domain at about 37 percent",
+        "Workflows move a payload through steps",
+        "Content Fragments are structured, channel-neutral content",
+        "Experience Fragments are reusable groups of components with layout",
+        "Expect scenario questions about which step type fits and where a custom step is implemented",
+        "Expect scenario questions about which fragment type to use and how a fragment is delivered to a third party"
+      ],
+      "narration": "Quick recap of Introduction. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

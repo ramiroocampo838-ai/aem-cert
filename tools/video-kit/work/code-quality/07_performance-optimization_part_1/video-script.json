@@ -1,0 +1,80 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "Performance Optimization (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Performance Optimization (Part 1 of 2)",
+      "sub": "Code Quality · 5 key concepts",
+      "narration": "Code Quality. Performance Optimization (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-083",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "PERF-001 (Severity: Critical) flags JCR queries executed on every page render without caching. What tool should you use to analyze query performance in AEM?",
+      "heading": "The AEM Query Performance Analyzer (/libs/granite/operations/content/diagnosistools/queryPerformance.html) and QueryDebug logs",
+      "body": "PERF-001 (Critical): JCR queries on every page render are a top AEM performance problem. The AEM Query Performance tool shows the slowest queries. The Oak QueryExplain feature shows the execution plan — revealing whether the query uses an index or performs a full node scan. Queries without proper Oak indexes cause full-repository traversals, which scale linearly with repository size and cause request timeouts under load.",
+      "narration": "PERF-001 (Severity: Critical) flags JCR queries executed on every page render without caching. What tool should you use to analyze query performance in AEM? The AEM Query Performance Analyzer (/libs/granite/operations/content/diagnosistools/queryPerformance.html) and QueryDebug logs. PERF-001 (Critical): JCR queries on every page render are a top AEM performance problem. The AEM Query Performance tool shows the slowest queries. The Oak QueryExplain feature shows the execution plan — revealing whether the query uses an index or performs a full node scan. Queries without proper Oak indexes cause full-repository traversals, which scale linearly with repository size and cause request timeouts under load."
+    },
+    {
+      "id": "02-cq-084",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "PERF-002 requires providing explicit Oak index definitions for all application JCR queries. What happens when a query runs without a matching Oak index?",
+      "heading": "Oak performs a full repository traversal — it scans every JCR node to find matches, which scales O(n) with repository size",
+      "body": "PERF-002 (Critical): Oak (AEM's JCR implementation) uses indexes for efficient queries. Without a matching index (Lucene, property index, or ordered index), Oak performs a full repository traversal — effectively a table scan. For a repository with 10 million nodes, this can take minutes. AEM logs a WARNING: 'Traversal query' in the error.log. Index definitions (oak:QueryIndexDefinition) must be created under /oak:index and deployed via content packages.",
+      "narration": "PERF-002 requires providing explicit Oak index definitions for all application JCR queries. What happens when a query runs without a matching Oak index? Oak performs a full repository traversal — it scans every JCR node to find matches, which scales O(n) with repository size. PERF-002 (Critical): Oak (AEM's JCR implementation) uses indexes for efficient queries. Without a matching index (Lucene, property index, or ordered index), Oak performs a full repository traversal — effectively a table scan. For a repository with 10 million nodes, this can take minutes. AEM logs a WARNING: 'Traversal query' in the error.log. Index definitions (oak:QueryIndexDefinition) must be created under /oak:index and deployed via content packages."
+    },
+    {
+      "id": "03-cq-085",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "PERF-003 (Severity: Major) warns against calling session.save() inside a loop when processing bulk content operations. What is the recommended approach?",
+      "heading": "Batch multiple changes together and call session.save() once after the loop, or every N items (e.g., every 500 nodes) to control memory usage",
+      "body": "PERF-003 (Major): session.save() in JCR flushes all pending changes to the repository and creates a transaction boundary. Calling it inside a loop (one save per node) creates one transaction per node — this is extremely slow because each save involves disk I/O, Lucene index update, and event dispatch. The fix: accumulate changes across multiple iterations and save periodically (every 500–1000 nodes), then do a final save after the loop ends.",
+      "narration": "PERF-003 (Severity: Major) warns against calling session.save() inside a loop when processing bulk content operations. What is the recommended approach? Batch multiple changes together and call session.save() once after the loop, or every N items (e.g., every 500 nodes) to control memory usage. PERF-003 (Major): session.save() in JCR flushes all pending changes to the repository and creates a transaction boundary. Calling it inside a loop (one save per node) creates one transaction per node — this is extremely slow because each save involves disk I/O, Lucene index update, and event dispatch. The fix: accumulate changes across multiple iterations and save periodically (every 500–1000 nodes), then do a final save after the loop ends."
+    },
+    {
+      "id": "04-cq-086",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "PERF-004 specifies that AEM Sling Models should use @ValueMapValue injection for simple properties instead of adapting Resource to ValueMap every time. Why?",
+      "heading": "@ValueMapValue is resolved once by Sling Models at injection time; resourceResolver.getValueMap() creates a new ValueMap wrapper on every call",
+      "body": "PERF-004 (Warning): Sling Models with @ValueMapValue are injected once when the model is first adapted from the resource — the framework resolves all annotated fields in one pass. Manually calling resource.adaptTo(ValueMap.class) multiple times in different methods creates multiple wrapper objects. The main benefit of @ValueMapValue is cleaner code and testability, and avoiding redundant object creation is a good practice.",
+      "narration": "PERF-004 specifies that AEM Sling Models should use @ValueMapValue injection for simple properties instead of adapting Resource to ValueMap every time. Why? @ValueMapValue is resolved once by Sling Models at injection time; resourceResolver.getValueMap() creates a new ValueMap wrapper on every call. PERF-004 (Warning): Sling Models with @ValueMapValue are injected once when the model is first adapted from the resource — the framework resolves all annotated fields in one pass. Manually calling resource.adaptTo(ValueMap.class) multiple times in different methods creates multiple wrapper objects. The main benefit of @ValueMapValue is cleaner code and testability, and avoiding redundant object creation is a good practice."
+    },
+    {
+      "id": "05-cq-087",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "PERF-005 (Severity: Major) requires using Oak property indexes for equality queries instead of Lucene full-text indexes. When is a property index more efficient than a Lucene full-text index?",
+      "heading": "For exact match queries on a specific property (e.g., @sling:resourceType = 'myproject/components/text') — property indexes are faster and smaller than Lucene for equality lookups",
+      "body": "PERF-005 (Major): Oak supports multiple index types. Property indexes (type='property') are B-tree structures for exact-value and range queries — small, fast to build, and efficient for queries like 'WHERE [jcr:primaryType] = \"cq:Page\"'. Lucene indexes (type='lucene') are full-text search engines with overhead from relevance scoring. For equality conditions on known properties, always use a property index. Lucene is justified only for full-text search.",
+      "narration": "PERF-005 (Severity: Major) requires using Oak property indexes for equality queries instead of Lucene full-text indexes. When is a property index more efficient than a Lucene full-text index? For exact match queries on a specific property (e.g., @sling:resourceType = 'myproject/components/text') — property indexes are faster and smaller than Lucene for equality lookups. PERF-005 (Major): Oak supports multiple index types. Property indexes (type='property') are B-tree structures for exact-value and range queries — small, fast to build, and efficient for queries like 'WHERE [jcr:primaryType] = \"cq:Page\"'. Lucene indexes (type='lucene') are full-text search engines with overhead from relevance scoring. For equality conditions on known properties, always use a property index. Lucene is justified only for full-text search."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The AEM Query Performance Analyzer (/libs/granite/operations/content/diagnosistools/queryPerformance.html) and QueryDebug logs",
+        "Oak performs a full repository traversal — it scans every JCR node to find matches, which scales O(n) with repository size",
+        "Batch multiple changes together and call session.save() once after the loop, or every N items (e.g., every 500 nodes) to control memory usage",
+        "@ValueMapValue is resolved once by Sling Models at injection time; resourceResolver.getValueMap() creates a new ValueMap wrapper on every call",
+        "For exact match queries on a specific property (e.g., @sling:resourceType = 'myproject/components/text') — property indexes are faster and smaller than Lucene for equality lookups"
+      ],
+      "narration": "Quick recap of Performance Optimization (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

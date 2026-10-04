@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Renders and Client Headers",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Renders and Client Headers",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Renders and Client Headers. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-023",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the /renders property define in Dispatcher?",
+      "heading": "The /renders property defines where Dispatcher sends requests to render a document",
+      "body": "Section 4 says the /renders property defines where Dispatcher sends requests to render a document.",
+      "narration": "What does the /renders property define in Dispatcher? The /renders property defines where Dispatcher sends requests to render a document. Section 4 says the /renders property defines where Dispatcher sends requests to render a document."
+    },
+    {
+      "id": "02-disp-024",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which two child properties does each render have according to the speech?",
+      "heading": "Each render has a /hostname and a /port",
+      "body": "Section 4 says each render has a /hostname and a /port.",
+      "narration": "Which two child properties does each render have according to the speech? Each render has a /hostname and a /port. Section 4 says each render has a /hostname and a /port."
+    },
+    {
+      "id": "03-disp-025",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "When a farm contains several renders, how does Dispatcher handle requests?",
+      "heading": "When there are several renders, Dispatcher distributes requests among them",
+      "body": "Section 4 says that when there are several renders, requests are distributed among them.",
+      "narration": "When a farm contains several renders, how does Dispatcher handle requests? When there are several renders, Dispatcher distributes requests among them. Section 4 says that when there are several renders, requests are distributed among them."
+    },
+    {
+      "id": "04-disp-026",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What does /timeout control, and what do 0 and the default mean?",
+      "heading": "The /timeout property is the connection timeout in milliseconds, and 0 means wait indefinitely, which is the default",
+      "body": "Section 4 says /timeout is the connection timeout in milliseconds, where 0 means wait indefinitely, and that is the default.",
+      "narration": "What does /timeout control, and what do 0 and the default mean? The /timeout property is the connection timeout in milliseconds, and 0 means wait indefinitely, which is the default. Section 4 says /timeout is the connection timeout in milliseconds, where 0 means wait indefinitely, and that is the default."
+    },
+    {
+      "id": "05-disp-027",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "A request hangs while Dispatcher is parsing response headers and then returns 504. Which setting from the speech is most directly involved, and what is its default?",
+      "heading": "The relevant setting is /receiveTimeout, whose default is 600000 milliseconds, or ten minutes",
+      "body": "Section 4 says /receiveTimeout is the time a response may take, its default is 600000 milliseconds or ten minutes, and hitting that timeout while parsing response headers returns 504.",
+      "narration": "A request hangs while Dispatcher is parsing response headers and then returns 504. Which setting from the speech is most directly involved, and what is its default? The relevant setting is /receiveTimeout, whose default is 600000 milliseconds, or ten minutes. Section 4 says /receiveTimeout is the time a response may take, its default is 600000 milliseconds or ten minutes, and hitting that timeout while parsing response headers returns 504."
+    },
+    {
+      "id": "06-disp-028",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What does setting /secure to 1 do for a render?",
+      "heading": "Setting /secure to 1 makes Dispatcher use HTTPS to reach AEM",
+      "body": "Section 4 says that /secure set to 1 makes Dispatcher use HTTPS to reach AEM.",
+      "narration": "What does setting /secure to 1 do for a render? Setting /secure to 1 makes Dispatcher use HTTPS to reach AEM. Section 4 says that /secure set to 1 makes Dispatcher use HTTPS to reach AEM."
+    },
+    {
+      "id": "07-disp-029",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Why is customizing /clientheaders risky if you forget a default header, and which header does the speech call out for page activation requests?",
+      "heading": "The /clientheaders list must be exhaustive, including default headers, and page activation requests need the PATH header",
+      "body": "Section 4 says that /clientheaders is the list of headers passed to the render, and if you customize it, you must specify an exhaustive list including the defaults. It also gives PATH as an example needed for page activation requests.",
+      "narration": "Why is customizing /clientheaders risky if you forget a default header, and which header does the speech call out for page activation requests? The /clientheaders list must be exhaustive, including default headers, and page activation requests need the PATH header. Section 4 says that /clientheaders is the list of headers passed to the render, and if you customize it, you must specify an exhaustive list including the defaults. It also gives PATH as an example needed for page activation requests."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The /renders property defines where Dispatcher sends requests to render a document",
+        "Each render has a /hostname and a /port",
+        "When there are several renders, Dispatcher distributes requests among them",
+        "The /timeout property is the connection timeout in milliseconds, and 0 means wait indefinitely, which is the default",
+        "The relevant setting is /receiveTimeout, whose default is 600000 milliseconds, or ten minutes",
+        "Setting /secure to 1 makes Dispatcher use HTTPS to reach AEM",
+        "The /clientheaders list must be exhaustive, including default headers, and page activation requests need the PATH header"
+      ],
+      "narration": "Quick recap of Renders and Client Headers. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

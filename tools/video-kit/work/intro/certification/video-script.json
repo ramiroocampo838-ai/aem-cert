@@ -1,0 +1,112 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "Certification",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Certification",
+      "sub": "Intro · 8 key concepts",
+      "narration": "Intro. Certification. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-009",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "How many questions are typically on an AEM Sites Developer Expert certification exam?",
+      "heading": "50 questions",
+      "body": "The AEM Sites Developer Expert certification exam consists of 50 questions (multiple choice and multiple select format), with a 100-minute duration and approximately 70% passing score.",
+      "narration": "How many questions are typically on an AEM Sites Developer Expert certification exam? 50 questions. The AEM Sites Developer Expert certification exam consists of 50 questions (multiple choice and multiple select format), with a 100-minute duration and approximately 70% passing score."
+    },
+    {
+      "id": "02-intro-010",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "How long is the AEM Sites Developer Expert certification exam?",
+      "heading": "100 minutes",
+      "body": "The AEM Sites Developer Expert exam is 100 minutes long, giving approximately 2 minutes per question across 50 total questions.",
+      "narration": "How long is the AEM Sites Developer Expert certification exam? 100 minutes. The AEM Sites Developer Expert exam is 100 minutes long, giving approximately 2 minutes per question across 50 total questions."
+    },
+    {
+      "id": "03-intro-011",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Which exam domain carries the highest weight in the AEM Sites Developer Expert certification?",
+      "heading": "Development (44%)",
+      "body": "The Development domain carries the highest weight at approximately 44% of the exam. It covers component development with HTL and Sling Models, editable templates, Content/Experience Fragments, workflows, services, MSM, and more.",
+      "narration": "Which exam domain carries the highest weight in the AEM Sites Developer Expert certification? Development (44%). The Development domain carries the highest weight at approximately 44% of the exam. It covers component development with HTL and Sling Models, editable templates, Content/Experience Fragments, workflows, services, MSM, and more."
+    },
+    {
+      "id": "04-intro-012",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What percentage of the AEM certification exam covers Configuration topics?",
+      "heading": "22%",
+      "body": "Configuration is Domain 1 and covers approximately 22% of the exam. Topics include OSGi configuration and services, run modes, project structure (ui.apps, ui.content, core), Maven build configuration, and Dispatcher farm configurations.",
+      "narration": "What percentage of the AEM certification exam covers Configuration topics? 22%. Configuration is Domain 1 and covers approximately 22% of the exam. Topics include OSGi configuration and services, run modes, project structure (ui.apps, ui.content, core), Maven build configuration, and Dispatcher farm configurations."
+    },
+    {
+      "id": "05-intro-013",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What does 'Domain 3: Build and Deployment' in the AEM certification cover?",
+      "heading": "Maven builds, CI/CD pipelines, Cloud Manager, and deployment strategies",
+      "body": "Domain 3 (Build and Deployment, ~14%) covers Maven build lifecycle and plugins, content packages, Package Manager, CI/CD pipelines in Cloud Manager, code quality gates, SonarQube, and deployment strategies including rollback.",
+      "narration": "What does 'Domain 3: Build and Deployment' in the AEM certification cover? Maven builds, CI/CD pipelines, Cloud Manager, and deployment strategies. Domain 3 (Build and Deployment, ~14%) covers Maven build lifecycle and plugins, content packages, Package Manager, CI/CD pipelines in Cloud Manager, code quality gates, SonarQube, and deployment strategies including rollback."
+    },
+    {
+      "id": "06-intro-014",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "What is the recommended daily study time for the AEM certification preparation?",
+      "heading": "1–2 hours daily, with consistency over cramming",
+      "body": "Best practice for AEM certification preparation is 1-2 hours of consistent daily study over 3-6 months. Consistency beats cramming — active learning (building examples, not just reading) is more effective than passive review.",
+      "narration": "What is the recommended daily study time for the AEM certification preparation? 1–2 hours daily, with consistency over cramming. Best practice for AEM certification preparation is 1-2 hours of consistent daily study over 3-6 months. Consistency beats cramming — active learning (building examples, not just reading) is more effective than passive review."
+    },
+    {
+      "id": "07-intro-015",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "What is the Pomodoro technique as it applies to AEM certification study?",
+      "heading": "25 minutes of focused study followed by a 5-minute break",
+      "body": "The Pomodoro technique is a time management method that uses 25-minute focused work intervals separated by 5-minute breaks. It's recommended for AEM study to maintain concentration and prevent burnout during long study sessions.",
+      "narration": "What is the Pomodoro technique as it applies to AEM certification study? 25 minutes of focused study followed by a 5-minute break. The Pomodoro technique is a time management method that uses 25-minute focused work intervals separated by 5-minute breaks. It's recommended for AEM study to maintain concentration and prevent burnout during long study sessions."
+    },
+    {
+      "id": "08-intro-016",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What is the WKND Tutorial in the context of AEM development?",
+      "heading": "Adobe's official hands-on tutorial project for learning AEM, building a sample site",
+      "body": "WKND is Adobe's official multi-part tutorial for learning AEM by building a complete Sites project from scratch. It covers the entire development workflow — project structure, components, templates, Sling Models, clientlibs, and deployment — and is the recommended starting point for new AEM developers.",
+      "narration": "What is the WKND Tutorial in the context of AEM development? Adobe's official hands-on tutorial project for learning AEM, building a sample site. WKND is Adobe's official multi-part tutorial for learning AEM by building a complete Sites project from scratch. It covers the entire development workflow — project structure, components, templates, Sling Models, clientlibs, and deployment — and is the recommended starting point for new AEM developers."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "50 questions",
+        "100 minutes",
+        "Development (44%)",
+        "22%",
+        "Maven builds, CI/CD pipelines, Cloud Manager, and deployment strategies",
+        "1–2 hours daily, with consistency over cramming",
+        "25 minutes of focused study followed by a 5-minute break",
+        "Adobe's official hands-on tutorial project for learning AEM, building a sample site"
+      ],
+      "narration": "Quick recap of Certification. 50 questions. 100 minutes. Development (44%). 22%. Maven builds, CI/CD pipelines, Cloud Manager, and deployment strategies. 1–2 hours daily, with consistency over cramming. 25 minutes of focused study followed by a 5-minute break. Adobe's official hands-on tutorial project for learning AEM, building a sample site."
+    }
+  ]
+}

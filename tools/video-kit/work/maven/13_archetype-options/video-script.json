@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Archetype Options",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Archetype Options",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Archetype Options. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-086",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does aemVersion select?",
+      "heading": "The target AEM platform",
+      "body": "The speech says aemVersion selects the target.",
+      "narration": "What does aemVersion select? The target AEM platform. The speech says aemVersion selects the target."
+    },
+    {
+      "id": "02-mvn-087",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is the default value of aemVersion?",
+      "heading": "cloud",
+      "body": "The speech says the default for aemVersion is cloud for AEM as a Cloud Service.",
+      "narration": "What is the default value of aemVersion? cloud. The speech says the default for aemVersion is cloud for AEM as a Cloud Service."
+    },
+    {
+      "id": "03-mvn-088",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "When is sdkVersion used, according to the speech?",
+      "heading": "Only when aemVersion is cloud",
+      "body": "The speech says sdkVersion, only when aemVersion is cloud, picks a specific SDK version.",
+      "narration": "When is sdkVersion used, according to the speech? Only when aemVersion is cloud. The speech says sdkVersion, only when aemVersion is cloud, picks a specific SDK version."
+    },
+    {
+      "id": "04-mvn-089",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What does includeDispatcherConfig do by default?",
+      "heading": "It defaults to y and adds Dispatcher configuration",
+      "body": "The speech says includeDispatcherConfig, default y, adds the Dispatcher configuration for cloud or for AMS and on-premise depending on aemVersion.",
+      "narration": "What does includeDispatcherConfig do by default? It defaults to y and adds Dispatcher configuration. The speech says includeDispatcherConfig, default y, adds the Dispatcher configuration for cloud or for AMS and on-premise depending on aemVersion."
+    },
+    {
+      "id": "05-mvn-090",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which values does the speech list for frontendModule in the standard options described there?",
+      "heading": "general and none",
+      "body": "The speech says frontendModule, default general, includes the front-end build module, and the other value is none. It separately notes SPA options add React or Angular front-end modules.",
+      "narration": "Which values does the speech list for frontendModule in the standard options described there? general and none. The speech says frontendModule, default general, includes the front-end build module, and the other value is none. It separately notes SPA options add React or Angular front-end modules."
+    },
+    {
+      "id": "06-mvn-091",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What do language and country set?",
+      "heading": "The content structure",
+      "body": "The speech says language and country set the content structure, for example en and us.",
+      "narration": "What do language and country set? The content structure. The speech says language and country set the content structure, for example en and us."
+    },
+    {
+      "id": "07-mvn-092",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a scenario where you need a language-master content structure for multi-language and multi-region setups, how should singleCountry be set?",
+      "heading": "Set singleCountry to n",
+      "body": "The speech says singleCountry, default y, controls whether a language-master content structure is created, and that structure is used for multi-language and multi-region setups. Therefore, wanting that structure means not keeping the single-country default.",
+      "narration": "Given a scenario where you need a language-master content structure for multi-language and multi-region setups, how should singleCountry be set? Set singleCountry to n. The speech says singleCountry, default y, controls whether a language-master content structure is created, and that structure is used for multi-language and multi-region setups. Therefore, wanting that structure means not keeping the single-country default."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The target AEM platform",
+        "cloud",
+        "Only when aemVersion is cloud",
+        "It defaults to y and adds Dispatcher configuration",
+        "general and none",
+        "The content structure",
+        "Set singleCountry to n"
+      ],
+      "narration": "Quick recap of Archetype Options. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

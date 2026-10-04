@@ -1,0 +1,102 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "AEMaaCS Overview (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "AEMaaCS Overview (Part 2 of 2)",
+      "sub": "Cloud Manager · 7 key concepts",
+      "narration": "Cloud Manager. AEMaaCS Overview (Part 2 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-008",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What is 'Sling Content Distribution' (SCD) used for in AEMaaCS?",
+      "heading": "Distributing content from Author to Publish instances — replacing traditional replication agents",
+      "body": "Sling Content Distribution (SCD) in AEMaaCS replaces the traditional byte-for-byte replication from Author to Publish. It is a queue-driven, push-based distribution service — more scalable and cloud-native, handling distribution to multiple publish instances automatically.",
+      "narration": "What is 'Sling Content Distribution' (SCD) used for in AEMaaCS? Distributing content from Author to Publish instances — replacing traditional replication agents. Sling Content Distribution (SCD) in AEMaaCS replaces the traditional byte-for-byte replication from Author to Publish. It is a queue-driven, push-based distribution service — more scalable and cloud-native, handling distribution to multiple publish instances automatically."
+    },
+    {
+      "id": "02-cm-009",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What is a Rapid Development Environment (RDE) in AEMaaCS?",
+      "heading": "A special AEMaaCS environment for rapid code iteration without running full pipeline deployments",
+      "body": "A Rapid Development Environment (RDE) is a developer-focused environment type in AEMaaCS that allows near-instant code deployment (OSGi bundles, content packages) without running a full Cloud Manager pipeline. This dramatically speeds up the feedback loop during development.",
+      "narration": "What is a Rapid Development Environment (RDE) in AEMaaCS? A special AEMaaCS environment for rapid code iteration without running full pipeline deployments. A Rapid Development Environment (RDE) is a developer-focused environment type in AEMaaCS that allows near-instant code deployment (OSGi bundles, content packages) without running a full Cloud Manager pipeline. This dramatically speeds up the feedback loop during development."
+    },
+    {
+      "id": "03-cm-010",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "How is an AEMaaCS instance fundamentally different from AEM 6.5 in terms of infrastructure?",
+      "heading": "AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server",
+      "body": "AEMaaCS runs as Docker containers orchestrated by Adobe on cloud infrastructure (auto-scaling, managed), while AEM 6.5 runs as a traditional Java process on a customer-managed server or AMS-managed virtual machine with fixed capacity.",
+      "narration": "How is an AEMaaCS instance fundamentally different from AEM 6.5 in terms of infrastructure? AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server. AEMaaCS runs as Docker containers orchestrated by Adobe on cloud infrastructure (auto-scaling, managed), while AEM 6.5 runs as a traditional Java process on a customer-managed server or AMS-managed virtual machine with fixed capacity."
+    },
+    {
+      "id": "04-cm-011",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What security capability is automatically included in AEMaaCS?",
+      "heading": "Automated security scanning — vulnerability tests run continuously as part of the pipeline",
+      "body": "AEMaaCS includes automated security scanning as part of the Cloud Manager CI/CD pipeline. Every deployment is scanned for common vulnerabilities and security issues, and deployments can be blocked if critical security issues are detected.",
+      "narration": "What security capability is automatically included in AEMaaCS? Automated security scanning — vulnerability tests run continuously as part of the pipeline. AEMaaCS includes automated security scanning as part of the Cloud Manager CI/CD pipeline. Every deployment is scanned for common vulnerabilities and security issues, and deployments can be blocked if critical security issues are detected."
+    },
+    {
+      "id": "05-cm-012",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What is the benefit of AEMaaCS's 'cloud-native architecture' for developers?",
+      "heading": "Developers focus on building features instead of managing infrastructure",
+      "body": "AEMaaCS's cloud-native architecture abstracts all infrastructure management. Developers focus on building features, components, and integrations instead of spending time on server maintenance, capacity planning, operating system updates, and AEM upgrade projects.",
+      "narration": "What is the benefit of AEMaaCS's 'cloud-native architecture' for developers? Developers focus on building features instead of managing infrastructure. AEMaaCS's cloud-native architecture abstracts all infrastructure management. Developers focus on building features, components, and integrations instead of spending time on server maintenance, capacity planning, operating system updates, and AEM upgrade projects."
+    },
+    {
+      "id": "06-cm-013",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What analytics integrations are built into AEMaaCS?",
+      "heading": "Deep integration with Adobe Experience Cloud including Adobe Analytics",
+      "body": "AEMaaCS has deep, native integration with the Adobe Experience Cloud suite, including Adobe Analytics for user behavior tracking, Adobe Target for personalization, and Adobe Campaign for marketing automation — all manageable from Cloud Manager.",
+      "narration": "What analytics integrations are built into AEMaaCS? Deep integration with Adobe Experience Cloud including Adobe Analytics. AEMaaCS has deep, native integration with the Adobe Experience Cloud suite, including Adobe Analytics for user behavior tracking, Adobe Target for personalization, and Adobe Campaign for marketing automation — all manageable from Cloud Manager."
+    },
+    {
+      "id": "07-cm-014",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What is the Cloud Acceleration Manager (CAM) used for?",
+      "heading": "Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service",
+      "body": "Cloud Acceleration Manager (CAM) is Adobe's tool that helps teams plan, track, and manage every step of the migration from AEM 6.x to AEMaaCS — from readiness assessment and code analysis to go-live validation — helping organizations reach production faster.",
+      "narration": "What is the Cloud Acceleration Manager (CAM) used for? Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service. Cloud Acceleration Manager (CAM) is Adobe's tool that helps teams plan, track, and manage every step of the migration from AEM 6.x to AEMaaCS — from readiness assessment and code analysis to go-live validation — helping organizations reach production faster."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Distributing content from Author to Publish instances — replacing traditional replication agents",
+        "A special AEMaaCS environment for rapid code iteration without running full pipeline deployments",
+        "AEMaaCS runs as containers managed by Adobe; AEM 6.5 runs as a fixed Java process on a VM/server",
+        "Automated security scanning — vulnerability tests run continuously as part of the pipeline",
+        "Developers focus on building features instead of managing infrastructure",
+        "Deep integration with Adobe Experience Cloud including Adobe Analytics",
+        "Guiding and tracking the migration journey from AEM 6.x to AEM as a Cloud Service"
+      ],
+      "narration": "Quick recap of AEMaaCS Overview (Part 2 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

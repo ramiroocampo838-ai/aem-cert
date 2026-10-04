@@ -1,0 +1,102 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Clientlibs, Blob Content and Exam Tips",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Clientlibs, Blob Content and Exam Tips",
+      "sub": "Dispatcher · 7 key concepts",
+      "narration": "Dispatcher. Clientlibs, Blob Content and Exam Tips. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-094",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Why can browsers cache AEM client libraries for a very long time?",
+      "heading": "Clientlibs can be cached indefinitely because a change produces a new file with a unique path",
+      "body": "The speech says client libraries are generated so browsers can cache JavaScript and CSS indefinitely because any change produces a new file with a unique path.",
+      "narration": "Why can browsers cache AEM client libraries for a very long time? Clientlibs can be cached indefinitely because a change produces a new file with a unique path. The speech says client libraries are generated so browsers can cache JavaScript and CSS indefinitely because any change produces a new file with a unique path."
+    },
+    {
+      "id": "02-disp-095",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Which Cloud Service programs cache blob content by default while still respecting authentication?",
+      "heading": "Programs created after mid-May 2022 with program IDs above 65000 cache blob content by default while respecting authentication",
+      "body": "The source says that for blob content, programs created after mid-May 2022, with program IDs above 65000, cache by default while respecting authentication.",
+      "narration": "Which Cloud Service programs cache blob content by default while still respecting authentication? Programs created after mid-May 2022 with program IDs above 65000 cache blob content by default while respecting authentication. The source says that for blob content, programs created after mid-May 2022, with program IDs above 65000, cache by default while respecting authentication."
+    },
+    {
+      "id": "03-disp-096",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "If no cache header is set on cacheable blob content in newer programs, what headers are applied by default?",
+      "heading": "Public blob traffic gets public, max-age 600, immutable, while authenticated blob traffic gets private",
+      "body": "The speech says that when no cache header is set, public blob content gets public, max-age 600, immutable, and authenticated traffic gets private.",
+      "narration": "If no cache header is set on cacheable blob content in newer programs, what headers are applied by default? Public blob traffic gets public, max-age 600, immutable, while authenticated blob traffic gets private. The speech says that when no cache header is set, public blob content gets public, max-age 600, immutable, and authenticated traffic gets private."
+    },
+    {
+      "id": "04-disp-097",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "How do older Cloud Service programs behave for blob caching by default?",
+      "heading": "Older programs do not cache blob content by default",
+      "body": "The source explicitly says older programs do not cache blob content by default.",
+      "narration": "How do older Cloud Service programs behave for blob caching by default? Older programs do not cache blob content by default. The source explicitly says older programs do not cache blob content by default."
+    },
+    {
+      "id": "05-disp-098",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Which environment variable can change the default caching-header behavior for blob content?",
+      "heading": "AEM_BLOB_ENABLE_CACHING_HEADERS can change the blob caching-header behavior",
+      "body": "The speech says the environment variable AEM_BLOB_ENABLE_CACHING_HEADERS can change the default blob caching-header behavior.",
+      "narration": "Which environment variable can change the default caching-header behavior for blob content? AEM_BLOB_ENABLE_CACHING_HEADERS can change the blob caching-header behavior. The speech says the environment variable AEM_BLOB_ENABLE_CACHING_HEADERS can change the default blob caching-header behavior."
+    },
+    {
+      "id": "06-disp-099",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What special behavior applies to blob responses larger than 16 KB?",
+      "heading": "Blobs larger than 16 KB are served as 302 redirects, and only a limited set of headers can be customized on them",
+      "body": "The source says blobs larger than 16 KB are served as 302 redirects, and only a limited list of headers can be customized on them, such as Content-Disposition and Cache-Control.",
+      "narration": "What special behavior applies to blob responses larger than 16 KB? Blobs larger than 16 KB are served as 302 redirects, and only a limited set of headers can be customized on them. The source says blobs larger than 16 KB are served as 302 redirects, and only a limited list of headers can be customized on them, such as Content-Disposition and Cache-Control."
+    },
+    {
+      "id": "07-disp-100",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which response directives are recommended to refresh cached content in the background and avoid cache misses?",
+      "heading": "Use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses",
+      "body": "The speech's optimization tips say to use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses.",
+      "narration": "Which response directives are recommended to refresh cached content in the background and avoid cache misses? Use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses. The speech's optimization tips say to use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Clientlibs can be cached indefinitely because a change produces a new file with a unique path",
+        "Programs created after mid-May 2022 with program IDs above 65000 cache blob content by default while respecting authentication",
+        "Public blob traffic gets public, max-age 600, immutable, while authenticated blob traffic gets private",
+        "Older programs do not cache blob content by default",
+        "AEM_BLOB_ENABLE_CACHING_HEADERS can change the blob caching-header behavior",
+        "Blobs larger than 16 KB are served as 302 redirects, and only a limited set of headers can be customized on them",
+        "Use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses"
+      ],
+      "narration": "Quick recap of Clientlibs, Blob Content and Exam Tips. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

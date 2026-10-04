@@ -1,0 +1,91 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Client Libraries — Advanced Features (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Client Libraries — Advanced Features (Part 2 of 2)",
+      "sub": "Templates · 6 key concepts",
+      "narration": "Templates. Client Libraries — Advanced Features (Part 2 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-095",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "How do you expose an /apps-restricted client library to visitors while keeping /apps access-restricted?",
+      "heading": "Creating a client library folder under /etc that embeds the library located under /apps",
+      "body": "To keep /apps restricted from website visitors while still delivering its client library code, you create a client library folder under /etc that embeds the /apps client library, using the embed property with the value of the target's categories property.",
+      "narration": "How do you expose an /apps-restricted client library to visitors while keeping /apps access-restricted? Creating a client library folder under /etc that embeds the library located under /apps. To keep /apps restricted from website visitors while still delivering its client library code, you create a client library folder under /etc that embeds the /apps client library, using the embed property with the value of the target's categories property."
+    },
+    {
+      "id": "02-tmpl-096",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "How does embedding help minimize requests on a page with many client libraries?",
+      "heading": "It combines all necessary client library code into a single file, reducing the number of <script> requests during page load",
+      "body": "Embedding lets you combine all necessary client library code into a single file via the embed property, consolidating multiple libraries and reducing the number of separate requests made during page load.",
+      "narration": "How does embedding help minimize requests on a page with many client libraries? It combines all necessary client library code into a single file, reducing the number of <script> requests during page load. Embedding lets you combine all necessary client library code into a single file via the embed property, consolidating multiple libraries and reducing the number of separate requests made during page load."
+    },
+    {
+      "id": "03-tmpl-097",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "When CSS is embedded from one client library into another, how are relative resource paths (like background images) resolved?",
+      "heading": "Relative to the embedding library's location, not the original embedded library's location",
+      "body": "When you embed CSS files from one client library into another, the generated CSS code contains paths relative to the embedding library's location, not the original library's — so a rule like background: url(images/bg.jpg) resolves relative to where the embedding library lives.",
+      "narration": "When CSS is embedded from one client library into another, how are relative resource paths (like background images) resolved? Relative to the embedding library's location, not the original embedded library's location. When you embed CSS files from one client library into another, the generated CSS code contains paths relative to the embedding library's location, not the original library's — so a rule like background: url(images/bg.jpg) resolves relative to where the embedding library lives."
+    },
+    {
+      "id": "04-tmpl-098",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "How do you inspect exactly which files are being embedded at runtime in a client library?",
+      "heading": "Append ?debugClientLibs=true to the URL — it shows @import statements instead of the merged, embedded code",
+      "body": "Enable debug mode by appending ?debugClientLibs=true to the page URL. This displays the names of embedded files as @import statements in the generated library, instead of the actual embedded code, letting you verify dependencies.",
+      "narration": "How do you inspect exactly which files are being embedded at runtime in a client library? Append ?debugClientLibs=true to the URL — it shows @import statements instead of the merged, embedded code. Enable debug mode by appending ?debugClientLibs=true to the page URL. This displays the names of embedded files as @import statements in the generated library, instead of the actual embedded code, letting you verify dependencies."
+    },
+    {
+      "id": "05-tmpl-099",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What are AEM's built-in CSS/JS preprocessors, and which is the default?",
+      "heading": "YUI Compressor is the default; Google Closure Compiler (GCC) for JavaScript is available as a pluggable alternative",
+      "body": "AEM ships with built-in support for YUI Compressor (CSS and JavaScript) and Google Closure Compiler (JavaScript), with YUI set as the default preprocessor. Preprocessors can be configured per-library or system-wide.",
+      "narration": "What are AEM's built-in CSS/JS preprocessors, and which is the default? YUI Compressor is the default; Google Closure Compiler (GCC) for JavaScript is available as a pluggable alternative. AEM ships with built-in support for YUI Compressor (CSS and JavaScript) and Google Closure Compiler (JavaScript), with YUI set as the default preprocessor. Preprocessors can be configured per-library or system-wide."
+    },
+    {
+      "id": "06-tmpl-100",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "What tool lets you discover all client library folders and preview the generated output for a category?",
+      "heading": "The /libs/cq/granite/components/dumplibs/dumplibs component, via the dumplibs.html/.test.html URLs",
+      "body": "The /libs/cq/granite/components/dumplibs/dumplibs component generates a page listing all client library folders, their categories and dependencies, accessible at dumplibs.html (with a Test Output page for previewing generated code per category).",
+      "narration": "What tool lets you discover all client library folders and preview the generated output for a category? The /libs/cq/granite/components/dumplibs/dumplibs component, via the dumplibs.html/.test.html URLs. The /libs/cq/granite/components/dumplibs/dumplibs component generates a page listing all client library folders, their categories and dependencies, accessible at dumplibs.html (with a Test Output page for previewing generated code per category)."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Creating a client library folder under /etc that embeds the library located under /apps",
+        "It combines all necessary client library code into a single file, reducing the number of <script> requests during page load",
+        "Relative to the embedding library's location, not the original embedded library's location",
+        "Append ?debugClientLibs=true to the URL — it shows @import statements instead of the merged, embedded code",
+        "YUI Compressor is the default; Google Closure Compiler (GCC) for JavaScript is available as a pluggable alternative",
+        "The /libs/cq/granite/components/dumplibs/dumplibs component, via the dumplibs.html/.test.html URLs"
+      ],
+      "narration": "Quick recap of Client Libraries — Advanced Features (Part 2 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

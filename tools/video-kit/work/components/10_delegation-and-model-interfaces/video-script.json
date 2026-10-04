@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Delegation & Model Interfaces",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Delegation & Model Interfaces",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Delegation & Model Interfaces. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-066",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Why must you never extend the Core Components' implementation classes directly?",
+      "heading": "Because their implementation classes are private and can change",
+      "body": "The speech says the Core Components implement their models privately. Because the implementation classes are private and can change, you must never extend them.",
+      "narration": "Why must you never extend the Core Components' implementation classes directly? Because their implementation classes are private and can change. The speech says the Core Components implement their models privately. Because the implementation classes are private and can change, you must never extend them."
+    },
+    {
+      "id": "02-comp-067",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What pattern should you use to extend or customize a Core Component model?",
+      "heading": "Use the delegation pattern",
+      "body": "The speech says you must never extend the private Core Component implementation classes and should use the delegation pattern instead.",
+      "narration": "What pattern should you use to extend or customize a Core Component model? Use the delegation pattern. The speech says you must never extend the private Core Component implementation classes and should use the delegation pattern instead."
+    },
+    {
+      "id": "03-comp-068",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "In the Model Interfaces pattern, what does your custom model implement?",
+      "heading": "The public Core Component model interface",
+      "body": "The speech gives com.adobe.cq.wcm.core.components.models.Title as an example and says your own model implements that public interface.",
+      "narration": "In the Model Interfaces pattern, what does your custom model implement? The public Core Component model interface. The speech gives com.adobe.cq.wcm.core.components.models.Title as an example and says your own model implements that public interface."
+    },
+    {
+      "id": "04-comp-069",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What is the purpose of the adapters parameter in @Model for a proxy model implementation?",
+      "heading": "It registers your class as an implementation of the interface",
+      "body": "The speech says that in @Model(... adapters = Title.class ...), the adapters parameter registers your class as an implementation of the interface.",
+      "narration": "What is the purpose of the adapters parameter in @Model for a proxy model implementation? It registers your class as an implementation of the interface. The speech says that in @Model(... adapters = Title.class ...), the adapters parameter registers your class as an implementation of the interface."
+    },
+    {
+      "id": "05-comp-070",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does the resourceType parameter do in a delegated proxy model?",
+      "heading": "It binds the model to your proxy component's resource type",
+      "body": "The speech says the resourceType parameter binds the model to your proxy component's resource type.",
+      "narration": "What does the resourceType parameter do in a delegated proxy model? It binds the model to your proxy component's resource type. The speech says the resourceType parameter binds the model to your proxy component's resource type."
+    },
+    {
+      "id": "06-comp-071",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario where you need the parent Core Component's model inside your proxy model, how does the speech say to inject it?",
+      "heading": "Use @Self @Via(type = ResourceSuperType.class) on the interface field",
+      "body": "The speech gives the exact pattern: @Self @Via(type = ResourceSuperType.class) private Title title.",
+      "narration": "Given a scenario where you need the parent Core Component's model inside your proxy model, how does the speech say to inject it? Use @Self @Via(type = ResourceSuperType.class) on the interface field. The speech gives the exact pattern: @Self @Via(type = ResourceSuperType.class) private Title title."
+    },
+    {
+      "id": "07-comp-072",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Because of resourceType binding, what happens when the Title interface is adapted for the proxy resource?",
+      "heading": "Sling Models picks your implementation instead of the Core Component's",
+      "body": "The speech says that because of the resourceType binding, Sling Models picks your implementation for the proxy resource, not the Core Component's. It calls this double binding in the Model Interfaces pattern.",
+      "narration": "Because of resourceType binding, what happens when the Title interface is adapted for the proxy resource? Sling Models picks your implementation instead of the Core Component's. The speech says that because of the resourceType binding, Sling Models picks your implementation for the proxy resource, not the Core Component's. It calls this double binding in the Model Interfaces pattern."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Because their implementation classes are private and can change",
+        "Use the delegation pattern",
+        "The public Core Component model interface",
+        "It registers your class as an implementation of the interface",
+        "It binds the model to your proxy component's resource type",
+        "Use @Self @Via(type = ResourceSuperType.class) on the interface field",
+        "Sling Models picks your implementation instead of the Core Component's"
+      ],
+      "narration": "Quick recap of Delegation & Model Interfaces. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Components & Core Components",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Components & Core Components",
+      "sub": "Templates · 7 key concepts",
+      "narration": "Templates. Components & Core Components. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-001",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What are components in AEM?",
+      "heading": "Modular units that realize specific functionality to present content on a website",
+      "body": "Components in AEM are modular units that realize specific functionality to present your content on your website. They are reusable, self-contained within one folder of the repository, and can be developed to extend default functionality.",
+      "narration": "What are components in AEM? Modular units that realize specific functionality to present content on a website. Components in AEM are modular units that realize specific functionality to present your content on your website. They are reusable, self-contained within one folder of the repository, and can be developed to extend default functionality."
+    },
+    {
+      "id": "02-tmpl-002",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What are the defining characteristics of an AEM component?",
+      "heading": "Reusable, self-contained in one repository folder, no hidden config files, can nest other components, built with HTL",
+      "body": "Components are reusable, developed as self-contained units within one folder of the repository, have no hidden configuration files, can contain other components, have a standardized UI, use dialogs built from Granite UI sub-elements, and are developed using HTL.",
+      "narration": "What are the defining characteristics of an AEM component? Reusable, self-contained in one repository folder, no hidden config files, can nest other components, built with HTL. Components are reusable, developed as self-contained units within one folder of the repository, have no hidden configuration files, can contain other components, have a standardized UI, use dialogs built from Granite UI sub-elements, and are developed using HTL."
+    },
+    {
+      "id": "03-tmpl-003",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the typical deployment path for a newly developed AEM component?",
+      "heading": "Develop locally, deploy to test, deploy to live authoring, deploy to live publish",
+      "body": "Because components are modular, you develop a new component locally, deploy it to a test environment, then to your live authoring environment where authors configure content, and finally to your publish environment(s) where it renders content for visitors.",
+      "narration": "What is the typical deployment path for a newly developed AEM component? Develop locally, deploy to test, deploy to live authoring, deploy to live publish. Because components are modular, you develop a new component locally, deploy it to a test environment, then to your live authoring environment where authors configure content, and finally to your publish environment(s) where it renders content for visitors."
+    },
+    {
+      "id": "04-tmpl-004",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What are the AEM Core Components?",
+      "heading": "Standardized Web Content Management components for AEM, aimed at accelerating development and reducing maintenance",
+      "body": "The Core Components are standardized WCM components for AEM, integrated into AEMaaCS, aimed at accelerating development and reducing maintenance efforts. They include commonly used elements like carousels, menus, and content lists, and offer flexibility to cater to specific requirements.",
+      "narration": "What are the AEM Core Components? Standardized Web Content Management components for AEM, aimed at accelerating development and reducing maintenance. The Core Components are standardized WCM components for AEM, integrated into AEMaaCS, aimed at accelerating development and reducing maintenance efforts. They include commonly used elements like carousels, menus, and content lists, and offer flexibility to cater to specific requirements."
+    },
+    {
+      "id": "05-tmpl-005",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What resource does Adobe provide to guide developers on implementing and using the Core Components?",
+      "heading": "The WKND Tutorial",
+      "body": "Adobe provides the WKND Tutorial, offering practical guidance on implementing and utilizing the Core Components within AEM, emphasizing best practices and techniques.",
+      "narration": "What resource does Adobe provide to guide developers on implementing and using the Core Components? The WKND Tutorial. Adobe provides the WKND Tutorial, offering practical guidance on implementing and utilizing the Core Components within AEM, emphasizing best practices and techniques."
+    },
+    {
+      "id": "06-tmpl-006",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What are the three ways to view the components available in an AEMaaCS instance?",
+      "heading": "The AEM Console, a cq:dialog referencing components.dialog, or a CRXDE Lite XPath query",
+      "body": "You can view available components using the AEM Console's Components page, by adding a cq:dialog with componentPath=\"/libs/wcm/core/components/dialog/components.dialog\", or by running the XPath query //element(*, cq:Component) in CRXDE Lite's Query tab.",
+      "narration": "What are the three ways to view the components available in an AEMaaCS instance? The AEM Console, a cq:dialog referencing components.dialog, or a CRXDE Lite XPath query. You can view available components using the AEM Console's Components page, by adding a cq:dialog with componentPath=\"/libs/wcm/core/components/dialog/components.dialog\", or by running the XPath query //element(*, cq:Component) in CRXDE Lite's Query tab."
+    },
+    {
+      "id": "07-tmpl-007",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What XPath query lists all components when run in CRXDE Lite's Query tab?",
+      "heading": "//element(*, cq:Component)",
+      "body": "In CRXDE Lite, selecting Tools > Query, choosing XPath as the type, and entering //element(*, cq:Component), then clicking Execute, lists every component in the repository.",
+      "narration": "What XPath query lists all components when run in CRXDE Lite's Query tab? //element(*, cq:Component). In CRXDE Lite, selecting Tools > Query, choosing XPath as the type, and entering //element(*, cq:Component), then clicking Execute, lists every component in the repository."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Modular units that realize specific functionality to present content on a website",
+        "Reusable, self-contained in one repository folder, no hidden config files, can nest other components, built with HTL",
+        "Develop locally, deploy to test, deploy to live authoring, deploy to live publish",
+        "Standardized Web Content Management components for AEM, aimed at accelerating development and reducing maintenance",
+        "The WKND Tutorial",
+        "The AEM Console, a cq:dialog referencing components.dialog, or a CRXDE Lite XPath query",
+        "//element(*, cq:Component)"
+      ],
+      "narration": "Quick recap of Components & Core Components. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

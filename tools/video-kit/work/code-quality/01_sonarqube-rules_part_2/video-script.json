@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "SonarQube Rules (Part 2 of 3)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "SonarQube Rules (Part 2 of 3)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. SonarQube Rules (Part 2 of 3). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-007",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "What does cyclomatic complexity measure in a Java method, as flagged by java:S1541?",
+      "heading": "The number of independent execution paths (branches) through the method",
+      "body": "Cyclomatic complexity counts the number of linearly independent paths through a method. Each if, else if, for, while, case, catch, and ternary operator adds 1 to the count. A method with complexity > 10 (SonarQube default) has too many branches, is hard to test comprehensively, and should be refactored into smaller, focused methods.",
+      "narration": "What does cyclomatic complexity measure in a Java method, as flagged by java:S1541? The number of independent execution paths (branches) through the method. Cyclomatic complexity counts the number of linearly independent paths through a method. Each if, else if, for, while, case, catch, and ternary operator adds 1 to the count. A method with complexity > 10 (SonarQube default) has too many branches, is hard to test comprehensively, and should be refactored into smaller, focused methods."
+    },
+    {
+      "id": "02-cq-008",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "Which SonarQube rule (Key: java:S00108) prevents AEM developers from silently swallowing RepositoryException, WorkflowException, and other critical errors?",
+      "heading": "Avoid Empty Catch Blocks",
+      "body": "java:S00108 (Severity: Major, Type: Code Smell) flags completely empty catch blocks. An empty catch block swallows the exception silently — there is no log, no rethrow, and no recovery. In AEM this hides failures in JCR saves, workflow completions, and replication events, making production issues extremely difficult to diagnose. The minimum fix is: log.error('message', e).",
+      "narration": "Which SonarQube rule (Key: java:S00108) prevents AEM developers from silently swallowing RepositoryException, WorkflowException, and other critical errors? Avoid Empty Catch Blocks. java:S00108 (Severity: Major, Type: Code Smell) flags completely empty catch blocks. An empty catch block swallows the exception silently — there is no log, no rethrow, and no recovery. In AEM this hides failures in JCR saves, workflow completions, and replication events, making production issues extremely difficult to diagnose. The minimum fix is: log.error('message', e)."
+    },
+    {
+      "id": "03-cq-009",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "What SonarQube rule key covers the requirement to use SLF4J loggers instead of System.out.println in AEM production Java code?",
+      "heading": "java:S106",
+      "body": "java:S106 (Severity: Minor, Type: Code Smell) flags all use of System.out and System.err. In AEM, log output must go through the Sling Log Service (backed by Logback) so it can be routed, throttled, and persisted correctly. Using SLF4J with parameterized messages (log.info('Processing: {}', path)) also avoids string concatenation overhead when the log level is disabled.",
+      "narration": "What SonarQube rule key covers the requirement to use SLF4J loggers instead of System.out.println in AEM production Java code? java:S106. java:S106 (Severity: Minor, Type: Code Smell) flags all use of System.out and System.err. In AEM, log output must go through the Sling Log Service (backed by Logback) so it can be routed, throttled, and persisted correctly. Using SLF4J with parameterized messages (log.info('Processing: {}', path)) also avoids string concatenation overhead when the log level is disabled."
+    },
+    {
+      "id": "04-cq-010",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Why should JCR property name constants like 'jcr:title' be extracted to private static final String fields rather than repeated inline, according to java:S1192?",
+      "heading": "To prevent drift — a typo in one occurrence causes silent data loss; a constant is changed in one place",
+      "body": "java:S1192 (Severity: Minor, Type: Code Smell) flags string literals that are duplicated 3 or more times. In AEM code, JCR property names like 'jcr:title' or 'jcr:description' are used across multiple methods. Extracting them as private static final String constants (e.g., PN_TITLE = 'jcr:title') means any rename or fix only needs to happen in one place, preventing inconsistency bugs.",
+      "narration": "Why should JCR property name constants like 'jcr:title' be extracted to private static final String fields rather than repeated inline, according to java:S1192? To prevent drift — a typo in one occurrence causes silent data loss; a constant is changed in one place. java:S1192 (Severity: Minor, Type: Code Smell) flags string literals that are duplicated 3 or more times. In AEM code, JCR property names like 'jcr:title' or 'jcr:description' are used across multiple methods. Extracting them as private static final String constants (e.g., PN_TITLE = 'jcr:title') means any rename or fix only needs to happen in one place, preventing inconsistency bugs."
+    },
+    {
+      "id": "05-cq-011",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "Which AEM API method is flagged by java:S1874 (Deprecated API Usage) because it grants unrestricted admin access with no audit trail and was removed in AEMaaCS?",
+      "heading": "getAdministrativeResourceResolver(null)",
+      "body": "getAdministrativeResourceResolver(null) was deprecated in AEM 6.1 and completely removed in AEMaaCS. It granted full admin privileges with no audit trail — a security vulnerability. The replacement is getServiceResourceResolver(params) where params contains the SUBSERVICE key mapped to a system user with only the permissions the service actually needs (least-privilege principle).",
+      "narration": "Which AEM API method is flagged by java:S1874 (Deprecated API Usage) because it grants unrestricted admin access with no audit trail and was removed in AEMaaCS? getAdministrativeResourceResolver(null). getAdministrativeResourceResolver(null) was deprecated in AEM 6.1 and completely removed in AEMaaCS. It granted full admin privileges with no audit trail — a security vulnerability. The replacement is getServiceResourceResolver(params) where params contains the SUBSERVICE key mapped to a system user with only the permissions the service actually needs (least-privilege principle)."
+    },
+    {
+      "id": "06-cq-012",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "According to java:S1874, what is the modern AEM replacement for WCMUsePojo when creating component backing logic?",
+      "heading": "Sling Models annotated with @Model",
+      "body": "WCMUsePojo is a legacy base class that requires a running AEM instance to test. Its modern replacement is a Sling Model: a class annotated with @Model(adaptables = Resource.class) that uses annotation-driven injection (@ValueMapValue, @ChildResource, @OSGiService). Sling Models can be unit-tested with AEM Mocks without a running AEM instance.",
+      "narration": "According to java:S1874, what is the modern AEM replacement for WCMUsePojo when creating component backing logic? Sling Models annotated with @Model. WCMUsePojo is a legacy base class that requires a running AEM instance to test. Its modern replacement is a Sling Model: a class annotated with @Model(adaptables = Resource.class) that uses annotation-driven injection (@ValueMapValue, @ChildResource, @OSGiService). Sling Models can be unit-tested with AEM Mocks without a running AEM instance."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "The number of independent execution paths (branches) through the method",
+        "Avoid Empty Catch Blocks",
+        "java:S106",
+        "To prevent drift — a typo in one occurrence causes silent data loss; a constant is changed in one place",
+        "getAdministrativeResourceResolver(null)",
+        "Sling Models annotated with @Model"
+      ],
+      "narration": "Quick recap of SonarQube Rules (Part 2 of 3). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

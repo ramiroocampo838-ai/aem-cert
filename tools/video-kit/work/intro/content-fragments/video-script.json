@@ -1,0 +1,134 @@
+{
+  "section": "intro",
+  "sectionLabel": "Intro",
+  "accent": "#a855f7",
+  "category": "Content Fragments",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Content Fragments",
+      "sub": "Intro · 10 key concepts",
+      "narration": "Intro. Content Fragments. In this video we review 10 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-intro-075",
+      "type": "concept",
+      "index": 1,
+      "total": 10,
+      "question": "What is a Content Fragment in AEM?",
+      "heading": "Structured, channel-agnostic content stored independently of presentation and delivered via APIs",
+      "body": "A Content Fragment is structured, channel-agnostic content stored in AEM's DAM. It is defined by a Content Fragment Model (schema with typed fields), has no inherent visual presentation, and is delivered to any consumer (web, mobile, IoT) via GraphQL or REST APIs.",
+      "narration": "What is a Content Fragment in AEM? Structured, channel-agnostic content stored independently of presentation and delivered via APIs. A Content Fragment is structured, channel-agnostic content stored in AEM's DAM. It is defined by a Content Fragment Model (schema with typed fields), has no inherent visual presentation, and is delivered to any consumer (web, mobile, IoT) via GraphQL or REST APIs."
+    },
+    {
+      "id": "02-intro-076",
+      "type": "concept",
+      "index": 2,
+      "total": 10,
+      "question": "What is a Content Fragment Model?",
+      "heading": "The schema definition that defines the fields and data types for a Content Fragment",
+      "body": "A Content Fragment Model defines the schema for Content Fragments — it specifies which fields the fragment contains (single-line text, multi-line text, numbers, date/time, boolean, enumeration, content references, fragment references) and their validation rules.",
+      "narration": "What is a Content Fragment Model? The schema definition that defines the fields and data types for a Content Fragment. A Content Fragment Model defines the schema for Content Fragments — it specifies which fields the fragment contains (single-line text, multi-line text, numbers, date/time, boolean, enumeration, content references, fragment references) and their validation rules."
+    },
+    {
+      "id": "03-intro-077",
+      "type": "concept",
+      "index": 3,
+      "total": 10,
+      "question": "What is an Experience Fragment (XF) in AEM?",
+      "heading": "A reusable page section — a group of components forming a complete visual experience",
+      "body": "An Experience Fragment (XF) is a group of AEM components assembled into a complete visual section (like a promotional banner or site header). Unlike Content Fragments (data-focused), XFs retain their layout/styling and can be embedded in pages or exported to external platforms.",
+      "narration": "What is an Experience Fragment (XF) in AEM? A reusable page section — a group of components forming a complete visual experience. An Experience Fragment (XF) is a group of AEM components assembled into a complete visual section (like a promotional banner or site header). Unlike Content Fragments (data-focused), XFs retain their layout/styling and can be embedded in pages or exported to external platforms."
+    },
+    {
+      "id": "04-intro-078",
+      "type": "concept",
+      "index": 4,
+      "total": 10,
+      "question": "What is the key difference between Content Fragments and Experience Fragments?",
+      "heading": "CF: structured data without design; XF: styled layout section with components",
+      "body": "Content Fragments are structured data objects — no layout, no CSS — delivered headlessly via GraphQL/REST. Experience Fragments are visual building blocks composed of styled AEM components — like a hero section or promotional banner — that retain their design when reused across pages or exported.",
+      "narration": "What is the key difference between Content Fragments and Experience Fragments? CF: structured data without design; XF: styled layout section with components. Content Fragments are structured data objects — no layout, no CSS — delivered headlessly via GraphQL/REST. Experience Fragments are visual building blocks composed of styled AEM components — like a hero section or promotional banner — that retain their design when reused across pages or exported."
+    },
+    {
+      "id": "05-intro-079",
+      "type": "concept",
+      "index": 5,
+      "total": 10,
+      "question": "How are Content Fragments delivered in a headless AEM implementation?",
+      "heading": "Via the AEM GraphQL API or Content Fragment REST API",
+      "body": "Content Fragments are delivered headlessly in two main ways: (1) GraphQL API — clients query AEM's GraphQL endpoint with typed queries or persisted queries; (2) Content Fragment REST API — the Assets HTTP API returns CF content as JSON. Both are available on the AEM Publish instance.",
+      "narration": "How are Content Fragments delivered in a headless AEM implementation? Via the AEM GraphQL API or Content Fragment REST API. Content Fragments are delivered headlessly in two main ways: (1) GraphQL API — clients query AEM's GraphQL endpoint with typed queries or persisted queries; (2) Content Fragment REST API — the Assets HTTP API returns CF content as JSON. Both are available on the AEM Publish instance."
+    },
+    {
+      "id": "06-intro-080",
+      "type": "concept",
+      "index": 6,
+      "total": 10,
+      "question": "What is a 'variation' in the context of Content Fragments?",
+      "heading": "An alternative version of a Content Fragment for a specific channel or use case",
+      "body": "A Content Fragment variation is a named alternate copy of the fragment's content. For example, an article CF might have a 'Master' variation (full article) and a 'Social Media' variation (shorter teaser). Variations are useful for channel-specific content without duplicating fragments.",
+      "narration": "What is a 'variation' in the context of Content Fragments? An alternative version of a Content Fragment for a specific channel or use case. A Content Fragment variation is a named alternate copy of the fragment's content. For example, an article CF might have a 'Master' variation (full article) and a 'Social Media' variation (shorter teaser). Variations are useful for channel-specific content without duplicating fragments."
+    },
+    {
+      "id": "07-intro-081",
+      "type": "concept",
+      "index": 7,
+      "total": 10,
+      "question": "What is a 'Content Reference' field in a Content Fragment Model?",
+      "heading": "A field type that stores references to assets or other JCR paths",
+      "body": "A Content Reference field in a CF Model stores references to other content — typically DAM assets (images, videos, documents) identified by their JCR path. This allows fragments to embed or link to assets while keeping structured content (text fields) separate from binary assets (images).",
+      "narration": "What is a 'Content Reference' field in a Content Fragment Model? A field type that stores references to assets or other JCR paths. A Content Reference field in a CF Model stores references to other content — typically DAM assets (images, videos, documents) identified by their JCR path. This allows fragments to embed or link to assets while keeping structured content (text fields) separate from binary assets (images)."
+    },
+    {
+      "id": "08-intro-082",
+      "type": "concept",
+      "index": 8,
+      "total": 10,
+      "question": "What is a 'Fragment Reference' field in a Content Fragment Model?",
+      "heading": "A field that stores a reference from one Content Fragment to another CF",
+      "body": "A Fragment Reference field in a CF Model allows a Content Fragment to reference another CF — creating relationships between content objects. For example, an Article CF might reference an Author CF (containing author details) through a fragment reference field.",
+      "narration": "What is a 'Fragment Reference' field in a Content Fragment Model? A field that stores a reference from one Content Fragment to another CF. A Fragment Reference field in a CF Model allows a Content Fragment to reference another CF — creating relationships between content objects. For example, an Article CF might reference an Author CF (containing author details) through a fragment reference field."
+    },
+    {
+      "id": "09-intro-083",
+      "type": "concept",
+      "index": 9,
+      "total": 10,
+      "question": "In AEM GraphQL for Content Fragments, what is a 'persisted query'?",
+      "heading": "A GraphQL query saved on the AEM instance and executed by name via a GET request",
+      "body": "A persisted query is a GraphQL query saved on the AEM server and retrieved by name via GET request (e.g., GET /graphql/execute.json/mysite/articleList). They are recommended over inline POST queries because they are CDN-cacheable, more secure (no arbitrary query injection), and faster.",
+      "narration": "In AEM GraphQL for Content Fragments, what is a 'persisted query'? A GraphQL query saved on the AEM instance and executed by name via a GET request. A persisted query is a GraphQL query saved on the AEM server and retrieved by name via GET request (e.g., GET /graphql/execute.json/mysite/articleList). They are recommended over inline POST queries because they are CDN-cacheable, more secure (no arbitrary query injection), and faster."
+    },
+    {
+      "id": "10-intro-084",
+      "type": "concept",
+      "index": 10,
+      "total": 10,
+      "question": "What is a 'Building Block' in the context of AEM Experience Fragments?",
+      "heading": "A reusable component group saved from an XF that can be inserted into other Experience Fragments",
+      "body": "Building Blocks are a special type within Experience Fragments — they are reusable sections extracted from an XF that can be embedded in other Experience Fragments. This creates a component-within-component reuse pattern, allowing consistent sections like CTAs or contact forms to be shared across multiple XFs.",
+      "narration": "What is a 'Building Block' in the context of AEM Experience Fragments? A reusable component group saved from an XF that can be inserted into other Experience Fragments. Building Blocks are a special type within Experience Fragments — they are reusable sections extracted from an XF that can be embedded in other Experience Fragments. This creates a component-within-component reuse pattern, allowing consistent sections like CTAs or contact forms to be shared across multiple XFs."
+    },
+    {
+      "id": "11-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Structured, channel-agnostic content stored independently of presentation and delivered via APIs",
+        "The schema definition that defines the fields and data types for a Content Fragment",
+        "A reusable page section — a group of components forming a complete visual experience",
+        "CF: structured data without design; XF: styled layout section with components",
+        "Via the AEM GraphQL API or Content Fragment REST API",
+        "An alternative version of a Content Fragment for a specific channel or use case",
+        "A field type that stores references to assets or other JCR paths",
+        "A field that stores a reference from one Content Fragment to another CF",
+        "A GraphQL query saved on the AEM instance and executed by name via a GET request",
+        "A reusable component group saved from an XF that can be inserted into other Experience Fragments"
+      ],
+      "narration": "Quick recap of Content Fragments. Structured, channel-agnostic content stored independently of presentation and delivered via APIs. The schema definition that defines the fields and data types for a Content Fragment. A reusable page section — a group of components forming a complete visual experience. CF: structured data without design; XF: styled layout section with components. Via the AEM GraphQL API or Content Fragment REST API. An alternative version of a Content Fragment for a specific channel or use case. A field type that stores references to assets or other JCR paths. A field that stores a reference from one Content Fragment to another CF. A GraphQL query saved on the AEM instance and executed by name via a GET request. A reusable component group saved from an XF that can be inserted into other Experience Fragments."
+    }
+  ]
+}

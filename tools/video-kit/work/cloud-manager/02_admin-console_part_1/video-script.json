@@ -1,0 +1,80 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "Cloud Manager",
+  "accent": "#10b981",
+  "category": "Admin Console (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Admin Console (Part 1 of 2)",
+      "sub": "Cloud Manager · 5 key concepts",
+      "narration": "Cloud Manager. Admin Console (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-035",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the Adobe Admin Console used for in AEM as a Cloud Service?",
+      "heading": "Managing users, groups, product profiles, and IMS organization settings for AEMaaCS",
+      "body": "The Adobe Admin Console (adminconsole.adobe.com) is the central identity and access management portal for all Adobe products. For AEMaaCS, it is where IMS Org admins add users, create product profiles, and assign roles. It governs access to both Cloud Manager and the AEM environments.",
+      "narration": "What is the Adobe Admin Console used for in AEM as a Cloud Service? Managing users, groups, product profiles, and IMS organization settings for AEMaaCS. The Adobe Admin Console (adminconsole.adobe.com) is the central identity and access management portal for all Adobe products. For AEMaaCS, it is where IMS Org admins add users, create product profiles, and assign roles. It governs access to both Cloud Manager and the AEM environments."
+    },
+    {
+      "id": "02-cm-036",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What is an IMS Organization in the context of AEM as a Cloud Service?",
+      "heading": "A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS",
+      "body": "An IMS Organization (IMS Org) is the top-level entity in Adobe's Identity Management System representing a company that has licensed Adobe products. All AEMaaCS programs belong to an IMS Org, and all user identities are managed within it. The IMS Org Admin has the highest level of access in the Admin Console.",
+      "narration": "What is an IMS Organization in the context of AEM as a Cloud Service? A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS. An IMS Organization (IMS Org) is the top-level entity in Adobe's Identity Management System representing a company that has licensed Adobe products. All AEMaaCS programs belong to an IMS Org, and all user identities are managed within it. The IMS Org Admin has the highest level of access in the Admin Console."
+    },
+    {
+      "id": "03-cm-037",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "Which product profiles exist by default for AEM as a Cloud Service in the Admin Console?",
+      "heading": "AEM Users and AEM Administrators — one set per environment tier (Author/Publish)",
+      "body": "AEMaaCS automatically creates AEM Users and AEM Administrators product profiles in the Admin Console for each Author and Publish environment tier. Users in AEM Administrators receive administrative access in AEM, while AEM Users get standard author/publish access. Cloud Manager roles are managed by separate Cloud Manager-specific product profiles.",
+      "narration": "Which product profiles exist by default for AEM as a Cloud Service in the Admin Console? AEM Users and AEM Administrators — one set per environment tier (Author/Publish). AEMaaCS automatically creates AEM Users and AEM Administrators product profiles in the Admin Console for each Author and Publish environment tier. Users in AEM Administrators receive administrative access in AEM, while AEM Users get standard author/publish access. Cloud Manager roles are managed by separate Cloud Manager-specific product profiles."
+    },
+    {
+      "id": "04-cm-038",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "How are Cloud Manager roles assigned to users?",
+      "heading": "By adding users to specific Cloud Manager product profiles in the Admin Console",
+      "body": "Cloud Manager roles are managed through the Adobe Admin Console. An IMS Org Admin adds users to Cloud Manager product profiles (e.g., 'Cloud Manager - Business Owner', 'Cloud Manager - Deployment Manager') which grant specific permissions within Cloud Manager. These profiles are separate from AEM environment profiles.",
+      "narration": "How are Cloud Manager roles assigned to users? By adding users to specific Cloud Manager product profiles in the Admin Console. Cloud Manager roles are managed through the Adobe Admin Console. An IMS Org Admin adds users to Cloud Manager product profiles (e.g., 'Cloud Manager - Business Owner', 'Cloud Manager - Deployment Manager') which grant specific permissions within Cloud Manager. These profiles are separate from AEM environment profiles."
+    },
+    {
+      "id": "05-cm-039",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What is the Business Owner role in Cloud Manager?",
+      "heading": "The user responsible for a program who can create programs, configure pipelines, and manage business-level settings",
+      "body": "The Business Owner is the most privileged Cloud Manager role. They can create programs, define production KPI targets (error rate, page views/min), approve production deployments, and manage all program settings. There must be at least one Business Owner per program.",
+      "narration": "What is the Business Owner role in Cloud Manager? The user responsible for a program who can create programs, configure pipelines, and manage business-level settings. The Business Owner is the most privileged Cloud Manager role. They can create programs, define production KPI targets (error rate, page views/min), approve production deployments, and manage all program settings. There must be at least one Business Owner per program."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Managing users, groups, product profiles, and IMS organization settings for AEMaaCS",
+        "A top-level administrative unit representing a company's entitlement to Adobe products including AEMaaCS",
+        "AEM Users and AEM Administrators — one set per environment tier (Author/Publish)",
+        "By adding users to specific Cloud Manager product profiles in the Admin Console",
+        "The user responsible for a program who can create programs, configure pipelines, and manage business-level settings"
+      ],
+      "narration": "Quick recap of Admin Console (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

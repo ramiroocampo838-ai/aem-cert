@@ -1,0 +1,80 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "Performance Optimization (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Performance Optimization (Part 2 of 2)",
+      "sub": "Code Quality · 5 key concepts",
+      "narration": "Code Quality. Performance Optimization (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-088",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is AEM's Lazy Loading pattern for large lists, and which PERF-006 (Severity: Minor) compliant API supports it for content tree traversal?",
+      "heading": "Use resource.listChildren() or Page.listChildren() which return lazy iterators — items are loaded from JCR only as the iterator advances",
+      "body": "PERF-006 (Minor): resource.listChildren() returns a lazy Iterator<Resource> backed by the JCR NodeIterator. Items are fetched from the repository only as the iterator calls next() — never loading more than the current item. Converting the result to new ArrayList<>(resource.listChildren()) forces eager evaluation of all children into memory. For a page with 10,000 child resources, this creates a 10,000-element ArrayList. Iterate lazily to keep memory usage constant.",
+      "narration": "What is AEM's Lazy Loading pattern for large lists, and which PERF-006 (Severity: Minor) compliant API supports it for content tree traversal? Use resource.listChildren() or Page.listChildren() which return lazy iterators — items are loaded from JCR only as the iterator advances. PERF-006 (Minor): resource.listChildren() returns a lazy Iterator<Resource> backed by the JCR NodeIterator. Items are fetched from the repository only as the iterator calls next() — never loading more than the current item. Converting the result to new ArrayList<>(resource.listChildren()) forces eager evaluation of all children into memory. For a page with 10,000 child resources, this creates a 10,000-element ArrayList. Iterate lazily to keep memory usage constant."
+    },
+    {
+      "id": "02-cq-089",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "How does configuring the Dispatcher to cache HTML responses with long TTL values improve AEM performance, and what is the mechanism?",
+      "heading": "Long TTL responses are served directly from the Dispatcher's disk cache — AEM Publisher never receives the request, eliminating all rendering, JCR reads, and network overhead",
+      "body": "PERF Dispatcher Caching: When the Dispatcher caches an HTML response, subsequent requests for that URL are served directly from the Apache httpd/IIS file system cache. The AEM rendering pipeline — Sling resolver, component scripts, JCR session, HTL evaluation, ResourceResolver — is bypassed entirely. A cache hit typically takes <5ms (disk read) vs. 50–500ms for an uncached AEM request. For high-traffic sites this means serving 10,000 req/s vs. 100 req/s from the same hardware.",
+      "narration": "How does configuring the Dispatcher to cache HTML responses with long TTL values improve AEM performance, and what is the mechanism? Long TTL responses are served directly from the Dispatcher's disk cache — AEM Publisher never receives the request, eliminating all rendering, JCR reads, and network overhead. PERF Dispatcher Caching: When the Dispatcher caches an HTML response, subsequent requests for that URL are served directly from the Apache httpd/IIS file system cache. The AEM rendering pipeline — Sling resolver, component scripts, JCR session, HTL evaluation, ResourceResolver — is bypassed entirely. A cache hit typically takes <5ms (disk read) vs. 50–500ms for an uncached AEM request. For high-traffic sites this means serving 10,000 req/s vs. 100 req/s from the same hardware."
+    },
+    {
+      "id": "03-cq-090",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "PERF-003 combined with JCR best practices: when bulk-importing 100,000 DAM assets into AEM, what is the recommended approach to avoid memory and performance issues?",
+      "heading": "Process in batches of 500–1000 assets; call session.save() after each batch, and call session.refresh(false) periodically to release stale session state",
+      "body": "PERF-003 and Bulk Import: The JCR session accumulates all pending changes in memory until session.save() is called. For a 100,000 asset import, calling save() only at the end would accumulate all 100,000 asset nodes (potentially GBs of pending change data) in memory. Pattern: process in batches of 500–1000, call session.save() after each batch (commits and clears the pending map), then optionally session.refresh(false) to release stale session state. This keeps memory usage constant regardless of total import size.",
+      "narration": "PERF-003 combined with JCR best practices: when bulk-importing 100,000 DAM assets into AEM, what is the recommended approach to avoid memory and performance issues? Process in batches of 500–1000 assets; call session.save() after each batch, and call session.refresh(false) periodically to release stale session state. PERF-003 and Bulk Import: The JCR session accumulates all pending changes in memory until session.save() is called. For a 100,000 asset import, calling save() only at the end would accumulate all 100,000 asset nodes (potentially GBs of pending change data) in memory. Pattern: process in batches of 500–1000, call session.save() after each batch (commits and clears the pending map), then optionally session.refresh(false) to release stale session state. This keeps memory usage constant regardless of total import size."
+    },
+    {
+      "id": "04-cq-091",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What is the purpose of declaring 'includedPaths' in an Oak Lucene index definition?",
+      "heading": "Restricts the Lucene index to only index nodes under the specified paths, reducing index size and build time",
+      "body": "Oak Lucene Index Optimization: By default, a Lucene index scans and indexes every node in the JCR repository. For AEM repositories with millions of nodes (/apps, /libs, /content, /home, /var combined), this creates enormous indexes that take hours to rebuild. The 'includedPaths' property (e.g., ['/content/mysite']) scopes the index to only the relevant content subtrees your queries target. A site-specific search index needs only /content/mysite — not the entire /libs or /home tree.",
+      "narration": "What is the purpose of declaring 'includedPaths' in an Oak Lucene index definition? Restricts the Lucene index to only index nodes under the specified paths, reducing index size and build time. Oak Lucene Index Optimization: By default, a Lucene index scans and indexes every node in the JCR repository. For AEM repositories with millions of nodes (/apps, /libs, /content, /home, /var combined), this creates enormous indexes that take hours to rebuild. The 'includedPaths' property (e.g., ['/content/mysite']) scopes the index to only the relevant content subtrees your queries target. A site-specific search index needs only /content/mysite — not the entire /libs or /home tree."
+    },
+    {
+      "id": "05-cq-092",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "AEM's Sling Request Processing pipeline executes multiple filters and resolvers. Which PERF-006 technique avoids re-resolving the sling:resourceType on every request for the same component?",
+      "heading": "The Sling Resource Resolver caches resource type lookups internally; developers should avoid creating new ResourceResolver instances per-request to benefit from this cache",
+      "body": "PERF-006 and Sling Resource Resolution: Sling's script resolver maintains a per-request cache of resolved scripts. Within one HTTP request, the same component included multiple times resolves the script only once. Sling also maintains a longer-lived cache of compiled scripts across requests. Key performance practice: avoid creating unnecessary new ResourceResolver instances per-request (each has its own overhead) and rely on Sling's built-in resolution caching rather than manual workarounds.",
+      "narration": "AEM's Sling Request Processing pipeline executes multiple filters and resolvers. Which PERF-006 technique avoids re-resolving the sling:resourceType on every request for the same component? The Sling Resource Resolver caches resource type lookups internally; developers should avoid creating new ResourceResolver instances per-request to benefit from this cache. PERF-006 and Sling Resource Resolution: Sling's script resolver maintains a per-request cache of resolved scripts. Within one HTTP request, the same component included multiple times resolves the script only once. Sling also maintains a longer-lived cache of compiled scripts across requests. Key performance practice: avoid creating unnecessary new ResourceResolver instances per-request (each has its own overhead) and rely on Sling's built-in resolution caching rather than manual workarounds."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Use resource.listChildren() or Page.listChildren() which return lazy iterators — items are loaded from JCR only as the iterator advances",
+        "Long TTL responses are served directly from the Dispatcher's disk cache — AEM Publisher never receives the request, eliminating all rendering, JCR reads, and network overhead",
+        "Process in batches of 500–1000 assets; call session.save() after each batch, and call session.refresh(false) periodically to release stale session state",
+        "Restricts the Lucene index to only index nodes under the specified paths, reducing index size and build time",
+        "The Sling Resource Resolver caches resource type lookups internally; developers should avoid creating new ResourceResolver instances per-request to benefit from this cache"
+      ],
+      "narration": "Quick recap of Performance Optimization (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

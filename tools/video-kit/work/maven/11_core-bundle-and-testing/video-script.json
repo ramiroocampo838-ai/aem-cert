@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Core Bundle & Testing",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Core Bundle & Testing",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Core Bundle & Testing. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-072",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does the core module build?",
+      "heading": "An OSGi bundle",
+      "body": "The speech says the core module builds an OSGi bundle.",
+      "narration": "What does the core module build? An OSGi bundle. The speech says the core module builds an OSGi bundle."
+    },
+    {
+      "id": "02-mvn-073",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What generates the bundle manifest, including the Sling-Model-Packages header?",
+      "heading": "The bnd-maven-plugin",
+      "body": "The speech says the bnd-maven-plugin generates the bundle manifest, including the Sling-Model-Packages header.",
+      "narration": "What generates the bundle manifest, including the Sling-Model-Packages header? The bnd-maven-plugin. The speech says the bnd-maven-plugin generates the bundle manifest, including the Sling-Model-Packages header."
+    },
+    {
+      "id": "03-mvn-074",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "According to the speech, what is the advantage of the generated Sling-Model-Packages header?",
+      "heading": "You do not maintain it manually",
+      "body": "The speech specifically notes that the bnd-maven-plugin generates the Sling-Model-Packages header so you do not maintain it manually.",
+      "narration": "According to the speech, what is the advantage of the generated Sling-Model-Packages header? You do not maintain it manually. The speech specifically notes that the bnd-maven-plugin generates the Sling-Model-Packages header so you do not maintain it manually."
+    },
+    {
+      "id": "04-mvn-075",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Given a scenario with constructor injection, which Maven compiler option does the speech call out when needed?",
+      "heading": "The parameters flag",
+      "body": "The speech says the Maven compiler options include the parameters flag when needed for constructor injection.",
+      "narration": "Given a scenario with constructor injection, which Maven compiler option does the speech call out when needed? The parameters flag. The speech says the Maven compiler options include the parameters flag when needed for constructor injection."
+    },
+    {
+      "id": "05-mvn-076",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What must the Java version of the build match?",
+      "heading": "What Cloud Manager supports for the target AEM release",
+      "body": "The speech says the Java version of the build must match what Cloud Manager supports for the target AEM release.",
+      "narration": "What must the Java version of the build match? What Cloud Manager supports for the target AEM release. The speech says the Java version of the build must match what Cloud Manager supports for the target AEM release."
+    },
+    {
+      "id": "06-mvn-077",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Where is the bundle embedded?",
+      "heading": "In the all package",
+      "body": "The speech states that the bundle is embedded in the all package.",
+      "narration": "Where is the bundle embedded? In the all package. The speech states that the bundle is embedded in the all package."
+    },
+    {
+      "id": "07-mvn-078",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What are the three testing levels described in the speech?",
+      "heading": "Unit tests in core, integration tests in it.tests, and UI tests in ui.tests",
+      "body": "The speech lists three levels: unit tests in core, integration tests in it.tests running on the AEM server, and UI tests in ui.tests using Selenium in the browser.",
+      "narration": "What are the three testing levels described in the speech? Unit tests in core, integration tests in it.tests, and UI tests in ui.tests. The speech lists three levels: unit tests in core, integration tests in it.tests running on the AEM server, and UI tests in ui.tests using Selenium in the browser."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "An OSGi bundle",
+        "The bnd-maven-plugin",
+        "You do not maintain it manually",
+        "The parameters flag",
+        "What Cloud Manager supports for the target AEM release",
+        "In the all package",
+        "Unit tests in core, integration tests in it.tests, and UI tests in ui.tests"
+      ],
+      "narration": "Quick recap of Core Bundle & Testing. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

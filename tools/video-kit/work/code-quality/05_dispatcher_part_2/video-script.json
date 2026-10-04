@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "Dispatcher (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Dispatcher (Part 2 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. Dispatcher (Part 2 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-077",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "In Dispatcher configuration, what is the purpose of the /renders section in dispatcher.any?",
+      "heading": "Defines the AEM Publisher backends — their hostname, port, and connection timeouts that the Dispatcher proxies requests to",
+      "body": "Dispatcher Configuration: /renders defines the backend AEM render farm — the Publisher (or Preview) instances that the Dispatcher forwards requests to when content is not in the cache or is stale. Each render entry specifies: /hostname (AEM server IP or hostname), /port (typically 4503 for Publisher), /timeout (connection timeout in milliseconds), /receiveTimeout (response timeout). Multiple /renders entries allow load balancing across Publisher cluster nodes.",
+      "narration": "In Dispatcher configuration, what is the purpose of the /renders section in dispatcher.any? Defines the AEM Publisher backends — their hostname, port, and connection timeouts that the Dispatcher proxies requests to. Dispatcher Configuration: /renders defines the backend AEM render farm — the Publisher (or Preview) instances that the Dispatcher forwards requests to when content is not in the cache or is stale. Each render entry specifies: /hostname (AEM server IP or hostname), /port (typically 4503 for Publisher), /timeout (connection timeout in milliseconds), /receiveTimeout (response timeout). Multiple /renders entries allow load balancing across Publisher cluster nodes."
+    },
+    {
+      "id": "02-cq-078",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "DISP-006 (Severity: Major) requires that query string parameters be explicitly allowlisted for caching. Why is caching all query string variations dangerous?",
+      "heading": "An attacker can flood the cache disk with unique query strings (cache busting attack), exhausting the Dispatcher's storage",
+      "body": "DISP-006 (Major): By default, Dispatcher includes the query string in the cache key. If query string caching is unrestricted, an attacker sends requests with unique random parameters (?cb=1234567890, ?cb=9876543210, etc.) causing the Dispatcher to create a new cache file for each — a 'cache busting' DoS attack that fills the disk and forces all requests to hit the AEM Publisher. Fix: configure /ignoreUrlParams to explicitly whitelist known query parameters; all others are stripped for caching purposes.",
+      "narration": "DISP-006 (Severity: Major) requires that query string parameters be explicitly allowlisted for caching. Why is caching all query string variations dangerous? An attacker can flood the cache disk with unique query strings (cache busting attack), exhausting the Dispatcher's storage. DISP-006 (Major): By default, Dispatcher includes the query string in the cache key. If query string caching is unrestricted, an attacker sends requests with unique random parameters (?cb=1234567890, ?cb=9876543210, etc.) causing the Dispatcher to create a new cache file for each — a 'cache busting' DoS attack that fills the disk and forces all requests to hit the AEM Publisher. Fix: configure /ignoreUrlParams to explicitly whitelist known query parameters; all others are stripped for caching purposes."
+    },
+    {
+      "id": "03-cq-079",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "What Dispatcher configuration rule prevents AEM's query builder endpoint (/bin/querybuilder.json) and QueryDebug endpoint from being publicly accessible?",
+      "heading": "A /filter deny rule blocking /bin/querybuilder.json and all /bin/* endpoints not explicitly required",
+      "body": "Dispatcher Security – /bin/ endpoints: AEM's /bin/ path serves many powerful servlets that must never be publicly accessible. The QueryBuilder endpoint (/bin/querybuilder.json) executes arbitrary JCR-SQL2 queries — a public user could query 'path=/content&type=nt:unstructured' to retrieve all structured content nodes including drafts and unpublished pages. Block /bin/querybuilder.json in /filter, and deny all /bin/* paths with explicit allows only for the specific endpoints needed.",
+      "narration": "What Dispatcher configuration rule prevents AEM's query builder endpoint (/bin/querybuilder.json) and QueryDebug endpoint from being publicly accessible? A /filter deny rule blocking /bin/querybuilder.json and all /bin/* endpoints not explicitly required. Dispatcher Security – /bin/ endpoints: AEM's /bin/ path serves many powerful servlets that must never be publicly accessible. The QueryBuilder endpoint (/bin/querybuilder.json) executes arbitrary JCR-SQL2 queries — a public user could query 'path=/content&type=nt:unstructured' to retrieve all structured content nodes including drafts and unpublished pages. Block /bin/querybuilder.json in /filter, and deny all /bin/* paths with explicit allows only for the specific endpoints needed."
+    },
+    {
+      "id": "04-cq-080",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Why should authentication-based pages (pages behind AEM's login) not be cached by the Dispatcher?",
+      "heading": "The Dispatcher cannot differentiate between users — it would serve User A's personalized authenticated response to User B",
+      "body": "Dispatcher Caching and Authentication: The Dispatcher caches responses by URL (ignoring cookies and auth headers by default). If an authenticated user visits /content/mysite/dashboard and the Dispatcher caches the personalized response, the next visitor receives that cached personalized content — even if unauthenticated. Fix: configure /auth_checker to validate authentication before serving cached content, or configure /cache /rules to exclude all authenticated paths from caching.",
+      "narration": "Why should authentication-based pages (pages behind AEM's login) not be cached by the Dispatcher? The Dispatcher cannot differentiate between users — it would serve User A's personalized authenticated response to User B. Dispatcher Caching and Authentication: The Dispatcher caches responses by URL (ignoring cookies and auth headers by default). If an authenticated user visits /content/mysite/dashboard and the Dispatcher caches the personalized response, the next visitor receives that cached personalized content — even if unauthenticated. Fix: configure /auth_checker to validate authentication before serving cached content, or configure /cache /rules to exclude all authenticated paths from caching."
+    },
+    {
+      "id": "05-cq-081",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What does the Dispatcher's 'grace period' (graceOnStaleContent) configuration do?",
+      "heading": "Allows the Dispatcher to serve stale cached content for a defined number of seconds while fetching fresh content from the Publisher — reduces latency on invalidation",
+      "body": "Dispatcher Grace Period: When a page is invalidated (stat file updated), the next request would normally hit the AEM Publisher directly. If many users request the page simultaneously, this causes a 'thundering herd' — all requests bypass the cache and hammer the Publisher at once. graceOnStaleContent allows the Dispatcher to continue serving the old (stale) cache entry for a defined number of seconds, refreshing it asynchronously. Only one request goes to the Publisher; all others are served from stale cache.",
+      "narration": "What does the Dispatcher's 'grace period' (graceOnStaleContent) configuration do? Allows the Dispatcher to serve stale cached content for a defined number of seconds while fetching fresh content from the Publisher — reduces latency on invalidation. Dispatcher Grace Period: When a page is invalidated (stat file updated), the next request would normally hit the AEM Publisher directly. If many users request the page simultaneously, this causes a 'thundering herd' — all requests bypass the cache and hammer the Publisher at once. graceOnStaleContent allows the Dispatcher to continue serving the old (stale) cache entry for a defined number of seconds, refreshing it asynchronously. Only one request goes to the Publisher; all others are served from stale cache."
+    },
+    {
+      "id": "06-cq-082",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "DISP-004 and OWASP requirements mandate blocking access to AEM's default servlet selectors. Which selector pattern expresses the most dangerous information disclosure risk?",
+      "heading": ".infinity.json — returns the complete JCR subtree including all child nodes and properties as a JSON document",
+      "body": "Dispatcher URL Filtering: The .infinity.json selector is one of the most dangerous AEM default features to leave publicly accessible. A request to '/content/mysite.infinity.json' returns the complete JCR tree under /content/mysite — every page, every property (including metadata, tags, and component data), every unpublished draft page, and any content stored by components. Block it in Dispatcher /filter with: /deny { /url '/*.infinity.json' }.",
+      "narration": "DISP-004 and OWASP requirements mandate blocking access to AEM's default servlet selectors. Which selector pattern expresses the most dangerous information disclosure risk? .infinity.json — returns the complete JCR subtree including all child nodes and properties as a JSON document. Dispatcher URL Filtering: The .infinity.json selector is one of the most dangerous AEM default features to leave publicly accessible. A request to '/content/mysite.infinity.json' returns the complete JCR tree under /content/mysite — every page, every property (including metadata, tags, and component data), every unpublished draft page, and any content stored by components. Block it in Dispatcher /filter with: /deny { /url '/*.infinity.json' }."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Defines the AEM Publisher backends — their hostname, port, and connection timeouts that the Dispatcher proxies requests to",
+        "An attacker can flood the cache disk with unique query strings (cache busting attack), exhausting the Dispatcher's storage",
+        "A /filter deny rule blocking /bin/querybuilder.json and all /bin/* endpoints not explicitly required",
+        "The Dispatcher cannot differentiate between users — it would serve User A's personalized authenticated response to User B",
+        "Allows the Dispatcher to serve stale cached content for a defined number of seconds while fetching fresh content from the Publisher — reduces latency on invalidation",
+        ".infinity.json — returns the complete JCR subtree including all child nodes and properties as a JSON document"
+      ],
+      "narration": "Quick recap of Dispatcher (Part 2 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "File System Organization",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "File System Organization",
+      "sub": "Env Setup · 8 key concepts",
+      "narration": "Env Setup. File System Organization. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-025",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "What is the Adobe-recommended top-level directory for local AEM SDK files?",
+      "heading": "~/aem-sdk/",
+      "body": "Adobe recommends organizing local AEM SDK files under `~/aem-sdk/`, with subdirectories for author, publish, and dispatcher. This keeps SDK files separate from your project code.",
+      "narration": "What is the Adobe-recommended top-level directory for local AEM SDK files? ~/aem-sdk/. Adobe recommends organizing local AEM SDK files under `~/aem-sdk/`, with subdirectories for author, publish, and dispatcher. This keeps SDK files separate from your project code."
+    },
+    {
+      "id": "02-env-026",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Where should the local Author service files be placed according to the recommended directory structure?",
+      "heading": "~/aem-sdk/author/",
+      "body": "The recommended structure places Author service files in `~/aem-sdk/author/`, Publish files in `~/aem-sdk/publish/`, and Dispatcher files in `~/aem-sdk/dispatcher/`.",
+      "narration": "Where should the local Author service files be placed according to the recommended directory structure? ~/aem-sdk/author/. The recommended structure places Author service files in `~/aem-sdk/author/`, Publish files in `~/aem-sdk/publish/`, and Dispatcher files in `~/aem-sdk/dispatcher/`."
+    },
+    {
+      "id": "03-env-027",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "Where should the AEM Maven project code be placed in the recommended file system structure?",
+      "heading": "~/code/<project-name>/",
+      "body": "The AEM Maven project (your custom code) should be placed in `~/code/<project-name>/`, kept separate from the SDK runtime directories in `~/aem-sdk/`. This separation makes it easy to manage multiple SDK versions.",
+      "narration": "Where should the AEM Maven project code be placed in the recommended file system structure? ~/code/<project-name>/. The AEM Maven project (your custom code) should be placed in `~/code/<project-name>/`, kept separate from the SDK runtime directories in `~/aem-sdk/`. This separation makes it easy to manage multiple SDK versions."
+    },
+    {
+      "id": "04-env-028",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "What is the main benefit of following the recommended ~/aem-sdk/ directory structure?",
+      "heading": "It keeps everything organized and makes it easy to manage multiple SDK versions",
+      "body": "The recommended structure keeps everything organized and makes it easy to manage multiple SDK versions. When Adobe releases a new SDK, you can keep old and new versions side by side without conflicts.",
+      "narration": "What is the main benefit of following the recommended ~/aem-sdk/ directory structure? It keeps everything organized and makes it easy to manage multiple SDK versions. The recommended structure keeps everything organized and makes it easy to manage multiple SDK versions. When Adobe releases a new SDK, you can keep old and new versions side by side without conflicts."
+    },
+    {
+      "id": "05-env-029",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What does the tilde (~) represent in file paths on Windows systems?",
+      "heading": "%HOMEPATH%",
+      "body": "On Windows, the tilde (~) in file paths maps to `%HOMEPATH%`, which typically resolves to `C:\\Users\\<username>`. So `~/aem-sdk/` becomes `C:\\Users\\<username>\\aem-sdk\\`.",
+      "narration": "What does the tilde (~) represent in file paths on Windows systems? %HOMEPATH%. On Windows, the tilde (~) in file paths maps to `%HOMEPATH%`, which typically resolves to `C:\\Users\\<username>`. So `~/aem-sdk/` becomes `C:\\Users\\<username>\\aem-sdk\\`."
+    },
+    {
+      "id": "06-env-030",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Which subdirectory under ~/aem-sdk/ is designated for Local Dispatcher Tools?",
+      "heading": "~/aem-sdk/dispatcher/",
+      "body": "The three subdirectories under `~/aem-sdk/` are: `author/` for the local Author service, `publish/` for the local Publish service, and `dispatcher/` for the local Dispatcher Tools.",
+      "narration": "Which subdirectory under ~/aem-sdk/ is designated for Local Dispatcher Tools? ~/aem-sdk/dispatcher/. The three subdirectories under `~/aem-sdk/` are: `author/` for the local Author service, `publish/` for the local Publish service, and `dispatcher/` for the local Dispatcher Tools."
+    },
+    {
+      "id": "07-env-031",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "How many subdirectories does the recommended ~/aem-sdk/ structure contain?",
+      "heading": "Three subdirectories",
+      "body": "The `~/aem-sdk/` directory contains three subdirectories: `author/` (local Author service), `publish/` (local Publish service), and `dispatcher/` (local Dispatcher Tools).",
+      "narration": "How many subdirectories does the recommended ~/aem-sdk/ structure contain? Three subdirectories. The `~/aem-sdk/` directory contains three subdirectories: `author/` (local Author service), `publish/` (local Publish service), and `dispatcher/` (local Dispatcher Tools)."
+    },
+    {
+      "id": "08-env-032",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "Why is the AEM Maven project kept in ~/code/ rather than inside ~/aem-sdk/?",
+      "heading": "To separate your custom code from the runtime SDK files",
+      "body": "Keeping project code in `~/code/<project>/` and runtime SDK in `~/aem-sdk/` is a separation of concerns. When Adobe releases a new SDK version, you can update the SDK without touching your code, and vice versa.",
+      "narration": "Why is the AEM Maven project kept in ~/code/ rather than inside ~/aem-sdk/? To separate your custom code from the runtime SDK files. Keeping project code in `~/code/<project>/` and runtime SDK in `~/aem-sdk/` is a separation of concerns. When Adobe releases a new SDK version, you can update the SDK without touching your code, and vice versa."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "~/aem-sdk/",
+        "~/aem-sdk/author/",
+        "~/code/<project-name>/",
+        "It keeps everything organized and makes it easy to manage multiple SDK versions",
+        "%HOMEPATH%",
+        "~/aem-sdk/dispatcher/",
+        "Three subdirectories",
+        "To separate your custom code from the runtime SDK files"
+      ],
+      "narration": "Quick recap of File System Organization. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

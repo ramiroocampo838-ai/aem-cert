@@ -1,0 +1,91 @@
+{
+  "section": "code-quality",
+  "sectionLabel": "Code Quality",
+  "accent": "#f97316",
+  "category": "HTL / Sightly (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "HTL / Sightly (Part 1 of 2)",
+      "sub": "Code Quality · 6 key concepts",
+      "narration": "Code Quality. HTL / Sightly (Part 1 of 2). In this video we review 6 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cq-047",
+      "type": "concept",
+      "index": 1,
+      "total": 6,
+      "question": "HTL-001 (Severity: Major) flags the use of context='unsafe' in HTL expressions. What does this context option do and why is it prohibited?",
+      "heading": "context='unsafe' disables all HTL XSS escaping — output is inserted into the DOM raw and unescaped, enabling XSS attacks",
+      "body": "HTL-001 (Major): HTL's primary security feature is automatic output escaping. Every '${expression}' is HTML-escaped by default. Using context='unsafe' removes this protection completely: the raw value is written directly into the HTML output. If the value contains '<script>alert(1)</script>', this executes as JavaScript in the victim's browser — a stored or reflected XSS vulnerability.",
+      "narration": "HTL-001 (Severity: Major) flags the use of context='unsafe' in HTL expressions. What does this context option do and why is it prohibited? context='unsafe' disables all HTL XSS escaping — output is inserted into the DOM raw and unescaped, enabling XSS attacks. HTL-001 (Major): HTL's primary security feature is automatic output escaping. Every '${expression}' is HTML-escaped by default. Using context='unsafe' removes this protection completely: the raw value is written directly into the HTML output. If the value contains '<script>alert(1)</script>', this executes as JavaScript in the victim's browser — a stored or reflected XSS vulnerability."
+    },
+    {
+      "id": "02-cq-048",
+      "type": "concept",
+      "index": 2,
+      "total": 6,
+      "question": "When is context='html' the correct HTL output context to use, and what security mechanism does HTL still apply?",
+      "heading": "Use context='html' only for trusted, pre-validated rich text from the CMS RTE — HTL applies Anti-Samy sanitization to remove dangerous tags/attributes",
+      "body": "HTL-001 and security: context='html' is the correct context for HTML-formatted rich text from the CMS RTE (Rich Text Editor). Unlike context='unsafe' (no protection), context='html' runs the value through Adobe's Anti-Samy HTML whitelist sanitizer, which strips dangerous elements (script, object, embed) and event handler attributes (onclick, onerror) while preserving safe formatting tags. Never use context='html' for user-submitted form data.",
+      "narration": "When is context='html' the correct HTL output context to use, and what security mechanism does HTL still apply? Use context='html' only for trusted, pre-validated rich text from the CMS RTE — HTL applies Anti-Samy sanitization to remove dangerous tags/attributes. HTL-001 and security: context='html' is the correct context for HTML-formatted rich text from the CMS RTE (Rich Text Editor). Unlike context='unsafe' (no protection), context='html' runs the value through Adobe's Anti-Samy HTML whitelist sanitizer, which strips dangerous elements (script, object, embed) and event handler attributes (onclick, onerror) while preserving safe formatting tags. Never use context='html' for user-submitted form data."
+    },
+    {
+      "id": "03-cq-049",
+      "type": "concept",
+      "index": 3,
+      "total": 6,
+      "question": "HTL-002 (Severity: Major) requires using data-sly-use to bind Java Sling Models or WCMUsePojo for business logic. Why does data-sly-use enforce this separation?",
+      "heading": "data-sly-use delegates business logic to Java/JS Use-API objects while keeping HTL purely declarative — no JSP-style scriptlets",
+      "body": "HTL-002 (Major): HTL was designed as a template language with intentionally limited expressiveness — it cannot execute arbitrary Java or perform complex computations inline. data-sly-use.model='com.myproject.MyModel' injects a Java Use-API object into the template, providing access to pre-computed properties. This enforces MVC separation: the @Model handles all data preparation and business logic; the HTL file handles only presentation.",
+      "narration": "HTL-002 (Severity: Major) requires using data-sly-use to bind Java Sling Models or WCMUsePojo for business logic. Why does data-sly-use enforce this separation? data-sly-use delegates business logic to Java/JS Use-API objects while keeping HTL purely declarative — no JSP-style scriptlets. HTL-002 (Major): HTL was designed as a template language with intentionally limited expressiveness — it cannot execute arbitrary Java or perform complex computations inline. data-sly-use.model='com.myproject.MyModel' injects a Java Use-API object into the template, providing access to pre-computed properties. This enforces MVC separation: the @Model handles all data preparation and business logic; the HTL file handles only presentation."
+    },
+    {
+      "id": "04-cq-050",
+      "type": "concept",
+      "index": 4,
+      "total": 6,
+      "question": "Which HTL attribute causes its element and all its children to be removed from the DOM output if the condition expression evaluates to false?",
+      "heading": "data-sly-test",
+      "body": "HTL conditional rendering uses data-sly-test. When '${myModel.showSection}' is false/null/empty, the element with data-sly-test and its entire subtree are suppressed from the output. Falsy values are: false, null, 0, empty string, empty array/collection. This is roughly equivalent to JSP's <c:if test='...'> but more readable and type-safe.",
+      "narration": "Which HTL attribute causes its element and all its children to be removed from the DOM output if the condition expression evaluates to false? data-sly-test. HTL conditional rendering uses data-sly-test. When '${myModel.showSection}' is false/null/empty, the element with data-sly-test and its entire subtree are suppressed from the output. Falsy values are: false, null, 0, empty string, empty array/collection. This is roughly equivalent to JSP's <c:if test='...'> but more readable and type-safe."
+    },
+    {
+      "id": "05-cq-051",
+      "type": "concept",
+      "index": 5,
+      "total": 6,
+      "question": "What does the 'data-sly-unwrap' HTL attribute do to the element it is placed on?",
+      "heading": "It renders the element's children while removing the element's own start and end tags from the output",
+      "body": "HTL data-sly-unwrap allows grouping of logic without adding extra HTML elements. '<div data-sly-unwrap><p>content</p></div>' renders only '<p>content</p>' — the <div> wrapper is not output. This is useful for wrapping multiple sibling elements under a single data-sly-test or data-sly-list condition without polluting the HTML structure. Equivalent to React's Fragment or Vue's template tag.",
+      "narration": "What does the 'data-sly-unwrap' HTL attribute do to the element it is placed on? It renders the element's children while removing the element's own start and end tags from the output. HTL data-sly-unwrap allows grouping of logic without adding extra HTML elements. '<div data-sly-unwrap><p>content</p></div>' renders only '<p>content</p>' — the <div> wrapper is not output. This is useful for wrapping multiple sibling elements under a single data-sly-test or data-sly-list condition without polluting the HTML structure. Equivalent to React's Fragment or Vue's template tag."
+    },
+    {
+      "id": "06-cq-052",
+      "type": "concept",
+      "index": 6,
+      "total": 6,
+      "question": "HTL-004 requires the correct output context for expressions placed inside a JavaScript event handler attribute (e.g., onclick). Which context should be used?",
+      "heading": "context='scriptToken' for safe identifier values, or context='scriptString' for string values — never 'unsafe' for inline JS",
+      "body": "HTL-004 (Major): Expression output context must match the syntactic context it appears in. For inline JavaScript, incorrect escaping can create XSS vulnerabilities. HTL provides: context='scriptToken' for values used as JS identifiers or numbers (allows only safe characters), and context='scriptString' for values embedded inside JS string literals (applies JS string escaping with \\u encoding). The default HTML attribute escaping does not protect against JavaScript injection within event handlers.",
+      "narration": "HTL-004 requires the correct output context for expressions placed inside a JavaScript event handler attribute (e.g., onclick). Which context should be used? context='scriptToken' for safe identifier values, or context='scriptString' for string values — never 'unsafe' for inline JS. HTL-004 (Major): Expression output context must match the syntactic context it appears in. For inline JavaScript, incorrect escaping can create XSS vulnerabilities. HTL provides: context='scriptToken' for values used as JS identifiers or numbers (allows only safe characters), and context='scriptString' for values embedded inside JS string literals (applies JS string escaping with \\u encoding). The default HTML attribute escaping does not protect against JavaScript injection within event handlers."
+    },
+    {
+      "id": "07-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "context='unsafe' disables all HTL XSS escaping — output is inserted into the DOM raw and unescaped, enabling XSS attacks",
+        "Use context='html' only for trusted, pre-validated rich text from the CMS RTE — HTL applies Anti-Samy sanitization to remove dangerous tags/attributes",
+        "data-sly-use delegates business logic to Java/JS Use-API objects while keeping HTL purely declarative — no JSP-style scriptlets",
+        "data-sly-test",
+        "It renders the element's children while removing the element's own start and end tags from the output",
+        "context='scriptToken' for safe identifier values, or context='scriptString' for string values — never 'unsafe' for inline JS"
+      ],
+      "narration": "Quick recap of HTL / Sightly (Part 1 of 2). Take a moment to review these 6 key points.",
+      "hold": 15
+    }
+  ]
+}

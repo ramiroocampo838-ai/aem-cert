@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Container Package & Embeds",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Container Package & Embeds",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Container Package & Embeds. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-036",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What should the all package include as embeds?",
+      "heading": "Only deployable artifacts such as the core bundle JAR and the ui.apps, ui.config, and ui.content packages",
+      "body": "Section 6 says the all package is a container and includes only deployable artifacts as embeds: the core bundle JAR and the ui.apps, ui.config, and ui.content packages.",
+      "narration": "What should the all package include as embeds? Only deployable artifacts such as the core bundle JAR and the ui.apps, ui.config, and ui.content packages. Section 6 says the all package is a container and includes only deployable artifacts as embeds: the core bundle JAR and the ui.apps, ui.config, and ui.content packages."
+    },
+    {
+      "id": "02-mvn-037",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What must the all package not contain?",
+      "heading": "Any content or code of its own",
+      "body": "The speech explicitly says the all package must not contain any content or code of its own.",
+      "narration": "What must the all package not contain? Any content or code of its own. The speech explicitly says the all package must not contain any content or code of its own."
+    },
+    {
+      "id": "03-mvn-038",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which FileVault plugin configuration should be used to include packages in the container?",
+      "heading": "embeddeds",
+      "body": "Section 6 says packages are included with the embeddeds configuration of the FileVault package Maven plugin, and that the older subPackages configuration is not used.",
+      "narration": "Which FileVault plugin configuration should be used to include packages in the container? embeddeds. Section 6 says packages are included with the embeddeds configuration of the FileVault package Maven plugin, and that the older subPackages configuration is not used."
+    },
+    {
+      "id": "04-mvn-039",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which older configuration does the speech say is not used for embedding packages?",
+      "heading": "subPackages",
+      "body": "The lesson contrasts embeddeds with the older subPackages configuration and says subPackages is not used.",
+      "narration": "Which older configuration does the speech say is not used for embedding packages? subPackages. The lesson contrasts embeddeds with the older subPackages configuration and says subPackages is not used."
+    },
+    {
+      "id": "05-mvn-040",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Where are embedded packages placed inside the container package?",
+      "heading": "/apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?",
+      "body": "Section 6 gives the exact target-path pattern for embedded packages: /apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?.",
+      "narration": "Where are embedded packages placed inside the container package? /apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?. Section 6 gives the exact target-path pattern for embedded packages: /apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?."
+    },
+    {
+      "id": "06-mvn-041",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Why does the second-level folder use the suffix -packages?",
+      "heading": "To prevent embedded packages from being deployed into the application's own target folders under /apps/<app-name>",
+      "body": "The speech says the -packages suffix is a convention that prevents embedded packages from being deployed into the target folders of the application under /apps/<app-name>, which would cause destructive or cyclic installation.",
+      "narration": "Why does the second-level folder use the suffix -packages? To prevent embedded packages from being deployed into the application's own target folders under /apps/<app-name>. The speech says the -packages suffix is a convention that prevents embedded packages from being deployed into the target folders of the application under /apps/<app-name>, which would cause destructive or cyclic installation."
+    },
+    {
+      "id": "07-mvn-042",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Which run-mode-specific embedded package folders are supported?",
+      "heading": "install.author and install.publish only",
+      "body": "Section 6 says only install.author and install.publish are supported; other run modes are not.",
+      "narration": "Which run-mode-specific embedded package folders are supported? install.author and install.publish only. Section 6 says only install.author and install.publish are supported; other run modes are not."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Only deployable artifacts such as the core bundle JAR and the ui.apps, ui.config, and ui.content packages",
+        "Any content or code of its own",
+        "embeddeds",
+        "subPackages",
+        "/apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?",
+        "To prevent embedded packages from being deployed into the application's own target folders under /apps/<app-name>",
+        "install.author and install.publish only"
+      ],
+      "narration": "Quick recap of Container Package & Embeds. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "section": "env-setup",
+  "sectionLabel": "Env Setup",
+  "accent": "#3b82f6",
+  "category": "Maven Modules & Package Types (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Maven Modules & Package Types (Part 2 of 2)",
+      "sub": "Env Setup · 5 key concepts",
+      "narration": "Env Setup. Maven Modules & Package Types (Part 2 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-env-084",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What configuration must all packages except 'all' have so Cloud Manager ignores them?",
+      "heading": "cloudManagerTarget set to none",
+      "body": "All packages except the `all` container package must have `<cloudManagerTarget>none</cloudManagerTarget>` in their package configuration. This tells Cloud Manager to ignore them — only the `all` package is deployed.",
+      "narration": "What configuration must all packages except 'all' have so Cloud Manager ignores them? cloudManagerTarget set to none. All packages except the `all` container package must have `<cloudManagerTarget>none</cloudManagerTarget>` in their package configuration. This tells Cloud Manager to ignore them — only the `all` package is deployed."
+    },
+    {
+      "id": "02-env-085",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "Which Maven module holds OSGi configurations and Repo Init scripts?",
+      "heading": "ui.config",
+      "body": "`ui.config` contains OSGi run mode configurations (`.cfg.json` files) and Repo Init scripts. OSGi configs in `ui.config` are scoped by run mode — they activate only for the matching environment (e.g., author, publish, dev, prod).",
+      "narration": "Which Maven module holds OSGi configurations and Repo Init scripts? ui.config. `ui.config` contains OSGi run mode configurations (`.cfg.json` files) and Repo Init scripts. OSGi configs in `ui.config` are scoped by run mode — they activate only for the matching environment (e.g., author, publish, dev, prod)."
+    },
+    {
+      "id": "03-env-086",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "How many key Maven modules does a standard AEM project have?",
+      "heading": "Five key modules",
+      "body": "A standard AEM project has five key Maven modules: `core` (Java OSGi bundle), `ui.apps` (code package → /apps), `ui.content` (content package → /content, /conf), `ui.config` (OSGi configs + Repo Init), and `all` (container package deployed by Cloud Manager).",
+      "narration": "How many key Maven modules does a standard AEM project have? Five key modules. A standard AEM project has five key Maven modules: `core` (Java OSGi bundle), `ui.apps` (code package → /apps), `ui.content` (content package → /content, /conf), `ui.config` (OSGi configs + Repo Init), and `all` (container package deployed by Cloud Manager)."
+    },
+    {
+      "id": "04-env-087",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What does the 'all' package embed?",
+      "heading": "All other Maven modules: core bundle, ui.apps, ui.content, ui.config",
+      "body": "The `all` package embeds all other modules: the `core` OSGi bundle, the `ui.apps` code package, the `ui.content` content package, and the `ui.config` configuration package. When Cloud Manager deploys `all`, it installs everything.",
+      "narration": "What does the 'all' package embed? All other Maven modules: core bundle, ui.apps, ui.content, ui.config. The `all` package embeds all other modules: the `core` OSGi bundle, the `ui.apps` code package, the `ui.content` content package, and the `ui.config` configuration package. When Cloud Manager deploys `all`, it installs everything."
+    },
+    {
+      "id": "05-env-088",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "Which package type is used for code packages like ui.apps that deploy to immutable paths?",
+      "heading": "application",
+      "body": "The `application` package type is assigned to code packages like `ui.apps` that deploy to immutable repository paths (`/apps`). AEMaaCS uses the package type to enforce immutability — `application` packages cannot write to mutable paths at runtime.",
+      "narration": "Which package type is used for code packages like ui.apps that deploy to immutable paths? application. The `application` package type is assigned to code packages like `ui.apps` that deploy to immutable repository paths (`/apps`). AEMaaCS uses the package type to enforce immutability — `application` packages cannot write to mutable paths at runtime."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "cloudManagerTarget set to none",
+        "ui.config",
+        "Five key modules",
+        "All other Maven modules: core bundle, ui.apps, ui.content, ui.config",
+        "application"
+      ],
+      "narration": "Quick recap of Maven Modules & Package Types (Part 2 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

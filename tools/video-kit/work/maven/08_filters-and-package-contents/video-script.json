@@ -1,0 +1,102 @@
+{
+  "section": "maven",
+  "sectionLabel": "Maven",
+  "accent": "#6366f1",
+  "category": "Filters & Package Contents",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Filters & Package Contents",
+      "sub": "Maven · 7 key concepts",
+      "narration": "Maven. Filters & Package Contents. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-mvn-051",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What does a package define in META-INF/vault/filter.xml according to the speech?",
+      "heading": "Which repository paths the package owns",
+      "body": "The speech says each package defines in META-INF/vault/filter.xml which repository paths it owns.",
+      "narration": "What does a package define in META-INF/vault/filter.xml according to the speech? Which repository paths the package owns. The speech says each package defines in META-INF/vault/filter.xml which repository paths it owns."
+    },
+    {
+      "id": "02-mvn-052",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Given a scenario where content under a filter root exists in the repository but not in the package, which filter mode removes that extra content by default?",
+      "heading": "replace",
+      "body": "The speech states that replace is the default mode and that it removes content in the filter root that is not in the package.",
+      "narration": "Given a scenario where content under a filter root exists in the repository but not in the package, which filter mode removes that extra content by default? replace. The speech states that replace is the default mode and that it removes content in the filter root that is not in the package."
+    },
+    {
+      "id": "03-mvn-053",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "Which filter mode adds content and overwrites existing content but never removes anything?",
+      "heading": "update",
+      "body": "The speech distinguishes the modes by saying update adds and overwrites but never removes.",
+      "narration": "Which filter mode adds content and overwrites existing content but never removes anything? update. The speech distinguishes the modes by saying update adds and overwrites but never removes."
+    },
+    {
+      "id": "04-mvn-054",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What rule applies to a package that has /apps filters?",
+      "heading": "It must not also have /content filters",
+      "body": "The speech explicitly says a package that has /apps filters must not also have /content filters.",
+      "narration": "What rule applies to a package that has /apps filters? It must not also have /content filters. The speech explicitly says a package that has /apps filters must not also have /content filters."
+    },
+    {
+      "id": "05-mvn-055",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "Why is mixing mutable and immutable roots in one package a problem in AEM as a Cloud Service?",
+      "heading": "Because it violates the rules of AEM as a Cloud Service",
+      "body": "The speech says mixing mutable and immutable roots in one package violates the rules of AEM as a Cloud Service.",
+      "narration": "Why is mixing mutable and immutable roots in one package a problem in AEM as a Cloud Service? Because it violates the rules of AEM as a Cloud Service. The speech says mixing mutable and immutable roots in one package violates the rules of AEM as a Cloud Service."
+    },
+    {
+      "id": "06-mvn-056",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Given a scenario where you are packaging actual templates, where does the speech place them?",
+      "heading": "Under /conf/<appId> in ui.content",
+      "body": "The speech says ui.content contains the actual templates under /conf/<appId>, while ui.apps contains template type and policy code under /apps/settings.",
+      "narration": "Given a scenario where you are packaging actual templates, where does the speech place them? Under /conf/<appId> in ui.content. The speech says ui.content contains the actual templates under /conf/<appId>, while ui.apps contains template type and policy code under /apps/settings."
+    },
+    {
+      "id": "07-mvn-057",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Where do legacy /etc nodes belong, according to the speech?",
+      "heading": "In ui.content, with a goal of migrating them away from /etc",
+      "body": "The speech says legacy /etc nodes belong in ui.content and ideally should be migrated to non-/etc locations.",
+      "narration": "Where do legacy /etc nodes belong, according to the speech? In ui.content, with a goal of migrating them away from /etc. The speech says legacy /etc nodes belong in ui.content and ideally should be migrated to non-/etc locations."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Which repository paths the package owns",
+        "replace",
+        "update",
+        "It must not also have /content filters",
+        "Because it violates the rules of AEM as a Cloud Service",
+        "Under /conf/<appId> in ui.content",
+        "In ui.content, with a goal of migrating them away from /etc"
+      ],
+      "narration": "Quick recap of Filters & Package Contents. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

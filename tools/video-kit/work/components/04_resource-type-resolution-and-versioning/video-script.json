@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "Resource Type Resolution & Versioning",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Resource Type Resolution & Versioning",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. Resource Type Resolution & Versioning. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-022",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "How does Sling resolve the script for a request?",
+      "heading": "It checks the resource's sling:resourceType first, then walks up sling:resourceSuperType until it finds a script",
+      "body": "The speech says Sling resolves a request by looking at the resource's sling:resourceType, and if the script is not found there, it walks up the sling:resourceSuperType chain until it finds one.",
+      "narration": "How does Sling resolve the script for a request? It checks the resource's sling:resourceType first, then walks up sling:resourceSuperType until it finds a script. The speech says Sling resolves a request by looking at the resource's sling:resourceType, and if the script is not found there, it walks up the sling:resourceSuperType chain until it finds one."
+    },
+    {
+      "id": "02-comp-023",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "Through resourceSuperType inheritance, what can a proxy inherit from its parent according to the speech?",
+      "heading": "HTL files, dialogs, and clientlibs",
+      "body": "The resource type resolution section explicitly says this inheritance is how a proxy inherits HTL files, dialogs, and clientlibs from its parent.",
+      "narration": "Through resourceSuperType inheritance, what can a proxy inherit from its parent according to the speech? HTL files, dialogs, and clientlibs. The resource type resolution section explicitly says this inheritance is how a proxy inherits HTL files, dialogs, and clientlibs from its parent."
+    },
+    {
+      "id": "03-comp-024",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the Sling search path order described in the speech?",
+      "heading": "Sling searches /apps first and then /libs",
+      "body": "The speech says search paths matter and that Sling searches /apps first and then /libs.",
+      "narration": "What is the Sling search path order described in the speech? Sling searches /apps first and then /libs. The speech says search paths matter and that Sling searches /apps first and then /libs."
+    },
+    {
+      "id": "04-comp-025",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Why must /libs never be modified?",
+      "heading": "Because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime",
+      "body": "The speech says /libs must never be modified because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime.",
+      "narration": "Why must /libs never be modified? Because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime. The speech says /libs must never be modified because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime."
+    },
+    {
+      "id": "05-comp-026",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What does the version number in a component path such as core/wcm/components/image/v3/image represent?",
+      "heading": "A major version under semantic versioning for backward-incompatible changes",
+      "body": "The speech says component versioning adds a number to the resource type path and that the version represents a major version under semantic versioning, increasing only for non-backward-compatible changes.",
+      "narration": "What does the version number in a component path such as core/wcm/components/image/v3/image represent? A major version under semantic versioning for backward-incompatible changes. The speech says component versioning adds a number to the resource type path and that the version represents a major version under semantic versioning, increasing only for non-backward-compatible changes."
+    },
+    {
+      "id": "06-comp-027",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "Which kind of changes are named as backward-incompatible examples for component versioning?",
+      "heading": "Changes to Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs",
+      "body": "The speech explicitly lists incompatible changes as including Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs.",
+      "narration": "Which kind of changes are named as backward-incompatible examples for component versioning? Changes to Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs. The speech explicitly lists incompatible changes as including Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs."
+    },
+    {
+      "id": "07-comp-028",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "Given a scenario where content points directly to a versioned component path, what rule from the speech is being violated?",
+      "heading": "Content must never point to a versioned component",
+      "body": "The speech states the rule clearly: content must never point to a versioned component. Instead, content points to the proxy, and the proxy points to the versioned parent.",
+      "narration": "Given a scenario where content points directly to a versioned component path, what rule from the speech is being violated? Content must never point to a versioned component. The speech states the rule clearly: content must never point to a versioned component. Instead, content points to the proxy, and the proxy points to the versioned parent."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "It checks the resource's sling:resourceType first, then walks up sling:resourceSuperType until it finds a script",
+        "HTL files, dialogs, and clientlibs",
+        "Sling searches /apps first and then /libs",
+        "Because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime",
+        "A major version under semantic versioning for backward-incompatible changes",
+        "Changes to Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs",
+        "Content must never point to a versioned component"
+      ],
+      "narration": "Quick recap of Resource Type Resolution & Versioning. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

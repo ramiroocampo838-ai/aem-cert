@@ -1,0 +1,266 @@
+{
+  "section": "cloud-manager",
+  "sectionLabel": "cloud-manager",
+  "accent": "#a855f7",
+  "category": "CI/CD Pipelines",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "CI/CD Pipelines",
+      "sub": "cloud-manager · 22 key concepts",
+      "narration": "cloud-manager. CI/CD Pipelines. In this video we review 22 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-cm-025",
+      "type": "concept",
+      "index": 1,
+      "total": 22,
+      "question": "What is a 'Production pipeline' in Cloud Manager?",
+      "heading": "A pipeline that deploys code from Git through stage to the production environment with quality gates",
+      "body": "A Production pipeline in Cloud Manager deploys code all the way to production. It follows the sequence: build code → run code quality checks → deploy to Stage → manual approval step → deploy to Production. This ensures code is validated on stage before reaching production.",
+      "narration": "What is a 'Production pipeline' in Cloud Manager? A pipeline that deploys code from Git through stage to the production environment with quality gates. A Production pipeline in Cloud Manager deploys code all the way to production. It follows the sequence: build code → run code quality checks → deploy to Stage → manual approval step → deploy to Production. This ensures code is validated on stage before reaching production."
+    },
+    {
+      "id": "02-cm-026",
+      "type": "concept",
+      "index": 2,
+      "total": 22,
+      "question": "What code quality checks does Cloud Manager run in a pipeline?",
+      "heading": "Unit test coverage, code quality via SonarQube, and security vulnerability scanning",
+      "body": "Cloud Manager's CI/CD quality gates include: SonarQube static code analysis, unit test execution with code coverage thresholds, custom AEM code quality rules (package structure, content classification), and security vulnerability scanning. Builds fail if critical thresholds are not met.",
+      "narration": "What code quality checks does Cloud Manager run in a pipeline? Unit test coverage, code quality via SonarQube, and security vulnerability scanning. Cloud Manager's CI/CD quality gates include: SonarQube static code analysis, unit test execution with code coverage thresholds, custom AEM code quality rules (package structure, content classification), and security vulnerability scanning. Builds fail if critical thresholds are not met."
+    },
+    {
+      "id": "03-cm-027",
+      "type": "concept",
+      "index": 3,
+      "total": 22,
+      "question": "What is a 'Non-Production pipeline' in Cloud Manager?",
+      "heading": "A pipeline that deploys to dev or stage environments without going to production",
+      "body": "Non-production pipelines in Cloud Manager deploy to development or staging environments without the full production approval process. They are faster and allow teams to validate features quickly before promoting code through the production pipeline.",
+      "narration": "What is a 'Non-Production pipeline' in Cloud Manager? A pipeline that deploys to dev or stage environments without going to production. Non-production pipelines in Cloud Manager deploy to development or staging environments without the full production approval process. They are faster and allow teams to validate features quickly before promoting code through the production pipeline."
+    },
+    {
+      "id": "04-cm-028",
+      "type": "concept",
+      "index": 4,
+      "total": 22,
+      "question": "What triggers can start a Cloud Manager pipeline?",
+      "heading": "Manual trigger, Git commit push, or scheduled execution",
+      "body": "Cloud Manager pipelines support three trigger mechanisms: Manual (someone clicks Run in the UI or via API), On Git Push (automatic CI trigger when code is pushed to the configured branch), and Scheduled (run at a specific time, e.g., nightly).",
+      "narration": "What triggers can start a Cloud Manager pipeline? Manual trigger, Git commit push, or scheduled execution. Cloud Manager pipelines support three trigger mechanisms: Manual (someone clicks Run in the UI or via API), On Git Push (automatic CI trigger when code is pushed to the configured branch), and Scheduled (run at a specific time, e.g., nightly)."
+    },
+    {
+      "id": "05-cm-029",
+      "type": "concept",
+      "index": 5,
+      "total": 22,
+      "question": "What is the role of 'code quality gates' in Cloud Manager pipelines?",
+      "heading": "They enforce minimum code quality standards — failing gates stop the deployment from proceeding",
+      "body": "Code quality gates in Cloud Manager are automated checkpoints that enforce minimum standards — such as minimum unit test coverage percentages, maximum SonarQube issues, and zero critical security vulnerabilities. If a gate fails, the pipeline stops and no deployment occurs.",
+      "narration": "What is the role of 'code quality gates' in Cloud Manager pipelines? They enforce minimum code quality standards — failing gates stop the deployment from proceeding. Code quality gates in Cloud Manager are automated checkpoints that enforce minimum standards — such as minimum unit test coverage percentages, maximum SonarQube issues, and zero critical security vulnerabilities. If a gate fails, the pipeline stops and no deployment occurs."
+    },
+    {
+      "id": "06-cm-030",
+      "type": "concept",
+      "index": 6,
+      "total": 22,
+      "question": "What happens at the 'Stage Deploy' step in a Production pipeline?",
+      "heading": "The built code artifacts are deployed to the Stage environment for pre-production testing",
+      "body": "In a Cloud Manager production pipeline, the Stage Deploy step installs the built code package on the Staging AEM environment (author and publish). This allows teams to perform final integration testing, UAT, and validation before approving the deployment to production.",
+      "narration": "What happens at the 'Stage Deploy' step in a Production pipeline? The built code artifacts are deployed to the Stage environment for pre-production testing. In a Cloud Manager production pipeline, the Stage Deploy step installs the built code package on the Staging AEM environment (author and publish). This allows teams to perform final integration testing, UAT, and validation before approving the deployment to production."
+    },
+    {
+      "id": "07-cm-031",
+      "type": "concept",
+      "index": 7,
+      "total": 22,
+      "question": "What is the 'Go-Live Approval' step in a Cloud Manager production pipeline?",
+      "heading": "A manual approval gate after Stage deployment before code is deployed to Production",
+      "body": "Go-Live Approval is the manual gate in a Cloud Manager production pipeline that pauses execution after the Stage Deploy step. A user with the appropriate role (typically Deployment Manager or Business Owner) must review stage testing results and explicitly approve before the pipeline proceeds to deploy to production.",
+      "narration": "What is the 'Go-Live Approval' step in a Cloud Manager production pipeline? A manual approval gate after Stage deployment before code is deployed to Production. Go-Live Approval is the manual gate in a Cloud Manager production pipeline that pauses execution after the Stage Deploy step. A user with the appropriate role (typically Deployment Manager or Business Owner) must review stage testing results and explicitly approve before the pipeline proceeds to deploy to production."
+    },
+    {
+      "id": "08-cm-032",
+      "type": "concept",
+      "index": 8,
+      "total": 22,
+      "question": "What is the purpose of a 'Config pipeline' in Cloud Manager?",
+      "heading": "Deploying configuration changes (Dispatcher, CDN rules, log forwarding) without a full code pipeline",
+      "body": "Config pipelines in Cloud Manager are designed for deploying configuration-only changes (Dispatcher configurations, CDN WAF rules, log forwarding config) without running a full code build/test/deploy cycle. This makes configuration updates faster and reduces risk.",
+      "narration": "What is the purpose of a 'Config pipeline' in Cloud Manager? Deploying configuration changes (Dispatcher, CDN rules, log forwarding) without a full code pipeline. Config pipelines in Cloud Manager are designed for deploying configuration-only changes (Dispatcher configurations, CDN WAF rules, log forwarding config) without running a full code build/test/deploy cycle. This makes configuration updates faster and reduces risk."
+    },
+    {
+      "id": "09-cm-033",
+      "type": "concept",
+      "index": 9,
+      "total": 22,
+      "question": "What is SonarQube's role in Cloud Manager pipelines?",
+      "heading": "A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities",
+      "body": "SonarQube is a static code analysis tool integrated into Cloud Manager's quality gates. It analyzes Java source code for bugs, code smells, security hotspots, and test coverage. Cloud Manager enforces custom AEM quality rules on top of standard SonarQube rules — builds fail if thresholds for critical issues are exceeded.",
+      "narration": "What is SonarQube's role in Cloud Manager pipelines? A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities. SonarQube is a static code analysis tool integrated into Cloud Manager's quality gates. It analyzes Java source code for bugs, code smells, security hotspots, and test coverage. Cloud Manager enforces custom AEM quality rules on top of standard SonarQube rules — builds fail if thresholds for critical issues are exceeded."
+    },
+    {
+      "id": "10-cm-034",
+      "type": "concept",
+      "index": 10,
+      "total": 22,
+      "question": "What is 'variable override' for pipelines in Cloud Manager?",
+      "heading": "Environment variables set in Cloud Manager that override OSGi config values at runtime",
+      "body": "Cloud Manager supports environment-specific variables (plain text and secrets) that are injected into AEMaaCS OSGi configurations. In .cfg.json files, values reference these variables using the $[env:VARIABLE_NAME] syntax, allowing environment-specific configuration without hardcoding sensitive values.",
+      "narration": "What is 'variable override' for pipelines in Cloud Manager? Environment variables set in Cloud Manager that override OSGi config values at runtime. Cloud Manager supports environment-specific variables (plain text and secrets) that are injected into AEMaaCS OSGi configurations. In .cfg.json files, values reference these variables using the $[env:VARIABLE_NAME] syntax, allowing environment-specific configuration without hardcoding sensitive values."
+    },
+    {
+      "id": "11-cm-045",
+      "type": "concept",
+      "index": 11,
+      "total": 22,
+      "question": "What is a Production Pipeline in Cloud Manager?",
+      "heading": "A two-stage pipeline deploying code through Stage testing and then to the Production environment",
+      "body": "A Production Pipeline in Cloud Manager is the primary deployment pipeline that includes: build, code quality analysis, deployment to Stage, testing on Stage, a Go Live approval gate, and finally deployment to Production. It requires Deployment Manager or Business Owner privileges to trigger and is the primary mechanism for releasing code changes into production.",
+      "narration": "What is a Production Pipeline in Cloud Manager? A two-stage pipeline deploying code through Stage testing and then to the Production environment. A Production Pipeline in Cloud Manager is the primary deployment pipeline that includes: build, code quality analysis, deployment to Stage, testing on Stage, a Go Live approval gate, and finally deployment to Production. It requires Deployment Manager or Business Owner privileges to trigger and is the primary mechanism for releasing code changes into production."
+    },
+    {
+      "id": "12-cm-046",
+      "type": "concept",
+      "index": 12,
+      "total": 22,
+      "question": "What happens during the Build step of a Cloud Manager pipeline?",
+      "heading": "Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles",
+      "body": "During the Build step, Cloud Manager checks out the configured Git branch and runs a Maven build (mvn clean package). This compiles Java source, runs unit tests, measures code coverage, and produces the deployable artifact — typically a ZIP containing OSGi bundles and content packages. The build artifact is then used by subsequent pipeline steps.",
+      "narration": "What happens during the Build step of a Cloud Manager pipeline? Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles. During the Build step, Cloud Manager checks out the configured Git branch and runs a Maven build (mvn clean package). This compiles Java source, runs unit tests, measures code coverage, and produces the deployable artifact — typically a ZIP containing OSGi bundles and content packages. The build artifact is then used by subsequent pipeline steps."
+    },
+    {
+      "id": "13-cm-047",
+      "type": "concept",
+      "index": 13,
+      "total": 22,
+      "question": "What is the Code Quality step in a Cloud Manager pipeline?",
+      "heading": "A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds",
+      "body": "The Code Quality step runs SonarQube static analysis on the build artifact. It evaluates Reliability Rating (bugs), Security Rating (vulnerabilities), Maintainability Rating (code smells), code coverage, and duplication. Results are compared against configured thresholds — failures can be 'Critical' (hard stop) or 'Important' (overridable by Deployment Manager/Business Owner).",
+      "narration": "What is the Code Quality step in a Cloud Manager pipeline? A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds. The Code Quality step runs SonarQube static analysis on the build artifact. It evaluates Reliability Rating (bugs), Security Rating (vulnerabilities), Maintainability Rating (code smells), code coverage, and duplication. Results are compared against configured thresholds — failures can be 'Critical' (hard stop) or 'Important' (overridable by Deployment Manager/Business Owner)."
+    },
+    {
+      "id": "14-cm-048",
+      "type": "concept",
+      "index": 14,
+      "total": 22,
+      "question": "What are the three SonarQube metric categories evaluated in Cloud Manager's Code Quality step?",
+      "heading": "Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt)",
+      "body": "Cloud Manager's Code Quality step evaluates three core SonarQube rating dimensions: Reliability Rating (bugs/crashes), Security Rating (vulnerabilities and hotspots), and Maintainability Rating (code smells and technical debt ratio). Each is rated A through E, and Cloud Manager configures thresholds that trigger Critical or Important failures.",
+      "narration": "What are the three SonarQube metric categories evaluated in Cloud Manager's Code Quality step? Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt). Cloud Manager's Code Quality step evaluates three core SonarQube rating dimensions: Reliability Rating (bugs/crashes), Security Rating (vulnerabilities and hotspots), and Maintainability Rating (code smells and technical debt ratio). Each is rated A through E, and Cloud Manager configures thresholds that trigger Critical or Important failures."
+    },
+    {
+      "id": "15-cm-049",
+      "type": "concept",
+      "index": 15,
+      "total": 22,
+      "question": "What is the difference between 'Critical' and 'Important' quality gate failures in Cloud Manager?",
+      "heading": "Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner",
+      "body": "Cloud Manager quality gates have two failure levels: Critical failures immediately stop the pipeline and cannot be overridden — the code must be fixed. Important failures pause the pipeline where a user with Deployment Manager or Business Owner role can choose to override and continue (accepting the risk) or reject. This gives teams flexibility without compromising on hard requirements.",
+      "narration": "What is the difference between 'Critical' and 'Important' quality gate failures in Cloud Manager? Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner. Cloud Manager quality gates have two failure levels: Critical failures immediately stop the pipeline and cannot be overridden — the code must be fixed. Important failures pause the pipeline where a user with Deployment Manager or Business Owner role can choose to override and continue (accepting the risk) or reject. This gives teams flexibility without compromising on hard requirements."
+    },
+    {
+      "id": "16-cm-050",
+      "type": "concept",
+      "index": 16,
+      "total": 22,
+      "question": "What triggers a Cloud Manager Production Pipeline execution?",
+      "heading": "A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured",
+      "body": "Production Pipelines can be triggered manually, by a Deployment Manager or Business Owner clicking 'Run' in the Cloud Manager UI (or via API); or automatically, when configured in 'Continuous Deployment' mode where pushes to the configured Git branch auto-trigger the pipeline. The Business Owner or Deployment Manager must handle the Go Live Approval gate.",
+      "narration": "What triggers a Cloud Manager Production Pipeline execution? A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured. Production Pipelines can be triggered manually, by a Deployment Manager or Business Owner clicking 'Run' in the Cloud Manager UI (or via API); or automatically, when configured in 'Continuous Deployment' mode where pushes to the configured Git branch auto-trigger the pipeline. The Business Owner or Deployment Manager must handle the Go Live Approval gate."
+    },
+    {
+      "id": "17-cm-051",
+      "type": "concept",
+      "index": 17,
+      "total": 22,
+      "question": "What is the 'Go Live Approval' step in a Production Pipeline?",
+      "heading": "A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment",
+      "body": "The Go Live Approval pauses the Production pipeline after Stage testing is complete. A Business Owner or Deployment Manager must explicitly approve the deployment to proceed to Production. They can also schedule the deployment for a future time window. If not approved within the configured expiry period, the pipeline expires and must be re-run.",
+      "narration": "What is the 'Go Live Approval' step in a Production Pipeline? A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment. The Go Live Approval pauses the Production pipeline after Stage testing is complete. A Business Owner or Deployment Manager must explicitly approve the deployment to proceed to Production. They can also schedule the deployment for a future time window. If not approved within the configured expiry period, the pipeline expires and must be re-run."
+    },
+    {
+      "id": "18-cm-052",
+      "type": "concept",
+      "index": 18,
+      "total": 22,
+      "question": "What is Blue/Green deployment in AEM as a Cloud Service?",
+      "heading": "A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches",
+      "body": "Blue/Green deployment is AEMaaCS's built-in zero-downtime deployment mechanism. The current live environment is 'Blue' and the new deployment goes to 'Green' (the standby). Once the new version is validated via health checks, traffic is automatically switched from Blue to Green. The old Blue environment remains briefly available for rollback.",
+      "narration": "What is Blue/Green deployment in AEM as a Cloud Service? A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches. Blue/Green deployment is AEMaaCS's built-in zero-downtime deployment mechanism. The current live environment is 'Blue' and the new deployment goes to 'Green' (the standby). Once the new version is validated via health checks, traffic is automatically switched from Blue to Green. The old Blue environment remains briefly available for rollback."
+    },
+    {
+      "id": "19-cm-053",
+      "type": "concept",
+      "index": 19,
+      "total": 22,
+      "question": "What is the purpose of 'Dispatcher Flush' after a pipeline deployment?",
+      "heading": "Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses",
+      "body": "After deployment, the Dispatcher (which caches AEM Publish responses) must have its cache cleared to ensure visitors receive newly deployed content rather than stale cached responses. AEMaaCS handles this by sending flush/invalidation requests to the Dispatcher automatically as part of the deployment pipeline, targeting pages associated with changed content paths.",
+      "narration": "What is the purpose of 'Dispatcher Flush' after a pipeline deployment? Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses. After deployment, the Dispatcher (which caches AEM Publish responses) must have its cache cleared to ensure visitors receive newly deployed content rather than stale cached responses. AEMaaCS handles this by sending flush/invalidation requests to the Dispatcher automatically as part of the deployment pipeline, targeting pages associated with changed content paths."
+    },
+    {
+      "id": "20-cm-054",
+      "type": "concept",
+      "index": 20,
+      "total": 22,
+      "question": "Where does Cloud Manager store the AEM project source code?",
+      "heading": "In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection",
+      "body": "Cloud Manager provides a built-in Adobe-hosted Git repository for each program. Additionally, Cloud Manager supports connecting external repositories — GitHub (Cloud and Enterprise), GitLab, and Bitbucket — so teams can continue using their existing VCS workflows. Pipelines can be configured to pull from any connected repository and branch.",
+      "narration": "Where does Cloud Manager store the AEM project source code? In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection. Cloud Manager provides a built-in Adobe-hosted Git repository for each program. Additionally, Cloud Manager supports connecting external repositories — GitHub (Cloud and Enterprise), GitLab, and Bitbucket — so teams can continue using their existing VCS workflows. Pipelines can be configured to pull from any connected repository and branch."
+    },
+    {
+      "id": "21-cm-055",
+      "type": "concept",
+      "index": 21,
+      "total": 22,
+      "question": "What is a Non-Production Pipeline in Cloud Manager?",
+      "heading": "A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production",
+      "body": "Non-Production Pipelines in Cloud Manager target Dev environments (and optionally Stage). They run the same steps as a Production pipeline (build, code quality, deployment) but don't include the Production deployment or Go Live Approval gate. This enables faster feedback loops — developers can validate changes in a real AEM environment without going through the full Production pipeline flow.",
+      "narration": "What is a Non-Production Pipeline in Cloud Manager? A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production. Non-Production Pipelines in Cloud Manager target Dev environments (and optionally Stage). They run the same steps as a Production pipeline (build, code quality, deployment) but don't include the Production deployment or Go Live Approval gate. This enables faster feedback loops — developers can validate changes in a real AEM environment without going through the full Production pipeline flow."
+    },
+    {
+      "id": "22-cm-056",
+      "type": "concept",
+      "index": 22,
+      "total": 22,
+      "question": "What is a 'Web Tier Config Pipeline' in Cloud Manager?",
+      "heading": "A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build",
+      "body": "Web Tier Config Pipelines are a Cloud Manager pipeline type that deploy only Dispatcher/httpd configuration changes (filter rules, rewrite rules, virtual host configs) without triggering a full Maven build or OSGi bundle deployment. This allows teams to quickly iterate on Dispatcher configuration independently from the main codebase deployment cycle.",
+      "narration": "What is a 'Web Tier Config Pipeline' in Cloud Manager? A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build. Web Tier Config Pipelines are a Cloud Manager pipeline type that deploy only Dispatcher/httpd configuration changes (filter rules, rewrite rules, virtual host configs) without triggering a full Maven build or OSGi bundle deployment. This allows teams to quickly iterate on Dispatcher configuration independently from the main codebase deployment cycle."
+    },
+    {
+      "id": "23-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "A pipeline that deploys code from Git through stage to the production environment with quality gates",
+        "Unit test coverage, code quality via SonarQube, and security vulnerability scanning",
+        "A pipeline that deploys to dev or stage environments without going to production",
+        "Manual trigger, Git commit push, or scheduled execution",
+        "They enforce minimum code quality standards — failing gates stop the deployment from proceeding",
+        "The built code artifacts are deployed to the Stage environment for pre-production testing",
+        "A manual approval gate after Stage deployment before code is deployed to Production",
+        "Deploying configuration changes (Dispatcher, CDN rules, log forwarding) without a full code pipeline",
+        "A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities",
+        "Environment variables set in Cloud Manager that override OSGi config values at runtime",
+        "A two-stage pipeline deploying code through Stage testing and then to the Production environment",
+        "Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles",
+        "A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds",
+        "Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt)",
+        "Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner",
+        "A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured",
+        "A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment",
+        "A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches",
+        "Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses",
+        "In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection",
+        "A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production",
+        "A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build"
+      ],
+      "narration": "Quick recap of CI/CD Pipelines. A pipeline that deploys code from Git through stage to the production environment with quality gates. Unit test coverage, code quality via SonarQube, and security vulnerability scanning. A pipeline that deploys to dev or stage environments without going to production. Manual trigger, Git commit push, or scheduled execution. They enforce minimum code quality standards — failing gates stop the deployment from proceeding. The built code artifacts are deployed to the Stage environment for pre-production testing. A manual approval gate after Stage deployment before code is deployed to Production. Deploying configuration changes (Dispatcher, CDN rules, log forwarding) without a full code pipeline. A static code analysis tool that checks for code quality issues, bugs, and security vulnerabilities. Environment variables set in Cloud Manager that override OSGi config values at runtime. A two-stage pipeline deploying code through Stage testing and then to the Production environment. Maven builds the AEM project, running unit tests and producing deployable content packages and OSGi bundles. A step that runs SonarQube analysis and evaluates against predefined quality gate thresholds. Reliability (bugs), Security (vulnerabilities), and Maintainability (code smells/technical debt). Critical failures block the pipeline immediately and cannot be overridden; Important failures can be manually bypassed by a Deployment Manager or Business Owner. A manual trigger by a Deployment Manager or Business Owner, or automatic trigger if CI mode is configured. A manual approval gate after Stage testing where a Business Owner or Deployment Manager must approve before Production deployment. A zero-downtime strategy where new code goes to an idle environment (Green) while current (Blue) stays live, then traffic switches. Clears the Dispatcher cache after deployment so updated content and code changes are served without stale cached responses. In an Adobe-hosted Git repository or an external Git repository linked via a Cloud Manager connection. A pipeline targeting Dev environments that runs build, code quality, and deployment steps without going to Stage or Production. A specialized pipeline for deploying only Dispatcher/CDN configuration changes without triggering a full code build."
+    }
+  ]
+}

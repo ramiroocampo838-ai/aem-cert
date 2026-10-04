@@ -1,0 +1,102 @@
+{
+  "section": "components",
+  "sectionLabel": "Components",
+  "accent": "#f43f5e",
+  "category": "HTL Templates & Use-API",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "HTL Templates & Use-API",
+      "sub": "Components · 7 key concepts",
+      "narration": "Components. HTL Templates & Use-API. In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-comp-044",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "What do data-sly-template and data-sly-call do?",
+      "heading": "data-sly-template defines a reusable template with parameters, and data-sly-call invokes it",
+      "body": "The speech says data-sly-template defines a reusable template with parameters in a file, and data-sly-call invokes it.",
+      "narration": "What do data-sly-template and data-sly-call do? data-sly-template defines a reusable template with parameters, and data-sly-call invokes it. The speech says data-sly-template defines a reusable template with parameters in a file, and data-sly-call invokes it."
+    },
+    {
+      "id": "02-comp-045",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "How do you use templates from another file in HTL?",
+      "heading": "Load the file with data-sly-use and then call the template with data-sly-call",
+      "body": "The speech says that to use templates from another file, you first load the file with data-sly-use.templates=\"template.html\" and then call it with data-sly-call.",
+      "narration": "How do you use templates from another file in HTL? Load the file with data-sly-use and then call the template with data-sly-call. The speech says that to use templates from another file, you first load the file with data-sly-use.templates=\"template.html\" and then call it with data-sly-call."
+    },
+    {
+      "id": "03-comp-046",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What is the difference between data-sly-include and data-sly-resource?",
+      "heading": "data-sly-include includes the output of another script as markup, while data-sly-resource includes a resource rendered through its own component",
+      "body": "The speech says data-sly-include includes the output of another script as markup and does not change the processing context, while data-sly-resource includes a resource rendered through its own component.",
+      "narration": "What is the difference between data-sly-include and data-sly-resource? data-sly-include includes the output of another script as markup, while data-sly-resource includes a resource rendered through its own component. The speech says data-sly-include includes the output of another script as markup and does not change the processing context, while data-sly-resource includes a resource rendered through its own component."
+    },
+    {
+      "id": "04-comp-047",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "Which options does the speech say you can pass to data-sly-resource?",
+      "heading": "resourceType, selectors, wcmmode, prependPath, and appendPath",
+      "body": "The speech says data-sly-resource can take options such as resourceType to force a component, selectors, wcmmode, prependPath, and appendPath.",
+      "narration": "Which options does the speech say you can pass to data-sly-resource? resourceType, selectors, wcmmode, prependPath, and appendPath. The speech says data-sly-resource can take options such as resourceType to force a component, selectors, wcmmode, prependPath, and appendPath."
+    },
+    {
+      "id": "05-comp-048",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "What can data-sly-use load through the Use-API?",
+      "heading": "A Java class, which can be a Sling Model, or a JavaScript Use-API file",
+      "body": "The speech says the Use-API is how HTL reaches logic and that data-sly-use can load a Java class, which may be a Sling Model, or a JavaScript Use-API file.",
+      "narration": "What can data-sly-use load through the Use-API? A Java class, which can be a Sling Model, or a JavaScript Use-API file. The speech says the Use-API is how HTL reaches logic and that data-sly-use can load a Java class, which may be a Sling Model, or a JavaScript Use-API file."
+    },
+    {
+      "id": "06-comp-049",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What is the recommended modern approach for HTL logic according to the speech?",
+      "heading": "Use Sling Models",
+      "body": "The speech says that while data-sly-use can load Java or JavaScript helpers, the recommended approach today is Sling Models.",
+      "narration": "What is the recommended modern approach for HTL logic according to the speech? Use Sling Models. The speech says that while data-sly-use can load Java or JavaScript helpers, the recommended approach today is Sling Models."
+    },
+    {
+      "id": "07-comp-050",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "When a Sling Model is loaded through the Sling Models Use Provider, what adaptable does it receive first if supported?",
+      "heading": "The request, and otherwise the resource",
+      "body": "The speech says that when loaded through the Sling Models Use Provider, the model gets the request as adaptable if it supports it, and the resource otherwise.",
+      "narration": "When a Sling Model is loaded through the Sling Models Use Provider, what adaptable does it receive first if supported? The request, and otherwise the resource. The speech says that when loaded through the Sling Models Use Provider, the model gets the request as adaptable if it supports it, and the resource otherwise."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "data-sly-template defines a reusable template with parameters, and data-sly-call invokes it",
+        "Load the file with data-sly-use and then call the template with data-sly-call",
+        "data-sly-include includes the output of another script as markup, while data-sly-resource includes a resource rendered through its own component",
+        "resourceType, selectors, wcmmode, prependPath, and appendPath",
+        "A Java class, which can be a Sling Model, or a JavaScript Use-API file",
+        "Use Sling Models",
+        "The request, and otherwise the resource"
+      ],
+      "narration": "Quick recap of HTL Templates & Use-API. Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}

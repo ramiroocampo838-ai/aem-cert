@@ -1,0 +1,113 @@
+{
+  "section": "dispatcher",
+  "sectionLabel": "Dispatcher",
+  "accent": "#d946ef",
+  "category": "Introduction",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Introduction",
+      "sub": "Dispatcher · 8 key concepts",
+      "narration": "Dispatcher. Introduction. In this video we review 8 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-disp-001",
+      "type": "concept",
+      "index": 1,
+      "total": 8,
+      "question": "This Dispatcher lesson maps mainly to which exam area, and about what percentage of the exam does it represent?",
+      "heading": "This lesson maps to Configurations, about 15 percent of the exam",
+      "body": "The introduction says this lesson maps to the Configurations part of the exam, about 15 percent.",
+      "narration": "This Dispatcher lesson maps mainly to which exam area, and about what percentage of the exam does it represent? This lesson maps to Configurations, about 15 percent of the exam. The introduction says this lesson maps to the Configurations part of the exam, about 15 percent."
+    },
+    {
+      "id": "02-disp-002",
+      "type": "concept",
+      "index": 2,
+      "total": 8,
+      "question": "Besides Configurations, which two exam-support areas does the lesson explicitly say this topic helps with?",
+      "heading": "The lesson also supports Build and Deployment and Analyzing and Debugging",
+      "body": "The introduction states that this lesson supports Build and Deployment and Analyzing and Debugging.",
+      "narration": "Besides Configurations, which two exam-support areas does the lesson explicitly say this topic helps with? The lesson also supports Build and Deployment and Analyzing and Debugging. The introduction states that this lesson supports Build and Deployment and Analyzing and Debugging."
+    },
+    {
+      "id": "03-disp-003",
+      "type": "concept",
+      "index": 3,
+      "total": 8,
+      "question": "What kind of exam questions does the speech tell you to expect for Dispatcher topics?",
+      "heading": "Expect scenario questions such as why a page was not cached, which file holds a rule, and how cache invalidation works",
+      "body": "The introduction explicitly says to expect scenario questions such as why a page was not cached, which file holds a rule, how the cache is invalidated, and what fails validation.",
+      "narration": "What kind of exam questions does the speech tell you to expect for Dispatcher topics? Expect scenario questions such as why a page was not cached, which file holds a rule, and how cache invalidation works. The introduction explicitly says to expect scenario questions such as why a page was not cached, which file holds a rule, how the cache is invalidated, and what fails validation."
+    },
+    {
+      "id": "04-disp-004",
+      "type": "concept",
+      "index": 4,
+      "total": 8,
+      "question": "In AEM as a Cloud Service, what path does traffic follow before it reaches the publish nodes?",
+      "heading": "Traffic passes through the CDN to an Apache web server layer that supports Dispatcher before reaching publish",
+      "body": "The introduction says that in AEM as a Cloud Service, traffic passes through the CDN to an Apache web server layer that supports Dispatcher.",
+      "narration": "In AEM as a Cloud Service, what path does traffic follow before it reaches the publish nodes? Traffic passes through the CDN to an Apache web server layer that supports Dispatcher before reaching publish. The introduction says that in AEM as a Cloud Service, traffic passes through the CDN to an Apache web server layer that supports Dispatcher."
+    },
+    {
+      "id": "05-disp-005",
+      "type": "concept",
+      "index": 5,
+      "total": 8,
+      "question": "What is Dispatcher used for primarily in the architecture described by the speech?",
+      "heading": "Dispatcher is used primarily as a cache to limit processing on the publish nodes",
+      "body": "The speech says Dispatcher is used primarily as a cache to limit processing on the publish nodes.",
+      "narration": "What is Dispatcher used for primarily in the architecture described by the speech? Dispatcher is used primarily as a cache to limit processing on the publish nodes. The speech says Dispatcher is used primarily as a cache to limit processing on the publish nodes."
+    },
+    {
+      "id": "06-disp-006",
+      "type": "concept",
+      "index": 6,
+      "total": 8,
+      "question": "Why does the speech also describe Dispatcher as a security layer?",
+      "heading": "Dispatcher is also a security layer because filters control which requests reach AEM",
+      "body": "The introduction states that Dispatcher is also a security layer because filters control which requests reach AEM.",
+      "narration": "Why does the speech also describe Dispatcher as a security layer? Dispatcher is also a security layer because filters control which requests reach AEM. The introduction states that Dispatcher is also a security layer because filters control which requests reach AEM."
+    },
+    {
+      "id": "07-disp-007",
+      "type": "concept",
+      "index": 7,
+      "total": 8,
+      "question": "A mock exam asks, \"Why was this page not cached?\" Which section of the certification blueprint is this lesson said to reinforce beyond Configurations?",
+      "heading": "That scenario also reinforces Analyzing and Debugging",
+      "body": "The introduction says this topic supports Analyzing and Debugging as well as Build and Deployment.",
+      "narration": "A mock exam asks, \"Why was this page not cached?\" Which section of the certification blueprint is this lesson said to reinforce beyond Configurations? That scenario also reinforces Analyzing and Debugging. The introduction says this topic supports Analyzing and Debugging as well as Build and Deployment."
+    },
+    {
+      "id": "08-disp-008",
+      "type": "concept",
+      "index": 8,
+      "total": 8,
+      "question": "What content-delivery layer does the lesson say it is about when it shifts from components, Maven, workflows, and fragments?",
+      "heading": "The lesson shifts to the Apache web server layer with the Dispatcher module and its caching",
+      "body": "The introduction says the lesson looks at how content is delivered: the Apache web server layer with Dispatcher and the caching around it.",
+      "narration": "What content-delivery layer does the lesson say it is about when it shifts from components, Maven, workflows, and fragments? The lesson shifts to the Apache web server layer with the Dispatcher module and its caching. The introduction says the lesson looks at how content is delivered: the Apache web server layer with Dispatcher and the caching around it."
+    },
+    {
+      "id": "09-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "This lesson maps to Configurations, about 15 percent of the exam",
+        "The lesson also supports Build and Deployment and Analyzing and Debugging",
+        "Expect scenario questions such as why a page was not cached, which file holds a rule, and how cache invalidation works",
+        "Traffic passes through the CDN to an Apache web server layer that supports Dispatcher before reaching publish",
+        "Dispatcher is used primarily as a cache to limit processing on the publish nodes",
+        "Dispatcher is also a security layer because filters control which requests reach AEM",
+        "That scenario also reinforces Analyzing and Debugging",
+        "The lesson shifts to the Apache web server layer with the Dispatcher module and its caching"
+      ],
+      "narration": "Quick recap of Introduction. Take a moment to review these 8 key points.",
+      "hold": 20
+    }
+  ]
+}

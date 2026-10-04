@@ -1,0 +1,80 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Template Lifecycle & Properties (Part 1 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Template Lifecycle & Properties (Part 1 of 2)",
+      "sub": "Templates · 5 key concepts",
+      "narration": "Templates. Template Lifecycle & Properties (Part 1 of 2). In this video we review 5 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-031",
+      "type": "concept",
+      "index": 1,
+      "total": 5,
+      "question": "What is the general lifecycle a template goes through before it's usable to create pages?",
+      "heading": "Create, configure, enable, allow, and publish",
+      "body": "A template goes through a clear lifecycle: create it, configure its structure/content/policies, enable it so it's selectable, allow it for specific content branches, and publish it so it's available on the publish environment.",
+      "narration": "What is the general lifecycle a template goes through before it's usable to create pages? Create, configure, enable, allow, and publish. A template goes through a clear lifecycle: create it, configure its structure/content/policies, enable it so it's selectable, allow it for specific content branches, and publish it so it's available on the publish environment."
+    },
+    {
+      "id": "02-tmpl-032",
+      "type": "concept",
+      "index": 2,
+      "total": 5,
+      "question": "What does enabling a template do?",
+      "heading": "It makes the template accessible for selection in the Create Page wizard",
+      "body": "Enabling a template makes it accessible for use during the page creation process — this step ensures the template appears as an option when selecting a template for a new page.",
+      "narration": "What does enabling a template do? It makes the template accessible for selection in the Create Page wizard. Enabling a template makes it accessible for use during the page creation process — this step ensures the template appears as an option when selecting a template for a new page."
+    },
+    {
+      "id": "03-tmpl-033",
+      "type": "concept",
+      "index": 3,
+      "total": 5,
+      "question": "What does allowing a template do, and where do you configure it?",
+      "heading": "It specifies the content branches or areas where the template can be used, via Page Properties > Advanced > Template Settings",
+      "body": "Allowing a template specifies the content branches or areas where the template can be utilized, configured in the root page's Page Properties dialog, Advanced tab, Template Settings section — you can add explicit paths or patterns, e.g. /conf/<folder>/settings/wcm/templates/.*",
+      "narration": "What does allowing a template do, and where do you configure it? It specifies the content branches or areas where the template can be used, via Page Properties > Advanced > Template Settings. Allowing a template specifies the content branches or areas where the template can be utilized, configured in the root page's Page Properties dialog, Advanced tab, Template Settings section — you can add explicit paths or patterns, e.g. /conf/<folder>/settings/wcm/templates/.*"
+    },
+    {
+      "id": "04-tmpl-034",
+      "type": "concept",
+      "index": 4,
+      "total": 5,
+      "question": "What happens if the Allowed Templates list is left empty on a page branch?",
+      "heading": "The tree is ascended until a value or list is found, so templates allowed at higher levels of the hierarchy are also considered",
+      "body": "If the Allowed Templates list is left empty, the tree will be ascended until a value or list is found, meaning templates allowed at higher levels of the hierarchy will also be considered for that branch.",
+      "narration": "What happens if the Allowed Templates list is left empty on a page branch? The tree is ascended until a value or list is found, so templates allowed at higher levels of the hierarchy are also considered. If the Allowed Templates list is left empty, the tree will be ascended until a value or list is found, meaning templates allowed at higher levels of the hierarchy will also be considered for that branch."
+    },
+    {
+      "id": "05-tmpl-035",
+      "type": "concept",
+      "index": 5,
+      "total": 5,
+      "question": "What does publishing a template accomplish?",
+      "heading": "It makes the fully configured template, and optionally its content policies, available on the publish environment",
+      "body": "Publishing a template is necessary to make the fully configured template available on the publish environment when a page is rendered — you can also select content policies to publish alongside it.",
+      "narration": "What does publishing a template accomplish? It makes the fully configured template, and optionally its content policies, available on the publish environment. Publishing a template is necessary to make the fully configured template available on the publish environment when a page is rendered — you can also select content policies to publish alongside it."
+    },
+    {
+      "id": "06-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Create, configure, enable, allow, and publish",
+        "It makes the template accessible for selection in the Create Page wizard",
+        "It specifies the content branches or areas where the template can be used, via Page Properties > Advanced > Template Settings",
+        "The tree is ascended until a value or list is found, so templates allowed at higher levels of the hierarchy are also considered",
+        "It makes the fully configured template, and optionally its content policies, available on the publish environment"
+      ],
+      "narration": "Quick recap of Template Lifecycle & Properties (Part 1 of 2). Take a moment to review these 5 key points.",
+      "hold": 13
+    }
+  ]
+}

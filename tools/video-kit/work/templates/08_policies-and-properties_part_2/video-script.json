@@ -1,0 +1,102 @@
+{
+  "section": "templates",
+  "sectionLabel": "Templates",
+  "accent": "#f59e0b",
+  "category": "Policies & Properties (Part 2 of 2)",
+  "voice": "en-US-GuyNeural",
+  "scenes": [
+    {
+      "id": "00-title",
+      "type": "title",
+      "heading": "Policies & Properties (Part 2 of 2)",
+      "sub": "Templates · 7 key concepts",
+      "narration": "Templates. Policies & Properties (Part 2 of 2). In this video we review 7 key concepts you need to know for the certification."
+    },
+    {
+      "id": "01-tmpl-063",
+      "type": "concept",
+      "index": 1,
+      "total": 7,
+      "question": "Which components are eligible for configuration on the Default Components tab?",
+      "heading": "Only components with drop zones — specific areas within a component where assets can be dropped",
+      "body": "Only components with drop zones are available for configuration in the Default Components tab. Drop zones are specific areas within a component where assets can be dropped or associated.",
+      "narration": "Which components are eligible for configuration on the Default Components tab? Only components with drop zones — specific areas within a component where assets can be dropped. Only components with drop zones are available for configuration in the Default Components tab. Drop zones are specific areas within a component where assets can be dropped or associated."
+    },
+    {
+      "id": "02-tmpl-064",
+      "type": "concept",
+      "index": 2,
+      "total": 7,
+      "question": "What does the Responsive Settings tab of a layout container let you specify?",
+      "heading": "The number of columns in the grid layout of the container, for different screen sizes/devices",
+      "body": "In the Responsive Settings tab, you can specify the number of columns in the grid layout of the container, customizing the responsive behavior and layout of the container based on different screen sizes and devices.",
+      "narration": "What does the Responsive Settings tab of a layout container let you specify? The number of columns in the grid layout of the container, for different screen sizes/devices. In the Responsive Settings tab, you can specify the number of columns in the grid layout of the container, customizing the responsive behavior and layout of the container based on different screen sizes and devices."
+    },
+    {
+      "id": "03-tmpl-065",
+      "type": "concept",
+      "index": 3,
+      "total": 7,
+      "question": "What visual indicator shows that a component has been unlocked in the template editor?",
+      "heading": "An open padlock symbol on the component's border",
+      "body": "When a component is unlocked, an open padlock symbol is displayed on the component's border, indicating it is unlocked and editable, and its toolbar adjusts to include editing and configuration options.",
+      "narration": "What visual indicator shows that a component has been unlocked in the template editor? An open padlock symbol on the component's border. When a component is unlocked, an open padlock symbol is displayed on the component's border, indicating it is unlocked and editable, and its toolbar adjusts to include editing and configuration options."
+    },
+    {
+      "id": "04-tmpl-066",
+      "type": "concept",
+      "index": 4,
+      "total": 7,
+      "question": "What restriction applies to the parent components of an unlocked component?",
+      "heading": "They can no longer be moved, cut, or deleted, ensuring the integrity and structure of the layout",
+      "body": "The parent components of an unlocked component cannot be moved, cut, or deleted, ensuring the integrity and structure of the layout is preserved even as the unlocked child becomes editable.",
+      "narration": "What restriction applies to the parent components of an unlocked component? They can no longer be moved, cut, or deleted, ensuring the integrity and structure of the layout. The parent components of an unlocked component cannot be moved, cut, or deleted, ensuring the integrity and structure of the layout is preserved even as the unlocked child becomes editable."
+    },
+    {
+      "id": "05-tmpl-067",
+      "type": "concept",
+      "index": 5,
+      "total": 7,
+      "question": "How does a layout container display its list of allowed components, to save space?",
+      "heading": "It becomes a scrollable list rather than growing to accommodate the full list of allowed components",
+      "body": "To save space, the layout container does not grow to accommodate the list of allowed components. Rather, the container becomes a scrollable list, with configurable components shown with a Policy icon.",
+      "narration": "How does a layout container display its list of allowed components, to save space? It becomes a scrollable list rather than growing to accommodate the full list of allowed components. To save space, the layout container does not grow to accommodate the list of allowed components. Rather, the container becomes a scrollable list, with configurable components shown with a Policy icon."
+    },
+    {
+      "id": "06-tmpl-068",
+      "type": "concept",
+      "index": 6,
+      "total": 7,
+      "question": "What happens to existing pages when you update the structure of a template they were created from?",
+      "heading": "They automatically reflect the changes, with a warning displayed as a reminder of the potential impact",
+      "body": "If you make updates to the structure of a template after creating pages based on it, those pages automatically reflect the changes made to the template's structure — a warning is displayed as a reminder, with confirmation dialogs for potential impact.",
+      "narration": "What happens to existing pages when you update the structure of a template they were created from? They automatically reflect the changes, with a warning displayed as a reminder of the potential impact. If you make updates to the structure of a template after creating pages based on it, those pages automatically reflect the changes made to the template's structure — a warning is displayed as a reminder, with confirmation dialogs for potential impact."
+    },
+    {
+      "id": "07-tmpl-069",
+      "type": "concept",
+      "index": 7,
+      "total": 7,
+      "question": "What caution should you take when locking or unlocking components on an already-enabled template?",
+      "heading": "Take special caution — unlocking a previously-locked component can cause it to be missing on existing pages, and locking a previously-editable one hides its content",
+      "body": "Special caution is needed when locking or unlocking components on enabled templates, since existing pages may already use the component. Unlocking a locked component typically causes it to be missing on existing pages; locking an editable one hides its content from display.",
+      "narration": "What caution should you take when locking or unlocking components on an already-enabled template? Take special caution — unlocking a previously-locked component can cause it to be missing on existing pages, and locking a previously-editable one hides its content. Special caution is needed when locking or unlocking components on enabled templates, since existing pages may already use the component. Unlocking a locked component typically causes it to be missing on existing pages; locking an editable one hides its content from display."
+    },
+    {
+      "id": "08-recap",
+      "type": "recap",
+      "heading": "Quick recap",
+      "items": [
+        "Only components with drop zones — specific areas within a component where assets can be dropped",
+        "The number of columns in the grid layout of the container, for different screen sizes/devices",
+        "An open padlock symbol on the component's border",
+        "They can no longer be moved, cut, or deleted, ensuring the integrity and structure of the layout",
+        "It becomes a scrollable list rather than growing to accommodate the full list of allowed components",
+        "They automatically reflect the changes, with a warning displayed as a reminder of the potential impact",
+        "Take special caution — unlocking a previously-locked component can cause it to be missing on existing pages, and locking a previously-editable one hides its content"
+      ],
+      "narration": "Quick recap of Policies & Properties (Part 2 of 2). Take a moment to review these 7 key points.",
+      "hold": 18
+    }
+  ]
+}
