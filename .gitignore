@@ -22,7 +22,8 @@ yarn-error.log*
 
 # md files
 *.md
-!VIDEO-KIT.md*.txt
+!VIDEO-KIT.md
+*.txt
 !public/speeches/*.txt
 !public/audios/
 !public/music/
