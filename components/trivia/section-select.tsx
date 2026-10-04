@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpen, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
+import { BookOpen, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, Blocks, Package, Workflow, Server, Database } from "lucide-react"
 import type { TriviaSection, TriviaSectionConfig } from "@/lib/trivia-types"
 import { INTRO_SECTION_CONFIG } from "@/lib/trivia-intro-questions"
 import { CLOUD_MANAGER_SECTION_CONFIG } from "@/lib/trivia-cloud-manager-questions"
@@ -8,8 +8,13 @@ import { CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-code-quality-questions
 import { ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
 import { AUTHENTICATION_SECTION_CONFIG } from "@/lib/trivia-authentication-questions"
 import { TEMPLATES_SECTION_CONFIG } from "@/lib/trivia-templates-questions"
+import { COMPONENTS_SECTION_CONFIG } from "@/lib/trivia-components-questions"
+import { MAVEN_SECTION_CONFIG } from "@/lib/trivia-maven-questions"
+import { WORKFLOWS_SECTION_CONFIG } from "@/lib/trivia-workflows-questions"
+import { DISPATCHER_SECTION_CONFIG } from "@/lib/trivia-dispatcher-questions"
+import { OAKOPS_SECTION_CONFIG } from "@/lib/trivia-oakops-questions"
 
-const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG, AUTHENTICATION_SECTION_CONFIG, TEMPLATES_SECTION_CONFIG]
+const SECTIONS: TriviaSectionConfig[] = [INTRO_SECTION_CONFIG, CLOUD_MANAGER_SECTION_CONFIG, CODE_QUALITY_SECTION_CONFIG, ENV_SETUP_SECTION_CONFIG, AUTHENTICATION_SECTION_CONFIG, TEMPLATES_SECTION_CONFIG, COMPONENTS_SECTION_CONFIG, MAVEN_SECTION_CONFIG, WORKFLOWS_SECTION_CONFIG, DISPATCHER_SECTION_CONFIG, OAKOPS_SECTION_CONFIG]
 
 const ICON_MAP: Record<string, React.ElementType> = {
   BookOpen,
@@ -18,6 +23,11 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Terminal,
   Fingerprint,
   LayoutTemplate,
+  Blocks,
+  Package,
+  Workflow,
+  Server,
+  Database,
 }
 
 const COLOR_CLASSES = {
@@ -68,6 +78,46 @@ const COLOR_CLASSES = {
     button:
       "bg-amber-600 hover:bg-amber-700 text-white shadow-amber-200 dark:bg-amber-700 dark:hover:bg-amber-600 dark:shadow-amber-900/50",
     glow: "group-hover:shadow-amber-200/60 dark:group-hover:shadow-amber-800/40",
+  },
+  rose: {
+    card: "border-rose-200 hover:border-rose-400 hover:shadow-rose-100 dark:border-rose-800 dark:hover:border-rose-500 dark:hover:shadow-rose-900/40",
+    icon: "bg-rose-100 text-rose-600 dark:bg-rose-900/40 dark:text-rose-400",
+    badge: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
+    button:
+      "bg-rose-600 hover:bg-rose-700 text-white shadow-rose-200 dark:bg-rose-700 dark:hover:bg-rose-600 dark:shadow-rose-900/50",
+    glow: "group-hover:shadow-rose-200/60 dark:group-hover:shadow-rose-800/40",
+  },
+  indigo: {
+    card: "border-indigo-200 hover:border-indigo-400 hover:shadow-indigo-100 dark:border-indigo-800 dark:hover:border-indigo-500 dark:hover:shadow-indigo-900/40",
+    icon: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400",
+    badge: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
+    button:
+      "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 dark:bg-indigo-700 dark:hover:bg-indigo-600 dark:shadow-indigo-900/50",
+    glow: "group-hover:shadow-indigo-200/60 dark:group-hover:shadow-indigo-800/40",
+  },
+  teal: {
+    card: "border-teal-200 hover:border-teal-400 hover:shadow-teal-100 dark:border-teal-800 dark:hover:border-teal-500 dark:hover:shadow-teal-900/40",
+    icon: "bg-teal-100 text-teal-600 dark:bg-teal-900/40 dark:text-teal-400",
+    badge: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300",
+    button:
+      "bg-teal-600 hover:bg-teal-700 text-white shadow-teal-200 dark:bg-teal-700 dark:hover:bg-teal-600 dark:shadow-teal-900/50",
+    glow: "group-hover:shadow-teal-200/60 dark:group-hover:shadow-teal-800/40",
+  },
+  fuchsia: {
+    card: "border-fuchsia-200 hover:border-fuchsia-400 hover:shadow-fuchsia-100 dark:border-fuchsia-800 dark:hover:border-fuchsia-500 dark:hover:shadow-fuchsia-900/40",
+    icon: "bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-900/40 dark:text-fuchsia-400",
+    badge: "bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300",
+    button:
+      "bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow-fuchsia-200 dark:bg-fuchsia-700 dark:hover:bg-fuchsia-600 dark:shadow-fuchsia-900/50",
+    glow: "group-hover:shadow-fuchsia-200/60 dark:group-hover:shadow-fuchsia-800/40",
+  },
+  lime: {
+    card: "border-lime-200 hover:border-lime-400 hover:shadow-lime-100 dark:border-lime-800 dark:hover:border-lime-500 dark:hover:shadow-lime-900/40",
+    icon: "bg-lime-100 text-lime-600 dark:bg-lime-900/40 dark:text-lime-400",
+    badge: "bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300",
+    button:
+      "bg-lime-600 hover:bg-lime-700 text-white shadow-lime-200 dark:bg-lime-700 dark:hover:bg-lime-600 dark:shadow-lime-900/50",
+    glow: "group-hover:shadow-lime-200/60 dark:group-hover:shadow-lime-800/40",
   },
 }
 

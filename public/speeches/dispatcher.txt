@@ -1,0 +1,179 @@
+AEM Dispatcher & Caching — Presentation Guide
+
+
+1. Introduction
+
+We have covered components, the Maven structure, workflows, and fragments. Now we look at how content is delivered: the Apache web server layer with the Dispatcher module, and the caching that sits around it.
+
+This lesson maps to the Configurations part of the exam, about 15 percent, and supports Build and Deployment and Analyzing and Debugging. Expect scenario questions: why was this page not cached, which file holds this rule, how is the cache invalidated, and what fails the Dispatcher validation.
+
+In AEM as a Cloud Service, traffic passes through the CDN to an Apache web server layer, which supports modules including Dispatcher. Dispatcher is used primarily as a cache, to limit processing on the publish nodes. It is also a security layer, because filters control which requests reach AEM.
+
+
+2. dispatcher.any, Farms and Includes
+
+The Dispatcher configuration is stored by default in a text file named dispatcher.any. Property names are prefixed with a forward slash. Multi-valued properties enclose their child items in braces.
+
+The top-level properties are /name, which uniquely identifies the Dispatcher instance, and /farms. A farm defines a set of Dispatcher behaviors for a web site or group of URLs. Use a single farm to handle all pages the same way. Use several farms when different sites or areas need different behavior.
+
+A farm contains child properties such as /clientheaders, /virtualhosts, /sessionmanagement, /renders, /filter, /vanity_urls, /cache, /statistics, /health_check, /retryDelay, /numberOfRetries, /unavailablePenalty, and /failover.
+
+The $include statement splits a large configuration into smaller files. A wildcard can include a range of files, for example farm_*.any. String values can use environment variables in the form ${variable_name}.
+
+When there is more than one farm, the farms are evaluated bottom-up. This matters when defining virtual hosts.
+
+
+3. Virtual Hosts
+
+The /virtualhosts property lists every hostname and URI combination that Dispatcher accepts for the farm. The asterisk wildcard is allowed. A single asterisk handles all requests.
+
+When a request arrives, Dispatcher finds the best-matching virtual host. It starts at the lowest farm and works upward, and inside each farm it starts at the top value and works down. The rules are:
+
+The first virtual host that matches the host, the scheme, and the URI of the request is used.
+
+If none match both scheme and URI, the first virtual host that matches the host is used.
+
+If no host matches, the topmost virtual host of the topmost farm is used.
+
+For this reason, put the default virtual host at the top of the virtualhosts property, in the topmost farm.
+
+
+4. Renders and Client Headers
+
+The /renders property defines where Dispatcher sends requests to render a document. Each render has a /hostname and a /port. A render is typically an AEM publish instance. When there are several renders, requests are distributed among them.
+
+Render options include /timeout, the connection timeout in milliseconds, where 0 means wait indefinitely, which is the default. /receiveTimeout is the time a response may take, and the default is 600000 milliseconds, ten minutes. If the timeout is reached while parsing response headers, Dispatcher returns a 504 status. /secure set to 1 makes Dispatcher use HTTPS to reach AEM.
+
+The /clientheaders property is the list of HTTP headers that Dispatcher passes from the client request to the render. If you customize it, you must specify an exhaustive list, including the default headers. For example, a Dispatcher that handles page activation requests needs the PATH header.
+
+
+5. Filters
+
+The /filter section specifies which HTTP requests Dispatcher accepts. Requests that are not accepted are sent back to the web server with a 404 status. If there is no /filter section, all requests are accepted.
+
+Filters are a series of rules that allow or deny. Each rule has a /type, which is allow or deny, and a pattern matched against part of the request line. Use an allowlist strategy: first deny everything, then allow only what is needed. The first deny-all rule looks like this: type deny, url asterisk.
+
+The request line elements are /method, /url, /query, and /protocol. Starting with Dispatcher 4.2.0, four more elements are available: /path, /selectors, /extension, and /suffix. Filtering on elements of the request line is the preferred method, rather than filtering the whole line.
+
+The older /glob property matches the entire request line. Filtering with globs is deprecated and can lead to security issues, so avoid it.
+
+Use double quotes for simple patterns. From Dispatcher 4.2.0, a pattern that contains a regular expression must be in single quotes. Regular expressions are POSIX Extended. Purge the cache whenever the filter rules change.
+
+If filters do not behave as expected, enable trace logging on Dispatcher to see which filter intercepts the request.
+
+Requests for the statfile are always rejected.
+
+
+6. Filter Safety and Vanity URLs
+
+In AEM as a Cloud Service, the Dispatcher validator checks the farm files. It fails if a filter rule uses a glob to allow requests, because of CVE-2016-0957. For example, allowing GET asterisk dot css asterisk would also allow any resource followed by a query string like question mark a equals dot css.
+
+The validator also fails if an admin feature is exposed, such as access to /crx/de or /system/console.
+
+Security checklist items include: deny access to sensitive paths, ensure anonymous write access is not possible, and restrict who can flush the cache. A request to /dispatcher/invalidate.cache from an unauthorized client should return 403.
+
+Vanity URLs need extra setup. If a page request is denied by a filter, Dispatcher consults its list of vanity URLs. The /vanity_urls section has /url, which must be /libs/granite/dispatcher/content/vanityUrls.html, /file, the local file where the list is stored, and /delay, the seconds between calls to the service. A filter must still deny the vanity URL. With Dispatcher 4.3.6, /loadOnStartup controls loading vanity URLs at startup, and 1 is the default.
+
+
+7. Cache Basics
+
+The /cache section controls how Dispatcher caches documents. Its subproperties include /docroot, /statfile, /serveStaleOnError, /allowAuthorized, /rules, /statfileslevel, /invalidate, /invalidateHandler, /allowedClients, /ignoreUrlParams, /headers, /mode, /gracePeriod, and /enableTTL.
+
+/docroot is the directory where cached files are stored. It must be the same path as the web server document root. With multiple farms, each farm needs a different document root.
+
+The /rules property controls which documents are cached by path. Each rule has a glob pattern and a type: allow means cache, deny means render every time. To cache everything, use glob asterisk with type allow, and add deny exceptions for dynamic sections.
+
+Regardless of the rules, Dispatcher never caches a document when: the request URI contains a question mark; the file extension is missing; the authentication header is set, which is configurable; or AEM responds with no-cache, no-store, or must-revalidate headers. Only GET and HEAD requests are cacheable.
+
+Do not cache closed user groups, because user rights are not checked for cached pages.
+
+
+8. Cache Invalidation
+
+Dispatcher invalidates files by touching a .stat file. The .stat file's modification date is compared to the cached document's modification date, and the document is fetched again if the .stat file is newer.
+
+The /statfileslevel property controls how many folder levels get a .stat file. The docroot is level 0. When a file is invalidated, every .stat file from the docroot down to the file's level, or to the configured statfileslevel if it is smaller, is touched. Only resources along that path are affected. If /statfileslevel is set, the /statfile property is ignored and .stat is used.
+
+The /invalidate property defines which documents are automatically invalidated. Auto-invalidated files are not deleted right away; their validity is checked at the next request. It is typically used for HTML pages, because pages link to each other. The usual configuration denies everything and allows asterisk dot html. PDF and ZIP downloads may need to be added.
+
+A manual flush is an HTTP POST to /dispatcher/invalidate.cache, with the headers CQ-Action, for example Activate, and CQ-Handle, the path pattern. The header CQ-Action-Scope with the value ResourceOnly flushes a resource without invalidating other parts of the cache.
+
+/allowedClients restricts which clients can flush the cache, matched by IP. It is recommended to define it. If it is not defined, any client can clear the cache, which can severely hurt performance if done repeatedly.
+
+/invalidateHandler defines a script called for each invalidation request. It receives the handle, the action, and the action scope.
+
+/gracePeriod throttles .stat file touching. It is the number of seconds a stale, auto-invalidated resource can still be served after the last activation. The recommended value is 2 seconds.
+
+/serveStaleOnError set to 1 keeps invalidated content when the render returns an error. If AEM returns 502, 503, or 504, or the connection times out, Dispatcher serves the stale document with HTTP status 111.
+
+
+9. URL Parameters, Headers, TTL and Authentication
+
+/ignoreUrlParams defines which URL parameters are ignored when deciding whether a page is cached. If all parameters in the URL are ignored, the page is cached. If any parameter is not ignored, the page is not cached. A rule allows a parameter name to be ignored, and a rule denies it, which prevents caching. The recommended approach is an allowlist: ignore everything with an allow rule on asterisk, then deny only the parameters that must bypass the cache, such as nocache.
+
+/headers lists the response headers Dispatcher stores next to the cached file and adds on later responses. The default list includes Cache-Control, Content-Disposition, Content-Type, Expires, Last-Modified, and X-Content-Type-Options. To store ETag, add it to /headers and set the Apache directive FileETag none.
+
+/enableTTL set to 1 enables time-based invalidation. Dispatcher reads Cache-Control max-age or Expires from the backend response, and creates an empty auxiliary file whose modification time equals the expiry. When the cached file is requested after that time, it is fetched again from the backend. From Dispatcher 4.3.5, both the TTL and the invalidation rules are taken into account.
+
+/allowAuthorized controls whether requests with authentication information are cached: the authorization header, a cookie named authorization, or a cookie named login-token. The default of 0 means they are not cached. Session management requires /allowAuthorized to be 0. For permission-sensitive caching, Adobe provides a separate feature.
+
+/mode sets the file permissions for new cache directories and files. The default is 0755.
+
+
+10. Invalidating from Author or Publish
+
+On AEM 6.5 and similar setups, a replication agent invalidates the cache. The standard Dispatcher Flush agent is installed by default. When configured on the author instance, it sends an invalidation request to Dispatcher when a page is activated. Its Transport URI points to /dispatcher/invalidate.cache on the Dispatcher host. The URI property is used only with path-based virtual hosts, to target a specific farm.
+
+The agent does not need a user name and password, but if they are set they are sent with basic authentication. Create a dedicated user for replication agents instead of the admin account.
+
+There are two issues with invalidating from author. Dispatcher must be reachable from the author instance, which a firewall may block. And publication and invalidation happen at the same time, so a user may request a page just after it was removed from the cache and just before the new page is published. AEM returns the old page and Dispatcher caches it again. This is more of an issue on large sites.
+
+Invalidating from the publish instance moves cache management to publish: the publish instance sends the invalidation request when it receives a published page. The decision to use it should be made by an experienced administrator, and the agent must be configured on every publish instance affected.
+
+
+11. Dispatcher in AEM as a Cloud Service
+
+The Dispatcher Tools are part of the AEM as a Cloud Service SDK. They provide a vanilla file structure to include in a Maven project, tooling to validate that the configuration includes only supported directives and correct syntax, and a Docker image that runs Dispatcher locally.
+
+There are two modes. Flexible mode is recommended and is the default for archetype 28 and higher. It is activated by the file opt-in/USE_SOURCES_DIRECTLY. It removes limits on the file structure and the number of rewrite rules. Legacy mode required a single rewrite.rules file.
+
+The project Dispatcher folder has two main subfolders. conf.d holds Apache configuration: available_vhosts, enabled_vhosts, rewrites, and variables. conf.dispatcher.d holds Dispatcher configuration: available_farms, enabled_farms, cache, clientheaders, filters, renders, virtualhosts, and dispatcher.any.
+
+A virtual host or farm is created in the available folder and enabled by a relative symbolic link in the enabled folder. Do not copy default.vhost directly into enabled_vhosts. In flexible mode, use relative paths.
+
+At least one virtual host must match the ServerAlias values star dot local, localhost, and 127.0.0.1, which are needed for Dispatcher invalidation. The aliases star dot adobeaemcloud dot net and star dot adobeaemcloud dot com are also required, for internal Adobe processes.
+
+
+12. Customizable and Immutable Files
+
+Customizable files are transferred to the Cloud environment on deployment. They include the .vhost files, rewrite.rules, custom.vars, global.vars, the .farm files, cache/rules.any, clientheaders/clientheaders.any, filters/filters.any, and virtualhosts/virtualhosts.any. In global.vars you can change the Dispatcher and rewrite log level.
+
+Immutable files are part of the base framework. Modifying them locally has no effect, because they are not transferred to the Cloud environment. The latest version is always used on deployment. They include default.vhost, dispatcher_vhost.conf, default_rewrite.rules, default.farm, default_invalidate.any, default_rules.any, default_clientheaders.any, dispatcher.any, default_filters.any, default_renders.any, and default_virtualhosts.any.
+
+Every farm must include default_renders.any in its /renders section, and default_invalidate.any in the /allowedClients section of /cache. Your own files may be included only in /clientheaders, /filters, /rules in /cache, and /virtualhosts, and they must be named clientheaders.any, filters.any, rules.any, and virtualhosts.any, or the default_ version. Any other $include fails validation. Do not include default_virtualhosts.any in a customization, because it matches every incoming request.
+
+Local validation uses the validate script in the SDK, with three phases. Phase 1 runs the validator, which reports directives that are not allowlisted. Phase 2 runs httpd -t to check Apache syntax. Phase 3 checks that the immutable files were not changed. Cloud Manager also runs httpd -t during deployment, and errors appear in the Build Images step failure log.
+
+
+13. CDN and Cache Headers in Cloud Service
+
+Caching of HTTP responses in the AEM as a Cloud Service CDN is controlled by the origin response headers Cache-Control, Surrogate-Control, or Expires. These are typically set in the Dispatcher vhost configuration with mod_headers, or in custom Java code on Publish.
+
+The CDN cache key includes the full request URL, including query parameters, so each different query parameter produces a different cache entry. Responses containing private, no-cache, or no-store in Cache-Control, or a Set-Cookie header, are not cached by the CDN.
+
+For text and HTML, Dispatcher sets default headers. By default, the browser caches for five minutes, and the CDN respects this. You can disable the default by defining DISABLE_DEFAULT_CACHING in global.vars. Use the EXPIRATION_TIME variable in global.vars to override it for all HTML and text. For finer control, use LocationMatch with Header set directives. Surrogate-Control applies to the Adobe managed CDN and lets you control the CDN cache independently of the browser.
+
+AEM as a Cloud Service removes a cache header if it detects it was applied to content Dispatcher cannot cache. The always option forces the header to be applied. A file under conf.dispatcher.d/cache must keep the rule that allows glob asterisk, which is in the default configuration.
+
+To keep content out of the CDN, set Cache-Control to private. Private HTML can still be cached at Dispatcher with permission-sensitive caching, so that only authorized users are served.
+
+
+14. Clientlibs, Blob Content and Exam Tips
+
+Client libraries are generated so that browsers can cache JavaScript and CSS indefinitely, because any change produces a new file with a unique path. Cache-Control is set to immutable, or 30 days for older browsers that do not respect immutable.
+
+For blob content, programs created after mid-May 2022, with program ids above 65000, cache by default while respecting authentication. If no cache header is set, public content gets public, max-age 600, immutable, and authenticated traffic gets private. Older programs do not cache blob content by default. The environment variable AEM_BLOB_ENABLE_CACHING_HEADERS can change this. Blobs larger than 16 KB are served as 302 redirects, and only a limited list of headers can be customized on them, such as Content-Disposition and Cache-Control.
+
+Optimizations: avoid User-Agent in the Vary header, and use stale-while-revalidate and stale-if-error to refresh in the background and avoid cache misses.
+
+Exam tips. Filters deny by default and allow what is needed, and glob allow rules are forbidden. A document with a question mark in the URL is not cached unless the parameters are ignored. The .stat file is how invalidation works, and statfileslevel sets how deep. Auto-invalidation applies to HTML. In Cloud Service, only the customizable files are deployed, the immutable default_ files cannot be changed, and a farm must include default_renders.any and default_invalidate.any. Use the validate script before pushing.

@@ -1,0 +1,191 @@
+AEM Oak Indexes, Logs, Replication & Topologies — Presentation Guide
+
+
+1. Introduction
+
+This is the last lesson of the series. It covers four operational areas: how Oak finds content with indexes, how AEM writes logs, how content moves from Author to Publish with replication, and how AEM instances are arranged in a topology.
+
+The topic maps to Analyzing and Debugging, about 18 percent of the exam, and Environment Maintenance, about 13 percent. It also supports Build and Deployment, because index definitions and log configurations are deployed as code. Expect scenario questions: why is this query slow, what name must a custom index have, which log shows this request, why was the publish queue blocked, and which persistence fits this topology.
+
+Where the Experience Manager 6.5 documentation and the Cloud Service documentation differ, this lesson says which one applies.
+
+
+2. Oak Query Engine and Indexers
+
+Unlike Jackrabbit 2, Oak does not index content by default. Custom indexes must be created when necessary, much like in a relational database. If there is no index for a query, many nodes may be traversed. The query still works but it is likely slow.
+
+When Oak runs a query without an index it prints a WARN log message that says it traversed a number of nodes and suggests creating an index or changing the query.
+
+The query engine supports XPath, which is recommended, SQL-2, the deprecated SQL, and JQOM. A query is parsed into an abstract syntax tree and then transformed into SQL-2, which is the native language of Oak.
+
+Several indexers can be plugged into the repository. The Property Index stores its definition in the repository. Apache Lucene and Solr implementations are available and support full-text search. The Traversal Index is used when no other indexer applies; it does not index content and walks the nodes to find matches.
+
+When several indexers can answer a query, each one estimates the cost. Oak picks the indexer with the lowest estimated cost, retrieves its results, and then filters them to make sure the current user has read access and the result matches the complete query.
+
+
+3. Property and Lucene Indexes
+
+Indexes are configured as nodes under oak:index. The node type must be oak:QueryIndexDefinition.
+
+The Property Index suits queries with property constraints that are not full-text. It uses type set to property and propertyNames listing the properties. The unique flag adds a uniqueness constraint, declaringNodeTypes restricts the index to a node type, and the reindex flag set to true triggers a full reindex.
+
+The Ordered index is deprecated and should be replaced with a Lucene Property Index.
+
+The Lucene full-text index uses type lucene and async set to async, so updates run on a background thread. Because of that, some full-text results can be unavailable for a short window after a change. If a full-text index is configured, all queries with a full-text condition use it. If none is configured, full-text conditions do not work as expected. Other options include includePropertyTypes, excludePropertyNames and reindex.
+
+Since Oak 1.0.8 Lucene can index non-full-text property constraints. For that, fulltextEnabled must be false, and includePropertyNames lists the properties. A Lucene Property Index is always async, so its results may not reflect the latest repository state.
+
+Full-text search tokenizes text into an inverted index. Stopwords are not indexed, tokens are lowercased, and stemming is applied. Analyzers, supported since Oak 1.2.0, run both at index time and at query time and are configured under an analyzers node, with the default analyzer in the default child.
+
+If reindexing is needed in large repositories, especially with MongoDB or full-text indexes, consider text pre-extraction and use oak-run to build the initial index.
+
+
+4. Index Definitions in Cloud Service
+
+In AEM as a Cloud Service the model changes from single instances to services driven by Cloud Manager pipelines. Index configuration is specified before a deployment, not changed on a running instance. Users do not have access to the Index Manager of a single instance in the cloud; it is for local development and on-premise deployments.
+
+Index definition changes are deployed like other content changes. With the rolling deployment model two sets of indexes exist, one for the old version and one for the new version. The Cloud Manager build page shows whether the indexing job is complete.
+
+Limitations: only indexes of type lucene are supported for customization. The async property can be async, async and nrt, or fulltext-async. Only the standard analyzers shipped with the product are supported, so custom analyzers are not. Search by similar feature vectors, useInSimilarity, is not supported. Internally an index may be run as an Elasticsearch version, but customers cannot configure Elasticsearch indexes directly.
+
+The three use cases are to add a new custom index, to update an existing index by adding a new version, and to remove an index that is no longer needed.
+
+Project setup: use filevault-package-maven-plugin version 1.3.2 or later. Add oak:index to immutableRootNodeNames next to apps and libs. In ui.apps and ui.apps.structure enable allowIndexDefinitions and noIntermediateSaves, which makes the configuration land atomically. Add a filter for /oak:index in ui.apps.structure.
+
+
+5. Index Names and Simplified Index Management
+
+An index falls into one of three categories. An out-of-the-box index, for example cqPageLucene-2 or damAssetLucene-8. A customization of an out-of-the-box index, which appends -custom- and a number, for example damAssetLucene-8-custom-1. A fully custom index, which also ends with -custom- and a version number, and should use a prefix to avoid naming conflicts, for example acme.product-1-custom-2.
+
+The naming pattern for a customization is indexName, product version, custom, custom version. For a fully custom index a prefix and a dot come first.
+
+To customize an out-of-the-box index, copy its latest definition from a Cloud Service environment using the CRX DE Package Manager, rename it with the custom suffix and add your changes. If the cloud index is of type elasticsearch, change type to lucene and change async to async and nrt. Introducing new full-text indexes on dam:Asset is strongly discouraged; instead customize damAssetLucene.
+
+Index package folders live under jcr_root in a folder named _oak_index in the project, because the colon is not valid in a file name.
+
+Simplified Index Management uses a diff.index. It customizes out-of-the-box indexes and defines custom indexes with a single diff.json file, and the customizations are merged automatically with the latest out-of-the-box index, creating a new version when needed. The folder is _oak_index/diff.index with a placeholder .content.xml and a diff.json file, and the vault filter includes /oak:index/diff.index. It cannot be used for indexes that cover /apps or /libs, such as cqPageLucene and ntBaseLucene; those use the legacy configuration. For ntBaseLucene, use a fully custom index with a prefix such as acme instead.
+
+After deploying, Cloud Manager starts jobs to add and merge the definitions for author and publish, and the repositories are reindexed before the switch.
+
+
+6. Logging Basics and OSGi Configuration
+
+Logging in AEM is based on Sling logging and is configured with OSGi configurations. There are three areas: global parameters for the central logging service, request data logging, and settings for individual services.
+
+The Apache Sling Logging Configuration configures the root logger: the log level, the location of the central log file, the number of versions to keep, the rotation by size or time interval, and the message format.
+
+For an individual service, AEM uses three elements. An OSGi service, the logger, writes a message. A Logging Logger takes the message and formats it. A Logging Writer writes the messages to the physical file. The Log File parameter links a Logger to a Writer, and the values must be identical. If there is no match, an implicit writer is created with default configuration and daily rotation.
+
+This lets you route messages of one service into a separate file, which helps during development, for example when you need a higher log level for a single service.
+
+On the 6.5 side the main files are error.log, request.log and access.log.
+
+
+7. Cloud Service Logs
+
+In AEM as a Cloud Service, log settings and levels are configuration files stored in Git and deployed by Cloud Manager. Logging breaks into three sets: AEM application logging, Apache HTTPD web server and Dispatcher logging, and CDN logging.
+
+AEM application logging has three logs. The AEM Java log, the HTTP request log, and the HTTP access log. Requests served from the Dispatcher cache or an upstream CDN do not appear in them.
+
+Java log levels are set per environment type through OSGi configuration in run mode folders: config for development, config.stage and config.prod. Use the Sling LogManager factory configuration with org.apache.sling.commons.log.names for the Java packages, and org.apache.sling.commons.log.level for the level. Recommended levels are debug on development, warn on stage and error on production.
+
+Do not change the default log level of the Apache Sling Logging Configuration, which is INFO. Do not change its format. Log output must stay in the default file logs/error.log. You must not change any property of org.apache.sling.commons.log.LogManager, and in the factory configuration you must not change org.apache.sling.commons.log.file or org.apache.sling.commons.log.pattern. Setting DEBUG for individual product packages is allowed but should be used sparingly and restored to INFO afterwards.
+
+The HTTP request log pairs requests and responses by the numeric ID in brackets, and other requests may appear between a pair. The HTTP access log shows requests in time order with status code and size, and is useful to follow a specific user. Neither the request log nor the access log is configurable in the cloud.
+
+
+8. Apache, Dispatcher and CDN Logs
+
+Three more logs exist for the Publish tier only: the Apache HTTPD access log, the Apache HTTPD error log and the Dispatcher log. They show requests before those requests reach the AEM application, so a request served from the cache never appears in the AEM logs.
+
+The Apache access log is not configurable. The error log level for mod_rewrite is set with the variable REWRITE_LOG_LEVEL in conf.d/variables/global.var. Values run from error through trace8, the default is warn, and the maximum in the cloud is debug. To debug rewrite rules, use the Dispatcher SDK locally.
+
+The Dispatcher log level is set with DISP_LOG_LEVEL in the same global.var file. Values are error, warn, info, debug and trace1. The default is warn. Debug is the maximum in the cloud and trace is not supported. Use IfDefine ENVIRONMENT_STAGE and ENVIRONMENT_PROD branches to set a level per environment.
+
+Dispatcher log lines show the farm and an action such as miss or none, which helps explain why a request reached AEM.
+
+The CDN log is in JSON format and cannot be customized or set to different modes. It shows fields such as timestamp, ttfb, status, url, and cache with the values HIT, MISS or PASS. It is useful for optimizing the cache hit ratio. It also records the traffic filter rules and WAF flags that matched.
+
+Logs are available by downloading through Cloud Manager or by tailing with the Adobe I/O command line interface.
+
+
+9. Replication Fundamentals
+
+Replication agents are the mechanism used to publish content from Author to Publish, to flush content from the Dispatcher cache, and to return user input from Publish to Author.
+
+For Author to Publish, a request to publish starts from a manual action or an automatic trigger. It is passed to the default replication agent, which packages the content and places it in the replication queue. The page status indicator is updated. The content is lifted from the queue and transported to the Publish environment, usually over HTTP. A servlet on Publish receives the content; the default servlet is bin/receive.
+
+User data such as users, groups and profiles is not replicated between Author and Publish.
+
+Reverse replication returns data from Publish to Author. The agent on Publish places the data in an outbox, and replication listeners on Author poll the outboxes. This way the Author environment controls all traffic. Reverse replication is effectively disabled by default since AEM 6.1. For AEM Communities, user generated content is never replicated; a common store is used instead.
+
+
+10. Replication Agents and Queues in 6.5
+
+A standard 6.5 installation has these agents: the Default Agent for Author to Publish, Dispatcher Flush for the cache, Reverse Replication, and the Static Agent, which stores a static representation in the file system.
+
+A queue shows Active when items are being processed, Idle when it is empty, and Blocked when items are queued but cannot be processed, for example when the receiving instance is down.
+
+Agent settings include Enabled, Serialization Type, Retry Delay with a default of 60000 milliseconds, Agent User Id, Log Level, and Use for reverse replication. Serialization type Dispatcher Flush marks an agent used to flush the cache. The Agent User Id account must have read access to all replicated paths on Author, and create and write access on Publish. If it is empty, the system user is used.
+
+Log Level options are Error, Info and Debug, with Info as the default. The Transport tab holds the URI, user, password and SSL options. The agent URI for a Default Agent points to bin/receive, and for Dispatcher Flush to dispatcher/invalidate.cache. With path-based virtual hosts, the URI chooses which farm is invalidated.
+
+
+11. Replication in Cloud Service
+
+AEM as a Cloud Service uses Sling Content Distribution to move content to a pipeline service outside the AEM runtime. There are two predefined agents. The publish agent is enabled by default and is used by the UI, workflows and the Replication API. The preview agent sends content to the preview tier and is not enabled by default. They are monitored from Tools, Deployment, Distribution.
+
+Ways to publish: Quick Publish, Manage Publication, scheduled On Time and Off Time with Auto Replicate enabled in the On Off Trigger Configuration, workflows, and the Replication API. For bulk publishing, use a workflow with the Tree Activation step; building your own bulk code is not recommended. The Publish Content Tree workflow is deprecated.
+
+With the Replication API, inject the Replicator and call replicate with ReplicationActionType ACTIVATE and the paths. Replicating without a filter uses only the agents enabled by default, which means publish. To target preview, pass ReplicationOptions with an AgentFilter. The overall ReplicationStatus is updated only when an agent enabled by default is included, so use getStatusForAgent for a specific agent.
+
+Limits: replicate fewer than 100 paths at a time, and 500 is the limit, above which a ReplicationException is thrown. Setting setUseAtomicCalls to false lifts the limit by bucketing. The content per call must not exceed 10 MB, not counting binaries.
+
+Each agent shows two queues. Persisted means the change is durably stored on the publish tier. Fully published means the change is live on all publish pods and the Dispatcher cache has been cleared for the paths. There is no per-pod queue because the publish tier scales automatically.
+
+To invalidate content, use Sling Content Invalidation from Author, which is the preferred method, or use the Replication API to invoke the Dispatcher flush agent.
+
+
+12. Persistence and Topologies in 6.5
+
+Starting with AEM 6.2, microkernels act as persistence managers. TarMK is designed for performance and MongoMK for scalability. Adobe recommends TarMK as the default in all deployments, for both Author and Publish, except for specific cases.
+
+Single TarMK instance: one instance on a single server. It is the default for Author. It is simple and fast, but it is not scalable beyond the server and has no failover.
+
+TarMK Cold Standby: a primary instance replicates its repository to a standby, which runs in cold standby mode with only the HTTP receiver running. It also works as a backup. Failover is not automatic and must be detected externally. Both instances need a license.
+
+TarMK Farm: several independent Oak instances, each with TarMK, kept in sync because the Author publishes the same content to each member. It is the default for Publish. It scales reads and gives failover.
+
+Oak cluster with MongoMK: several Author instances access a MongoDB replica set, in one data center or across several. It is active-active, scales Author horizontally, and gives high availability, although performance can be lower than TarMK in some cases.
+
+Reasons to choose MongoMK on Author: thousands of named users a day, hundreds of concurrent users, hundreds of thousands of asset ingestions or page edits a day, tens of thousands of searches a day. A minimal MongoDB topology is a replica set with one primary and two secondary nodes with latency under 15 milliseconds, and an Author cluster with two active nodes. Put the data store on a shared file system or Amazon S3 rather than in MongoDB.
+
+
+13. Cloud Service Architecture and Operations
+
+AEM as a Cloud Service moves from instance-centric to service-based, with n-x AEM containers driven by Cloud Manager CI/CD pipelines. You do not choose TarMK or MongoMK, and you do not manage Author clusters or Publish farms yourself. The publish tier scales automatically.
+
+Code, OSGi configurations, Dispatcher configuration, log configuration and index definitions are all deployed through Cloud Manager. Configuration changes in production that bypass the pipeline break the CI/CD policy.
+
+With rolling deployments the old and the new version run side by side for a time, so two sets of indexes exist. The index for the new version is built and the repositories are reindexed before the traffic switch, and the Cloud Manager build page shows the status.
+
+Traffic flows from the CDN to the Apache and Dispatcher layer on Publish, and then to AEM. Each layer has its own log, which is why checking only the AEM logs can miss a request that was answered earlier in the chain.
+
+SREs monitor system health around the clock, and customers can set up alerts and see metrics, including search performance, at runtime.
+
+
+14. Troubleshooting and Exam Tips
+
+Slow query: look for the WARN message about traversed nodes, then create a suitable Lucene index. In the cloud, deploy the index through the pipeline with the correct custom name; do not edit the repository by hand.
+
+Custom index not used: check the name pattern with custom and a version, the prefix, the type lucene, the async value, the includedPaths and tags, the allowIndexDefinitions and noIntermediateSaves options, and the vault filter.
+
+Where to look in the cloud: AEM Java log for application code, request log to pair requests and responses, access log to follow a user, Dispatcher log to see miss or none actions, Apache error log for rewrite rules, CDN log for HIT, MISS and PASS.
+
+Never change the default INFO level, the log format, or the logs/error.log destination in the cloud. Raise a package to DEBUG only temporarily.
+
+Publish queue blocked: the receiving instance is disabled or unreachable, or the agent user lacks permissions. Check the agent log and the Retry Delay.
+
+Remember the numbers: Retry Delay 60000 milliseconds, fewer than 100 paths per replicate call with a limit of 500, 10 MB per call, latency under 15 milliseconds for MongoDB nodes, 1.3.2 for the vault plugin.
+
+Remember the defaults: Author is a single TarMK, Publish is a TarMK farm, TarMK for performance, MongoMK for scalability, only the publish agent is on by default in the cloud, and Dispatcher and rewrite logs default to warn.

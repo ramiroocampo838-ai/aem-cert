@@ -1,4 +1,4 @@
-import { GraduationCap, Presentation, ArrowRight, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
+import { GraduationCap, Presentation, ArrowRight, Cloud, Brain, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, Blocks, Package, Workflow, Server, Database } from "lucide-react"
 import Link from "next/link"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
@@ -275,6 +275,206 @@ export default function HomePage() {
               <div className="rounded-lg border border-border bg-background/50 p-3">
                 <div className="text-2xl font-bold text-yellow-600">2.1-2.4</div>
                 <div className="text-xs text-muted-foreground">Exam Objectives</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Component Development Presentation Feature */}
+        <Card className="border-2 border-rose-500/20 bg-gradient-to-br from-rose-500/5 to-pink-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-rose-600 text-white">
+                  <Blocks className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Component Development</CardTitle>
+                  <CardDescription>Proxy components, HTL, Sling Models, dialogs, OSGi services, and servlets in AEM</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/component-dev" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-rose-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-pink-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-red-600">2.1-2.2</div>
+                <div className="text-xs text-muted-foreground">Exam Objectives</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Maven & Archetype Presentation Feature */}
+        <Card className="border-2 border-indigo-500/20 bg-gradient-to-br from-indigo-500/5 to-blue-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                  <Package className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Maven & Archetype</CardTitle>
+                  <CardDescription>Project modules, package types, the container package, and the AEM Project Archetype</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/maven-build" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-indigo-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-blue-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-slate-600">3.1-3.2</div>
+                <div className="text-xs text-muted-foreground">Exam Objectives</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Workflows & Fragments Presentation Feature */}
+        <Card className="border-2 border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-cyan-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-600 text-white">
+                  <Workflow className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Workflows & Fragments</CardTitle>
+                  <CardDescription>Workflow models and steps, custom process steps, Content Fragments, and Experience Fragments</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/workflows-fragments" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-teal-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-cyan-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-slate-600">AEM Dev</div>
+                <div className="text-xs text-muted-foreground">Exam Domain</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Dispatcher & Caching Presentation Feature */}
+        <Card className="border-2 border-fuchsia-500/20 bg-gradient-to-br from-fuchsia-500/5 to-purple-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-fuchsia-600 text-white">
+                  <Server className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Dispatcher & Caching</CardTitle>
+                  <CardDescription>Farms, filters, cache rules and invalidation, Cloud Service Dispatcher tools, and CDN caching</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/dispatcher-caching" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-fuchsia-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-purple-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-slate-600">Config</div>
+                <div className="text-xs text-muted-foreground">Exam Domain</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Oak, Logs & Replication Presentation Feature */}
+        <Card className="border-2 border-lime-500/20 bg-gradient-to-br from-lime-500/5 to-green-500/5">
+          <CardHeader>
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-lime-600 text-white">
+                  <Database className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle>Oak, Logs & Replication</CardTitle>
+                  <CardDescription>Oak indexes, logging, replication agents and queues, and AEM topologies</CardDescription>
+                </div>
+              </div>
+              <Button asChild>
+                <Link href="/oak-operations" className="gap-2">
+                  <span className="hidden md:block">Start Presentation</span>
+                  <span className="block md:hidden">Start</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-lime-600">14</div>
+                <div className="text-xs text-muted-foreground">Interactive Slides</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-green-600">100</div>
+                <div className="text-xs text-muted-foreground">Concepts Covered</div>
+              </div>
+              <div className="rounded-lg border border-border bg-background/50 p-3">
+                <div className="text-2xl font-bold text-slate-600">Debug</div>
+                <div className="text-xs text-muted-foreground">Exam Domain</div>
               </div>
             </div>
           </CardContent>

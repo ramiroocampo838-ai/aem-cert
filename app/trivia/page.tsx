@@ -13,6 +13,11 @@ import { codeQualityQuestions, CODE_QUALITY_SECTION_CONFIG } from "@/lib/trivia-
 import { envSetupQuestions, ENV_SETUP_SECTION_CONFIG } from "@/lib/trivia-env-setup-questions"
 import { authenticationQuestions, AUTHENTICATION_SECTION_CONFIG } from "@/lib/trivia-authentication-questions"
 import { templatesQuestions, TEMPLATES_SECTION_CONFIG } from "@/lib/trivia-templates-questions"
+import { componentsQuestions, COMPONENTS_SECTION_CONFIG } from "@/lib/trivia-components-questions"
+import { mavenQuestions, MAVEN_SECTION_CONFIG } from "@/lib/trivia-maven-questions"
+import { workflowsQuestions, WORKFLOWS_SECTION_CONFIG } from "@/lib/trivia-workflows-questions"
+import { dispatcherQuestions, DISPATCHER_SECTION_CONFIG } from "@/lib/trivia-dispatcher-questions"
+import { oakOpsQuestions, OAKOPS_SECTION_CONFIG } from "@/lib/trivia-oakops-questions"
 
 const SECTION_CONFIGS = {
   intro: INTRO_SECTION_CONFIG,
@@ -21,6 +26,11 @@ const SECTION_CONFIGS = {
   "env-setup": ENV_SETUP_SECTION_CONFIG,
   authentication: AUTHENTICATION_SECTION_CONFIG,
   templates: TEMPLATES_SECTION_CONFIG,
+  components: COMPONENTS_SECTION_CONFIG,
+  maven: MAVEN_SECTION_CONFIG,
+  workflows: WORKFLOWS_SECTION_CONFIG,
+  dispatcher: DISPATCHER_SECTION_CONFIG,
+  oakops: OAKOPS_SECTION_CONFIG,
 }
 
 const QUESTION_BANKS = {
@@ -30,6 +40,11 @@ const QUESTION_BANKS = {
   "env-setup": envSetupQuestions,
   authentication: authenticationQuestions,
   templates: templatesQuestions,
+  components: componentsQuestions,
+  maven: mavenQuestions,
+  workflows: workflowsQuestions,
+  dispatcher: dispatcherQuestions,
+  oakops: oakOpsQuestions,
 }
 
 const SESSION_SIZE = 10

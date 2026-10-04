@@ -3,7 +3,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, ChevronRight } from "lucide-react"
+import { GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, Blocks, Package, Workflow, Server, Database, ChevronRight } from "lucide-react"
 
 const sections = [
   {
@@ -72,6 +72,61 @@ const sections = [
     color: "text-amber-500",
     bg: "bg-amber-500/10",
   },
+  {
+    key: "components",
+    title: "Components",
+    subtitle: "Component Development",
+    description: "Proxy components, HTL, Sling Models, dialogs, OSGi services, and servlets in AEM.",
+    icon: Blocks,
+    concepts: 100,
+    categories: 14,
+    color: "text-rose-500",
+    bg: "bg-rose-500/10",
+  },
+  {
+    key: "maven",
+    title: "Maven",
+    subtitle: "Maven & Archetype",
+    description: "Project modules, package types, the container package, and the AEM Project Archetype.",
+    icon: Package,
+    concepts: 100,
+    categories: 14,
+    color: "text-indigo-500",
+    bg: "bg-indigo-500/10",
+  },
+  {
+    key: "workflows",
+    title: "Workflows",
+    subtitle: "Workflows & Fragments",
+    description: "Workflow models and steps, custom process steps, Content Fragments, and Experience Fragments.",
+    icon: Workflow,
+    concepts: 100,
+    categories: 14,
+    color: "text-teal-500",
+    bg: "bg-teal-500/10",
+  },
+  {
+    key: "dispatcher",
+    title: "Dispatcher",
+    subtitle: "Dispatcher & Caching",
+    description: "Farms, filters, cache rules and invalidation, Cloud Service Dispatcher tools, and CDN caching.",
+    icon: Server,
+    concepts: 100,
+    categories: 14,
+    color: "text-fuchsia-500",
+    bg: "bg-fuchsia-500/10",
+  },
+  {
+    key: "oakops",
+    title: "Oak & Operations",
+    subtitle: "Oak, Logs & Replication",
+    description: "Oak indexes, logging, replication agents and queues, and AEM topologies.",
+    icon: Database,
+    concepts: 100,
+    categories: 14,
+    color: "text-lime-500",
+    bg: "bg-lime-500/10",
+  },
 ]
 
 export default function TopicsPage() {
@@ -87,7 +142,7 @@ export default function TopicsPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Study Topics</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            604 concepts across 6 sections. Select a section to explore its concepts by category.
+            1104 concepts across 11 sections. Select a section to explore its concepts by category.
           </p>
         </div>
 

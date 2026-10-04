@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate } from "lucide-react"
+import { ArrowLeft, GraduationCap, Cloud, ShieldCheck, Terminal, Fingerprint, LayoutTemplate, Blocks, Package, Workflow, Server, Database } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -11,6 +11,11 @@ import { codeQualityCategories } from "@/lib/concepts/code-quality"
 import { envSetupCategories } from "@/lib/concepts/env-setup"
 import { authenticationCategories } from "@/lib/concepts/authentication"
 import { templatesCategories } from "@/lib/concepts/templates"
+import { componentsCategories } from "@/lib/concepts/components"
+import { mavenCategories } from "@/lib/concepts/maven"
+import { workflowsCategories } from "@/lib/concepts/workflows"
+import { dispatcherCategories } from "@/lib/concepts/dispatcher"
+import { oakopsCategories } from "@/lib/concepts/oakops"
 import type { ConceptCategory } from "@/lib/concepts/types"
 import type { LucideIcon } from "lucide-react"
 
@@ -78,6 +83,51 @@ const SECTIONS: Record<string, SectionMeta> = {
     iconColor: "text-amber-500",
     iconBg: "bg-amber-500/10",
     categories: templatesCategories,
+  },
+  components: {
+    title: "Components",
+    subtitle: "Component Development",
+    description: "Proxy components, HTL, Sling Models, dialogs, OSGi services, and servlets in AEM.",
+    icon: Blocks,
+    iconColor: "text-rose-500",
+    iconBg: "bg-rose-500/10",
+    categories: componentsCategories,
+  },
+  maven: {
+    title: "Maven",
+    subtitle: "Maven & Archetype",
+    description: "Project modules, package types, the container package, and the AEM Project Archetype.",
+    icon: Package,
+    iconColor: "text-indigo-500",
+    iconBg: "bg-indigo-500/10",
+    categories: mavenCategories,
+  },
+  workflows: {
+    title: "Workflows",
+    subtitle: "Workflows & Fragments",
+    description: "Workflow models and steps, custom process steps, Content Fragments, and Experience Fragments.",
+    icon: Workflow,
+    iconColor: "text-teal-500",
+    iconBg: "bg-teal-500/10",
+    categories: workflowsCategories,
+  },
+  dispatcher: {
+    title: "Dispatcher",
+    subtitle: "Dispatcher & Caching",
+    description: "Farms, filters, cache rules and invalidation, Cloud Service Dispatcher tools, and CDN caching.",
+    icon: Server,
+    iconColor: "text-fuchsia-500",
+    iconBg: "bg-fuchsia-500/10",
+    categories: dispatcherCategories,
+  },
+  oakops: {
+    title: "Oak & Operations",
+    subtitle: "Oak, Logs & Replication",
+    description: "Oak indexes, logging, replication agents and queues, and AEM topologies.",
+    icon: Database,
+    iconColor: "text-lime-500",
+    iconBg: "bg-lime-500/10",
+    categories: oakopsCategories,
   },
 }
 

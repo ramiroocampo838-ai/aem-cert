@@ -31,6 +31,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# video generator outputs
+/video-out
+/tools/video-kit/work
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

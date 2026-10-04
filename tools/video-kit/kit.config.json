@@ -1,0 +1,24 @@
+{
+  "voice": "en-US-GuyNeural",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "padSeconds": 0.8,
+  "browserPath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "outputDir": "video-out",
+  "defaultAccent": "#a855f7",
+  "maxConceptsPerVideo": 8,
+  "sections": {
+    "intro": { "label": "Intro", "accent": "#a855f7" },
+    "cloud-manager": { "label": "Cloud Manager", "accent": "#10b981" },
+    "code-quality": { "label": "Code Quality", "accent": "#f97316" },
+    "env-setup": { "label": "Env Setup", "accent": "#3b82f6" },
+    "authentication": { "label": "Authentication", "accent": "#06b6d4" },
+    "templates": { "label": "Templates", "accent": "#f59e0b" },
+    "components": { "label": "Components", "accent": "#f43f5e" },
+    "maven": { "label": "Maven", "accent": "#6366f1" },
+    "workflows": { "label": "Workflows", "accent": "#14b8a6" },
+    "dispatcher": { "label": "Dispatcher", "accent": "#d946ef" },
+    "oakops": { "label": "Oak & Operations", "accent": "#84cc16" }
+  }
+}

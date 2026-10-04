@@ -1,0 +1,195 @@
+AEM Workflows, Content Fragments & Experience Fragments — Presentation Guide
+
+
+1. Introduction
+
+We have covered components and the Maven project structure. Now we look at three features that developers extend and configure constantly: Workflows, Content Fragments, and Experience Fragments.
+
+This lesson supports the AEM Development part of the exam, the largest domain at about 37 percent. Workflows are automation: they move a payload through steps. Content Fragments are structured, channel-neutral content. Experience Fragments are reusable groups of components with layout.
+
+Expect scenario questions: which step type fits this requirement, where is a custom step implemented, which fragment type should be used for this use case, and how a fragment is delivered to a third party.
+
+
+2. Workflow Model Concepts
+
+A WorkflowModel is the definition of a workflow. It is made of WorkflowNodes and WorkflowTransitions. The transitions connect the nodes and define the flow. A model always has a start node and an end node.
+
+A transition is the link between two consecutive steps, and rules can be applied to it.
+
+The payload is the resource that is advanced through the workflow. It can reference a resource in the repository by path, UUID, or URL, or it can be a serialized Java object.
+
+A WorkItem is the unit that is passed through a workflow instance. It contains the WorkflowData the instance acts on and a reference to the WorkflowNode that describes the current step. A workflow instance can have one or many work items at the same time. In the repository, the work item is stored below the workflow instance.
+
+Each user account has its own workflow inbox. Work items are assigned either to the user directly or to a group the user belongs to.
+
+A workflow instance has a lifecycle. It is created when you choose a model and define the payload, and it ends when the end node is processed. The actions available on an instance are terminate, suspend, resume, and restart. Completed and terminated instances are archived.
+
+
+3. Runtime Models and Sync
+
+Workflow models are versioned. When a workflow instance runs, it uses the runtime model that was available at the time the workflow started.
+
+A runtime model is generated when you trigger Sync in the workflow model editor. If you edit a model but do not Sync, running instances and new instances do not reflect the change. Only runtime models generated after the update reflect it.
+
+Edits made, or runtime models generated, after an instance has started are not applied to that instance. The exception is the underlying ECMA scripts, which are held only once, so changes to them are picked up.
+
+Workflow types in the console are Default, which are out-of-the-box models, Custom, which have no indicator, and Legacy, which were created in a prior version of AEM.
+
+
+4. Workflow Step Types
+
+Each step accomplishes a discrete task. The step types are:
+
+Participant steps, for a user or group. They generate a work item and assign it to a user or group. A person must complete the work item for the workflow to advance.
+
+Process steps, which are executed automatically by the system. They are implemented by an ECMA script or by a Java class.
+
+Container steps, which start another workflow model as a sub-workflow.
+
+OR Split and Join, which use logic to decide which step to execute next.
+
+AND Split and Join, which allow multiple steps to run simultaneously.
+
+All steps share the common properties Autoadvance and Timeout alerts, and the timeouts are scriptable.
+
+The Dynamic Participant step uses a service or script to choose the user who receives the work item at runtime, instead of a fixed user.
+
+
+5. Transient Workflows, Multi Resource Support and Stages
+
+Standard workflows save runtime history while they run. A model can be flagged as Transient so that the history is not persisted. This is a performance tuning option that saves time and resources. It fits workflows that run often and do not need history. Transient workflows were introduced for loading many assets.
+
+Even when a model is transient, runtime information must still be persisted in some cases: when the payload type, such as video, needs external processing steps; when the workflow enters an AND Split; and when the workflow reaches a participant step, at which point it changes at runtime to non-transient because a person is involved.
+
+Do not use a Goto Step in a transient workflow. Goto creates a Sling job to continue the workflow at the target step, which defeats the purpose of being transient and generates an error in the log. Use an OR Split to make choices instead.
+
+Multi Resource Support means a single workflow instance is started even when several resources are selected, and each resource is attached as a package. Without it, one instance is started for each selected resource.
+
+Workflow Stages give a conceptual view of progress. Step names can be technical, so stages group steps into meaningful names that users see while the workflow runs.
+
+
+6. Workflows in AEM as a Cloud Service
+
+In AEM as a Cloud Service, models and launchers are configuration, and configuration lives under /conf. Custom workflow models are stored under /conf/global/settings/workflow/models, and workflow launchers under /conf/global/settings/workflow/launcher. Because /apps and /libs are immutable, never place custom models in /libs.
+
+Models and launchers are deployed as code through the Cloud Manager pipeline, as part of the project packages. The runtime model that running instances use is generated under /var/workflow/models when the model is synced.
+
+A workflow launcher starts a workflow automatically when a repository event occurs on a path that matches its conditions, such as a node being created or modified. A launcher defines the event type, the node type, the path, and the model to start.
+
+
+7. Custom Process Steps in Java
+
+A custom process step is implemented as an OSGi service that implements the WorkflowProcess interface. Its single method is execute, which receives a WorkItem, a WorkflowSession, and a MetaDataMap, and may throw a WorkflowException.
+
+The service is registered with the OSGi Declarative Services annotation, as a component with service WorkflowProcess, and a property named process.label gives the step a display name. The label is what the Process Step dialog shows when the model author picks the implementation.
+
+The WorkItem gives you the workflow instance and its WorkflowData, which holds the payload. The WorkflowSession gives access to workflow operations. To work with repository content, the session can be adapted to a ResourceResolver or JCR Session.
+
+The MetaDataMap argument passed to execute carries the step arguments. When the model author types values in the Arguments field of the Process Step, they are stored under the PROCESS_ARGS key.
+
+A custom process step can also be implemented as an ECMA script. In scripts, the variable graniteWorkItem is the ECMA representation of the current WorkItem, and the variable args holds the step arguments.
+
+
+8. MetaDataMaps and Persisting Data
+
+Workflow metadata persists information needed during the life of the workflow and between steps. It is stored in MetaDataMap objects.
+
+There are three types of MetaDataMap, for Workflow, WorkflowData, and WorkItem objects. A WorkItem map can only be used while that work item, that is, that step, is running. The Workflow and WorkflowData maps are shared over the entire workflow, and it is recommended to use only the WorkflowData map.
+
+To persist data for later steps in Java, call getWorkflow().getWorkflowData().getMetaDataMap() on the WorkItem and put a key and value. Subsequent steps can read it.
+
+Dialog values stored below the ./metaData node of a step component are added to the workflow MetaDataMap. When the key is PROCESS_ARGS, the value is available directly as args in ECMA scripts, and as the MetaDataMap argument in Java.
+
+In ECMA scripts, the variable metaData is the metadata of the step, which is different from the workflow metadata.
+
+
+9. Custom Workflow Step Components
+
+A workflow step component defines how a step looks and behaves when building models: its category and name in the workflow sidekick, its appearance in the model, its edit dialog, and the service or script that runs at runtime.
+
+Step components are created like any component and inherit from a base step by setting sling:resourceSuperType. The three base paths are cq/workflow/components/model/process, cq/workflow/components/model/participant, and cq/workflow/components/model/dynamic_participant.
+
+All base steps inherit from a common step component that renders the step title and provides a dialog with a Common tab for title and description, and an Advanced tab for email notification properties.
+
+Never change anything in /libs. Recreate the item under /apps and make the changes there.
+
+Design-time defaults go in a cq:editConfig node of type cq:EditConfig, with a child node named cq:formParameters of type nt:unstructured. Properties on cq:formParameters include:
+
+jcr:title and jcr:description, to give default title and description to step instances.
+
+PROCESS, PARTICIPANT, and DYNAMIC_PARTICIPANT, which fix the implementation, user, or chooser, depending on the super type. Setting them removes the ability of model authors to change the value.
+
+FORM_PATH, to present a form when the user opens a work item, and DIALOG_PATH, to present a custom dialog when the user completes it. These apply to participant steps.
+
+PROCESS_AUTO_ADVANCE, a Boolean. When true, which is the default and recommended value, the workflow runs the step and continues. When false, the workflow runs the step and stops, which needs extra handling.
+
+DO_NOTIFY, a Boolean that says whether email notifications are sent for user participation steps. It assumes the mail server is configured.
+
+
+10. Interacting with Workflows Programmatically
+
+To start or manage workflows from code, you obtain a WorkflowSession. In Java and OSGi services, you adapt a ResourceResolver to WorkflowSession. In ECMA scripts, the sling variable is a ScriptHelper that gives access to the request and its resource resolver, which can be adapted to WorkflowSession.
+
+Workflows can also be managed through the Workflow REST API, which the Workflow console itself uses. GET requests return JSON when the URL has the .json extension. Workflow instances are listed by state, and the states are RUNNING, SUSPENDED, ABORTED, and COMPLETED. Models are listed under the models URL, and a specific model returns its id, title, version, description, nodes, and transitions.
+
+In a model, each node has a type such as START, PARTICIPANT, PROCESS, or END, and its metaData holds properties like PARTICIPANT, PROCESS, and PROCESS_AUTO_ADVANCE.
+
+
+11. Content Fragments: Concepts
+
+Content Fragments are channel-neutral, structured content. They are managed as assets and are independent of any page. A fragment can be used for page authoring and for headless delivery.
+
+To create a fragment you need a Content Fragment Model. The model is enabled with the Configuration Browser and created in the Content Fragment console. It defines the structure of a fragment: the title, content elements, and tag definitions. A model requires a title and one data element. Authors cannot change the structure while authoring. Changes to a model after fragments exist can impact those fragments.
+
+A fragment is made of elements, paragraphs, and metadata. Elements hold the structured data, such as text, numbers, booleans, and date and time. Paragraphs are blocks of multi-line text that give content control during page authoring.
+
+Every fragment has one Main, which is the basis of all variations. Main cannot be deleted. In the Assets console editor, Main is labeled Master.
+
+Variations are copies of Main that authors edit for a specific channel or purpose. They are stored in the fragment, which avoids scattering copies of content. Variations can be compared and synchronized with Main.
+
+Images can be used with a fragment as a Content Reference, or inside a Multi line text field.
+
+
+12. Content Fragments: Delivery and Best Practices
+
+For page authoring, a fragment is referenced on a page with the Content Fragment Component, which is a core component. It is responsible for layout and for delivering the fragment as HTML or JSON. Dragging a fragment onto a page associates the component automatically.
+
+For headless delivery, fragments are delivered as JSON. Content Services deliver content to Single Page Applications, native mobile apps, and other channels, using the JSON Exporter. GraphQL is the query mechanism for headless delivery of fragments.
+
+The Content Fragments console is optimized for headless use and is available only in AEM as a Cloud Service.
+
+Adobe best practices: keep structures simple. Create as many models as needed but no more; a small set, a maximum of low tens, is usually enough, and too many slows GraphQL queries and complicates governance. Avoid deep nesting of Content Fragment References; keep nesting to no more than ten levels. Include only the data fields a model needs. Do not use more than ten rich text fields in one model, which are the Multi line text data type; use nested fragments instead. Do not exceed ten variations per fragment, because variations add processing time on author and on delivery. Prototype and test before production.
+
+
+13. Experience Fragments: Concepts
+
+An Experience Fragment is a group of one or more components, including content and layout, that can be referenced within pages. It can contain any component, and it can contain other Experience Fragments.
+
+An Experience Fragment is part of an experience, that is, a page. It is based on an editable template, which defines structure and components, and the template is used to create the root page of the fragment. It is made of components with layout in a paragraph system.
+
+One or more variations can be created based on the root page. Variations can share content and components.
+
+Use Experience Fragments to reuse parts of a page without copy and paste, to support headless use where a third-party touchpoint consumes the experience, and with Multi Site Management, because a fragment is part of a page. They are also used for channel-specific variations and for omnichannel commerce such as social media.
+
+Experience Fragments can only be used on pages that are based on editable templates.
+
+Fragments are organized in folders, and the folder structure does not need to match the site page structure. The recommended way to restrict templates is the Allowed Templates property of the folder, which accepts a regular expression, for example matching templates under /conf whose name starts with experience-fragment. Setting it at instance level is not recommended because it can be overwritten on upgrade.
+
+Write access requires the user to be in the group experience-fragments-editors.
+
+
+14. Experience Fragments: Development and Exam Tips
+
+Developer facts. A fragment master or variation uses the sling:resourceType cq/experience-fragments/components/xfpage, which falls back to the core page component through sling:resourceSuperType.
+
+The plain HTML rendition is requested with the .plain. selector, for example master.plain.html. It exists so that third-party applications can read the fragment by URL. It adds protocol, host, and context path to src, href, and action attributes and to attributes ending in -src or -href. Links always reference the publish instance. The rendition is built by the Sling Rewriter pipeline, configured under the experience-fragments rewriter configuration, and it supports the options allowedCssClasses and allowedTags. Overlay the configuration rather than editing it in /libs.
+
+An Experience Fragment template must be recognized by the Create wizard. Either its resource type inherits from cq/experience-fragments/components/xfpage and its name begins with experience-fragment, or the Allowed Templates are configured in the console.
+
+Components used in fragments follow standard component practices. The only extra step is allowing them on the template with the content policy.
+
+Export to Target sends a fragment to Adobe Target as an offer, in HTML or JSON format. It needs a Target configuration and Link Externalizer settings, and the fragment and its resources must be published. The HTML offer is built with the .nocloudconfigs.html selector. The rewriter then replaces html, head, and body with div elements and rewrites internal links so they point to published resources.
+
+Social variations contain text and image for social posts, and components must follow the extraction conventions to be considered.
+
+Exam tips. Content Fragment is structured data with no layout, delivered as JSON or through a component. Experience Fragment is layout plus components, delivered as HTML. An Experience Fragment can contain a Content Fragment, not the other way around. Process steps run automatically, participant steps need a person. Sync generates the runtime model. Never edit /libs; in Cloud Service workflow models and launchers live under /conf and are deployed as code.

@@ -22,7 +22,12 @@ import {
   FolderOpen,
   Terminal,
   Fingerprint,
-  LayoutTemplate
+  LayoutTemplate,
+  Blocks,
+  Package,
+  Workflow,
+  Server,
+  Database
 } from "lucide-react"
 import { useTheme } from "next-themes"
 
@@ -49,6 +54,11 @@ const navItems = [
   { title: "Environment Setup", href: "/env-setup", icon: Terminal },
   { title: "Authentication", href: "/authentication", icon: Fingerprint },
   { title: "Templates", href: "/templates", icon: LayoutTemplate },
+  { title: "Component Dev", href: "/component-dev", icon: Blocks },
+  { title: "Maven & Archetype", href: "/maven-build", icon: Package },
+  { title: "Workflows & Fragments", href: "/workflows-fragments", icon: Workflow },
+  { title: "Dispatcher & Caching", href: "/dispatcher-caching", icon: Server },
+  { title: "Oak, Logs & Replication", href: "/oak-operations", icon: Database },
   { title: "Trivia", href: "/trivia", icon: Brain },
   { title: "Topics", href: "/topics", icon: BookOpen },
   { title: "Resources", href: "/resources", icon: Link2 },

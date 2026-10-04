@@ -1,0 +1,189 @@
+AEM Component Development — Presentation Guide
+
+
+1. Introduction
+
+Templates define where components can go. Now we look inside the components themselves: how they are structured, how they are extended, how their markup is written with HTL, how their logic is written with Sling Models, how their dialogs are built, and how OSGi services and servlets support them.
+
+This lesson maps to Section 2 of the exam: AEM Development. Specifically 2.1, identifying how to implement a proxy of a core component, and 2.2, given a scenario, identifying how to create component functionality including the HTL, models, and services. It also touches Section 1, Configurations, through OSGi configurations.
+
+The exam is scenario-based. Expect questions such as: which file do you change, which property do you set, which annotation do you use, and what happens if you get it wrong.
+
+
+2. Anatomy of a Component
+
+A component is a node of type cq:Component stored in the repository under /apps. A project's components live in /apps/<project>/components, and in the Maven project they are packaged in the ui.apps module.
+
+A component folder typically contains: a .content.xml defining the cq:Component node and its properties such as jcr:title, componentGroup, and sling:resourceSuperType; an HTL script named after the component, for example title.html; a _cq_dialog folder for the edit dialog; a _cq_design_dialog folder for the design dialog that template authors use for policies; and optionally a clientlibs folder.
+
+The key properties are: jcr:title, the name shown to authors; componentGroup, which controls the grouping in the components browser, and a group starting with a dot is hidden; sling:resourceSuperType, which sets inheritance; and cq:isContainer, which marks a component as a container for other components.
+
+Content never lives inside a component. The component is code, and the content is stored under /content. A content resource points to its component with the sling:resourceType property.
+
+
+3. The Proxy Component Pattern
+
+Every content resource has a sling:resourceType that references the component that renders it. Best practice is that this property points to a site-specific component, not to a component shared by multiple sites. This gives flexibility: if one site needs different behavior, the customization is made on its own component and does not affect the other sites.
+
+To avoid duplicating code, the project component refers to the shared parent with the sling:resourceSuperType property. A project component that mostly just refers to a parent is called a proxy component. A proxy can be entirely empty, only a cq:Component node with a resourceSuperType, if it fully inherits the functionality, or it can redefine some aspects.
+
+For the Core Components, the parent lives at /apps/core/wcm/components, for example core/wcm/components/title/v3/title. The proxy lives in your project, for example /apps/wknd/components/title, with sling:resourceSuperType set to core/wcm/components/title/v3/title.
+
+Never modify the Core Components code directly. That makes them unsupported and breaks upgrades. Adobe also warns not to copy the whole component when only a part needs changing.
+
+The AEM Project Archetype generates proxies of the Core Components for you in ui.apps, following this recommended pattern.
+
+
+4. Resource Type Resolution and Component Versioning
+
+Sling resolves the script for a request by looking at the sling:resourceType of the resource. If the script is not found there, Sling walks up the chain of sling:resourceSuperType until it finds one. This is how a proxy inherits HTL files, dialogs, and clientlibs from its parent.
+
+Search paths matter. Sling searches /apps first and then /libs. Customizations go in /apps; /libs must never be modified, because it is overlaid on every update in AEM as a Cloud Service and is immutable at runtime.
+
+Component versioning adds a number to the resource type path, for example core/wcm/components/image/v3/image, and to the Java package of the implementation. The version represents a major version under semantic versioning and increases only for changes that are not backward compatible. Incompatible changes include Sling Models, HTL scripts, HTML markup and CSS selectors, JSON representation, and dialogs.
+
+The rule: content must never point to a versioned component. A sling:resourceType in content must not have a version number, or upgrading the component forces content refactoring. The proxy component pattern solves this: content points to the proxy, and the proxy points to the versioned parent.
+
+
+5. HTL Fundamentals
+
+HTL, the HTML Template Language, is the server-side template language for AEM. It replaces JSP. It was designed to be secure and simple, and it automatically applies context-aware XSS protection.
+
+Expressions use the syntax of a dollar sign and braces, like ${properties.jcr:title}. Options follow an at sign: ${text @ context='html'}. You can use the logical operators and, or, not, and the ternary operator. The or operator can provide defaults: ${properties.pageTitle || properties.jcr:title || resource.name}. Comparison operators are strict: the equality operators work like triple equals in JavaScript, with no type conversion. The ternary colon must be surrounded by spaces.
+
+Global objects available in HTL include properties, pageProperties, inheritedPageProperties, currentPage, resource, request, and wcmmode.
+
+Display contexts control escaping: text, html, attribute, uri, scriptToken, scriptString, scriptComment, styleToken, styleString, styleComment, number, and unsafe. The default is text for content and attribute for attribute values, and uri for attributes such as href and src. For script and style contexts you must set a context explicitly, otherwise nothing is output. The context unsafe disables escaping and is a security risk.
+
+Useful options: format for strings, dates, and numbers; i18n for translations; join for arrays; and the URI manipulation options such as scheme, domain, path, selectors, extension, prependPath, and appendPath.
+
+Comments in HTL are written as <!--/* comment */--> and are removed from the output, unlike normal HTML comments.
+
+
+6. HTL Block Statements
+
+Block statements are data-sly attributes on HTML elements. The main ones are: data-sly-use, which initializes a helper object such as a Sling Model; data-sly-test, which renders the element conditionally; data-sly-list, which iterates; data-sly-repeat, which repeats the host element for each item; data-sly-text and data-sly-attribute, which set text and attributes; data-sly-element, which changes the element name; data-sly-set, which defines a variable; data-sly-unwrap, which removes the host element and keeps the content; data-sly-include and data-sly-resource, which include other scripts and resources; and data-sly-template with data-sly-call, which define and call reusable templates.
+
+data-sly-list exposes an item and itemList by default. itemList provides index, count, first, middle, last, odd, and even. You can rename the identifiers, for example data-sly-list.page.
+
+The difference between list and repeat: data-sly-list keeps the host element and iterates over its content, while data-sly-repeat repeats the host element itself.
+
+data-sly-test can store its result in a variable: data-sly-test.hasTitle="${properties.jcr:title}". The variable can be reused later, and it is not scoped to the element.
+
+The priority order of block statements, from highest to lowest, is: 1 template; 2 set, test, and use; 3 call; 4 text; 5 element, include, and resource; 6 unwrap; 7 list and repeat; 8 attribute. Statements with the same priority are evaluated left to right. Because list runs after test, a data-sly-test on the same element as a data-sly-list is evaluated once, before the loop starts.
+
+The sly element, written as <sly>, is a special tag that is removed from the output but whose statements still run. It is the modern alternative to data-sly-unwrap.
+
+
+7. HTL Templates, Include, Resource, and the Use-API
+
+data-sly-template defines a reusable template with parameters in a file. data-sly-call invokes it. To use templates from another file, first load the file with data-sly-use.templates="template.html" and then call data-sly-call="${templates.myTemplate @ param=value}". The Core Components use this heavily, and a proxy can override a template.
+
+data-sly-include includes the output of another script, as markup, and does not change the processing context. data-sly-resource includes a resource rendered through its own component. You can pass options: resourceType to force a component, selectors, and wcmmode, and you can use prependPath and appendPath. The common example is rendering a child resource such as a parsys or a responsive grid.
+
+The Use-API is how HTL reaches logic. data-sly-use can load a Java class, which can be a Sling Model, or a JavaScript Use-API file. Today the recommended approach is Sling Models: data-sly-use.model="com.wknd.core.models.Byline". Loaded through the Sling Models Use Provider, the model gets the request as adaptable if it supports it, and the resource otherwise. You can pass parameters with options.
+
+HTL deliberately limits logic. It does not allow arbitrary calculations in the template. Anything beyond simple conditions goes into the Sling Model. This is the separation of concerns principle: logic in Sling Models, markup in HTL.
+
+
+8. Sling Models Fundamentals
+
+Sling Models are annotation-driven Java POJOs that are mapped automatically from Sling objects such as resources and requests, and they can also receive OSGi services. They are the recommended way to implement component logic.
+
+A model is a class or an interface annotated with @Model and the adaptables parameter: @Model(adaptables = Resource.class). The common adaptables are Resource and SlingHttpServletRequest. If you use injectors that need the request, for example request attributes or script bindings, the adaptable must be the request. Adobe advises using Resource where possible, because then the model can be used inside and outside the context of a request.
+
+Models are registered through the Sling-Model-Packages header in the bundle manifest, or the Sling-Model-Classes header. The Sling Models bnd plugin, which is used by the AEM archetype's core module, generates those headers at build time.
+
+Client code obtains a model through adaptTo: resource.adaptTo(MyModel.class). If the adaptation cannot be made, adaptTo returns null. Alternatively, the ModelFactory OSGi service offers createModel, which throws an exception explaining why the model could not be instantiated.
+
+Injection can happen into fields, into methods in interface-only models, or into constructors with @Inject. The default injection strategy is required: if an injection fails, the model cannot be instantiated and adaptTo returns null. Marking a field as optional lets the model be created with a null or default value.
+
+
+9. Sling Models Injectors and Annotations
+
+Each injector has a specialized annotation. The most important ones for the exam are:
+
+@ValueMapValue injects a property from the resource's ValueMap.
+
+@ChildResource injects a child resource or a list of child resources.
+
+@ScriptVariable injects an HTL and scripting binding, such as currentPage, resource, or properties. It needs the request as adaptable.
+
+@SlingObject injects Sling objects like the ResourceResolver, the Resource, or the request and response.
+
+@OSGiService injects an OSGi service.
+
+@RequestAttribute injects a request attribute.
+
+@Self injects the adaptable itself, or an object adapted from it.
+
+@Via changes the object from which the value is read. For example, @Via("resource") reads from the resource of a request, and @Via(type = ResourceSuperType.class) reads from the model of the resource super type.
+
+@Inject is the generic annotation, which is discouraged. The specific annotations are faster and clearer, and they fix which injector is used.
+
+Optional injection is set with injectionStrategy = InjectionStrategy.OPTIONAL on the annotation, or defaultInjectionStrategy on @Model. @Default provides default values. @Named sets a different property name. @PostConstruct marks a method that runs after all injections are complete, and it is where initialization logic goes.
+
+If a property name is not given, the name is derived from the field or method name. The injected property for a field named title is title.
+
+Model Interfaces versus classes: interface-only models use methods for injection, and Sling Models creates them with dynamic proxies. Default interface methods are not executed by Sling Models.
+
+
+10. Model Interfaces and the Delegation Pattern
+
+The Core Components implement their models privately. Because the implementation classes are private and can change, you must never extend them. Instead, you use the delegation pattern.
+
+The Core Components expose a public interface, such as com.adobe.cq.wcm.core.components.models.Title. Your own model implements that interface and receives the original implementation through injection, then delegates to it for the parts you do not change.
+
+The key annotations: @Model(adaptables = SlingHttpServletRequest.class, adapters = Title.class, resourceType = "myproject/components/title"). The adapters parameter registers your class as an implementation of the interface, and the resourceType parameter binds it to your proxy component's resource type. To get the parent's implementation, you inject: @Self @Via(type = ResourceSuperType.class) private Title title. Then each method either returns your own value or calls title.getType().
+
+Because of the resourceType binding, when the Title interface is adapted for the proxy resource, Sling Models picks your implementation, not the Core Component's. This is called double binding and is the Model Interfaces pattern. The HTL keeps pointing at the interface, so a project can redefine the Sling Model without touching the HTL, or redefine the HTL without touching the model.
+
+
+11. Exporting Models as JSON
+
+Sling Models can be exported as JSON with the Sling Model Exporter. You annotate the model with @Exporter(name = "jackson", extensions = "json"). Requesting the resource with the .model.json selector and extension returns the serialized model, for example /content/wknd/page/jcr:content/root/title.model.json.
+
+Core Components also implement ComponentExporter and ContainerExporter, which allow the components to be exported as part of the page JSON. This is the base of the SPA editor and of headless consumption of component content.
+
+The exporter uses the Jackson library. You exclude properties with @JsonIgnore and rename them with @JsonProperty. Remember that the model needs the resourceType parameter and the ComponentExporter implementation when it is exported with the page model.
+
+A model that is only for HTL needs no exporter. Add the exporter only when the data is consumed as JSON.
+
+
+12. Component Dialogs
+
+AEM components have two kinds of dialogs: the edit dialog, named cq:dialog, which page authors use to set the content of the component, and the design dialog, named cq:design_dialog, which template authors use to set policies. Both are built with Granite UI, the Coral 3 based Touch UI framework, and both are stored as nodes of type nt:unstructured.
+
+A dialog is a tree of nodes: a root with sling:resourceType granite/ui/components/coral/foundation/fixedcolumns or tabs, and then field nodes with resourceTypes like granite/ui/components/coral/foundation/form/textfield, pathfield, select, checkbox, and multifield. The name property of a field is the JCR property where the value is saved, for example ./jcr:title. The path prefix ./ means relative to the component's content resource.
+
+Dialogs are inherited through sling:resourceSuperType. The Sling Resource Merger lets a proxy merge its dialog with the parent's dialog. To remove an inherited tab, you create a node with the same name and set the property sling:hideResource to true. To reorder, you use sling:orderBefore. To add a tab, you add a new node.
+
+Adobe's guideline: replicate the structure of the parent dialog up to the tab item level, and never touch the structures below a tab item. Instead of editing something below a tab, hide the whole tab and add your own tab. This keeps your customization compatible with updates of the Core Component's dialog.
+
+Hide Conditions, granite:hide on a field, can be used to hide a field conditionally. Field validation uses the foundation validation API. Granite UI components also support showhide behavior through the granite:class property and data attributes.
+
+
+13. OSGi Services and Configurations
+
+AEM is built on OSGi. Services provide reusable logic, such as search or integration with external systems, and Sling Models get them with @OSGiService.
+
+A service is a class annotated with @Component(service = MyService.class), using the Declarative Services annotations from org.osgi.service.component.annotations. It implements an interface. Services are injected with @Reference.
+
+Configurable services use the OSGi Metatype annotations. You define an @ObjectClassDefinition on an annotation type with @AttributeDefinition for each property, then add @Designate(ocd = Config.class) on the service, and receive the configuration in the @Activate method.
+
+Configurations are stored as .cfg.json files in the repository, in a config folder of ui.config. The ui.config module uses run-mode specific folders: config, config.author, config.publish, config.dev, config.stage, and config.prod. Run modes in AEM as a Cloud Service are author and publish, plus the environment type dev, stage, and prod. A .cfg.json file is named after the PID, or the factory PID with a tilde and a name for factory configurations, for example org.apache.sling.commons.log.LogManager.factory.config~wknd.cfg.json.
+
+Secrets and environment-specific values should not be hard-coded. In AEM as a Cloud Service you use environment variables defined in Cloud Manager and referenced in the cfg.json file with $[env:VARIABLE_NAME], and secrets with $[secret:SECRET_NAME]. Never commit secrets to Git.
+
+Because AEM as a Cloud Service has an immutable /apps, you cannot change configuration through the web console in a deployed environment. Configurations belong in code.
+
+
+14. Sling Servlets, Style System, and Best Practices
+
+Servlets are a way to expose custom endpoints. They are OSGi components that extend SlingSafeMethodsServlet, for read-only GET, or SlingAllMethodsServlet, for GET and POST. Register them by resource type with @Component(service = Servlet.class) and @SlingServletResourceTypes(resourceTypes = "wknd/components/search", methods = "GET", extensions = "json").
+
+The best practice is to bind servlets to resource types and not to paths. Path-bound servlets, with @SlingServletPaths, are discouraged because they cannot be access-controlled through the repository and are harder to secure. Resource type binding means the servlet is only reachable for content that uses that resource type, and the permissions of the resource apply.
+
+The Style System lets template authors define CSS classes in a policy that content authors then apply to a component, without any code change. Components can have many styles with a single HTL. It is a preferred way to offer visual variants, rather than creating additional components.
+
+A summary of best practices for the exam: put logic in Sling Models and markup in HTL; use proxy components and never point content to versioned components; never modify /libs; use specific injector annotations and not @Inject; use Resource as adaptable when you can; use model interfaces and the delegation pattern to extend Core Components; keep dialogs structurally compatible with the parent; bind servlets to resource types; do not hard-code configuration; and prefer the Style System and configurable components over copies of nearly identical components.

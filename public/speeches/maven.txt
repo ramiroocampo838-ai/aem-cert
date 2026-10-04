@@ -1,0 +1,189 @@
+AEM Maven Project Structure & Archetype — Presentation Guide
+
+
+1. Introduction
+
+We have covered how components are built. Now we look at how everything is packaged and deployed: the Maven project structure, the content package types, the container package, and the AEM Project Archetype that generates all of it.
+
+This lesson maps to Section 3 of the exam: Build and Deployment. Specifically 3.1, identifying the correct Maven project structure, and 3.2, given a scenario, identifying how to configure projects from archetypes. Build and Deployment is about 17 percent of the exam, so it is worth studying carefully.
+
+Expect scenario questions: which module holds this file, which package type is correct, why did the deployment fail, and which Archetype property produces this result.
+
+
+2. Mutable versus Immutable Repository Areas
+
+AEM as a Cloud Service requires a strict separation of code and content. The areas /apps and /libs are immutable: after AEM starts, you cannot create, update, or delete anything in them at runtime. Any attempt fails.
+
+Everything else is mutable, meaning it can be changed at runtime: /content, /conf, /var, /etc, /system, /tmp, /home, and /oak:index.
+
+As in earlier versions, /libs must never be modified. Only AEM product code is deployed to /libs.
+
+Because of this separation, a single content package cannot deploy to both /apps and a mutable area. The application must split code and content into discrete packages.
+
+Oak indexes are a special case. /oak:index is mutable at runtime, but the Cloud Manager must wait until a new index is deployed and fully reindexed before switching to the new code image. For that reason, Oak index definitions are deployed as code: they are part of the code package, ui.apps, and not the content package.
+
+
+3. The Modules of an AEM Project
+
+An AEM project follows a multi-module Maven structure. The key modules are:
+
+core is a Java OSGi bundle with the OSGi services, listeners, schedulers, Sling Models, servlets, and request filters.
+
+ui.apps contains the /apps part of the project: components, clientlibs, templates code, and the Oak index definitions. It deploys only to /apps.
+
+ui.config contains the OSGi configurations, organized in run-mode specific folders, plus the Repo Init scripts.
+
+ui.content contains content and configuration that is mutable: /content, /conf, /content/dam, context-aware configurations, and governed tag taxonomies. Anything not in /apps or /oak:index belongs here.
+
+all is the container package that embeds everything into one deployable artifact.
+
+ui.frontend, optional, contains the webpack-based front-end build that generates the clientlibs.
+
+it.tests contains Java-based integration tests that run on the AEM server. ui.tests contains Selenium-based UI tests. Unit tests live in the core module.
+
+dispatcher.cloud contains the Dispatcher configuration for AEM as a Cloud Service. dispatcher.ams is for AMS and on-premise projects.
+
+The parent pom.xml at the root drives the structure, manages the versions of dependencies, and lists the modules.
+
+
+4. Package Types
+
+Every package must declare a package type, which clarifies its purpose and how it is deployed. The type is set with the packageType configuration of the filevault-package-maven-plugin.
+
+Code, immutable, packages set packageType to application. ui.apps and ui.config are code packages.
+
+Content, mutable, packages set packageType to content. ui.content is a content package.
+
+Container packages set packageType to container. The all package is a container. A container may hold only OSGi bundles, configurations, and sub packages; it must not contain regular nodes, and in AEM as a Cloud Service containers may not use install hooks.
+
+Adobe's documentation states both rules: container packages must set their packageType to container, and the container all/pom.xml project does not need to declare a packageType in the documented snippets. The application and content packages declare theirs explicitly.
+
+Another setting is accessControlHandling, usually set to merge, which keeps existing ACLs when the package is installed.
+
+
+5. Marking Packages for Cloud Manager Deployment
+
+By default, the Cloud Manager harvests every package produced by the Maven build. But the all package is the single deployment artifact, and it already embeds the other packages. If ui.apps or ui.content were also deployed individually, they would be installed twice.
+
+To prevent this, every package-producing project except all adds this property in the filevault-package-maven-plugin configuration: properties with cloudManagerTarget set to none.
+
+The rule to remember: all is the only package that Cloud Manager deploys. Every other package sets cloudManagerTarget to none.
+
+An application deployment must be composed of a single AEM package. That package contains sub packages for everything the application needs: code, configuration, and any baseline content.
+
+
+6. The Container Package and Embeds
+
+The all package is a container. It includes only deployable artifacts as embeds: the OSGi bundle JAR from core, and the ui.apps, ui.config, and ui.content packages. The all package must not contain any content or code of its own.
+
+Packages are included with the embeddeds configuration of the FileVault package Maven plugin. The older subPackages configuration is not used.
+
+Embedded packages are placed in a special folder with this format: /apps/<app-name>-packages/(content|application|container)/install(.author|.publish)?
+
+The first level is always /apps. The second level is the application name with the suffix -packages. The suffix is a convention that prevents the embedded packages from being deployed into the target folders of the application under /apps/<app-name>, which would cause destructive or cyclic installation. The third level is application, content, or container, matching the package type. The fourth level is install for both author and publish, install.author for only author, or install.publish for only publish. Only install.author and install.publish are supported; other run modes are not.
+
+Typical uses of author-only or publish-only packages are ACLs that differ between author and publish, configuration for author-only activities, and integrations with back-office systems needed only on author.
+
+Because the sub packages are embedded in the container, the container's filter.xml must include the target paths: a filter with root /apps/<my-app>-packages for each second-level folder.
+
+OSGi bundle JARs are embedded directly in the all package. Third-party packages are embedded in the same way, and third-party applications are embedded through their own all package. They must be available from Adobe's public Maven repository or a public repository registered in the project pom.xml.
+
+
+7. Package Dependencies and the Repository Structure Package
+
+To make installation order correct, packages declare dependencies on each other. The general rule: packages that contain mutable content, ui.content, depend on the immutable code, ui.apps, that supports them. In the simple case, all has no dependencies, ui.apps has no dependencies, and ui.content depends on ui.apps.
+
+There is an exception. If a code package contains only OSGi bundles, no AEM package should declare a dependency on it. Such a package is not registered with Package Manager, so any package that depends on it has an unsatisfied dependency and fails to install.
+
+Complex deployments with several sites use a common ui.apps and per-site packages: site-a.ui.apps depends on common.ui.apps, and site-a.ui.content depends on site-a.ui.apps.
+
+Code packages, those with packageType application, also need a repository structure package. It is configured with the repositoryStructurePackage element in the filevault-package-maven-plugin. It enforces correctness of structural dependencies, so that one code package does not install over another's folders. The archetype generates a ui.apps.structure module for this. Content packages do not require it.
+
+
+8. Filters and Package Contents
+
+Each package defines in its META-INF/vault/filter.xml which repository paths it owns. The ui.apps filter lists paths such as /apps/<appId> and the Oak index paths. The ui.content filter lists /content/<appId>, /conf/<appId>, and similar mutable paths. A filter can set a mode: replace, the default, which removes content in the filter root that is not in the package; merge, which adds content and never removes; and update, which adds and overwrites but never removes.
+
+A package that has /apps filters must not also have /content filters. Mixing mutable and immutable roots in one package violates the rules of AEM as a Cloud Service.
+
+The ui.apps module contains /apps/<appId>/components, /apps/<appId>/clientlibs, and the template type and policy code under /apps/settings. The ui.content module contains the actual templates under /conf/<appId>, pages under /content/<appId>, and assets under /content/dam/<appId>.
+
+Legacy /etc nodes belong in ui.content, and ideally should be migrated to non-/etc locations.
+
+
+9. ui.config, Run Modes, and Repo Init
+
+The ui.config package contains the OSGi configurations. It is considered code, because the configurations belong to OSGi bundles and have no regular content nodes, so it is marked as a container package.
+
+The configurations are in /apps/<appId>/osgiconfig. A common folder, config, holds defaults that apply everywhere. Run-mode specific folders follow the pattern config.<author|publish>.<dev|stage|prod>, for example config.author, config.publish.prod, or config.dev. The run mode names are author and publish for the service, and dev, stage, and prod for the environment type.
+
+Configuration files use the cfg.json format. One exception is Repo Init, which is best written with the .config format because it supports multi-line values.
+
+Repo Init is the recommended way to deploy mutable content that is logically part of the application. Its scripts live in the ui.config project and are stored as the scripts property of RepositoryInitializer factory configurations. They can define baseline content structures, users, service users, groups, and ACLs. Repo Init scripts have implicit permission to perform everything they define, and they run early in the deployment lifecycle, so the structures exist by the time the code runs. The scripts must be defined inline in the scripts field; the references configuration does not work.
+
+Only groups that the application needs, for example one a workflow assigns work to, are defined by Repo Init. Organizational users and groups are defined at runtime.
+
+
+10. The Parent POM
+
+The pom.xml at the root of the project is the parent POM. It lists the modules in the modules section, manages dependency versions in dependencyManagement, and defines global properties.
+
+Sub modules must not include version information for managed dependencies; versions are managed in the parent.
+
+The global properties are used to deploy to a local AEM instance by default: aem.host, aem.port, aem.publish.host, aem.publish.port, sling.user, and sling.password. The defaults are localhost, 4502 for author, 4503 for publish, and the admin user. They can be overridden from the command line, for example mvn -PautoInstallPackage clean install -Daem.host=production.hostname, so the POM files do not have to change.
+
+One key dependency is the AEM Java API. For AEM as a Cloud Service it is the aem-sdk-api dependency, which contains all APIs of the SDK with a single entry. For AEM 6.5 it is the uber-jar. Best practice is to keep this version aligned with the target version of AEM.
+
+The Core Components are provided out of the box in AEM as a Cloud Service, so the archetype does not add the Core Components dependency for the cloud. For AEM 6.5.x and AMS, the archetype adds the Core Components as a dependency and embeds them. The core.wcm.components.examples package is a set of sample pages; remove it for production deployments.
+
+
+11. The Core Bundle
+
+The core module builds an OSGi bundle. The bnd-maven-plugin generates the bundle manifest, including the Sling-Model-Packages header for Sling Models, so you do not maintain it manually. The archetype uses the Declarative Services and Metatype annotations in the bundle code.
+
+The Maven compiler options include the parameters flag when needed for constructor injection. The Java version of the build must match what the Cloud Manager supports for the target AEM release.
+
+The bundle is embedded in the all package. Unit tests of the bundle use the AEM Mocks, Sling Context, and JUnit, and they run in the core module during the Maven build.
+
+There are three levels of testing in the project: unit tests in core, integration tests in it.tests that run on the AEM server, and UI tests in ui.tests that use Selenium in the browser.
+
+
+12. Generating a Project with the Archetype
+
+The AEM Project Archetype is a Maven template that creates a minimal, best-practices-based AEM project. It already includes the editable templates, the Core Components proxies, the Style System, the front-end build, example code, and the Dispatcher configuration.
+
+You generate a project with the maven-archetype-plugin, version 3.3.1 or later:
+
+mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.3.1:generate -D archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D archetypeVersion=<version> -D appTitle="My Site" -D appId="mysite" -D groupId="com.mysite"
+
+The older archetype group ID, com.adobe.granite.archetype, is needed only for older versions of the archetype.
+
+The key properties: appTitle sets the website title and the component groups. appId is the technical name used for the component, config, and content folder names, and the client library names. groupId sets the Maven groupId and, as a valid Java package name, the Java source package. artifactId defaults to the appId. package defaults to the groupId. version defaults to 1.0-SNAPSHOT.
+
+
+13. Archetype Options
+
+aemVersion selects the target. The default is cloud for AEM as a Cloud Service. A value like 6.5.8 targets AMS or on-premise.
+
+sdkVersion, only when aemVersion is cloud, picks a specific SDK version, and the default is latest.
+
+includeDispatcherConfig, default y, adds the Dispatcher configuration for cloud or for AMS and on-premise, depending on aemVersion.
+
+frontendModule, default general, includes the front-end build module; the other value is none. Options for SPA projects add React or Angular front-end modules.
+
+language and country set the content structure, for example en and us. singleCountry, default y, controls whether a language-master content structure is created, which is used for multi-language and multi-region setups.
+
+includeExamples, default n, includes a Component Library example site.
+
+Other options include Commerce, with the Commerce Integration Framework, and Forms.
+
+The generated project includes a README for each module, and the root README documents the build commands.
+
+
+14. Building, Deploying, and Best Practices
+
+mvn clean install builds all modules and produces the packages and the bundle. The Maven profiles deploy to a running AEM instance. autoInstallSinglePackage, at the project root, installs the all package on the author instance. autoInstallSinglePackagePublish installs it on the publish instance. autoInstallPackage in ui.apps, or other content package modules, installs that package alone. autoInstallBundle in the core module installs only the OSGi bundle, which is the fast option while developing Java code.
+
+Cloud Manager builds the project from Git with Maven and deploys only the all package.
+
+Best practices to remember for the exam: use the archetype to create new projects; keep the structure of core, ui.apps, ui.config, ui.content, and all; never mix code and content in one package; deploy Oak indexes as code in ui.apps; embed everything in the all container; set cloudManagerTarget to none on every package except all; use packageType application, content, and container correctly; use embeddeds and not subPackages; use the -packages folder suffix; make ui.content depend on ui.apps, except when ui.apps only has OSGi bundles; manage dependency versions only in the parent POM; and put environment-specific values in run-mode folders and Cloud Manager variables, never in code.

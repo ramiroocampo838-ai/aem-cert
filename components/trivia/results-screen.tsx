@@ -57,6 +57,41 @@ const COLOR_CLASSES = {
     retryBtn:
       "bg-amber-600 hover:bg-amber-700 text-white shadow-amber-200 dark:bg-amber-700 dark:hover:bg-amber-600",
   },
+  rose: {
+    accent: "text-rose-600 dark:text-rose-400",
+    ring: "ring-rose-200 dark:ring-rose-800",
+    badge: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
+    retryBtn:
+      "bg-rose-600 hover:bg-rose-700 text-white shadow-rose-200 dark:bg-rose-700 dark:hover:bg-rose-600",
+  },
+  indigo: {
+    accent: "text-indigo-600 dark:text-indigo-400",
+    ring: "ring-indigo-200 dark:ring-indigo-800",
+    badge: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
+    retryBtn:
+      "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 dark:bg-indigo-700 dark:hover:bg-indigo-600",
+  },
+  teal: {
+    accent: "text-teal-600 dark:text-teal-400",
+    ring: "ring-teal-200 dark:ring-teal-800",
+    badge: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300",
+    retryBtn:
+      "bg-teal-600 hover:bg-teal-700 text-white shadow-teal-200 dark:bg-teal-700 dark:hover:bg-teal-600",
+  },
+  fuchsia: {
+    accent: "text-fuchsia-600 dark:text-fuchsia-400",
+    ring: "ring-fuchsia-200 dark:ring-fuchsia-800",
+    badge: "bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300",
+    retryBtn:
+      "bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow-fuchsia-200 dark:bg-fuchsia-700 dark:hover:bg-fuchsia-600",
+  },
+  lime: {
+    accent: "text-lime-600 dark:text-lime-400",
+    ring: "ring-lime-200 dark:ring-lime-800",
+    badge: "bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300",
+    retryBtn:
+      "bg-lime-600 hover:bg-lime-700 text-white shadow-lime-200 dark:bg-lime-700 dark:hover:bg-lime-600",
+  },
 }
 
 const BADGE_ICON_MAP: Record<string, React.ElementType> = {

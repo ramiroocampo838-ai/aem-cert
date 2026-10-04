@@ -78,6 +78,66 @@ const COLOR_CLASSES = {
     nextBtn:
       "bg-amber-600 hover:bg-amber-700 text-white dark:bg-amber-700 dark:hover:bg-amber-600",
   },
+  rose: {
+    topic: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300",
+    progress: "bg-rose-500",
+    option: {
+      default:
+        "border-border hover:border-rose-400 hover:bg-rose-50 dark:hover:border-rose-500 dark:hover:bg-rose-900/20 hover:scale-[1.01]",
+      selected:
+        "border-rose-500 bg-rose-50 dark:border-rose-400 dark:bg-rose-900/30",
+    },
+    nextBtn:
+      "bg-rose-600 hover:bg-rose-700 text-white dark:bg-rose-700 dark:hover:bg-rose-600",
+  },
+  indigo: {
+    topic: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
+    progress: "bg-indigo-500",
+    option: {
+      default:
+        "border-border hover:border-indigo-400 hover:bg-indigo-50 dark:hover:border-indigo-500 dark:hover:bg-indigo-900/20 hover:scale-[1.01]",
+      selected:
+        "border-indigo-500 bg-indigo-50 dark:border-indigo-400 dark:bg-indigo-900/30",
+    },
+    nextBtn:
+      "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-700 dark:hover:bg-indigo-600",
+  },
+  teal: {
+    topic: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300",
+    progress: "bg-teal-500",
+    option: {
+      default:
+        "border-border hover:border-teal-400 hover:bg-teal-50 dark:hover:border-teal-500 dark:hover:bg-teal-900/20 hover:scale-[1.01]",
+      selected:
+        "border-teal-500 bg-teal-50 dark:border-teal-400 dark:bg-teal-900/30",
+    },
+    nextBtn:
+      "bg-teal-600 hover:bg-teal-700 text-white dark:bg-teal-700 dark:hover:bg-teal-600",
+  },
+  fuchsia: {
+    topic: "bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300",
+    progress: "bg-fuchsia-500",
+    option: {
+      default:
+        "border-border hover:border-fuchsia-400 hover:bg-fuchsia-50 dark:hover:border-fuchsia-500 dark:hover:bg-fuchsia-900/20 hover:scale-[1.01]",
+      selected:
+        "border-fuchsia-500 bg-fuchsia-50 dark:border-fuchsia-400 dark:bg-fuchsia-900/30",
+    },
+    nextBtn:
+      "bg-fuchsia-600 hover:bg-fuchsia-700 text-white dark:bg-fuchsia-700 dark:hover:bg-fuchsia-600",
+  },
+  lime: {
+    topic: "bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300",
+    progress: "bg-lime-500",
+    option: {
+      default:
+        "border-border hover:border-lime-400 hover:bg-lime-50 dark:hover:border-lime-500 dark:hover:bg-lime-900/20 hover:scale-[1.01]",
+      selected:
+        "border-lime-500 bg-lime-50 dark:border-lime-400 dark:bg-lime-900/30",
+    },
+    nextBtn:
+      "bg-lime-600 hover:bg-lime-700 text-white dark:bg-lime-700 dark:hover:bg-lime-600",
+  },
 }
 
 interface QuestionCardProps {
