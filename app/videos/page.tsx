@@ -11,11 +11,11 @@ export default function VideosPage() {
         <h1 className="text-sm font-medium">Videos</h1>
       </header>
 
-      <div className="flex-1 p-4 md:p-6 lg:p-8 max-w-4xl mx-auto w-full">
+      <div className="flex-1 p-4 md:p-6 lg:p-8 max-w-5xl mx-auto w-full">
         <div className="mb-6 space-y-1">
           <h2 className="text-2xl font-bold tracking-tight">Video Library</h2>
           <p className="text-muted-foreground text-sm">
-            Explore and play available videos. New files are automatically detected.
+            Browse every narrated video by section and play the one you want. Videos are listed in syllabus order.
           </p>
         </div>
 

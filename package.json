@@ -7,7 +7,8 @@
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
-    "video:build": "node tools/video-kit/build.mjs"
+    "video:build": "node tools/video-kit/build.mjs",
+    "video:index": "node tools/video-kit/index.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

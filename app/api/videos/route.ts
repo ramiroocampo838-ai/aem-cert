@@ -1,51 +1,36 @@
 import { NextResponse } from "next/server"
-import { readdir, stat } from "fs/promises"
+import { readFile } from "fs/promises"
 import path from "path"
 
-export interface VideoFile {
-  name: string
-  title: string
-  url: string
+export const dynamic = "force-dynamic"
+
+export interface VideoItem {
+  id: string
+  part: number | null
+  duration: number
   size: number
-  extension: string
 }
 
-const VIDEO_EXTENSIONS = [".mp4", ".webm", ".ogg", ".mov", ".mkv", ".avi"]
+export interface VideoCategory {
+  slug: string
+  order: number
+  name: string
+  videos: VideoItem[]
+}
 
-function formatTitle(filename: string): string {
-  const withoutExt = filename.replace(/\.[^/.]+$/, "")
-  return withoutExt
-    .replace(/[-_]/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase())
+export interface VideoSection {
+  id: string
+  label: string
+  accent: string
+  categories: VideoCategory[]
 }
 
 export async function GET() {
   try {
-    const videosDir = path.join(process.cwd(), "public", "videos")
-    const files = await readdir(videosDir)
-
-    const videoFiles: VideoFile[] = []
-
-    for (const file of files) {
-      const ext = path.extname(file).toLowerCase()
-      if (!VIDEO_EXTENSIONS.includes(ext)) continue
-
-      const filePath = path.join(videosDir, file)
-      const fileStat = await stat(filePath)
-
-      videoFiles.push({
-        name: file,
-        title: formatTitle(file),
-        url: `/videos/${encodeURIComponent(file)}`,
-        size: fileStat.size,
-        extension: ext.replace(".", "").toUpperCase(),
-      })
-    }
-
-    videoFiles.sort((a, b) => a.title.localeCompare(b.title))
-
-    return NextResponse.json({ videos: videoFiles })
+    const file = path.join(process.cwd(), "video-out", "manifest.json")
+    const manifest = JSON.parse(await readFile(file, "utf8")) as { sections: VideoSection[] }
+    return NextResponse.json(manifest)
   } catch {
-    return NextResponse.json({ videos: [] })
+    return NextResponse.json({ sections: [] })
   }
 }
