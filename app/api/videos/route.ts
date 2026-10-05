@@ -9,6 +9,7 @@ export interface VideoItem {
   part: number | null
   duration: number
   size: number
+  description?: string
 }
 
 export interface VideoCategory {

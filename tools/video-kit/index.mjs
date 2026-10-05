@@ -33,7 +33,7 @@ for (const [id, meta] of Object.entries(cfg.sections)) {
   const dir = path.join(outDir, id)
   if (!fs.existsSync(dir)) continue
 
-  const names = new Map(loadCategories(id).map((c) => [slug(c.name), c.name]))
+  const categoryBySlug = new Map(loadCategories(id).map((category) => [slug(category.name), category]))
   const groups = new Map()
 
   for (const file of fs.readdirSync(dir).sort()) {
@@ -48,7 +48,7 @@ for (const [id, meta] of Object.entries(cfg.sections)) {
       groups.set(catSlug, {
         slug: catSlug,
         order: Number(nn),
-        name: names.get(catSlug) ?? catSlug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+        name: categoryBySlug.get(catSlug)?.name ?? catSlug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
         videos: [],
       })
     }
@@ -57,6 +57,7 @@ for (const [id, meta] of Object.entries(cfg.sections)) {
       part: part ? Number(part) : null,
       duration: ffprobeDuration(full),
       size: fs.statSync(full).size,
+      description: categoryBySlug.get(catSlug)?.videoDescriptions?.[(part ? Number(part) : 1) - 1],
     })
   }
 

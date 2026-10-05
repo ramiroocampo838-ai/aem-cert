@@ -9,4 +9,5 @@ export interface Concept {
 export interface ConceptCategory {
   name: string
   concepts: Concept[]
+  videoDescriptions?: string[]
 }
