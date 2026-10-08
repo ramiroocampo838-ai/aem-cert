@@ -36,6 +36,11 @@ yarn-error.log*
 /tools/video-kit/work/*/*/*
 !/tools/video-kit/work/*/*/video-script.json
 
+# rendered videos live on YouTube; see lib/videos/youtube-urls.json
+/video-out/
+/youtube-meta/
+*.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

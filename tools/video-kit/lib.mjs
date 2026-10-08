@@ -43,8 +43,8 @@ const clean = (s) => s.replace(/\s+/g, " ").trim()
 
 // Builds the editable scene list for one category: title, one scene per concept, recap.
 // Splits a category into evenly sized parts of at most cfg.maxConceptsPerVideo concepts.
-export function splitCategory(category, cfg) {
-  const max = cfg.maxConceptsPerVideo ?? 8
+export function splitCategory(category, cfg, section) {
+  const max = cfg.sections[section]?.maxConceptsPerVideo ?? cfg.maxConceptsPerVideo ?? 8
   const count = Math.ceil(category.concepts.length / max)
   const size = Math.ceil(category.concepts.length / count)
   return Array.from({ length: count }, (_, i) => ({

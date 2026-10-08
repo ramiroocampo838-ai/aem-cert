@@ -1,0 +1,2118 @@
+{
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro",
+      "accent": "#a855f7",
+      "categories": [
+        {
+          "slug": "aem-overview",
+          "order": 1,
+          "name": "AEM Overview",
+          "videos": [
+            {
+              "id": "01_aem-overview",
+              "part": null,
+              "duration": 238,
+              "youtubeId": null,
+              "description": "Introduces Adobe Experience Manager as a content platform, including its place in Adobe Experience Cloud, digital asset management, omnichannel delivery, and managing multiple sites."
+            }
+          ]
+        },
+        {
+          "slug": "apache-sling",
+          "order": 2,
+          "name": "Apache Sling",
+          "videos": [
+            {
+              "id": "02_apache-sling",
+              "part": null,
+              "duration": 399,
+              "youtubeId": null,
+              "description": "Explains how Sling maps URLs to JCR resources and selects rendering scripts, with examples of selectors, suffixes, resource types, servlets, and resource resolution."
+            }
+          ]
+        },
+        {
+          "slug": "jcr-repository",
+          "order": 3,
+          "name": "JCR Repository",
+          "videos": [
+            {
+              "id": "03_jcr-repository",
+              "part": null,
+              "duration": 372,
+              "youtubeId": null,
+              "description": "Covers JCR and Oak, where AEM stores pages, code, configurations, assets, and users, plus page nodes, node types, and JCR-SQL2 queries."
+            }
+          ]
+        },
+        {
+          "slug": "osgi",
+          "order": 4,
+          "name": "OSGi",
+          "videos": [
+            {
+              "id": "04_osgi",
+              "part": null,
+              "duration": 388,
+              "youtubeId": null,
+              "description": "Introduces OSGi bundles, services, component lifecycles, annotations, and run-mode configuration, and shows the Felix console for runtime management."
+            }
+          ]
+        },
+        {
+          "slug": "sling-models",
+          "order": 5,
+          "name": "Sling Models",
+          "videos": [
+            {
+              "id": "05_sling-models",
+              "part": null,
+              "duration": 372,
+              "youtubeId": null,
+              "description": "Shows how Sling Models adapt resources and requests, inject JCR values and services, connect backend logic to HTL, and support unit testing."
+            }
+          ]
+        },
+        {
+          "slug": "components",
+          "order": 6,
+          "name": "Components",
+          "videos": [
+            {
+              "id": "06_components",
+              "part": null,
+              "duration": 439,
+              "youtubeId": null,
+              "description": "Covers component definitions and author dialogs, HTL rendering, client libraries, component inheritance, Core Components, and proxy components."
+            }
+          ]
+        },
+        {
+          "slug": "editable-templates",
+          "order": 7,
+          "name": "Editable Templates",
+          "videos": [
+            {
+              "id": "07_editable-templates",
+              "part": null,
+              "duration": 360,
+              "youtubeId": null,
+              "description": "Explains editable template structure and initial content, template policies, allowed components, style options, and responsive layout containers."
+            }
+          ]
+        },
+        {
+          "slug": "content-fragments",
+          "order": 8,
+          "name": "Content Fragments",
+          "videos": [
+            {
+              "id": "08_content-fragments",
+              "part": null,
+              "duration": 348,
+              "youtubeId": null,
+              "description": "Compares structured Content Fragments with visual Experience Fragments, covering models, references, variations, GraphQL delivery, and reusable building blocks."
+            }
+          ]
+        },
+        {
+          "slug": "aem-cloud-service",
+          "order": 9,
+          "name": "AEM Cloud Service",
+          "videos": [
+            {
+              "id": "09_aem-cloud-service",
+              "part": null,
+              "duration": 242,
+              "youtubeId": null,
+              "description": "Explains AEM as a Cloud Service, including immutable code, Rapid Development Environments, content distribution, environment variables, and asset processing."
+            }
+          ]
+        },
+        {
+          "slug": "certification",
+          "order": 10,
+          "name": "Certification",
+          "videos": [
+            {
+              "id": "10_certification",
+              "part": null,
+              "duration": 236,
+              "youtubeId": null,
+              "description": "Summarizes the AEM Sites Developer Expert exam format and domain weights, with study recommendations and Adobe's WKND tutorial as a learning resource."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cloud-manager",
+      "label": "Cloud Manager",
+      "accent": "#10b981",
+      "categories": [
+        {
+          "slug": "aemaacs-overview",
+          "order": 1,
+          "name": "AEMaaCS Overview",
+          "videos": [
+            {
+              "id": "01_aemaacs-overview_part_1",
+              "part": 1,
+              "duration": 235,
+              "youtubeId": null,
+              "description": "Introduces AEM as a Cloud Service and its managed, continuously updated infrastructure. Covers the CDN, autoscaling, immutable code versus mutable content, asset processing, and content distribution."
+            },
+            {
+              "id": "01_aemaacs-overview_part_2",
+              "part": 2,
+              "duration": 228,
+              "youtubeId": null,
+              "description": "Continues with Rapid Development Environments, the container-based cloud architecture, automated security, developer responsibilities, Experience Cloud integrations, and migration planning with Cloud Acceleration Manager."
+            }
+          ]
+        },
+        {
+          "slug": "admin-console",
+          "order": 2,
+          "name": "Admin Console",
+          "videos": [
+            {
+              "id": "02_admin-console_part_1",
+              "part": 1,
+              "duration": 190,
+              "youtubeId": null,
+              "description": "Explains IMS organizations, product profiles, and how the Admin Console grants access to AEM and Cloud Manager. Introduces the Business Owner role and its program-level responsibilities."
+            },
+            {
+              "id": "02_admin-console_part_2",
+              "part": 2,
+              "duration": 197,
+              "youtubeId": null,
+              "description": "Covers Deployment Manager and Developer permissions, sandbox programs and environment hibernation, and the separate product-profile assignment required for AEM Author access."
+            }
+          ]
+        },
+        {
+          "slug": "cloud-manager",
+          "order": 3,
+          "name": "Cloud Manager",
+          "videos": [
+            {
+              "id": "03_cloud-manager_part_1",
+              "part": 1,
+              "duration": 161,
+              "youtubeId": null,
+              "description": "Introduces Cloud Manager as the operational and CI/CD hub for AEMaaCS, then compares Business Owner, Deployment Manager, and Developer responsibilities and where their roles are assigned."
+            },
+            {
+              "id": "03_cloud-manager_part_2",
+              "part": 2,
+              "duration": 164,
+              "youtubeId": null,
+              "description": "Covers the Program Manager role, how programs group environments and pipelines, sandbox versus production programs, and the Git repositories available to a program."
+            }
+          ]
+        },
+        {
+          "slug": "pipeline-variants",
+          "order": 4,
+          "name": "Pipeline Variants",
+          "videos": [
+            {
+              "id": "04_pipeline-variants_part_1",
+              "part": 1,
+              "duration": 207,
+              "youtubeId": null,
+              "description": "Compares Front End, Full Stack, Config, and Code Quality pipelines, explaining which assets and configurations each pipeline builds or deploys."
+            },
+            {
+              "id": "04_pipeline-variants_part_2",
+              "part": 2,
+              "duration": 206,
+              "youtubeId": null,
+              "description": "Covers external Git repository connections and validation, pull-request quality checks, Edge Delivery Services pipelines, and the production-pipeline limit per program."
+            }
+          ]
+        },
+        {
+          "slug": "pipeline-steps",
+          "order": 5,
+          "name": "Pipeline Steps",
+          "videos": [
+            {
+              "id": "05_pipeline-steps_part_1",
+              "part": 1,
+              "duration": 244,
+              "youtubeId": null,
+              "description": "Walks through the production pipeline from Build and Code Quality through Stage deployment and testing. Covers functional, custom, UI, and performance tests, including customer-provided test containers."
+            },
+            {
+              "id": "05_pipeline-steps_part_2",
+              "part": 2,
+              "duration": 208,
+              "youtubeId": null,
+              "description": "Explains what happens when a step fails, scheduled production deployment, configuration pipelines, overridable quality gates, and the execution details shown in pipeline reports."
+            }
+          ]
+        },
+        {
+          "slug": "ci-cd-pipelines",
+          "order": 6,
+          "name": "CI/CD Pipelines",
+          "videos": [
+            {
+              "id": "06_ci-cd-pipelines_part_1",
+              "part": 1,
+              "duration": 251,
+              "youtubeId": null,
+              "description": "Introduces production and non-production pipelines, their triggers and quality gates, deployment to Stage, production approval, and pipelines for configuration-only changes."
+            },
+            {
+              "id": "06_ci-cd-pipelines_part_2",
+              "part": 2,
+              "duration": 306,
+              "youtubeId": null,
+              "description": "Covers SonarQube, environment variables, Maven builds, quality-gate metrics and severity, and how pipeline execution can be triggered manually or automatically."
+            },
+            {
+              "id": "06_ci-cd-pipelines_part_3",
+              "part": 3,
+              "duration": 236,
+              "youtubeId": null,
+              "description": "Explains production approval, blue-green deployment, Dispatcher cache clearing, Git repository sources, Dev pipelines, and dedicated Dispatcher/CDN configuration pipelines."
+            }
+          ]
+        },
+        {
+          "slug": "code-quality",
+          "order": 7,
+          "name": "Code Quality",
+          "videos": [
+            {
+              "id": "07_code-quality",
+              "part": null,
+              "duration": 362,
+              "youtubeId": null,
+              "description": "Reviews Cloud Manager code-quality checks, including AEM-specific rules, coverage thresholds, SonarQube configuration and ratings, Dispatcher validation, and Maven analysis for AEM compatibility."
+            }
+          ]
+        },
+        {
+          "slug": "monitoring",
+          "order": 8,
+          "name": "Monitoring",
+          "videos": [
+            {
+              "id": "08_monitoring",
+              "part": null,
+              "duration": 354,
+              "youtubeId": null,
+              "description": "Surveys Cloud Manager monitoring tools: environment metrics and health, Developer Console, log access and forwarding, alerts, Lighthouse reports, and New Relic application monitoring."
+            }
+          ]
+        },
+        {
+          "slug": "api-and-cli",
+          "order": 9,
+          "name": "API & CLI",
+          "videos": [
+            {
+              "id": "09_api-and-cli",
+              "part": null,
+              "duration": 333,
+              "youtubeId": null,
+              "description": "Introduces the Cloud Manager REST API and CLI, Adobe IMS service credentials, and automation for pipelines, environments, logs, environment variables, and paused-step approvals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-quality",
+      "label": "Code Quality",
+      "accent": "#f97316",
+      "categories": [
+        {
+          "slug": "sonarqube-rules",
+          "order": 1,
+          "name": "SonarQube Rules",
+          "videos": [
+            {
+              "id": "01_sonarqube-rules_part_1",
+              "part": 1,
+              "duration": 254,
+              "youtubeId": null,
+              "description": "Reviews SonarQube rules for closing resources safely, protecting credentials, avoiding null dereferences, and keeping methods manageable in AEM Java code."
+            },
+            {
+              "id": "01_sonarqube-rules_part_2",
+              "part": 2,
+              "duration": 268,
+              "youtubeId": null,
+              "description": "Covers exception handling and logging, avoiding magic strings, safe ResourceResolver usage, and annotating Sling Models correctly."
+            },
+            {
+              "id": "01_sonarqube-rules_part_3",
+              "part": 3,
+              "duration": 282,
+              "youtubeId": null,
+              "description": "Explains class-size and magic-number rules, thread safety in shared OSGi services, synchronized collections, and critical rule severity."
+            }
+          ]
+        },
+        {
+          "slug": "aem-best-practices",
+          "order": 2,
+          "name": "AEM Best Practices",
+          "videos": [
+            {
+              "id": "02_aem-best-practices_part_1",
+              "part": 1,
+              "duration": 380,
+              "youtubeId": null,
+              "description": "Shows AEM patterns for closing ResourceResolvers, using service users, avoiding repeated repository lookups, keeping business logic in Sling Models, and writing thread-safe services."
+            },
+            {
+              "id": "02_aem-best-practices_part_2",
+              "part": 2,
+              "duration": 386,
+              "youtubeId": null,
+              "description": "Covers configurable paths, safe resource adaptation, thread-safe servlets, Context-Aware Configuration, service-user mappings, and AEM's TagManager API."
+            }
+          ]
+        },
+        {
+          "slug": "htl-sightly",
+          "order": 3,
+          "name": "HTL / Sightly",
+          "videos": [
+            {
+              "id": "03_htl-sightly_part_1",
+              "part": 1,
+              "duration": 315,
+              "youtubeId": null,
+              "description": "Explains HTL output contexts and XSS protection, safe rich-text rendering, separating logic with data-sly-use, conditional rendering, unwrapped output, and safe JavaScript values."
+            },
+            {
+              "id": "03_htl-sightly_part_2",
+              "part": 2,
+              "duration": 334,
+              "youtubeId": null,
+              "description": "Compares HTL template calls, includes, and resource rendering, then covers URI escaping, list metadata, client libraries, and safe number and style tokens."
+            }
+          ]
+        },
+        {
+          "slug": "osgi-felix",
+          "order": 4,
+          "name": "OSGi / Felix",
+          "videos": [
+            {
+              "id": "04_osgi-felix_part_1",
+              "part": 1,
+              "duration": 336,
+              "youtubeId": null,
+              "description": "Covers explicit package imports and Maven dependency scope, optional OSGi service references, dependency injection, configuration lifecycle methods, and bundle naming."
+            },
+            {
+              "id": "04_osgi-felix_part_2",
+              "part": 2,
+              "duration": 340,
+              "youtubeId": null,
+              "description": "Explains OSGi deactivation cleanup, package version ranges, dynamic references, bundle classloaders, configuration annotations, and scheduled jobs."
+            }
+          ]
+        },
+        {
+          "slug": "dispatcher",
+          "order": 5,
+          "name": "Dispatcher",
+          "videos": [
+            {
+              "id": "05_dispatcher_part_1",
+              "part": 1,
+              "duration": 335,
+              "youtubeId": null,
+              "description": "Reviews Dispatcher security controls for request paths and methods, cache invalidation, blocking public access to Author, limiting invalidation clients, denying JCR JSON, and preventing clickjacking."
+            },
+            {
+              "id": "05_dispatcher_part_2",
+              "part": 2,
+              "duration": 324,
+              "youtubeId": null,
+              "description": "Covers Publisher farm configuration, cache-busting risks, blocking sensitive endpoints, avoiding personalized-content leaks, stale cache delivery, and .infinity.json exposure."
+            }
+          ]
+        },
+        {
+          "slug": "oakpal-content-rules",
+          "order": 6,
+          "name": "OakPAL Content Rules",
+          "videos": [
+            {
+              "id": "06_oakpal-content-rules_part_1",
+              "part": 1,
+              "duration": 340,
+              "youtubeId": null,
+              "description": "Shows OakPAL package checks for filtered writes under /apps, package replacement behavior, immutable content, overlays, required primary types, and mutable properties."
+            },
+            {
+              "id": "06_oakpal-content-rules_part_2",
+              "part": 2,
+              "duration": 357,
+              "youtubeId": null,
+              "description": "Covers rules against packaging ACLs or /var data, package category conflicts, direct /libs changes, overlapping filters, and Blocker versus Error severity."
+            }
+          ]
+        },
+        {
+          "slug": "performance-optimization",
+          "order": 7,
+          "name": "Performance Optimization",
+          "videos": [
+            {
+              "id": "07_performance-optimization_part_1",
+              "part": 1,
+              "duration": 288,
+              "youtubeId": null,
+              "description": "Explains AEM query diagnostics, the cost of repository traversal, batching JCR writes, avoiding repeated ValueMap creation, and choosing property indexes for exact matches."
+            },
+            {
+              "id": "07_performance-optimization_part_2",
+              "part": 2,
+              "duration": 296,
+              "youtubeId": null,
+              "description": "Covers lazy child iteration, long-lived Dispatcher caching, batched asset processing, path-restricted Lucene indexes, and reusing ResourceResolvers to benefit from caching."
+            }
+          ]
+        },
+        {
+          "slug": "security",
+          "order": 8,
+          "name": "Security",
+          "videos": [
+            {
+              "id": "08_security",
+              "part": null,
+              "duration": 452,
+              "youtubeId": null,
+              "description": "Reviews AEM security risks and protections, including query injection, default passwords, Dispatcher bypass, CSRF validation, servlet registration, TLS, repository users, and resource-level access controls."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "env-setup",
+      "label": "Env Setup",
+      "accent": "#3b82f6",
+      "categories": [
+        {
+          "slug": "local-environment-overview",
+          "order": 1,
+          "name": "Local Environment Overview",
+          "videos": [
+            {
+              "id": "01_local-environment-overview",
+              "part": null,
+              "duration": 223,
+              "youtubeId": null,
+              "description": "Introduces a local AEM development setup, its Author and Publish services, project code, and Dispatcher, and explains how local testing catches issues before CI/CD."
+            }
+          ]
+        },
+        {
+          "slug": "development-tools",
+          "order": 2,
+          "name": "Development Tools",
+          "videos": [
+            {
+              "id": "02_development-tools",
+              "part": null,
+              "duration": 194,
+              "youtubeId": null,
+              "description": "Reviews the core tools for local AEM development: Java JDK, Maven, Node.js, and Git, including commands to check each installation."
+            }
+          ]
+        },
+        {
+          "slug": "adobe-i-o-cli",
+          "order": 3,
+          "name": "Adobe I/O CLI",
+          "videos": [
+            {
+              "id": "03_adobe-i-o-cli",
+              "part": null,
+              "duration": 219,
+              "youtubeId": null,
+              "description": "Introduces the Adobe I/O CLI and its Cloud Manager plugin, covering installation, authentication options, Developer Console setup, and deploying to an RDE."
+            }
+          ]
+        },
+        {
+          "slug": "file-system-organization",
+          "order": 4,
+          "name": "File System Organization",
+          "videos": [
+            {
+              "id": "04_file-system-organization",
+              "part": null,
+              "duration": 225,
+              "youtubeId": null,
+              "description": "Shows a practical local folder layout for AEM SDK versions, Author and Dispatcher runtimes, and project source code, keeping runtime files separate from custom code."
+            }
+          ]
+        },
+        {
+          "slug": "quickstart-jar",
+          "order": 5,
+          "name": "QuickStart Jar",
+          "videos": [
+            {
+              "id": "05_quickstart-jar_part_1",
+              "part": 1,
+              "duration": 143,
+              "youtubeId": null,
+              "description": "Explains what the AEM QuickStart JAR does, where to obtain it, how to launch it safely from the command line, and the default Author port."
+            },
+            {
+              "id": "05_quickstart-jar_part_2",
+              "part": 2,
+              "duration": 154,
+              "youtubeId": null,
+              "description": "Covers the default Publish port, the crx-quickstart runtime directory and reset process, running separate instances, and what the AEMaaCS SDK contains."
+            }
+          ]
+        },
+        {
+          "slug": "quickstart-jar-naming-convention",
+          "order": 6,
+          "name": "QuickStart Jar Naming Convention",
+          "videos": [
+            {
+              "id": "06_quickstart-jar-naming-convention_part_1",
+              "part": 1,
+              "duration": 150,
+              "youtubeId": null,
+              "description": "Breaks down the QuickStart JAR filename pattern and uses examples to identify Author or Publish tier, Dev or Production mode, and port."
+            },
+            {
+              "id": "06_quickstart-jar-naming-convention_part_2",
+              "part": 2,
+              "duration": 162,
+              "youtubeId": null,
+              "description": "Explains how the port and run mode affect startup, why the instance tier is locked in crx-quickstart, and what happens when a JAR is renamed."
+            }
+          ]
+        },
+        {
+          "slug": "content-distribution",
+          "order": 7,
+          "name": "Content Distribution",
+          "videos": [
+            {
+              "id": "07_content-distribution",
+              "part": null,
+              "duration": 241,
+              "youtubeId": null,
+              "description": "Compares local replication agents with the Adobe Pipeline used in AEM as a Cloud Service, including the local Author-to-Publish setup and its configuration."
+            }
+          ]
+        },
+        {
+          "slug": "local-dispatcher",
+          "order": 8,
+          "name": "Local Dispatcher",
+          "videos": [
+            {
+              "id": "08_local-dispatcher",
+              "part": null,
+              "duration": 236,
+              "youtubeId": null,
+              "description": "Shows how to run and validate the local Dispatcher in Docker, use hot reload, configure it to proxy to AEM Publish, and access it on its local port."
+            }
+          ]
+        },
+        {
+          "slug": "maven-project-structure",
+          "order": 9,
+          "name": "Maven Project Structure",
+          "videos": [
+            {
+              "id": "09_maven-project-structure_part_1",
+              "part": 1,
+              "duration": 158,
+              "youtubeId": null,
+              "description": "Explains immutable and mutable AEM paths, distinguishing application code in /apps from content in /content and Adobe's platform code in /libs."
+            },
+            {
+              "id": "09_maven-project-structure_part_2",
+              "part": 2,
+              "duration": 155,
+              "youtubeId": null,
+              "description": "Introduces the ui.apps and ui.content modules, where configuration content belongs, and how code and content map to immutable and mutable repository paths."
+            }
+          ]
+        },
+        {
+          "slug": "maven-modules-and-package-types",
+          "order": 10,
+          "name": "Maven Modules & Package Types",
+          "videos": [
+            {
+              "id": "10_maven-modules-and-package-types_part_1",
+              "part": 1,
+              "duration": 140,
+              "youtubeId": null,
+              "description": "Introduces the core, application, content, and container modules in a Maven AEM project and explains the container package's role as the deployment artifact."
+            },
+            {
+              "id": "10_maven-modules-and-package-types_part_2",
+              "part": 2,
+              "duration": 150,
+              "youtubeId": null,
+              "description": "Covers Cloud Manager package targets, ui.config, the five key project modules, and how application packages assemble the project's deployable modules."
+            }
+          ]
+        },
+        {
+          "slug": "repo-init-and-aem-archetype",
+          "order": 11,
+          "name": "Repo Init & AEM Archetype",
+          "videos": [
+            {
+              "id": "11_repo-init-and-aem-archetype",
+              "part": null,
+              "duration": 245,
+              "youtubeId": null,
+              "description": "Covers Repo Init scripts for declaring repository structure, users, groups, and ACLs, when they run, and how run modes scope their execution; also introduces the AEM Maven Archetype and its generated modules."
+            }
+          ]
+        },
+        {
+          "slug": "troubleshooting",
+          "order": 12,
+          "name": "Troubleshooting",
+          "videos": [
+            {
+              "id": "12_troubleshooting",
+              "part": null,
+              "duration": 252,
+              "youtubeId": null,
+              "description": "Walks through common local AEM checks in Package Manager, CRXDE Lite, the Bundle Console, error logs, and client-library diagnostics, including Java-version and startup issues."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authentication",
+      "label": "Authentication",
+      "accent": "#06b6d4",
+      "categories": [
+        {
+          "slug": "authentication-overview",
+          "order": 1,
+          "name": "Authentication Overview",
+          "videos": [
+            {
+              "id": "01_authentication-overview",
+              "part": null,
+              "duration": 225,
+              "youtubeId": null,
+              "description": "Introduces authentication methods in AEM and compares where Adobe IMS, SAML, OAuth, OpenID Connect, and token authentication are supported across Author and Publish."
+            }
+          ]
+        },
+        {
+          "slug": "adobe-ims-fundamentals",
+          "order": 2,
+          "name": "Adobe IMS Fundamentals",
+          "videos": [
+            {
+              "id": "02_adobe-ims-fundamentals_part_1",
+              "part": 1,
+              "duration": 158,
+              "youtubeId": null,
+              "description": "Explains Adobe IMS users, groups, and product profiles, and how they provide the initial access to AEM Author."
+            },
+            {
+              "id": "02_adobe-ims-fundamentals_part_2",
+              "part": 2,
+              "duration": 165,
+              "youtubeId": null,
+              "description": "Covers the permissions granted by AEM product profiles, the roles of AEM groups, and how IMS uses OAuth to connect AEM with Adobe identity services."
+            }
+          ]
+        },
+        {
+          "slug": "admin-console-and-org-onboarding",
+          "order": 3,
+          "name": "Admin Console & Org Onboarding",
+          "videos": [
+            {
+              "id": "03_admin-console-and-org-onboarding",
+              "part": null,
+              "duration": 240,
+              "youtubeId": null,
+              "description": "Walks through onboarding an organization to IMS, claiming its domain, configuring identity providers, and understanding product context instances and supported user identities."
+            }
+          ]
+        },
+        {
+          "slug": "user-onboarding-methods",
+          "order": 4,
+          "name": "User Onboarding Methods",
+          "videos": [
+            {
+              "id": "04_user-onboarding-methods",
+              "part": null,
+              "duration": 245,
+              "youtubeId": null,
+              "description": "Compares manual user creation, CSV imports, and directory synchronization with the User Sync Tool, including one-way sync and mapping enterprise groups to Adobe product access."
+            }
+          ]
+        },
+        {
+          "slug": "login-flows",
+          "order": 5,
+          "name": "Login Flows",
+          "videos": [
+            {
+              "id": "05_login-flows",
+              "part": null,
+              "duration": 242,
+              "youtubeId": null,
+              "description": "Traces local administrator and Adobe IMS login flows, including redirects through a customer identity provider for SSO and reuse of an existing IMS session."
+            }
+          ]
+        },
+        {
+          "slug": "saml-2-0-the-flow",
+          "order": 6,
+          "name": "SAML 2.0 — The Flow",
+          "videos": [
+            {
+              "id": "06_saml-2-0-the-flow_part_1",
+              "part": 1,
+              "duration": 150,
+              "youtubeId": null,
+              "description": "Introduces SAML authentication for AEM Publish and follows the login request from the protected resource to the Identity Provider and its signed assertion."
+            },
+            {
+              "id": "06_saml-2-0-the-flow_part_2",
+              "part": 2,
+              "duration": 163,
+              "youtubeId": null,
+              "description": "Explains how Publish validates the assertion, creates or updates the user, issues a login cookie, redirects to the requested page, and verifies signatures with certificates."
+            }
+          ]
+        },
+        {
+          "slug": "saml-2-0-configuration",
+          "order": 7,
+          "name": "SAML 2.0 — Configuration",
+          "videos": [
+            {
+              "id": "07_saml-2-0-configuration_part_1",
+              "part": 1,
+              "duration": 223,
+              "youtubeId": null,
+              "description": "Covers prerequisites for SAML setup, certificate management in the Global Trust Store, moving trust configuration to Publish, keystore requirements, and the OSGi authentication handler."
+            },
+            {
+              "id": "07_saml-2-0-configuration_part_2",
+              "part": 2,
+              "duration": 254,
+              "youtubeId": null,
+              "description": "Explains the SAML handler's OSGi properties, site-specific configuration paths, CORS requirements for Identity Provider POSTs, and deployment through Cloud Manager."
+            }
+          ]
+        },
+        {
+          "slug": "token-authentication-overview",
+          "order": 8,
+          "name": "Token Authentication Overview",
+          "videos": [
+            {
+              "id": "08_token-authentication-overview",
+              "part": null,
+              "duration": 180,
+              "youtubeId": null,
+              "description": "Introduces bearer-token authentication for external clients using AEM APIs, and compares local development access tokens with production OAuth Server-to-Server credentials."
+            }
+          ]
+        },
+        {
+          "slug": "local-development-access-token",
+          "order": 9,
+          "name": "Local Development Access Token",
+          "videos": [
+            {
+              "id": "09_local-development-access-token",
+              "part": null,
+              "duration": 232,
+              "youtubeId": null,
+              "description": "Shows how to obtain and use a short-lived local development token for AEMaaCS, including required access profiles, its user identity and permissions, expiration, and secure handling."
+            }
+          ]
+        },
+        {
+          "slug": "service-credentials-and-oauth-server-to-server",
+          "order": 10,
+          "name": "Service Credentials & OAuth Server-to-Server",
+          "videos": [
+            {
+              "id": "10_service-credentials-and-oauth-server-to-server_part_1",
+              "part": 1,
+              "duration": 240,
+              "youtubeId": null,
+              "description": "Introduces OAuth Server-to-Server as the production authentication method, covering the move from JWT, technical accounts, client credentials, scopes, and bearer tokens."
+            },
+            {
+              "id": "10_service-credentials-and-oauth-server-to-server_part_2",
+              "part": 2,
+              "duration": 214,
+              "youtubeId": null,
+              "description": "Explains how service credentials differ from access tokens, credential rotation and technical-account limits, security considerations, and migration of API integrations to OAuth."
+            }
+          ]
+        },
+        {
+          "slug": "configuring-technical-account-permissions",
+          "order": 11,
+          "name": "Configuring Technical Account Permissions",
+          "videos": [
+            {
+              "id": "11_configuring-technical-account-permissions",
+              "part": null,
+              "duration": 246,
+              "youtubeId": null,
+              "description": "Shows how to find the AEM user created for a technical account and grant permissions through AEM groups, then verify access against an asset operation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "Templates",
+      "accent": "#f59e0b",
+      "categories": [
+        {
+          "slug": "components-and-core-components",
+          "order": 1,
+          "name": "Components & Core Components",
+          "videos": [
+            {
+              "id": "01_components-and-core-components",
+              "part": null,
+              "duration": 219,
+              "youtubeId": null,
+              "description": "Introduces AEM components as reusable website building blocks, explains the role of Core Components, and points to WKND and AEM tools for exploring component definitions."
+            }
+          ]
+        },
+        {
+          "slug": "editable-templates-fundamentals",
+          "order": 2,
+          "name": "Editable Templates Fundamentals",
+          "videos": [
+            {
+              "id": "02_editable-templates-fundamentals",
+              "part": null,
+              "duration": 196,
+              "youtubeId": null,
+              "description": "Explains editable templates, their structure and author-editable regions, template policies and responsive settings, and where to manage templates in AEM."
+            }
+          ]
+        },
+        {
+          "slug": "roles-and-template-folders",
+          "order": 3,
+          "name": "Roles & Template Folders",
+          "videos": [
+            {
+              "id": "03_roles-and-template-folders_part_1",
+              "part": 1,
+              "duration": 140,
+              "youtubeId": null,
+              "description": "Compares Admin, Developer, and Template Author responsibilities, including who can create template folders and who manages their technical versus authoring details."
+            },
+            {
+              "id": "03_roles-and-template-folders_part_2",
+              "part": 2,
+              "duration": 123,
+              "youtubeId": null,
+              "description": "Covers template-author permissions, the role of /conf/global, why site-specific folders are preferred, and the order AEM uses to resolve template configuration."
+            }
+          ]
+        },
+        {
+          "slug": "template-types",
+          "order": 4,
+          "name": "Template Types",
+          "videos": [
+            {
+              "id": "04_template-types",
+              "part": null,
+              "duration": 201,
+              "youtubeId": null,
+              "description": "Explains template types as blueprints for editable templates, where they are stored, how to configure responsive breakpoints, and ways to create a custom type."
+            }
+          ]
+        },
+        {
+          "slug": "template-lifecycle-and-properties",
+          "order": 5,
+          "name": "Template Lifecycle & Properties",
+          "videos": [
+            {
+              "id": "05_template-lifecycle-and-properties_part_1",
+              "part": 1,
+              "duration": 148,
+              "youtubeId": null,
+              "description": "Walks through creating, configuring, enabling, allowing, and publishing a template, including how allowed paths determine where authors can use it."
+            },
+            {
+              "id": "05_template-lifecycle-and-properties_part_2",
+              "part": 2,
+              "duration": 108,
+              "youtubeId": null,
+              "description": "Covers template title, description, thumbnail, status changes, thumbnail generation, and warnings when edits may affect pages that use the template."
+            }
+          ]
+        },
+        {
+          "slug": "editing-templates-structure-mode",
+          "order": 6,
+          "name": "Editing Templates — Structure Mode",
+          "videos": [
+            {
+              "id": "06_editing-templates-structure-mode",
+              "part": null,
+              "duration": 221,
+              "youtubeId": null,
+              "description": "Shows how Structure mode defines locked template components and editable areas, how authors add components, and how policies and layout settings affect the template."
+            }
+          ]
+        },
+        {
+          "slug": "editing-templates-initial-content-and-layout",
+          "order": 7,
+          "name": "Editing Templates — Initial Content & Layout",
+          "videos": [
+            {
+              "id": "07_editing-templates-initial-content-and-layout",
+              "part": null,
+              "duration": 215,
+              "youtubeId": null,
+              "description": "Explains how Initial Content sets the starting content for new pages, which components can be edited or added, how later template changes affect pages, and how to configure responsive layouts."
+            }
+          ]
+        },
+        {
+          "slug": "policies-and-properties",
+          "order": 8,
+          "name": "Policies & Properties",
+          "videos": [
+            {
+              "id": "08_policies-and-properties_part_1",
+              "part": 1,
+              "duration": 198,
+              "youtubeId": null,
+              "description": "Introduces component policies and their settings for containers, including allowed and default components, responsive behavior, and asset-to-component mapping."
+            },
+            {
+              "id": "08_policies-and-properties_part_2",
+              "part": 2,
+              "duration": 207,
+              "youtubeId": null,
+              "description": "Covers responsive grid columns, locked and unlocked components, large allowed-component lists, policy updates, and the effects of changing component lock states."
+            }
+          ]
+        },
+        {
+          "slug": "experience-fragments",
+          "order": 9,
+          "name": "Experience Fragments",
+          "videos": [
+            {
+              "id": "09_experience-fragments_part_1",
+              "part": 1,
+              "duration": 150,
+              "youtubeId": null,
+              "description": "Shows how to create an Experience Fragment from grouped components and add a fragment reference to a page to reuse its content and properties."
+            },
+            {
+              "id": "09_experience-fragments_part_2",
+              "part": 2,
+              "duration": 130,
+              "youtubeId": null,
+              "description": "Explains reuse across websites, apps, and external channels, adapting fragment variations, synchronization with Live Copy, and social media integration."
+            }
+          ]
+        },
+        {
+          "slug": "client-libraries-fundamentals",
+          "order": 10,
+          "name": "Client Libraries — Fundamentals",
+          "videos": [
+            {
+              "id": "10_client-libraries-fundamentals_part_1",
+              "part": 1,
+              "duration": 162,
+              "youtubeId": null,
+              "description": "Introduces AEM client libraries for delivering CSS and JavaScript, their folder structure and properties, and how categories organize front-end resources."
+            },
+            {
+              "id": "10_client-libraries-fundamentals_part_2",
+              "part": 2,
+              "duration": 177,
+              "youtubeId": null,
+              "description": "Explains js.txt and css.txt aggregation, the ui.frontend build integration, and exposing client libraries through /etc.clientlibs with a proxy."
+            }
+          ]
+        },
+        {
+          "slug": "client-libraries-advanced-features",
+          "order": 11,
+          "name": "Client Libraries — Advanced Features",
+          "videos": [
+            {
+              "id": "11_client-libraries-advanced-features_part_1",
+              "part": 1,
+              "duration": 205,
+              "youtubeId": null,
+              "description": "Covers including client libraries from HTL, declaring dependencies, and how embedded libraries contribute their generated CSS and JavaScript to a page."
+            },
+            {
+              "id": "11_client-libraries-advanced-features_part_2",
+              "part": 2,
+              "duration": 211,
+              "youtubeId": null,
+              "description": "Explains embedding libraries across repository paths, merged output and debug mode, available minifiers, and the AEM client-library diagnostics page."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "label": "Components",
+      "accent": "#f43f5e",
+      "categories": [
+        {
+          "slug": "introduction",
+          "order": 1,
+          "name": "Introduction",
+          "videos": [
+            {
+              "id": "01_introduction",
+              "part": null,
+              "duration": 172,
+              "youtubeId": null,
+              "description": "Introduces the component-development topics in the AEM Sites Developer exam, from component placement and structure to proxy patterns, HTL, models, and services."
+            }
+          ]
+        },
+        {
+          "slug": "anatomy-of-a-component",
+          "order": 2,
+          "name": "Anatomy of a Component",
+          "videos": [
+            {
+              "id": "02_anatomy-of-a-component",
+              "part": null,
+              "duration": 158,
+              "youtubeId": null,
+              "description": "Explains the AEM component node and folder under /apps, its .content.xml metadata, rendering script, author-facing title, component group, and container setting."
+            }
+          ]
+        },
+        {
+          "slug": "proxy-component-pattern",
+          "order": 3,
+          "name": "Proxy Component Pattern",
+          "videos": [
+            {
+              "id": "03_proxy-component-pattern",
+              "part": null,
+              "duration": 167,
+              "youtubeId": null,
+              "description": "Shows how site-specific proxy components extend shared Core Components through sling:resourceSuperType, including minimal proxy definitions and why /libs should not be modified."
+            }
+          ]
+        },
+        {
+          "slug": "resource-type-resolution-and-versioning",
+          "order": 4,
+          "name": "Resource Type Resolution & Versioning",
+          "videos": [
+            {
+              "id": "04_resource-type-resolution-and-versioning",
+              "part": null,
+              "duration": 181,
+              "youtubeId": null,
+              "description": "Traces Sling resource-type and supertype lookup across /apps and /libs, and explains component versioning, compatibility changes, and why content should not reference versioned components directly."
+            }
+          ]
+        },
+        {
+          "slug": "htl-fundamentals",
+          "order": 5,
+          "name": "HTL Fundamentals",
+          "videos": [
+            {
+              "id": "05_htl-fundamentals",
+              "part": null,
+              "duration": 186,
+              "youtubeId": null,
+              "description": "Introduces HTL expressions, context-aware XSS protection, output contexts, default values, strict comparisons, global objects, and explicit context handling."
+            }
+          ]
+        },
+        {
+          "slug": "htl-block-statements",
+          "order": 6,
+          "name": "HTL Block Statements",
+          "videos": [
+            {
+              "id": "06_htl-block-statements",
+              "part": null,
+              "duration": 156,
+              "youtubeId": null,
+              "description": "Explains HTL data-sly attributes for helper objects, conditions, loops, and repeated elements, including loop metadata, variable scope, and evaluation behavior."
+            }
+          ]
+        },
+        {
+          "slug": "htl-templates-and-use-api",
+          "order": 7,
+          "name": "HTL Templates & Use-API",
+          "videos": [
+            {
+              "id": "07_htl-templates-and-use-api",
+              "part": null,
+              "duration": 167,
+              "youtubeId": null,
+              "description": "Covers reusable HTL templates and calls, the difference between including scripts and rendering resources, supported resource options, and using Sling Models through the Use-API."
+            }
+          ]
+        },
+        {
+          "slug": "sling-models-fundamentals",
+          "order": 8,
+          "name": "Sling Models Fundamentals",
+          "videos": [
+            {
+              "id": "08_sling-models-fundamentals",
+              "part": null,
+              "duration": 186,
+              "youtubeId": null,
+              "description": "Introduces Sling Models as annotation-driven Java POJOs, choosing Resource or request adaptables, registering models, and handling adaptation failures with adaptTo or ModelFactory."
+            }
+          ]
+        },
+        {
+          "slug": "sling-models-injectors",
+          "order": 9,
+          "name": "Sling Models Injectors",
+          "videos": [
+            {
+              "id": "09_sling-models-injectors",
+              "part": null,
+              "duration": 177,
+              "youtubeId": null,
+              "description": "Reviews common Sling Model injectors for properties, child resources, script variables, Sling objects, and OSGi services, including adaptable requirements and why specific annotations are preferred."
+            }
+          ]
+        },
+        {
+          "slug": "delegation-and-model-interfaces",
+          "order": 10,
+          "name": "Delegation & Model Interfaces",
+          "videos": [
+            {
+              "id": "10_delegation-and-model-interfaces",
+              "part": null,
+              "duration": 169,
+              "youtubeId": null,
+              "description": "Explains how proxy components extend Core Component model interfaces using delegation, @Model registration, resource-type binding, and ResourceSuperType adaptation."
+            }
+          ]
+        },
+        {
+          "slug": "exporting-models-as-json",
+          "order": 11,
+          "name": "Exporting Models as JSON",
+          "videos": [
+            {
+              "id": "11_exporting-models-as-json",
+              "part": null,
+              "duration": 176,
+              "youtubeId": null,
+              "description": "Shows how to expose Sling Models as JSON with the Jackson exporter and .model.json, configure exported properties, and support page JSON for SPA Editor and headless consumers."
+            }
+          ]
+        },
+        {
+          "slug": "component-dialogs",
+          "order": 12,
+          "name": "Component Dialogs",
+          "videos": [
+            {
+              "id": "12_component-dialogs",
+              "part": null,
+              "duration": 183,
+              "youtubeId": null,
+              "description": "Compares author and design dialogs, explains Granite UI field storage and relative property names, and covers inherited dialogs and safe Sling Resource Merger overrides."
+            }
+          ]
+        },
+        {
+          "slug": "osgi-services-and-configurations",
+          "order": 13,
+          "name": "OSGi Services & Configurations",
+          "videos": [
+            {
+              "id": "13_osgi-services-and-configurations",
+              "part": null,
+              "duration": 211,
+              "youtubeId": null,
+              "description": "Covers reusable OSGi services and dependency injection, typed configuration annotations, ui.config files, and secure environment-variable and secret handling in AEM Cloud Service."
+            }
+          ]
+        },
+        {
+          "slug": "servlets-style-system-and-best-practices",
+          "order": 14,
+          "name": "Servlets, Style System & Best Practices",
+          "videos": [
+            {
+              "id": "14_servlets-style-system-and-best-practices",
+              "part": null,
+              "duration": 206,
+              "youtubeId": null,
+              "description": "Reviews safe resource-type servlet registration, why path-bound servlets are discouraged, author-selectable Style System policies, and maintainable AEM component practices."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maven",
+      "label": "Maven",
+      "accent": "#6366f1",
+      "categories": [
+        {
+          "slug": "introduction",
+          "order": 1,
+          "name": "Introduction",
+          "videos": [
+            {
+              "id": "01_introduction",
+              "part": null,
+              "duration": 155,
+              "youtubeId": null,
+              "description": "Introduces the Maven topics in the AEM Sites Developer exam, including project modules, package types, container packages, the AEM Project Archetype, and deployment scenarios."
+            }
+          ]
+        },
+        {
+          "slug": "mutable-vs-immutable-areas",
+          "order": 2,
+          "name": "Mutable vs Immutable Areas",
+          "videos": [
+            {
+              "id": "02_mutable-vs-immutable-areas",
+              "part": null,
+              "duration": 171,
+              "youtubeId": null,
+              "description": "Explains AEM's mutable and immutable repository paths, where code and content packages belong, why /libs is not modified, and how Cloud Manager handles index changes during deployment."
+            }
+          ]
+        },
+        {
+          "slug": "project-modules",
+          "order": 3,
+          "name": "Project Modules",
+          "videos": [
+            {
+              "id": "03_project-modules",
+              "part": null,
+              "duration": 168,
+              "youtubeId": null,
+              "description": "Surveys the AEM Maven project modules, including core, ui.apps, ui.config, ui.content, ui.frontend, and the modules used for integration, UI, and unit testing."
+            }
+          ]
+        },
+        {
+          "slug": "package-types",
+          "order": 4,
+          "name": "Package Types",
+          "videos": [
+            {
+              "id": "04_package-types",
+              "part": null,
+              "duration": 138,
+              "youtubeId": null,
+              "description": "Explains application, content, and container package types, where to configure them in the FileVault Maven plugin, and how package filters and merge behavior affect installation."
+            }
+          ]
+        },
+        {
+          "slug": "cloud-manager-target",
+          "order": 5,
+          "name": "Cloud Manager Target",
+          "videos": [
+            {
+              "id": "05_cloud-manager-target",
+              "part": null,
+              "duration": 156,
+              "youtubeId": null,
+              "description": "Covers the cloudManagerTarget setting for Maven packages, why subpackages should not deploy independently, and how the all container package bundles code, configuration, and baseline content."
+            }
+          ]
+        },
+        {
+          "slug": "container-package-and-embeds",
+          "order": 6,
+          "name": "Container Package & Embeds",
+          "videos": [
+            {
+              "id": "06_container-package-and-embeds",
+              "part": null,
+              "duration": 165,
+              "youtubeId": null,
+              "description": "Explains the role and contents of the AEM container package, how embeddeds and subPackages are declared, where they are installed, and how to avoid deploying into application package folders."
+            }
+          ]
+        },
+        {
+          "slug": "dependencies-and-repository-structure",
+          "order": 7,
+          "name": "Dependencies & Repository Structure",
+          "videos": [
+            {
+              "id": "07_dependencies-and-repository-structure",
+              "part": null,
+              "duration": 202,
+              "youtubeId": null,
+              "description": "Shows how Maven package dependencies should flow between AEM modules, why bundles are not Package Manager dependencies, and how repository-structure packages prevent folder ownership conflicts."
+            }
+          ]
+        },
+        {
+          "slug": "filters-and-package-contents",
+          "order": 8,
+          "name": "Filters & Package Contents",
+          "videos": [
+            {
+              "id": "08_filters-and-package-contents",
+              "part": null,
+              "duration": 155,
+              "youtubeId": null,
+              "description": "Explains FileVault filter roots and import modes, Cloud Service package restrictions, and where configuration and legacy content such as /etc should be placed or migrated."
+            }
+          ]
+        },
+        {
+          "slug": "ui-config-run-modes-and-repo-init",
+          "order": 9,
+          "name": "ui.config, Run Modes & Repo Init",
+          "videos": [
+            {
+              "id": "09_ui-config-run-modes-and-repo-init",
+              "part": null,
+              "duration": 157,
+              "youtubeId": null,
+              "description": "Covers OSGi configuration files in ui.config, run-mode folder naming and formats, and Repo Init scripts for setting up repository content and users."
+            }
+          ]
+        },
+        {
+          "slug": "parent-pom",
+          "order": 10,
+          "name": "Parent POM",
+          "videos": [
+            {
+              "id": "10_parent-pom",
+              "part": null,
+              "duration": 149,
+              "youtubeId": null,
+              "description": "Reviews the parent POM's dependency management and shared build properties, local AEM connection defaults, command-line property overrides, and SDK API dependency cleanup."
+            }
+          ]
+        },
+        {
+          "slug": "core-bundle-and-testing",
+          "order": 11,
+          "name": "Core Bundle & Testing",
+          "videos": [
+            {
+              "id": "11_core-bundle-and-testing",
+              "part": null,
+              "duration": 138,
+              "youtubeId": null,
+              "description": "Explains how the core module builds an OSGi bundle with the bnd Maven plugin, how Maven parameters and target API versions affect it, and where integration, UI, and unit tests run."
+            }
+          ]
+        },
+        {
+          "slug": "generating-with-the-archetype",
+          "order": 12,
+          "name": "Generating with the Archetype",
+          "videos": [
+            {
+              "id": "12_generating-with-the-archetype",
+              "part": null,
+              "duration": 149,
+              "youtubeId": null,
+              "description": "Shows how the AEM Maven Archetype generates a project, which plugin and archetype versions to use, and how project identifiers, titles, component groups, and defaults are selected."
+            }
+          ]
+        },
+        {
+          "slug": "archetype-options",
+          "order": 13,
+          "name": "Archetype Options",
+          "videos": [
+            {
+              "id": "13_archetype-options",
+              "part": null,
+              "duration": 143,
+              "youtubeId": null,
+              "description": "Explains archetype options for targeting AEM Cloud, enabling Dispatcher configuration, choosing project and content structure, and configuring single- or multi-country sites."
+            }
+          ]
+        },
+        {
+          "slug": "build-deploy-and-best-practices",
+          "order": 14,
+          "name": "Build, Deploy & Best Practices",
+          "videos": [
+            {
+              "id": "14_build-deploy-and-best-practices",
+              "part": null,
+              "duration": 161,
+              "youtubeId": null,
+              "description": "Covers building and installing AEM packages and bundles, Maven auto-install profiles, deploying only the all package, and keeping environment-specific values in run modes or Cloud Manager variables."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflows",
+      "label": "Workflows",
+      "accent": "#14b8a6",
+      "categories": [
+        {
+          "slug": "introduction",
+          "order": 1,
+          "name": "Introduction",
+          "videos": [
+            {
+              "id": "01_introduction",
+              "part": null,
+              "duration": 154,
+              "youtubeId": null,
+              "description": "Introduces the exam topics in this section: AEM workflows, Content Fragments, and Experience Fragments, with a focus on choosing workflow steps and fragment delivery approaches."
+            }
+          ]
+        },
+        {
+          "slug": "workflow-model-concepts",
+          "order": 2,
+          "name": "Workflow Model Concepts",
+          "videos": [
+            {
+              "id": "02_workflow-model-concepts",
+              "part": null,
+              "duration": 152,
+              "youtubeId": null,
+              "description": "Explains workflow models, transitions, start and end nodes, payloads, work items and inbox assignments, plus the actions available on workflow instances."
+            }
+          ]
+        },
+        {
+          "slug": "runtime-models-and-sync",
+          "order": 3,
+          "name": "Runtime Models and Sync",
+          "videos": [
+            {
+              "id": "03_runtime-models-and-sync",
+              "part": null,
+              "duration": 152,
+              "youtubeId": null,
+              "description": "Shows how workflow model versions and runtime synchronization affect new and running instances, including changes to scripts and legacy models."
+            }
+          ]
+        },
+        {
+          "slug": "workflow-step-types",
+          "order": 4,
+          "name": "Workflow Step Types",
+          "videos": [
+            {
+              "id": "04_workflow-step-types",
+              "part": null,
+              "duration": 157,
+              "youtubeId": null,
+              "description": "Compares participant, process, container, OR split and AND split steps, and covers shared timeout behavior and dynamic participant selection."
+            }
+          ]
+        },
+        {
+          "slug": "transient-multi-resource-and-stages",
+          "order": 5,
+          "name": "Transient, Multi Resource and Stages",
+          "videos": [
+            {
+              "id": "05_transient-multi-resource-and-stages",
+              "part": null,
+              "duration": 194,
+              "youtubeId": null,
+              "description": "Explains transient workflows, their performance tradeoffs and persistence exceptions, behavior around human steps and AND splits, and how multi-resource workflows package selected resources."
+            }
+          ]
+        },
+        {
+          "slug": "custom-process-steps-in-java",
+          "order": 6,
+          "name": "Custom Process Steps in Java",
+          "videos": [
+            {
+              "id": "06_custom-process-steps-in-java",
+              "part": null,
+              "duration": 183,
+              "youtubeId": null,
+              "description": "Shows how to implement and register a Java workflow process using WorkflowProcess, access the work item and payload, use WorkflowSession and repositories, and read process arguments."
+            }
+          ]
+        },
+        {
+          "slug": "workflows-in-cloud-service",
+          "order": 7,
+          "name": "Workflows in Cloud Service",
+          "videos": [
+            {
+              "id": "07_workflows-in-cloud-service",
+              "part": null,
+              "duration": 177,
+              "youtubeId": null,
+              "description": "Covers where workflow models and launchers are configured in AEM as a Cloud Service, how to deploy them through Cloud Manager, runtime model generation, and launcher events."
+            }
+          ]
+        },
+        {
+          "slug": "metadatamaps-and-persisting-data",
+          "order": 8,
+          "name": "MetaDataMaps and Persisting Data",
+          "videos": [
+            {
+              "id": "08_metadatamaps-and-persisting-data",
+              "part": null,
+              "duration": 173,
+              "youtubeId": null,
+              "description": "Explains workflow-level versus work-item metadata, how to persist shared values across steps, and how Java and ECMA process arguments map to MetaDataMaps."
+            }
+          ]
+        },
+        {
+          "slug": "custom-step-components",
+          "order": 9,
+          "name": "Custom Step Components",
+          "videos": [
+            {
+              "id": "09_custom-step-components",
+              "part": null,
+              "duration": 199,
+              "youtubeId": null,
+              "description": "Explains workflow step components and their authoring dialogs, process and dynamic participant resource types, safe overlays under /apps, and PROCESS, FORM_PATH, and DIALOG_PATH parameters."
+            }
+          ]
+        },
+        {
+          "slug": "programmatic-interaction",
+          "order": 10,
+          "name": "Programmatic Interaction",
+          "videos": [
+            {
+              "id": "10_programmatic-interaction",
+              "part": null,
+              "duration": 162,
+              "youtubeId": null,
+              "description": "Covers adapting a ResourceResolver to WorkflowSession, using the Workflow REST API and JSON endpoints, checking instance states, listing models, and reading step metadata."
+            }
+          ]
+        },
+        {
+          "slug": "content-fragments-concepts",
+          "order": 11,
+          "name": "Content Fragments Concepts",
+          "videos": [
+            {
+              "id": "11_content-fragments-concepts",
+              "part": null,
+              "duration": 154,
+              "youtubeId": null,
+              "description": "Introduces structured, channel-neutral Content Fragments and their models, elements, variations, and content references, including how model definitions govern authoring."
+            }
+          ]
+        },
+        {
+          "slug": "content-fragments-delivery-and-best-practices",
+          "order": 12,
+          "name": "Content Fragments Delivery and Best Practices",
+          "videos": [
+            {
+              "id": "12_content-fragments-delivery-and-best-practices",
+              "part": null,
+              "duration": 158,
+              "youtubeId": null,
+              "description": "Shows how pages reference Content Fragments and how they are delivered through GraphQL as JSON, then covers model governance, reference depth, and variation-count considerations."
+            }
+          ]
+        },
+        {
+          "slug": "experience-fragments-concepts",
+          "order": 13,
+          "name": "Experience Fragments Concepts",
+          "videos": [
+            {
+              "id": "13_experience-fragments-concepts",
+              "part": null,
+              "duration": 163,
+              "youtubeId": null,
+              "description": "Explains Experience Fragments as reusable component groups, their editable-template foundation, folder policies, nested fragments, and the permissions needed to author them."
+            }
+          ]
+        },
+        {
+          "slug": "experience-fragments-development-and-tips",
+          "order": 14,
+          "name": "Experience Fragments Development and Tips",
+          "videos": [
+            {
+              "id": "14_experience-fragments-development-and-tips",
+              "part": null,
+              "duration": 203,
+              "youtubeId": null,
+              "description": "Covers Experience Fragment resource types, plain HTML output and link rewriting, template eligibility, content policies, and exporting fragments to Adobe Target."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dispatcher",
+      "label": "Dispatcher",
+      "accent": "#d946ef",
+      "categories": [
+        {
+          "slug": "introduction",
+          "order": 1,
+          "name": "Introduction",
+          "videos": [
+            {
+              "id": "01_introduction",
+              "part": null,
+              "duration": 195,
+              "youtubeId": null,
+              "description": "Introduces Dispatcher as a caching and security layer in the AEM request path, and previews the configuration, troubleshooting, and cache-invalidation topics covered."
+            }
+          ]
+        },
+        {
+          "slug": "dispatcher-any-farms-and-includes",
+          "order": 2,
+          "name": "dispatcher.any, Farms and Includes",
+          "videos": [
+            {
+              "id": "02_dispatcher-any-farms-and-includes",
+              "part": null,
+              "duration": 154,
+              "youtubeId": null,
+              "description": "Explains dispatcher.any syntax, top-level properties and farm structure, when to use one or multiple farms, and how includes, wildcards, and variables organize configuration."
+            }
+          ]
+        },
+        {
+          "slug": "virtual-hosts",
+          "order": 3,
+          "name": "Virtual Hosts",
+          "videos": [
+            {
+              "id": "03_virtual-hosts",
+              "part": null,
+              "duration": 161,
+              "youtubeId": null,
+              "description": "Shows how Dispatcher matches hostnames and URIs to virtual hosts and farms, including evaluation order, first-match behavior, and the default fallback host."
+            }
+          ]
+        },
+        {
+          "slug": "renders-and-client-headers",
+          "order": 4,
+          "name": "Renders and Client Headers",
+          "videos": [
+            {
+              "id": "04_renders-and-client-headers",
+              "part": null,
+              "duration": 178,
+              "youtubeId": null,
+              "description": "Covers Publisher render endpoints, load distribution, connection and response timeouts, secure HTTPS connections, and the client headers Dispatcher must forward."
+            }
+          ]
+        },
+        {
+          "slug": "filters",
+          "order": 5,
+          "name": "Filters",
+          "videos": [
+            {
+              "id": "05_filters",
+              "part": null,
+              "duration": 165,
+              "youtubeId": null,
+              "description": "Explains Dispatcher request filters, deny-by-default allowlisting, filter rule syntax, and why matching individual request elements is safer than deprecated glob rules."
+            }
+          ]
+        },
+        {
+          "slug": "filter-safety-and-vanity-urls",
+          "order": 6,
+          "name": "Filter Safety and Vanity URLs",
+          "videos": [
+            {
+              "id": "06_filter-safety-and-vanity-urls",
+              "part": null,
+              "duration": 192,
+              "youtubeId": null,
+              "description": "Reviews unsafe filter patterns and exposed admin paths, cache-flush access controls, and how vanity URL resolution works alongside Dispatcher filters."
+            }
+          ]
+        },
+        {
+          "slug": "cache-basics",
+          "order": 7,
+          "name": "Cache Basics",
+          "videos": [
+            {
+              "id": "07_cache-basics",
+              "part": null,
+              "duration": 190,
+              "youtubeId": null,
+              "description": "Introduces Dispatcher cache roots and rules, allow and deny patterns, and the request and response conditions that prevent caching, including query strings and authenticated content."
+            }
+          ]
+        },
+        {
+          "slug": "cache-invalidation",
+          "order": 8,
+          "name": "Cache Invalidation",
+          "videos": [
+            {
+              "id": "08_cache-invalidation",
+              "part": null,
+              "duration": 195,
+              "youtubeId": null,
+              "description": "Explains .stat-based cache invalidation, statfileslevel, automatic and manual flushes, ResourceOnly behavior, and restricting which clients can clear the cache."
+            }
+          ]
+        },
+        {
+          "slug": "url-parameters-headers-ttl-and-authentication",
+          "order": 9,
+          "name": "URL Parameters, Headers, TTL and Authentication",
+          "videos": [
+            {
+              "id": "09_url-parameters-headers-ttl-and-authentication",
+              "part": null,
+              "duration": 180,
+              "youtubeId": null,
+              "description": "Covers cache handling for URL parameters and response headers, ETag configuration, expiry and TTL files, and the security implications of caching authenticated requests."
+            }
+          ]
+        },
+        {
+          "slug": "invalidating-from-author-or-publish",
+          "order": 10,
+          "name": "Invalidating from Author or Publish",
+          "videos": [
+            {
+              "id": "10_invalidating-from-author-or-publish",
+              "part": null,
+              "duration": 190,
+              "youtubeId": null,
+              "description": "Compares Author-side and Publish-side Dispatcher flush agents, including transport settings, farm selection, dedicated credentials, reachability, and stale-content timing."
+            }
+          ]
+        },
+        {
+          "slug": "dispatcher-in-cloud-service",
+          "order": 11,
+          "name": "Dispatcher in Cloud Service",
+          "videos": [
+            {
+              "id": "11_dispatcher-in-cloud-service",
+              "part": null,
+              "duration": 194,
+              "youtubeId": null,
+              "description": "Introduces the Cloud Service Dispatcher project layout and local Docker tooling, then covers flexible mode, Apache and Dispatcher configuration folders, symlink activation, and required local virtual hosts."
+            }
+          ]
+        },
+        {
+          "slug": "customizable-and-immutable-files",
+          "order": 12,
+          "name": "Customizable and Immutable Files",
+          "videos": [
+            {
+              "id": "12_customizable-and-immutable-files",
+              "part": null,
+              "duration": 190,
+              "youtubeId": null,
+              "description": "Distinguishes customizable Dispatcher files from immutable framework files, explains supported farm defaults and include locations, and highlights unsafe virtual-host defaults."
+            }
+          ]
+        },
+        {
+          "slug": "cdn-and-cache-headers",
+          "order": 13,
+          "name": "CDN and Cache Headers",
+          "videos": [
+            {
+              "id": "13_cdn-and-cache-headers",
+              "part": null,
+              "duration": 195,
+              "youtubeId": null,
+              "description": "Explains how origin Cache-Control, Surrogate-Control, and Expires headers govern CDN and browser caching, including query-string cache keys and ways to disable or tune defaults."
+            }
+          ]
+        },
+        {
+          "slug": "clientlibs-blob-content-and-exam-tips",
+          "order": 14,
+          "name": "Clientlibs, Blob Content and Exam Tips",
+          "videos": [
+            {
+              "id": "14_clientlibs-blob-content-and-exam-tips",
+              "part": null,
+              "duration": 189,
+              "youtubeId": null,
+              "description": "Covers long-lived client-library caching, Cloud Service blob caching rules and authentication headers, blob redirect limits, and stale-while-revalidate strategies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oakops",
+      "label": "Oak & Operations",
+      "accent": "#84cc16",
+      "categories": [
+        {
+          "slug": "introduction",
+          "order": 1,
+          "name": "Introduction",
+          "videos": [
+            {
+              "id": "01_introduction",
+              "part": null,
+              "duration": 154,
+              "youtubeId": null,
+              "description": "Introduces Oak indexing, AEM logging, Author-to-Publish replication, and deployment topologies, with scenarios focused on diagnosing slow queries and operational issues."
+            }
+          ]
+        },
+        {
+          "slug": "oak-query-engine-and-indexers",
+          "order": 2,
+          "name": "Oak Query Engine and Indexers",
+          "videos": [
+            {
+              "id": "02_oak-query-engine-and-indexers",
+              "part": null,
+              "duration": 161,
+              "youtubeId": null,
+              "description": "Explains how Oak evaluates repository queries, why unindexed traversal can be slow, how traversal warnings help identify issues, and how indexers estimate query cost."
+            }
+          ]
+        },
+        {
+          "slug": "property-and-lucene-indexes",
+          "order": 3,
+          "name": "Property and Lucene Indexes",
+          "videos": [
+            {
+              "id": "03_property-and-lucene-indexes",
+              "part": null,
+              "duration": 191,
+              "youtubeId": null,
+              "description": "Compares Oak property and Lucene indexes, covering index definitions, uniqueness and node-type constraints, asynchronous indexing, and full-text query behavior."
+            }
+          ]
+        },
+        {
+          "slug": "index-definitions-in-cloud-service",
+          "order": 4,
+          "name": "Index Definitions in Cloud Service",
+          "videos": [
+            {
+              "id": "04_index-definitions-in-cloud-service",
+              "part": null,
+              "duration": 185,
+              "youtubeId": null,
+              "description": "Covers how to define and deploy Oak indexes in AEM as a Cloud Service, supported Lucene options, reindexing during releases, and required FileVault and package configuration."
+            }
+          ]
+        },
+        {
+          "slug": "index-names-and-simplified-index-management",
+          "order": 5,
+          "name": "Index Names and Simplified Index Management",
+          "videos": [
+            {
+              "id": "05_index-names-and-simplified-index-management",
+              "part": null,
+              "duration": 190,
+              "youtubeId": null,
+              "description": "Explains naming conventions for custom and customized Oak indexes, how to base changes on current product definitions, and how diff.index simplifies index management."
+            }
+          ]
+        },
+        {
+          "slug": "logging-basics-and-osgi-configuration",
+          "order": 6,
+          "name": "Logging Basics and OSGi Configuration",
+          "videos": [
+            {
+              "id": "06_logging-basics-and-osgi-configuration",
+              "part": null,
+              "duration": 176,
+              "youtubeId": null,
+              "description": "Introduces Sling logging and its OSGi configuration, including logger and writer relationships, log levels, rotation, file destinations, and common AEM log files."
+            }
+          ]
+        },
+        {
+          "slug": "cloud-service-logs",
+          "order": 7,
+          "name": "Cloud Service Logs",
+          "videos": [
+            {
+              "id": "07_cloud-service-logs",
+              "part": null,
+              "duration": 245,
+              "youtubeId": null,
+              "description": "Surveys AEM Cloud Service Java, request, access, and CDN logs, where log settings are deployed, how to read their formats, and which requests they capture."
+            }
+          ]
+        },
+        {
+          "slug": "apache-dispatcher-and-cdn-logs",
+          "order": 8,
+          "name": "Apache, Dispatcher and CDN Logs",
+          "videos": [
+            {
+              "id": "08_apache-dispatcher-and-cdn-logs",
+              "part": null,
+              "duration": 167,
+              "youtubeId": null,
+              "description": "Explains Publish-side Apache, Dispatcher, and CDN logs, how to set supported log levels, interpret cache actions such as HIT and MISS, and retrieve logs with Cloud Manager or the CLI."
+            }
+          ]
+        },
+        {
+          "slug": "replication-fundamentals",
+          "order": 9,
+          "name": "Replication Fundamentals",
+          "videos": [
+            {
+              "id": "09_replication-fundamentals",
+              "part": null,
+              "duration": 161,
+              "youtubeId": null,
+              "description": "Introduces AEM replication for publishing, cache flushing, and reverse user-data flows, including queues, transport endpoints, and data that uses a shared store instead."
+            }
+          ]
+        },
+        {
+          "slug": "replication-agents-and-queues-in-6-5",
+          "order": 10,
+          "name": "Replication Agents and Queues in 6.5",
+          "videos": [
+            {
+              "id": "10_replication-agents-and-queues-in-6-5",
+              "part": null,
+              "duration": 167,
+              "youtubeId": null,
+              "description": "Covers AEM 6.5 replication agent types and queue states, agent permissions and logging, receive endpoints, and selecting a Dispatcher farm for cache flushes."
+            }
+          ]
+        },
+        {
+          "slug": "replication-in-cloud-service",
+          "order": 11,
+          "name": "Replication in Cloud Service",
+          "videos": [
+            {
+              "id": "11_replication-in-cloud-service",
+              "part": null,
+              "duration": 162,
+              "youtubeId": null,
+              "description": "Explains Sling Content Distribution in AEM Cloud Service, default publish and preview agents, distribution tools, workflow-based tree activation, and publication status meanings."
+            }
+          ]
+        },
+        {
+          "slug": "persistence-and-topologies-in-6-5",
+          "order": 12,
+          "name": "Persistence and Topologies in 6.5",
+          "videos": [
+            {
+              "id": "12_persistence-and-topologies-in-6-5",
+              "part": null,
+              "duration": 204,
+              "youtubeId": null,
+              "description": "Compares TarMK and MongoMK deployment topologies, including standalone and standby setups, TarMK farms, Author clusters, scaling considerations, and MongoDB replica-set requirements."
+            }
+          ]
+        },
+        {
+          "slug": "cloud-service-architecture-and-operations",
+          "order": 13,
+          "name": "Cloud Service Architecture and Operations",
+          "videos": [
+            {
+              "id": "13_cloud-service-architecture-and-operations",
+              "part": null,
+              "duration": 197,
+              "youtubeId": null,
+              "description": "Explains AEM Cloud Service's container-based, service-oriented architecture, pipeline-managed configuration and indexes, rolling releases, request routing, and operational monitoring."
+            }
+          ]
+        },
+        {
+          "slug": "troubleshooting-and-exam-tips",
+          "order": 14,
+          "name": "Troubleshooting and Exam Tips",
+          "videos": [
+            {
+              "id": "14_troubleshooting-and-exam-tips",
+              "part": null,
+              "duration": 249,
+              "youtubeId": null,
+              "description": "Provides diagnostic steps for slow Oak queries, index deployment, AEM and Dispatcher logs, replication failures, and topology questions, with practical limits and exam reminders."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

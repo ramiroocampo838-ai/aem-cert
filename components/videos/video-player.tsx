@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { CheckCircle2, Play, SkipBack, SkipForward, Search, Video } from "lucide-react"
+import { CheckCircle2, Clock, Play, SkipBack, SkipForward, Search, Video } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,6 +17,78 @@ interface Entry {
 
 const WATCHED_KEY = "aem-cert:videos-watched"
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare global {
+  interface Window {
+    YT?: any
+    onYouTubeIframeAPIReady?: () => void
+  }
+}
+
+let ytApiPromise: Promise<any> | null = null
+
+function loadYouTubeApi(): Promise<any> {
+  if (window.YT?.Player) return Promise.resolve(window.YT)
+  if (!ytApiPromise) {
+    ytApiPromise = new Promise((resolve) => {
+      const previous = window.onYouTubeIframeAPIReady
+      window.onYouTubeIframeAPIReady = () => {
+        previous?.()
+        resolve(window.YT)
+      }
+      const script = document.createElement("script")
+      script.src = "https://www.youtube.com/iframe_api"
+      document.head.appendChild(script)
+    })
+  }
+  return ytApiPromise
+}
+
+const YT_ENDED = 0
+
+function YouTubeEmbed({ videoId, autoplay, onEnded }: { videoId: string; autoplay: boolean; onEnded: () => void }) {
+  const hostRef = useRef<HTMLDivElement>(null)
+  const onEndedRef = useRef(onEnded)
+  onEndedRef.current = onEnded
+
+  useEffect(() => {
+    const host = hostRef.current
+    if (!host) return
+    let player: any
+    let cancelled = false
+    const target = document.createElement("div")
+    host.appendChild(target)
+
+    loadYouTubeApi().then((YT) => {
+      if (cancelled) return
+      player = new YT.Player(target, {
+        host: "https://www.youtube-nocookie.com",
+        videoId,
+        width: "100%",
+        height: "100%",
+        playerVars: { autoplay: autoplay ? 1 : 0, rel: 0, modestbranding: 1, playsinline: 1 },
+        events: {
+          onStateChange: (e: { data: number }) => {
+            if (e.data === YT_ENDED) onEndedRef.current()
+          },
+        },
+      })
+    })
+
+    return () => {
+      cancelled = true
+      player?.destroy?.()
+      host.innerHTML = ""
+    }
+    // autoplay only matters when the video changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videoId])
+
+  return <div ref={hostRef} className="absolute inset-0 [&_iframe]:h-full [&_iframe]:w-full" />
+}
+
+const thumbUrl = (youtubeId: string) => `https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`
+
 function formatDuration(seconds: number): string {
   const m = Math.floor(seconds / 60)
   const s = seconds % 60
@@ -29,9 +101,6 @@ function flatten(section: VideoSection): Entry[] {
   )
 }
 
-const mediaUrl = (kind: "video" | "poster", section: string, id: string) =>
-  `/api/videos/media/${kind}/${section}/${id}`
-
 export function VideoPlayer() {
   const [sections, setSections] = useState<VideoSection[]>([])
   const [loading, setLoading] = useState(true)
@@ -40,7 +109,6 @@ export function VideoPlayer() {
   const [currentId, setCurrentId] = useState<string | null>(null)
   const [query, setQuery] = useState("")
   const [watched, setWatched] = useState<Set<string>>(new Set())
-  const videoRef = useRef<HTMLVideoElement>(null)
   const autoPlayRef = useRef(false)
 
   useEffect(() => {
@@ -66,6 +134,13 @@ export function VideoPlayer() {
   const entries = useMemo(() => (section ? flatten(section) : []), [section])
   const currentIndex = entries.findIndex((e) => e.video.id === currentId)
   const current = currentIndex >= 0 ? entries[currentIndex] : null
+  const isPlayable = (e: Entry | undefined) => !!e?.video.youtubeId
+  const adjacent = (dir: 1 | -1) => {
+    for (let i = currentIndex + dir; i >= 0 && i < entries.length; i += dir) if (isPlayable(entries[i])) return entries[i]
+    return undefined
+  }
+  const prevEntry = currentIndex >= 0 ? adjacent(-1) : undefined
+  const nextEntry = currentIndex >= 0 ? adjacent(1) : undefined
 
   const select = useCallback(
     (id: string, play = true) => {
@@ -104,8 +179,7 @@ export function VideoPlayer() {
   function handleEnded() {
     if (!current) return
     markWatched(current.video.id)
-    const next = entries[currentIndex + 1]
-    if (next) select(next.video.id)
+    if (nextEntry) select(nextEntry.video.id)
   }
 
   const filtered = useMemo(() => {
@@ -115,7 +189,8 @@ export function VideoPlayer() {
   }, [section, query])
 
   const accent = section?.accent ?? "#a855f7"
-  const sectionWatched = entries.filter((e) => watched.has(e.video.id)).length
+  const playableCount = entries.filter(isPlayable).length
+  const sectionWatched = entries.filter((e) => isPlayable(e) && watched.has(e.video.id)).length
 
   if (loading) {
     return (
@@ -134,8 +209,7 @@ export function VideoPlayer() {
           <Video className="mb-4 h-10 w-10 opacity-30" />
           <p className="font-medium">{error ?? "No videos available"}</p>
           <p className="mt-1 text-sm">
-            Generate them with <code className="rounded bg-muted px-1 text-xs">pnpm video:build</code> and run{" "}
-            <code className="rounded bg-muted px-1 text-xs">pnpm video:index</code>.
+            Run <code className="rounded bg-muted px-1 text-xs">pnpm video:index</code> to rebuild the manifest.
           </p>
         </CardContent>
       </Card>
@@ -146,16 +220,11 @@ export function VideoPlayer() {
     <div className="space-y-6">
       <Card className="overflow-hidden border-2" style={{ borderColor: `${accent}55` }}>
         <div className="relative aspect-video w-full bg-black">
-          {current ? (
-            <video
+          {current?.video.youtubeId ? (
+            <YouTubeEmbed
               key={current.video.id}
-              ref={videoRef}
-              src={mediaUrl("video", section!.id, current.video.id)}
-              poster={mediaUrl("poster", section!.id, current.video.id)}
-              className="h-full w-full object-contain"
-              controls
-              autoPlay={autoPlayRef.current}
-              preload="metadata"
+              videoId={current.video.youtubeId}
+              autoplay={autoPlayRef.current}
               onEnded={handleEnded}
             />
           ) : (
@@ -178,8 +247,8 @@ export function VideoPlayer() {
             <Button
               variant="outline"
               size="icon"
-              disabled={currentIndex <= 0}
-              onClick={() => select(entries[currentIndex - 1].video.id)}
+              disabled={!prevEntry}
+              onClick={() => prevEntry && select(prevEntry.video.id)}
               title="Previous"
             >
               <SkipBack className="h-4 w-4" />
@@ -187,8 +256,8 @@ export function VideoPlayer() {
             <Button
               variant="outline"
               size="icon"
-              disabled={currentIndex < 0 || currentIndex >= entries.length - 1}
-              onClick={() => select(entries[currentIndex + 1].video.id)}
+              disabled={!nextEntry}
+              onClick={() => nextEntry && select(nextEntry.video.id)}
               title="Next"
             >
               <SkipForward className="h-4 w-4" />
@@ -228,7 +297,7 @@ export function VideoPlayer() {
           />
         </div>
         <p className="text-xs text-muted-foreground">
-          {sectionWatched} / {entries.length} watched
+          {sectionWatched} / {playableCount} watched
         </p>
       </div>
 
@@ -245,29 +314,43 @@ export function VideoPlayer() {
             <div className="grid gap-2 sm:grid-cols-2">
               {category.videos.map((video) => {
                 const active = video.id === currentId
+                const playable = !!video.youtubeId
                 const done = watched.has(video.id)
                 return (
                   <Card
                     key={video.id}
-                    onClick={() => select(video.id)}
-                    className={`cursor-pointer transition-all hover:shadow-md ${active ? "bg-primary/5" : ""}`}
+                    onClick={playable ? () => select(video.id) : undefined}
+                    aria-disabled={!playable}
+                    className={`transition-all ${
+                      playable ? "cursor-pointer hover:shadow-md" : "cursor-not-allowed opacity-60"
+                    } ${active ? "bg-primary/5" : ""}`}
                     style={active ? { borderColor: accent } : undefined}
                   >
                     <CardContent className="flex items-center gap-3 p-2">
                       <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-sm bg-muted">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={mediaUrl("poster", section!.id, video.id)}
-                          alt=""
-                          loading="lazy"
-                          className="h-full w-full object-cover"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100">
-                          <Play className="h-5 w-5 text-white" />
-                        </div>
-                        <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1 text-[10px] text-white">
-                          {formatDuration(video.duration)}
-                        </span>
+                        {video.youtubeId ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={thumbUrl(video.youtubeId)}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center">
+                            <Clock className="h-5 w-5 text-muted-foreground opacity-50" />
+                          </div>
+                        )}
+                        {playable && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100">
+                            <Play className="h-5 w-5 text-white" />
+                          </div>
+                        )}
+                        {video.duration != null && (
+                          <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1 text-[10px] text-white">
+                            {formatDuration(video.duration)}
+                          </span>
+                        )}
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-medium">{category.name}</p>
@@ -280,7 +363,12 @@ export function VideoPlayer() {
                               Part {video.part}/{category.videos.length}
                             </Badge>
                           )}
-                          {done && <CheckCircle2 className="h-4 w-4 text-emerald-500" />}
+                          {!playable && (
+                            <Badge variant="outline" className="text-xs">
+                              Coming soon
+                            </Badge>
+                          )}
+                          {done && playable && <CheckCircle2 className="h-4 w-4 text-emerald-500" />}
                         </div>
                       </div>
                     </CardContent>

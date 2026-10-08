@@ -1,6 +1,6 @@
 /**
  * Video generator for the AEM cert hub.
- * Usage: node tools/video-kit/build.mjs <section> [category-slug] [--part=N] [--script-only] [--keep-script]
+ * Usage: node tools/video-kit/build.mjs <section> [category-slug] [--part=N] [--script-only] [--keep-script] [--keep-work]
  *   Builds numbered videos (NN_slug[_part_N].mp4) from lib/concepts/<section>; long categories are split in parts.
  *   Edit tools/video-kit/work/<section>/<NN_slug[_part_N]>/video-script.json and re-run with
  *   --keep-script to build from your edits instead of regenerating the script.
@@ -50,7 +50,7 @@ function validate(script) {
 async function buildCategory(category) {
   const catSlug = slug(category.name)
   const order = String(allCategories.indexOf(category) + 1).padStart(2, "0")
-  const parts = splitCategory(category, cfg)
+  const parts = splitCategory(category, cfg, section)
   const only = partFlag ? parts.filter((p) => p.number === partFlag) : parts
   for (const part of only) await buildPart(category, part, `${order}_${catSlug}${parts.length > 1 ? `_part_${part.number}` : ""}`)
 }
@@ -82,6 +82,8 @@ async function buildPart(category, part, name) {
   await renderScenes(script, frameDir, cfg)
 
   const clips = []
+  const chapters = []
+  let elapsed = 0
   for (const s of script.scenes) {
     const audio = path.join(audioDir, `${s.id}.mp3`)
     const clip = path.join(clipDir, `${s.id}.mp4`)
@@ -90,11 +92,19 @@ async function buildPart(category, part, name) {
     run("ffmpeg", [
       "-y", "-loop", "1", "-framerate", String(cfg.fps), "-i", path.join(frameDir, `${s.id}.png`),
       "-i", audio, "-af", `apad=pad_dur=${pad}`, "-t", total.toFixed(2),
-      "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", String(cfg.fps),
+      "-c:v", "libx264", "-preset", "medium", "-tune", "stillimage", "-crf", String(cfg.crf ?? 28),
+      "-pix_fmt", "yuv420p", "-r", String(cfg.fps),
       "-c:a", "aac", "-ar", "44100", "-ac", "2", clip,
     ])
     clips.push(clip)
+    chapters.push({ start: elapsed, title: s.type === "title" ? "Introduction" : s.type === "recap" ? "Recap" : s.heading })
+    elapsed += total
     console.log(`clip ${s.id} (${total.toFixed(1)}s)`)
+  }
+  // A short title scene is folded into the first concept chapter so every chapter lasts 10s or more.
+  if (chapters.length > 1 && chapters[1].start < 10) {
+    chapters.shift()
+    chapters[0].start = 0
   }
 
   const list = path.join(workDir, "clips.txt")
@@ -102,6 +112,42 @@ async function buildPart(category, part, name) {
   const final = path.join(outDir, `${name}.mp4`)
   run("ffmpeg", ["-y", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", final])
   console.log(`Final video: ${final} (${duration(final).toFixed(0)}s)`)
+
+  writeYoutubeMeta(script, category, part, name, chapters)
+
+  if (!flags.includes("--keep-work")) {
+    for (const dir of [audioDir, frameDir, clipDir]) fs.rmSync(dir, { recursive: true, force: true })
+    fs.rmSync(list, { force: true })
+  }
+}
+
+const stamp = (seconds) => {
+  const s = Math.round(seconds)
+  const h = Math.floor(s / 3600)
+  const m = Math.floor((s % 3600) / 60)
+  const sec = String(s % 60).padStart(2, "0")
+  return h ? `${h}:${String(m).padStart(2, "0")}:${sec}` : `${m}:${sec}`
+}
+
+// YouTube needs at least 3 chapters, the first at 0:00 and each at least 10 seconds long.
+function writeYoutubeMeta(script, category, part, name, chapters) {
+  const label = cfg.sections[section]?.label ?? section
+  const partLabel = part.count > 1 ? ` (Part ${part.number} of ${part.count})` : ""
+  const title = `${label}: ${category.name}${partLabel} | AEM Developer Certification`
+  const valid = chapters.length >= 3 && chapters.every((c, i) => i === chapters.length - 1 || chapters[i + 1].start - c.start >= 10)
+  const description = [
+    category.videoDescriptions?.[part.number - 1],
+    `Key concepts for the Adobe Experience Manager (AEM) Developer certification: ${category.name}${partLabel}.`,
+    valid ? chapters.map((c) => `${stamp(c.start)} ${c.title}`).join("\n") : "",
+    "#AEM #AdobeExperienceManager #AEMCertification",
+  ]
+    .filter(Boolean)
+    .join("\n\n")
+
+  const metaDir = path.join(root, "youtube-meta", section)
+  fs.mkdirSync(metaDir, { recursive: true })
+  fs.writeFileSync(path.join(metaDir, `${name}.txt`), `TITLE:\n${title}\n\nDESCRIPTION:\n${description}\n`)
+  if (!valid) console.warn(`chapters skipped for ${name} (need >=3 chapters of >=10s)`)
 }
 
 

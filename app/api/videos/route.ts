@@ -7,8 +7,8 @@ export const dynamic = "force-dynamic"
 export interface VideoItem {
   id: string
   part: number | null
-  duration: number
-  size: number
+  duration: number | null
+  youtubeId: string | null
   description?: string
 }
 
@@ -28,7 +28,7 @@ export interface VideoSection {
 
 export async function GET() {
   try {
-    const file = path.join(process.cwd(), "video-out", "manifest.json")
+    const file = path.join(process.cwd(), "lib", "videos", "manifest.json")
     const manifest = JSON.parse(await readFile(file, "utf8")) as { sections: VideoSection[] }
     return NextResponse.json(manifest)
   } catch {
